@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Praktikum 2 Seminar | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
-  <meta name="description" content="Praktikum 2 Seminar | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <title>Praktikum 7 Sissejuhatus QGISi 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 7 Sissejuhatus QGISi 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Praktikum 2 Seminar | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:title" content="Praktikum 7 Sissejuhatus QGISi 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Praktikum 2 Seminar | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="twitter:title" content="Praktikum 7 Sissejuhatus QGISi 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="ruumiobjektid.html"/>
+<link rel="prev" href="qgis-1.html"/>
+<link rel="next" href="kirjandus.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -143,56 +143,87 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="seminar" class="section level1">
-<h1><span class="header-section-number">Praktikum 2</span> Seminar</h1>
-<div id="mõisted" class="section level2">
-<h2><span class="header-section-number">2.1</span> Mõisted</h2>
-<p>Mõne artiklis kasutatud mõiste seletusi:</p>
+<div id="qgis_2" class="section level1">
+<h1><span class="header-section-number">Praktikum 7</span> Sissejuhatus QGISi 2</h1>
+<div id="andmete-avamine" class="section level2">
+<h2><span class="header-section-number">7.1</span> Andmete avamine</h2>
+<p>Lae <a href="">Moodle’ist alla tänase praktikumi andmed</a> ning ava kõik need kihid QGISis. Võid jätkata eelmise praktikumi QGIS projekti. Kihelkondade kiht on kujutab 1917. aasta seisu. Kihis võib olla mõningaid ebatäpsusi. Mälestiste kihis on kõik muinsuskaitse all olevad mälestised. Aladena tähistatud mälestistest on siin lihtsama käsitlemise huvides tehtud samuti punktid. Pärast avamist vaadake ka andmete atribuuttabeleid, et näha millist infot on nendega kaasas. Vorbuse uurimisala kasutame harjutuse käigus ja praege võib selle välja lülitada.</p>
+</div>
+<div id="andmete-valimine-ja-mõõtmine-käsitsi" class="section level2">
+<h2><span class="header-section-number">7.2</span> Andmete valimine ja mõõtmine (käsitsi)</h2>
+<p>Kihi valimise abil saame luua valikust uue kihi või muuta valiku omadusi. Hetkel vaatame käsitsi valimise variante. Kaardil objektide valimiseks kliki kihtide paneelis kihil, millest soovid valida. Objekte saab valida kaardil kuju joonistades või määrates väärtused, mille põhjal valik teha. Proovime mõlemat! Valitud objektid muutuvad kollaseks.</p>
+<div class="figure" style="text-align: center"><span id="fig:selectiontools"></span>
+<img src="imgs/selection_tools.png" alt="Valimise tööriistad menüüribal" width="30%" />
+<p class="caption">
+Figure 7.1: Valimise tööriistad menüüribal
+</p>
+</div>
+<p>Vali kaardil kõik Saaremaa kihelkonnad ning salvesta need eraldi kihina tehes <em>paremklikk → Export → Save <strong>Selected</strong> Features As</em>. Formaadiks <em>Geopackage</em> ja vali sirvimise ikoonile klikkides kursuse kaustas andmete kaust. Anna kihile mõistlik nimi. Näiteks <em>kihelkonnad_saaremaa</em> või <em>saaremaa_kihelkonnad</em>.</p>
+<p>Vali kaardil Liivimaa kubermangu kihelkonnad. <em>Select Features By Value</em> ja kubermangu tulpa kirjuta “Liivimaa” <em>→ Select Features → Close</em>. Järgmistel kordadel vaatame ka keerulisemaid valikuid <em>Select Features By Expression</em> abil. Vali samamoodi kõik arheoloogia mälestised ja salvesta need eraldi kihina. Valiku tegemiseks vaata kihi atribuuttabelit.</p>
+</div>
+<div id="kihi-ja-andmete-loomine" class="section level2">
+<h2><span class="header-section-number">7.3</span> Kihi ja andmete loomine</h2>
+<p>Märkida tuleb vanalt topograafiliselt kaardilt uurimispiirkonna piires Tartust u 7 km kirdes asuva Vorbuse asula läheduses oleva Metsaküla küla suuremad teed ja talud, mida tänapäeval enam pole. Piirkonnas toimusid 1960.–70. aastate maaparandusega (uute põldude rajamisega) seoses mitmed ümberkorraldused.</p>
+<div class="figure" style="text-align: center"><span id="fig:vorbuse"></span>
+<img src="imgs/vorbuse.jpeg" alt="Vorbuse piirkonna talud ja teed, mida tänapäeval enam pole" width="80%" />
+<p class="caption">
+Figure 7.2: Vorbuse piirkonna talud ja teed, mida tänapäeval enam pole
+</p>
+</div>
+<p><strong>Lisa WMS-teenusest ajalooline topokaart:</strong></p>
 <ul>
-<li><strong><em>Cognitive maps</em></strong> - kujutluskaart. Inimese (või muu elusolendi) kogemuste põhjal ajju talletatud ettekujutus/mudel mingist reaalsest või irreaalsest ruumist; laiemas käsituses mis tahes protsessist või mõistest.<br />
-</li>
-<li><strong><em>Community mapping</em></strong>, <strong><em>participatory mapping</em></strong> - kogukondlik ja/või osaluskaardistamine. Kaartide tegemine n-ö tavaliste inimeste poolt tavaliste inimeste jaoks, praktikas sageli mingil ühiskondlikul-kultuurilisel või poliitilisel eesmärgil (nt pärandi, keele kaitsmiseks, mingi kogukonna arengu planeerimiseks, mingi piirkonna ressursside õiglasemaks jaotamiseks). Nende mõistetega on lähedalt seotud ka mõiste <strong><em>counter-mapping</em></strong>, mis veelgi selgemalt tegeleb alternatiivse kaardistamise abil traditsiooniliste võimusuhete lammutamise ja õõnestamisega. Nii osaluskaardistamine kui ka <em>vastukaardistamine</em> esindavad <strong><em>kriitilise kartograafia</em></strong> rakendusi. Kriitilise kartograafia põhitees on, et kaardid peegeldavad ja kinnistavad võimusuhteid ning seda enamasti ühiskonnas domineeriva klassi positsioonilt.<br />
-</li>
-<li><strong><em>Gazetteer</em></strong> - kohanimeloend. Koondab tavaliselt infot kohanimega seotud koordinaatide ja koha tüübi kohta (nt mägi, jõgi, linn, küla), aga võib lisaks sisaldada ka nt rööpnimekujusid, asustuse infot, seoseid teiste sõnastiku kirjetega jm infot.<br />
-</li>
-<li><strong><em>Geocoding</em></strong> - geokodeerimine ehk kohtade tekstiliste viidete (nt kohanimede, aadresside) muutmine geograafilisteks koordinaatideks. Tagurpidi geokodeerimine muudab omakorda geograafilised koordinaadid kohanimedeks või aadressideks.<br />
-</li>
-<li><strong><em>Locative media</em></strong> - 1) digitaalne sisu (nt pildid, videod, helid) või selle loomiseks kasutatud vahendid, millele on lisatud asukohainfo; 2) vahendid, mis kasutavad digitaalse sisu edastamiseks asukohainfot. Digihumanitaaria kontekstis ka raamistik, mille kaudu uurida üksikisiku suhteid ja vastastikuseid mõjusid koha ja tehnoloogiaga.<br />
-</li>
-<li><strong><em>Psychogeography</em></strong> - kunsti- ja teadussuund, mille fookuses on see, kuidas kogetakse (eeskätt) linnakeskkondi ning kuidas keskkond mõjutab meie emotsioone ja käitumist. Sealjuures pööratakse tähelepanu viisidele, kuidas saada ümbritsevast uusi ja ootamatuid elamusi ning avastada “tavapärasest erinevat”.<br />
-</li>
-<li><strong><em>Thick mapping</em></strong> - paljude erinevate geograafiliste või kohaspetsiifiliste andmete (pildid, narratiivid, kaardid, suulised ja kirjalikud mälestused jne) kogumine, koondamine/agregeerimine ja visualiseerimine selleks, et pakkuda kohtadele ja neis toimunud sündmustele erinevaid perspektiive (ka nt millegi alusel marginaliseeritud või vähem häälekate gruppide omi). Kasutatud on ka terminit <em>deep mapping</em>.</li>
+<li>Lülita sisse Vorbuse uurimisala kiht ja liigu selle juurde.</li>
+<li>Layer → Add layer → Add WMS/WMTS layer.</li>
+<li>Avanenud aknas kliki New. Seal Name: Maaamet ajaloolised kaardid ning URL juurde kopeeri aadress <a href="https://kaart.maaamet.ee/wms/ajalooline" class="uri">https://kaart.maaamet.ee/wms/ajalooline</a>? ja vajuta OK.</li>
+<li>Kliki <em>Connect</em> ja vali <em>Ajalooline</em> alt 4<em>5 ew_25T Eesti topograafiline kaart 1:25000 (1923–1935)</em> ning seejärel <em>Add → Close</em>.</li>
+<li>Lisa eelmise punktiga sarnaselt WMS-teenusest tänapäevane aluskaart:
+<ul>
+<li>Loo uus ühendus või kasuta eelmises loengus seadistatud ühendust <em>Maa-amet alus</em>. Loomisel kasuta URLi <em><a href="http://kaart.maaamet.ee/wms/alus" class="uri">http://kaart.maaamet.ee/wms/alus</a>?</em></li>
+</ul></li>
+<li>Vali rippmenüüst Maa-amet alus, kliki <em>Connect</em> ja vali <em>Põhikaardid</em> alt *2 pohi _vr2 Põhikaart*.</li>
+<li>Vaata põgusalt, kuidas on märgitud talud ja teed ajaloolisel topokaardil ja tänapäevasel põhikaardil.</li>
+</ul>
+<p><strong>Loo uued tühjad kihid talude ja teede märkimiseks</strong></p>
+<ul>
+<li>Ülevalt menüüst <em>Layer → Create Layer → New Geopackage Layer</em></li>
+<li>Sirvimise ikoonile klikkides liigu seal kausta kursuse andmete kausta. Pane faili nimeks vorbuse_talud ning vajuta <em>Save</em>.</li>
+<li>Vali <em>Geometry type: Point</em>.</li>
+<li>Rippmenüüst koordinaatsüsteem <em>EPSG: 3301, Estonian Coordinate System 1997</em>.</li>
+<li>Lisa kihile uus atribuutide väli. <em>New field</em> all <em>Name</em> järel kirjuta <em>nimi</em> ja kliki <em>Add to Fields List → OK</em>.</li>
+<li>Nüüd on talude märkimiseks loodud tühi kiht, mis ilmus ka kihtide paneelile. Seda kihti paneelil sisse-välja lülitades ei juhtu hetkel midagi, kuna selles pole veel ühtegi punkti.</li>
+<li>Loo sarnaselt talude kihile ka teede vektorkiht. Vali teede märkimiseks õige <em>Geometry type</em>.</li>
+</ul>
+<p><em>Märgi ajalooliselt kaardilt talud ja teed, mida tänapäeval enam pole</em> Talud on topograafilisel kaardil tähistatud kandilise viirutatud alaga, millel asub must punkt, mis tähistab hoonet.</p>
+<ul>
+<li>Kliki kihtide paneelil kihil <em>Vorbuse_talud</em> ning vajuta üleval tööriista ribal kollasele pliiatsile (või <em>Layer → Toggle editing</em>). Pliiatsi kõrval olevad ikoonid muutuvad värviliseks. Vali kolme punktiga ikoon <em>Add features</em>. Nüüd saad kaardile punkte märkida.</li>
+<li>Kliki topograafilisel kaardil talu peal. Avanenud aknas jäta <em>id</em> lahter tühjaks, aga kirjuta <em>nimi</em> juurde võimalusel märgitud talu nimi.</li>
+<li>Kui kõik talud on märgitud, siis salvesta muudatused. Selleks vajuta tööriistaribal kollase pliiatsi kõrval disketina kujutatud salvestamise ikoonile (<em>Save Layer</em>). Lülita editing välja vajutades kollasel pliiatsil.</li>
+<li>Nüüd peaksid näha olema kõikide talude peal värvilised punktid.
+<ul>
+<li>Muuda punktide värvi ja suurust, et need paremini välja paistaksid ning lisa nimesilt.</li>
+<li>Selleks, et sildid paremini välja paistaksid võid <em>Labels</em> menüüs <em>Background</em> alt teha linnukese <em>Draw background</em> ees ning <em>Placement</em> alt määrata <em>Distance: 2</em>. Selle tulemusena on siltide tekst taust valge ning sildid asuvad punktist 2 mm kaugusel.</li>
+</ul></li>
+</ul>
+<p>Märgi kihiga <em>vorbuse_teed</em> uurimispiirkonna piires need teed, mida tänapäevasel kaardil enam pole. Ära märgi väga väikseid või neid teid, mille asukoht või kurvilisus on ainult pisut muutunud.</p>
+<ul>
+<li>Teede märkimine on sisuliselt sama nagu punktide märkimine. Kolme punktiga ikooni asemel on tööriistaribal samas kohas aga lihtsalt nurgelise joonega ikoon.</li>
+<li>Märgi tee punktide abil joonena. Joone lõpetamiseks tee parempoolne klikk ja anna sellele järjekorra number. Joone paksust saab muuta samal viisil nagu punktil.</li>
+<li>Kui oled talud ja teed märkinud, siis lülita ajalooline topokaart välja. Nüüd on endised talud ja teed näha tänapäevasel põhikaardil.</li>
 </ul>
 </div>
-<div id="rühmatöö-1-gisi-ja-ruumi-geohumanitaaria-projekte-ja-rakendusi" class="section level2">
-<h2><span class="header-section-number">2.2</span> Rühmatöö 1: GISi ja ruumi-/geohumanitaaria projekte ja rakendusi</h2>
-<p>Võite osaleda üksi või rühmaga (maksimaalselt 3 inimest).</p>
-<p>Otsige üks enda erialaga (lähemalt või kaugemalt) seotud projekt, mis kasutaks GISi või tegeleks ruumi- või geohumanitaariaga. Alustada võib näiteks <a href="https://anterotesis.com/wordpress/mapping-resources/dh-gis-projects/">siit</a>, aga kindlasti võiks lähemalt uurida ka artiklites olnud viiteid.</p>
-<p>Lisage <a href="https://padlet.com/maarjaliisapilvik/14fuhzi8dpw9i2to">virtuaalsele tahvlile</a>:</p>
+<div id="kaartide-kujundamine-ja-eksportimine" class="section level2">
+<h2><span class="header-section-number">7.4</span> Kaartide kujundamine ja eksportimine</h2>
+<p>Kui kaardiaknas on loodud sobiv lahendus, siis ekspordi see kaardina. Kaardi tegemiseks:</p>
 <ul>
-<li>projekti nimi,</li>
-<li>projekti link,</li>
-<li>valdkond,<br />
-</li>
-<li>kirjeldus selle kohta, millega projektis tegeletakse,<br />
-</li>
-<li>võimalusel visuaalset lisamaterjali (nt pilte rakendustest, kaartidest vm).</li>
+<li>Ülevalt vasakult <em>Project → New Print Layout</em>. Anna sellele sobiv nimi.</li>
+<li>Avanenud aknas ülevalt <em>Add Item → Add Map</em>. Nüüd joonista akna valgele lehele nelinurk hoides all hiire vasakpoolset klahvi. QGIS-i peaaknas olev kaart kujutatakse sinna. Tee nelinurk sama suureks kui valge taust.</li>
+<li>Säti kaarti nii et kõik vajalik oleks näha. Selleks vali <em>Edit → Move Content</em> või vajuta klaviatuuril C. Liiguta kaarti hiire vasakpoolset klahvi all hoides. Paremal servas <em>Item properties</em> alt saab valida kaardi mõõtkava (Scale), et kaarti suuremaks või väiksemaks teha.</li>
+<li>Lisa kaardile joonmõõtkava. <em>Add item → Add Scalebar</em> ning kliki kaardile. Avanenud aknas lihtsalt <em>OK</em>. Paremal <em>Item properties → Segments</em> saad muuta muuta mõõtkava pikkust. Vali <em>left 0</em> ja lisa paremale poole nii palju, kui soovid. <em>Fixed width</em> muudab mõõtkava ühe ühiku pikkust. <em>Style</em> rippmenüüst saad valida endale meelepärase stiili.</li>
+<li>Lisa kaardile põhjasuunda tähistav nool. <em>Add item → Add North Arrow</em> ning kliki kaardile. Paiguta noole kast kaardi ühte ülemisse nurka. Paremal <em>Item properties</em> all kliki <em>Search directories</em> ning vali soovi korral mõni muu nool.</li>
+<li>Lisa kaardile enda nimi ja viide Maa-ametile. <em>Add Item → Add Label</em> ning kliki kaardile. Avanenud aknas OK. Paiguta tekkinud kast kaardi ühte nurka. Paremal <em>Item properties</em> all kirjuta enda nimi ning vajadusel viide Maa-ameti andmetele. Nt Aluskaart: Maa-amet 2020.</li>
+<li>Ekspordi kaart kursuse kausta. Üleval servas vasakul <em>Layout → Export as Image</em>. Anna sellele mõistlik nimi. Avanenud aknas Save.</li>
+<li>Ava kaart kaustas ning vaata, kas kõik jäi õigesti.</li>
 </ul>
-<div class="figure">
-<embed src="./imgs/padlet_projektid.pdf" style="width:100.0%" height="700" />
-<p class="caption">Erinevaid projekte</p>
-</div>
-</div>
-<div id="rühmatöö-2-humanitaaria-vs.-kvantitatiivsed-meetodid" class="section level2">
-<h2><span class="header-section-number">2.3</span> Rühmatöö 2: humanitaaria vs. kvantitatiivsed meetodid</h2>
-<p>Moodustage 3 inimesest koosnevad rühmad.</p>
-<p>Pooled rühmad saavad <strong>skeptikute/pessimistide</strong> rolli: teie arvates ei saa GISi ja laiemalt praeguste arvutuslike meetodite ja kvantitatiivse lähenemisega humanitaaria andmete ja küsimustega töötada (või siis mitte vähemalt väga hästi). Ka interdistsiplinaarsus on teie meelest praktikas väga raskesti saavutatav.</p>
-<p>Teine pool rühmadest saab <strong>optimistide</strong> rolli: teie arvates on humanitaaria eri suunad ka metodoloogiliselt pidevas arengus ning analüüsimeetodite vahetamine, laenamine ja kohandamine eri distsipliinide vahel ja sees annab humanitaariale väga palju juurde.</p>
-<p>Koondage <a href="https://padlet.com/maarjaliisapilvik/irf5y9aiahqkr9s1">siia</a> võimalikult palju argumente ja lihtsalt arvamusi, näiteid jm, mis teie rühma esindatavat seisukohta toetaksid. Võite sealjuures loomulikult ära kasutada artikleid, guugeldada, aga ka rühma sees ise ideid genereerida.</p>
-<div class="figure">
-<embed src="./imgs/padlet-debatt.pdf" style="width:100.0%" height="700" />
-<p class="caption">Debatt</p>
-</div>
 
 </div>
 </div>
@@ -201,8 +232,8 @@
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ruumiobjektid.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="qgis-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
