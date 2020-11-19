@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Praktikum 7 Sissejuhatus QGISi 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
-  <meta name="description" content="Praktikum 7 Sissejuhatus QGISi 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <title>Praktikum 16 Geograafiline tekstianalüüs 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 16 Geograafiline tekstianalüüs 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Praktikum 7 Sissejuhatus QGISi 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:title" content="Praktikum 16 Geograafiline tekstianalüüs 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Praktikum 7 Sissejuhatus QGISi 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="twitter:title" content="Praktikum 16 Geograafiline tekstianalüüs 2 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="qgis-1.html"/>
-<link rel="next" href="avaandmed.html"/>
+<link rel="prev" href="tekstianalyys.html"/>
+<link rel="next" href="kirjandus.html"/>
 <script src="libs/header-attrs-2.2/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -250,87 +250,171 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qgis_2" class="section level1" number="7">
-<h1><span class="header-section-number">Praktikum 7</span> Sissejuhatus QGISi 2</h1>
-<div id="andmete-avamine-1" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Andmete avamine</h2>
-<p>Lae <a href="">Moodle’ist alla tänase praktikumi andmed</a> ning ava kõik need kihid QGISis. Võid jätkata eelmise praktikumi QGIS projekti. Kihelkondade kiht on kujutab 1917. aasta seisu. Kihis võib olla mõningaid ebatäpsusi. Mälestiste kihis on kõik muinsuskaitse all olevad mälestised. Aladena tähistatud mälestistest on siin lihtsama käsitlemise huvides tehtud samuti punktid. Pärast avamist vaadake ka andmete atribuuttabeleid, et näha millist infot on nendega kaasas. Vorbuse uurimisala kasutame harjutuse käigus ja praege võib selle välja lülitada.</p>
-</div>
-<div id="andmete-valimine-ja-mõõtmine-käsitsi" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Andmete valimine ja mõõtmine (käsitsi)</h2>
-<p>Kihi valimise abil saame luua valikust uue kihi või muuta valiku omadusi. Hetkel vaatame käsitsi valimise variante. Kaardil objektide valimiseks kliki kihtide paneelis kihil, millest soovid valida. Objekte saab valida kaardil kuju joonistades või määrates väärtused, mille põhjal valik teha. Proovime mõlemat! Valitud objektid muutuvad kollaseks.</p>
-<div class="figure" style="text-align: center"><span id="fig:selectiontools"></span>
-<img src="imgs/selection_tools.PNG" alt="Valimise tööriistad menüüribal" width="30%" />
+<div id="tekstianalyys2" class="section level1" number="16">
+<h1><span class="header-section-number">Praktikum 16</span> Geograafiline tekstianalüüs 2</h1>
+<p>Tänases praktikumis tegeleme geograafilise tekstianalüüsiga, kasutades eesti keele automaattöötluseks loodud vahendeid.
+Nagu eelmises praktikumis mainitud, sisaldub selleks kõige põhjalikum tööriistade komplekt Pythoni EstNLTK teekides.</p>
+<p>Materjali ja aja kokkuhoiu huvides oleme juba eraldanud tekstidest kohanimeüksused.</p>
+<p>Kasutame geograafilise tekstianalüüsi näitlikustamiseks siin <a href="https://datadoi.ee/handle/33/76">Tartu Linnaraamatukogu e-raamatute eeltöödeldud faile</a> (lehel kasutas <em>soned.zip</em>). Tegeleme selles praktikumis Eduard Bornhöhe teosega “Vürst Gabriel ehk Pirita kloostri viimsed päevad”.</p>
+<div id="ülesanne-1-lihtne-teksti-meelsuse-analüüs" class="section level2" number="16.1">
+<h2><span class="header-section-number">16.1</span> Ülesanne 1: lihtne teksti meelsuse analüüs</h2>
+<p>Esimeses ülesandes</p>
+<ul>
+<li>vaatleme, <strong>milliseid kohanimeüksusi</strong> on teoses mainitud;</li>
+<li>loeme kokku, <strong>kui palju</strong> mingit kohta on mainitud;<br />
+</li>
+<li>analüüsime, milline on kohanimeüksust sisaldava <strong>tekstikatkendi meelsus</strong>: kas tekst on pigem positiivne, negatiivne, vastuoluline või neutraalne;<br />
+</li>
+<li>geokodeerime kohanimeüksused;<br />
+</li>
+<li>visualiseerime andmeid.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:bornhohe1"></span>
+<img src="imgs/16_bornhohe.PNG" alt="&quot;Vürst Gabriel ehk Pirita kloostri viimsed päevad&quot; lähtetekst" width="100%" />
 <p class="caption">
-Figure 7.1: Valimise tööriistad menüüribal
+Figure 16.1: “Vürst Gabriel ehk Pirita kloostri viimsed päevad” lähtetekst
 </p>
 </div>
-<p>Vali kaardil kõik Saaremaa kihelkonnad ning salvesta need eraldi kihina tehes <em>paremklikk → Export → Save <strong>Selected</strong> Features As</em>. Formaadiks <em>Geopackage</em> ja vali sirvimise ikoonile klikkides kursuse kaustas andmete kaust. Anna kihile mõistlik nimi. Näiteks <em>kihelkonnad_saaremaa</em> või <em>saaremaa_kihelkonnad</em>.</p>
-<p>Vali kaardil Liivimaa kubermangu kihelkonnad. <em>Select Features By Value</em> ja kubermangu tulpa kirjuta “Liivimaa” <em>→ Select Features → Close</em>. Järgmistel kordadel vaatame ka keerulisemaid valikuid <em>Select Features By Expression</em> abil. Vali samamoodi kõik arheoloogia mälestised ja salvesta need eraldi kihina. Valiku tegemiseks vaata kihi atribuuttabelit.</p>
+<p>Kõigepealt vaatame faili <strong><em>kontekstitabel_bornhohe_incorr.csv</em></strong>, kus on tabelkujul</p>
+<ul>
+<li>kohanimeüksus sellisel kujul, nagu see tekstis esineb (tulp <em>kohad</em>). Mitmest sõnast koosneva kohanimeüksuse puhul (nt <em>Tallinna linnast</em>) ainult kõige esimene komponent (nt <em>Tallinna</em>);<br />
+</li>
+<li>katkend/kontekst ehk 20 sõna kohanimest vasakule ja paremale (tulp <em>kontekstid</em>);<br />
+</li>
+<li>kohanimeüksuse kõige esimese komponendi lemma (tulp <em>lemmad1</em>) ehk sõnaraamatukuju (nt <em>Tallinn</em>);<br />
+</li>
+<li>terve kohanimeüksus (tulp <em>lemmad2</em>), milles lemmatiseeritud ehk sõnaraamatukujule viidud ainult kõige viimane element (nt <em>Tallinna <strong>linn</strong></em>).</li>
+</ul>
+<p>Tabelis on nimetuvastaja automaatne väljund, kus mingeid parandusi ei ole tehtud.</p>
+<pre><code>##        kohad
+## 1  Tallinnas
+## 2      Harju
+## 3      Harju
+## 4 Tallinnast
+## 5   Paidesse
+## 6      Liivi
+##                                                                                                                                                                                                                                                          kontekstid
+## 1                               kloostri viimsed päevad . E. Bornhöhe ( Eduard Brunberg&#39;i ) ajaloolik jutustus suurest Liivi sõjast ( 1558 - 1583 ) . Tallinnas . Trükitud G. Pihlaka kuluga . 1. Junker Hansu äpardus . See oli kena , soe suvine päev Lõikuse kuu
+## 2                                Junker Hansu äpardus . See oli kena , soe suvine päev Lõikuse kuu hakatusel 1576. Armsalt ja rahuliselt säras päike Harju maa üle , aga maakoha pilt , mida päikese ja soojuse kiired läbipaistva kuldse uduga katsivad , ei olnud
+## 3        ohakatega kaetud põllud , ära põletatud mõisade ja külade ahervarred - need olivad maakoha tähtsamad tundemärgid . Rikas ja rõõmus Harju maa oli 18 aastase sõja läbi suuremalt jaolt vaikseks kõrbeks muudetud , kus Sakslased ja Poolakad , Venelased ja
+## 4        kus Sakslased ja Poolakad , Venelased ja Rootslased aeg ajalt endise rikkuse riismeid taastamas käisivad . Maantee pääl , mis Tallinnast Paidesse viib ja sel ajal kõige viletsamas korras oli , sõitsivad neli ratsanikku , kõik noored mehed Saksa moodi
+## 5     Sakslased ja Poolakad , Venelased ja Rootslased aeg ajalt endise rikkuse riismeid taastamas käisivad . Maantee pääl , mis Tallinnast Paidesse viib ja sel ajal kõige viletsamas korras oli , sõitsivad neli ratsanikku , kõik noored mehed Saksa moodi riides
+## 6 rohkeste nalja ja naeris ise kõige valjemine oma nalja üle . Tema nägu oli selle parandamata kergemeele peegel , mis Liivi orduriigi mõisnikkusi ja kodanikkusi hirmsa sõja hädasid unustama ja Venelasi sagedaste imestama pani . Vana orduriik oli Vene löökide
+##   lemmad1        lemmad2
+## 1 Tallinn        Tallinn
+## 2   Harju          Harju
+## 3   Harju          Harju
+## 4 Tallinn        Tallinn
+## 5     pai            pai
+## 6   Liivi Liivi orduriik</code></pre>
+<div id="tekstikatkendite-meelsuse-tuvastamine" class="section level3" number="16.1.1">
+<h3><span class="header-section-number">16.1.1</span> Tekstikatkendite meelsuse tuvastamine</h3>
+<p>Järgmiseks määrame tekstikatkendite meelsuse. Selleks saame kasutada näiteks <a href="http://peeter.eki.ee:5000/applications/list">Eesti Keele Instituudi emotsioonidetektorit</a>, mida saab kasutada ka Microsoft Excelis.
+Selleks installime kõigepealt vastava pistikprogrammi (<em>plugin</em>):</p>
+<ul>
+<li>laadime alla faili <strong>valence.xlam</strong>;</li>
+<li>avame Exceli ja valime <em>File</em> -&gt; <em>Options</em> -&gt; <em>Add-Ins</em>;</li>
+<li>kõige all valime <em>Manage</em> -&gt; <em>Excel Add-ins</em> -&gt; <em>Go</em> -&gt; <em>Browse</em> -&gt; valime faili <em>valence.xlam</em> -&gt; OK;</li>
+<li>paneme Exceli kinni ning teeme uuesti lahti.</li>
+</ul>
+<p>Järgmiseks avame Excelis faili <strong>kontekstitabel_bornhohe_incorr.csv</strong>: <em>Data</em> -&gt; <em>From Text</em> -&gt; <em>Delimited</em>, <em>File origin: Unicode (UTF-8)</em> ja <em>My data has headers</em> -&gt; <em>Next</em> -&gt; <em>Delimiters</em> (ainult Semicolon) -&gt; <em>Next</em> -&gt; <em>Finish</em>.</p>
+<ul>
+<li>Tekitame uue tulba, nt nimega “Ajutine”.<br />
+</li>
+<li>Kirjutame uue tulba esimesse lahtrisse funktsiooni <code>=Valence.Test()</code> ning funktsiooni sulgude sisse vastaval real asuva lahtri viite, kus on tekstikatkend, nt <code>=Valence.Test(B2)</code>.</li>
+<li>Kopeerime valemi kõikidesse ajutise tulba lahtritesse nii, et igal real oleks funktsiooni sulgude sees vastava rea number (<code>B2</code>, <code>B3</code>, <code>B4</code>, <code>B5</code> jne) ning funktsiooni vasteks õige tekstikatkendi hinnang.<br />
+</li>
+<li>Teeme tulba kõrvale uue tulba nimega “Emotsioonid” ning kopeerime kõik ajutise tulba väärtused sellesse tulpa, kasutades väärtustena kleepimist (<em>Paste as Values</em>).<br />
+</li>
+<li>Kustutame tulba “Ajutine” ning salvestame faili csv- või xlsx-failina. NB! Windowsis muutub csv-na salvestamisel faili kodeering UTF-8st WIndowsis endas kasutatavaks, keelespetsiifiliseks kodeeringuks. Kui tahad kodeeringut tagasi UTF-8ks muuta, siis installi näiteks Notepad++, ava csv-fail seal ning vali <em>Encoding</em> -&gt; <em>Convert to UTF-8</em> -&gt; <em>Save</em>.</li>
+</ul>
 </div>
-<div id="kihi-ja-andmete-loomine" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Kihi ja andmete loomine</h2>
-<p>Märkida tuleb vanalt topograafiliselt kaardilt uurimispiirkonna piires Tartust u 7 km kirdes asuva Vorbuse asula läheduses oleva Metsaküla küla suuremad teed ja talud, mida tänapäeval enam pole. Piirkonnas toimusid 1960.–70. aastate maaparandusega (uute põldude rajamisega) seoses mitmed ümberkorraldused.</p>
-<div class="figure" style="text-align: center"><span id="fig:vorbuse"></span>
-<img src="imgs/vorbuse.jpeg" alt="Vorbuse piirkonna talud ja teed, mida tänapäeval enam pole" width="80%" />
+<div id="geosildistamine" class="section level3" number="16.1.2">
+<h3><span class="header-section-number">16.1.2</span> Geosildistamine</h3>
+<p>Nüüd peame saama oma tabelile koordinaadid. Selleks kasutame <a href="https://inaadress.maaamet.ee/geocoder/bulk">Maa-ameti massgeokodeerimise teenust</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:bornhohe2"></span>
+<img src="imgs/16_bornhohe2.PNG" alt="Geokodeerimise sätted" width="100%" />
 <p class="caption">
-Figure 7.2: Vorbuse piirkonna talud ja teed, mida tänapäeval enam pole
+Figure 16.2: Geokodeerimise sätted
 </p>
 </div>
-<p><strong>Lisa WMS-teenusest ajalooline topokaart:</strong></p>
-<ul>
-<li>Lülita sisse Vorbuse uurimisala kiht ja liigu selle juurde.</li>
-<li>Layer → Add layer → Add WMS/WMTS layer.</li>
-<li>Avanenud aknas kliki New. Seal Name: Maaamet ajaloolised kaardid ning URL juurde kopeeri aadress <a href="https://kaart.maaamet.ee/wms/ajalooline" class="uri">https://kaart.maaamet.ee/wms/ajalooline</a>? ja vajuta OK.</li>
-<li>Kliki <em>Connect</em> ja vali <em>Ajalooline</em> alt 4<em>5 ew_25T Eesti topograafiline kaart 1:25000 (1923–1935)</em> ning seejärel <em>Add → Close</em>.</li>
-<li>Lisa eelmise punktiga sarnaselt WMS-teenusest tänapäevane aluskaart:
-<ul>
-<li>Loo uus ühendus või kasuta eelmises loengus seadistatud ühendust <em>Maa-amet alus</em>. Loomisel kasuta URLi <em><a href="http://kaart.maaamet.ee/wms/alus" class="uri">http://kaart.maaamet.ee/wms/alus</a>?</em></li>
-</ul></li>
-<li>Vali rippmenüüst Maa-amet alus, kliki <em>Connect</em> ja vali <em>Põhikaardid</em> alt *2 pohi _vr2 Põhikaart*.</li>
-<li>Vaata põgusalt, kuidas on märgitud talud ja teed ajaloolisel topokaardil ja tänapäevasel põhikaardil.</li>
-</ul>
-<p><strong>Loo uued tühjad kihid talude ja teede märkimiseks</strong></p>
-<ul>
-<li>Ülevalt menüüst <em>Layer → Create Layer → New Geopackage Layer</em></li>
-<li>Sirvimise ikoonile klikkides liigu seal kausta kursuse andmete kausta. Pane faili nimeks vorbuse_talud ning vajuta <em>Save</em>.</li>
-<li>Vali <em>Geometry type: Point</em>.</li>
-<li>Rippmenüüst koordinaatsüsteem <em>EPSG: 3301, Estonian Coordinate System 1997</em>.</li>
-<li>Lisa kihile uus atribuutide väli. <em>New field</em> all <em>Name</em> järel kirjuta <em>nimi</em> ja kliki <em>Add to Fields List → OK</em>.</li>
-<li>Nüüd on talude märkimiseks loodud tühi kiht, mis ilmus ka kihtide paneelile. Seda kihti paneelil sisse-välja lülitades ei juhtu hetkel midagi, kuna selles pole veel ühtegi punkti.</li>
-<li>Loo sarnaselt talude kihile ka teede vektorkiht. Vali teede märkimiseks õige <em>Geometry type</em>.</li>
-</ul>
-<p><em>Märgi ajalooliselt kaardilt talud ja teed, mida tänapäeval enam pole</em> Talud on topograafilisel kaardil tähistatud kandilise viirutatud alaga, millel asub must punkt, mis tähistab hoonet.</p>
-<ul>
-<li>Kliki kihtide paneelil kihil <em>Vorbuse_talud</em> ning vajuta üleval tööriista ribal kollasele pliiatsile (või <em>Layer → Toggle editing</em>). Pliiatsi kõrval olevad ikoonid muutuvad värviliseks. Vali kolme punktiga ikoon <em>Add features</em>. Nüüd saad kaardile punkte märkida.</li>
-<li>Kliki topograafilisel kaardil talu peal. Avanenud aknas jäta <em>id</em> lahter tühjaks, aga kirjuta <em>nimi</em> juurde võimalusel märgitud talu nimi.</li>
-<li>Kui kõik talud on märgitud, siis salvesta muudatused. Selleks vajuta tööriistaribal kollase pliiatsi kõrval disketina kujutatud salvestamise ikoonile (<em>Save Layer</em>). Lülita editing välja vajutades kollasel pliiatsil.</li>
-<li>Nüüd peaksid näha olema kõikide talude peal värvilised punktid.
-<ul>
-<li>Muuda punktide värvi ja suurust, et need paremini välja paistaksid ning lisa nimesilt.</li>
-<li>Selleks, et sildid paremini välja paistaksid võid <em>Labels</em> menüüs <em>Background</em> alt teha linnukese <em>Draw background</em> ees ning <em>Placement</em> alt määrata <em>Distance: 2</em>. Selle tulemusena on siltide tekst taust valge ning sildid asuvad punktist 2 mm kaugusel.</li>
-</ul></li>
-</ul>
-<p>Märgi kihiga <em>vorbuse_teed</em> uurimispiirkonna piires need teed, mida tänapäevasel kaardil enam pole. Ära märgi väga väikseid või neid teid, mille asukoht või kurvilisus on ainult pisut muutunud.</p>
-<ul>
-<li>Teede märkimine on sisuliselt sama nagu punktide märkimine. Kolme punktiga ikooni asemel on tööriistaribal samas kohas aga lihtsalt nurgelise joonega ikoon.</li>
-<li>Märgi tee punktide abil joonena. Joone lõpetamiseks tee parempoolne klikk ja anna sellele järjekorra number. Joone paksust saab muuta samal viisil nagu punktil.</li>
-<li>Kui oled talud ja teed märkinud, siis lülita ajalooline topokaart välja. Nüüd on endised talud ja teed näha tänapäevasel põhikaardil.</li>
-</ul>
+<p>Laadime üles csv- või xlsx-faili, kasutame sisendaadressiks/lähteaadressiks pikka kohanimeüksust ehk tulpa <em>lemmad2</em> ning kui töö on valmis, siis saadud tabeli SHP-failina alla (eeldame, et me ei hakka käsitsi faili koordinaate muutma).</p>
 </div>
-<div id="kaartide-kujundamine-ja-eksportimine" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Kaartide kujundamine ja eksportimine</h2>
-<p>Kui kaardiaknas on loodud sobiv lahendus, siis ekspordi see kaardina. Kaardi tegemiseks:</p>
+<div id="visualiseerimine-1" class="section level3" number="16.1.3">
+<h3><span class="header-section-number">16.1.3</span> Visualiseerimine</h3>
+<p>Avame QGISi ning laadime sinna geokodeeritud faili.<br />
+Valime sobiva aluskaardi, näiteks eelmisel korral kasutatud <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/">Natural Earth Data vektorandmed</a> (admin0 Countries).</p>
+<p>Visualiseerimiseks on meil vaja teada,</p>
 <ul>
-<li>Ülevalt vasakult <em>Project → New Print Layout</em>. Anna sellele sobiv nimi.</li>
-<li>Avanenud aknas ülevalt <em>Add Item → Add Map</em>. Nüüd joonista akna valgele lehele nelinurk hoides all hiire vasakpoolset klahvi. QGIS-i peaaknas olev kaart kujutatakse sinna. Tee nelinurk sama suureks kui valge taust.</li>
-<li>Säti kaarti nii et kõik vajalik oleks näha. Selleks vali <em>Edit → Move Content</em> või vajuta klaviatuuril C. Liiguta kaarti hiire vasakpoolset klahvi all hoides. Paremal servas <em>Item properties</em> alt saab valida kaardi mõõtkava (Scale), et kaarti suuremaks või väiksemaks teha.</li>
-<li>Lisa kaardile joonmõõtkava. <em>Add item → Add Scalebar</em> ning kliki kaardile. Avanenud aknas lihtsalt <em>OK</em>. Paremal <em>Item properties → Segments</em> saad muuta muuta mõõtkava pikkust. Vali <em>left 0</em> ja lisa paremale poole nii palju, kui soovid. <em>Fixed width</em> muudab mõõtkava ühe ühiku pikkust. <em>Style</em> rippmenüüst saad valida endale meelepärase stiili.</li>
-<li>Lisa kaardile põhjasuunda tähistav nool. <em>Add item → Add North Arrow</em> ning kliki kaardile. Paiguta noole kast kaardi ühte ülemisse nurka. Paremal <em>Item properties</em> all kliki <em>Search directories</em> ning vali soovi korral mõni muu nool.</li>
-<li>Lisa kaardile enda nimi ja viide Maa-ametile. <em>Add Item → Add Label</em> ning kliki kaardile. Avanenud aknas OK. Paiguta tekkinud kast kaardi ühte nurka. Paremal <em>Item properties</em> all kirjuta enda nimi ning vajadusel viide Maa-ameti andmetele. Nt Aluskaart: Maa-amet 2020.</li>
-<li>Ekspordi kaart kursuse kausta. Üleval servas vasakul <em>Layout → Export as Image</em>. Anna sellele mõistlik nimi. Avanenud aknas Save.</li>
-<li>Ava kaart kaustas ning vaata, kas kõik jäi õigesti.</li>
+<li>kui mitu korda igat kohta mainiti,<br />
+</li>
+<li>kui mitu igast mainimisest olid negatiivses, positiivses, neutraalses või vastuolulises kontekstis.</li>
 </ul>
+<p>Võime vastavad andmed tuletada mitut moodi. Siin teeme esmalt geokodeeritud kihist DB Manageris uue kihi, kus iga kohanimeüksuse esinemisjuhud on kokku loetud (<em>count</em>).</p>
+<pre><code>SELECT lemmad__1, count(*) as arv, geometry
+FROM geocoded
+GROUP BY lemmad__1;</code></pre>
+<p>Tee ka linnuke <em>Load as new layer</em> ette ning laadi tulemus uue kihina nimega <em>koguarv</em>.</p>
+<p>Visualiseerime kohanimeüksuste esinemissagedusi punktidena nii, et</p>
+<ul>
+<li>ringide suurus näitaks mainimiste arvu,</li>
+<li>siltide teksti suurus näitaks mainimiste arvu (näita kõiki silte).</li>
+</ul>
+<p>Nüüd teeme enam-vähem samal moel kihi, kus on eraldi kokku loetud positiivsete, negatiivsete jne katkendite hulk iga kohanime puhul.</p>
+<pre><code>SELECT lemmad__1, count(*) as arv, geometry, Emotsioon
+FROM geocoded
+GROUP BY lemmad__1, Emotsioon;</code></pre>
+<p>Nüüd saame visualiseerida lihtsalt teatud emotsioonidega seotud kohti, ent võime ka kaks kihti ühendada ning arvutada iga emotsiooni osakaalu vastava koha katkendite hulgas.</p>
+<p>Ühendamiseks võime liita emotsioonidega kihile esimese, koondsagedustega kihi.<br />
+Ühendatud kihil loome uue atribuudi <em>osakaal</em> (tulp <em>arv</em> jagatud tulbaga <em>koguarv_arv</em> ja korrutatud 100-ga).</p>
+<p>Nüüd visualiseerime piirkondi nii, et</p>
+<ul>
+<li>punkti värv väljendab vastava kohaga seotud emotsiooni,</li>
+<li>punkti suurus vastava emotsiooni osakaalu.</li>
+</ul>
+<p>Teeme punktid pisut läbipaistvamaks ja hajutame neid nii, et kõik punktid oleksid näha.</p>
+<p>Lõpuks võime veel teha heatmapi, kus kuvame algse punktikihi põhjal punktide jaotumist rastrina (nagu eelmisel korral) ning kuvame selle peal loodud vektorkihti.</p>
+</div>
+</div>
+<div id="ülesanne-2-lihtne-kollokatsioonide-analüüs" class="section level2" number="16.2">
+<h2><span class="header-section-number">16.2</span> Ülesanne 2: lihtne kollokatsioonide analüüs</h2>
+<p>Teises ülesandes püüame leida kohanimede kontekstist <strong>kollokatsioone</strong> ehk sõnu, mis esinevad konkreetsete kohanimedega sagedamini koos, kui võiks arvata nende üldisest esinemissagedusest tekstis.</p>
+<p>Oleme otsinud kohanimedega koos esinevaid omadussõnu, mis EstNLTK morfoloogilises analüsaatoris on eristatud märgendiga ‘A’.</p>
+<p>Tuvastatud kohanimedega tabel asub failis <strong>sonapaarid_bornhohe_freqs_corr.csv</strong>.</p>
+<pre><code>##                  PAARID         KOHAD POS_KOHAD  KOLLOKAADID POS_KOLLOKAADID
+## 1 Saksa-Rootsi esialgne  Saksa-Rootsi         H     esialgne               A
+## 2   Lääne-Euroopa äärne Lääne-Euroopa         H        äärne               A
+## 3  Rootsimaa tõenäitlik     Rootsimaa         H   tõenäitlik               A
+## 4    Järva omavääriline         Järva         H omavääriline               A
+## 5          Järva säälne         Järva         H       säälne               A
+## 6            Lääs äärne          Lääs         H        äärne               A
+##   NER_KOLLOKAADID KOKKU KOHT_KOKKU KOLL_KOKKU     N                     E
+## 1               O     1          1          1 45442 2.200607367633467e-05
+## 2               O     1          1          1 45442 2.200607367633467e-05
+## 3               O     1          2          1 45442 4.401214735266934e-05
+## 4               O     1          3          1 45442 6.601822102900401e-05
+## 5               O     1          3          1 45442 6.601822102900401e-05
+## 6               O     1          3          1 45442 6.601822102900401e-05
+##              Z.skoor
+## 1 213.16660156320475
+## 2 213.16660156320475
+## 3  150.7282324052536
+## 4 123.06637802158457
+## 5 123.06637802158457
+## 6 123.06637802158457</code></pre>
+<p>Automaatse nimetuvastuse tulemusi on siin käsitsi veidi kohendatud ja parandatud. Näiteks on kohanimeks märgitud <em>Pirita</em> ja <em>Liivi</em>, mittekohanimedeks jällegi suurtähelised sõnad nagu <em>Haleda</em> ja <em>Viimse</em>.</p>
+<p>Laadime tabeli Maa-ameti geokodeerijasse. Seekord kasutame koordinaatide saamiseks ainult kohanimeüksuse esimest komponenti (tulbas <em>KOHAD</em>).<br />
+Kuna on tõenäoline, et tahame koordinaate veel käsitsi muuta (nt välisriikide kohanimesid), siis laadime geokodeeritud tabeli alla csv- või xlsx-failina.</p>
+<p>Kasutame nüüd näiteks Google Mapsi, et leida üldised koordinaadid kohanimedele nagu Rootsi, Rootsimaa, Liivimaa, Lääne-Euroopa jms. Pane tähele, et Google Mapsist saame WGS84(EPSG:4326) süsteemis koordinaadid. Seega peaksime muutma koordinaate vastavates tulpades (mitte eesti koordinaatide referentssüsteemis). Võime seda teha Excelis.</p>
+<p>Salvesta parandatud fail csv-formaadis ja laadi see QGISi. NB! Kasutades EPSG4326 koordinaate tahab QGIS, et csv-failis oleksid pikkus- ja laiuskraadide komakohad eraldatud punktiga. Maa-ameti kodeerija aga eraldab need komaga. Seega peaksime (nt Excelis) enne ka komad punktidega asendama ning salvestama koordinaatide tulbad arvuliste tüüpidena.</p>
+<ul>
+<li>Visualiseerime jälle kõigepealt üldist punktide jaotumist (nt punktide suuruse abil või kontsentriliste ringidena: <em>Symbology</em> -&gt; <em>Point Displacement</em>).<br />
+</li>
+<li>Lisame ka sildid. <em>Renderer Settings</em> alt saame määrata punktide värvi ja suuruse. Määrame punkti suuruse Z-skoori järgi (NB! Jälgi, mis tüüpi tunnus Z-skoor tabelis on).<br />
+</li>
+<li>Lisame sõnapaaride sildid ainult nendele sõnapaaridele, kus sõnadevahelise seose tugevuse statistik z-skoor on üle 50 (<em>Rule-based labeling</em>). Siltide nihutamiseks võid kasutada näiteks <em>callout</em>’e.</li>
+</ul>
+
 
 </div>
 </div>
@@ -339,8 +423,8 @@ Figure 7.2: Vorbuse piirkonna talud ja teed, mida tänapäeval enam pole
           </div>
         </div>
       </div>
-<a href="qgis-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="avaandmed.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tekstianalyys.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
