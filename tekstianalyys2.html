@@ -254,7 +254,7 @@
 <h1><span class="header-section-number">Praktikum 16</span> Geograafiline tekstianalüüs 2</h1>
 <p>Tänases praktikumis tegeleme geograafilise tekstianalüüsiga, kasutades eesti keele automaattöötluseks loodud vahendeid.
 Nagu eelmises praktikumis mainitud, sisaldub selleks kõige põhjalikum tööriistade komplekt Pythoni EstNLTK teekides.</p>
-<p>Materjali ja aja kokkuhoiu huvides oleme juba eraldanud tekstidest kohanimeüksused.</p>
+<p>Materjali ja aja kokkuhoiu huvides oleme juba eraldanud tekstidest kohanimeüksused. Koodid ja juhendid leiad <a href="https://github.com/MPilvik/bornhohe_analyys">siit</a>.</p>
 <p>Kasutame geograafilise tekstianalüüsi näitlikustamiseks siin <a href="https://datadoi.ee/handle/33/76">Tartu Linnaraamatukogu e-raamatute eeltöödeldud faile</a> (lehel kasutas <em>soned.zip</em>). Tegeleme selles praktikumis Eduard Bornhöhe teosega “Vürst Gabriel ehk Pirita kloostri viimsed päevad”.</p>
 <div id="ülesanne-1-lihtne-teksti-meelsuse-analüüs" class="section level2" number="16.1">
 <h2><span class="header-section-number">16.1</span> Ülesanne 1: lihtne teksti meelsuse analüüs</h2>
@@ -317,7 +317,7 @@ Selleks installime kõigepealt vastava pistikprogrammi (<em>plugin</em>):</p>
 <li>kõige all valime <em>Manage</em> -&gt; <em>Excel Add-ins</em> -&gt; <em>Go</em> -&gt; <em>Browse</em> -&gt; valime faili <em>valence.xlam</em> -&gt; OK;</li>
 <li>paneme Exceli kinni ning teeme uuesti lahti.</li>
 </ul>
-<p>Järgmiseks avame Excelis faili <strong>kontekstitabel_bornhohe_incorr.csv</strong>: <em>Data</em> -&gt; <em>From Text</em> -&gt; <em>Delimited</em>, <em>File origin: Unicode (UTF-8)</em> ja <em>My data has headers</em> -&gt; <em>Next</em> -&gt; <em>Delimiters</em> (ainult Semicolon) -&gt; <em>Next</em> -&gt; <em>Finish</em>.</p>
+<p>Järgmiseks avame Excelis faili <strong>kontekstitabel_bornhohe_incorr.csv</strong>: <em>Data</em> -&gt; <em>From Text</em> -&gt; <em>Delimited</em>, <em>File origin: Unicode (UTF-8)</em> ja <em>My data has headers</em> -&gt; <em>Next</em> -&gt; <em>Delimiters</em> (ainult Semicolon) -&gt; <em>Next</em> -&gt; <em>Finish</em>. (Uuemate Exceli versioonide puhul vaata juhendit <a href="https://support.microsoft.com/en-us/office/import-or-export-text-txt-or-csv-files-5250ac4c-663c-47ce-937b-339e391393ba">siit</a>).</p>
 <ul>
 <li>Tekitame uue tulba, nt nimega “Ajutine”.<br />
 </li>
@@ -328,6 +328,12 @@ Selleks installime kõigepealt vastava pistikprogrammi (<em>plugin</em>):</p>
 </li>
 <li>Kustutame tulba “Ajutine” ning salvestame faili csv- või xlsx-failina. NB! Windowsis muutub csv-na salvestamisel faili kodeering UTF-8st WIndowsis endas kasutatavaks, keelespetsiifiliseks kodeeringuks. Kui tahad kodeeringut tagasi UTF-8ks muuta, siis installi näiteks Notepad++, ava csv-fail seal ning vali <em>Encoding</em> -&gt; <em>Convert to UTF-8</em> -&gt; <em>Save</em>.</li>
 </ul>
+<div class="figure" style="text-align: center"><span id="fig:excel1"></span>
+<img src="imgs/16_excel1.gif" alt="Teksti meelsuse tuvastamine" width="100%" />
+<p class="caption">
+Figure 16.2: Teksti meelsuse tuvastamine
+</p>
+</div>
 </div>
 <div id="geosildistamine" class="section level3" number="16.1.2">
 <h3><span class="header-section-number">16.1.2</span> Geosildistamine</h3>
@@ -335,15 +341,21 @@ Selleks installime kõigepealt vastava pistikprogrammi (<em>plugin</em>):</p>
 <div class="figure" style="text-align: center"><span id="fig:bornhohe2"></span>
 <img src="imgs/16_bornhohe2.PNG" alt="Geokodeerimise sätted" width="100%" />
 <p class="caption">
-Figure 16.2: Geokodeerimise sätted
+Figure 16.3: Geokodeerimise sätted
 </p>
 </div>
-<p>Laadime üles csv- või xlsx-faili, kasutame sisendaadressiks/lähteaadressiks pikka kohanimeüksust ehk tulpa <em>lemmad2</em> ning kui töö on valmis, siis saadud tabeli SHP-failina alla (eeldame, et me ei hakka käsitsi faili koordinaate muutma).</p>
+<p>Laadime üles csv- või xlsx-faili, kasutame sisendaadressiks/lähteaadressiks pikka kohanimeüksust ehk tulpa <em>lemmad2</em> ning kui töö on valmis, siis saadud tabeli <strong>SHP-failina</strong> alla (eeldame, et me ei hakka käsitsi faili koordinaate muutma).</p>
 </div>
 <div id="visualiseerimine-1" class="section level3" number="16.1.3">
 <h3><span class="header-section-number">16.1.3</span> Visualiseerimine</h3>
 <p>Avame QGISi ning laadime sinna geokodeeritud faili.<br />
 Valime sobiva aluskaardi, näiteks eelmisel korral kasutatud <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/">Natural Earth Data vektorandmed</a> (admin0 Countries).</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis1"></span>
+<img src="imgs/16_qgis1.PNG" alt="Andmekihid QGISis" width="100%" />
+<p class="caption">
+Figure 16.4: Andmekihid QGISis
+</p>
+</div>
 <p>Visualiseerimiseks on meil vaja teada,</p>
 <ul>
 <li>kui mitu korda igat kohta mainiti,<br />
@@ -355,25 +367,63 @@ Valime sobiva aluskaardi, näiteks eelmisel korral kasutatud <a href="https://ww
 FROM geocoded
 GROUP BY lemmad__1;</code></pre>
 <p>Tee ka linnuke <em>Load as new layer</em> ette ning laadi tulemus uue kihina nimega <em>koguarv</em>.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis2"></span>
+<img src="imgs/16_qgis2.gif" alt="Andmekihid QGISis" width="100%" />
+<p class="caption">
+Figure 16.5: Andmekihid QGISis
+</p>
+</div>
 <p>Visualiseerime kohanimeüksuste esinemissagedusi punktidena nii, et</p>
 <ul>
 <li>ringide suurus näitaks mainimiste arvu,</li>
 <li>siltide teksti suurus näitaks mainimiste arvu (näita kõiki silte).</li>
 </ul>
-<p>Nüüd teeme enam-vähem samal moel kihi, kus on eraldi kokku loetud positiivsete, negatiivsete jne katkendite hulk iga kohanime puhul.</p>
-<pre><code>SELECT lemmad__1, count(*) as arv, geometry, Emotsioon
+<div class="figure" style="text-align: center"><span id="fig:qgis3"></span>
+<img src="imgs/16_qgis3.gif" alt="Andmekihid QGISis" width="100%" />
+<p class="caption">
+Figure 16.6: Andmekihid QGISis
+</p>
+</div>
+<p>Näeme, et automaatne nimetuvastus ja automaatne geokodeerimine ilma mingi vahekontrolli, täpsustuste ja parandusteta ei tööta Bornhöhe tekstil hästi ning tegelikult peaksime adekvaatsete tulemuste saamiseks siiski ka pisut käsitööd tegema.</p>
+<p>Praegu aga ignoreerime ebatäpseid tulemusi ja teeme enam-vähem samal moel kihi, kus on eraldi kokku loetud positiivsete, negatiivsete jne katkendite hulk iga kohanime puhul.</p>
+<pre><code>SELECT lemmad__1, count(*) as arv, geometry, Emotsiooni
 FROM geocoded
-GROUP BY lemmad__1, Emotsioon;</code></pre>
+GROUP BY lemmad__1, Emotsiooni;</code></pre>
+<p>(Pane tähele, et kui emotsioone sisaldav tulbanimi oli enne <em>Emotsioonid</em>, siis QGIS võib tulbanime pisut lühendada.)</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis4"></span>
+<img src="imgs/16_qgis4.gif" alt="Andmekihid QGISis" width="100%" />
+<p class="caption">
+Figure 16.7: Andmekihid QGISis
+</p>
+</div>
 <p>Nüüd saame visualiseerida lihtsalt teatud emotsioonidega seotud kohti, ent võime ka kaks kihti ühendada ning arvutada iga emotsiooni osakaalu vastava koha katkendite hulgas.</p>
 <p>Ühendamiseks võime liita emotsioonidega kihile esimese, koondsagedustega kihi.<br />
 Ühendatud kihil loome uue atribuudi <em>osakaal</em> (tulp <em>arv</em> jagatud tulbaga <em>koguarv_arv</em> ja korrutatud 100-ga).</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis5"></span>
+<img src="imgs/16_qgis5.gif" alt="Andmekihid QGISis" width="100%" />
+<p class="caption">
+Figure 16.8: Andmekihid QGISis
+</p>
+</div>
 <p>Nüüd visualiseerime piirkondi nii, et</p>
 <ul>
 <li>punkti värv väljendab vastava kohaga seotud emotsiooni,</li>
 <li>punkti suurus vastava emotsiooni osakaalu.</li>
 </ul>
-<p>Teeme punktid pisut läbipaistvamaks ja hajutame neid nii, et kõik punktid oleksid näha.</p>
-<p>Lõpuks võime veel teha heatmapi, kus kuvame algse punktikihi põhjal punktide jaotumist rastrina (nagu eelmisel korral) ning kuvame selle peal loodud vektorkihti.</p>
+<p>Teeme punktid pisut läbipaistvamaks.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis6"></span>
+<img src="imgs/16_qgis6.gif" alt="Andmekihid QGISis" width="100%" />
+<p class="caption">
+Figure 16.9: Andmekihid QGISis
+</p>
+</div>
+<p>Lõpuks võiksime veel teha heatmapi, nagu eelmisel korral, kus kuvame algse punktikihi põhjal punktide jaotumist rastrina ning kuvame selle peal loodud vektorkihti.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis7"></span>
+<img src="imgs/16_qgis7.gif" alt="Andmekihid QGISis" width="100%" />
+<p class="caption">
+Figure 16.10: Andmekihid QGISis
+</p>
+</div>
 </div>
 </div>
 <div id="ülesanne-2-lihtne-kollokatsioonide-analüüs" class="section level2" number="16.2">
@@ -405,15 +455,47 @@ GROUP BY lemmad__1, Emotsioon;</code></pre>
 <p>Automaatse nimetuvastuse tulemusi on siin käsitsi veidi kohendatud ja parandatud. Näiteks on kohanimeks märgitud <em>Pirita</em> ja <em>Liivi</em>, mittekohanimedeks jällegi suurtähelised sõnad nagu <em>Haleda</em> ja <em>Viimse</em>.</p>
 <p>Laadime tabeli Maa-ameti geokodeerijasse. Seekord kasutame koordinaatide saamiseks ainult kohanimeüksuse esimest komponenti (tulbas <em>KOHAD</em>).<br />
 Kuna on tõenäoline, et tahame koordinaate veel käsitsi muuta (nt välisriikide kohanimesid), siis laadime geokodeeritud tabeli alla csv- või xlsx-failina.</p>
-<p>Kasutame nüüd näiteks Google Mapsi, et leida üldised koordinaadid kohanimedele nagu Rootsi, Rootsimaa, Liivimaa, Lääne-Euroopa jms. Pane tähele, et Google Mapsist saame WGS84(EPSG:4326) süsteemis koordinaadid. Seega peaksime muutma koordinaate vastavates tulpades (mitte eesti koordinaatide referentssüsteemis). Võime seda teha Excelis.</p>
+<p>Kasutame nüüd näiteks Google Mapsi, et leida üldised koordinaadid kohanimedele nagu Rootsi, Rootsimaa, Liivimaa, Lääne-Euroopa jms. Pane tähele, et Google Mapsist saame WGS84(EPSG:4326) süsteemis koordinaadid ehk geograafilised, mitte projitseeritud koordinaadid. Seega peaksime muutma koordinaate tulpades <strong>N</strong> ja <strong>E</strong> (mitte eesti süsteemis koordinaatide tulbas). Võime seda teha Excelis.</p>
+<ul>
+<li>Muudame ära näiteks koordinaadid kohtadel <em>Eesti</em>, <em>Kura</em> (Kuramaa), <em>Liivi</em> (määrame nt Riia linna), <em>Läti</em>, <em>Lääs</em> (tekstis <em>Lääne maa</em>), <em>Maarja</em> ja <em>Marienthal</em> (viidatakse Püha Brigitta kloostri varemetele), <em>Moskva</em>, <em>Pihkva</em>, <em>Poola</em>, <em>Rooma</em>, <em>Rootsi</em>, <em>Rootsimaa</em>, <em>Rootsi-Saksa</em>, <em>Saksa</em>, <em>Saksamaa</em>, <em>Vene</em>, <em>Viru</em>, <em>Virumaa</em> ja <em>Võnnu</em> (Cesis).<br />
+</li>
+<li>Lisame koordinaadid <em>Lõuna-Liivile</em> ja <em>Lääne-Euroopale</em>.</li>
+</ul>
 <p>Salvesta parandatud fail csv-formaadis ja laadi see QGISi. NB! Kasutades EPSG4326 koordinaate tahab QGIS, et csv-failis oleksid pikkus- ja laiuskraadide komakohad eraldatud punktiga. Maa-ameti kodeerija aga eraldab need komaga. Seega peaksime (nt Excelis) enne ka komad punktidega asendama ning salvestama koordinaatide tulbad arvuliste tüüpidena.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis8"></span>
+<img src="imgs/16_qgis8.PNG" alt="Parandatud koordinaatidega faili importimine" width="100%" />
+<p class="caption">
+Figure 16.11: Parandatud koordinaatidega faili importimine
+</p>
+</div>
+<p>Kuna nüüd on meil ka Euroopa teiste kohtade koordinaatidega punktid, muuda projekti aknas all paremas nurgas projekti koordinaatsüsteemiks Euroopa koordinaatsüsteem <strong>EPSG:3857</strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis9"></span>
+<img src="imgs/16_qgis9.PNG" alt="Kaart uues koordinaatide referentssüsteemis" width="100%" />
+<p class="caption">
+Figure 16.12: Kaart uues koordinaatide referentssüsteemis
+</p>
+</div>
 <ul>
 <li>Visualiseerime jälle kõigepealt üldist punktide jaotumist (nt punktide suuruse abil või kontsentriliste ringidena: <em>Symbology</em> -&gt; <em>Point Displacement</em>).<br />
 </li>
-<li>Lisame ka sildid. <em>Renderer Settings</em> alt saame määrata punktide värvi ja suuruse. Määrame punkti suuruse Z-skoori järgi (NB! Jälgi, mis tüüpi tunnus Z-skoor tabelis on).<br />
-</li>
-<li>Lisame sõnapaaride sildid ainult nendele sõnapaaridele, kus sõnadevahelise seose tugevuse statistik z-skoor on üle 50 (<em>Rule-based labeling</em>). Siltide nihutamiseks võid kasutada näiteks <em>callout</em>’e.</li>
+<li><em>Renderer Settings</em> alt saame määrata punktide värvi ja suuruse ning välise ringi ära kaotada.</li>
 </ul>
+<div class="figure" style="text-align: center"><span id="fig:qgis10"></span>
+<img src="imgs/16_qgis10.gif" alt="Punktid kontsentriliste ringidena" width="100%" />
+<p class="caption">
+Figure 16.13: Punktid kontsentriliste ringidena
+</p>
+</div>
+<ul>
+<li>Lisame sõnapaaride sildid ainult nendele sõnapaaridele, kus sõnadevahelise seose tugevuse statistik z-skoor on üle 50 (<em>Rule-based labeling</em>). NB! Jälgi, mis tüüpi on Z-skoori tunnus. Siltide nihutamiseks võib kasutada näiteks <em>callout</em>’e.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:qgis11"></span>
+<img src="imgs/16_qgis11.gif" alt="Siltide lisamine" width="100%" />
+<p class="caption">
+Figure 16.14: Siltide lisamine
+</p>
+</div>
+<p>Proovi nüüd kaarti paremini stiliseerida.</p>
 
 
 </div>
