@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Praktikum 11 Ruumiandmete visualiseerimine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
-  <meta name="description" content="Praktikum 11 Ruumiandmete visualiseerimine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <title>Praktikum 17 Geostatistika 1 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 17 Geostatistika 1 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Praktikum 11 Ruumiandmete visualiseerimine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:title" content="Praktikum 17 Geostatistika 1 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Praktikum 11 Ruumiandmete visualiseerimine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="twitter:title" content="Praktikum 17 Geostatistika 1 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="georefereerimine.html"/>
-<link rel="next" href="visualiseerimine2.html"/>
+<link rel="prev" href="tekstianalyys2.html"/>
+<link rel="next" href="kirjandus.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -207,7 +207,7 @@
 <li class="chapter" data-level="17.1" data-path="geostatistika1.html"><a href="geostatistika1.html#punktimustri-analüüs"><i class="fa fa-check"></i><b>17.1</b> Punktimustri analüüs</a><ul>
 <li class="chapter" data-level="17.1.1" data-path="geostatistika1.html"><a href="geostatistika1.html#punktitihedus"><i class="fa fa-check"></i><b>17.1.1</b> Punktitihedus</a></li>
 </ul></li>
-<li class="chapter" data-level="17.2" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#ülesanne"><i class="fa fa-check"></i><b>17.2</b> Ülesanne</a></li>
+<li class="chapter" data-level="17.2" data-path="georefereerimine.html"><a href="georefereerimine.html#ülesanne-1"><i class="fa fa-check"></i><b>17.2</b> Ülesanne 1</a></li>
 <li class="chapter" data-level="17.3" data-path="geostatistika1.html"><a href="geostatistika1.html#ruumiline-vastastikmõju"><i class="fa fa-check"></i><b>17.3</b> Ruumiline vastastikmõju</a></li>
 <li class="chapter" data-level="17.4" data-path="geostatistika1.html"><a href="geostatistika1.html#ülesanne-2"><i class="fa fa-check"></i><b>17.4</b> Ülesanne 2</a></li>
 <li class="chapter" data-level="17.5" data-path="index.html"><a href="index.html#järgmisel-korral"><i class="fa fa-check"></i><b>17.5</b> Järgmisel korral</a></li>
@@ -230,245 +230,102 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="visualiseerimine1" class="section level1">
-<h1><span class="header-section-number">Praktikum 11</span> Ruumiandmete visualiseerimine</h1>
-<div id="avaldised" class="section level2">
-<h2><span class="header-section-number">11.1</span> Avaldised</h2>
-<p>Avaldised (<em>expressions</em>) on tehted ja vormelid, mille abil hõlpsalt muuta atribuutide väärtusi, luua uusi (virtuaalseid) atribuute või kihte, andmetest alamhulki välja filtreerida, teha statistikat jne. Avaldiste abil saab andmeid QGISis mitmekülgsemalt analüüsida ning visualiseerida.</p>
-<p>Avaldisi saab QGISis kasutada mitmes kohas, näiteks</p>
-<ul>
-<li>objektide valimiseks <em>Select Features by Expression</em> tööriista abil,<br />
-</li>
-<li>objektide valimiseks atribuuttabeli alumisest vasakust nurgast <em>Advanced Filter (Expression)</em>,<br />
-</li>
-<li>atribuutide muutmiseks <em>Field calculator</em>’is,<br />
-</li>
-<li><em>Query builder</em>’is,<br />
-</li>
-<li>sümbolite, siltide või paigutuse parameetrite reeglipõhisel muutmisel,<br />
-</li>
-<li><em>Database Manager</em>’is,<br />
-</li>
-<li>jne.</li>
-</ul>
-<div class="figure" style="text-align: center"><span id="fig:expressions1"></span>
-<img src="imgs/expressions1.png" alt="Avaldised 1) Select Features by Expression, 2) Advanced Filter (Expression), 3) Field Calculator, 4) Query Builder, 5) Rule-based symbology, 6) DB Manager" width="45%" /><img src="imgs/expressions2.png" alt="Avaldised 1) Select Features by Expression, 2) Advanced Filter (Expression), 3) Field Calculator, 4) Query Builder, 5) Rule-based symbology, 6) DB Manager" width="45%" /><img src="imgs/expressions3.png" alt="Avaldised 1) Select Features by Expression, 2) Advanced Filter (Expression), 3) Field Calculator, 4) Query Builder, 5) Rule-based symbology, 6) DB Manager" width="45%" /><img src="imgs/expressions4.png" alt="Avaldised 1) Select Features by Expression, 2) Advanced Filter (Expression), 3) Field Calculator, 4) Query Builder, 5) Rule-based symbology, 6) DB Manager" width="45%" /><img src="imgs/expressions5.png" alt="Avaldised 1) Select Features by Expression, 2) Advanced Filter (Expression), 3) Field Calculator, 4) Query Builder, 5) Rule-based symbology, 6) DB Manager" width="45%" /><img src="imgs/expressions6.png" alt="Avaldised 1) Select Features by Expression, 2) Advanced Filter (Expression), 3) Field Calculator, 4) Query Builder, 5) Rule-based symbology, 6) DB Manager" width="45%" />
+<div id="geostatistika1" class="section level1">
+<h1><span class="header-section-number">Praktikum 17</span> Geostatistika 1</h1>
+<p>“Everything is related to everything else, but near things are more related than distant things” - First law of geography, Waldo Tobler, 1970.</p>
+<div id="punktimustri-analüüs" class="section level2">
+<h2><span class="header-section-number">17.1</span> Punktimustri analüüs</h2>
+<p>Punktimustri analüüsi näol on tegemist statistiliste meetodite kogumiga, mille abil saab uurida ruumilisi (keerukaid) suhteid nähtuste vahel, mis on kujutatud punktidena. Näiteks asustusüksused maastikul, mingi info kogumiskoht (pärimus, keel, ilm jm). Kuigi sageli on punktidega kaasas ka täiendavat infot, siis lisaks sellele võib meid huvitada puhtalt ka punktide jaotumine ruumis. Arheoloogias on näiteks selliseid meetodeid kasutatud juba alates 1960. aastatest kui hakati rohkem tegelema kvantitatiivsete meetoditega. Näiteks on uuritud leidude paiknemist asulates, hoonetes ja matustes ning näiteks linnamägesid maastikul. GISi kasutusele võtmine muidugi oluliselt lihtsustas nende ananlüüside tegemist.</p>
+<div id="punktitihedus" class="section level3">
+<h3><span class="header-section-number">17.1.1</span> Punktitihedus</h3>
+<p>Lihtne viis punktide jaotumise hindamiseks formaalselt on mõõta nende tihedust mingis kindlas piirkonnas. Seda nimetatakse ka kui esimese järgu ruumiline intensiivsus (<em>first-order spatial intensity</em>). Lihtsaim tulemus keskmise intensiivsuse väljendamiseks võib olla number, mis näitab oodatavat punktide arvu mingis alas. Vaatame näidet!</p>
+<p>All oleval pildil on näha 100 punkti, mis jaotuvad juhuslikult 10 x 10 alal, mis on jagatud 2 x 2 ruutudeks ehk tegemist 25 ruuduga. Ühikud ei ole siinkohal tähtsad. Need sõltuvad meie uurimisalast ja -küsimusest ning võivad ulatuda nanomeetrist kilomeetri ja valgusaastani. Esimese asjane võiks küsida, kui palju punkte võiks paikneda ühes ruudus, arvestades, et igal ruudul (või muul pindalaühikul) on sama hea võimalus punktide saamiseks? Võiks eeldada, et vastus on 4, kuna 100 / 25 = 4. Kui jaotumine on aga juhuslik (<em>random</em>), siis ei saa eeldada, et igas ruudus oleks 4 punkti, vaid jaotus järgib teoreetilist Poissoni jaotus. Selle kohaselt on mitmes ruudus vähem kui 4 ja üksikutes ruutudes rohkem kui 4 punkti. Poissoni jaotus on punktimustri analüüsis väga oluline teoreetiline eeldus. Täiesti juhuslikult paiknevate punktide jaotuse vaadeldav intensiivsus pindalaühiku kohta peaks järgima Poissoni jaotust. Seda nimetatakse kui täielik ruumiline juhuslikkus (<em>complete spatial randomness – CSR</em>) ja selle jaotuse loonud juhuslikku käitumist nimetatakse Poissoni punkti protsessiks (<em>Poisson point process</em>).</p>
+<div class="figure" style="text-align: center"><span id="fig:17firstorderrandom"></span>
+<img src="imgs/17_first_order_intensity_random.PNG" alt="Juhuslik jaotumine ja võrdlus Poissoni jaotusega [@Gillings2020, fig 4.1]" width="100%" />
 <p class="caption">
-Figure 11.1: Avaldised 1) Select Features by Expression, 2) Advanced Filter (Expression), 3) Field Calculator, 4) Query Builder, 5) Rule-based symbology, 6) DB Manager
+Figure 17.1: Juhuslik jaotumine ja võrdlus Poissoni jaotusega <span class="citation">(Gillings et al. <a href="kirjandus.html#ref-Gillings2020" role="doc-biblioref">2020</a>, fig 4.1)</span>
 </p>
 </div>
-<p>Avaldisi saab eeldefineeritud funktsioonide abil koostada mitmeks erinevaks otstarbeks, vaata ülevaadet <a href="https://docs.qgis.org/3.4/en/docs/user_manual/working_with_vector/expression.html#vector-expressions">siit</a>. Sealjuures saab sageli üht ja sama asja teha erineval moel.<br />
-Vaatame sel korral ülesannete toel lähemalt matemaatilisi funktsioone (<em>Math</em>), operaatoreid (<em>Operators</em>), tingimuslauseid (<em>Conditionals</em>) ning teksti muutmise võimalusi (<em>String</em>).</p>
-<p>Lisaks eeldefineeritud funktsioonidele saab kasutada ka <a href="https://www.w3schools.com/sql/">SQL-i päringuid</a>, näiteks:</p>
-<ul>
-<li><a href="https://www.w3schools.com/sql/sql_select.asp">Ridade ja tulpade valimine</a>
-<ul>
-<li><strong>SELECT</strong> tulp <strong>FROM</strong> andmestik;
-<ul>
-<li><em>vali andmestikust ainult üks tulp</em><br />
-</li>
-</ul></li>
-<li><strong>SELECT</strong> tulp1, tulp2 <strong>FROM</strong> andmestik;
-<ul>
-<li><em>vali andmestikust kaks tulpa</em><br />
-</li>
-</ul></li>
-<li><strong>SELECT DISTINCT</strong> tulp <strong>FROM</strong> andmestik;
-<ul>
-<li><em>vali andmestikust tulba unikaalsed väärtused</em><br />
-</li>
-</ul></li>
-<li><strong>SELECT</strong> * <strong>FROM</strong> andmestik;
-<ul>
-<li><em>vali andmestikust kõik read ja tulbad</em><br />
-</li>
-</ul></li>
-<li><strong>SELECT</strong> * <strong>FROM</strong> andmestik <strong>WHERE</strong> tulp = ‘Mingi väärtus’;
-<ul>
-<li><em>vali andmestikust kõik tulbad ja read, kus tulbas ‘tulp’ on väärtus ‘Mingi väärtus’</em><br />
-</li>
-</ul></li>
-<li><strong>SELECT</strong> tulp1, tulp2 <strong>FROM</strong> andmestik <strong>WHERE</strong> tulp1 &gt; 50 <strong>AND</strong> tulp2 <strong>ILIKE</strong> ‘%St%’;
-<ul>
-<li><em>vali andmestikust tulbad ‘tulp1’ ja ‘tulp2’ ning ainult sellised read, kus tulp1 väärtused on suuremad kui 50 ja kus tulp2s on lahtris kuskil tähejärjend ‘St’</em></li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_update.asp">Muutmine</a>
-<ul>
-<li><strong>UPDATE</strong> andmestik <strong>SET</strong> tulp = ‘Mingi uus väärtus’ <strong>WHERE</strong> tulp = ‘Mingi vana väärtus’;
-<ul>
-<li><em>uuenda andmestikku nii, et sea tulba ‘tulp’ väärtuseks ‘Mingi uus väärtus’ nendel ridadel, kus tulba ‘tulp’ väärtus on praegu ‘Mingi vana väärtus’</em></li>
-</ul></li>
-<li><strong>UPDATE</strong> andmestik <strong>SET</strong> tulp = ‘Mingi uus väärtus’ <strong>WHERE</strong> id = 8;
-<ul>
-<li><em>uuenda andmestikku nii, et sea tulba ‘tulp’ väärtuseks ‘Mingi uus väärtus’ sellel real, kus id väärtus on 8</em></li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_insert.asp">Lisamine</a>
-<ul>
-<li><strong>INSERT INTO</strong> andmestik (tulp1, tulp2, tulp3, tulp4) <strong>VALUES</strong> (‘tulp1 väärtus’, ‘tulp2 väärtus’, ‘tulp3 väärtus’, ‘tulp4 väärtus’);
-<ul>
-<li><em>sisesta andmestikku üks rida, kus tulpadesse ‘tulp1’, ‘tulp2’, ‘tulp3’ ja ‘tulp4’ lähevad vastavalt väärtused ‘tulp1 väärtus’, ‘tulp2 väärtus’, ‘tulp3 väärtus’ ja ‘tulp4 väärtus’</em><br />
-</li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_delete.asp">Kustutamine</a>
-<ul>
-<li><strong>DELETE FROM</strong> andmestik <strong>WHERE</strong> tulp = ‘Mingi väärtus’;
-<ul>
-<li><em>kustuta andmestikust read, kus tulbas ‘tulp’ on väärtus ‘Mingi väärtus’</em><br />
-</li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_orderby.asp">Järjestamine</a>
-<ul>
-<li><strong>SELECT</strong> tulp1, tulp2, tulp3 <strong>FROM</strong> andmestik <strong>ORDER BY</strong> tulp1;
-<ul>
-<li><em>vali andmestikust ainult tulbad ‘tulp1’, ‘tulp2’ ja ‘tulp3’ ning järjesta uus andmestik ‘tulp1’ väärtuste järgi (vaikimisi väiksemast suuremani või A-st Z-ni)</em><br />
-</li>
-</ul></li>
-<li><strong>SELECT</strong> tulp1, tulp2, tulp3 <strong>FROM</strong> andmestik <strong>ORDER BY</strong> tulp1, tulp2;
-<ul>
-<li><em>vali andmestikust ainult tulbad ‘tulp1’, ‘tulp2’ ja ‘tulp3’ ning järjesta uus andmestik ‘tulp1’ ning siis ‘tulp2’ väärtuste järgi</em><br />
-</li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_groupby.asp">Grupeerimine</a>
-<ul>
-<li><strong>SELECT</strong> tulp1, tulp2 <strong>FROM</strong> andmestik <strong>GROUP BY</strong> tulp1;
-<ul>
-<li><em>vali andmestikust tulbad ‘tulp1’ ja ‘tulp2’ ning grupeeri andmed ‘tulp1’ unikaalsete väärtuste järgi</em></li>
-</ul></li>
-<li><strong>SELECT</strong> tulp1, tulp2 <strong>FROM</strong> andmestik <strong>WHERE</strong> tulp1 = ‘Mingi väärtus’ <strong>GROUP BY</strong> tulp2;
-<ul>
-<li><em>vali andmestikust tulbad ‘tulp1’ ja ‘tulp2’ ning ainult read, kus tulbal ‘tulp1’ on väärtused ‘Mingi väärtus’, grupeeri saadud tabel ‘tulp2’ unikaalsete väärtuste järgi</em></li>
-</ul></li>
-</ul></li>
-</ul>
-<p>Põhimõtteliselt on selline SQLi päringusüsteem kõikide filtreerimiste, kihtide loomiste, muutmiste, suure osa operaatorite, funktsioonide jm taustal. QGIS paneb ise päringud SQLi keelde.</p>
-<p>Katsetame! Impordime esmalt QGISi</p>
-<ul>
-<li>kihelkondade <em>shapefile</em>’i (EKI, Peeter Päll),<br />
-</li>
-<li><em>shapefile</em>’i, mis sisaldab andmeid <em>ei ole</em> ja <em>pole</em> eituskonstruktsioonide <strong>levikust</strong> eesti murretes Andrus Saareste 1955. aasta “Väikese Eesti murdeatlase” põhjal (vaata lähemalt <a href="https://github.com/MPilvik/RuRaKe">siit</a>),<br />
-</li>
-<li>CSV-faili, mis sisaldab andmeid <em>ei ole</em> ja <em>pole</em> suhtelisest <strong>sagedusest</strong> <a href="www.murre.ut.ee/mkweb">Eesti murrete korpuses</a>. NB! Kodeering on UTF-8, välju eraldab semikoolon, esimesel real on tulbanimed ning koordinaatide infot failis ei ole.</li>
-</ul>
-<div class="figure" style="text-align: center"><span id="fig:expressions7"></span>
-<img src="imgs/expressions7.png" alt="Lisatud kihid" width="100%" />
+<p>Huvi korral vaata Poissoni jaotuse tutvustust <a href="https://www.youtube.com/watch?v=BbLfV0wOeyc">365 Data Science videost</a> või paljudest teistest Youtube’is leiduvatest seletustest.</p>
+<p>Teine teoreetiline eeldus on, et iga punkt käitub samamoodi kogu uurimisala ulatuses. Pärismaailmas olevad punktide jaotused sageli aga ei vasta sellele eeldusele. Näiteks on mingis uurimisala piirkonnas rohkem või vähem punkte kui teistes. Sellisel vaadeldud juhul võib eeldada, et mingi väline protsess/käitumine mõjutab punktide intensiivsust uurimisala erinevates piirkondades. Näiteks külade koondumine kihelkonna põhjaossa, kuna lõunaosas on soo. All oleval joonisel on näha selgelt, et joonised koonduvad ülesse parempoolsesse nurka ning ruudupõhine lugemine näitab, et jaotus ei järgi Poissoni jaotust. Sageli on aga erinevus sellisest juhuslikust homogeensest punktimustrist suhteliselt selge ning me ei peagi seda niimoodi vaatama või testima. Pärismaailmas ongi väga vähe nähtuseid, mis on täielikult juhuslikud.</p>
+<p>Populaarne meetod esimese järgu intensiivsuse kokku võtmiseks on <em>kernel density estimation</em> ehk KDE. See on sarnane ruudupõhise lugemisega, aga kindlate ruutude asemel liigub kogu alast süsteemselt üle aken ehk kernel ehk tuum. Igas asukohas loetakse kokku punktid, mis jäävad akna alale ja see arv jäädvustatakse kerneli (ajutisse) keskkohta. Tulemuseks on rasterkiht, mille iga piksli väärtus näitab punktimustri intensiivsust selles piirkonnas. Sarnane meetod on Gaussi kernel, mis võtab arvesse kõiki punkte igal arvutusel, kuid millel siin rohkem ei peatu.</p>
+<p>KDE puhul on oluline kasutatava akna suurus. See on pisut arbitraarne valik, kuid on olemas ka automaatseid meetodeid selle valimiseks. Samas aga soovitatakse üldiselt teha mitme erineva suurusega, et saada mustrist parem ettekujutus.</p>
+<div class="figure" style="text-align: center"><span id="fig:17firstorderinhom"></span>
+<img src="imgs/17_first_order_intensity_inhomogenous.PNG" alt="Mittehomogeenne jaotumine ja võrdlus Poissoni jaotusega [@Gillings2020, fig 4.1]" width="100%" />
 <p class="caption">
-Figure 11.2: Lisatud kihid
+Figure 17.2: Mittehomogeenne jaotumine ja võrdlus Poissoni jaotusega <span class="citation">(Gillings et al. <a href="kirjandus.html#ref-Gillings2020" role="doc-biblioref">2020</a>, fig 4.1)</span>
 </p>
 </div>
+<p>Miks aga üldse seda teha? Tihti saame ju niigi aru, milline on intensiivsus erinevates alades. Siiski tuuakse sageli välja mitu põhjust, miks KDE on oluline alguspunkt punktide jaotumise analüüsimiseks:</p>
+<ol style="list-style-type: decimal">
+<li>kasutades erinevaid akna suuruseid formaliseerime oma võrdluse peenema ja suurema skaalaga punktide esimese järgu ruumilisest intensiivsusest;</li>
+<li>see aitab mõista olukordi, kus on liiga palju punkte, et lihtsalt peale vaadates midagi nende kohta öelda või juhud, kus punktidel on mingi kaal ning neid ei saa seetõttu võrdsetena võrrelda;</li>
+<li>see võib olla sisendiks järgmistele keerukamatele analüüsidele. Näiteks mudelitele, kus võrreldakse mittehomogeensete punktide mustrite tekkeprotsesse.</li>
+</ol>
+<!-- ## Terminid -->
+<!-- - CRS - complete spatial randomness -->
+<!-- - IRP - independent random process -->
+<!-- - first order effect -->
+<!-- - second order effect -->
+<!-- - deterministic -->
+<!-- - stochasticity -->
+<!-- - Tobler’s first law of geography -->
+<!-- - spatial autocorrelation -->
+<!-- - ääre efektid -->
 </div>
-<div id="ülesanne-1-ei-olepole-suhtelised-sagedused" class="section level2">
-<h2><span class="header-section-number">11.2</span> Ülesanne 1: “ei ole”/“pole” suhtelised sagedused</h2>
-<ul>
-<li>Tee koopia kihelkondade kihist (nimeta see nt <em>kihelkonnad2</em>).
-<ul>
-<li>paremklikk kihelkondade kihil -&gt; <em>Duplicate Layer</em>,</li>
-<li>paremklikk kihil <em>kihelkonnad copy</em> -&gt; <em>Rename Layer</em><br />
-</li>
-</ul></li>
-<li>Ühenda andmestik <em>eiole_pole_mk_props</em> kihiga <em>kihelkonnad2</em>. Esmalt kontrolli, kas ühendamine võiks üldse korralikult õnnestuda, st kas mõlemas kihis viidatakse samadele kihelkondadele ühtmoodi. Selleks, et leida kihelkonnad/murrakud, mis on kahele kihile ühised, saab kasutada SQLi päringut <strong><code>SELECT Murrak FROM eiole_pole_mk_props INTERSECT SELECT Parish_id FROM kihelkonnad2;</code></strong>. Selleks, et leida aga kihelkonnad, mida teises andmestikus ei ole, võib kasutada päringut <strong><code>SELECT Murrak FROM eiole_pole_mk_props EXCEPT SELECT Parish_id FROM kihelkonnad2;</code></strong>. Kasuta päringu tegemiseks <em>DB Manageri</em>. Kui oled vajutanud nupul <em>Execute</em>, väljastatakse alumisse aknasse need murrakute nimed, mis on küll andmestikus <em>eiole_pole_mk_props</em> tulbas <em>Murrak</em>, ent mida ei ole sellisel kujul andmestikus <em>kihelkonnad2</em> tulbas <em>Parish_id</em>.<br />
-
-<div class="figure" style="text-align: center"><span id="fig:expressions8"></span>
-<img src="imgs/expressions8.png" alt="Vigase kihelkonnanime tuvastamine" width="100%" />
-<p class="caption">
-Figure 11.3: Vigase kihelkonnanime tuvastamine
-</p>
-</div></li>
-<li>Paranda CSV-kihis selle murraku nime, mis ei sisaldu kihelkondade <em>shapefile</em>’is. Kuna CSV-faili atribuute muuta ei saa, lisa kihile uus virtuaalne atribuut <em>Murrak2</em>, kus asendad vigase nime õigega (kasuta tingimuslauset).<br />
-
-<div class="figure" style="text-align: center"><span id="fig:expressions9"></span>
-<img src="imgs/expressions9.png" alt="Uue virtuaalse atribuudi loomine" width="100%" />
-<p class="caption">
-Figure 11.4: Uue virtuaalse atribuudi loomine
-</p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:expressions10"></span>
-<img src="imgs/expressions10.png" alt="Uue virtuaalse atribuudi loomine (2)" width="100%" />
+<div id="ülesanne-1" class="section level2">
+<h2><span class="header-section-number">17.2</span> Ülesanne 1</h2>
+<p>Vaata Tartumaa asustuse punktimustrit, vaata üldist ülevaadet andmetest ning loode Kernel density estimation. Lae Moodle’ist alla kiht tartumaa_asustus.gpkg ning ava see QGISis. Andmestik pärineb <a href="https://kohanimeregister.ee/knravalik/">Kohanimeregistrist</a> ning selles on igale Tartumaa küla või aleviku nimele lisatud <a href="https://www.eki.ee/dict/knr/">Kohanimeraamatust</a> esmamainimise aasta, kihelkond ning nime etümoloogia. Lisaks võid taustale avada ka eelmistes praktikumides kasutatud maakondade ja/või kihelkondade kihi.</p>
+<p>Vaata andmestiku atribuuttabelit, et näha millega on tegemist. Esmamainimise aastate tulbast ülevaate saamiseks võib kasutada funktsiooni <em>Show statistical summary</em>. Näha on lihtne ülevaade vanimast, noorimast külast ning keskmisest ja enimlevinud esmamainimise aastaarvust jms.</p>
+<div class="figure" style="text-align: center"><span id="fig:17statisticalsummary"></span>
+<img src="imgs/17_statistical_summary.gif" alt="Show statistical summary kasutamine" width="100%" />
 <p class="caption">
-Figure 11.5: Uue virtuaalse atribuudi loomine (2)
-</p>
-</div></li>
-<li>Lisa kihile <em>kihelkonnad2</em> <em>ei ole</em>/<em>pole</em> andmed. Kasuta vastavalt <em>Parish_id</em> ja <em>Murrak2</em> tulpasid.<br />
-
-<div class="figure" style="text-align: center"><span id="fig:expressions11"></span>
-<img src="imgs/expressions11.png" alt="Kihtide ühendamine" width="100%" />
-<p class="caption">
-Figure 11.6: Kihtide ühendamine
-</p>
-</div></li>
-<li>Värvi <em>ei ole</em>/<em>pole</em> proportsioonide infoga täiendatud kihi <em>kihelkonnad2</em> polügoonid vastavalt <em>ei ole</em> suhtelisele sagedusele kihelkonnas/murrakus nii, et halliga oleksid märgitud ka kihelkonnad, millest murdekorpuse sagedusinfot ei ole. Selleks peab kasutama reeglipõhist sümboloogiat.<br />
-
-<div class="figure" style="text-align: center"><span id="fig:expressions12"></span>
-<img src="imgs/expressions12.gif" alt="Reeglipõhine polügoonide värvimine" width="100%" />
-<p class="caption">
-Figure 11.7: Reeglipõhine polügoonide värvimine
-</p>
-</div></li>
-</ul>
-</div>
-<div id="ülesanne-2-ei-olepole-selged-eelistused" class="section level2">
-<h2><span class="header-section-number">11.3</span> Ülesanne 2: “ei ole”/“pole” selged eelistused</h2>
-<ul>
-<li>Tee kihist <em>kihelkonnad2</em> duplikaat nimega <em>kihelkonnad3</em>.<br />
-</li>
-<li>Kasutades reeglipõhist polügoonide värvimist, kuva kihil <em>kihelkonnad3</em> värviliselt ainult sagedused, mille puhul <em>ei ole</em> ja <em>pole</em> <strong>proportsioonide absoluuterinevus</strong> on vähemalt 0,5. Ülejäänud polügoonidele (sh puuduvatele väärtustele) määra hall värv.<br />
-
-<div class="figure" style="text-align: center"><span id="fig:expressions13"></span>
-<img src="imgs/expressions13.gif" alt="Suured sageduserinevused" width="100%" />
-<p class="caption">
-Figure 11.8: Suured sageduserinevused
-</p>
-</div></li>
-<li>Nüüd muuda reegleid nii, et kihelkonnad, mille puhul <em>ei_ole</em> ja <em>pole</em> vahe on negatiivne (-0,5 või vähem), on sinised, ja need, mille vahe on positiivne (0,5 või suurem), on punased.<br />
-
-<div class="figure" style="text-align: center"><span id="fig:expressions14"></span>
-<img src="imgs/expressions14.gif" alt="'ei ole' ja 'pole' konstruktsioonide eelistused murrakutes" width="100%" />
-<p class="caption">
-Figure 11.9: ‘ei ole’ ja ‘pole’ konstruktsioonide eelistused murrakutes
-</p>
-</div></li>
-</ul>
-</div>
-<div id="ülesanne-3-tekstiatribuutide-muutmine" class="section level2">
-<h2><span class="header-section-number">11.4</span> Ülesanne 3: tekstiatribuutide muutmine</h2>
-<ul>
-<li>Muuda kihil <em>kihelkonnad3</em> eestikeelsete murrete nimetustes kõik Setu murded Seto murreteks, kasutades <em>CASE</em>-tingimuslauset.<br />
-
-<div class="figure" style="text-align: center"><span id="fig:expressions15"></span>
-<img src="imgs/expressions15.png" alt="Setu murre atribuuttabelis" width="100%" />
-<p class="caption">
-Figure 11.10: Setu murre atribuuttabelis
+Figure 17.3: Show statistical summary kasutamine
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:expressions16"></span>
-<img src="imgs/expressions16.png" alt="Setu murre Seto murdeks" width="100%" />
+<p>Külade vanusest esmase ülevaate saamiseks võib kasutada erinevaid värve iga sajandi jaoks. Seda saab teha <em>Graduated</em> sümboloogia ja <em>Pretty breaks</em> abil.</p>
+<p>Loo Kernel density estimation kihid erinevate akna suurustega. <em>Processing -&gt; Toolbox -&gt;</em> otsingusse <em>kernel</em> <em>-&gt; Heatmap (Kernel density estimation)</em>. Raadiuseks võib esialgu panna 10 kilomeetrit (<strong>jälgi, et ühik oleks õige!</strong>) ning piksli suuruseks 500.</p>
+<div class="figure" style="text-align: center"><span id="fig:17kernelestimation"></span>
+<img src="imgs/17_kernel_density_r10.PNG" alt="Kernel density estimation raadiusega 10 km ja piksli suurusega 500 m" width="100%" />
 <p class="caption">
-Figure 11.11: Setu murre Seto murdeks
+Figure 17.4: Kernel density estimation raadiusega 10 km ja piksli suurusega 500 m
 </p>
-</div></li>
-<li>Muuda kihil <em>kihelkonnad3</em> ingliskeelsete murrete nimetustes kõik Setu murded Seto murreteks, kasutades <em>if</em>-tingimuslauset.<br />
+</div>
+<p>Visualiseeri raster vastavalt enda eelistusele ning vaadata ka <em>Identify features</em> (Ctrl Shift i) funktsiooniga rastri väärtuseid erinevates kohtades.</p>
+</div>
+<div id="ruumiline-vastastikmõju" class="section level2">
+<h2><span class="header-section-number">17.3</span> Ruumiline vastastikmõju</h2>
+<p>Eelnevalt vaatasime punktide jaotuse esimese järgu omadusi, mis kirjeldavad üldist punktide tihedust ning seda kas intensiivsus on uurimisalas homogeenne või mitte. Juhtudel, kus ei ole tegemist homogeense jaotumisega võib eeldada mingit välist mõju. Tõenäoliselt ei ole suur osa inimtegevust ja kultuuri ruumis päris suvaline.</p>
+<p>Punktimustrite uurimise juures on oluline aspekt see, et ühe punkti asumine teatud kohas võib suurendada või vähendada teise punkti asumist selle läheduses. See on punktimustri <strong>teise järgu omadus</strong> (<em>second-order property</em>). Näiteks pole vast mõistlik kogu uurimisalas küladel täiesti kõrvuti asuda. Niisiis eeldatakse, et mittehomogeense mustri taga võib olla mingi tõmbav (attraction) või lükkav/peletav (inhibition) protsess.</p>
+<div class="figure" style="text-align: center"><span id="fig:17secondordern"></span>
+<img src="imgs/17_second_order.PNG" alt="Punktimustrid, kus (a) pole teise järgu efekte, (b) paiknemine on regulaarne ja (c) klasterdunud [@Gillings2020, fig 4.2]." width="100%" />
+<p class="caption">
+Figure 17.5: Punktimustrid, kus (a) pole teise järgu efekte, (b) paiknemine on regulaarne ja (c) klasterdunud <span class="citation">(Gillings et al. <a href="kirjandus.html#ref-Gillings2020" role="doc-biblioref">2020</a>, fig 4.2)</span>.
+</p>
+</div>
+<p>Lihtne, kuid samas suuresti problemaatiline meetod selliste mustrite (esialgseks) uurimiseks on lähima naabri analüüs ehk <em>nearest neighbour analysis</em> ehk <em>Clark and Evans test</em>. Testi käigus arvutatakse iga punkti ja tema lähima naabri vaheline distants ja seejärel võrreldakse kõikide nende lähime naabri distantside aritmeetilist keskmist eeldatava juhusliku distantsiga sellise punktide arvu ja ala suuruse põhjal.</p>
+<p>Testi tulemusena saadav r-väärtus ehk <em>nearest neighbour index</em> näitab, et jaotus on juhuslik kui see 1 lähedal, regulaarne, kui see on suurem kui 1 ning klasterdunud kui see on väiksem kui 1.</p>
+<p>Peamine probleem testiga on aga see, et raske või lausa võimatu on arvestada uurimisala servadega. Eriti juhtudel, kui uuritav punktimuster võib sinna edasi ulatuda. Sellest lahendamiseks on arendatud välja mõningad keerulisemisemad meetodid, mida võimalusel vaatame järgmisel korral. Milline oleks aga lihtne lahendus meie asustuse uurimise andmestiku puhul?</p>
+<!-- arheo ja sullivani raamatust -->
+<!-- https://docs.qgis.org/3.16/en/docs/training_manual/vector_analysis/spatial_statistics.html -->
+<!-- kernel density estimation. heatmap -->
+<!-- dbscan clustering, v.cluster -->
+<!-- ## voronoi polygons  -->
+<!-- ## interpolation -->
+<!-- mis oleks hea data set, et oleks loogiline. -->
+<!-- ## graphical model builder -->
+<!-- ### Ülesanne 2 -->
+<!-- Tartumaa asustuse kernel density ja gaussian density. Võrrelda kihelkondade jaotumisega.  -->
+</div>
+<div id="ülesanne-2" class="section level2">
+<h2><span class="header-section-number">17.4</span> Ülesanne 2</h2>
+<p>Arvuta Tartumaa asustuse Nearest Neighbor Index iga sajandi kohta või näiteks keskaja ja uusaja kohta. <em>Processing Toolbox</em> otsingusse <em>nearest</em> ja sealt <em>Nearest neighbor analysis</em>. Ava analüüsi tulemusena valminud html fail ning vaata, milline on indexi väärtus ning hinda selle järgi, kas punktid asuvad suvaliselt, regulaarselt või klasterdunult.</p>
+</div>
+<div id="järgmisel-korral" class="section level2">
+<h2><span class="header-section-number">17.5</span> Järgmisel korral</h2>
+<p>Interpoleerimine, arvutused rastritega ja võimalusel QGIS Graphical Modeler.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:expressions17"></span>
-<img src="imgs/expressions17.png" alt="Setu murre Seto murdeks (2)" width="100%" />
-<p class="caption">
-Figure 11.12: Setu murre Seto murdeks (2)
-</p>
-</div></li>
-<li>Leia kõik kihelkondade nimed, mille saksakeelne nimi algab lühendiga <em>St.</em> ning muuda see <em>Sankt</em>’iks, kasutades regulaaravaldist.<br />
-
-<div class="figure" style="text-align: center"><span id="fig:expressions18"></span>
-<img src="imgs/expressions18.png" alt="'St.' muutmine 'Sankt'-iks" width="100%" />
-<p class="caption">
-Figure 11.13: ‘St.’ muutmine ‘Sankt’-iks
-</p>
-</div></li>
-<li>Leia kõik kihelkonnad, mille nimed lõppevad <em>la</em>-ga (nt <em>Ambla</em>) ja asenda need lõpud uues tulbas <em>LA</em>-ga (<em>AmbLA</em>), kasutades regulaaravaldist.</li>
-</ul>
-<p>Põhimõtteliselt võiksime kasutada DB Manageris ka <em>UPDATE CASE WHERE</em> lauseid, ent kuna ükski meie kihtidest ei ole QGISi jaoks päris andmebaas, siis saame teha DB Manageris ainult päringuid, aga tabelit muuta ei saa. Saame aga eksportida mõne <em>virtuaalse kihi</em> näiteks GeoPackage-formaadis failina ning seda uuesti sisse lugedes saame andmestikku DB Manageris ka SQL-lausete abil muuta.</p>
 
 </div>
 </div>
@@ -477,8 +334,8 @@ Figure 11.13: ‘St.’ muutmine ‘Sankt’-iks
           </div>
         </div>
       </div>
-<a href="georefereerimine.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="visualiseerimine2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tekstianalyys2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
