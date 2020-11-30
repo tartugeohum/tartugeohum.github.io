@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Praktikum 14 Ruumiandmete visualiseerimine 4 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
-  <meta name="description" content="Praktikum 14 Ruumiandmete visualiseerimine 4 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <title>Praktikum 19 Veebikaardid | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 19 Veebikaardid | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Praktikum 14 Ruumiandmete visualiseerimine 4 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:title" content="Praktikum 19 Veebikaardid | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Praktikum 14 Ruumiandmete visualiseerimine 4 | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="twitter:title" content="Praktikum 19 Veebikaardid | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="visualiseerimine3.html"/>
-<link rel="next" href="tekstianalyys.html"/>
+<link rel="prev" href="geostatistika2.html"/>
+<link rel="next" href="kirjandus.html"/>
 <script src="libs/header-attrs-2.2/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -290,93 +290,122 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="visualiseerimine4" class="section level1" number="14">
-<h1><span class="header-section-number">Praktikum 14</span> Ruumiandmete visualiseerimine 4</h1>
-<div id="euroopa-ja-maailma-andmed" class="section level2" number="14.1">
-<h2><span class="header-section-number">14.1</span> Euroopa ja maailma andmed</h2>
-<p>Varasemates praktikumides oleme tegelenud sisuliselt ainult Eesti alaga. Sageli võib olla vaja aga visualiseerida andmeid ka teistest riikidest. Sellega käesolevas praktikumis tegelemegi. Lae alla avaandmete praktikumist tuttavalt lehelt <a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/">Natural Earth Data</a> maailmariikide (<em>Admin 0 - Countries</em>) ja linnade (<em>Populated places</em>) kihid. Paki need lahti oma andmete kausta ning ava QGISis. Huvi korral vaata ka lähemalt, mida andmetes täpsemalt kujutatakse, klikkides lingil <em>About | Issues | Version History »</em>.</p>
-<div class="figure" style="text-align: center"><span id="fig:naturalearth"></span>
-<img src="imgs/natural_earth.PNG" alt="Natural Earth logo" width="50%" />
+<div id="veebikaardid" class="section level1" number="19">
+<h1><span class="header-section-number">Praktikum 19</span> Veebikaardid</h1>
+<p>Tavalised arvutis hoitavad kaardid on <strong>digitaalsed kaardid</strong>, mille võib panna ka veebilehele, ent mille koostamine, säilitamine ja näitamine ei sõltu kuidagi veebitehnoloogiast. Digitaalsed kaardid on staatilised. <strong>Veebikaardid</strong> aga lihtsalt ei paikne veebis, vaid on veebist sõltuvad: nii nende koostamine kui ka vaatamine sõltub veebitehnoloogiast. Sageli on veebikaardid dünaamilised, interaktiivsed ning võivad kasutada ka mujalt veebist päritavaid andmeid.</p>
+<p>Lisaks sellele, et veebikaartidel saab kuvada korraga mitut kihti, mingeid kihte sisse ja välja lülitada või kasutada andmete esitamiseks animatsiooni, saab nendele lisada ka erinevaid lisaelemente, näiteks sisse- ja väljasuumimine, vahemaade mõõtmine, legend, pealkirjad, otsing jpm. Samuti saab määrata, mis juhtub, kui kasutaja liigub hiirega mingi punkti peale, sellel klikib või mingil muul moel veebikaardiga suhtleb.</p>
+<p>Tänapäevase veebikaardi aluskaart koosneb <strong>paanidest</strong> (<em>tiles</em>), tüüpiliselt 256×256 piksli suurustest rasterpiltidest (aga juba ka vektoritest), mida laaditakse vastavalt kasutaja valikutele kaardipaanide serverist (näiteks OpenStreetMapi serverist). See tähendab, et kasutajale näidatakse ainult seda osa kaardist, mida tal on vaja näha, muutes kaardi laadimise oluliselt kiiremaks.</p>
+<div class="figure" style="text-align: center"><span id="fig:tiles"></span>
+<img src="imgs/19_tiles.gif" alt="Kaardipaanide laadimine (Allikas: [Axis Maps](https://www.axismaps.com/guide/what-is-a-web-map))" width="100%" />
 <p class="caption">
-Figure 14.1: Natural Earth logo
+Figure 19.1: Kaardipaanide laadimine (Allikas: <a href="https://www.axismaps.com/guide/what-is-a-web-map">Axis Maps</a>)
 </p>
 </div>
-<div id="koordinaatsüsteemid" class="section level3" number="14.1.1">
-<h3><span class="header-section-number">14.1.1</span> Koordinaatsüsteemid</h3>
-<p>Kuna maailma andmestik on ulatuselt oluliselt suurem kui Eesti ala, millega seni tegelenud oleme, siis on vaja muuta ka koordinaatsüsteemi. Natural Earth Data andmestikud on esitatud geograafilises koordinaatsüsteemis World Geodetic System 1984 (WGS 84, EPSG 4326). Selleks, et andmeid korralikult näha tuleb vahetada senikasutatud EPSG 3301 õige vastu. Selleks kliki all paremal nurgas koordinaatsüsteemi tekstile ning otsi avanenud aknas <em>4326</em>.</p>
-<div class="figure" style="text-align: center"><span id="fig:wgs"></span>
-<img src="imgs/wgs84.gif" alt="Koordinaatsüsteemi vahetamine nn on-the-fly" width="100%" />
+<p>Aluskaart annab sinu veebikaardile geograafilise konteksti, ent ei ole iseenesest kaardi tegemise ega vaatamise põhjuseks. Aluskaardil saab omakorda kuvada muid vektor- või rasterandmeid.</p>
+<p>Suur osa veebikaartidest (ja neid pakkuvatest APIdest) on vaikimisi Web Mercatori (EPSG:3857) projektsioonis, mille puhul peab arvestama sellega, et alade suurus on moonutatud.</p>
+<iframe width="100%" height="480px" src="https://thetruesize.com/#?borders=1~!MTU2MDMyNDc.NDgyOTAxOQ*MzM0ODE1MTM(NDAxMDYxNQ~!CONTIGUOUS_US*MTAwMjQwNzU.MjUwMjM1MTc(MTc1)MA~!IN*NTI2NDA1MQ.Nzg2MzQyMQ)Mg~!CN*OTkyMTY5Nw.NzMxNDcwNQ(MjI1)MQ" frameborder="0" scrolling="yes">
+</iframe>
+<p>Kui tahta teha sageli, palju või korralikke veebikaarte ja kaardirakendusi, tasub vähemalt mingil algtasemel ära õppida keel, milles seda teha saab.
+Veebilehed kasutavad (vähemalt) <a href="https://www.w3schools.com/html/default.asp"><strong>HTML</strong></a>i, et veebilehte struktureerida, <a href="https://www.w3schools.com/css/default.asp"><strong>CSS</strong></a>i, et veebilehte kujundada, ning <a href="https://www.w3schools.com/js/default.asp"><strong>JavaScript</strong></a>i, et lisada veebilehele interaktiivsust.
+<!-- javascript võib lehe sisu muuta, muuta selle väljanägemist mingis brauseris, saata serverile mingit informatsiooni või küsida serverilt uut informatsiooni--></p>
+<div class="figure" style="text-align: center"><span id="fig:htmlcssjs"></span>
+<img src="imgs/19_htmlcssjs.jpg" alt="HTML, CSS ja JavaScript (Allikas: [dev.to](https://dev.to/fabcodingzest/how-to-get-started-with-web-development-front-end-part-1-5c6h))" width="70%" />
 <p class="caption">
-Figure 14.2: Koordinaatsüsteemi vahetamine nn on-the-fly
+Figure 19.2: HTML, CSS ja JavaScript (Allikas: <a href="https://dev.to/fabcodingzest/how-to-get-started-with-web-development-front-end-part-1-5c6h">dev.to</a>)
 </p>
 </div>
-<p>Nüüd peaks andmed õigesti näha olema. Vaata mõlema andmestiku atribuuttabeleid ning ka riikide piire. Nagu näha on riigipiirid olulised lihtsustatud, kuna see teeb kihi väiksemaks ja töö sellega lihtsamaks ning sellisel skaalal ei ole detailsus niivõrd oluline.</p>
-<p>Nagu varasemates praktikumis räägitud, moonutab Mercatori</p>
-</div>
-</div>
-<div id="euroopa-riikide-ja-linnade-filtreerimine" class="section level2" number="14.2">
-<h2><span class="header-section-number">14.2</span> Euroopa riikide ja linnade filtreerimine</h2>
-<p>Lõika välja ainult Euroopa riigid ja ka Euroopa linnad. Riikide andmestikus on olemas tulp <em>Region_UN</em>, mille põhjal saamegi valida ainult riigid, mille väärtus on seal tulbas on <em>Europe</em>. Kasuta selleks näiteks tööriista <em>Select features by value</em>. Käsitsi võid valida riigid ka <em>Select</em> funktsiooniga ükshaaval neil klikkides (hoia all <em>Shift</em> klahvi, et valida mitu korraga) või kastiga valides.</p>
-<div class="figure" style="text-align: center"><span id="fig:selecteur"></span>
-<img src="imgs/select_eur.gif" alt="Euroopa riikide valimine" width="100%" />
+<p>Ühe lihtsa veebilehe struktuur võib välja näha näiteks selline:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Minu lehe pealkiri&lt;/title&gt;
+    &lt;link href=&quot;stiil.css&quot; type=&quot;text/css&quot;/ rel=&quot;stylesheet&quot;&gt;
+  &lt;/head&gt;
+  &lt;body bgcolor=&quot;black&quot; text=&quot;white&quot;&gt;
+    &lt;h1&gt;Minu esimene veebileht&lt;/h1&gt;
+    &lt;p&gt;Siin on mingi tekst.&lt;/p&gt;
+    &lt;p&gt;Siin on &lt;a href=&quot;https://tartugeohum.github.io/&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt;, kust leiab kõik selle kursuse materjalid&lt;/p&gt;
+    &lt;p&gt;Siin all on nupp, millele vajutades saab veel midagi teada.&lt;/p&gt;
+    &lt;p id=&quot;pealkiri&quot; style=&quot;display:none&quot;&gt;See on minu esimene veebileht!&lt;/p&gt;
+    &lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&#39;pealkiri&#39;).style.display=&#39;block&#39;&quot;&gt;Vajuta siia!&lt;/button&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Selle veebilehe juurde käiv CSS-fail omakorda selline:</p>
+<pre><code>h1{
+  text-align: center;
+  color: blue;
+  font-size: 40px;
+}
+p{
+  font-family: courier;
+  font-size: 20px;
+}</code></pre>
+<p>Kokku saab ühe väga lihtsa lehe, mis näeb välja selline:</p>
+<div class="figure" style="text-align: center"><span id="fig:html"></span>
+<img src="imgs/19_html.PNG" alt="Lihtne veebileht" width="100%" />
 <p class="caption">
-Figure 14.3: Euroopa riikide valimine
+Figure 19.3: Lihtne veebileht
 </p>
 </div>
-<p>Kui riigid valitud, siis ekspordi valik Geopackage failina, näiteks nimega <em>euroopa_riigid</em>. Eemaldada maailmariikide kiht. Vaheta projekti mõõtkava. Ülemaailmse EPSG 4326 asemel vali mõõtkavaks <strong>ETRS89-extended / LCC Europe EPSG 3034</strong>, mis on sobilik kogu Euroopa alaga töötamiseks. Kustuta Euroopa kihist Venemaa, et saaksime töötada väiksema ulatusega.</p>
-<p>Mitmel Euroopa riigil on alasid ka Euroopa mandrist väljaspool. Need alad tulevad ka praeguse valikuga kaasa ning praeguse ülesande juures need ei sega. Vajadusel saab eraldiseisvad polügoni ka kustutada. Hetkel aga proovides kustutada näiteks Prantsuse Guajaanat kustub ka kogu Prantsusmaa. Seda seetõttu, et kõiki ühele riigile kuuluvaid alasid käsitletakse selles andmestikus ühe objektina, mida kujutab atribuuttabelis ka üks rida. Sellise kihi geomeetria on <em>Multipolygon</em>. Soovides eraldiseisvaid polügone kustutada, tuleb need kõigepealt mitmeks objektiks teha. Näiteks funktsiooniga <em>Multipart to singleparts</em>, kuid hektel pole see vajalik.</p>
-<div class="figure" style="text-align: center"><span id="fig:exporteur"></span>
-<img src="imgs/export_eur.gif" alt="Euroopa eksportimine ja koordinaatsüsteemi vahetamine" width="100%" />
+<p>Interaktiivsete <strong>veebikaartide</strong> jaoks kasutatakse sageli näiteks JavaScripti <a href="https://leafletjs.com/"><strong>Leaflet</strong></a>i või <a href="https://openlayers.org/"><strong>OpenLayers</strong></a>i APIsid, mis suhtlevad erinevate serveritega ning muudavad ja kuvavad kaarti vastavalt kasutaja valikutele. Mõlemad teegid on vabavaralised ja avatud lähtekoodiga, samas kui näiteks Google Mapsi API ja ArcGISi API on seotud konkreetse omandusliku (<em>proprietary</em>) tarkvaraga.
+<!-- Veebikaartide APId sisaldavad kaardiklasse ja kihte, ilma et peaks ise kirjutama tervet pikka koodi, millega mingit kaarti programmaatiliselt joonistada. APIde abil saab seega kirjutada programme kiiremini ja lihtsamalt --></p>
+<div class="figure" style="text-align: center"><span id="fig:leafletOL"></span>
+<img src="imgs/19_leaflet.png" alt="Leaflet ja OpenLayers" width="48%" /><img src="imgs/19_openlayers.png" alt="Leaflet ja OpenLayers" width="48%" />
 <p class="caption">
-Figure 14.4: Euroopa eksportimine ja koordinaatsüsteemi vahetamine
+Figure 19.4: Leaflet ja OpenLayers
 </p>
 </div>
+<p>Leafleti kasutatakse üldiselt rohkem, see on ökonoomsem, lihtsama APIga ning sobib hästi lihtsamate kaardirakenduste tegemiseks (<em>Leaflet does the 20% of things that are required 80% of the time</em>). Samas saab paljud funktsioonid kätte ainult erinevatest pluginatest ning kõiki võib-olla ei olegi veel olemas. Suure hulga funktsionaalsustega kaardirakenduste jaoks soovitatakse kasutada pigem OpenLayersit, mille API on keerulisem, ent selle võrra on see paindlikum ning pakub rohkem funktsioone.</p>
+<div id="kaardikihid-qgisis" class="section level2" number="19.1">
+<h2><span class="header-section-number">19.1</span> Kaardikihid QGISis</h2>
+<p>Eelmisel korral tegime kaardi, kus interpoleerisime <strong>murdekorpuse sagedusandmete</strong> põhjalt “ei ole” ja “pole” rasterkihi, kus kihelkondade keskpunktide väärtuste järgi oli ennustatud ka vahepealseid väärtusi, kuigi sealt algselt andmeid ei olnud.</p>
+<p>Seekord teeme võrdluseks kaardi <strong>murdeatlase levikuandmete</strong> põhjalt. Selleks:</p>
+<ol style="list-style-type: decimal">
+<li>laadime QGISi kihelkondade ja atlase andmete vektorkihid,<br />
+</li>
+<li>filtreerime välja read, kus keelendeid ei ole,<br />
+</li>
+<li>värvime allesjäänud punktid vastavalt variandile “ei ole” või “pole”,<br />
+</li>
+<li>loeme kokku iga kihelkonna piiridesse jäävad punktid,<br />
+</li>
+<li>loeme kokku iga kihelkonna piiridesse jäävad “ei ole” punktid,<br />
+</li>
+<li>leiame “ei ole” osakaalu,<br />
+</li>
+<li>leiame nüüd uuesti kihelkondade tsentroidid (meil on küll esialgsed punktiandmed täpsemad, aga kategoriaalsed ja annavad infot ainult ühe variandi kohta),<br />
+</li>
+<li>interpoleerime IDW-ga tsentroidide kihi põhjal,<br />
+</li>
+<li>peidame kihtidelt tunnused, mida me ei taha veebikaardil näidata,<br />
+</li>
+<li>valime kaardile aluskaardi (<em>QuickMapServices</em>).</li>
+</ol>
 </div>
-<div id="skpin-visualiseerimine" class="section level2" number="14.3">
-<h2><span class="header-section-number">14.3</span> SKP/in visualiseerimine</h2>
-<p>Proovime visualiseerida siseriikliku kogutoodangut inimese kohta nii riigi värvina kui ka diagrammina, mis kujutab ka rahvaarvu. Kasutame reeglipõhist värvimist, kus jagame GDP rahvaarvuga ning jaotame need väärtused kolme kuni seitsmesse gruppi. Paremklikk <em>-&gt; Properties -&gt; Symbology - Rule-based</em>. Loo rohelise plussmärgiga iga vahemiku jaoks eraldi reeglid (vt valmis näidet). Reegli <em>Filter</em> lahtrisse kirjuta avaldis <strong>GDP_MD_EST" / “POP_EST” * 1000000 &gt; 5000 AND “GDP_MD_EST” / “POP_EST” * 1000000 &lt;= 10000</strong>. Loo samasugused reeglid ka teiste vahemike jaoks. Reeglipõhistest sümbolitest on lähemalt juttu prakikumis <a href="visualiseerimine1.html#visualiseerimine1">11</a>. Värvivalikul võid lähtuda eelmises praktikumis käsitletud <a href="https://colorbrewer2.org/">Colorbreweri</a> võimalustest. Seal kujutatud värvide <em>HEX</em> väärtuse saab kopeerida QGISis värvivalikute juures <em>HTML notation</em> reale.</p>
-<!-- Võib lisada *Shapeburst fill* efekte. -->
-<div class="figure" style="text-align: center"><span id="fig:euroskp"></span>
-<img src="imgs/europe_skp.png" alt="SKP inimese kohta Euroopa riikides." width="1754" />
-<p class="caption">
-Figure 14.5: SKP inimese kohta Euroopa riikides.
-</p>
+<div id="veebikaartide-eksportimine" class="section level2" number="19.2">
+<h2><span class="header-section-number">19.2</span> Veebikaartide eksportimine</h2>
+<p>Tehtud kaartide hõlpsaks lisamiseks veebi saab installida nüüd <strong>qgis2web</strong> plugina. See genereerib QGISi projektist kas OpenLayersi, Leafleti või Mapboxi API abil veebikaardi tervikliku veebilehena koos kõikide vajalike kaustade ja failidega, ilma et peaksime tingimata ise JavaScriptis, CSSis ja HTMLis koodi kirjutama.</p>
+<p>Vali seejärel <em>Web</em> -&gt; <em>qgis2web</em> -&gt; <em>Create web map</em>.</p>
+<p>Katseta erinevate sätetega, võrdle OpenLayersi ja Leafleti failide suurusi, failistruktuure.</p>
 </div>
-<p>Visualiseerime ka diagrammidena. Tee kihist <em>euroopa_riigid</em> koopia. Sellel kihil ava <em>Properties -&gt; Diagrams -&gt; Pie chart -&gt; Attributes</em> ning lisa <em>Assigned attributes</em> juurde samad avaldised, mida kasutasid eelmises kihis riikide värvimiseks. Nagu näha kattavad mõned diagrammid kogu riigi ning varjavad ka teisi diagramme.</p>
-<div class="figure" style="text-align: center"><span id="fig:diagrammeexpression"></span>
-<img src="imgs/exp_diagramm.gif" alt="Avaldiste loomine diagrammi jaoks."  />
-<p class="caption">
-Figure 14.6: Avaldiste loomine diagrammi jaoks.
-</p>
+<div id="veebikaartide-majutamine" class="section level2" number="19.3">
+<h2><span class="header-section-number">19.3</span> Veebikaartide majutamine</h2>
+<p>Valmis veebikaardi jagamiseks teistega võid saata kogu rakenduse kausta kellelegi lokaalselt vaatamiseks või selle kuskile serverisse avalikult üles panna. Tartu Ülikooli tudengitel ja töötajatel on TÜ serveris \\pohl.ut.ee oma võrguketas (vaikimisi 1GB), kus on võimalik hoida ja varundada oma isiklikke faile. Samuti saab TÜ serverisse oma kodukataloogi salvestada ja üles panna loodud veebilehed (vaata juhendit <a href="https://www.ut.ee/et/4891">siit</a>). Veebilehed tuleks salvestada kodukataloogi alamkausta <strong>public_html</strong> ning nendele saab ligi aadressilt <strong><a href="https://www.ut.ee/~kasutajanimi/" class="uri">https://www.ut.ee/~kasutajanimi/</a></strong>.</p>
+<p>Ülikooli võrguketastele ligipääsemiseks peab olema ülikooli sisevõrgus. Väljastpoolt ülikooli saab sisevõrku turvaliselt <a href="https://wiki.ut.ee/pages/viewpage.action?pageId=17105590">ühenduse virtuaalse privaatvõrgu</a> (<strong>VPN</strong>) abil.</p>
+<p>Ülikooli sisevõrgus olles saab isikliku võrguketta kodu- või sülearvutile <a href="https://wiki.ut.ee/pages/viewpage.action?pageId=17105488">külge haakida</a>. NB! Kasutajanimi olgu kujul domenis\kasutajanimi (mitte <a href="mailto:kasutajanimi@ut.ee" class="email">kasutajanimi@ut.ee</a>)</p>
+<p>(Kui see kohe ei tööta, siis proovi esmalt <a href="https://www.techcrumble.net/2018/03/you-cant-access-this-shared-folder-because-your-organizations-security-policies-block-unauthenticated-guest-access/">seda</a>.)</p>
+<p>Veebikaarte saab tasuta majutada näiteks ka <a href="https://github.com/"><strong>GitHubis</strong></a> (vaata lühikest juhendit <a href="https://rogerdudler.github.io/git-guide/">siit</a>). Selleks tuleks teha uus avalik repositoorium, kuhu paigutada <em>qgis2web</em>i väljundkausta sisu (sh kindlasti ka fail <em>index.html</em>). Vaata juhendit näiteks <a href="https://github.com/NieneB/Webmapping_for_beginners/wiki/Hosting-on-github">siit</a>.</p>
+<p>Kuskile serverisse riputatud veebilehte saab omakorda paigutada teise veebilehe sisse, nt HTML-i <a href="https://www.w3schools.com/tags/tag_iframe.ASP"><strong>iframe</strong></a>-märgendi abil.</p>
+<p>Oma veebikaarte võib jagada ka otse QGISist, nt <a href="https://qgiscloud.com/">QGIS Cloud</a>i või <a href="http://gisquick.org/">Gisquick</a> pluginate abil.</p>
 </div>
-<p>Paneme diagrammi suuruse sõltuma riigi rahvaarvust. Lisaks tuleb määrata neile ka miinimum suurus, et väiksema rahvaarvuga riigite diagrammid oleks nähtavad. Maksimumväärtuse võiks määrata pisut suurema kui suurim rahvaarv. Siin kasutame 100 000 000. Taoliste sätetega on 100 miljoni elanikuga riigi diagramm 15 mm suurune ning väiksema rahvaarvuga riikidelt järjest väiksem.</p>
-<div class="figure" style="text-align: center"><span id="fig:diagrammesize"></span>
-<img src="imgs/diagramm_size.gif" alt="SKP inimese kohta Euroopa riikides diagramidena. Ringi suurus näitab rahvaarvu."  />
-<p class="caption">
-Figure 14.7: SKP inimese kohta Euroopa riikides diagramidena. Ringi suurus näitab rahvaarvu.
-</p>
+<div id="lisa" class="section level2" number="19.4">
+<h2><span class="header-section-number">19.4</span> Lisa</h2>
+<p>Kui tahad veebikaartide tegemise kohta rohkem õppida, siis väga hea ja põhjaliku kursuse veebikaartide kohta leiad näiteks <a href="https://github.com/jakobzhao/geog371">siit</a>.</p>
 </div>
-<p>Vali riikidele ka meelepärane värv ning ekspordi kaart koos legendiga. Võid katsetada ka erinevate visualiseerimise efektidega. Selleks tee <em>Simple fill</em> sümboloogia juures all pool linnuke <em>Draw effects</em> ette ning kliki kollasel tähekesel efektide valimiseks.</p>
-<div class="figure" style="text-align: center"><span id="fig:diagrammeeurope"></span>
-<img src="imgs/europe_skp_dia.png" alt="SKP inimese kohta Euroopa riikides diagramidena. Ringi suurus näitab rahvaarvu." width="1754" />
-<p class="caption">
-Figure 14.8: SKP inimese kohta Euroopa riikides diagramidena. Ringi suurus näitab rahvaarvu.
-</p>
-</div>
-</div>
-<div id="rastriga-katsetamine" class="section level2" number="14.4">
-<h2><span class="header-section-number">14.4</span> Rastriga katsetamine</h2>
-<p>Loome linnade populatsiooni põhjal interpoleeritud kihi kogu Euroopa jaoks.</p>
-<div class="figure" style="text-align: center"><span id="fig:euroint"></span>
-<img src="imgs/europe_interpolation_pop.png" alt="Linnade populatsioonist interpoleeritud rasterkiht." width="1754" />
-<p class="caption">
-Figure 14.9: Linnade populatsioonist interpoleeritud rasterkiht.
-</p>
-</div>
-</div>
-<div id="järgmisel-korral-8" class="section level2" number="14.5">
-<h2><span class="header-section-number">14.5</span> Järgmisel korral</h2>
-<p>Kahel järgmisel korral tekstianalüüs. Pärast seda veel geostatistika, veebirakenduste ja R’i kasutamise praktikumid.</p>
+<div id="järgmisel-korral-11" class="section level2" number="19.5">
+<h2><span class="header-section-number">19.5</span> Järgmisel korral</h2>
+<p>Ruumiandmete analüüs R-is. Selleks palun installi endale <a href="https://www.r-project.org/"><strong>R</strong></a> ja <a href="https://rstudio.com/products/rstudio/download/"><strong>RStudio</strong></a> uusimad versioonid.</p>
+
 
 </div>
 </div>
@@ -385,8 +414,8 @@ Figure 14.9: Linnade populatsioonist interpoleeritud rasterkiht.
           </div>
         </div>
       </div>
-<a href="visualiseerimine3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tekstianalyys.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="geostatistika2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
