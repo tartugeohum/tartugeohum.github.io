@@ -1,0 +1,6 @@
+output_dir: "docs"
+language:
+    ui:
+        chapter_name: "Praktikum "
+    label:
+        fig: "Joonis "
