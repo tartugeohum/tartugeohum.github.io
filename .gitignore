@@ -37,3 +37,18 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Data files
+/data/
+
+# Images
+/imgs/
+
+# Files
+*_files/
+
+# csl-files
+*.csl
+
+# bib-files
+*.bib
