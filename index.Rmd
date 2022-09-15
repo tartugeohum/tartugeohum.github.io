@@ -116,7 +116,7 @@ embed_url("https://www.youtube.com/watch?v=ryWcq7Dv4jE") %>% use_align("center")
 ```
 
 -   GISi ulatuslikum areng toimus 1970ndatel ning 1980ndate lõpuks oli fookus juba sellel, kuidas parandada GISi kasutuskogemust.\
--   Esimestel aastakümnetel oli GIS põhiliselt haldus- ja militaarkasutuses. 1981. aastal tõi ESRI (Environmental Systems Research Institute, Inc.) välja **esimese kommertsliku GIS-toote**, ARC/INFO, mis põhines Harvard Laboratory Computer Graphicsi poolt arendatud esimesel vektoritega töötaval GISil. ESRI roll GIS-tarkvara arendajana on sellest alates ainult kasvanud.\
+-   Esimestel aastakümnetel oli GIS põhiliselt haldus- ja militaarkasutuses. 1982. aastal tõi ESRI (Environmental Systems Research Institute, Inc.) välja **esimese kommertsliku GIS-toote**, ARC/INFO, mis põhines Harvard Laboratory Computer Graphicsi poolt arendatud esimesel vektoritega töötaval GISil. ESRI roll GIS-tarkvara arendajana on sellest alates ainult kasvanud.\
 -   1990ndatest alates hakkas GISi **kasutajaskond kiiresti kasvama**. Seda soodustas järjest väiksemate, odavamate ja kiiremate arvutite tootmine, andmete ulatuslikum kättesaadavus ning uute satelliitide ja kaugseiretehnoloogia kasutuselevõtt.\
 -   Viimast kaht kümnendit on iseloomustanud lisaks tehnoloogia jätkuvale arengule ka **vabavaralise GIS-tarkvara teke**, mis on teinud ruumiandmete kasutamise ja analüüsi kättesaadavamaks nii tavakasutajale kui ka talle pakutavate toodete arendajatele. On toimunud nn [**georuumiline revolutsioon (*Geospatial Revolution*)**](https://www.e-education.psu.edu/maps/l1_p2.html), mis on muutnud nii seda, kuidas me liigume, otsuseid teeme ja oma lugusid jagame.
 

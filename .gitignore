@@ -52,3 +52,6 @@ vignettes/*.pdf
 
 # bib-files
 *.bib
+
+# not-ready rmd-files
+_*.rmd
