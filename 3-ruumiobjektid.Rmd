@@ -217,6 +217,7 @@ knitr::include_graphics(here::here("imgs", "3_okabe_2006.PNG"))
 
 
 Vaata natuke [siin](http://blog.ut.ee/30-maps-of-estonia-in-30-days/) ringi. Kas saad aru, millist tüüpi mudeleid on kasutatud?
+Vaata ka *30 Day Map Challenge* käigus tehtud kaarte ([siin](https://30daymapchallenge.com/)). 
 
 
 ## Ülesanne
