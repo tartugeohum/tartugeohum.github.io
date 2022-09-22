@@ -4,3 +4,4 @@ language:
         chapter_name: "Praktikum "
     label:
         fig: "Joonis "
+delete_merged_file: true
