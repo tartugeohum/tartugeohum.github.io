@@ -27,7 +27,6 @@ Kõige rohkemate funktsioonide ja võimalustega teenust *story map*'ide tegemise
 ESRI teenuses on aga tasuta võimalik kasutada ainult teatud funktsioone.  
 Sel korral vaatleme esmalt vabavaralist platvormi **[StoryMapJS](https://storymap.knightlab.com/)** ning võrdleme seda seejärel **[ESRI](https://storymaps.arcgis.com/)** platvormi tasuta funktsioonidega.  
 
-<!--Teeme mõlemaga tehniliselt läbi ühe *story map*'i loomise protsessi. Võtame aluseks mingi Vikipeedia artikli, näiteks [selle siin](https://en.wikipedia.org/wiki/Janis_Joplin), ning püüame panna selle *story map*'i vormi.-->  
 
 
 ### [StoryMapJS](https://storymap.knightlab.com/)
@@ -133,6 +132,8 @@ Veel paar aastat tagasi oli võimalik vähese vaevaga kasutada *story map*'ide t
 Otsi [Vikipeediast tänase kuupäevaga](https://en.wikipedia.org/wiki/September_26) seotud sündmus (nt ajalooline sündmus, mõne kuulsa isiku sünni- või surmakuupäev) ning kujuta vastavat Vikipeedia artiklit või selle olulisemaid osi *story map*'il kas StoryMap JS või ArcGis Story Maps keskkonnas. Lisa võimalusel pilte, linke ja muud, mis loo käiku aitavad jälgida.  
 
 Avalikusta valmis *story map* ning lisa *iframe*'i kood [ühisesse faili](https://sites.google.com/d/1uxJ5p4H9AwxlD9N0ZmkOsqCYJRp2qOks/p/1X9k-l1uhfa44c_3den1vHCvgqgpbnO8J/edit): `Manusta` -> `Manusta kood` -> sisesta *iframe*'i kood -> `Järgmine` -> `Sisesta`.  
+
+
 
 
 
