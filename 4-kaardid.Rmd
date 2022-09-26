@@ -393,9 +393,18 @@ Lõpetuseks võiksime näidata sisse suumides ka valdade nimesid. Selleks peame 
 knitr::include_graphics(here::here("imgs", "4_mapbox11.png"))
 ```
 
-Loodud kaarti saame printida/faili salvestada või eksportida kuskile veebikeskkonda. Kihtide järjekorda muutes saame kontrollida, mida meie kaardilt näha on (näiteks võib riigipiiride kihi tõsta kohanimede kihist ettepoole, kui ei taha, et sisse suumides ilmuksid nähtavale linnade nimed). Kahjuks ei võimalda Mapbox Studio praegusel hetkel lisada kaardile legendi jms kaardi elemente. Mapbox Studio võimaluste kohta võid põhjalikumalt lugeda [sellest juhendist](https://docs.mapbox.com/studio-manual/guides/).  
+Kihtide järjekorda muutes saame kontrollida, mida meie kaardilt näha on (näiteks võib riigipiiride kihi tõsta kohanimede kihist ettepoole, kui ei taha, et sisse suumides ilmuksid nähtavale linnade nimed). Kahjuks ei võimalda Mapbox Studio praegusel hetkel lisada kaardile legendi jms kaardi elemente. Mapbox Studio võimaluste kohta võid põhjalikumalt lugeda [sellest juhendist](https://docs.mapbox.com/studio-manual/guides/).  
 
 
+### Kaardi jagamine {#kaardijagamine}
+
+Loodud kaarti saame printida/faili salvestada või eksportida kuskile veebikeskkonda. Kaardi eksportimiseks ja selle kasutamiseks nt mõnes muus veebikeskkonnas aluskaardina, vali ülevalt menüüst `Share`. `Preview only` linki jagades saab kes tahes lingiga sinu kaarti vaadata. Mujal keskkondades kasutamiseks või stiili jagamiseks teiste Mapboxi kasutajatega tuleb loodud stiil esmalt teha avalikuks: `Allow copying: Make public`. `Website embed` annab *iframe*'i koodi, mille saab kleepida mis tahes veebilehe HTML-koodi sisse, et kaart ilmuks mingil veebilehel. 
+
+`Developer resources` lubab kaardistiili kasutada muudes veebi- või telefonirakendustes. Näiteks `Web` saki alt leiab stiili aadressi (`Style URL`) ja juurdepääsuloa (`Access token`), mille abil on võimalik kasutada Mapboxis loodud stiili mõnes veebirakenduses (nt [StoryMapJS](https://storymap.knightlab.com/)). Saki `Third party` alt leiad aadressi, millega saab kasutada loodud stiili suuremate GIS-tarkvarade rakendustes (ArcGIS, Carto, QGIS). Sellest järgmisel korral veel.  
+
+```{r mapbox12, echo = F, fig.align = "center", fig.show='hold', out.width= "80%", fig.cap= "Kaardistiili jagamine"}
+knitr::include_graphics(here::here("imgs", "4_sharemapbox.png"))
+```
 
 ## Järgmisel korral
 
