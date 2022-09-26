@@ -1,4 +1,4 @@
-# Story maps ja Mapbox {#storymaps}
+# Story maps {#storymaps}
 
 ## Story maps
 
