@@ -1,4 +1,4 @@
-# Sissejuhatus QGISi 2 {#qgis_2}
+# Sissejuhatus QGISi (2) {#qgis_2}
 
 Praktikumis tegeleme põhiliselt andmetest alamhulkade valimisega, andmete digiteerimise ja kaartide koostamisega. Selleks kasutame kolme andmestikku:  
 
