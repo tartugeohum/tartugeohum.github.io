@@ -125,7 +125,7 @@ knitr::include_graphics(here::here("imgs", "6_qgis_harjutus1.png"))
 Kas see on hea visualiseerimine? Mis on hea, mis on puudu, mis on üleliigne, kui eesmärgiks on näidata kaitse all olevate kirikute arvu maakonnas?
 
 
-### Harjutus 2 
+### Harjutus 2 {#yhendamine1}
 
 Harjutuse eesmärk on luua kaart, mis näitab **maakondade värvi** abil, kui palju on muinsuskaitse all olevaid kirikuid maakondades (nn horopleetkaart \@ref(fig:horopleet)). Teisisõnu: **klassifitseerime** maakonnad selle järgi, millist kirikute arvu põhjal moodustuvat sagedusklassi nad esindavad.   
 Selleks tuleb maakondade polügoonide kihiga siduda tabel, kus on kirjas iga maakonna kirikute arv, ning värvida seejärel maakonnad vastavalt sellele arvule.  
