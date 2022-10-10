@@ -27,7 +27,7 @@ Võib kasutada samu või muid sarnaseid kaarte nendest piirkondadest. Laadime ka
 
 ## Harjutus 1: vana Tartu kaardi georefereerimine
 
-Avame QGISi. QGISis on georefereerimise tööriist *Georeferencer* leitav ülevalt menüüst *Raster* alt. Juhul, kui seal valikut *Georeferencer* ei ole (näiteks kui kasutad vanemat QGISi versiooni), siis tuleb see aktiveerida. Selleks vali *Plugins → Manage and Install Plugins* → otsingusse kirjuta *Georeferencer* → tee linnuke *Georefencer GDAL Plugin* ette ja sulge see aken. Nüüd on tööriist *Georeferencer* rastrimenüü all näha. Tööriista sisselülitamine on ühekordne tegevus, järgmisel korral QGISi avades on see juba olemas. Selle tööriista kohta saab täpsemalt lugeda [QGIS 3.22 juhendist](https://docs.qgis.org/3.22/en/docs/user_manual/working_with_raster/georeferencer.html).
+Avame QGISi. QGISis on georefereerimise tööriist *Georeferencer* leitav ülevalt menüüst *Raster* alt (alates QGISi versioonist 3.26 *Layer* alt). Juhul, kui seal valikut *Georeferencer* ei ole (näiteks kui kasutad vanemat QGISi versiooni), siis tuleb see aktiveerida. Selleks vali *Plugins → Manage and Install Plugins* → otsingusse kirjuta *Georeferencer* → tee linnuke *Georefencer GDAL Plugin* ette ja sulge see aken. Nüüd on tööriist *Georeferencer* rastrimenüü all näha. Tööriista sisselülitamine on ühekordne tegevus, järgmisel korral QGISi avades on see juba olemas. Selle tööriista kohta saab täpsemalt lugeda [QGIS 3.22 juhendist](https://docs.qgis.org/3.22/en/docs/user_manual/working_with_raster/georeferencer.html).
 
 **Avame kaardi pildifaili**
 
@@ -65,7 +65,7 @@ Vajutame rohelisel noolekesel *Start Georeferencing*. Nüüd ilmub georefereerit
 
 Vaatame, kui hästi tänapäevase koordinaatsüsteemiga sidumine õnnestus. Kui kaart on väga paigast ära, siis saame lisada rohkem punkte või muuta transformatsiooni tüüpi. Vastavatest algoritmidest saab täpsemalt lugeda tööriista *Georeferencer* [juhendist](https://docs.qgis.org/3.22/en/docs/user_manual/working_with_raster/georeferencer.html#available-transformation-algorithms), ent lühidalt:  
 
-- *Linear* algoritm sobib põhliselt siis, kui tegu on kõrge kvaliteediga rasterkaardiga, mille koordinaatide referentssüsteem on teada. See ei võimalda kujutist pöörata ega muul moel muundada. Enamasti sobib see seega uuematele kaartidele, mis on (kindlas projektsioonis) suure täpsusega.     
+- *Linear* algoritm sobib põhiliselt siis, kui tegu on kõrge kvaliteediga rasterkaardiga, mille koordinaatide referentssüsteem on teada. See ei võimalda kujutist pöörata ega muul moel muundada. Enamasti sobib see seega uuematele kaartidele, mis on (kindlas projektsioonis) suure täpsusega.     
 - *Helmerti* algoritm sobib hea kvaliteediga suuremõõtkavalistele rasterkaartidele või ortofotodele, mille koordinaatsüsteem ei pruugi ühtida aluskaardi omaga. Võimaldab kujutist ka pöörata ja muuta mõõtkava.   
 - *Polynomial* 1. algoritm lubab georefereeritavat kujutist rohkem muundada, aga tagab siiski selle, et sirged jooned kaardil jääksid sirgeteks ja paralleelsed jooned paralleelseteks.  
 - *Polynomial* 2. ja 3. algoritm lubavad kujutist veelgi rohkem muundada, sh painutada kujutisel olevaid sirgeid jooni.   
