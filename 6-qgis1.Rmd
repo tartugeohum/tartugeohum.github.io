@@ -179,7 +179,7 @@ knitr::include_graphics(here::here("imgs", "6_qgis_harjutus2.png"))
 ```
 
 
-## Aluskaardid
+## Aluskaardid {#aluskaardid}
 
 Nagu varasemates loengutes nägime, on olemas rohkelt aluskaarte, mida erinevates rakendustes põhiliselt teemakaartide tegemisel kasutatakse. QGISis saab neid kasutada läbi pistikprogrammide ehk *Plugins* või WMS- ja WFS-teenuste (vastavalt *web map service* ja *web feature service*).   
 

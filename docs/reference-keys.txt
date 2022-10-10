@@ -87,6 +87,17 @@ fig:statamet3
 fig:addfields
 fig:palukyla
 fig:Flickr
+fig:dorpat1870
+fig:jaggowal1688
+fig:georef1
+fig:georefsettings
+fig:georefvalmis
+fig:georefclipped
+fig:georefjagala
+fig:uuekihitegemine
+fig:digit1
+fig:koilapindala
+fig:koilaalad
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
@@ -105,7 +116,7 @@ ruumiobjektid
 vektorandmed
 rasterandmed
 vektor-vs.-raster
-ülesanne
+kasikirjalised
 järgmisel-korral-2
 kaardid
 kaart
@@ -139,7 +150,7 @@ järgmisel-korral-5
 qgis_2
 andmete-valimine
 vektorkihi-geomeetria-parandamine
-kihi-ja-andmete-loomine
+kihiloomine
 kaartide-kujundamine-ja-eksportimine
 järgmisel-korral-6
 avaandmed
@@ -155,3 +166,10 @@ harjutus-2
 muu
 muude-riikide-ruumiandmed
 järgmisel-korral-7
+georefereerimine
+kaartide-otsimine-ja-allalaadimine
+harjutus-1-vana-tartu-kaardi-georefereerimine
+harjutus-2-ajalooline-maakasutus-jägala-mõisa-külades
+harjutus-3-käsikirjalise-kaardi-georefereerimine
+veebilahendus
+järgmisel-korral-8

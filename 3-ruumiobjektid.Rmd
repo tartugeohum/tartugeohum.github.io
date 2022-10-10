@@ -220,7 +220,7 @@ Vaata natuke [siin](http://blog.ut.ee/30-maps-of-estonia-in-30-days/) ringi. Kas
 Vaata ka *30 Day Map Challenge* käigus tehtud kaarte ([siin](https://30daymapchallenge.com/)). 
 
 
-## Ülesanne
+## Ülesanne {#kasikirjalised}
 
 Kujuta ette, et Google Mapsi ei ole veel leiutatud ja paberkaardid on väga kallid, aga sulle on Tartusse külla tulnud sõber / perekonnaliige / tuttav / välismaa sõber, kes ei ole siin kunagi varem käinud. Joonista tema jaoks paberile Tartu kesklinna kaart ning lisa kaardile enda või tema jaoks tähtsamad kohad ning tagaküljele kirjuta ka, kellele kaart on mõeldud. 
 
