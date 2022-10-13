@@ -207,6 +207,22 @@ div.csl-indent {
 <li class="chapter" data-level="9.5" data-path="georefereerimine.html"><a href="georefereerimine.html#veebilahendus"><i class="fa fa-check"></i><b>9.5</b> Veebilahendus</a></li>
 <li class="chapter" data-level="9.6" data-path="georefereerimine.html"><a href="georefereerimine.html#järgmisel-korral-8"><i class="fa fa-check"></i><b>9.6</b> Järgmisel korral</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="avaldised.html"><a href="avaldised.html"><i class="fa fa-check"></i><b>10</b> Avaldised ja päringud</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="avaldised.html"><a href="avaldised.html#avaldised-1"><i class="fa fa-check"></i><b>10.1</b> Avaldised</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="avaldised.html"><a href="avaldised.html#harjutused"><i class="fa fa-check"></i><b>10.1.1</b> Harjutused</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="avaldised.html"><a href="avaldised.html#päringud"><i class="fa fa-check"></i><b>10.2</b> Päringud</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="avaldised.html"><a href="avaldised.html#harjutused-1"><i class="fa fa-check"></i><b>10.2.1</b> Harjutused</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="avaldised.html"><a href="avaldised.html#ülesanne-1-ei-olepole-suhtelised-sagedused-murdekorpuses"><i class="fa fa-check"></i><b>10.3</b> Ülesanne 1: “ei ole”/“pole” suhtelised sagedused murdekorpuses</a></li>
+<li class="chapter" data-level="10.4" data-path="avaldised.html"><a href="avaldised.html#ülesanne-2-ei-olepole-murdeatlase-levikuandmed"><i class="fa fa-check"></i><b>10.4</b> Ülesanne 2: “ei ole”/“pole” murdeatlase levikuandmed</a></li>
+<li class="chapter" data-level="10.5" data-path="avaldised.html"><a href="avaldised.html#ülesanne-3-ei-olepole-selged-eelistused"><i class="fa fa-check"></i><b>10.5</b> Ülesanne 3: “ei ole”/“pole” selged eelistused</a></li>
+<li class="chapter" data-level="10.6" data-path="avaldised.html"><a href="avaldised.html#ülesanne-4-tekstiatribuutide-muutmine"><i class="fa fa-check"></i><b>10.6</b> Ülesanne 4: tekstiatribuutide muutmine</a></li>
+<li class="chapter" data-level="10.7" data-path="avaldised.html"><a href="avaldised.html#järgmisel-korral-9"><i class="fa fa-check"></i><b>10.7</b> Järgmisel korral</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
 </ul>
 
@@ -369,8 +385,8 @@ Jah
 <li>Maa-amet ei vastuta otsese ega kaudse kahju eest, mis võib tekkida andmete kasutamisest tulenevalt.</li>
 </ul>
 <p>Maa-ameti kaudu on vabalt kasutatavad ka <strong><a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus/Ajalooline-haldusjaotus-p827.html">ajalooliste haldusjaotuste</a></strong> andmed, sh mõisate, kihelkondade, valdade, rajoonide kohta. Andmete kasutamisel tutvu kindlasti ka viitamistingimustega.</p>
-<div id="harjutus-1-1" class="section level4 hasAnchor" number="8.2.1.1">
-<h4><span class="header-section-number">8.2.1.1</span> Harjutus 1<a href="avaandmed.html#harjutus-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="p8h1" class="section level4 hasAnchor" number="8.2.1.1">
+<h4><span class="header-section-number">8.2.1.1</span> Harjutus 1<a href="avaandmed.html#p8h1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Kus asuvad Tartus suuremate kortermajadega piirkonnad? Vaatame faili <em>tartuaadressid.csv</em> (Moodle’is), mis on alamosa Maa-ameti <a href="https://xgis.maaamet.ee/adsavalik/extracts">jõusolevate aadressiobjektide andmestikust</a> (seisuga 5.09.2022). Kuna Tartu aadresside algfail on üpris suur (97 255 kirjet), siis meie kasutatav fail sisaldab ainult elukondlike hoonete ja eluruumide aadresse, millel on olemas ka koordinaadid.</p>
 <p>Laadime andmestiku QGISi ning vaatame, kas meil õnnestub aadressipunkti suurust ja läbipaistvust muutes tuvastada näiteks suurte kortermajadega piirkonnad Tartu linnas.</p>
 <ul>
@@ -444,7 +460,7 @@ Joonis 8.4: Ükskõik millise murde kõnelejate kuvamine Statistikaameti teemaka
 <li>Murdekõnelejate arv on atribuuttabelis tulbas <strong>VAARTUS</strong>, ent kui teeme kihil paremkliki ning valime <em>Properties → Fields</em>, näeme, et VAARTUS on hetkel tuvastatud tekstilise tunnusena (<em>String</em>), mitte arvulisena. Selleks aga, et kuvada murdekõnelejate arvu muutumist järkjärgulisena, vajame arvulist tunnust. Üks võimalus on teha lihtsalt uus tunnus.</li>
 </ul></li>
 </ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:addnumericfield"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:addnumericfield1"></span>
 <img src="imgs/8_addnumericfield.gif" alt="Lisa arvuline tunnus" width="80%" />
 <p class="caption">
 Joonis 8.5: Lisa arvuline tunnus

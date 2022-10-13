@@ -1,0 +1,142 @@
+# Story maps {#storymaps}
+
+## Story maps
+
+***Story map***, mille võiks ehk tõlkida kui *loojutustuskaart*, on formaat, mis võimaldab piltide, teksti, video ja kohainfo kaudu jutustada lugusid fotograafiast, kunstist, kirjandusest, spordist, ajaloost, teadusest, ühiskonnast ja paljust muust. 
+
+Kontseptsioon on lihtne: kaardile märgitakse punktid, mille juurde saab lisada nii tekstilist kui ka pildilist infot selles kohas toimunud sündmuse või selles kohas paikneva objekti kohta. Kaardi punkte omavahel ühendades tekibki mingi narratiiv.  
+Laiemas tõlgenduses ei pea *story map*'i *kaart* olema tingimata geograafiline. Kontekstina võib toimida ka näiteks mõni maal, foto või muu visuaal, ent taust on sel juhul siiski käsitletav ruumina, milles saab loogiliselt liikuda. Klassikalises *story map*'is on lähtepunktiks siiski mingi narratiiv, mida mööda liikudes liigume ka vastavatesse paikadesse geograafilisel kaardil.  
+
+
+Ühest küljest on *story map*'il palju ühist tavaliste veebilehtedega, kus jutustatakse mingit lugu, mida illustreerivad muu materjali kõrval ka kaardid, ent *story map*'il on **koht (ja aeg) oluliselt prominentsemal kohal**.  
+Teiselt poolt on *story map*'il ühisjooni tavaliste kaardirakendustega, kuhu saab lisada ruumiobjekte, mida iseloomustavad teatud atribuudid. Atribuudina võib näiteks lisada ka pikema teksti, lingi pildile või videole jpm. Väga selget piiri *story map*'i ja kindlasti-mitte-*story*-*map*'i vahele on raske tõmmata, ent kuna *story map*'i fookus on selgelt mingi loo jutustamisel või argumendi esitamisel, on see enamasti **visuaalselt esteetilisem ja sujuvam** ning oluliseks omaduseks on **väljundi võimalikult lihtne ja kiire integreeritavus** erinevate veebiplatvormidega.  
+*Story map* on hea meedium näiteks esitluste ja ettekannete jaoks, kui aeg ja koht (õigemini kohad) on narratiivi või argumendi esitamise seisukohast olulised.
+
+
+Kõige rohkemate funktsioonide ja võimalustega teenust *story map*'ide tegemiseks pakub ilmselt **ESRI** oma **ArcGIS StoryMaps** rakenduse kaudu. ESRI-l on ka eraldi digihumanitaaria [*story map*'ide kollektsioon](https://collections.storymaps.esri.com/humanities/). Mõned näited:   
+
+<iframe width="640px" height="480px" src="https://storymaps.esri.com/stories/2016/humboldt/index.html" frameborder="0" scrolling="yes"></iframe>
+
+<iframe width="640px" height="480px" src="https://storymaps.esri.com/stories/2017/hip-hop/map/" frameborder="0" scrolling="yes"></iframe>
+
+<iframe width="640px" height="480px" src="https://story.maps.arcgis.com/apps/Cascade/index.html?appid=46daf1304a0c4ad69a8935c7ed2ab692" frameborder="0" scrolling="yes"></iframe>
+
+<iframe width="640px" height="480px" src="https://maps.calgary.ca/language/" frameborder="0" scrolling="yes"></iframe>
+
+
+ESRI teenuses on aga tasuta võimalik kasutada ainult teatud funktsioone.  
+Sel korral vaatleme esmalt vabavaralist platvormi **[StoryMapJS](https://storymap.knightlab.com/)** ning võrdleme seda seejärel **[ESRI](https://storymaps.arcgis.com/)** platvormi tasuta funktsioonidega.  
+
+
+
+### [StoryMapJS](https://storymap.knightlab.com/)
+
+- Loo tegemiseks pead Google'i kasutajakontoga sisse logima.  
+- Kui oled sisse loginud, vajuta nupul *New*.  
+- Nimeta oma lugu. Loo nimi saab ühtlasi sinu projekti ID-ks, mida kasutatakse hiljem loole viitava lingi nimes. Kui kasutad mitmesõnalist nime, milles tühikud eraldavad sõnu, siis asendatakse need ID-s sidekriipsudega.  
+- Sätete (*Options*) alt saad valida:  
+    + kaardi suuruse (kõrgus (*Height*) pikslites, laius (*Width*) protsentides ekraani laiusest);
+    + keele. Keel määrab ära, mis keeles kuvatakse kasutajale igasugu nupud ja juhised. Valikus on ka eesti keel;   
+    + teksti fondi (küsimärgile vajutades näed ka, millised eri variandid välja näevad);  
+    + kas soovid, et kaardi erinevate punktide vahele tõmmataks joon (*treat as cartography*) või mitte (*treat as image*);  
+    + esilehel kuvatava nupu nt vaatama kutsuva tekstiga (*call to action*);  
+    + aluskaardi. Saad valida nii olemasolevate põhjade vahel kui ka omaenda või teiste kohandatud kaartide vahel. Näiteks on võimalik integreerida Mapboxi kaarte, kui kopeerid sinna Mapboxi stiili veebiaadressi ja juurdepääsuloa (vt [eelmise korra materjale](#kaardijagamine)). 
+ 
+ 
+```{r storymaps1, echo = F, fig.align = "center", fig.show='hold', out.width= "60%", fig.cap= "Storymaps JS sätted"}
+knitr::include_graphics(here::here("imgs", "5_storymapsjs_settings.png"))
+```
+
+
+Kui oled oma loo n-ö ära seadistanud, siis saad hakata lisama sisu.  
+
+- Kõigepealt saad valida pildi, mida avalehel näidatakse (`Media`), lisada pealkirja ja tutvustava teksti ja muuta soovi korral tausta (`Background Options`).  
+
+```{r storymaps2, echo = F, fig.align = "center", fig.show='hold', out.width= "80%", fig.cap= "Storymaps JS avakuva seadistamine"}
+knitr::include_graphics(here::here("imgs", "5_storymapsjs_avakuva.png"))
+```
+
+ - `Preview` vahelehel näidatakse *story map*'i väljundit, lehe vasakul poolel hakatakse kuvama loo kaarti, kui mingid kohad on juba ära märgitud.    
+- Sisu lisamiseks lisa slaid (`Add slide`). Iga slaid on seotud ühe kohaga.   
+    + Esmalt otsi koordinaatide või kohanime järgi koht, millega slaidil esitatav loo osa seotud on. Saad vahetada koha markerit ka mõne enda üles laetud pildi/ikooni vastu (`Marker Options`).  
+    + Võid lisada nii pilte kui ka videoid, samuti saab teksti sisse lisada linke.  
+- Kui oled loo valmis saanud, siis salvesta see (vasakul ülemises menüüs nupp `Save`).  
+- Oma lugu võib jagada (paremal ülemises menüüs nupp `Share`) lingiga või ka näiteks otse Twitteri, Facebooki, Google+'i või Redditi kaudu. Samuti võib selle *iframe*'i koodi abil lisada otse enda veebilehele (näiteks Wordpressi, Mediumi või mujale, kasvõi sellele kursuse lehele siin). 
+
+```{r storymaps3, echo = F, fig.align = "center", fig.show='hold', out.width= "100%", fig.cap= "Storymaps JS väljundi kuvamine *iframe*'i kaudu (väga lihtsal) veebilehel"}
+knitr::include_graphics(here::here("imgs", "5_storymapjs_iframe.png"))
+```
+
+
+
+### [ArcGIS StoryMaps](https://storymaps.arcgis.com/)
+
+- Loo tegemiseks pead looma (avaliku) kasutajakonto. Seejärel saad meilile aktiveerimislingi ning sellele vajutades saabki konto loomise lõpule viia (määrata kasutajanime ja parooli jms).   
+- Kindluse mõttes võib esmalt ära vahetada vaikimisi platvormi keele, kui see ei ole inglise keel. Vastasel juhul võivad mõned tõlked arusaamatuks jääda (nt sõna *heading* tõlkena võib kohata sõna *suund*). Selleks saab minna üleval paremas nurgas enda profiili lingile ning vaadata lähemalt seadeid (*Kuva minu seaded* või *View my settings*) ning uuenda keelt, numbri- ja kuupäevavorminguid. Seejärel trüki aadressiribale uuesti `https://storymaps.arcgis.com`.   
+- Uue loo tegemiseks vajuta nupul *New story*. Võib alustada tühja malliga või valida mallitüübi  
+    + *Sidecar* (tekst ja visuaal kuvatud kõrvuti paneelidel, sobib hästi, kui suurem rõhk on näiteks tekstil)  
+    + *Guided map tour* (tekst ja visuaal kuvatud kaardil, vaataja liigub mööda punkte kindlaks määratud järjekorras)  
+    + *Explorer map tour* (nagu eelmine vormel, aga vaataja saab valida, mis järjekorras mööda punkte liigub).  
+- Kasutame siin tühja malli, millele saame lisada teisi malle juurde. Tiitellehele saab märkida oma projekti nime ja lühikese tutvustuse. Võib lisada juurde ka pildi või video (**NB! Kui kasutad teiste tehtud materjale, viita kindlasti ka autorile**).  
+
+```{r storymaps4, echo = F, fig.align = "center", fig.show='hold', out.width= "60%", fig.cap= "ArcGIS StoryMapsi avakuva"}
+knitr::include_graphics(here::here("imgs", "5_arcgis_intro.png"))
+```
+
+- Plussikestest saad lisada uusi plokke:  
+    + teksti (`Text`),  
+    + nupu, mis viib nt mingile lingile (`Button`),  
+    + horisontaalse eraldusriba eri tekstiplokkide vahele (`Separator`),  
+    + kaardi (`Map`),  
+    + pildi (`Image`),  
+    + video (`Video`),  
+    + liuguri, mis lubab kõrvutada kaht kaarti või pilti (`Swipe`),    
+    + teisi loomalle (*Slideshow*, *Sidecar*, *Map tour*), mille sisse omakorda võib lisada üleval nimetatud elemente.  
+- Tasulises versioonis on võimalik kasutada veel plokitüüpe.  
+- Kaardi (`Map`) lisamisel  
+    + tuleks valida esmalt aluskaart (*basemap*),  
+    + seejärel lisada tekst, meedia ja siduda punktid konkreetsete kohtadega.
+    + Kõige lihtsam on seda teha nii, kui valid `Map` -> `New express map`  
+    
+```{r storymaps5, echo = F, fig.align = "center", fig.show='hold', out.width= "80%", fig.cap= "ArcGIS StoryMapsi kaardi lisamine"}
+knitr::include_graphics(here::here("imgs", "5_arcgis_addmap.gif"))
+```
+      
+- Võid aluskaardina kasutada ka Mapboxis stiliseeritud kaarti.  
+
+```{r storymaps6, echo = F, fig.align = "center", fig.show='hold', out.width= "80%", fig.cap= "Mapboxi kaardi kasutamine aluskaardina"}
+knitr::include_graphics(here::here("imgs", "5_argis_addmap2.gif"))
+```
+
+- Saad kaardi lisada ka *Map tour* formaadis.   
+
+```{r storymaps7, echo = F, fig.align = "center", fig.show='hold', out.width= "80%", fig.cap= "ArcGIS StoryMapsi kaardi lisamine *Map tour* formaadis"}
+knitr::include_graphics(here::here("imgs", "5_arcgis_maptour.gif"))
+```
+
+
+- Kui lugu on valmis, avalikusta lugu (ülemises menüüs nupp `Publish`).   
+- Kaarti saab jagada samuti lingiga (kui lugu on avalik) ning lisada *iframe*'i koodiga teistele veebilehtedele (`More actions` -> `Embed this story`).  
+- Vaata lähemalt kõikide ArcGIS-i *story map*'ide võimalusi [siit](https://storymaps.arcgis.com/stories/cea22a609a1d4cccb8d54c650b595bc4).  
+
+
+    
+---
+  
+
+Veel paar aastat tagasi oli võimalik vähese vaevaga kasutada *story map*'ide tegemiseks ka platvorme nagu [MapStory](https://mapstory.org) või [Odyssey.js](https://cartodb.github.io/odyssey.js/), ent nende kasutamine on praeguseks oluliselt raskendatud (nõuab veidi koodikirjutamisoskust ning kõik funktsioonid ei ole enam toetatud). 
+
+
+## Ülesanne: tänane kuupäev *story map*'is
+
+Otsi [Vikipeediast tänase kuupäevaga](https://en.wikipedia.org/wiki/September_26) seotud sündmus (nt ajalooline sündmus, mõne kuulsa isiku sünni- või surmakuupäev) ning kujuta vastavat Vikipeedia artiklit või selle olulisemaid osi *story map*'il kas StoryMap JS või ArcGis Story Maps keskkonnas. Lisa võimalusel pilte, linke ja muud, mis loo käiku aitavad jälgida.  
+
+Avalikusta valmis *story map* ning lisa *iframe*'i kood [ühisesse faili](https://sites.google.com/d/1uxJ5p4H9AwxlD9N0ZmkOsqCYJRp2qOks/p/1X9k-l1uhfa44c_3den1vHCvgqgpbnO8J/edit): `Manusta` -> `Manusta kood` -> sisesta *iframe*'i kood -> `Järgmine` -> `Sisesta`.  
+
+
+
+
+
+## Järgmisel korral
+
+Neljapäeval kolime lõpuks QGISi ning teeme esimesed sammud tarkvaraga tutvumisel.  
