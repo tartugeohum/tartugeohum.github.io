@@ -76,7 +76,7 @@ knitr::include_graphics(here::here("imgs", "7_qgis_select3.gif"))
 ```
 
 
-## Vektorkihi geomeetria parandamine
+## Vektorkihi geomeetria parandamine {#kihiparandus}
 
 Nägime, et vektorkihid võivad vahel olla geomeetriliselt vigased. Näiteks ristub polügooni piir iseendaga ja tekitab polügooni sisse "auke". Mõnikord võib juhtuda ka, et jooned ei lõppe õiges kohas ära või hoopis ei jõua õigesse kohta välja (näiteks ristmike puhul).  
 
