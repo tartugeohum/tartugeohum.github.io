@@ -2,12 +2,12 @@
 
 ## Euroopa ja maailma andmed
 
-Varasemates praktikumides oleme tegelenud sisuliselt ainult Eesti alaga. Sageli võib olla vaja aga visualiseerida andmeid ka teistest riikidest. Sellega käesolevas praktikumis tegelemegi. Laadime alla avaandmete praktikumist tuttavalt lehelt [Natural Earth Data](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/) maailma riikide (*Admin 0 - Countries*) ja linnade (*Populated places*) kihid. Pakime need lahti oma andmete kausta. Huvi korral võime ka lähemalt vaadata, mida andmetes täpsemalt kujutatakse, klikkides lingil *About | Issues | Version History*. 
+Varasemates praktikumides oleme tegelenud sisuliselt ainult Eesti alaga. Sageli võib olla vaja aga visualiseerida andmeid ka teistest riikidest. Sellega käesolevas praktikumis tegelemegi. Laadime alla avaandmete praktikumist tuttavalt lehelt [Natural Earth Data](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/) maailma riikide (*Admin 0 - Countries*) kihi. Pakime selle lahti oma andmete kausta. Huvi korral võime ka lähemalt vaadata, mida andmetes täpsemalt kujutatakse, klikkides lingil *About | Issues | Version History*. 
 
 
-Loeme esmalt sisse maailma riikide andmed. Kuna maailma andmestik on ulatuselt oluliselt suurem kui Eesti ala, millega seni tegelenud oleme, siis on vaja muuta ka koordinaatide referentssüsteemi. Natural Earth Data andmestikud on esitatud geograafilises koordinaatide referentssüsteemis *World Geodetic System* 1984 (WGS 84, EPSG:4326). Selleks, et andmeid korralikult näha, tuleb vahetada senikasutatud Eesti ametlik süsteem EPSG:3301 õige vastu. Selleks klikime all paremal nurgas projekti koordinaatsüsteemi tekstile ja otsime avanenud aknas *4326*.
+Loeme maailma riikide andmed QGISi. Kuna maailma andmestik on ulatuselt oluliselt suurem kui Eesti ala, millega seni tegelenud oleme, siis on vaja muuta ka koordinaatide referentssüsteemi. Natural Earth Data andmestikud on esitatud geograafilises koordinaatide referentssüsteemis *World Geodetic System* 1984 (WGS 84, EPSG:4326). Selleks, et andmeid korralikult näha, tuleb vahetada senikasutatud Eesti ametlik süsteem EPSG:3301 õige vastu. Selleks klikime all paremal nurgas projekti koordinaatsüsteemi tekstile ja otsime avanenud aknas *4326*.
 
-Nüüd peaks andmed õigesti näha olema. Vaatame mõlema andmestiku atribuuttabeleid ja ka riigipiire. Nagu näha, on riigipiirid olulised lihtsustatud, kuna see võimaldab teha andmemahtu väiksemaks ja töö seeläbi kiiremaks. Lisaks ei ole sellisel skaalal detailsus niivõrd oluline.
+Nüüd peaks andmed õigesti näha olema. Vaatame andmestiku atribuuttabelit ja ka riigipiire. Nagu näha, on riigipiirid oluliselt lihtsustatud, kuna see võimaldab teha andmemahtu väiksemaks ja töö seeläbi kiiremaks. Lisaks ei ole sellisel skaalal detailsus niivõrd oluline.
 
 
 ## Euroopa riikide filtreerimine
@@ -20,7 +20,7 @@ Kui riigid valitud, siis salvestame valiku ajutise kihina (*Edit → Copy Featur
 
 Mitmel Euroopa riigil on alasid ka Euroopa maailmajaost väljaspool, mis tulevad samuti valikuga kaasa. Vajadusel saab eraldiseisvad polügoonid ka kustutada. Proovides aga kustutada näiteks Prantsuse Guajaanat, kustub hetkel ka kogu Prantsusmaa, kuna kõiki ühele riigile kuuluvaid alasid käsitletakse selles andmestikus ühe objektina. Kustutades Venemaa, kustub ka Kaliningradi oblast Leedu ja Poola vahel. Sellise kihi tüüp on **_Multipolygon_**: mitu eraldiseisvat polügooni moodustavad ühe kokkukuuluva objekti. Soovides eraldiseisvaid polügoone kustutada, tuleb need kõigepealt eraldi objektideks teha. Selleks  
 
-- valime *Vector → Geometry Tools → Multipart to singleparts*,  
+- valime *Vector → Geometry Tools → __Multipart to singleparts__*,  
 - *Input layer* väärtuseks määrame varem tehtud ajutise Euroopa riikide kihi,  
 - vajutame *Run*.  
 - Vajutame nüüd *Single parts* kihi muutmiseks kollasel pliiatsil ja kustutame valiku tööriista abil ookeanidest kaugemad saarestikud,  
@@ -31,7 +31,7 @@ Vahetame projekti koordinaatide referentssüsteemi. Ülemaailmse EPSG:4326 aseme
 
 Kui nüüd *Single parts* kihi atribuuttabelit vaatame, näeme, et nüüd on suur osa riike jällegi mitme rea peal laiali, kuna iga eraldiseisev riigi osa on nüüd omaette objekt (nt Hiiumaa ja Saaremaa on eraldi polügoonid ja eraldi objektid). Võiksime need nüüd uuesti riikide ja omavalitsuslike alade (nt Fääri saared) kaupa multipolügoonideks ühendada. Selleks  
 
-- valime *Vector → Geometry Tools → Collect Geometries*,  
+- valime *Vector → Geometry Tools → __Collect Geometries__*,  
 - *Input layer* väärtuseks määrame *Single parts* kihi,  
 - *Unique ID fields* väärtuseks valime atribuudi *NAME*,  
 - vajutame *Run*.  
@@ -57,13 +57,13 @@ knitr::include_graphics(here::here("imgs", "13_euroopa.png"))
 
 Proovime visualiseerida sisemajanduslikku kogutoodangut inimese kohta nii riigi värvi kaudu kui ka diagrammina. 
 
-Värvime esmalt polügoonid avaldise abil, kus jagame GDP rahvaarvuga ning jaotame need väärtused sagedusklassidesse. Vaatame esmalt atribuuttabelit. Kas tahame näidata kõiki andmeid?
-Vatikani GPD real on arv -99. See ei tähenda, et Vatikani SKP oleks negatiivne, vaid nii märgitakse tabelis puuduvaid väärtusi. Võiksime niisiis Vatikani kaardil kuidagi eraldi kujutada. Samuti võiksime analüüsimata jätta Venemaa andmed.  
+Värvime esmalt polügoonid avaldise abil, kus jagame GDP rahvaarvuga ning jaotame need väärtused sagedusklassidesse. Vaatame atribuuttabelit. Kas tahame näidata kõiki andmeid?
+Vatikani GDP real on arv -99. See ei tähenda, et Vatikani SKP oleks negatiivne, vaid nii märgitakse tabelis puuduvaid väärtusi. Võiksime niisiis Vatikani kaardil kuidagi eraldi kujutada. Samuti võiksime analüüsimata jätta Venemaa andmed.  
 
 
 ### Ülesanne: polügoonide värvimine SKP/in põhjal
 
-Polügoonide värvimiseks selle põhjal, kui suur on vastava riigi SKP inimese kohta, võib lihtsalt kasutada avaldist, aga võime ka esmalt teha andmestikku uue ajutise tulba, et hiljem oleks vähem trükkimist. Uue tulba nimi võiks olla `gdp_pc` (*GDP per capita*), tüüp kümnendarv (*decimal number*) ja sinna võiksid minna väärtused, mille leiame avaldisega `"GDP_MD" / "POP_EST" * 1000000`. Vatikani ja Venemaa osade väärtused võiksid olla `NULL`. 
+Polügoonide värvimiseks selle põhjal, kui suur on vastava riigi SKP inimese kohta, võib kasutada kohe lihtsalt avaldist, aga võime ka esmalt teha andmestikku uue ajutise tulba, et hiljem oleks vähem trükkimist. Uue tulba nimi võiks olla `gdp_pc` (*GDP per capita*), tüüp kümnendarv (*decimal number*) ja sinna võiksid minna väärtused, mille leiame avaldisega `"GDP_MD" / "POP_EST" * 1000000`. Vatikani ja Venemaa osade väärtused võiksid olla `NULL`. See tähendab, et võiks kasutada *if*-tingimuslauset: **kui** tulbas `"NAME"` on väärtus `'Vatican'` või tulbas `"NAME"` on väärtus `'Russia'`, *'siis** pane tulpa `NULL`, **vastasel juhul** aga jaga GDP (millionites dollarites) läbi rahvaarvuga ja korruta saadud tulemus miljoniga.  
 
 
 Kui tulp on loodud, tuleks värvida polügoonid nii, et tekiksid nt järgmised sagedusklassid:  
@@ -78,7 +78,7 @@ Kui tulp on loodud, tuleks värvida polügoonid nii, et tekiksid nt järgmised s
 
 Lisaks tuleks eraldi reeglitega värvida Vatikan ja Venemaa osad, mida praegu Euroopa osadeks ei loe.  
 
-Kõige lihtsam on ilmselt alustada tavalisest *Graduated* värvimisest, valida sobiv värviskaala ja klasside arv ja andmed ära klassifitseerida. Seejärel saab muuta stiliseerimise tüübiks *Rule-based* ja sagedusklasside piiride reegeleid käsitsi muuta (klasside arv ja värviskaala on sel juhul juba olemas). Lisaks tuleks kirjutada kaks reeglit puuduvate klasside jaoks.   
+Kõige lihtsam on ilmselt alustada tavalisest *Graduated* värvimisest, valida sobiv värviskaala ja klasside arv ja andmed ära klassifitseerida. Seejärel saab muuta stiliseerimise tüübiks *Rule-based* ja sagedusklasside piiride reegleid käsitsi muuta (klasside arv ja värviskaala on sel juhul juba olemas). Lisaks tuleks kirjutada kaks reeglit puuduvate klasside jaoks.   
 
 ```{r euroskp, echo =F, fig.align='center', fig.show='hold', fig.cap = "SKP inimese kohta Euroopa riikides", out.width="70%"}
 knitr::include_graphics(here::here("imgs", "13_skp.png"))
@@ -116,13 +116,15 @@ Eemaldame Vatikani ja Venemaa diagrammid.
 
 Värvime riikide polügoonid mingit neutraalset värvi (*Single symbol*) ja ekspordime kaardi koos legendiga. 
 
-```{r diagrammeeurope, echo =F, fig.align='center', fig.show='hold', fig.cap = "SKP inimese kohta Euroopa riikides diagramidena. Ringi suurus näitab rahvaarvu."}
+```{r diagrammeeurope, echo =F, fig.align='center', fig.show='hold', fig.cap = "SKP inimese kohta Euroopa riikides diagrammidena. Ringi suurus näitab rahvaarvu."}
 knitr::include_graphics(here::here("imgs", "13_skp_valmis.png"))
 ```
 
-Praegusel juhul oleks tegelikult võinud kujundada diagrammide asemel ja lihtsalt mingit polügoonide keskpunktide (*Centroids*) kihti.  
+Praegusel juhul oleks tegelikult võinud kujundada diagrammide asemel ka lihtsalt mingit polügoonide keskpunktide (*Centroids*) kihti.  
 
-Kui aga tahta lihtsalt graafikuid, saab sedagi QGISis edukalt teha. Selleks võib kasutada *DataPlotly* pistikprogrammi (*Plugins → Manage and install plugins*). Proovime teha tulpdiagrammi (*Bar Plot*) riikide rahvaarvust ja sektordiagrammi Euroopa 4 eri regiooni rahvaarvust. 
+
+
+Kui tahta teha lihtsalt graafikuid, saab tegelikult sedagi QGISis teha. Selleks võib kasutada *DataPlotly* pistikprogrammi (*Plugins → Manage and install plugins*). Proovime teha tulpdiagrammi (*Bar Plot*) riikide rahvaarvust ja sektordiagrammi Euroopa 4 eri regiooni rahvaarvust. 
 
 DataPlotly diagramme saab lisada ka trükivaatesse (*Print Layout*).  
 
