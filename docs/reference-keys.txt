@@ -138,6 +138,11 @@ fig:colorblind
 fig:hiiumaa
 fig:hiiumaalabels
 fig:hiiumaavalmis
+fig:euroopa
+fig:euroskp
+fig:diagrammeexpression
+fig:diagrammeeurope
+fig:selectbylocation13
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
@@ -241,3 +246,11 @@ sildid
 kaardi-tegemine
 ülesanne
 järgmisel-korral-11
+maailm
+euroopa-ja-maailma-andmed
+euroopa-riikide-filtreerimine
+skpin-visualiseerimine
+ülesanne-polügoonide-värvimine-skpin-põhjal
+harjutus-skpin-kohta-diagrammidena-või-punktidena
+maailma-linnade-punktikiht
+järgmisel-korral-12

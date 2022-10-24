@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Praktikum 12 Värvid, sildid ja eksitamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
-  <meta name="description" content="Praktikum 12 Värvid, sildid ja eksitamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <title>Praktikum 13 Maailma ruumiandmed ja diagrammid | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 13 Maailma ruumiandmed ja diagrammid | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Praktikum 12 Värvid, sildid ja eksitamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:title" content="Praktikum 13 Maailma ruumiandmed ja diagrammid | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Praktikum 12 Värvid, sildid ja eksitamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="twitter:title" content="Praktikum 13 Maailma ruumiandmed ja diagrammid | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="andmekihtide_yhendamine.html"/>
-<link rel="next" href="maailm.html"/>
+<link rel="prev" href="varvid.html"/>
+<link rel="next" href="kirjandus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -286,173 +286,157 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="varvid" class="section level1 hasAnchor" number="12">
-<h1><span class="header-section-number">Praktikum 12</span> Värvid, sildid ja eksitamine<a href="varvid.html#varvid" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="eksitamine" class="section level2 hasAnchor" number="12.1">
-<h2><span class="header-section-number">12.1</span> Eksitamine<a href="varvid.html#eksitamine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Visuaalsete moonutustega üritatakse sageli näidata andmeid graafiku või kaardi koostaja jaoks sobiva nurga alt. Alberto Cairo <span class="citation">(<a href="kirjandus.html#ref-Cairo2019" role="doc-biblioref">Cairo 2019</a>)</span> on koostanud suurepärase raamatu <a href="http://albertocairo.com/">How Charts Lie</a>, mis õpetab lugejat eksitavaid graafikuid ja kaarte ära tundma. Ta eristab viis võimalust eksitamiseks:</p>
+<div id="maailm" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">Praktikum 13</span> Maailma ruumiandmed ja diagrammid<a href="maailm.html#maailm" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="euroopa-ja-maailma-andmed" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Euroopa ja maailma andmed<a href="maailm.html#euroopa-ja-maailma-andmed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Varasemates praktikumides oleme tegelenud sisuliselt ainult Eesti alaga. Sageli võib olla vaja aga visualiseerida andmeid ka teistest riikidest. Sellega käesolevas praktikumis tegelemegi. Laadime alla avaandmete praktikumist tuttavalt lehelt <a href="https://www.naturalearthdata.com/downloads/50m-cultural-vectors/">Natural Earth Data</a> maailma riikide (<em>Admin 0 - Countries</em>) ja linnade (<em>Populated places</em>) kihid. Pakime need lahti oma andmete kausta. Huvi korral võime ka lähemalt vaadata, mida andmetes täpsemalt kujutatakse, klikkides lingil <em>About | Issues | Version History</em>.</p>
+<p>Loeme esmalt sisse maailma riikide andmed. Kuna maailma andmestik on ulatuselt oluliselt suurem kui Eesti ala, millega seni tegelenud oleme, siis on vaja muuta ka koordinaatide referentssüsteemi. Natural Earth Data andmestikud on esitatud geograafilises koordinaatide referentssüsteemis <em>World Geodetic System</em> 1984 (WGS 84, EPSG:4326). Selleks, et andmeid korralikult näha, tuleb vahetada senikasutatud Eesti ametlik süsteem EPSG:3301 õige vastu. Selleks klikime all paremal nurgas projekti koordinaatsüsteemi tekstile ja otsime avanenud aknas <em>4326</em>.</p>
+<p>Nüüd peaks andmed õigesti näha olema. Vaatame mõlema andmestiku atribuuttabeleid ja ka riigipiire. Nagu näha, on riigipiirid olulised lihtsustatud, kuna see võimaldab teha andmemahtu väiksemaks ja töö seeläbi kiiremaks. Lisaks ei ole sellisel skaalal detailsus niivõrd oluline.</p>
+</div>
+<div id="euroopa-riikide-filtreerimine" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> Euroopa riikide filtreerimine<a href="maailm.html#euroopa-riikide-filtreerimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lõikame välja ainult Euroopa riigid. Riikide andmestikus on olemas tulp <em>Region_UN</em>, mille põhjal saamegi valida ainult riigid, mille väärtus tulbas on <em>Europe</em>. Kasutame selleks näiteks tööriista <em>Select Features by Value</em>. Riike võib mõistagi valida ka käsitsi, kasutades muid <em>Select</em> tööriistu.</p>
+<p>Kui riigid valitud, siis salvestame valiku ajutise kihina (<em>Edit → Copy Features</em>, <em>Edit → Paste Features As Temporary Scratch Layer</em>). Kustutame suure maailma riikide kihi.</p>
+<p>Mitmel Euroopa riigil on alasid ka Euroopa maailmajaost väljaspool, mis tulevad samuti valikuga kaasa. Vajadusel saab eraldiseisvad polügoonid ka kustutada. Proovides aga kustutada näiteks Prantsuse Guajaanat, kustub hetkel ka kogu Prantsusmaa, kuna kõiki ühele riigile kuuluvaid alasid käsitletakse selles andmestikus ühe objektina. Kustutades Venemaa, kustub ka Kaliningradi oblast Leedu ja Poola vahel. Sellise kihi tüüp on <strong><em>Multipolygon</em></strong>: mitu eraldiseisvat polügooni moodustavad ühe kokkukuuluva objekti. Soovides eraldiseisvaid polügoone kustutada, tuleb need kõigepealt eraldi objektideks teha. Selleks</p>
 <ul>
-<li>halvasti kujundamine,<br />
+<li>valime <em>Vector → Geometry Tools → Multipart to singleparts</em>,<br />
 </li>
-<li>kahtlased andmed,<br />
+<li><em>Input layer</em> väärtuseks määrame varem tehtud ajutise Euroopa riikide kihi,<br />
 </li>
-<li>ebapiisavad andmed,<br />
+<li>vajutame <em>Run</em>.<br />
 </li>
-<li>ebamäärasuse varjamine,<br />
+<li>Vajutame nüüd <em>Single parts</em> kihi muutmiseks kollasel pliiatsil ja kustutame valiku tööriista abil ookeanidest kaugemad saarestikud,<br />
 </li>
-<li>eksitavate mustrite esitamine või neile vihjamine.</li>
+<li>kui teeme kihil paremkliki ja valime <em>Zoom to layer</em> ning näeme sobivat ala, siis lõpetame kollasele pliiatsile klikkides muutmise.</li>
 </ul>
-<p>Halvasti kujundamise teel eksitamine võib esineda ka lihtsalt läbimõtlematusest. Suhteliselt minimaalselt eksitava kaardi heaks näiteks on “Aktuaalse kaamera” ilmakaart, kus mingil põhjusel on kõik eraldiseisvad Eesti osad (manner ja saared) värvitud idast läände tumerohelisest heleroheliseks. Mingit infot selline visualiseerimine tegelikult ei edasta, kuid võib panna vaataja mõtlema, kas sellega tahetakse öelda midagi ilma kohta.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:errilm"></span>
-<img src="imgs/12_err_ilm.png" alt="Kuvatõmmis &quot;Aktuaalse kaamera&quot; ilmakaardist" width="75%" />
-<p class="caption">
-Joonis 12.1: Kuvatõmmis “Aktuaalse kaamera” ilmakaardist
-</p>
-</div>
-<p>Kolmemõõtmelised graafikud (ja kohati ka kaardid) on sageli märk halvast visualiseerimisest või tahtlikust eksitamisest. Allpool oleval joonisel on esimesel kolmel 3D graafikul jäetud mulje, et firmal läheb väga hästi. Vaadates aga tavalistelt kahemõõtmelistelt graafikutelt samu andmeid, on reaalne olukord palju selgem. Joonise võimalikult hästi mõistmiseks tuleb kindlasti tähelepanu pöörata skaaladele. Kui tahetakse erinevusi või muutusi näidata suuremana, kui need tegelikult on, siis ei pruugi skaalad alata nullist, vaid koostajale sobivast arvust.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cairographs"></span>
-<img src="imgs/12_cairo_bar_3d.png" alt="Ettevõtte käekäik kolme- ja kahemõõtmelistel graafikutel [@Cairo2019, ptk 2]." width="40%" /><img src="imgs/12_cairo_pie_3d.png" alt="Ettevõtte käekäik kolme- ja kahemõõtmelistel graafikutel [@Cairo2019, ptk 2]." width="40%" /><img src="imgs/12_cairo_line_3d.png" alt="Ettevõtte käekäik kolme- ja kahemõõtmelistel graafikutel [@Cairo2019, ptk 2]." width="40%" /><img src="imgs/12_cairo_good_graphs.png" alt="Ettevõtte käekäik kolme- ja kahemõõtmelistel graafikutel [@Cairo2019, ptk 2]." width="40%" />
-<p class="caption">
-Joonis 12.2: Ettevõtte käekäik kolme- ja kahemõõtmelistel graafikutel <span class="citation">(<a href="kirjandus.html#ref-Cairo2019" role="doc-biblioref">Cairo 2019</a>, ptk 2)</span>.
-</p>
-</div>
-<p>Uudisteagentuurid kasutavad sageli eksitavaid graafikuid, mis sobituvad sõnumiga, mida nad soovivad edastada. Kuidas eksitavad näiteks allpool olevad graafikud?</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:foxnbc"></span>
-<img src="imgs/12_fox_christianity.png" alt="Kuvatõmmised Fox News ja NBC2 eksitavatest graafikutest" width="45%" /><img src="imgs/12_nbc_zika.jfif" alt="Kuvatõmmised Fox News ja NBC2 eksitavatest graafikutest" width="45%" />
-<p class="caption">
-Joonis 12.3: Kuvatõmmised Fox News ja NBC2 eksitavatest graafikutest
-</p>
-</div>
-<p>Graafikute puhul on kehtib üldiselt reegel, mida vähem asju seda selgem. Seda illustreerib hästi <a href="https://www.darkhorseanalytics.com/blog/data-looks-better-naked">Joey Cherdarchuki blogipostitus</a>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cleangraph"></span>
-<img src="imgs/12_chart_clarity.gif" alt="Graafiku selguse parandamine üleliigse eemaldamise kaudu" width="75%" />
-<p class="caption">
-Joonis 12.4: Graafiku selguse parandamine üleliigse eemaldamise kaudu
-</p>
-</div>
-<p>Kõik kaardid on siiski juba olemuslikult eksitavad või valed, kuna nagu oleme varem rääkinud, tekivad projektsioonide tõttu kaardile moonutused. Seda eksitamist peetakse aga üldjuhul aktsepteeritavaks, kuna see on tavaliselt teada. Kõige sagedamini eksitavad kaardid vale värviskaala ja selle ulatuse valikute tõttu, olgu see tahtlikult või kogemata.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:poverty"></span>
-<img src="imgs/12_cairo_PovertyBadA.png" alt="Vaesus USAs maakonniti. Ülemisel kaardil esitatakse andmed alahinnatult, keskmisel liialdatult ning alumisel võrdselt kõikide värvigruppide vahel ja keskmist arvesse võttes [@Cairo2019, ptk 2]." width="75%" /><img src="imgs/12_cairo_PovertyBadB.png" alt="Vaesus USAs maakonniti. Ülemisel kaardil esitatakse andmed alahinnatult, keskmisel liialdatult ning alumisel võrdselt kõikide värvigruppide vahel ja keskmist arvesse võttes [@Cairo2019, ptk 2]." width="75%" /><img src="imgs/12_cairo_PovertyGood.png" alt="Vaesus USAs maakonniti. Ülemisel kaardil esitatakse andmed alahinnatult, keskmisel liialdatult ning alumisel võrdselt kõikide värvigruppide vahel ja keskmist arvesse võttes [@Cairo2019, ptk 2]." width="75%" />
-<p class="caption">
-Joonis 12.5: Vaesus USAs maakonniti. Ülemisel kaardil esitatakse andmed alahinnatult, keskmisel liialdatult ning alumisel võrdselt kõikide värvigruppide vahel ja keskmist arvesse võttes <span class="citation">(<a href="kirjandus.html#ref-Cairo2019" role="doc-biblioref">Cairo 2019</a>, ptk 2)</span>.
-</p>
-</div>
-<p>Graafikute ja kaartide kvaliteet sõltub eelkõige aluseks olevate andmete asjakohasest kasutamisest. Oluline on eelnevalt veenduda andmete päritolus ja usaldatavuses. See on ka üks põhjus, miks lisame kursusel tehtud kaartidele viite Maa-ameti jt andmestikele.</p>
-</div>
-<div id="värvidest" class="section level2 hasAnchor" number="12.2">
-<h2><span class="header-section-number">12.2</span> Värvidest<a href="varvid.html#värvidest" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Andmete visualiseerimisel tuleb alati tähelepanu pöörata sellele, et kasutatud värvivalik ja skaala võimalikult hästi ja kõigile arusaadavalt infot edastaks. Värviskaalaga kaarti, joonist või graafikut vaadates peaks olema selge ülevaade andmete ulatusest ning üldiselt ei tohiks ühtegi väärtust (eriti neid, mis pole äärmustes) petlikult rõhutada.</p>
-<p>Värvivaliku puhul tuleb ka arvestada, kuidas näevad seda <a href="https://en.wikipedia.org/wiki/Color_blindness">värvipimedad</a> või kuidas jääks sama skaala näha mustvalgena (näiteks trükitult). Sel teemal ilmusid paar aastat tagasi mh ka artiklid <a href="https://www.nature.com/articles/s41467-020-19160-7">The misuse of colour in science communication</a> <span class="citation">(<a href="kirjandus.html#ref-Crameri2020" role="doc-biblioref">Crameri et al. 2020</a>)</span> ja <a href="https://ieeexplore.ieee.org/document/9167329">The Importance of Colormaps</a> <span class="citation">(<a href="kirjandus.html#ref-Thyng2020" role="doc-biblioref">Thyng 2020</a>)</span>. Vaata lisaks <a href="http://www.fabiocrameri.ch/colourmaps.php">fabiocrameri.ch/colourmaps.php</a>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cramerifig2"></span>
-<img src="imgs/12_crameri_fig2.webp" alt="Erinevate värviskaalade nähtavus sagedate värvipimeduste korral [@Crameri2020, fig 2]." width="75%" />
-<p class="caption">
-Joonis 12.6: Erinevate värviskaalade nähtavus sagedate värvipimeduste korral <span class="citation">(<a href="kirjandus.html#ref-Crameri2020" role="doc-biblioref">Crameri et al. 2020</a>, fig 2)</span>.
-</p>
-</div>
-<p>Üldiselt on soovitatav vältida ka liiga erksaid ning kontrastseid värve nii esteetilistel põhjustel kui ka seetõttu, et need võivad varjata muud infot. Erinevat tüüpi andmete jaoks värvide valimisel on abiks <a href="https://colorbrewer2.org/">colorbrewer2.org</a>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:colorblind"></span>
-<img src="imgs/12_colorblindness.png" alt="Värvipimeduse leviku kaart kontolt [Terrible Maps](https://twitter.com/TerribleMaps/status/1445521494331703304)" width="75%" />
-<p class="caption">
-Joonis 12.7: Värvipimeduse leviku kaart kontolt <a href="https://twitter.com/TerribleMaps/status/1445521494331703304">Terrible Maps</a>
-</p>
-</div>
-</div>
-<div id="visualiseerimine" class="section level2 hasAnchor" number="12.3">
-<h2><span class="header-section-number">12.3</span> Visualiseerimine<a href="varvid.html#visualiseerimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Katsetame andmete erineva visualiseerimisega. Avame kihi <em>asustusyksus_malestised.gpkg</em>, kus on lisaks asustusüksustele kirjas ka mälestiste arv liikide kaupa (ajaloolised, arheoloogilised, kunstimälestised). Tegemist on lihtsustatud andmestikuga, kus kultuurimälestisi, mis kuuluvad mitmesse liiki, on loetud korduvalt. See tähendab, et juba eksitame kaardil paratamatult juba andmestiku valikust tulenevalt.</p>
-<ol style="list-style-type: decimal">
-<li>Värvime asustusüksused vastavalt vabalt valitud väärtusele.<br />
-</li>
-<li>Valime välja ühe valla, millest soovime kaarti teha, ja teeme sellest eraldi kihi.<br />
-</li>
-<li>Värvime valla polügoonid vastavalt mingile tunnusele andmestikus. Katsetame erinevaid visualiseerimisviise.</li>
-</ol>
-<p>Nagu silte, saab igale kihi elemendile lisada ka graafikuid. Lisame sektordiagrammi, mis näitab, kuidas mälestised igas uuritava valla asustusüksuses liigiti jagunevad. Selleks</p>
+<p>Vahetame projekti koordinaatide referentssüsteemi. Ülemaailmse EPSG:4326 asemel valime referentssüsteemiks <strong>ETRS89-extended / LCC Europe EPSG 3034</strong>, mis on sobilik kogu Euroopa alaga töötamiseks.</p>
+<p>Kui nüüd <em>Single parts</em> kihi atribuuttabelit vaatame, näeme, et nüüd on suur osa riike jällegi mitme rea peal laiali, kuna iga eraldiseisev riigi osa on nüüd omaette objekt (nt Hiiumaa ja Saaremaa on eraldi polügoonid ja eraldi objektid). Võiksime need nüüd uuesti riikide ja omavalitsuslike alade (nt Fääri saared) kaupa multipolügoonideks ühendada. Selleks</p>
 <ul>
-<li>klikime tööriistal <em>Layer Diagram Options</em>,<br />
+<li>valime <em>Vector → Geometry Tools → Collect Geometries</em>,<br />
 </li>
-<li>valime graafikutüübiks <em>Pie Chart</em>,<br />
+<li><em>Input layer</em> väärtuseks määrame <em>Single parts</em> kihi,<br />
 </li>
-<li><em>Attributes</em> jaotises valime tunnused <em>ajalugu</em>, <em>arheo</em>, <em>arhitek</em> ja <em>kunst</em> ning vajutame rohelisel ristikesel,<br />
+<li><em>Unique ID fields</em> väärtuseks valime atribuudi <em>NAME</em>,<br />
 </li>
-<li>määrame igale tunnusele oma värvi,<br />
-</li>
-<li><em>Size</em> jaotises valime <em>Scaled size</em> alt <em>Attribute</em> väärtuseks <em>kokku</em>, leiame maksimaalse väärtuse ja määrame sobiva suuruse (nt 6), teeme linnukese ka valiku <em>Increase size of small diagrams</em> ette ja määrame miinimumsuuruseks nt 2.<br />
-</li>
-<li>Vajutame <em>Apply</em>.</li>
+<li>vajutame <em>Run</em>.</li>
 </ul>
-<p>Selleks, et kaotada ära tühje diagramme nendest küladest, kust tegelikult ühtegi kultuurimälestist ei ole, liigume jaotisse <em>Rendering → Visibility</em>, <em>Show diagram</em> juures vajutame sümbolil ja valime <em>Field type</em> väärtuseks atribuudi <em>kokku</em>. Vajutame <em>OK</em>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hiiumaa"></span>
-<img src="imgs/12_hiiumaa_asustus.png" alt="Hiiumaa kultuurimälestised" width="100%" />
-<p class="caption">
-Joonis 12.8: Hiiumaa kultuurimälestised
-</p>
-</div>
-<div id="sildid" class="section level3 hasAnchor" number="12.3.1">
-<h3><span class="header-section-number">12.3.1</span> Sildid<a href="varvid.html#sildid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Sageli on olukordi, kus andmetele on vaja lisada silte, kuid need asuvad tihedalt koos ega paista seetõttu hästi välja. Siin on abiks tööriist <em>callouts</em> (ee k <em>viiktekstid</em>), mis võimaldab joonte abil objekti sildi selle keskpunktist ja/või teistest siltidest kaugemale asetada.</p>
+<p>Jätame lõpuks atribuuttabelisse alles ainult tulbad <code>SOVEREIGNT</code>, <code>TYPE</code>, <code>NAME</code>, <code>POP_EST</code>, <code>GDP_MD</code> ja <code>SUBREGION</code>. Selleks</p>
 <ul>
-<li>Teeme kihil topeltkliki → <em>Labels → Single labels</em>.<br />
+<li>teeme kihil topeltkliki,<br />
 </li>
-<li>Lisame sildid ainult nendele küladele, kust on vähemalt 11 mälestist: <em>Value</em> kasti kirjutame avaldise <code>if("kokku" &gt; 10, "ANIMI", NULL)</code>.<br />
+<li>jaotises <em>Fields</em> vajutame kihi muutmiseks kollasel pliiatsil,<br />
 </li>
-<li>Liigume jaotisesse <em>Callouts</em> ja teeme linnukese valiku <em>Draw callouts</em> ette. Vajutame <em>OK</em>.<br />
+<li>vajutame mingil atribuudil ja valime kõik tulbad (<code>Ctrl+A</code>),<br />
 </li>
-<li>Peaaknas klikime ikoonil <em>Moves a layer or diagramm</em> <img src="imgs/12_movelabel.png" />, klikime siltidel, mida tahame liigutada, ja veame need sobivasse kohta.</li>
+<li><code>Ctrl</code>-nuppu all hoides teeme mitteaktiivseks tulbad <code>SOVEREIGNT</code>, <code>TYPE</code>, <code>NAME</code>, <code>POP_EST</code>, <code>GDP_MD</code> ja <code>SUBREGION</code>,<br />
+</li>
+<li>vajutame tulba kustutamise nupul <em>Delete field</em>,<br />
+</li>
+<li>vajutame muutmise lõpetamiseks uuesti kollasel pliiatsil.</li>
 </ul>
-<p>Siltidele võib lisada ka puhvrid, mis toovad need need paremini muude andmete taustal välja. Samamoodi saab neile lisada varjud.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hiiumaalabels"></span>
-<img src="imgs/12_hiiumaa_labels.png" alt="Hiiumaa kultuurimälestised siltidega" width="70%" />
+<p>Salvestame tulemuse faili nimega <em>euroopa_riigid.gpkg</em>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:euroopa"></span>
+<img src="imgs/13_euroopa.png" alt="Euroopa riigid" width="100%" />
 <p class="caption">
-Joonis 12.9: Hiiumaa kultuurimälestised siltidega
+Joonis 13.1: Euroopa riigid
 </p>
 </div>
 </div>
-<div id="kaardi-tegemine" class="section level3 hasAnchor" number="12.3.2">
-<h3><span class="header-section-number">12.3.2</span> Kaardi tegemine<a href="varvid.html#kaardi-tegemine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Kui oleme andmete visualiseerimisega valmis saanud, avame kaardi tegemiseks <em>Print Layout</em> ja lisame peaaknas oleva kaardi. Kaart näeb sageli parem välja, kui see ei ulatu päris servani, vaid jäetud on väike äär. Selleks, et kaardi elemente paremini paigutada, lülita sisse <em>View</em> alt <em>Show grid</em> ja <em>Snap to grid</em>.</p>
-<p>Kui tegemist on väljavõttega mingist suuremast alast, siis võib olla kasulik näidata, kus praegune vaade üldisemalt paikneb. Seda saab teha <em>Overview</em> abil. Selleks</p>
+<div id="skpin-visualiseerimine" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> SKP/in visualiseerimine<a href="maailm.html#skpin-visualiseerimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Proovime visualiseerida sisemajanduslikku kogutoodangut inimese kohta nii riigi värvi kaudu kui ka diagrammina.</p>
+<p>Värvime esmalt polügoonid avaldise abil, kus jagame GDP rahvaarvuga ning jaotame need väärtused sagedusklassidesse. Vaatame esmalt atribuuttabelit. Kas tahame näidata kõiki andmeid?
+Vatikani GPD real on arv -99. See ei tähenda, et Vatikani SKP oleks negatiivne, vaid nii märgitakse tabelis puuduvaid väärtusi. Võiksime niisiis Vatikani kaardil kuidagi eraldi kujutada. Samuti võiksime analüüsimata jätta Venemaa andmed.</p>
+<div id="ülesanne-polügoonide-värvimine-skpin-põhjal" class="section level3 hasAnchor" number="13.3.1">
+<h3><span class="header-section-number">13.3.1</span> Ülesanne: polügoonide värvimine SKP/in põhjal<a href="maailm.html#ülesanne-polügoonide-värvimine-skpin-põhjal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Polügoonide värvimiseks selle põhjal, kui suur on vastava riigi SKP inimese kohta, võib lihtsalt kasutada avaldist, aga võime ka esmalt teha andmestikku uue ajutise tulba, et hiljem oleks vähem trükkimist. Uue tulba nimi võiks olla <code>gdp_pc</code> (<em>GDP per capita</em>), tüüp kümnendarv (<em>decimal number</em>) ja sinna võiksid minna väärtused, mille leiame avaldisega <code>"GDP_MD" / "POP_EST" * 1000000</code>. Vatikani ja Venemaa osade väärtused võiksid olla <code>NULL</code>.</p>
+<p>Kui tulp on loodud, tuleks värvida polügoonid nii, et tekiksid nt järgmised sagedusklassid:</p>
 <ul>
-<li>lukustame esmalt valla kaardistiili: <em>Item Properties → Layers</em>, teeme linnukese <em>Lock layers</em> ja <em>Lock styles for layers</em> ette.<br />
+<li>3000-10000,<br />
 </li>
-<li>Seejärel lisame trükivaatesse uue kaardi tervest Eesti alast, ilma et Hiiumaa kiht näha oleks.<br />
+<li>10000-20000,<br />
 </li>
-<li>Valime Eesti ala kaardi <em>Item properties</em> alt <em>Overviews</em> → roheline plussmärk → <em>Draw “Overview 1” overview</em> → <em>Map frame</em> → Map 1.<br />
+<li>20000-30000,<br />
 </li>
-<li>Lisame ülevaatekaardile ka taustavärvi (<em>Item Properties → Background</em>) ja raami (<em>Item Properties → Frame</em>).</li>
+<li>30000-40000,<br />
+</li>
+<li>40000-50000,<br />
+</li>
+<li>50000-60000,<br />
+</li>
+<li>&gt; 60000</li>
 </ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hiiumaavalmis"></span>
-<img src="imgs/12_hiiumaa_valmis.png" alt="Valmis kaart" width="100%" />
+<p>Lisaks tuleks eraldi reeglitega värvida Vatikan ja Venemaa osad, mida praegu Euroopa osadeks ei loe.</p>
+<p>Kõige lihtsam on ilmselt alustada tavalisest <em>Graduated</em> värvimisest, valida sobiv värviskaala ja klasside arv ja andmed ära klassifitseerida. Seejärel saab muuta stiliseerimise tüübiks <em>Rule-based</em> ja sagedusklasside piiride reegeleid käsitsi muuta (klasside arv ja värviskaala on sel juhul juba olemas). Lisaks tuleks kirjutada kaks reeglit puuduvate klasside jaoks.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:euroskp"></span>
+<img src="imgs/13_skp.png" alt="SKP inimese kohta Euroopa riikides" width="70%" />
 <p class="caption">
-Joonis 12.10: Valmis kaart
+Joonis 13.2: SKP inimese kohta Euroopa riikides
 </p>
 </div>
-<p>Vajadusel saab eksporditavale kaardile lisada ka atribuuttabeli: <em>Add item → Attribute table</em>.<br />
-<em>Item properties</em> alt saab valida, milliseid tulpasid ja kuidas näidata.</p>
 </div>
-</div>
-<div id="ülesanne" class="section level2 hasAnchor" number="12.4">
-<h2><span class="header-section-number">12.4</span> Ülesanne<a href="varvid.html#ülesanne" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Leidke endale paariline. Iga paar saab endale kahe peale ühe andmestiku.</p>
+<div id="harjutus-skpin-kohta-diagrammidena-või-punktidena" class="section level3 hasAnchor" number="13.3.2">
+<h3><span class="header-section-number">13.3.2</span> Harjutus: SKP/in kohta diagrammidena või punktidena<a href="maailm.html#harjutus-skpin-kohta-diagrammidena-või-punktidena" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Visualiseerime sama asja ka diagrammidena.</p>
 <ul>
-<li>Tartu linna <a href="https://geohub.tartulv.ee/maps/yp2040-miljoo-muinsuskaitse-avaandmed/about">kalmistud</a> (polügoonid) ja <a href="https://geohub.tartulv.ee/maps/ka-malestis/about">kalmistutele maetud kultuurilooliste isikud</a> (polügoonid),
-<ul>
-<li>kuupäevadega töötamiseks on kasulikud <em>Date and Time</em> jaotise funktsioonid ja avaldised, näiteks võimaldab funktsioon <code>age()</code> arvutada välja kellegi vanuse ja funktsioon <code>year()</code> teisendada vanus päevades või lihtsalt ka mingi kuupäev ainult aastateks.</li>
-</ul></li>
-<li>Tartu linna <a href="https://geohub.tartulv.ee/maps/yp2040-ruumiline-areng-avaandmed/about">rahvastiku ja eluruumide prognoos</a> (polügoonid),<br />
+<li>Teeme Euroopa kihist koopia (paremklikk → <em>Duplicate Layer</em>).<br />
 </li>
-<li>Tuntud eestlaste või Eestiga seotud isikute andmed, mis on aluseks rakendusele <a href="https://tjukanovt.github.io/notable-people?fbclid=IwAR0PPqeqBJNJGXMMQ0avraSaSOwm05xIxouUWhiLbeQ1Te9gBVnvwGC3i3U">Notable people</a> (punktid). Terve andmestiku viide ja allalaadimise link <a href="https://data.sciencespo.fr/dataset.xhtml?persistentId=doi:10.21410/7E4/RDAG3O">siin</a>, andmestiku tutvustus <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9184645/">siin</a>.
-<ul>
-<li>andmestikku sisse lugedes tasub mõelda, kas olulisemad on inimeste sünni- või surmakohad, mille koordinaadid vastavalt tulpades <code>bplo1</code> (<em>birth place longitude</em>) ja <code>bpla1</code> (<em>birth place latitude</em>) ning <code>dplo1</code> (<em>death place longitude</em>) ja <code>dpla1</code> (<em>death place latitude</em>).</li>
-</ul></li>
+<li>Teeme koopia kihil topeltkliki ja valime <em>Diagrams → Pie chart → Attributes</em>.<br />
+</li>
+<li>Lisame <em>Assigned attributes</em> juurde samad avaldised, mida kasutasime eelmises kihis riikide värvimiseks. Kui tahta värvida diagramme samade värvidega nagu polügoone, saab kasutada näiteks <em>color picker</em> tööriista.</li>
 </ul>
-<p>Ülesanne on mõelda välja üks või paar teemat, mida andmete põhjal saaks kaardil kujutada ning kujundada üks kaart nii, et andmed oleksid esitatud <strong>võimalikult hästi</strong> ja täpselt, võttes arvesse nii vajalikke/ebavajalikke elemente, skaalasid, värve jm-d, ja teine kaart nii, et andmed oleksid esitatud <strong>halvasti ja eksitavalt</strong>. Selleks, et tekiksid konkreetsed võrdlusalused, võiks esmalt paaris kokku leppida, mis elementidega mängitakse ja mis põhimõtetel andmeid esitatakse.</p>
-<p>Lubatud (mõnel juhul isegi soovitatud) on andmetest vaid mingite alamhulkade kujutamine, samuti võib muuta kihi ruumikujusid (näiteks väikeste polügoonide asemel kujutada nende polügoonide keskpunkte või punktide asemel kujutada polügoonidena nendesse jäävate punktide arvu).</p>
-<p>Praktikumi lõpus tutvustage paar minutit enda andmeid ja kaarte.</p>
+<p>Nagu näha, katavad mõned diagrammid kogu riigi ning varjavad ka teisi diagramme.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:diagrammeexpression"></span>
+<img src="imgs/13_diagram1.png" alt="Diagrammid avaldistega" width="80%" />
+<p class="caption">
+Joonis 13.3: Diagrammid avaldistega
+</p>
 </div>
-<div id="järgmisel-korral-11" class="section level2 hasAnchor" number="12.5">
-<h2><span class="header-section-number">12.5</span> Järgmisel korral<a href="varvid.html#järgmisel-korral-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Maailma ruumiandmed ja diagrammid.</p>
+<p>Paneme diagrammi suuruse sõltuma riigi rahvaarvust. Lisaks tuleb määrata neile ka miinimumsuurus, et väiksema rahvaarvuga riikide diagrammid oleksid nähtavad.</p>
+<ul>
+<li>Valime <em>Layer Diagram</em> tööriistas <em>Size</em> jaotise.<br />
+</li>
+<li><em>Size units</em> väärtuseks valime <em>Scaled size</em>, mis võimaldab diagrammide suurusi muuta vastavalt mingile tunnusele andmestikus.<br />
+</li>
+<li><em>Attribute</em> väärtuseks valime <em>POP_EST</em>.<br />
+</li>
+<li><em>Maximum value</em> väärtuseks määrame 99 999 999.<br />
+</li>
+<li><em>Size</em> väärtuseks määrame 15 mm.<br />
+</li>
+<li>Teeme linnukese valiku <em>Increase size of small diagrams</em> ette ja määrame miinimumsuuruseks 1 mm.</li>
+</ul>
+<p>Eemaldame Vatikani ja Venemaa diagrammid.</p>
+<ul>
+<li><em>Layer Diagram</em> tööriist → <em>Rendering → Visibility → Show diagram → Expression → Edit</em>, kirjutame <code>"NAME" IS NOT 'Vatican' AND "NAME" IS NOT 'Russia'</code>.</li>
+</ul>
+<p>Värvime riikide polügoonid mingit neutraalset värvi (<em>Single symbol</em>) ja ekspordime kaardi koos legendiga.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:diagrammeeurope"></span>
+<img src="imgs/13_skp_valmis.png" alt="SKP inimese kohta Euroopa riikides diagramidena. Ringi suurus näitab rahvaarvu." width="1559" />
+<p class="caption">
+Joonis 13.4: SKP inimese kohta Euroopa riikides diagramidena. Ringi suurus näitab rahvaarvu.
+</p>
+</div>
+<p>Praegusel juhul oleks tegelikult võinud kujundada diagrammide asemel ja lihtsalt mingit polügoonide keskpunktide (<em>Centroids</em>) kihti.</p>
+<p>Kui aga tahta lihtsalt graafikuid, saab sedagi QGISis edukalt teha. Selleks võib kasutada <em>DataPlotly</em> pistikprogrammi (<em>Plugins → Manage and install plugins</em>). Proovime teha tulpdiagrammi (<em>Bar Plot</em>) riikide rahvaarvust ja sektordiagrammi Euroopa 4 eri regiooni rahvaarvust.</p>
+<p>DataPlotly diagramme saab lisada ka trükivaatesse (<em>Print Layout</em>).</p>
+</div>
+</div>
+<div id="maailma-linnade-punktikiht" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">13.4</span> Maailma linnade punktikiht<a href="maailm.html#maailma-linnade-punktikiht" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Impordime nüüd QGISi ka <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places.zip">maailma suuremate linnade kihi</a>. Eraldame sealt ainult Euroopa andmepunktid. Võime kasutada tööriista <em>Select by Location</em>, et valida ainult neid punkte, mis jäävad meie Euroopa kihi piiridesse.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:selectbylocation13"></span>
+<img src="imgs/13_selectbylocation.png" alt="Euroopa punktide valimine" width="60%" />
+<p class="caption">
+Joonis 13.5: Euroopa punktide valimine
+</p>
+</div>
+<p>Värvime punktid vastavalt rahvastiku arvule (<code>POP_MAX</code>). Kuhu tundub Euroopa rahvastik koonduvat? Lähemalt vaatame punktimustrite analüüsi geostatistika praktikumides.</p>
+</div>
+<div id="järgmisel-korral-12" class="section level2 hasAnchor" number="13.5">
+<h2><span class="header-section-number">13.5</span> Järgmisel korral<a href="maailm.html#järgmisel-korral-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sissejuhatus geograafilisse tekstianalüüsi.</p>
 
 </div>
 </div>
@@ -461,8 +445,8 @@ Joonis 12.10: Valmis kaart
           </div>
         </div>
       </div>
-<a href="andmekihtide_yhendamine.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="maailm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="varvid.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
