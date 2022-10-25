@@ -47,6 +47,9 @@ vignettes/*.pdf
 # Files
 *_files/
 
+# Course work catalog
+/Lopuprojekt/
+
 # csl-files
 *.csl
 

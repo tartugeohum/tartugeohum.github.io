@@ -63,7 +63,7 @@ Vatikani GDP real on arv -99. See ei tähenda, et Vatikani SKP oleks negatiivne,
 
 ### Ülesanne: polügoonide värvimine SKP/in põhjal
 
-Polügoonide värvimiseks selle põhjal, kui suur on vastava riigi SKP inimese kohta, võib kasutada kohe lihtsalt avaldist, aga võime ka esmalt teha andmestikku uue ajutise tulba, et hiljem oleks vähem trükkimist. Uue tulba nimi võiks olla `gdp_pc` (*GDP per capita*), tüüp kümnendarv (*decimal number*) ja sinna võiksid minna väärtused, mille leiame avaldisega `"GDP_MD" / "POP_EST" * 1000000`. Vatikani ja Venemaa osade väärtused võiksid olla `NULL`. See tähendab, et võiks kasutada *if*-tingimuslauset: **kui** tulbas `"NAME"` on väärtus `'Vatican'` või tulbas `"NAME"` on väärtus `'Russia'`, *'siis** pane tulpa `NULL`, **vastasel juhul** aga jaga GDP (millionites dollarites) läbi rahvaarvuga ja korruta saadud tulemus miljoniga.  
+Polügoonide värvimiseks selle põhjal, kui suur on vastava riigi SKP inimese kohta, võib kasutada kohe lihtsalt avaldist, aga võime ka esmalt teha andmestikku uue ajutise tulba, et hiljem oleks vähem trükkimist. Uue tulba nimi võiks olla `gdp_pc` (*GDP per capita*), tüüp kümnendarv (*decimal number*) ja sinna võiksid minna väärtused, mille leiame avaldisega `"GDP_MD" / "POP_EST" * 1000000`. Vatikani ja Venemaa osade väärtused võiksid olla `NULL`. See tähendab, et võiks kasutada *if*-tingimuslauset: **kui** tulbas `"NAME"` on väärtus `'Vatican'` või tulbas `"NAME"` on väärtus `'Russia'`, **siis** pane tulpa `NULL`, **vastasel juhul** aga jaga GDP (miljonites dollarites) läbi rahvaarvuga ja korruta saadud tulemus miljoniga.  
 
 
 Kui tulp on loodud, tuleks värvida polügoonid nii, et tekiksid nt järgmised sagedusklassid:  
