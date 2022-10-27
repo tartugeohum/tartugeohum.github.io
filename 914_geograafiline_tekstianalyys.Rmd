@@ -203,6 +203,14 @@ Võime punkte visualiseerida ka nii, et näitame suuremalt korduvalt esinevaid n
 knitr::include_graphics(here::here("imgs", "14_countpoints.png"))
 ```
 
+Sellisel juhul saame *Symbology* jaotises valida *Marker → Size*, vajutada paremas ääres oleval kastil ![](imgs/14_editsize.png) ja valida *Field type* väärtuseks loodud tulp *count*.  
+
+Teine variant on kasutada punkti suuruse visualiseerimiseks kohe geokodeeritud kihi *Symbology* jaotises avaldist `count("name", group_by:="name")`, ilma uut kihti tekitamata. Selleks vali kastikesel klikkides *Expression → Edit* ja sisesta avaldis.  
+
+```{r counpoints2, echo=F, fig.align="center", fig.cap="Korduvate punktide kokkulugemine ilma uut kihti tekitamata", out.width="70%"}
+knitr::include_graphics(here::here("imgs", "14_countpoints2.png"))
+```
+
 
 ## Järgmisel korral
 

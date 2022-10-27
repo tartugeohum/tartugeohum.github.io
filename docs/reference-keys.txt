@@ -153,6 +153,7 @@ fig:london
 fig:mappinglakes2
 fig:mmqgis
 fig:counpoints
+fig:counpoints2
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
