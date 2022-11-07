@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Praktikum 2 Seminar | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
-  <meta name="description" content="Praktikum 2 Seminar | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <title>Praktikum 15 Geograafiline tekstianalüüs (2) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 15 Geograafiline tekstianalüüs (2) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Praktikum 2 Seminar | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:title" content="Praktikum 15 Geograafiline tekstianalüüs (2) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Praktikum 2 Seminar | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="twitter:title" content="Praktikum 15 Geograafiline tekstianalüüs (2) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="ruumiobjektid.html"/>
+<link rel="prev" href="tekstianalyys.html"/>
+<link rel="next" href="kirjandus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -311,80 +311,207 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="seminar" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Praktikum 2</span> Seminar<a href="seminar.html#seminar" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="mõisted" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Mõisted<a href="seminar.html#mõisted" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Mõne artiklites kasutatud mõiste seletusi:</p>
+<div id="tekstianalyys2" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Praktikum 15</span> Geograafiline tekstianalüüs (2)<a href="tekstianalyys2.html#tekstianalyys2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Tänases praktikumis tegeleme geograafilise tekstianalüüsiga, katsetades eesti keele automaattöötluseks loodud vahendeid. Nagu eelmises praktikumis mainitud, sisaldub selleks kõige põhjalikum tööriistade komplekt Pythoni <strong>EstNLTK</strong> teekides.</p>
+<p>Kasutame geograafilise tekstianalüüsi näitlikustamiseks <a href="https://stenogrammid.riigikogu.ee/et">Riigikogu istungite stenogramme</a>. Selle praktikumi jaoks oleme kraapinud veebist nende istungite protokollid, mis on toimunud vahemikus 01.01.2020 ja 01.11.2022.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="imgs/15_stenogrammid.png" alt="Riigikogu istungite stenogrammid veebilehel" width="80%" />
+<p class="caption">
+Joonis 15.1: Riigikogu istungite stenogrammid veebilehel
+</p>
+</div>
+<p>Kõik protokollid on Moodle’is praktikumi materjalide kaustas eraldi alamkaustas nimega <strong><em>stenogrammid.zip</em></strong>. Samuti on materjalide hulgas kraapimiseks kasutatud R-i skript.</p>
+<p>Tänases ülesandes</p>
+<ol style="list-style-type: decimal">
+<li>leiame, <strong>milliseid kohanimeüksusi</strong> on istungi protokollis mainitud;<br />
+</li>
+<li>analüüsime, milline on kohanimeüksust sisaldava <strong>tekstikatkendi meelsus</strong>: kas tekst on pigem positiivne, negatiivne või neutraalne;<br />
+</li>
+<li><strong>puhastame</strong> andmestiku;<br />
+</li>
+<li><strong>geokodeerime</strong> kohanimeüksused;<br />
+</li>
+<li><strong>visualiseerime</strong> andmeid.</li>
+</ol>
+<div id="kohanimeüksuste-ja-tekstikatkendite-meelsuse-tuvastamine" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Kohanimeüksuste ja tekstikatkendite meelsuse tuvastamine<a href="tekstianalyys2.html#kohanimeüksuste-ja-tekstikatkendite-meelsuse-tuvastamine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kohanimeüksuste automaatseks tuvastamiseks ning nende vahetu konteksti eraldamiseks tekstist kasutame EstNLTK analüüsivahendeid. Selleks, et Pythoni installimiselt ning skriptide kirjutamiselt aega kokku hoida, kasutame praktikumis <strong><a href="https://colab.research.google.com/drive/1K8wftl_g9PC9psobw9-lcUwoF1ukM90y?usp=sharing">Google Colabi</a></strong>, mille kaudu saame jooksutada juba valmis kirjutatud skripti. Kui soovid eesti keele automaattöötluse kohta rohkem õppida, on suureks abiks <a href="https://github.com/estnltk/estnltk">EstNLTK õppematerjalid</a> (kaustas <em>tutorials</em>) ja TÜ kursus “<a href="https://github.com/d009/EstNLP">Eesti keele töötlus Pythonis</a>”.</p>
+<p>Meelsusanalüüsiks kasutame siin Eesti Keele Instituudi <a href="http://peeter.eki.ee:5000/valence">emotsioonidetektorit</a>, mille aluseks olev Pythoni kood on üleval GitHubi lehel <a href="https://github.com/EKT1/valence/" class="uri">https://github.com/EKT1/valence/</a>. Sama kausta materjalid on ka Moodle’is failis <em>valence-master.zip</em>. Emotsioonidetektori kohta saad lugeda artiklist <em><a href="http://www.folklore.ee/folklore/vol64/polarity.pdf">Pajupuu, Hille; Altrov, Rene; Pajupuu, Jaan (2016). Identifying polarity in different text types. Folklore. Electronic Journal of Folklore, 64, 25−42</a></em>.</p>
+<p>Koodi jooksutamiseks vajuta koodiplokkide vasakus servas oleval noolekesel. Kui midagi skripti jooksutamisel ei tööta, on praktikumi materjalides kaasas ka ühe näidisfaili (<em>202106091400.csv</em>) analüüsid (kaustas <em>kohanimed_valmis</em>).</p>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="3%" />
+<col width="89%" />
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">kohanime_vorm</th>
+<th align="left">kohanime_lemma</th>
+<th align="left">kontekst</th>
+<th align="left">meelsus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Eestis</td>
+<td align="left">Eesti</td>
+<td align="left">esmaspäeval kinnitasime nädala töökava ja sinna hulka oli märgitud ka Sotsiaaldemokraatliku Erakonna fraktsiooni algatatud olulise tähtsusega riikliku küsimuse ” Ebavõrdsus Eestis – kas vaesusest saab välja kärpida ? ” arutelu . Ettekandjaks oli määratud majandusanalüütik Madis Aben . Me teame .</td>
+<td align="left">positive</td>
+</tr>
+<tr class="even">
+<td align="left">Viljandimaalt</td>
+<td align="left">Viljandimaa</td>
+<td align="left">oleks mõeldav ? Sest inimestele peab ju ette ka ütlema . Näiteks üks esineja peaks sel juhul hakkama siia sõitma Viljandimaalt . Aitäh ! Möönan , et olukord ei ole väga selge , just esinejate vaatest , aga me saame üheskoos</td>
+<td align="left">positive</td>
+</tr>
+<tr class="odd">
+<td align="left">Eestis</td>
+<td align="left">Eesti</td>
+<td align="left">tagasi hea kolleegi Helmen Küti ettepaneku juurde . Asjaolu , et on nad pannud püsti sellise küsimuse nagu ” Ebavõrdsus Eestis – kas vaesusest saab välja kärpida ? ” arutelu , on iseenesest nii verbaalses mõttes äärmiselt oluline kui ka sisu</td>
+<td align="left">positive</td>
+</tr>
+<tr class="even">
+<td align="left">Eestis</td>
+<td align="left">Eesti</td>
+<td align="left">muud selgitust ma ei taha , ainult seda , mis annab õiguse – Sotsiaaldemokraatliku Erakonna päevakorda pandud punkti ” Ebavõrdsus Eestis ” välja arvata ! Palun nimetage see norm ! Härra Grünthal , Riigikogu juhatus ei arva Sotsiaaldemokraatliku Erakonna fraktsiooni päevakorrapunkti</td>
+<td align="left">positive</td>
+</tr>
+<tr class="odd">
+<td align="left">Euroopa</td>
+<td align="left">Euroopa</td>
+<td align="left">ole protseduuriline küsimus . Läheme edasi tänase päevakorraga . Esimene päevakorrapunkt on väliskomisjoni esitatud Riigikogu otsuse ” Riigikogu otsuse ” Euroopa Julgeoleku- ja Koostööorganisatsiooni Parlamentaarse Assamblee Eesti delegatsiooni moodustamine ” muutmine ” eelnõu esimene lugemine . Ettekande teeb väliskomisjoni liige Imre</td>
+<td align="left">neutral</td>
+</tr>
+<tr class="even">
+<td align="left">Eesti</td>
+<td align="left">Eesti</td>
+<td align="left">tänase päevakorraga . Esimene päevakorrapunkt on väliskomisjoni esitatud Riigikogu otsuse ” Riigikogu otsuse ” Euroopa Julgeoleku- ja Koostööorganisatsiooni Parlamentaarse Assamblee Eesti delegatsiooni moodustamine ” muutmine ” eelnõu esimene lugemine . Ettekande teeb väliskomisjoni liige Imre Sooäär . Palun ! Aitäh ,</td>
+<td align="left">neutral</td>
+</tr>
+</tbody>
+</table>
+<p>Skripti väljundiks on fail <strong><em>istung.csv</em></strong>, kus on tabelkujul</p>
 <ul>
-<li><strong><em>Cognitive maps</em></strong> - kujutluskaart. Inimese (või muu elusolendi) kogemuste põhjal ajju talletatud ettekujutus/mudel mingist reaalsest või irreaalsest ruumist; laiemas käsituses mis tahes protsessist või mõistest.<br />
+<li>kohanimeüksus sellisel kujul, nagu see tekstis esineb (tulp <code>kohanime_vorm</code>);<br />
 </li>
-<li><strong><em>Community mapping</em></strong>, <strong><em>participatory mapping</em></strong> - kogukondlik ja/või osaluskaardistamine. Kaartide tegemine n-ö tavaliste inimeste poolt tavaliste inimeste jaoks, praktikas sageli mingil ühiskondlikul-kultuurilisel või poliitilisel eesmärgil (nt pärandi, keele kaitsmiseks, mingi kogukonna arengu planeerimiseks, mingi piirkonna ressursside õiglasemaks jaotamiseks). Nende mõistetega on lähedalt seotud ka mõiste <strong><em>counter-mapping</em></strong>, mis veelgi selgemalt tegeleb alternatiivse kaardistamise abil traditsiooniliste võimusuhete lammutamise ja õõnestamisega. Nii osaluskaardistamine kui ka <em>vastukaardistamine</em> esindavad <strong><em>kriitilise kartograafia</em></strong> rakendusi. Kriitilise kartograafia põhitees on, et kaardid peegeldavad ja kinnistavad võimusuhteid ning seda enamasti ühiskonnas domineeriva klassi positsioonilt.<br />
+<li>kohanimeüksuse algvorm (tulp <code>kohanime_lemma</code>), mitmesõnalise kohanimeüksuse puhul on lemmatiseeritud ainult nimeüksuse viimane sõna (nt <code>Tallinna linn</code>);<br />
 </li>
-<li><strong><em>Gazetteer</em></strong> - kohanimeloend. Koondab tavaliselt infot kohanimega seotud koordinaatide ja koha tüübi kohta (nt mägi, jõgi, linn, küla), aga võib lisaks sisaldada ka nt rööpnimekujusid, asustuse infot, seoseid teiste sõnastiku kirjetega jm infot.<br />
+<li>kontekst ehk 20 sõna kohanimest vasakule ja paremale (tulp <code>kontekst</code>);<br />
 </li>
-<li><strong><em>Geocoding</em></strong> - geokodeerimine ehk kohtade tekstiliste viidete (nt kohanimede, aadresside) muutmine geograafilisteks koordinaatideks. Tagurpidi geokodeerimine muudab omakorda geograafilised koordinaadid kohanimedeks või aadressideks.<br />
+<li>kontekstile määratud meelsuse hinnang (tulp <code>meelsus</code>).</li>
+</ul>
+<p>Loeme tabeli Excelisse või muusse tabeltöötlusprogrammi:</p>
+<ul>
+<li><em>Data → From Text/CSV</em> → <em>File Origin: UTF-8</em>, <em>Delimiter: Tab</em> → <em>Transform Data</em> → vajuta <em>Use First Row as Headers</em> → <em>Close &amp; Load</em>).</li>
+</ul>
+<p>Hindame nimetuvastuse kvaliteeti. On teada, et automaatne nimetuvastus töötab kõige paremini isikunimede tuvastamisega, kohanimede ja organisatsioonidega on sel rohkem raskusi.<br />
+Võime andmeid pisut käsitsi puhastada ja korrastada. Kustutame tabelist read, kus nimetuvastus on eksinud (nt <em>Facebook</em>, <em>Euroopa Liit</em>), parandame kohanimede lemmasid (nt <em>pai</em> → <em>Paide</em>).</p>
+<p>Salvestame Exceli tabeli nimega <strong><em>istung.xlsx</em></strong>.</p>
+</div>
+<div id="tekstikatkendi-meelsuse-tuvastamine-excelis" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Tekstikatkendi meelsuse tuvastamine Excelis<a href="tekstianalyys2.html#tekstikatkendi-meelsuse-tuvastamine-excelis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>EKI emotsioonidetektor on tegelikult kasutatav ka MS Exceli laiendusena (<em>Add-in</em>), ent see ei pruugi uuemates Exceli versioonides alati töötada. Katsetame.</p>
+<ul>
+<li>Laadime lehelt <a href="http://peeter.eki.ee:5000/applications/list" class="uri">http://peeter.eki.ee:5000/applications/list</a> alla faili <em><a href="http://peeter.eki.ee:5000/valence.xlam">valence.xlam</a></em>.<br />
 </li>
-<li><strong><em>Locative media</em></strong> - 1) digitaalne sisu (nt pildid, videod, helid), millele on lisatud asukohainfo; 2) vahendid, mis kasutavad digitaalse sisu edastamiseks asukohainfot. Digihumanitaaria kontekstis ka raamistik, mille kaudu uurida üksikisiku suhteid ja vastastikuseid mõjusid koha ja tehnoloogiaga.<br />
+<li>Otsime Excelist üles <em>File → Options → Add-ins → Manage Excel Add-ins → Go → Browse</em>, otsime üles faili <em>valence.xlam</em>.<br />
 </li>
-<li><strong><em>Memory map</em></strong> - enamasti interaktiivne kaart, mis väljendab mingi koha ajalugu suuliste või kirjalike narratiivide ja neid toetava visuaalse materjali kaudu.<br />
-</li>
-<li><strong><em>Psychogeography</em></strong> - kunsti- ja teadussuund, mille fookuses on see, kuidas kogetakse (eeskätt) linnakeskkondi ning kuidas keskkond mõjutab meie emotsioone ja käitumist. Sealjuures pööratakse tähelepanu viisidele, kuidas saada ümbritsevast uusi ja ootamatuid elamusi ning avastada “tavapärasest erinevat”.<br />
-</li>
-<li><strong><em>Thick mapping</em></strong> - paljude erinevate geograafiliste või kohaspetsiifiliste andmete (pildid, narratiivid, kaardid, suulised ja kirjalikud mälestused jne) kogumine, koondamine/agregeerimine ja visualiseerimine selleks, et pakkuda kohtadele ja neis toimunud sündmustele erinevaid perspektiive (ka nt millegi alusel marginaliseeritud või vähem häälekate gruppide omi). Kasutatud on ka terminit <em>deep mapping</em>.</li>
+<li>Kirjutame Excelis tabeli uude tulpa <code>=Valence.TestBayes()</code> ja sulgude vahele lahtri viite, milles on tekst (nt <code>=Valence.TestBayes(C2)</code>). Kontrollime, kas tulemused vastavad Pythoni skriptiga saadud tulemustele.</li>
 </ul>
 </div>
-<div id="rühmatöö-1-gisi-ja-ruumi-geohumanitaaria-projekte-ja-rakendusi" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Rühmatöö 1: GISi ja ruumi-/geohumanitaaria projekte ja rakendusi<a href="seminar.html#rühmatöö-1-gisi-ja-ruumi-geohumanitaaria-projekte-ja-rakendusi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Võite osaleda üksi või kahekesi.</p>
-<p>Otsige üks enda erialaga (lähemalt või kaugemalt) seotud projekt, mis kasutaks GISi või tegeleks ruumi- või geohumanitaariaga. Alustada võib näiteks <a href="https://anterotesis.com/wordpress/mapping-resources/dh-gis-projects/">siit</a>, aga kindlasti võiks lähemalt uurida ka artiklites olnud viiteid.</p>
-<p>Lisage <a href="https://padlet.com/maarjaliisapilvik/geohumprojektid2022">virtuaalsele tahvlile</a>:</p>
+<div id="koordinaatide-lisamine-geokodeerimine" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> Koordinaatide lisamine (geokodeerimine)<a href="tekstianalyys2.html#koordinaatide-lisamine-geokodeerimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nüüd peame saama oma tabelile koordinaadid. Selleks võiksime proovida põhimõtteliselt kasutada ka <a href="https://inaadress.maaamet.ee/geocoder/one#/">Maa-ameti geokodeerimise teenust</a>, aga kuna teame, et meie tabelis on palju ka välisriikide kohanimesid, ei oleks sellest väga palju kasu. Katsetame niisiis hoopis QGISi geokodeerijat.<br />
+Esmalt salvestame xlsx-faili csv-na, nt nimega <strong><em>istung_parandatud.csv</em></strong>. Geokodeerimise jaoks oleks vaja, et faili kodeering oleks UTF-8.</p>
+<p>Seejärel</p>
 <ul>
-<li>projekti nimi,</li>
-<li>projekti link,</li>
-<li>valdkond,<br />
+<li>avame QGISi,<br />
 </li>
-<li>kirjeldus selle kohta, millega projektis tegeletakse,<br />
+<li>otsime sobiva aluskaardi ja CRS-i,<br />
 </li>
-<li>võimalusel visuaalset lisamaterjali (nt pilte rakendustest, kaartidest vm).</li>
+<li>laadime csv-faili QGISi,<br />
+</li>
+<li>valime <em>Processing → Toolbox → Vector general → Batch Nominatim geocoder</em>, <em>Input layer</em> on csv-faili kiht, mille just laadisime, <em>Address field</em> on <em>kohanime_lemma</em>.</li>
 </ul>
-<div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
-<p style="padding:0;margin:0">
-<iframe src="https://padlet.com/embed/yaanewweybm00se9" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0">
-</iframe>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="imgs/15_geokodeerimine.png" alt="Tuvastatud kohanimede geokodeerimine QGISis" width="60%" />
+<p class="caption">
+Joonis 15.2: Tuvastatud kohanimede geokodeerimine QGISis
 </p>
-<div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px">
-<a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank">
-<div style="display:flex;align-items:center;">
-<img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Made with Padlet">
 </div>
-</a>
+<p>Nimetame kihi <em>Geocoded</em> ümber nimega <strong><em>istungi_kohad</em></strong>.</p>
 </div>
-</div>
-</div>
-<div id="rühmatöö-2-humanitaaria-ja-kvantitatiivsed-meetodid" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Rühmatöö 2: humanitaaria ja kvantitatiivsed meetodid<a href="seminar.html#rühmatöö-2-humanitaaria-ja-kvantitatiivsed-meetodid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Moodustage 3-4 inimesest koosnevad rühmad.</p>
-<p>Üks rühm saab <strong>skeptikute/pessimistide</strong> rolli: teie arvates ei saa GISi ja laiemalt praeguste arvutuslike meetodite ja kvantitatiivse lähenemisega humanitaaria andmete ja küsimustega töötada (või siis mitte vähemalt väga hästi). Ka interdistsiplinaarsus on teie meelest praktikas väga raskesti saavutatav.</p>
-<p>Teine rühm saab <strong>optimistide</strong> rolli: teie arvates on humanitaaria eri suunad ka metodoloogiliselt pidevas arengus ning analüüsimeetodite vahetamine, laenamine ja kohandamine eri distsipliinide vahel ja sees annab humanitaariale väga palju juurde.</p>
-<p>Koondage <a href="https://padlet.com/maarjaliisapilvik/digimeetodid2022">siia</a> võimalikult palju argumente ja lihtsalt arvamusi, näiteid jm, mis teie rühma esindatavat seisukohta toetaksid. Võite sealjuures loomulikult ära kasutada artikleid, guugeldada, aga ka rühma sees ise ideid genereerida.</p>
-<div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
-<p style="padding:0;margin:0">
-<iframe src="https://padlet.com/embed/wszjbs5f7x7grqd9" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0">
-</iframe>
+<div id="visualiseerimine-1" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">15.4</span> Visualiseerimine<a href="tekstianalyys2.html#visualiseerimine-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mainimiste-arv" class="section level3 unnumbered hasAnchor">
+<h3>Mainimiste arv<a href="tekstianalyys2.html#mainimiste-arv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vaatame esmalt, milliseid kohti ja kui palju mainiti. Selleks on teatavasti mitu võimalust:</p>
+<ul>
+<li>muudame punktide läbipaistvust (rohkem mainitud kohad jäävad tumedamalt);<br />
+</li>
+<li>valime <em>Symbology</em> jaotises <em>Single symbol</em> asemel <em>Point Cluster</em> või <em>Point Displacement</em>;<br />
+</li>
+<li>valime <em>Symbology</em> jaotises <em>Heatmap</em>, valime sobiva värvipaleti ja -skaala.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="imgs/15_heatmap.png" alt="Stenogrammis mainitud kohanimede *heatmap*" width="70%" />
+<p class="caption">
+Joonis 15.3: Stenogrammis mainitud kohanimede <em>heatmap</em>
 </p>
-<div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px">
-<a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank">
-<div style="display:flex;align-items:center;">
-<img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Made with Padlet">
 </div>
-</a>
+<p>Võime ka teha uue kihi, kus loeme kokku, kui mitu punkti ühe nimega mainitakse, ja visualiseerida mainimiste arvu näiteks punkti suuruse abil. Selleks valime <em>Database → DB Manager → SQL Window</em> ja päringu aknasse kirjutame</p>
+<pre><code>SELECT kohanime_lemma, COUNT(kohanime_lemma) AS arv, geometry
+FROM istungi_kohad
+GROUP BY kohanime_lemma;</code></pre>
+<p>Vajutame <em>Execute</em>, teeme linnukese kasti <em>Load as new layer</em> ette ja vajutame <em>Load</em>. Uuel kihil vajutame <em>Size</em> paremas ääres kastikest, valime <em>Expression → Edit</em> ja kirjutame avaldiseks <code>log10("arv")*10</code>. Logaritmimine vähendab erinevusi suurt arvude vahel ja toob esile erinevusi väiksemate arvude vahel.</p>
+</div>
+<div id="emotsioonid" class="section level3 unnumbered hasAnchor">
+<h3>Emotsioonid<a href="tekstianalyys2.html#emotsioonid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kasutame punktide asemel diagramme, et visualiseerida, kui suur protsent mingi koha mainimistest olid positiivses, negatiivses ja neutraalses kontekstis. Selleks tuleb esmalt teha kiht, kus oleme kokku lugenud iga koha iga emotsiooni mainimiste arvu ja pannud selle eraldi tulpadesse.</p>
+<p><em>Database → DB Manager → SQL Window</em> ja päringu aknasse kirjutame</p>
+<pre><code>SELECT kohanime_lemma, geometry,
+SUM(CASE WHEN meelsus = &#39;positive&#39; THEN 1 ELSE 0 END) AS positive,
+SUM(CASE WHEN meelsus = &#39;negative&#39; THEN 1 ELSE 0 END) AS negative,
+SUM(CASE WHEN meelsus = &#39;neutral&#39; THEN 1 ELSE 0 END) AS neutral
+FROM istungi_kohad
+GROUP BY kohanime_lemma;  </code></pre>
+<ul>
+<li>Uue tekkinud kihi <em>Symbology</em> jaotises valime <em>Single symbol</em> asemel <em>No symbols</em>.<br />
+</li>
+<li>Lisame pirukadiagrammid (<em>Diagrams → Pie Chart</em>),
+<ul>
+<li>atribuutideks valime tulbad <em>positive</em>, <em>negative</em> ja <em>neutral</em>,<br />
+</li>
+<li>neile kategooriatele valime sobivad värvid,<br />
+</li>
+<li>muudame diagrammid veidi läbipaistvamaks (<em>Rendering → Opacity</em>)<br />
+</li>
+<li>ja diagrammide suuruseks määrame <em>Scaled size</em>,
+<ul>
+<li><em>Attribute</em> väärtuseks <code>"positive"+"negative"+"neutral"</code><br />
+</li>
+<li>ja valime sobiva skaala, arvestades kõige sagedamini mainitud koha mainimiste arvu ja kõige harvemini mainitud kohtade arvu.<br />
+</li>
+</ul></li>
+<li>paneme diagrammid punktide koha peale: <em>Placement → Over point</em>.</li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="imgs/15_diagrams.png" alt="Positiivsete, negatiivsete ja neutraalsete mainimiste osakaalud" width="70%" />
+<p class="caption">
+Joonis 15.4: Positiivsete, negatiivsete ja neutraalsete mainimiste osakaalud
+</p>
+</div>
+<p>Määrame lõpuks ka kohanimedele sildid, mis tuleksid nähtavale alles siis, kui oleme piisavalt sisse suuminud.</p>
+<p><em>Symbology → Labels → Single labels → Rendering → Scale Dependent Visibility</em>. Teeme ka linnukese valiku <em>Show all labels for this layer</em> ette.</p>
 </div>
 </div>
-</div>
-<div id="järgmisel-korral-1" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Järgmisel korral<a href="seminar.html#järgmisel-korral-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Ruumiobjektid ja ruumiandmed: millisel kujul reaalse maailma objekte geoinfosüsteemides kujutada?</p>
+<div id="järgmisel-korral-14" class="section level2 hasAnchor" number="15.5">
+<h2><span class="header-section-number">15.5</span> Järgmisel korral<a href="tekstianalyys2.html#järgmisel-korral-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Geostatistika.</p>
 
 </div>
 </div>
@@ -393,8 +520,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ruumiobjektid.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tekstianalyys.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

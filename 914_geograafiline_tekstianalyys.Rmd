@@ -1,4 +1,4 @@
-# Geograafiline tekstianalüüs {#tekstianalyys}
+# Geograafiline tekstianalüüs (1) {#tekstianalyys}
 
 Geograafiline tekstianalüüs on uurimissuund ja metodoloogia, mis ühendab kirjandusteaduste traditsioonilised tekstianalüüsi meetodid ruumianalüüsi ja arvutuslike tekstianalüüsi meetoditega.
 

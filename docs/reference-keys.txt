@@ -154,6 +154,10 @@ fig:mappinglakes2
 fig:mmqgis
 fig:counpoints
 fig:counpoints2
+fig:unnamed-chunk-7
+fig:unnamed-chunk-9
+fig:unnamed-chunk-10
+fig:unnamed-chunk-11
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
@@ -274,3 +278,9 @@ geoparserite-katsetamine
 kohanimede-tuvastamine
 kohanimede-geokodeerimine
 järgmisel-korral-13
+tekstianalyys2
+kohanimeüksuste-ja-tekstikatkendite-meelsuse-tuvastamine
+tekstikatkendi-meelsuse-tuvastamine-excelis
+koordinaatide-lisamine-geokodeerimine
+visualiseerimine-1
+järgmisel-korral-14
