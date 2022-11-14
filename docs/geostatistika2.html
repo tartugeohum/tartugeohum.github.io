@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Praktikum 3 Ruumiobjektid ja ruumiandmed | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
-  <meta name="description" content="Praktikum 3 Ruumiobjektid ja ruumiandmed | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <title>Praktikum 17 Geostatistika (2) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 17 Geostatistika (2) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Praktikum 3 Ruumiobjektid ja ruumiandmed | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:title" content="Praktikum 17 Geostatistika (2) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Praktikum 3 Ruumiobjektid ja ruumiandmed | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="twitter:title" content="Praktikum 17 Geostatistika (2) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="seminar.html"/>
-<link rel="next" href="kaardid.html"/>
+<link rel="prev" href="geostatistika1.html"/>
+<link rel="next" href="kirjandus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -342,259 +342,147 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ruumiobjektid" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Praktikum 3</span> Ruumiobjektid ja ruumiandmed<a href="ruumiobjektid.html#ruumiobjektid" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Meid ümbritsevas maailmas on palju erinevaid ruumiga seotud nähtusi, näiteks konkreetsed füüsilised objektid (teed, hooned), kokuleppelised või abstraktsed objektid (nt riigipiir), sündmused (nt katastroofid, meeleavaldused, spordiüritused) või ka mingid pidevad nähtused, nagu temperatuur, mis esinevad väljana terves ruumis ning mille konkreetset väärtust on mingites ruumi punktides võimalik määrata.</p>
-<p>Humanitaarteaduste kontekstis võime mõelda ka sellistest ruumiga seotud nähtustest ja objektidest, nagu muistsed ohverdusrituaalid, kirjandusteoste sündmused, (tajutavad) murdepiirid, keelelised üksused (sõnad, konstruktsioonid), ajaloolised lahingud, sõjakäigud jne.<br />
-Nähtustel on omakorda mingid omadused, mille abil neid nähtusi või ruumi ennast kirjeldada.</p>
-<!-- Nähtused võivad seega olla looduslikud, tehislikud, mõttelised.-->
-<p>(Geo)infosüsteemide abil saame reaalse maailma objekte ja nähtusi hallata, kujutada ja analüüsida aga ainult nende mingil moel abstraheeritud ja formaliseeritud kujul, <strong>ruumiobjektina</strong>.</p>
-<p><a href="https://www.riigiteataja.ee/akt/109102020004">Ruumiandmete seaduse</a> definitsioon (§ 3, lg 3):</p>
-<blockquote>
-<p>Ruumiobjekt käesoleva seaduse tähenduses on konkreetse asukoha või geograafilise alaga seotud reaalmaailma nähtuse abstraktne kujutis.</p>
-</blockquote>
-<p><strong>Ruumiandmed</strong> omakorda kirjeldavad</p>
-<blockquote>
-<p>… ruumiobjektide asukohta, omadusi ja kuju geograafilises ruumis.</p>
-</blockquote>
-<p>(Ruumiandmete seaduse § 3, lg 1.)</p>
-<p>Objektidele ja nähtustele sobiva kujutamisviisi valimine sõltub eeskätt sellest, kas läheneme ruumile ja selles asuvatele objektidele ja nähtustele objektikeskselt või asukohakeskselt.</p>
+<div id="geostatistika2" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Praktikum 17</span> Geostatistika (2)<a href="geostatistika2.html#geostatistika2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Alustuseks vaatame meetodit, millest eelmisel korral vaid möödaminnes rääkisime.</p>
+<div id="klasterdamine" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Klasterdamine<a href="geostatistika2.html#klasterdamine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>K-keskmiste (<em>K-means</em>) klasterdamine on meetod, mille abil jagatakse väärtused (punktid) etteantud arvu gruppidesse ehk klastritesse. Klastritesse jaotumine sõltub sellest, millise klastri keskpunktile vastav punkt kõige lähemal on. Esmalt leitakse niisiis punktide üldise jaotumise järgi (vahel ka täiesti suvaliselt) klastrite keskpunktid, seejärel seostatakse kõik muud punktid lähima keskpunktiga. Siis arvutatakse uued keskpunktide asukohad ja leitakse sellised punktid, mille lähimaks keskpunktiks ei ole enam selle klastri keskpunkt, milles punkt asub. Kui selliseid punkte leidub, siis korratakse punktide klastritesse jagamist.</p>
+<p>Proovime selle läbi. Laadime QGISi kihelkondade vektorkihi ja Saaremaa asustusüksuste vektorkihi. Jagame Saaremaa asustusüksused sama paljudeks klastriteks, kui on Saaremaal kihelkondi. <em>Processing → Toolbox → Vector analysis → K-means clustering</em>.</p>
+<p>Vaatame, kas lihtsalt distantsipõhine külade jaotamine gruppidesse kattub kihelkondadega. Sama võiks teha näiteks taludega ja võrrelda küladesse jaotumist. Selle põhjal omakorda võiks uurida edasi, kas inimestevaheline suhtlus toimib (või ajalooliselt toimis) pigem ühe küla/kihelkonna piirides või tõenäolisemalt üle küla/kihelkonna piiride, millised on/olid sotsiaalsed võrgustikud jne.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:18kalster"></span>
+<img src="imgs/17_klaster_saaremaa.PNG" alt="Saaremaa külade jaotumine klastriteks" width="60%" />
+<p class="caption">
+Joonis 17.1: Saaremaa külade jaotumine klastriteks
+</p>
+</div>
+</div>
+<div id="interpoleerimine" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Interpoleerimine<a href="geostatistika2.html#interpoleerimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Eelmisel korral vaatasime, kuidas kujutada mingi nähtuse intensiivsust eri paikades, kui me kas teame ainult seda, kus nähtuse andmepunktid geograafiliselt paiknevad, või on see ainus, mis meid huvitab. Sel korral vaatame lähemalt, mida teha juhul, kui punktide paiknemise asemel huvitab meid lisaks ka mingi tunnus, mis punkte iseloomustab. Näiteks kui teame mingi hulga vallakohtuprotokollide kohta seda, kui palju sõnu tänapäeva keelel treenitud morfoloogiline analüsaator 19. sajandil kasutatud sõnavormidest ära tundis, saame (küll suhteliselt jämedalt) ennustada, kui tänapäeva eesti keelele sarnast keelt kuskil piirkonnas tollal räägiti, isegi kui meil ei ole konkreetsete geograafiliste punktide kohta andmeid.</p>
+<!-- temperatuur:
+E, T, K keskmine õhutemperatuur
+E, T, K õhutemperatuur mingil kellaajal
+E, T, K, N 20, 25, 30, 35? kraadi-->
+<!-- "kõnelema", "rääkima", "tarvis", "vaja" külad ja kaaluks andmepunktide arv kuskilt külast-->
+<!-- ei räägi tegelikult punktandmetest, vaid aladest, punktandmed lihtsustavad -->
+<p>Geostatistika abil saame niisiis iseloomustada meid huvitavate atribuutide ruumilist struktuuri ja ennustada nende väärtusi kohtades, kust meil tegelikud vaatlusandmed puuduvad. Selleks, et hinnata mingi nähtuse väärtust kohas, kust meil (valimis) andmeid ei ole, tuleb kasutada interpoleerimist, mis põhineb nn <strong>ennustamise funktsioonil</strong> (<em>prediction</em>).<br />
+Sageli kasutatakse interpoleerimist selleks, et luua pidev rastermudel mingist eraldiseisvate punktide hulgast. Interpoleerimiseks on erinevaid meetodeid ning õige valiku tegemine võib olla kohati suhteliselt keeruline. Eelkõige oleneb see andmete iseloomust ja ulatusest ning nähtusest, mida üritame mõista. Tulemus võib samuti meetodist olenevalt suuresti erineda.</p>
+<p>Sisuliselt on interpoleerimine ennustav mudeldamine väärtuste hindamiseks mõõtmiskohtade vahel. Teistest meetoditest, nagu näiteks eelmisel korral vaadatud KDE, erinebki see just selle poolest, et interpoleerimine mitte <strong>ei iseloomusta</strong> mingit andmestikku, vaid pigem <strong>ennustab</strong> selle põhjal. KDE võtab mingi nähtuse esinemissageduse ning muudab selle tiheduseks, aga ei ennusta tihedust punktide vahel, vaid ainult iseloomustab seda. Kuna interpoleerimine aga ennnustab, siis on tegu ka keerukama meetodiga.</p>
+<div id="distantsi-kaaluv-interpoleerimine" class="section level3 hasAnchor" number="17.2.1">
+<h3><span class="header-section-number">17.2.1</span> Distantsi kaaluv interpoleerimine<a href="geostatistika2.html#distantsi-kaaluv-interpoleerimine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Lineaarne distantsipõhine meetod on suhteliselt lihtne, nagu allolevalt jooniselt näha.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:17simpleinterpolation"></span>
+<img src="imgs/17_simple_interpolation.PNG" alt="Lihtsad interpoleerimise näited. A - kahe punkti ja lineaarse interpoleerimisega D = 15. B - lisades kolmanda punkt ja interpoleerides IDW abil D = 12.5 [@Gillings2020]." width="100%" />
+<p class="caption">
+Joonis 17.2: Lihtsad interpoleerimise näited. A - kahe punkti ja lineaarse interpoleerimisega D = 15. B - lisades kolmanda punkt ja interpoleerides IDW abil D = 12.5 <span class="citation">(<a href="kirjandus.html#ref-Gillings2020" role="doc-biblioref">Gillings et al. 2020</a>)</span>.
+</p>
+</div>
+<p>Populaarne distantsipõhine meetod on <strong>IDW</strong> ehk <em>inverse distance weighting</em> (läheduskaalude meetod). Selle puhul kaalutakse punkte vastavalt nendevahelise kauguse ruudule, sest eeldatakse, et punktide väljendatud nähtuse mõju kahaneb, mida kaugemale punktist liikuda. Mida lähemal on punkt, seda suurem on tema kaal. Sellest ka nimi <em>inverse distance weighting</em>. Vaatame korraks ka IDW valemit, et meetodit paremini mõista.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:17idwformula"></span>
+<img src="imgs/17_idw_formula.PNG" alt="IDW meetodi valem" width="25%" />
+<p class="caption">
+Joonis 17.3: IDW meetodi valem
+</p>
+</div>
+<p>Valemis tähistab <em>n</em> teadaolevate punktide koguarvu (ülaloleval joonisel b näiteks 3), <em>Z<sub>i</sub></em> iga teadaoleva punkti mingi atribuudi väärtust (näiteks 12, 21 ja 8) ja <em>d<sub>i</sub></em> iga teadaoleva punkti kaugust tundmatust punktist, mille atribuudi väärtust (<em>Z<sub>p</sub></em>) tahame ennustada.</p>
+<p>Joonisel oleva punkti D mingi atribuudi väärtuse arvutamiseks seega:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:17idwformulaex"></span>
+<img src="imgs/17_idw_formula_example.PNG" alt="IDW meetodi valemi näide punkti D väärtuse arvutamiseks" width="25%" />
+<p class="caption">
+Joonis 17.4: IDW meetodi valemi näide punkti D väärtuse arvutamiseks
+</p>
+</div>
+<p>Kuna suurima atribuudi väärtusega punkt B asus tundmatust punktist D kaugemal kui lähemad ja madalamate atribuutide väärtustega punktid A ja C, siis B mõju punktile D hinnati väiksemaks ja D väärtus lähemaks seega A ja C väärtustele.</p>
+<p>QGISis leiab IDW tööriista, kui valida <em>Processing → Toolbox → Interpolation → IDW interpolation</em>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:17idwqgis"></span>
+<img src="imgs/17_idw_qgis.png" alt="IDW interpoleerimise tööriist QGISis" width="60%" />
+<p class="caption">
+Joonis 17.5: IDW interpoleerimise tööriist QGISis
+</p>
+</div>
+<p><strong>1</strong> - punktide vektorkiht.<br />
+<strong>2</strong> - vektorkihi (arvuline!) atribuut, mille väärtusi interpoleerida. Kui tahad interpoleerida kategoorilist tunnust, siis võib mõelda, kas kategooriatel on mingi hierarhia, mispuhul saab kasutada arve 1, 2, 3, 4, 5 jne, või saab teisendada tunnuse binaarseks 1-0 vastanduseks (nt 1 = klass1, 0 = klass2, interpoleeritakse klass1 esinemise tõenäosust).<br />
+<strong>3</strong> - tuleb vajutada atribuudi lisamiseks.<br />
+<strong>4</strong> - kauguse koefitsient <em>P</em> ehk <em>power</em>, mis ütleb, millisesse astmesse punktidevaheline kaugus valemis tõsta. Vaikimisi kasutatakse 2. astet ehk ruutuvõtmist. Mida suurem on <em>P</em>, seda enam mõju ennustamisel on lähedal asuvatel punktidel ja vähem mõju kaugemale jäävatel ning seda detailsem ja fragmentaarsem on tulemuseks saadav rasterfail. Kui <em>P</em> on 0, siis kauguse põhjal mingit kaalumist ei toimu.<br />
+<strong>5</strong> - määrab, millises ulatuses rastrit interpoleerida (võib olla nt mingi muu vektorkiht, nt maakondade vektorkiht).<br />
+<strong>6</strong> - väljundiks saadava rastri piksli külje suurus (kasutatava CRS-i ühikutes, enamasti meetrites). Mida suurem on mõõtkava (st mida väiksemat ala vaatleme), seda väiksem peaks olema piksli suurus.</p>
+<p>GDALi kaudu saab kasutada ka teist IDW-tööriista, mis pakub natuke enam paindlikkust. Näiteks saab seal määrata otsimisraadiuse (kui kaugele jäävaid punkte üldse arvesse võtta) või maksimaalse arvu punkte, mida punkti läheduses arvesse võtta.</p>
+<!-- IDW number of nearest points, search radius-->
+</div>
+<div id="ülesanne-1-2" class="section level3 hasAnchor" number="17.2.2">
+<h3><span class="header-section-number">17.2.2</span> Ülesanne 1<a href="geostatistika2.html#ülesanne-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Interpoleerime <em>ei ole</em> ja <em>pole</em> varieerumist Andrus Saareste murdeatlase andmete põhjal, kasutades IDW-d. Kuna interpoleerimiseks on vaja arvulist tunnust, peaksime oma binaarse kategoriaalse tunnuse, mis määrab selle, kas kasutati varianti <em>ei ole</em> või <em>pole</em>, teisendama esmalt kujule <strong>0</strong> (<em>ei ole</em>) ja <strong>1</strong> (<em>pole</em>) (vaata 10. praktikumi materjale, <a href="avaldised.html#fig:expressionsex5">10.9</a>).</p>
+<p>Lõika saadud raster kihelkondade piiridesse (<em>Raster → Extraction → Clip Raster by Mask Layer</em>).</p>
+</div>
+<div id="splain-spline" class="section level3 hasAnchor" number="17.2.3">
+<h3><span class="header-section-number">17.2.3</span> Splain (<em>Spline</em>)<a href="geostatistika2.html#splain-spline" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Splain (<em>spline</em>) on pidev kõver, mis ühendab punkte. <em>Thin Plate Spline</em> on meetod, kus püütakse splainide abil tekitada minimaalse kõverusega pidevat pinda, mis läbiks kõiki andmestiku punkte, kusjuures punkte kujutatakse ette kolmemõõtmelisena: teame punktide x- ja y- koordinaate ning mingi punktide atribuut, mille väärtusi interpoleerime, annab justkui kõrgusinfo, z-koordinaadi. Pinda üritatakse punktide vahele ja peale sättida niisiis nii, et sel oleks võimalikult vähe kumerust, aga samal ajal oleksid läbitud kõik punktid. <em>Regularized spline</em> lubab kõverale ka väärtuseid, mis on punktide enda väärtustest suuremad või väiksemad (lubame ennustada vaadeldavatest andmetest väljapoole). <em>Tension spline</em> ei lase sellistel kumerustel tekkida.</p>
+<!--The name "Thin Plate" comes from the fact that a TPS more or less simulates how a thin metal plate would behave if it was forced through the same control points. -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:18spline"></span>
+<img src="imgs/17_spline.PNG" alt="Splaini meetodi põhimõte. A - regulariseeritud kõrgusväärtusega, mis lubab punkti väärtusest suuremad väärtuseid. B - *tension spline*, mis hoiab rohkem kinni punktide väärtustest, et luua siledam/ühtlasem pind" width="80%" />
+<p class="caption">
+Joonis 17.6: Splaini meetodi põhimõte. A - regulariseeritud kõrgusväärtusega, mis lubab punkti väärtusest suuremad väärtuseid. B - <em>tension spline</em>, mis hoiab rohkem kinni punktide väärtustest, et luua siledam/ühtlasem pind
+</p>
+</div>
+<!-- Andmepunktide kaalumine-->
+<p>QGISis saab splainide abil interpoleerida tööriistaga, mille leiab <em>Processing → Toolbox → SAGA → Raster → Spline Interpolation → Thin Plate Spline</em>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:17tps"></span>
+<img src="imgs/17_thinplatespline.png" alt="*Thin Plate Spline* interpoleerimise tööriist QGISis" width="60%" />
+<p class="caption">
+Joonis 17.7: <em>Thin Plate Spline</em> interpoleerimise tööriist QGISis
+</p>
+</div>
+<p><strong>1</strong> - punktide vektorkiht.<br />
+<strong>2</strong> - vektorkihi (arvuline) atribuut, mille väärtusi interpoleerida.<br />
+<strong>3</strong> - määrab, millises ulatuses interpoleerida.<br />
+<strong>4</strong> - väljundiks saadava rastri piksli lkülje suurus (kasutatava CRS-i ühikutes, enamasti meetrites).<br />
+<strong>5</strong> - regulariseerimise parameeter. Mida suurem on see parameeter, seda lõdvemalt on splain punktide täpsete asukohtadega seotud (võib olla kasulikum siis, kui olemasolevate punktide koordinaadid ei ole väga täpsed).<br />
+<strong>6</strong> - otsimisraadius CRSi originaalühikutes (nt meetrites).<br />
+<strong>7</strong> - mitut punkti iga piksli väärtuse arvutamisel arvestada. Mida rohkem punkte arvesse võtta, seda kaugemaid punkte saab rastri arvutamisel arvestada ja seda sujuvamad on rastri üleminekud.<br />
+<strong>8</strong> - mis suunas punkte arvestada.</p>
+</div>
+<div id="ülesanne-2-2" class="section level3 hasAnchor" number="17.2.4">
+<h3><span class="header-section-number">17.2.4</span> Ülesanne 2<a href="geostatistika2.html#ülesanne-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Interpoleerime samu atlase andmeid nüüd <em>Thin Plate Spline</em> meetodiga. Katsetame eri parameetrite väärtustega (eeskätt eri regulariseerimise parameetriga).</p>
+</div>
+<div id="ülesanne-3" class="section level3 hasAnchor" number="17.2.5">
+<h3><span class="header-section-number">17.2.5</span> Ülesanne 3<a href="geostatistika2.html#ülesanne-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Interpoleerime nüüd nii IDW-ga kui ka TPS-iga <em>ei ole</em> ja <em>pole</em> eituskonstruktsioonide varieerumist Eesti murretes, kasutades atlase levikuandmete asemel <strong>murdekorpuse sagedusandmeid</strong>. Sagedusandmed võimaldavad interpoleerimisel kasutada 0 ja 1 asemel ka vahepealseid väärtusi (<em>ei ole</em> või <em>pole</em> osakaalusid), seega võiks raster tulla sujuvam ja nüansseeritum.</p>
 <ul>
-<li><strong>Objektikeskses</strong> lähenemises seame fookusesse objektid. Need täidavad kindlates punktides mingit ruumi, neid saab loendada, need võivad külgneda ja kattuda, neil on mingid kindlad omadused, need on võib-olla seotud mingite teiste objektidega jne. Ruum ja selle omadused on ainult üks atribuut, mille kaudu objekte kirjeldada.
-<ul>
-<li>Sellises lähenemises on objektid <strong>diskreetsed</strong>: neil on kindel asukoht ja ruumikuju (nt hoone, mälestusmärk, riigipiir).<br />
+<li>Esmalt tuleb kasutuse osakaalude CSV-tabel liita kihelkondade ruumiandmetega.<br />
 </li>
-</ul></li>
-<li><strong>Asukohakeskses</strong> lähenemises on fookus ruumil. Ruum on sama objektiga otsast otsani täidetud. Objektid ja nende omadused kirjeldavad ruumi, on ruumi atribuutideks.
-<ul>
-<li>Asukohakeskses lähenemises on objektid <strong>pidevad</strong>: objekt esineb terves ruumis, aga saab ruumi erinevates punktides erineva väärtuse (nt maapinna reljeef, temperatuur ja õhurõhk maapinnal, kultuurikihi intensiivsus).</li>
-</ul></li>
+<li>Kuna interpoleerimiseks vajame punkte, mitte polügoone, siis tuleb need seejärel leida osakaaludega kihelkondade kihi põhjal.<br />
+</li>
+<li>Lõpetuseks tuleks välja jätta punktid (kihelkonnad), kust osakaalude andmed puuduvad.</li>
 </ul>
-<p>Need kaks lähenemist on aluseks sellele, kuidas ruumiobjekte geoinfosüsteemis kujutada: kas vektorkujul või rasterkujul. Vastavaid kujutusviise nimetatakse ka <strong>ruumiandmete mudeliteks</strong>.</p>
-<!-- Bolstad 2008-->
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:data-models"></span>
-<img src="imgs/3_Bolstad2016.PNG" alt="Vektor- vs. rasterandmed [@Bolstad2016 : 41]" width="80%" />
-<p class="caption">
-Joonis 3.1: Vektor- vs. rasterandmed <span class="citation">(<a href="kirjandus.html#ref-Bolstad2016" role="doc-biblioref">Bolstad 2016</a> : 41)</span>
-</p>
+<p>Nüüd interpoleerime punktandmeid erinevate meetoditega, lõikame saadud rastrid kihelkondade piiridesse ja värvime sama värvipaletiga. Võrdleme erinevusi.</p>
+<p>Vaatame ka rasterite profiile, et nendest parem ettekujutus saada. <em>Plugins → Profile tool</em>.</p>
+<p>Erinevuste paremaks võrdlemiseks saab kihid ka üksteisest lahutada. Kasutame selleks <em>Raster → Raster calculator</em>.</p>
 </div>
-<div id="vektorandmed" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Vektorandmed<a href="ruumiobjektid.html#vektorandmed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Vektormudelis</strong> kujutatakse andmeobjekte <strong>geomeetriliste kujundite</strong> abil.
-Geomeetrilisi põhiobjekte ehk primitiive on 3:</p>
+</div>
+<div id="voronoi-polügoonid" class="section level2 hasAnchor" number="17.3">
+<h2><span class="header-section-number">17.3</span> Voronoi polügoonid<a href="geostatistika2.html#voronoi-polügoonid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kui meil on tegemist kategoriaalse (st mittearvulise) atribuudiga (nt <code>Keelend</code> võib olla <em>ei ole</em> või <em>pole</em>) ja me ei taha neid kunstlikult arvulisteks vastandusteks muuta, siis saame kategooriate levikut kujutada ka nn Voronoi polügoonide abil (tuntud ka kui Thiesseni polügoonid). Sel puhul jagatakse punktandmete ümber asuv pind väikesteks “keskusteks” nii, et igas keskuses asuv suvaline punkt (mille väärtust me ei tea) kuuluks just selle keskuse juurde. Iga tegeliku andmepunkti ümber jääv ala kannab niisiis andmepunktiga samu atribuute ja atribuudi väärtus võiks esineda seega tervesse alasse jäävatel suvalistel punktidel. Alad saab värvida vastavalt sellele atribuudile.</p>
 <ul>
-<li><strong>punkt</strong> (nt torn, kivi),<br />
+<li>Valime <em>Processing → Toolbox → Vector geometry → Voronoi polygons</em>.<br />
 </li>
-<li><strong>joon</strong> (nt tee, jõgi),<br />
+<li><em>Input layer</em> olgu <em>ei ole</em> ja <em>pole</em> levikut kujutava murdeatlase punktikiht. Vajutame <em>Run</em>.<br />
 </li>
-<li><strong>pind/areaal/polügoon/ala</strong> (nt põld, mets, linn).</li>
+<li>Saadud kihi lõikame kihelkondade kihi piiridesse: <em>Vector → Geoprocessing Tools → Clip</em>, <em>Input layer</em> olgu <em>Voronoi polygons</em> ja <em>Overlay layer</em> kihelkondade vektorkiht. Vajutame <em>Run</em>.<br />
+</li>
+<li>Saadud kihil <em>Clipped</em> värvime polügoonid vastavalt atribuudile, mis ütleb, kas polügooni alla jääval alal võidaks kasutada pigem varianti <em>ei ole</em> või <em>pole</em>: <em>Symbology → Categorized</em>.</li>
 </ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ruumiobjektid"></span>
-<img src="imgs/3_points_lines_polygons.PNG" alt="Punktid, jooned, polügoonid [@Ballas2018 : 13]" width="80%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:17voronoi"></span>
+<img src="imgs/17_voronoi.png" alt="Voronoi polügoonide klassifitseerimine *ei ole* ja *pole* kasutuse põhjal" width="80%" />
 <p class="caption">
-Joonis 3.2: Punktid, jooned, polügoonid <span class="citation">(<a href="kirjandus.html#ref-Ballas2018" role="doc-biblioref">Ballas et al. 2018</a> : 13)</span>
+Joonis 17.8: Voronoi polügoonide klassifitseerimine <em>ei ole</em> ja <em>pole</em> kasutuse põhjal
 </p>
 </div>
-<p><strong>Punkt</strong> on eukleidilises mõttes nullmõõtmeline ning seda esitatakse koordinaatsüsteemis kujul <em>P</em>(x; y). <!-- ruumil on mõõde, punktil ei ole--></p>
-<p>Mitmest punktist moodustub ühemõõtmeline <strong>joon</strong>, enamasti <em>murdjoon</em>, mille (käänu)punktid saab ühendada sirglõiguga. <!-- joonel saab mõõta pikkust--></p>
-<p>Joonest omakorda saab moodustada <strong>polügooni</strong>, mispuhul joone algus- ja lõpp-punkt kattuvad. <!-- polügoonil saab määrata pindala ja ümbermõõdu--></p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:points-lines-polygons"></span>
-<img src="imgs/3_Bolstad2016_pointslinespolygons.PNG" alt="Geomeetrilised objektid [@Bolstad2016 : 43]" width="60%" />
-<p class="caption">
-Joonis 3.3: Geomeetrilised objektid <span class="citation">(<a href="kirjandus.html#ref-Bolstad2016" role="doc-biblioref">Bolstad 2016</a> : 43)</span>
-</p>
 </div>
-<p>Geomeetrilise objekti valik sõltub sealjuures sellest, kui täpselt mingit andmeobjekti soovitakse kujutada. Näiteks võib Eesti pühapaikade kaardistamisel kasutada punkti ruumikuju, pühapaiga lähemal vaatlusel aga kasutada hoopis polügooni ruumikuju, eristada selle sees omakorda teisi polügoone või punkte jne.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pringi1"></span>
-<img src="imgs/3_pringi1.PNG" alt="Pringi Ohvrimägi punktina ja polügoonina ([Hiite Maja looduslike pühapaikade kaardirakendus](https://hiitemaja.maps.arcgis.com/apps/webappviewer/index.html?id=db7d4fe754d245b9ac53f6d9a76e229e))" width="45%" /><img src="imgs/3_pringi2.PNG" alt="Pringi Ohvrimägi punktina ja polügoonina ([Hiite Maja looduslike pühapaikade kaardirakendus](https://hiitemaja.maps.arcgis.com/apps/webappviewer/index.html?id=db7d4fe754d245b9ac53f6d9a76e229e))" width="45%" />
-<p class="caption">
-Joonis 3.4: Pringi Ohvrimägi punktina ja polügoonina (<a href="https://hiitemaja.maps.arcgis.com/apps/webappviewer/index.html?id=db7d4fe754d245b9ac53f6d9a76e229e">Hiite Maja looduslike pühapaikade kaardirakendus</a>)
-</p>
-</div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pringi3"></span>
-<img src="imgs/3_pringi3.PNG" alt="Pringi Ohvrimäe raietööd [@Kaasik2018]" width="100%" />
-<p class="caption">
-Joonis 3.5: Pringi Ohvrimäe raietööd <span class="citation">(<a href="kirjandus.html#ref-Kaasik2018" role="doc-biblioref">Kaasik 2018</a>)</span>
-</p>
-</div>
-<!--Vaatame natuke [sellel lehel](http://orbis.stanford.edu/) ringi. Milliseid ruumiobjekte on kujutatud?-->
-<p>Vektorandmete struktuur võib olla väga erinev. Kõige lihtsamas struktuuris on iga objekt (punkt, joon või polügoon) kirjeldatud <em>x</em>- ja <em>y</em>-koordinaatide jada kaudu. See tähendab ka näiteks, et teineteisega külgnevad polügoonid on kirjeldatud eraldi joonelõikude kaudu, olgugi et neil on osa lõike ühised. Sellises struktuuris ei ole objektidevahelised suhted kuidagi kirjeldatud ning külgnemissuhe on implitseeritud ainult samasuguste koordinaatide kaudu.</p>
-<p>Teine levinud viis andmeid struktureerida on kasutada <strong>topoloogilisi suhteid</strong>, mis kirjeldaksid ruumiobjektide paiknemissuhteid nii, et need mingite teisenduste (nt pööramise või suumimise) käigus ei muutuks. Näiteks külgnevate polügoonide puhul teaks sellisel juhul polügoonide ühine joonelõik, et tema parem pool kuulub ühte polügooni ja vasak pool teise ning kaob ära vajadus samu koordinaate kaks korda määrata.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:spaghetti-topological"></span>
-<img src="imgs/3_spaghetti_topological.PNG" alt="Spagetistruktuur vs. topoloogiline struktuur [@Bolstad2016 : 48]" width="80%" />
-<p class="caption">
-Joonis 3.6: Spagetistruktuur vs. topoloogiline struktuur <span class="citation">(<a href="kirjandus.html#ref-Bolstad2016" role="doc-biblioref">Bolstad 2016</a> : 48)</span>
-</p>
-</div>
-<p>Topoloogilised suhted on aluseks topoloogiareeglitele.</p>
-<div class="figure">
-<embed src="imgs/3_topology_rules_poster.pdf" style="width:80.0%" height="700" />
-<p class="caption">Topoloogiareeglid ArcGISis</p>
-</div>
-<p>Topoloogilisi suhteid ja reegleid kasutatakse näiteks siis, kui tahetakse planeerida võimalikult kiiret teekonda ühest punktist teise või hoonestuse paiknemist, aga ka paljuks muuks. Pelgaks visualiseerimiseks pole aga topoloogilisi suhteid andmebaasis vaja defineerida.</p>
-<p>Vektorandmeid hoitakse GISis enamasti kas <a href="https://en.wikipedia.org/wiki/Shapefile">SHP</a>, <a href="https://en.wikipedia.org/wiki/Geography_Markup_Language">GML</a>, <a href="https://en.wikipedia.org/wiki/MapInfo_TAB_format">TAB</a> või <a href="https://en.wikipedia.org/wiki/Vector_Product_Format">VPF</a> formaatides.</p>
-<p>Nii vektor- kui ka rasterandmeid saab hoida <em>geopackage</em>’i (<a href="https://en.wikipedia.org/wiki/GeoPackage">GPKG</a>) formaadis.</p>
-</div>
-<div id="rasterandmed" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Rasterandmed<a href="ruumiobjektid.html#rasterandmed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Rastermudelit</strong> kasutatakse eeskätt pidevate andmeobjektide (nn <em>väljade</em>) kujutamiseks. Rastermudelis jagatakse ruum ühesuguste (kindla kujuga) osadega korrapäraseks võrguks ehk <em>rastriks</em>, nii et igale rastri elemendile saab koordinaatide abil ühtmoodi viidata.</p>
-<p>Rastermudel peaks olema tõenäoliselt juba tuttav, kui oled kokku puutunud näiteks digifotodega või muude digiteeritud piltidega. Formaadid, nagu JPEG, TIFF, GIF jm, põhinevad kõik rastermudelil. Samuti põhinevad rastertehnoloogial nt kõiksugu LCD-monitorid.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:raster"></span>
-<img src="imgs/3_raster_model.PNG" alt="Rastermudeli struktuur [@Bolstad2016 : 54]" width="70%" />
-<p class="caption">
-Joonis 3.7: Rastermudeli struktuur <span class="citation">(<a href="kirjandus.html#ref-Bolstad2016" role="doc-biblioref">Bolstad 2016</a> : 54)</span>
-</p>
-</div>
-<p>Rastri üht elementi nimetatakse tavaliselt <strong>piksliks</strong> (<em>pixel</em> ehk <em>picture element</em>). Pikslid võivad olla igasuguse kujuga, ent enamasti on need siiski ruudukujulised. Olgugi, et piksel on olemuselt alati kahemõõtmeline, on piksli koordinaatideks selle keskpunkti koordinaadid. Ühel pikslil on terves oma ulatuses üks väärtus (vastaval alal kõige tüüpilisem või keskmine väärtus), mis täpsustab näiteks selle piksli värvi ja/või heleduse ning iseloomustab selle kaudu piksliga piiratud alas asuva ruumilise nähtuse mingit omadust. Selline omadus võib olla nii pidev (nt kõrgusinfo, mingi keelelise konstruktsiooni suhteline kasutussagedus) kui ka diskreetne (nt konstruktsiooni <em>A</em> vs. konstruktsiooni <em>B</em> kasutus).</p>
-<p>See, kui täpselt rastermudel mingile reaalse maailma andmeobjekti kujule vastab, sõltub sellest, kui suured on ühe rastri elemendi ehk piksli mõõtmed, ehk sellest, kui suur on resolutsioon ehk <strong>eraldusvõime/lahutusvõime</strong>. Mida kõrgem on eraldusvõime, seda täpsem rastermudel on, ent seda suurem on ka rasterandmete faili suurus; mida madalam on eraldusvõime, seda enam infot läheb kaotsi. Efektiivseks eraldusvõime määramiseks tuleks arvesse võtta nii kaardi mõõtkava kui ka muude kaardistatavate andmete väikseimat ühikut.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
-<img src="imgs/3_Bolstad2016_rasters.PNG" alt="Rastri resolutsioon [@Bolstad2016 : 55]" width="80%" />
-<p class="caption">
-Joonis 3.8: Rastri resolutsioon <span class="citation">(<a href="kirjandus.html#ref-Bolstad2016" role="doc-biblioref">Bolstad 2016</a> : 55)</span>
-</p>
-</div>
-<p>GISi seisukohast on eraldi liik rasterandmeid <strong>satelliitpildid, aerofotod ja ortofotod</strong>, mis pakuvad GISile olulist kontekstilist infot.
-Satelliitide eri sensorite abil saadud info abil on võimalik kuvada suurt hulka maapinna omadusi ja protsesse. Passiivsed sensorid analüüsivad looduslikest allikatest (nt päikeselt) peegeldunud või kiiratud elektromagnetkiirgust. Aktiivsed sensorid edastavad ise mingit signaali ning analüüsivad selle tagasipeegeldumist Maa pinnalt. Erinevad satelliidid annavad erineva kvaliteediga pilte.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:satelliit"></span>
-<img src="imgs/3_estcube1.png" alt="EstCube-1 tehtud satelliitpilt ([https://www.estcube.com/](https://www.estcube.com/))" width="70%" />
-<p class="caption">
-Joonis 3.9: EstCube-1 tehtud satelliitpilt (<a href="https://www.estcube.com/">https://www.estcube.com/</a>)
-</p>
-</div>
-<p>Vaata värskemaid NASA satelliitpilte <a href="https://wvs.earthdata.nasa.gov/?COORDINATES=55.0171,17.8288,61.4922,35.0957">siit</a>.</p>
-<p>Aerofotosid saab teha näiteks õhupallist, kopterist või lennukist. Aerofotod võivad oma läätse tõttu olla servadest moonutatud ning samuti võivad moonutatud olla maapinnast kõrgel olevad objektid (nt tornid, korstnad, tipud). Ortofotod on geomeetriliselt parandatud aerofotod.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:aero-orto"></span>
-<img src="imgs/3_aerofoto_ortofoto.PNG" alt="Aerofotod vs. ortofotod ([Open Geospatial Education](https://opengeospatial.weebly.com/31-remote-sensing-platforms.html))" width="100%" />
-<p class="caption">
-Joonis 3.10: Aerofotod vs. ortofotod (<a href="https://opengeospatial.weebly.com/31-remote-sensing-platforms.html">Open Geospatial Education</a>)
-</p>
-</div>
-<p>Rastreid võib aga saada ka <strong>vektorandmete teisendamisel või interpoleerimisel rasterkujule</strong>. Sellisel juhul võib pidada üheks rastri elemendiks nn <strong>rakslit</strong> ning selle väärtus viitab enamasti mingi ruumiobjekti ID-le või mingi atribuudi väärtusele.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:german-dialects"></span>
-<img src="imgs/3_chat1_points.png" alt="Vektorandmetest rasterandmeteni ([Timo Grossenbacher, 2018](https://timogrossenbacher.ch/2018/03/categorical-spatial-interpolation-with-r/))" width="45%" /><img src="imgs/3_chat2_raster.png" alt="Vektorandmetest rasterandmeteni ([Timo Grossenbacher, 2018](https://timogrossenbacher.ch/2018/03/categorical-spatial-interpolation-with-r/))" width="45%" />
-<p class="caption">
-Joonis 3.11: Vektorandmetest rasterandmeteni (<a href="https://timogrossenbacher.ch/2018/03/categorical-spatial-interpolation-with-r/">Timo Grossenbacher, 2018</a>)
-</p>
-</div>
-<p>Rasterandmete levinumad formaadid on näiteks <a href="https://en.wikipedia.org/wiki/JPEG">JPEG</a>, <a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>, <a href="https://en.wikipedia.org/wiki/TIFF">TIFF</a>, <a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP</a>.</p>
-</div>
-<div id="vektor-vs.-raster" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Vektor vs. raster<a href="ruumiobjektid.html#vektor-vs.-raster" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<table>
-<tr>
-<th>
-Vektorandmed
-</th>
-<th>
-Rasterandmed
-</th>
-</tr>
-<tr>
-<td>
-andmestruktuur võib olla keerukas
-</td>
-<td>
-andmestruktuur on lihtne
-</td>
-</tr>
-<tr>
-<td>
-vähem mahukad
-</td>
-<td>
-võivad olla väga mahukad
-</td>
-</tr>
-<tr>
-<td>
-sobivad ruumiobjektide piiritlemiseks või nende asukoha keskpunktide määramiseks
-</td>
-<td>
-sobivad paremini mingil alal esineva (pideva) nähtuse iseloomustamiseks
-</td>
-</tr>
-<tr>
-<td>
-sobivad paremini inimtegevuse kujutamise jaoks
-</td>
-<td>
-sobivad paremini keskkonna- või loodusnähtuste jaoks
-</td>
-</tr>
-<tr>
-<td>
-sobivad paremini konkreetsetele nähtustele paljude atribuutidega
-</td>
-<td>
-sobivad paremini komplekssetele nähtustele väheste atribuutidega
-</td>
-</tr>
-<tr>
-<td>
-sobivad paremini täpsete, konkreetsete andmetega
-</td>
-<td>
-sobivad paremini ebatäpsete/puudulike või üldistavate andmetega
-</td>
-</tr>
-<tr>
-<td>
-võib arvestada ka topoloogilisi suhteid
-</td>
-<td>
-enamasti objektidevahelisi suhteid ei arvesta
-</td>
-</tr>
-<tr>
-<td>
-on vähem tundlikud projektsiooni muutmisele
-</td>
-<td>
-võivad olla väga tundlikud projektsiooni muutmisele
-</td>
-</tr>
-<tr>
-<td>
-kaardid on visuaalselt ilusamad
-</td>
-<td>
-kaardid suhteliselt robustsed
-</td>
-<!-- ja keeruline kombineerida erinevate resolutsioonidega andmekihte-->
-</tr>
-</table>
-<p><strong>Mõttepaus</strong>:</p>
-<ul>
-<li>Kumba mudelit kasutaksid riigimaanteede kaardistamiseks? Miks?<br />
-</li>
-<li>Kumba mudelit kasutaksid rahvastikutiheduse mudeldamiseks? Miks?<br />
-</li>
-<li>Millisel kujul saaksid kujutada enda uurimisainest?</li>
-</ul>
-<p>Paljud tänapäeva GIS-tehnoloogiad võimaldavad kasutada mõlemat mudelit paralleelselt. Näiteks digitaalsed maastikumudelid kuvavad sageli rasterandmete abil mingi piirkonna reljeefi või maakasutust, punktide abil huvipakkuvaid hooneid, joonte abil jõgesid ja teid ning polügoonide abil haldusjaotust. Sealjuures võib otsustada, kas kuvada näiteks kirikud, haiglad ja haridusasutused eraldi kihtidel või ühe kihina, milles sisaldub hoone funktsiooni määrav atribuut.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:arheo-ex"></span>
-<img src="imgs/3_arheo_example_kimber_lohukivid_totalviewshed.jpg" alt="Maastiku nähtavuse analüüsimine [@Kimber2016]" width="70%" />
-<p class="caption">
-Joonis 3.12: Maastiku nähtavuse analüüsimine <span class="citation">(<a href="kirjandus.html#ref-Kimber2016" role="doc-biblioref">Kimber 2016</a>)</span>
-</p>
-</div>
-<p>Samuti võib üht ja sama nähtust kuvada erinevat moodi.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
-<img src="imgs/3_okabe_2006.PNG" alt="Tänavaröövid Saitamas [@Okabe2006 : 8]" width="70%" />
-<p class="caption">
-Joonis 3.13: Tänavaröövid Saitamas <span class="citation">(<a href="kirjandus.html#ref-Okabe2006" role="doc-biblioref">Okabe 2006</a> : 8)</span>
-</p>
-</div>
-<p>Vaata natuke <a href="http://blog.ut.ee/30-maps-of-estonia-in-30-days/">siin</a> ringi. Kas saad aru, millist tüüpi mudeleid on kasutatud?
-Vaata ka <em>30 Day Map Challenge</em> käigus tehtud kaarte (<a href="https://30daymapchallenge.com/">siin</a>).</p>
-</div>
-<div id="kasikirjalised" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Ülesanne<a href="ruumiobjektid.html#kasikirjalised" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Kujuta ette, et Google Mapsi ei ole veel leiutatud ja paberkaardid on väga kallid, aga sulle on Tartusse külla tulnud sõber / perekonnaliige / tuttav / välismaa sõber, kes ei ole siin kunagi varem käinud. Joonista tema jaoks paberile Tartu kesklinna kaart ning lisa kaardile enda või tema jaoks tähtsamad kohad ning tagaküljele kirjuta ka, kellele kaart on mõeldud.</p>
-</div>
-<div id="järgmisel-korral-2" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Järgmisel korral<a href="ruumiobjektid.html#järgmisel-korral-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Neljapäeval räägime lähemalt kaartidest ja nende omadustest, koordinaatsüsteemidest ja projektsioonidest.</p>
+<div id="järgmisel-korral-16" class="section level2 hasAnchor" number="17.4">
+<h2><span class="header-section-number">17.4</span> Järgmisel korral<a href="geostatistika2.html#järgmisel-korral-16" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Veebirakendused, veebimajutus.</p>
 
 </div>
 </div>
@@ -603,8 +491,8 @@ Vaata ka <em>30 Day Map Challenge</em> käigus tehtud kaarte (<a href="https://3
           </div>
         </div>
       </div>
-<a href="seminar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="kaardid.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="geostatistika1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
