@@ -50,6 +50,9 @@ vignettes/*.pdf
 # Course work catalog
 /Lopuprojekt/
 
+# Homework catalog
+/Kodutood/
+
 # csl-files
 *.csl
 

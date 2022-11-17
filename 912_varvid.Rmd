@@ -131,7 +131,7 @@ Vajadusel saab eksporditavale kaardile lisada ka atribuuttabeli: *Add item → A
 *Item properties* alt saab valida, milliseid tulpasid ja kuidas näidata.  
 
 
-## Ülesanne
+## Ülesanne {#yl12_1}
 
 Leidke endale paariline. Iga paar saab endale kahe peale ühe andmestiku. 
 

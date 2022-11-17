@@ -129,7 +129,7 @@ Interpoleerime nüüd nii IDW-ga kui ka TPS-iga *ei ole* ja *pole* eituskonstruk
 Nüüd interpoleerime punktandmeid erinevate meetoditega, lõikame saadud rastrid kihelkondade piiridesse ja värvime sama värvipaletiga. Võrdleme erinevusi.  
 
 
-Vaatame ka rasterite profiile, et nendest parem ettekujutus saada. *Plugins → Profile tool*.
+Vaatame ka rastrite profiile, et nendest parem ettekujutus saada. *Plugins → Profile tool*.
 
 Erinevuste paremaks võrdlemiseks saab kihid ka üksteisest lahutada. Kasutame selleks *Raster → Raster calculator*. 
 
