@@ -157,11 +157,11 @@ Valmis veebikaardi jagamiseks teistega võid saata kogu rakenduse kausta kellele
 
 ### Ülikooli võrguketas
 
-Tartu Ülikooli tudengitel ja töötajatel on TÜ serveris \\\\pohl.ut.ee oma võrguketas (vaikimisi 1GB), kus on võimalik hoida ja varundada oma isiklikke faile. Samuti saab TÜ serverisse oma kodukataloogi salvestada ja üles panna loodud veebilehed. Veebilehed tuleks salvestada kodukataloogi alamkausta **public_html** ning nendele saab ligi aadressilt **`https://kodu.ut.ee/~kasutajanimi/`**.  
+Tartu Ülikooli tudengitel ja töötajatel on TÜ serveris \\\\pohl.ut.ee või \\\\leesikas.ut.ee oma võrguketas (vaikimisi 1GB), kus on võimalik hoida ja varundada oma isiklikke faile. Samuti saab TÜ serverisse oma kodukataloogi salvestada ja üles panna loodud veebilehed. Veebilehed tuleks salvestada kodukataloogi alamkausta **public_html** ning nendele saab ligi aadressilt **`https://kodu.ut.ee/~kasutajanimi/`**.  
 
 Ülikooli võrguketastele ligipääsemiseks peab olema ülikooli sisevõrgus. Väljastpoolt ülikooli saab sisevõrku turvaliselt ühenduse [virtuaalse privaatvõrgu](https://wiki.ut.ee/pages/viewpage.action?pageId=17105590) (**VPN**) abil. 
 
-Ülikooli sisevõrgus olles saab isikliku võrguketta kodu- või sülearvutile [külge haakida](https://wiki.ut.ee/pages/viewpage.action?pageId=17105488). Windowsis näiteks tuleb selleks minna esmalt jaotisesse *This PC* ja valida ülamenüüst *Computer → Map network drive*. Vali võrgukettale suvaline täht, mis pole veel kasutuses, *Folder* jaotisse kirjuta `\\pohl.ut.ee\sinukasutajanimi`. NB! Kui sisselogimisel küsitakse kasutajanime, siis see olgu kujul `domenis\\kasutajanimi` (mitte `kasutajanimi@ut.ee`)
+Ülikooli sisevõrgus olles saab isikliku võrguketta kodu- või sülearvutile [külge haakida](https://wiki.ut.ee/pages/viewpage.action?pageId=17105488). Windowsis näiteks tuleb selleks minna esmalt jaotisesse *This PC* ja valida ülamenüüst *Computer → Map network drive*. Vali võrgukettale suvaline täht, mis pole veel kasutuses, *Folder* jaotisse kirjuta `\\pohl.ut.ee\sinukasutajanimi`. NB! Kui sisselogimisel küsitakse kasutajanime, siis see olgu kujul `domenis\kasutajanimi`, leesika serveri puhul `kasutajanimi@ut.ee`.
  
 (Kui see kohe ei tööta, siis proovi esmalt [seda](https://www.techcrumble.net/2018/03/you-cant-access-this-shared-folder-because-your-organizations-security-policies-block-unauthenticated-guest-access/).)
 
