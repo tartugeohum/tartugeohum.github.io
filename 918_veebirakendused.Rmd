@@ -126,7 +126,7 @@ Jaotises `Appearance` valime, milliseid üldisi elemente ja vidinaid oma kaardil
 
 - *Add layers list* alt saab valida, kas võimalikud kihid kuvada menüüs, mille saab lahti klõpsata (*Collapsed*), või menüüs, kus on kõik kihid kohe nähtaval (*Expanded*).  
 - *Attribute filter* kastis saab valida need andmestiku atribuudid, mille põhjal kaardi kasutaja saab alamhulki pärida, nt kui tahab näha ainult Võru murde andmeid või ainult *ei ole* punkte.   
-- *Layer search* alt saab määrata kihid, millelt kasutaja võib päringuid teha (nt et leida üles Toomas Hendrik Ilvese punktike).  
+- *Layer search* alt saab määrata kihid, millelt kasutaja võib päringuid teha (nt et leida üles mõni Pühalepa kihelkonna punktike).  
 - *Template* ütleb, kas kaardi suurus veebilehel on nii suur, kui ta on parajasti näha QGISi peaaknas, nn lõuendil (*canvas*), või ulatub kaart üle kogu veebilehe.  
 - *Extent* määrab ära, kas näeme veebikaardi avamisel seda vaadet, mida parajasti QGISi peaaknas lõuendil, või näidatakse sellist ulatust, mis katab ära kihtide maksimaalse ulatuse (nt et kõik punktid kaardil oleksid kohe alguses näha).  
 - *Max zoom level* ja *Min zoom level* määravad ära, kui detailselt (mis suumimise astmel) kasutajal kaarti vaadata lubame.  
