@@ -185,6 +185,9 @@ fig:layersandgroups
 fig:appearance
 fig:loouuskonto
 fig:github1
+fig:efiseesti
+fig:temporal
+fig:temporalcontroller
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
@@ -337,3 +340,12 @@ veebikaartide-majutamine-ja-jagamine
 ülikooli-võrguketas
 github-pages
 järgmisel-korral-17
+veebirakendused2
+ajatelje-kasutamine-qgisis
+ajadimensioon-mapbox-gl-js-apis
+html
+css
+javascript
+ülesanne-4
+lisa
+järgmisel-korral-18

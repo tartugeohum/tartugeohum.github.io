@@ -1,4 +1,4 @@
-# Veebirakendused, veebimajutus {#veebirakendused}
+# Veebirakendused, veebimajutus (1) {#veebirakendused}
 
 Tavalised arvutis hoitavad kaardid on **digitaalsed kaardid**, mille võib panna ka veebilehele, ent mille koostamine, säilitamine ja näitamine ei sõltu kuidagi veebitehnoloogiast. Digitaalsed kaardid on staatilised. **Veebikaardid** aga mitte lihtsalt ei paikne veebis, vaid on veebist sõltuvad: nii nende koostamine kui ka vaatamine sõltub veebitehnoloogiast. Sageli on veebikaardid dünaamilised, interaktiivsed ning võivad kasutada ka mujalt veebist päritavaid andmeid.
 
