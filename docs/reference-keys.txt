@@ -188,6 +188,7 @@ fig:github1
 fig:efiseesti
 fig:temporal
 fig:temporalcontroller
+fig:20rstudioide
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
@@ -349,3 +350,16 @@ javascript
 ülesanne-4
 lisa
 järgmisel-korral-18
+r
+miks-teha-kaarte-koodipõhiselt
+r-rstudio-ja-r-markdown
+pakettide-installimine
+kood
+andmete-sisselugemine
+kaartide-tegemine
+andmete-valimine-1
+andmestike-ühendamine-1
+jooniste-eksportimine
+ülesanne-5
+r-i-raamatud-ja-juhendid
+järgmisel-korral-19

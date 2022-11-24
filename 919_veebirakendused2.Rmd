@@ -394,6 +394,10 @@ Terve veebilehe kood näeb nüüd välja niisiis järgmine:
 
 Paneme lehe **index.html** nüüd üles oma ülikooli võrgukettale või GitHubi (vt eelmise korra materjale).  
 
+<iframe src="https://mpilvik.github.io/eestifilmid/" width="100%" height="500" style="border:none;" title="Veebikaart GitHubist (mpilvik.github.io/eestifilmid/)"></iframe>
+
+
+
 ## Ülesanne
 
 Võta eelmisel korral kasutatud väljapaistvate eestlaste gpkg-andmestik, laadi see QGISi ja salvesta geojson-failina.

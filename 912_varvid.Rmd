@@ -135,7 +135,7 @@ Vajadusel saab eksporditavale kaardile lisada ka atribuuttabeli: *Add item → A
 
 Leidke endale paariline. Iga paar saab endale kahe peale ühe andmestiku. 
 
-- Tartu linna [kalmistud](https://geohub.tartulv.ee/maps/yp2040-miljoo-muinsuskaitse-avaandmed/about) (polügoonid) ja [kalmistutele maetud kultuurilooliste isikud](https://geohub.tartulv.ee/maps/ka-malestis/about) (polügoonid),  
+- Tartu linna [kalmistud](https://geohub.tartulv.ee/maps/yp2040-miljoo-muinsuskaitse-avaandmed/about) (polügoonid) ja [kalmistutele maetud kultuuriloolised isikud](https://geohub.tartulv.ee/maps/ka-malestis/about) (polügoonid),  
     - kuupäevadega töötamiseks on kasulikud *Date and Time* jaotise funktsioonid ja avaldised, näiteks võimaldab funktsioon `age()` arvutada välja kellegi vanuse ja funktsioon `year()` teisendada vanus päevades või lihtsalt ka mingi kuupäev ainult aastateks.  
     
 - Tartu linna [rahvastiku ja eluruumide prognoos](https://geohub.tartulv.ee/maps/yp2040-ruumiline-areng-avaandmed/about) (polügoonid),  
