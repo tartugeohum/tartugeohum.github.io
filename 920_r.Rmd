@@ -339,15 +339,15 @@ Atlase punktikihi puhul meil murrete infot teada ei ole (on ainult maakondade in
 
 **Ruumiandmete** omavahel ühendamiseks saab kasutada funktsiooni **`st_join()`** (paketist `sf`). Selleks, et ühendamisel säiliks andmestiku vektortüübina punktandmestik, mitte polügoonid, peaksime vasakule poole panema atlase andmestiku nime ja paremale kihelkondade oma.  
 
-```{r}
+```{r, echo = T}
 atlas_khk <- st_join(atlas, kihelkonnad)
 ```
 
-```{r}
+```{r, echo = T}
 head(atlas_khk)
 ```
 
-```{r}
+```{r, echo = T}
 kesk_khk <- kihelkonnad %>% filter(Dialect_et == "Kesk")
 kesk_atlas <- atlas_khk %>% filter(Dialect_et == "Kesk")
 
@@ -359,7 +359,7 @@ ggplot() +
 
 Võtame kaardilt ära ka koordinaadistiku ja värvime tausta tumehalliks  
 
-```{r}
+```{r, echo = T}
 ggplot() +
     geom_sf(data = kesk_khk) +
     geom_sf(data = kesk_atlas, alpha = 0.5, size = 3, aes(color = KeelendBin)) +
@@ -372,7 +372,7 @@ ggplot() +
 
 Väiksema ala puhul võime punktide asemel kuvada ehk hoopis konkreetsete keelendite silte.  
 
-```{r}
+```{r, echo = T}
 ggplot() +
     geom_sf(data = kesk_khk) +
     geom_sf_text(data = kesk_atlas, aes(label = Keelend), size = 3) + # sildid
