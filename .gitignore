@@ -45,7 +45,7 @@ vignettes/*.pdf
 /imgs/
 
 # Files
-*_files/
+#*_files/
 
 # Course work catalog
 /Lopuprojekt/
