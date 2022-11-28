@@ -1,4 +1,4 @@
-# Ruumiandmete analüüs R-iga {#r}
+# Ruumiandmete analüüs R-iga (1) {#r}
 
 
 ## Miks teha kaarte koodipõhiselt?

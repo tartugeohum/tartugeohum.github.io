@@ -363,3 +363,12 @@ jooniste-eksportimine
 ülesanne-5
 r-i-raamatud-ja-juhendid
 järgmisel-korral-19
+r2
+staatilised-kaardid
+shiny-rakendus
+pakettide-laadimine-ja-andmete-sisselugemine
+andmete-eeltöötlemine
+kasutajaliides
+server
+rakenduse-kokkupanemine
+rakenduse-jagamine
