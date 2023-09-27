@@ -26,3 +26,8 @@ keele-sotsiaalteadus
 veel-näiteid
 küsitlus
 järgmisel-korral
+seminar
+mõisted
+rühmatöö-1-gisi-ja-ruumi-geohumanitaaria-projekte-ja-rakendusi
+rühmatöö-2-humanitaaria-ja-kvantitatiivsed-meetodid
+järgmisel-korral-1
