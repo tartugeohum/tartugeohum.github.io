@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Praktikum 5 Story maps | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 5 Story maps | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Praktikum 5 Story maps | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Praktikum 5 Story maps | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  
+  
+  
+
+<meta name="author" content="Maarja-Liisa Pilvik, Andres Kimber" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="kaardid.html"/>
+<link rel="next" href="kirjandus.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.2.0/leaflet.js"></script>
+<link href="libs/leaflet-measure-2.1.7/leaflet-measure.css" rel="stylesheet" />
+<script src="libs/leaflet-measure-2.1.7/leaflet-measure.min.js"></script>
+<script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Sissejuhatus</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#kursuse-korraldusest"><i class="fa fa-check"></i><b>1.1</b> Kursuse korraldusest</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#mis-on-geoinfosüsteemid"><i class="fa fa-check"></i><b>1.2</b> Mis on geoinfosüsteemid?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#geoinfosüsteemide-ajaloost"><i class="fa fa-check"></i><b>1.3</b> Geoinfosüsteemide ajaloost</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#ruumiandmed-ja-gis-humanitaarteadustes"><i class="fa fa-check"></i><b>1.4</b> Ruumiandmed ja GIS humanitaarteadustes</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#lugude-jutustamine"><i class="fa fa-check"></i><b>1.4.1</b> Lugude jutustamine</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#arheoloogia"><i class="fa fa-check"></i><b>1.4.2</b> Arheoloogia</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#keeleteadus"><i class="fa fa-check"></i><b>1.4.3</b> Keeleteadus</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#keele-sotsiaalteadus"><i class="fa fa-check"></i><b>1.4.4</b> Keele-/sotsiaalteadus</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#veel-näiteid"><i class="fa fa-check"></i><b>1.4.5</b> Veel näiteid</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#küsitlus"><i class="fa fa-check"></i><b>1.5</b> Küsitlus</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#järgmisel-korral"><i class="fa fa-check"></i><b>1.6</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="seminar.html"><a href="seminar.html"><i class="fa fa-check"></i><b>2</b> Seminar</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="seminar.html"><a href="seminar.html#mõisted"><i class="fa fa-check"></i><b>2.1</b> Mõisted</a></li>
+<li class="chapter" data-level="2.2" data-path="seminar.html"><a href="seminar.html#rühmatöö-1-gisi-ja-ruumi-geohumanitaaria-projekte-ja-rakendusi"><i class="fa fa-check"></i><b>2.2</b> Rühmatöö 1: GISi ja ruumi-/geohumanitaaria projekte ja rakendusi</a></li>
+<li class="chapter" data-level="2.3" data-path="seminar.html"><a href="seminar.html#rühmatöö-2-humanitaaria-ja-kvantitatiivsed-meetodid"><i class="fa fa-check"></i><b>2.3</b> Rühmatöö 2: humanitaaria ja kvantitatiivsed meetodid</a></li>
+<li class="chapter" data-level="2.4" data-path="seminar.html"><a href="seminar.html#järgmisel-korral-1"><i class="fa fa-check"></i><b>2.4</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html"><i class="fa fa-check"></i><b>3</b> Ruumiobjektid ja ruumiandmed</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#vektorandmed"><i class="fa fa-check"></i><b>3.1</b> Vektorandmed</a></li>
+<li class="chapter" data-level="3.2" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#rasterandmed"><i class="fa fa-check"></i><b>3.2</b> Rasterandmed</a></li>
+<li class="chapter" data-level="3.3" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#vektor-vs.-raster"><i class="fa fa-check"></i><b>3.3</b> Vektor vs. raster</a></li>
+<li class="chapter" data-level="3.4" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#kasikirjalised"><i class="fa fa-check"></i><b>3.4</b> Ülesanne</a></li>
+<li class="chapter" data-level="3.5" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#järgmisel-korral-2"><i class="fa fa-check"></i><b>3.5</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="kaardid.html"><a href="kaardid.html"><i class="fa fa-check"></i><b>4</b> Kaardid, koordinaatsüsteemid ja projektsioonid</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="kaardid.html"><a href="kaardid.html#kaart"><i class="fa fa-check"></i><b>4.1</b> Kaart</a></li>
+<li class="chapter" data-level="4.2" data-path="kaardid.html"><a href="kaardid.html#kaardi-elemendid"><i class="fa fa-check"></i><b>4.2</b> Kaardi elemendid</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="kaardid.html"><a href="kaardid.html#mootkava"><i class="fa fa-check"></i><b>4.2.1</b> Mõõtkava</a></li>
+<li class="chapter" data-level="4.2.2" data-path="kaardid.html"><a href="kaardid.html#projektsioon"><i class="fa fa-check"></i><b>4.2.2</b> Koordinaatsüsteemid ja projektsioonid</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="kaardid.html"><a href="kaardid.html#kaartide-liigitus"><i class="fa fa-check"></i><b>4.3</b> Kaartide liigitus</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="kaardid.html"><a href="kaardid.html#digitaalkaardid"><i class="fa fa-check"></i><b>4.3.1</b> Digitaalkaardid</a></li>
+<li class="chapter" data-level="4.3.2" data-path="kaardid.html"><a href="kaardid.html#viguriga-kaardid"><i class="fa fa-check"></i><b>4.3.2</b> Viguriga kaardid</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="kaardid.html"><a href="kaardid.html#kaartide-koostamine-ja-kujundamine-veebis"><i class="fa fa-check"></i><b>4.4</b> Kaartide koostamine ja kujundamine veebis</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="kaardid.html"><a href="kaardid.html#arcgis-online"><i class="fa fa-check"></i><b>4.4.1</b> ArcGIS Online</a></li>
+<li class="chapter" data-level="4.4.2" data-path="kaardid.html"><a href="kaardid.html#mapbox-studio"><i class="fa fa-check"></i><b>4.4.2</b> Mapbox Studio</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="kaardid.html"><a href="kaardid.html#järgmisel-korral-3"><i class="fa fa-check"></i><b>4.5</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="storymaps.html"><a href="storymaps.html"><i class="fa fa-check"></i><b>5</b> Story maps</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="storymaps.html"><a href="storymaps.html#story-maps"><i class="fa fa-check"></i><b>5.1</b> Story maps</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="storymaps.html"><a href="storymaps.html#storymapjs"><i class="fa fa-check"></i><b>5.1.1</b> StoryMapJS</a></li>
+<li class="chapter" data-level="5.1.2" data-path="storymaps.html"><a href="storymaps.html#arcgis-storymaps"><i class="fa fa-check"></i><b>5.1.2</b> ArcGIS StoryMaps</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="storymaps.html"><a href="storymaps.html#ülesanne-tänane-kuupäev-story-mapis"><i class="fa fa-check"></i><b>5.2</b> Ülesanne: tänane kuupäev <em>story map</em>’is</a></li>
+<li class="chapter" data-level="5.3" data-path="storymaps.html"><a href="storymaps.html#järgmisel-korral-4"><i class="fa fa-check"></i><b>5.3</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="storymaps" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Praktikum 5</span> Story maps<a href="storymaps.html#storymaps" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="story-maps" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Story maps<a href="storymaps.html#story-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong><em>Story map</em></strong>, mida on eesti keelde tõlgitud kui <em>kaardilugu</em>, on formaat, mis võimaldab piltide, teksti, video ja kohainfo kaudu jutustada lugusid fotograafiast, kunstist, kirjandusest, spordist, ajaloost, teadusest, ühiskonnast ja paljust muust.</p>
+<p>Kontseptsioon on lihtne: kaardile märgitakse punktid, mille juurde saab lisada nii tekstilist kui ka pildilist infot selles kohas toimunud sündmuse või selles kohas paikneva objekti kohta. Kaardi punkte omavahel ühendades tekibki mingi narratiiv.<br />
+Laiemas tõlgenduses ei pea <em>story map</em>’i <em>kaart</em> olema tingimata geograafiline. Kontekstina võib toimida ka näiteks mõni maal, foto või muu visuaal, ent taust on sel juhul siiski käsitletav ruumina, milles saab loogiliselt liikuda. Klassikalises <em>story map</em>’is on lähtepunktiks siiski mingi narratiiv, mida mööda liikudes liigume ka vastavatesse paikadesse geograafilisel kaardil.</p>
+<p>Ühest küljest on <em>story map</em>’il palju ühist tavaliste veebilehtedega, kus jutustatakse mingit lugu, mida illustreerivad muu materjali kõrval ka kaardid, ent <em>story map</em>’il on <strong>koht (ja aeg) oluliselt prominentsemal kohal</strong>.<br />
+Teiselt poolt on <em>story map</em>’il ühisjooni tavaliste kaardirakendustega, kuhu saab lisada ruumiobjekte, mida iseloomustavad teatud atribuudid. Atribuudina võib näiteks lisada ka pikema teksti, lingi pildile või videole jpm. Väga selget piiri <em>story map</em>’i ja kindlasti-mitte-<em>story</em>-<em>map</em>’i vahele on raske tõmmata, ent kuna <em>story map</em>’i fookus on selgelt mingi loo jutustamisel või argumendi esitamisel, on see enamasti <strong>visuaalselt esteetilisem ja sujuvam</strong> ning oluliseks omaduseks on <strong>väljundi võimalikult lihtne ja kiire integreeritavus</strong> erinevate veebiplatvormidega.<br />
+<em>Story map</em> on hea meedium näiteks esitluste ja ettekannete jaoks, kui aeg ja koht (õigemini kohad) on narratiivi või argumendi esitamise seisukohast olulised.</p>
+<p>Kõige rohkemate funktsioonide ja võimalustega teenust <em>story map</em>’ide tegemiseks pakub ilmselt <strong>ESRI</strong> oma <strong>ArcGIS StoryMaps</strong> rakenduse kaudu. ESRI-l on ka eraldi digihumanitaaria <a href="https://collections.storymaps.esri.com/humanities/"><em>story map</em>’ide kollektsioon</a>. Mõned näited:</p>
+<iframe width="640px" height="480px" src="https://storymaps.esri.com/stories/2016/humboldt/index.html" frameborder="0" scrolling="yes">
+</iframe>
+<iframe width="640px" height="480px" src="https://storymaps.esri.com/stories/2017/hip-hop/map/" frameborder="0" scrolling="yes">
+</iframe>
+<iframe width="640px" height="480px" src="https://story.maps.arcgis.com/apps/Cascade/index.html?appid=46daf1304a0c4ad69a8935c7ed2ab692" frameborder="0" scrolling="yes">
+</iframe>
+<iframe width="640px" height="480px" src="https://maps.calgary.ca/language/" frameborder="0" scrolling="yes">
+</iframe>
+<p>Kaardilugusid on üha enam hakatud tegema ka Eestis, vaata näiteks <a href="https://keskkonnateadlik-kaur.hub.arcgis.com/">Keskkonnaagentuuri</a>, <a href="https://rahvaloendus.ee/et/tulemused/kaardilood">statistikaameti</a> kaardilugusid. Ka 2023. aasta konkursil “Andmepärl” parima infograafika tiitliga pärjatud <a href="https://ekspress.delfi.ee/artikkel/96315029/ekspressi-hitid-2022-sisesta-oma-aadress-ja-vaata-kuidas-sinu-kodukoht-tallinnas-muutunud-on">Eesti Ekspressi lugu Tallinna elanike kohta</a> on oma olemuselt kaardilugu.</p>
+<p>Sel korral vaatleme esmalt vabavaralist platvormi <strong><a href="https://storymap.knightlab.com/">StoryMapJS</a></strong> ning võrdleme seda seejärel <strong><a href="https://storymaps.arcgis.com/">ESRI</a></strong> platvormi tasuta funktsioonidega.</p>
+<div id="storymapjs" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> <a href="https://storymap.knightlab.com/">StoryMapJS</a><a href="storymaps.html#storymapjs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Loo tegemiseks pead Google’i kasutajakontoga sisse logima.<br />
+</li>
+<li>Kui oled sisse loginud, vajuta nupul <em>New</em>.<br />
+</li>
+<li>Nimeta oma lugu. Loo nimi saab ühtlasi sinu projekti ID-ks, mida kasutatakse hiljem loole viitava lingi nimes. Kui kasutad mitmesõnalist nime, milles tühikud eraldavad sõnu, siis asendatakse need ID-s sidekriipsudega.<br />
+</li>
+<li>Sätete (<em>Options</em>) alt saad valida:
+<ul>
+<li>kaardi suuruse (kõrgus (<em>Height</em>) pikslites, laius (<em>Width</em>) protsentides ekraani laiusest);</li>
+<li>keele. Keel määrab ära, mis keeles kuvatakse kasutajale igasugu nupud ja juhised. Valikus on ka eesti keel;<br />
+</li>
+<li>teksti fondi (küsimärgile vajutades näed ka, millised eri variandid välja näevad);<br />
+</li>
+<li>kas soovid, et kaardi erinevate punktide vahele tõmmataks joon (<em>treat as cartography</em>) või mitte (<em>treat as image</em>);<br />
+</li>
+<li>esilehel kuvatava nupu nt vaatama kutsuva tekstiga (<em>call to action</em>);<br />
+</li>
+<li>aluskaardi. Saad valida nii olemasolevate põhjade vahel kui ka omaenda või teiste kohandatud kaartide vahel. Näiteks on võimalik integreerida Mapboxi kaarte, kui kopeerid sinna Mapboxi stiili veebiaadressi ja juurdepääsuloa (vt <a href="kaardid.html#kaardijagamine">eelmise korra materjale</a>).</li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:storymaps1"></span>
+<img src="imgs/5_storymapsjs_settings.png" alt="Storymaps JS sätted" width="60%" />
+<p class="caption">
+Joonis 5.1: Storymaps JS sätted
+</p>
+</div>
+<p>Kui oled oma loo n-ö ära seadistanud, siis saad hakata lisama sisu.</p>
+<ul>
+<li>Kõigepealt saad valida pildi, mida avalehel näidatakse (<code>Media</code>), lisada pealkirja ja tutvustava teksti ja muuta soovi korral tausta (<code>Background Options</code>).</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:storymaps2"></span>
+<img src="imgs/5_storymapsjs_avakuva.png" alt="Storymaps JS avakuva seadistamine" width="80%" />
+<p class="caption">
+Joonis 5.2: Storymaps JS avakuva seadistamine
+</p>
+</div>
+<ul>
+<li><code>Preview</code> vahelehel näidatakse <em>story map</em>’i väljundit, lehe vasakul poolel hakatakse kuvama loo kaarti, kui mingid kohad on juba ära märgitud.<br />
+</li>
+<li>Sisu lisamiseks lisa slaid (<code>Add slide</code>). Iga slaid on seotud ühe kohaga.
+<ul>
+<li>Esmalt otsi koordinaatide või kohanime järgi koht, millega slaidil esitatav loo osa seotud on. Saad vahetada koha markerit ka mõne enda üles laetud pildi/ikooni vastu (<code>Marker Options</code>).<br />
+</li>
+<li>Võid lisada nii pilte kui ka videoid, samuti saab teksti sisse lisada linke.<br />
+</li>
+</ul></li>
+<li>Kui oled loo valmis saanud, siis salvesta see (vasakul ülemises menüüs nupp <code>Save</code>).<br />
+</li>
+<li>Oma lugu võib jagada (paremal ülemises menüüs nupp <code>Share</code>) lingiga või ka näiteks otse Twitteri, Facebooki, Google+’i või Redditi kaudu. Samuti võib selle <em>iframe</em>’i koodi abil lisada otse enda veebilehele (näiteks Wordpressi, Mediumi või mujale, kasvõi sellele kursuse lehele siin).</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:storymaps3"></span>
+<img src="imgs/5_storymapjs_iframe.png" alt="Storymaps JS väljundi kuvamine *iframe*'i kaudu (väga lihtsal) veebilehel" width="100%" />
+<p class="caption">
+Joonis 5.3: Storymaps JS väljundi kuvamine <em>iframe</em>’i kaudu (väga lihtsal) veebilehel
+</p>
+</div>
+</div>
+<div id="arcgis-storymaps" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> <a href="https://storymaps.arcgis.com/">ArcGIS StoryMaps</a><a href="storymaps.html#arcgis-storymaps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Loo tegemiseks pead looma (avaliku) kasutajakonto. Seejärel saad meilile aktiveerimislingi ning sellele vajutades saabki konto loomise lõpule viia (määrata kasutajanime ja parooli jms).<br />
+</li>
+<li>Kindluse mõttes võib esmalt ära vahetada vaikimisi platvormi keele, kui see ei ole inglise keel. Vastasel juhul võivad mõned tõlked arusaamatuks jääda (nt sõna <em>heading</em> tõlkena võib kohata sõna <em>suund</em>). Selleks saab minna üleval paremas nurgas enda profiili lingile ning vaadata lähemalt seadeid (<em>Kuva minu seaded</em> või <em>View my settings</em>) ning uuenda keelt, numbri- ja kuupäevavorminguid. Seejärel trüki aadressiribale uuesti <code>https://storymaps.arcgis.com</code>.<br />
+</li>
+<li>Uue loo tegemiseks vajuta nupul <em>New story</em>. Võib alustada tühja malliga või valida mallitüübi
+<ul>
+<li><em>Sidecar</em> (tekst ja visuaal kuvatud kõrvuti paneelidel, sobib hästi, kui suurem rõhk on näiteks tekstil)<br />
+</li>
+<li><em>Guided map tour</em> (tekst ja visuaal kuvatud kaardil, vaataja liigub mööda punkte kindlaks määratud järjekorras)<br />
+</li>
+<li><em>Explorer map tour</em> (nagu eelmine vormel, aga vaataja saab valida, mis järjekorras mööda punkte liigub).<br />
+</li>
+</ul></li>
+<li>Kasutame siin tühja malli, millele saame lisada teisi malle juurde. Tiitellehele saab märkida oma projekti nime ja lühikese tutvustuse. Võib lisada juurde ka pildi või video (<strong>NB! Kui kasutad teiste tehtud materjale, viita kindlasti ka autorile</strong>).</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:storymaps4"></span>
+<img src="imgs/5_arcgis_intro.png" alt="ArcGIS StoryMapsi avakuva" width="60%" />
+<p class="caption">
+Joonis 5.4: ArcGIS StoryMapsi avakuva
+</p>
+</div>
+<ul>
+<li>Plussikestest saad lisada uusi plokke:
+<ul>
+<li>teksti (<code>Text</code>),<br />
+</li>
+<li>nupu, mis viib nt mingile lingile (<code>Button</code>),<br />
+</li>
+<li>horisontaalse eraldusriba eri tekstiplokkide vahele (<code>Separator</code>),<br />
+</li>
+<li>koodiploki (<code>Code</code>),<br />
+</li>
+<li>tabeli (<code>Table</code>) kuni 8 tulba ja 10 reaga,<br />
+</li>
+<li>kaardi (<code>Map</code>),<br />
+</li>
+<li>pildi (<code>Image</code>),<br />
+</li>
+<li>video (<code>Video</code>),<br />
+</li>
+<li>liuguri, mis lubab kõrvutada kaht kaarti või pilti (<code>Swipe</code>),<br />
+</li>
+<li>teisi loomalle (<em>Slideshow</em>, <em>Sidecar</em>, <em>Map tour</em>), mille sisse omakorda võib lisada üleval nimetatud elemente.<br />
+</li>
+</ul></li>
+<li>Tasulises versioonis on võimalik kasutada veel plokitüüpe.<br />
+</li>
+<li>Kaardi (<code>Map</code>) võid lisada juba varem valmis tehtud kaartide hulgast (nt eelmisel korral tehtud vallakohtuprotokollide kaart) või teha kohapeal uus. Selleks
+<ul>
+<li>tuleks valida esmalt aluskaart (<em>basemap</em>),<br />
+</li>
+<li>seejärel lisada tekst, meedia ja siduda punktid konkreetsete kohtadega.</li>
+<li>Kõige lihtsam on seda teha nii, kui valid <code>Map</code> -&gt; <code>New express map</code></li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:storymaps5"></span>
+<img src="imgs/5_arcgis_addmap.gif" alt="ArcGIS StoryMapsi kaardi lisamine" width="80%" />
+<p class="caption">
+Joonis 5.5: ArcGIS StoryMapsi kaardi lisamine
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:storymaps51"></span>
+<img src="imgs/5_arcgis_drawing.png" alt="Joonistamise võimalused kaardi tegemisel" width="80%" />
+<p class="caption">
+Joonis 5.6: Joonistamise võimalused kaardi tegemisel
+</p>
+</div>
+<ul>
+<li>Võid aluskaardina kasutada ka Mapboxis stiliseeritud kaarti.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:storymaps6"></span>
+<img src="imgs/5_argis_addmap2.gif" alt="Mapboxi kaardi kasutamine aluskaardina" width="80%" />
+<p class="caption">
+Joonis 5.7: Mapboxi kaardi kasutamine aluskaardina
+</p>
+</div>
+<ul>
+<li>Saad kaardi lisada ka <em>Map tour</em> formaadis.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:storymaps7"></span>
+<img src="imgs/5_arcgis_maptour.gif" alt="ArcGIS StoryMapsi kaardi lisamine *Map tour* formaadis" width="80%" />
+<p class="caption">
+Joonis 5.8: ArcGIS StoryMapsi kaardi lisamine <em>Map tour</em> formaadis
+</p>
+</div>
+<ul>
+<li>Kui lugu on valmis, avalikusta lugu (ülemises menüüs nupp <code>Publish</code>).<br />
+</li>
+<li>Kaarti saab jagada samuti lingiga (kui lugu on avalik) ning lisada <em>iframe</em>’i koodiga teistele veebilehtedele (<code>More actions</code> -&gt; <code>Embed this story</code>).<br />
+</li>
+<li>Vaata lähemalt kõikide ArcGIS-i <em>story map</em>’ide võimalusi <a href="https://storymaps.arcgis.com/stories/cea22a609a1d4cccb8d54c650b595bc4">siit</a>.</li>
+</ul>
+<hr />
+<p>Veel paar aastat tagasi oli võimalik vähese vaevaga kasutada <em>story map</em>’ide tegemiseks ka platvorme nagu <a href="https://mapstory.org">MapStory</a> või <a href="https://cartodb.github.io/odyssey.js/">Odyssey.js</a>, ent nende kasutamine on praeguseks oluliselt raskendatud (nõuab veidi koodikirjutamisoskust ning kõik funktsioonid ei ole enam toetatud).</p>
+</div>
+</div>
+<div id="ülesanne-tänane-kuupäev-story-mapis" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Ülesanne: tänane kuupäev <em>story map</em>’is<a href="storymaps.html#ülesanne-tänane-kuupäev-story-mapis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Otsi <a href="https://en.wikipedia.org/wiki/October_9">Vikipeediast tänase kuupäevaga</a> seotud sündmus (nt ajalooline sündmus, mõne kuulsa isiku sünni- või surmakuupäev), võid kasutada ka <a href="https://et.wikipedia.org/wiki/9._oktoober">eestikeelset nimekirja</a>, ning kujuta vastavat Vikipeedia artiklit või selle olulisemaid osi <em>story map</em>’il kas StoryMap JS või ArcGis Story Maps keskkonnas. Lisa võimalusel pilte, linke ja muud, mis loo käiku aitavad jälgida.</p>
+<p>Avalikusta valmis <em>story map</em> ning lisa <em>iframe</em>’i kood <a href="https://sites.google.com/d/1PclrC78cCPWmg7ZZ0-6AbcHX5H1fpWjb/p/1dvzXbbuMyM4jnyYTNsPNHj69IJQK8-gU/edit">ühisesse faili</a>: <code>Manusta</code> -&gt; <code>Manusta kood</code> -&gt; sisesta <em>iframe</em>’i kood -&gt; <code>Järgmine</code> -&gt; <code>Sisesta</code>.</p>
+</div>
+<div id="järgmisel-korral-4" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Järgmisel korral<a href="storymaps.html#järgmisel-korral-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kolmapäeval kolime lõpuks QGISi ning teeme esimesed sammud tarkvaraga tutvumisel.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="kaardid.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
