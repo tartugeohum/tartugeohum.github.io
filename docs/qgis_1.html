@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Praktikum 6 Sissejuhatus QGISi (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 6 Sissejuhatus QGISi (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Praktikum 6 Sissejuhatus QGISi (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Praktikum 6 Sissejuhatus QGISi (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  
+  
+  
+
+<meta name="author" content="Maarja-Liisa Pilvik, Andres Kimber" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="storymaps.html"/>
+<link rel="next" href="kirjandus.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.2.0/leaflet.js"></script>
+<link href="libs/leaflet-measure-2.1.7/leaflet-measure.css" rel="stylesheet" />
+<script src="libs/leaflet-measure-2.1.7/leaflet-measure.min.js"></script>
+<script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Sissejuhatus</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#kursuse-korraldusest"><i class="fa fa-check"></i><b>1.1</b> Kursuse korraldusest</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#mis-on-geoinfosüsteemid"><i class="fa fa-check"></i><b>1.2</b> Mis on geoinfosüsteemid?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#geoinfosüsteemide-ajaloost"><i class="fa fa-check"></i><b>1.3</b> Geoinfosüsteemide ajaloost</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#ruumiandmed-ja-gis-humanitaarteadustes"><i class="fa fa-check"></i><b>1.4</b> Ruumiandmed ja GIS humanitaarteadustes</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#lugude-jutustamine"><i class="fa fa-check"></i><b>1.4.1</b> Lugude jutustamine</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#arheoloogia"><i class="fa fa-check"></i><b>1.4.2</b> Arheoloogia</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#keeleteadus"><i class="fa fa-check"></i><b>1.4.3</b> Keeleteadus</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#keele-sotsiaalteadus"><i class="fa fa-check"></i><b>1.4.4</b> Keele-/sotsiaalteadus</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#veel-näiteid"><i class="fa fa-check"></i><b>1.4.5</b> Veel näiteid</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#küsitlus"><i class="fa fa-check"></i><b>1.5</b> Küsitlus</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#järgmisel-korral"><i class="fa fa-check"></i><b>1.6</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="seminar.html"><a href="seminar.html"><i class="fa fa-check"></i><b>2</b> Seminar</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="seminar.html"><a href="seminar.html#mõisted"><i class="fa fa-check"></i><b>2.1</b> Mõisted</a></li>
+<li class="chapter" data-level="2.2" data-path="seminar.html"><a href="seminar.html#rühmatöö-1-gisi-ja-ruumi-geohumanitaaria-projekte-ja-rakendusi"><i class="fa fa-check"></i><b>2.2</b> Rühmatöö 1: GISi ja ruumi-/geohumanitaaria projekte ja rakendusi</a></li>
+<li class="chapter" data-level="2.3" data-path="seminar.html"><a href="seminar.html#rühmatöö-2-humanitaaria-ja-kvantitatiivsed-meetodid"><i class="fa fa-check"></i><b>2.3</b> Rühmatöö 2: humanitaaria ja kvantitatiivsed meetodid</a></li>
+<li class="chapter" data-level="2.4" data-path="seminar.html"><a href="seminar.html#järgmisel-korral-1"><i class="fa fa-check"></i><b>2.4</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html"><i class="fa fa-check"></i><b>3</b> Ruumiobjektid ja ruumiandmed</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#vektorandmed"><i class="fa fa-check"></i><b>3.1</b> Vektorandmed</a></li>
+<li class="chapter" data-level="3.2" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#rasterandmed"><i class="fa fa-check"></i><b>3.2</b> Rasterandmed</a></li>
+<li class="chapter" data-level="3.3" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#vektor-vs.-raster"><i class="fa fa-check"></i><b>3.3</b> Vektor vs. raster</a></li>
+<li class="chapter" data-level="3.4" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#kasikirjalised"><i class="fa fa-check"></i><b>3.4</b> Ülesanne</a></li>
+<li class="chapter" data-level="3.5" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#järgmisel-korral-2"><i class="fa fa-check"></i><b>3.5</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="kaardid.html"><a href="kaardid.html"><i class="fa fa-check"></i><b>4</b> Kaardid, koordinaatsüsteemid ja projektsioonid</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="kaardid.html"><a href="kaardid.html#kaart"><i class="fa fa-check"></i><b>4.1</b> Kaart</a></li>
+<li class="chapter" data-level="4.2" data-path="kaardid.html"><a href="kaardid.html#kaardi-elemendid"><i class="fa fa-check"></i><b>4.2</b> Kaardi elemendid</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="kaardid.html"><a href="kaardid.html#mootkava"><i class="fa fa-check"></i><b>4.2.1</b> Mõõtkava</a></li>
+<li class="chapter" data-level="4.2.2" data-path="kaardid.html"><a href="kaardid.html#projektsioon"><i class="fa fa-check"></i><b>4.2.2</b> Koordinaatsüsteemid ja projektsioonid</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="kaardid.html"><a href="kaardid.html#kaartide-liigitus"><i class="fa fa-check"></i><b>4.3</b> Kaartide liigitus</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="kaardid.html"><a href="kaardid.html#digitaalkaardid"><i class="fa fa-check"></i><b>4.3.1</b> Digitaalkaardid</a></li>
+<li class="chapter" data-level="4.3.2" data-path="kaardid.html"><a href="kaardid.html#viguriga-kaardid"><i class="fa fa-check"></i><b>4.3.2</b> Viguriga kaardid</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="kaardid.html"><a href="kaardid.html#kaartide-koostamine-ja-kujundamine-veebis"><i class="fa fa-check"></i><b>4.4</b> Kaartide koostamine ja kujundamine veebis</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="kaardid.html"><a href="kaardid.html#arcgis-online"><i class="fa fa-check"></i><b>4.4.1</b> ArcGIS Online</a></li>
+<li class="chapter" data-level="4.4.2" data-path="kaardid.html"><a href="kaardid.html#mapbox-studio"><i class="fa fa-check"></i><b>4.4.2</b> Mapbox Studio</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="kaardid.html"><a href="kaardid.html#järgmisel-korral-3"><i class="fa fa-check"></i><b>4.5</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="storymaps.html"><a href="storymaps.html"><i class="fa fa-check"></i><b>5</b> Story maps</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="storymaps.html"><a href="storymaps.html#story-maps"><i class="fa fa-check"></i><b>5.1</b> Story maps</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="storymaps.html"><a href="storymaps.html#storymapjs"><i class="fa fa-check"></i><b>5.1.1</b> StoryMapJS</a></li>
+<li class="chapter" data-level="5.1.2" data-path="storymaps.html"><a href="storymaps.html#arcgis-storymaps"><i class="fa fa-check"></i><b>5.1.2</b> ArcGIS StoryMaps</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="storymaps.html"><a href="storymaps.html#ülesanne-tänane-kuupäev-story-mapis"><i class="fa fa-check"></i><b>5.2</b> Ülesanne: tänane kuupäev <em>story map</em>’is</a></li>
+<li class="chapter" data-level="5.3" data-path="storymaps.html"><a href="storymaps.html#järgmisel-korral-4"><i class="fa fa-check"></i><b>5.3</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="qgis_1.html"><a href="qgis_1.html"><i class="fa fa-check"></i><b>6</b> Sissejuhatus QGISi (1)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="qgis_1.html"><a href="qgis_1.html#installimine"><i class="fa fa-check"></i><b>6.1</b> Installimine</a></li>
+<li class="chapter" data-level="6.2" data-path="qgis_1.html"><a href="qgis_1.html#andmed-ja-failihaldus"><i class="fa fa-check"></i><b>6.2</b> Andmed ja failihaldus</a></li>
+<li class="chapter" data-level="6.3" data-path="qgis_1.html"><a href="qgis_1.html#esimene-seadistamine-ja-kasutajaliides"><i class="fa fa-check"></i><b>6.3</b> Esimene seadistamine ja kasutajaliides</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="qgis_1.html"><a href="qgis_1.html#vaikimisi-koordinaatide-referentssüsteemi-sätestamine."><i class="fa fa-check"></i><b>6.3.1</b> Vaikimisi koordinaatide referentssüsteemi sätestamine.</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="qgis_1.html"><a href="qgis_1.html#andmete-avamine"><i class="fa fa-check"></i><b>6.4</b> Andmete avamine</a></li>
+<li class="chapter" data-level="6.5" data-path="qgis_1.html"><a href="qgis_1.html#kihtide-visualiseerimine"><i class="fa fa-check"></i><b>6.5</b> Kihtide visualiseerimine</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="qgis_1.html"><a href="qgis_1.html#harjutus-1"><i class="fa fa-check"></i><b>6.5.1</b> Harjutus 1</a></li>
+<li class="chapter" data-level="6.5.2" data-path="qgis_1.html"><a href="qgis_1.html#yhendamine1"><i class="fa fa-check"></i><b>6.5.2</b> Harjutus 2</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="qgis_1.html"><a href="qgis_1.html#aluskaardid"><i class="fa fa-check"></i><b>6.6</b> Aluskaardid</a></li>
+<li class="chapter" data-level="6.7" data-path="qgis_1.html"><a href="qgis_1.html#järgmisel-korral-5"><i class="fa fa-check"></i><b>6.7</b> Järgmisel korral</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="qgis_1" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Praktikum 6</span> Sissejuhatus QGISi (1)<a href="qgis_1.html#qgis_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>QGIS (varasemalt Quantum GIS) on <strong>vabavaraline</strong> ja <strong>avatud lähtekoodiga</strong> geoinfosüsteemide tarkvara, mida saab kasutada kõikide tuntumate operatsioonisüsteemidega. QGISis saab rakendada kõiki põhilisi ruumiandmete analüüsi meetodeid ning funktsionaalsuselt ei jää see sugugi alla kommertstarkvarale (nt ArcGIS).</p>
+<div id="installimine" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Installimine<a href="qgis_1.html#installimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>QGISil on alati kaks hetkeversiooni: stabiilne <em>Long term release</em> (LTR) ja uusimate võimalustega <em>Latest release</em> (LR). Väga suuri erinevusi nende versioonide vahel ei ole, eriti selle kursuse raames käsitletavate tööriistade osas. Arvutiklassi arvutitesse peaks olema installitud kõige hiljutisem stabiilne versioon <strong>3.28</strong>, järgmine stabiilne versioon tuleb aga välja juba 27. oktoobril. Kel huvi, võib vaadata ka <a href="https://qgis.org/en/site/getinvolved/development/roadmap.html#release">väljalaskegraafikut</a>.</p>
+<p>QGIS 3.28 saab alla laadida <a href="https://qgis.org/en/site/forusers/download.html">ametlikult kodulehelt</a>, valides enda arvuti operatsioonisüsteemile sobiva variandi. Allalaadimine võib pisut aega võtta. Kui allalaadimine on lõppenud, ava fail ning installi programm. Kasuta vaikimisi valikuid.</p>
+<p><img src="imgs/6_qgis_328.webp" width="50%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="andmed-ja-failihaldus" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Andmed ja failihaldus<a href="qgis_1.html#andmed-ja-failihaldus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Segaduste vältimiseks on soovitatav kursusel kasutada kaustade struktuuri, kus selle kursuse kaustas on QGISi projekti fail(id) laiendiga <em>.qgz</em> ja kaustad <strong>andmed</strong> ja <strong>kaardid</strong>, kuhu panete vastavalt kõik praktikumides kasutatavad andmed ja valminud kaardid. Võimalike probleemide vältimiseks (eriti Windowsi operatsioonisüsteemis) võiks kursuse kaust olla kohas (<em>directory path</em>), kus ei ole täpitähti. Nt <em>C:/ut/magistrantuur/sygis_2023/geohum2023/</em>.</p>
+<p>Näiteks:</p>
+<ul>
+<li>C:/…/geohum2023/
+<ul>
+<li>praktikum_6.qgz</li>
+<li>andmed/
+<ul>
+<li>kirikud.gpkg</li>
+<li>vallakohtuprotokollid1.csv</li>
+<li>jne</li>
+</ul></li>
+<li>kaardid/
+<ul>
+<li>pr6_ylesanne_1.png</li>
+<li>pr6_ylesanne_2.jpeg</li>
+<li>jne</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Praktikumis kasutatavad andmed leiate <a href="https://moodle.ut.ee/">Moodle’ist</a>. Laadige need alla, pakkige lahti (parempoolne klikk ja <em>Extract here</em>) ja asetage kausta <em>andmed</em>. Soovi korral võite Eesti maakondade kihi ka ise <a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html">Maa-ameti Geoportaalist</a> alla laadida, kuna tegu on avalike ruumiandmetega. Siin kasutame <em>shapefile</em>-formaadis maakondade vektorandmeid (<em>Maakond SHP</em>). Klikkides jaotisel <em>Ruumiandmed</em> leiab ka rohkelt muid andmeid.</p>
+</div>
+<div id="esimene-seadistamine-ja-kasutajaliides" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Esimene seadistamine ja kasutajaliides<a href="qgis_1.html#esimene-seadistamine-ja-kasutajaliides" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Avame programmi QGIS Desktop 3.28. Sageli on esimisel korral avades QGIS eestikeelne. See on küll tore, kuid kahjuks on tõlge poolik ning internetist abi otsides on eestikeelsetest terminitest vähe kasu. Niisiis kasutame kursusel <strong>ingliskeelset versiooni</strong>. Selleks saab valida ülaserva menüüst <em>Seaded → Suvandid → Üldine</em> (vasakul servas). Teeme linnukese <em>Override System Locale</em> ette. Valime <em>User Interface Translation</em> rippmenüüst <em>American English</em>. <em>Locale (numbers, date and currency formats)</em> juures ei tule midagi muuta. See peab jääma <em>Estonian Estonia (et_EE)</em>. Vajuta all servas <em>OK</em>. <strong>Sulge QGIS ning ava uuesti.</strong> Nüüd on programm ingliskeelne.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:changelanguage"></span>
+<img src="imgs/6_qgis_language.gif" alt="Keele muutmine QGISis" width="80%" />
+<p class="caption">
+Joonis 6.1: Keele muutmine QGISis
+</p>
+</div>
+<div id="vaikimisi-koordinaatide-referentssüsteemi-sätestamine." class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Vaikimisi koordinaatide referentssüsteemi sätestamine.<a href="qgis_1.html#vaikimisi-koordinaatide-referentssüsteemi-sätestamine." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kuna enamik harjutusi kursusel käsitlevad Eesti ruumiandmeid, siis oleks mõistlik valida vaikimisi koordinaatide referentsüssteemiks (<em>CRS</em>) ka Eesti süsteem:</p>
+<ul>
+<li>Ülevalt servast menüüst valime <em>Settings → Options → CRS and Transforms → CRS Handling</em>. Alumisel gif-il on kasutatud eelmist QGISi stabiilset versiooni, kus seda nimetati lihtsalt CRS-iks.<br />
+</li>
+<li><em>CRS for Projects</em> alt valime <em>Use a default CRS</em>, klikime rippmenüü kõrval ikoonil ja kirjutame seal <em>Filter</em> otsinguse <em>Estonian Coordinate System of 1997</em> ehk <a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Geodeetilised-andmed/Eesti-geodeetiline-susteem/L-EST97-koordinaatsusteem-p173.html">L-EST97</a>. Vajutame sellele otsingu tulemusele ning menüü alumises servas <em>OK</em>. Teeme sama <em>CRS for Layers</em> juures. vajutame OK ja sulgeme seaded.<br />
+</li>
+<li>Vahetame ka praeguse projekti <em>CRS</em>-i. Selleks klikime ekraani alumises paremas nurgas maakera ikooni kõrval ning valime ka seal EPSG:3301 koodiga <em>CRS</em>-i.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:defaultcrs"></span>
+<img src="imgs/6_qgis_crs.gif" alt="Koordinaatsüsteemi sätestamine" width="80%" />
+<p class="caption">
+Joonis 6.2: Koordinaatsüsteemi sätestamine
+</p>
+</div>
+<p>Salvestame QGISi projekti oma kursuse kausta, valides ülevalt vasakult <em>Project → Save</em>. Failinimeks võib panna näiteks <em>praktikum_6</em>. <strong>Praktikumi jooksul võiks projekti aeg-ajalt salvestada!</strong></p>
+<p>Vaata QGISi kasutajaliidest. Suurde keskel olevasse aknasse ilmuvad kaardid ja ruumiandmete kihid graafiliselt. Vasakul on kihtide aken <em>Layers</em>. Allservas näeme kursori asukoha koordinaate, mõõtkava, mida saab seal ka muuta, ning paremal nurgas on koordinaatsüsteem, mis peaks nüüd olema EPSG:3301. Üleval servas on menüüd ja kõiksugused tööriistad.</p>
+</div>
+</div>
+<div id="andmete-avamine" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Andmete avamine<a href="qgis_1.html#andmete-avamine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nagu varasematest mäletame, on põhilised ruumiandmete tüübid raster- ja vektorandmed. Viimased neist võivad koosneda punktidest, joontest või polügoonidest. Avame kõigist andmetüüpidest näite.</p>
+<ul>
+<li><p>Avame Eesti <strong>maakondade kihi</strong>.</p>
+<ul>
+<li><em>Layer → Add layer → Add vector layer</em>.<br />
+</li>
+<li>Kliki <em>Vector Dataset(s)</em> juures sirvimise ikoonil (kolm punkti). Vali andmete kaustast <em>shape</em>-fail <em>maakond_20231001.shp</em> ja vajuta <em>Open</em>. Seejärel menüü all servas <em>Add</em> ja <em>Close</em>.<br />
+</li>
+<li>Nüüd on avatud kiht kõigi Eesti maakondade piirjoontega.</li>
+</ul></li>
+<li><p>Avame muinsuskaitse all olevate <strong>kirikute kihi</strong>. Kõik samamoodi nagu eelmise kihiga, valida tuleb lihtsalt <em>geopackage</em>’i fail <em>kirikud.gpkg</em>.</p></li>
+<li><p>Avame suuremate <strong>jõgede kihi</strong> <em>joed.gpkg</em>. Kui on juba selge, kuidas käib menüü kaudu kihi avamine, siis võib selle kihi avamiseks faili ka lihtsalt kaardiaknasse lohistada.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vectorlayers"></span>
+<img src="imgs/6_qgis_vector_layers.gif" alt="Vektorkihtide lisamine" width="80%" />
+<p class="caption">
+Joonis 6.3: Vektorkihtide lisamine
+</p>
+</div>
+<p>Kihtide paneelil <em>Layers</em> saab kihte välja ja sisse lülitada ning hiirega tõstes muuta nende järjekorda.<br />
+Peaaknas saab hiire rullikuga suumida (all servas muutub ka mõõtkava).<br />
+Hiire vasakpoolset klahvi all hoides ja ka klaviatuuri nooltega saab kaardil liikuda.<br />
+Mingi kihi terve ulatuse nägemiseks vali <em>Layers</em> paneelil kiht, tee sellel paremklikk ning vali <em>Zoom to Layer</em>. Sellest on abi ka siis, kui oled kaardil n-ö eksinud ja ei suuda kihti enam üles leida.<br />
+Kihtide <strong>atribuuttabelit</strong> saab vaadata, kui teha kihil paremklikk ja valida <em>Open Attribute Table</em>. Proovime kaardil ringi liikuda ning vaatame kõikide kihtide atribuuttabelit.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:attributes"></span>
+<img src="imgs/6_qgis_maakondade_atribuudid.png" alt="Maakondade vektorkihi atribuuttabel" width="60%" />
+<p class="caption">
+Joonis 6.4: Maakondade vektorkihi atribuuttabel
+</p>
+</div>
+<p>Vaatame ka näidet rasterandmetest ortofotode näol. Ava 2020. a ja 1995. a ortofotod kasutades <em>Layer → Add Layer → Add Raster Layer</em> ning vali vastavalt failid <em>orto_2020.tif</em> ja <em>orto_1995.tif</em>. Vajuta <em>Add</em> ja <em>Close</em>.<br />
+Esmapilgul ei ole midagi näha, kuna ortofotod on väga suure mõõtkavaga (=väga väikese ala kohta). Liigu kihtide juurde (paremklikk -&gt; <em>Zoom to Layer(s)</em>) ja vaata nende erinevusi. Selleks lülita vastavaid kihte <em>Layers</em> paneelil sisse ja välja. Proovi ka lähedale suumida, et näha eraldiseisvaid piksleid. 1995. aasta ortofotol on oluliselt vähem piksleid, mis tähendab, et ühe piksli mõõtmed on palju suuremad.</p>
+<p>Rasteri pikslisuuruse vaatamiseks tee kihil paremklikk → <em>Properties</em>. Vali jaotis <em>Information</em>. <em>Information from provider</em> juures on kirjas <em>Pixel size</em>, antud juhul piksli küljepikkus meetrites. Pärast seda võib rasterkihid eemaldada. Selleks tee kihtide aknas kihil paremklikk → <em>Remove layer</em>. Võid mõlemad kihid ka korraga eemaldada.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rasterlayers"></span>
+<img src="imgs/6_qgis_rasterlayers.gif" alt="Rasterkihtide lisamine" width="80%" />
+<p class="caption">
+Joonis 6.5: Rasterkihtide lisamine
+</p>
+</div>
+<p>Ortofotode kohta saab rohkem lugeda ja neid ka ise kaardiruutude kaupa alla laadida <a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Ortofotod-p99.html">Maa-ameti Geoportaalist</a>.</p>
+</div>
+<div id="kihtide-visualiseerimine" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Kihtide visualiseerimine<a href="qgis_1.html#kihtide-visualiseerimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Selleks, et kõik kihid välja paistaksid, peaksid need olema ülevalt alla järjekorras kirikud, jõed, maakonnad. Andmete visualiseerisemiseks on meil punktide puhul kasutada värv, kuju ja suurus. Joonte ja alade puhul on meil kuju ette antud, kuid saame lisaks värvile ja suurusele vahetada mustrit (nt katkendjoon või viirutatud ala).</p>
+<div id="harjutus-1" class="section level3 hasAnchor" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> Harjutus 1<a href="qgis_1.html#harjutus-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Muudame kihtide stiili nii, et kirikud paistaksid selgelt välja, jõed oleksid sinised ja nähtavad ning maakondi tähistaksid ainult nende piirjooned. Lisame ka maakonnanimed.</p>
+<p>Sümbolite muutmiseks teeme kihil topeltkliki (või paremkliki ja valime <em>Properties</em>) ning avanenud aknas valime vasakul servas jaotise <strong><em>Symbology</em></strong>.</p>
+<p>Avanenud menüüs valime punkt- ja joonobjektidele värvi (<em>Color</em>) ja suuruse (<em>Size</em>, joonte puhul <em>Width</em>). Võib mängida ka läbipaistvusega (<em>Opacity</em>). Kui tahad vahetulemust näha, aga ei taha <em>Properties</em> akent kinni panna, võid vajutada avanenud akna alumises servas nupule <em>Apply</em>. Kui oled tulemusega rahul ja rohkem midagi muuta ei taha, vajuta <em>OK</em>.</p>
+<p>Pindobjektidele ehk maakondade polügoonidele valime sümbolitüübiks <em>Simple fill</em> asemel <em>Outline: Simple Line</em>. See tähendab, et kogu ala pole mitte mingi värviga täidetud (<em>fill</em>), vaid näeme ainult ala piirjooni. Võib muuta ka piirjoonte värvi ja paksust (<em>Stroke width</em>).</p>
+<p>Alternatiivina võib kihi stiili muutmiseks sisse lülitada paneeli <em>Layer Styling</em>. Selleks valime üleval menüüribal <em>View → Panels → Layer Styling</em>. Nüüd on seesama <em>Symbology</em> aken kaardiakna kõrval ning muudatused on kohe paremini näha.</p>
+<p>Lisame maakonnanimed, valides maakondade vektorkihi puhul samas menüüs vasakult <strong><em>Labels</em></strong> ning seal <em>No Labels</em> asemel <em>Single Labels</em>. <em>Value</em> alt vali <em>MNIMI</em>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:harjutus1"></span>
+<img src="imgs/6_qgis_harjutus1.png" alt="Harjutus 1 tulemus" width="100%" />
+<p class="caption">
+Joonis 6.6: Harjutus 1 tulemus
+</p>
+</div>
+<p>Kas see on hea visualiseerimine? Mis on hea, mis on puudu, mis on üleliigne, kui eesmärgiks on näidata kaitse all olevate kirikute arvu maakonnas?</p>
+</div>
+<div id="yhendamine1" class="section level3 hasAnchor" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> Harjutus 2<a href="qgis_1.html#yhendamine1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Harjutuse eesmärk on luua kaart, mis näitab <strong>maakondade värvi</strong> abil, kui palju on muinsuskaitse all olevaid kirikuid maakondades (nn horopleetkaart <a href="kaardid.html#fig:horopleet">4.3</a>). Teisisõnu: <strong>klassifitseerime</strong> maakonnad selle järgi, millist kirikute arvu põhjal moodustuvat sagedusklassi nad esindavad.<br />
+Selleks tuleb maakondade polügoonide kihiga siduda tabel, kus on kirjas iga maakonna kirikute arv, ning värvida seejärel maakonnad vastavalt sellele arvule.</p>
+<p>Avame Exceli, Notepad++-i vms programmiga faili <em>kirikud_maakonniti.csv</em>. Nagu näha, on tegu väga lihtsa andmestikuga, kus on ainult kaks tulpa ja 15 rida (iga maakonna kohta üks rida). <strong>Avame sama faili QGISis: </strong></p>
+<ul>
+<li><em>Layer → Add Layer → Add Delimited Text Layer</em><br />
+</li>
+<li>Klikime <em>File name</em> juures sirvimise ikoonil (kolm punkti). Valime kaustast faili <em>kirikud_maakonniti.csv</em>.<br />
+</li>
+<li>Valime <em>File Format</em> juures <em>CSV</em> (<em>comma-separated values</em> ehk tabel, kus tulpasid eraldavad komad).<br />
+</li>
+<li><em>Record and Fields Options</em> juures teeme linnukese <em>First record has field names</em> ette. See on vajalik, et QGIS arvestaks tabeli esimest rida kui tulpade pealkirju.<br />
+</li>
+<li><em>Geometry Definition</em> juures valime <em>No geometry (attribute only table)</em>. See tuleb valida, kuna antud tabelis ei ole ühtegi koordinaatidega tulpa. Kui oleks, saaksime siin määrata, millise nimega tulbas paiknevad pikkus- ja millise nimega tulbas laiuskraade kuvavad koordinaadid, samuti selle, millises CRSis koordinaadid on määratud.<br />
+</li>
+<li>Vaatame nüüd, kas all <em>Sample Data</em> aknas on andmed kujutatud eraldi tulpades ja täpitähed olemas. Kui täpitähti pole, peame valima üleval <em>Encoding</em> rippmenüüst <em>iso8859_15</em>, mis on ametlik eesti keele kodeering, või <em>windows-1252</em>. Tegelikult töötavad veel paar kodeeringut.<br />
+</li>
+<li><em>Add → Close</em>. Nagu näha, ei ilmunud QGISi peaaknasse midagi, kuna tegu pole ruumiandmete kihiga, vaid lihtsalt tabeliga.<br />
+</li>
+<li>Vaatame kihtide paneelis lisatud CSV-faili atribuuttabelit. See on samasugune nagu Excelis/Notepadis.</li>
+</ul>
+<p><strong>Ühendame kultuurimälestiste tabeli maakondade kihiga: </strong></p>
+<ul>
+<li>Andmestike ühendamiseks peab olema mõlemas andmestikus tulp, mille sisu kattub teise andmestiku ühe tulba sisuga. Käesoleva kahe andmestiku puhul on mõlemal tulp maakondade nimedega: maakondade vektorkihil on selle atribuudi nimi <code>MNIMI</code> ja csv-kihil <code>maakond</code>.<br />
+</li>
+<li>Kuna ühendame ruumiandmetega mitteruumiandmeid (ja mitte vastupidi), valime <em>Layers</em> paneelil <strong>maakondade polügoonide vektorkihi</strong>, teeme sellel topeltkliki, valime vasakul servas jaotise <em>Joins</em> ning vajutame all servas rohelisele plussmärgile. Täidame avanenud aknas väljad järgmiselt:
+<ul>
+<li><strong>Join layer</strong>: <em>kirikud_maakonniti</em> (see on see mitteruumiandmete kiht, mida ruumiandmetega liidame)</li>
+<li><strong>Join field</strong>: <em>maakond</em> (mitteruumiandmete kihi tulp, mille sisu kattub ruumiandmete kihi ühe tulba sisuga)<br />
+</li>
+<li><strong>Target field</strong>: <em>MNIMI</em> (ruumiandmete kihi tulp, mille sisu kattub mitteruumiandmete kihi ühe tulba sisuga)<br />
+</li>
+<li><strong>Joined fields</strong> ette teeme linnukese ja seal omakorda linnukese ainult tulbanime <em>kirikuid</em> ette, kuna me ei soovi tabelist võtta ka maakondade nimesid, mis on polügoonide vektorkihil juba olemas.</li>
+<li><strong>Custom Field Name Prefix</strong> ette teeme linnukese ja kustutame sealses lahtris oleva teksti, et lisatavatele tulpadele (antud juhul tulbale <em>kirikuid</em>) ei kirjutataks ühendatud andmestikus ette ka liidetava kihi nime: tahame, et uues andmestikus oleks lihtsalt tulp <em>kirikuid</em>, mitte <em>kirikud_maakonniti_kirikuid</em>.<br />
+</li>
+<li><em>OK → OK</em><br />
+</li>
+<li>Vaatame uuesti maakondade vektorkihi atribuuttabelit (kiirklahv F6), et näha, kas igale maakonnale said lisatud kirikute arvud.</li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tablejoin"></span>
+<img src="imgs/6_qgis_tablejoin.png" alt="Kirikute tabel ühendatud maakondade kihiga" width="70%" />
+<p class="caption">
+Joonis 6.7: Kirikute tabel ühendatud maakondade kihiga
+</p>
+</div>
+<blockquote>
+<p>Mis juhtub, kui ühendad kaks andmestikku teistpidi: kirikute arvu tabelile liidad maakondade polügoonide kihi?</p>
+</blockquote>
+<p><strong>Värvime maakonnad vastavalt kirikute arvule.</strong></p>
+<ul>
+<li>Maakondade kihil teeme topeltkliki või paremkliki ja valime <em>Properties</em>. Liigume jaotisesse <em>Symbology</em>.<br />
+</li>
+<li><em>Simple line</em> asemel vali uuesti <em>Symbol layer type</em> juurest <em>Simple fill</em><br />
+</li>
+<li>Jaotise ülaservast valime <em>Single Symbol</em> asemel <em>Graduated</em> selleks, et värvida valitud kihi elemendid vastavalt mingile arvulisele, pidevale tunnusele (siin on selleks kirikute arv):
+<ul>
+<li><em>Value</em> juures valime tunnuse <em>kirikuid</em>. See määrab, millise tulba väärtuste põhjal maakonnad värvitakse.<br />
+</li>
+<li><em>Color ramp</em> juures valime rippmenüüst värviskaala, millel on ühtlane 2–3 tooni üleminek. Näiteks helekollasest tumeroheliseks (vt <em>All Color Ramps</em> -&gt; <em>YlGn</em>).<br />
+</li>
+<li>Klikime <em>Classify</em>. Proovime ka erinevate jaotumistega (nt <em>Equal interval</em> ja <em>Pretty breaks</em>) ja klasside hulgaga (<em>Classes</em>). Näiteks <em>Pretty breaks</em> ja kolm klassi annab ilusa tulemuse. Jälgime, et enamik maakondi ei oleks ühte värvi. Räägime klassifitseerimismeetoditest edaspidi ka lähemalt.<br />
+</li>
+<li>Vajutame <em>OK</em>.<br />
+</li>
+</ul></li>
+<li>Nüüd on kõik maakonnad värvitud valitud värviskaalaga vastavalt sellele, kui palju on neis kirikuid. Kas see kaart on informatiivne? Mida peaks lisama või ära võtma?</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:harjutus2"></span>
+<img src="imgs/6_qgis_harjutus2.png" alt="Harjutus 2 tulemus" width="100%" />
+<p class="caption">
+Joonis 6.8: Harjutus 2 tulemus
+</p>
+</div>
+</div>
+</div>
+<div id="aluskaardid" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Aluskaardid<a href="qgis_1.html#aluskaardid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nagu varasemates loengutes nägime, on olemas rohkelt aluskaarte, mida erinevates rakendustes põhiliselt teemakaartide tegemisel kasutatakse. QGISis saab neid kasutada läbi pistikprogrammide ehk <em>Plugins</em> või WMS- ja WFS-teenuste (vastavalt <em>web map service</em> ja <em>web feature service</em>).</p>
+<p>WMS-teenuse kaudu saab kasutada peaaegu kõiki <a href="https://xgis.maaamet.ee/xgis2/page/app/maainfo">Maa-ameti XGISis</a> olevaid kihte. Täpsemalt saab sellest lugeda <a href="https://geoportaal.maaamet.ee/est/Teenused/WMS-teenused-p65.html">WMS teenuste lehel</a>. Lisaks saab kasutada paljusid muid andmeid kogu maailmast. WMS-teenuse kaarte saab kasutada sisuliselt ainult visualiseerimiseks. Päringuid, valikuid vmt nende põhjal teha ei saa.</p>
+<p><strong>Lisame WMS-teenusest aluskaardi:</strong></p>
+<ul>
+<li><em>Layer → Add Layer → Add WMS/WMTS layer</em>.<br />
+</li>
+<li>Lisame ühenduse (<em>New</em>). Avanenud aknas määrame nimeks (<em>Name</em>) näiteks <em>Maa-ameti aluskaart</em> ning URLi juurde kopeerime aadressi <a href="https://kaart.maaamet.ee/wms/alus?">https://kaart.maaamet.ee/wms/alus?</a>. Vajutame <em>OK</em>. Nüüd on paika pandud, millise Maa-ameti kaardiserveriga QGIS ühenduse loob.<br />
+</li>
+<li>Klikime ühenduse loomiseks nupul <em>Connect</em>. Valime serverist laetud kihtide hulgast näiteks <em>138 MAANTEED</em> ning klikime nupul <em>Add</em>.<br />
+</li>
+<li>Lisame veel ühe ühenduse (<em>New</em>). Seal kirjutame nime (<em>Name</em>) lahtrisse <em>Maa-ameti orto ja reljeef</em> ning URLi juurde kopeerime aadressi <a href="https://kaart.maaamet.ee/wms/fotokaart?">https://kaart.maaamet.ee/wms/fotokaart?</a>. Vajutame <em>OK</em>.<br />
+</li>
+<li>Klikime uue ühenduse loomiseks nupul <em>Connect</em>. Valime serverist kihi <em>21 vreljeef</em> ning klikime nupul <em>Add</em>. Sulgeme akna.<br />
+</li>
+<li>Nüüd on peaaknas näha maanteed koos reljeefiga. Kui lisatud WMS-kihid ei paista välja, siis tuleb muuta kihtide järjekorda või rohkem sisse või välja suumida.<br />
+</li>
+<li>Proovime lisada ka täiendavaid kihte.</li>
+</ul>
+<p><strong>Quickmap ja OSM</strong></p>
+<p>Lisame veebikaartide pistikprogrammi.</p>
+<ul>
+<li>Üleval servas valime <em>Plugins → Manage and Install Plugins</em>. Otsingusse kirjutame <em>Quickmap</em>. Valime <em>QuickMapSercives</em> ja installime selle. Sulgeme akna.<br />
+</li>
+<li>Järgmiseks valime ülaservas <em>Web → QuickMapServices → OSM → OSM standard</em>. Nüüd on aluskaardiks OpenStreetMap. Jällegi - kui aluskaardi kiht ei paista välja, muuda <em>Layers</em> paneelil kihtide järjekorda või lülita muid kihte välja.</li>
+</ul>
+<p>Proovime ka teisi kaarte, nt Google’i aluskaarti.</p>
+<p>Rohkemate võimaluste jaoks laadi lisakomplekt QMS kaarte: <em>Web → QuickMapServices → Settings → More services → Get contributed pack → OK → Save</em>.</p>
+</div>
+<div id="järgmisel-korral-5" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Järgmisel korral<a href="qgis_1.html#järgmisel-korral-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kaartide kujundamine ja eksportimine, andmete loomine ja digitaliseerimine QGISis.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="storymaps.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
