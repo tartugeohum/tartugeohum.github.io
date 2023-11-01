@@ -143,6 +143,15 @@ fig:contains
 fig:expressions1000
 fig:expressions1001
 fig:manual
+fig:errilm
+fig:cairographs
+fig:foxnbc
+fig:poverty
+fig:cramerifig2
+fig:colorblind
+fig:hiiumaa
+fig:hiiumaalabels
+fig:hiiumaavalmis
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
@@ -249,3 +258,11 @@ geokodeerimine
 ruumiandmete-omavahel-ühendamine
 ruumiandmete-käsitsi-lisamine
 järgmisel-korral-10
+varvid
+eksitamine
+värvidest
+visualiseerimine
+sildid
+kaardi-tegemine
+yl12_1
+järgmisel-korral-11

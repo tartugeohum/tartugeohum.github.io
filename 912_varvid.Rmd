@@ -1,0 +1,153 @@
+# Värvid, sildid ja eksitamine {#varvid}
+
+## Eksitamine
+
+Visuaalsete moonutustega üritatakse sageli näidata andmeid graafiku või kaardi koostaja jaoks sobiva nurga alt. Alberto Cairo [@Cairo2019] on koostanud suurepärase raamatu [How Charts Lie](http://albertocairo.com/), mis õpetab lugejat eksitavaid graafikuid ja kaarte ära tundma. Ta eristab viis võimalust eksitamiseks:  
+
+- halvasti kujundamine,  
+- kahtlased andmed,  
+- ebapiisavad andmed,  
+- ebamäärasuse varjamine,  
+- eksitavate mustrite esitamine või neile vihjamine.
+
+Halvasti kujundamise teel eksitamine võib esineda ka lihtsalt läbimõtlematusest. Suhteliselt minimaalselt eksitava kaardi heaks näiteks on "Aktuaalse kaamera" ilmakaart, kus mingil põhjusel on kõik eraldiseisvad Eesti osad (manner ja saared) värvitud idast läände tumerohelisest heleroheliseks. Mingit infot selline visualiseerimine tegelikult ei edasta, kuid võib panna vaataja mõtlema, kas sellega tahetakse öelda midagi ilma kohta. 
+
+```{r errilm, echo =F, fig.align='center', fig.show='hold', fig.cap = 'Kuvatõmmis "Aktuaalse kaamera" ilmakaardist', out.width="75%"}
+knitr::include_graphics(here::here("imgs", "12_err_ilm.png"))
+```
+
+Kolmemõõtmelised graafikud (ja kohati ka kaardid) on sageli märk halvast visualiseerimisest või tahtlikust eksitamisest. Allpool oleval joonisel on esimesel kolmel 3D graafikul jäetud mulje, et firmal läheb väga hästi. Vaadates aga tavalistelt kahemõõtmelistelt graafikutelt samu andmeid, on reaalne olukord palju selgem. Joonise võimalikult hästi mõistmiseks tuleb kindlasti tähelepanu pöörata skaaladele. Kui tahetakse erinevusi või muutusi näidata suuremana, kui need tegelikult on, siis ei pruugi skaalad alata nullist, vaid koostajale sobivast arvust.  
+
+```{r cairographs, echo =F, fig.align='center', fig.show='hold', fig.cap = "Ettevõtte käekäik kolme- ja kahemõõtmelistel graafikutel [@Cairo2019, ptk 2].", out.width="40%"}
+knitr::include_graphics(here::here("imgs", c("12_cairo_bar_3d.png", "12_cairo_pie_3d.png", "12_cairo_line_3d.png", "12_cairo_good_graphs.png")))
+```
+
+Uudisteagentuurid kasutavad sageli eksitavaid graafikuid, mis sobituvad sõnumiga, mida nad soovivad edastada. Kuidas eksitavad näiteks allpool olevad graafikud?
+
+```{r foxnbc, echo =F, fig.align='center', fig.show='hold', fig.cap = "Kuvatõmmised Fox News ja NBC2 eksitavatest graafikutest", out.width="45%"}
+knitr::include_graphics(here::here("imgs", c("12_fox_christianity.png", "12_nbc_zika.jfif")))
+```
+
+
+Kõik kaardid on siiski juba olemuslikult eksitavad või valed, kuna nagu oleme varem rääkinud, tekivad projektsioonide tõttu kaardile moonutused. Seda eksitamist peetakse aga üldjuhul aktsepteeritavaks, kuna see on tavaliselt teada. Kõige sagedamini eksitavad kaardid vale värviskaala ja selle ulatuse valikute tõttu, olgu see tahtlikult või kogemata. 
+
+```{r poverty, echo =F, fig.align='center', fig.show='hold', fig.cap = "Vaesus USAs maakonniti. Ülemisel kaardil esitatakse andmed alahinnatult, keskmisel liialdatult ning alumisel võrdselt kõikide värvigruppide vahel ja keskmist arvesse võttes [@Cairo2019, ptk 2].", out.width="75%"}
+knitr::include_graphics(here::here("imgs", c("12_cairo_PovertyBadA.png", "12_cairo_PovertyBadB.png", "12_cairo_PovertyGood.png")))
+```
+
+
+Graafikute ja kaartide kvaliteet sõltub eelkõige aluseks olevate andmete asjakohasest kasutamisest. Oluline on eelnevalt veenduda andmete päritolus ja usaldatavuses. See on ka üks põhjus, miks lisame kursusel tehtud kaartidele viite Maa-ameti jt andmestikele. 
+
+
+
+
+
+
+## Värvidest
+
+Andmete visualiseerimisel tuleb alati tähelepanu pöörata sellele, et kasutatud värvivalik ja skaala võimalikult hästi ja kõigile arusaadavalt infot edastaks. Värviskaalaga kaarti, joonist või graafikut vaadates peaks olema selge ülevaade andmete ulatusest ning üldiselt ei tohiks ühtegi väärtust (eriti neid, mis pole äärmustes) petlikult rõhutada. 
+
+Värvivaliku puhul tuleb ka arvestada, kuidas näevad seda [värvipimedad](https://en.wikipedia.org/wiki/Color_blindness) või kuidas jääks sama skaala näha mustvalgena (näiteks trükitult). Sel teemal ilmusid paar aastat tagasi mh ka artiklid [The misuse of colour in science communication](https://www.nature.com/articles/s41467-020-19160-7) [@Crameri2020] ja [The Importance of Colormaps](https://ieeexplore.ieee.org/document/9167329) [@Thyng2020]. Vaata lisaks [fabiocrameri.ch/colourmaps.php](http://www.fabiocrameri.ch/colourmaps.php). 
+
+
+```{r cramerifig2, echo =F, fig.align='center', fig.show='hold', fig.cap = "Erinevate värviskaalade nähtavus sagedate värvipimeduste korral [@Crameri2020, fig 2].", out.width="75%"}
+knitr::include_graphics(here::here("imgs", "12_crameri_fig2.webp"))
+```
+
+Üldiselt on soovitatav vältida ka liiga erksaid ning kontrastseid värve nii esteetilistel põhjustel kui ka seetõttu, et need võivad varjata muud infot. Erinevat tüüpi andmete jaoks värvide valimisel on abiks [colorbrewer2.org](https://colorbrewer2.org/).
+
+```{r colorblind, echo =F, fig.align='center', fig.show='hold', fig.cap = "Värvipimeduse leviku kaart kontolt [Terrible Maps](https://twitter.com/TerribleMaps/status/1445521494331703304)", out.width="75%"}
+knitr::include_graphics(here::here("imgs", "12_colorblindness.png"))
+```
+
+Värvipimeduse spektrisse kuuluvate inimestega arvestamiseks peetakse kõige turvalisemaks värvikombinatsiooniks punase, kollase ja sinise värvipaletti. Samuti võib võimalusel eelistada monokromaatilist ehk ühevärvilist paletti, milles üleminekuid märgib heleduse-tumeduse skaala, mitte värvitoon ise.  
+
+## Visualiseerimine
+
+Katsetame andmete erineva visualiseerimisega. Avame kihi *asustusyksus_malestised.gpkg*, kus on lisaks asustusüksustele kirjas ka mälestiste arv liikide kaupa (ajaloolised, arheoloogilised, kunstimälestised). Tegemist on lihtsustatud andmestikuga, kus kultuurimälestisi, mis kuuluvad mitmesse liiki, on loetud korduvalt. See tähendab, et juba eksitame kaardil paratamatult juba andmestiku valikust tulenevalt. 
+
+1. Värvime asustusüksused vastavalt vabalt valitud väärtusele.  
+2. Valime välja ühe omavalitsuse, millest soovime kaarti teha, ja teeme sellest eraldi kihi.  
+3. Värvime omavalitsuse polügoonid vastavalt mingile tunnusele andmestikus. Katsetame erinevaid visualiseerimisviise.    
+
+
+Nagu silte, saab igale kihi elemendile lisada ka graafikuid. Lisame sektordiagrammi, mis näitab, kuidas mälestised igas uuritava omavalitsuse asustusüksuses liigiti jagunevad. Selleks   
+
+- klikime tööriistal *Layer Diagram Options* ![](imgs/12_layerdiagram.png),  
+- valime graafikutüübiks *Pie Chart*,  
+- *Attributes* jaotises valime tunnused *ajalugu*, *arheo*, *arhitek* ja *kunst* ning vajutame rohelisel ristikesel,  
+- määrame igale tunnusele oma värvi,  
+- *Size* jaotises valime *Scaled size* alt *Attribute* väärtuseks *kokku*, leiame maksimaalse väärtuse ja määrame sobiva suuruse (nt 6), teeme linnukese ka valiku *Increase size of small diagrams* ette ja määrame miinimumsuuruseks nt 2.  
+- Vajutame *Apply*.  
+
+Selleks, et kaotada ära tühje diagramme nendest küladest, kust tegelikult ühtegi kultuurimälestist ei ole, liigume jaotisse *Rendering → Visibility*, *Show diagram* juures vajutame sümbolil ja valime *Field type* väärtuseks atribuudi *kokku*. Vajutame *OK*.   
+
+
+```{r hiiumaa, echo =F, fig.align='center', fig.show='hold', fig.cap = "Hiiumaa kultuurimälestised", out.width="100%"}
+knitr::include_graphics(here::here("imgs", "12_hiiumaa_asustus.png"))
+```
+
+
+
+### Sildid
+
+Sageli on olukordi, kus andmetele on vaja lisada silte, kuid need asuvad tihedalt koos ega paista seetõttu hästi välja. Siin on abiks tööriist *callouts* (ee k *viiktekstid*), mis võimaldab joonte abil objekti sildi selle keskpunktist ja/või teistest siltidest kaugemale asetada.  
+
+- Teeme kihil topeltkliki → *Labels → Single labels*.  
+- Lisame asustusüksuste nimede sildid ainult nendele küladele, kust on vähemalt 11 mälestist: *Value* kasti kirjutame avaldise `if("kokku" > 10, "ANIMI", NULL)`.  
+- Selleks, et silte näha oleks, peab uuemas QGISi versioonis liikuma jaotisse *Labels → Single labels → Rendering → Overlapping labels* ning valima *Mode* väärtuseks *Allow Overlaps without Penalty*.  
+- Liigume jaotisesse *Callouts* ja teeme linnukese valiku *Draw callouts* ette. Vajutame *OK*.   
+- Peaaknas klikime ikoonil *Moves a layer or diagramm* ![](imgs/12_movelabel.png), klikime siltidel, mida tahame liigutada, ja veame need sobivasse kohta.
+
+
+Siltidele võib lisada ka puhvrid, mis toovad need need paremini muude andmete taustal välja. Samamoodi saab neile lisada varjud.
+
+```{r hiiumaalabels, echo =F, fig.align='center', fig.show='hold', fig.cap = "Hiiumaa kultuurimälestised siltidega", out.width="70%"}
+knitr::include_graphics(here::here("imgs", "12_hiiumaa_labels.png"))
+```
+
+
+### Kaardi tegemine
+
+Kui oleme andmete visualiseerimisega valmis saanud, avame kaardi tegemiseks *Print Layout* ja lisame peaaknas oleva kaardi. Kaart näeb sageli parem välja, kui see ei ulatu päris servani, vaid jäetud on väike äär. Selleks, et kaardi elemente paremini paigutada, lülita sisse *View* alt *Show grid* ja *Snap to grid*. 
+
+Kui tegemist on väljavõttega mingist suuremast alast, siis võib olla kasulik näidata, kus praegune vaade üldisemalt paikneb. Seda saab teha *Overview* abil. Selleks  
+
+- lukustame esmalt valla kaardistiili: *Item Properties → Layers*, teeme linnukese *Lock layers* ja *Lock styles for layers* ette.  
+- Seejärel lisame trükivaatesse **uue kaardi** tervest Eesti alast, ilma et eelnevalt valitud omavalitsuse kiht näha oleks.  
+- Valime Eesti ala kaardi *Item properties* alt *Overviews* → roheline plussmärk → *Draw "Overview 1" overview* → *Map frame* → Map 1.  
+- Lisame ülevaatekaardile ka taustavärvi (*Item Properties → Background*) ja raami (*Item Properties → Frame*).  
+
+```{r hiiumaavalmis, echo =F, fig.align='center', fig.show='hold', fig.cap = "Valmis kaart", out.width="100%"}
+knitr::include_graphics(here::here("imgs", "12_hiiumaa_valmis.png"))
+```
+
+
+Vajadusel saab eksporditavale kaardile lisada ka atribuuttabeli: *Add item → Attribute table*.  
+*Item properties* alt saab valida, milliseid tulpasid ja kuidas näidata.  
+
+
+## Ülesanne {#yl12_1}
+
+Leidke endale paariline. Iga paar saab endale kahe peale ühe andmestiku. 
+
+- Tartu linna [kalmistud](https://geohub.tartulv.ee/maps/yp2040-miljoo-muinsuskaitse-avaandmed/about) (polügoonid) ja [kalmistutele maetud kultuuriloolised isikud](https://geohub.tartulv.ee/maps/ka-malestis/about) (polügoonid),  
+    - võib lähemalt vaadelda ka ainult üht kalmistut,  
+    - kuupäevadega töötamiseks on kasulikud *Date and Time* jaotise funktsioonid ja avaldised, näiteks võimaldab funktsioon `age()` arvutada välja kellegi vanuse ja funktsioon `year()` teisendada vanus päevades või lihtsalt ka mingi kuupäev ainult aastateks.  
+    
+- Tartu linna [rahvastiku ja eluruumide prognoos 2040. aastaks (2020. aasta andmete põhjal)](https://geohub.tartulv.ee/maps/yp2040-ruumiline-areng-avaandmed/about) (polügoonid),  
+- Tuntud eestlaste või Eestiga seotud isikute andmed, mis on aluseks rakendusele [Notable people](https://tjukanovt.github.io/notable-people?fbclid=IwAR0PPqeqBJNJGXMMQ0avraSaSOwm05xIxouUWhiLbeQ1Te9gBVnvwGC3i3U) (punktid). Terve andmestiku viide ja allalaadimise link [siin](https://data.sciencespo.fr/dataset.xhtml?persistentId=doi:10.21410/7E4/RDAG3O), andmestiku tutvustus [siin](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9184645/).     
+    - andmestikku sisse lugedes tasub mõelda, kas olulisemad on inimeste sünni- või surmakohad, mille koordinaadid vastavalt tulpades `bplo1` (*birth place longitude*) ja `bpla1` (*birth place latitude*) ning `dplo1` (*death place longitude*) ja `dpla1` (*death place latitude*).   
+    - NB! Pane tähele, milline on andmestiku koordinaatide referentssüsteem ehk CRS!    
+
+
+Ülesanne on mõelda välja vähemalt üks teema, mida andmete põhjal saaks kaardil kujutada, ning kujundada üks kaart nii, et andmed oleksid esitatud **võimalikult hästi** ja täpselt, võttes arvesse nii vajalikke/ebavajalikke elemente, skaalasid, värve jm-d, ja teine kaart nii, et andmed oleksid esitatud **halvasti ja eksitavalt**. Selleks, et tekiksid konkreetsed võrdlusalused, võiks esmalt paaris kokku leppida, mis elementidega mängitakse ja mis põhimõtetel andmeid esitatakse.  
+
+Lubatud (mõnel juhul isegi soovitatud) on andmetest vaid mingite alamhulkade kujutamine, samuti võib muuta kihi ruumikujusid (näiteks väikeste polügoonide asemel kujutada nende polügoonide keskpunkte (*Vector → Geometry tools → Centroids*) või punktide asemel kujutada polügoonidena nendesse jäävate punktide arvu (*Processing → Toolbox → Vector analysis → Count points in polygon*)).  
+
+Praktikumi lõpus laadige oma kaardid Moodle'isse (Muud materjalid -> Head ja halvad kaardid). Vaatame neid järgmisel korral praktikumi alguses.  
+
+
+## Järgmisel korral
+
+Maailma ruumiandmed ja diagrammid. NB! Järgmine kord 13. novembril!  
