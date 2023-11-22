@@ -197,7 +197,7 @@ Arvutame nüüd Tartumaa asustuse *Nearest Neighbor Index*'i iga sajandi kohta v
 
 - *Observed Mean Distance* näitab, mis on kahe punktide ja nende lähimate naabrite vaheliste kauguste keskmine,  
 - *Expected Mean Distance* näitab, mis oleks see oodatud keskmine kaugus siis, kui punktide paiknemine oleks juhuslik,  
-- *The Nearest Neighbor index* näitab, kas punktid paiknevad juhuslikult (r = 0: OMD ja EMD on enam-vähem samad), regulaarselt (r > 1, OMD > EMD) või klasterdunult (r < 1, OMD < EMD).  
+- *The Nearest Neighbor index* näitab, kas punktid paiknevad juhuslikult (r = 1: OMD ja EMD on enam-vähem samad), regulaarselt (r > 1, OMD > EMD) või klasterdunult (r < 1, OMD < EMD).  
 - *Z-Score*: kui väärtus > 2, siis on näha statistiliselt olulist regulaarsust, kui väärtus on < -2, on näha statistiliselt olulist klasterdumist.  
 
 
