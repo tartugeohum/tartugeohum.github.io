@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Praktikum 6 Sissejuhatus QGISi (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
-  <meta name="description" content="Praktikum 6 Sissejuhatus QGISi (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <title>Praktikum 16 Geostatistika (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 16 Geostatistika (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Praktikum 6 Sissejuhatus QGISi (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:title" content="Praktikum 16 Geostatistika (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Praktikum 6 Sissejuhatus QGISi (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="twitter:title" content="Praktikum 16 Geostatistika (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="storymaps.html"/>
-<link rel="next" href="qgis_2.html"/>
+<link rel="prev" href="tekstianalyys2.html"/>
+<link rel="next" href="kirjandus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -339,240 +339,220 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qgis_1" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Praktikum 6</span> Sissejuhatus QGISi (1)<a href="qgis_1.html#qgis_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>QGIS (varasemalt Quantum GIS) on <strong>vabavaraline</strong> ja <strong>avatud lähtekoodiga</strong> geoinfosüsteemide tarkvara, mida saab kasutada kõikide tuntumate operatsioonisüsteemidega. QGISis saab rakendada kõiki põhilisi ruumiandmete analüüsi meetodeid ning funktsionaalsuselt ei jää see sugugi alla kommertstarkvarale (nt ArcGIS).</p>
-<div id="installimine" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Installimine<a href="qgis_1.html#installimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>QGISil on alati kaks hetkeversiooni: stabiilne <em>Long term release</em> (LTR) ja uusimate võimalustega <em>Latest release</em> (LR). Väga suuri erinevusi nende versioonide vahel ei ole, eriti selle kursuse raames käsitletavate tööriistade osas. Arvutiklassi arvutitesse peaks olema installitud kõige hiljutisem stabiilne versioon <strong>3.28</strong>, järgmine stabiilne versioon tuleb aga välja juba 27. oktoobril. Kel huvi, võib vaadata ka <a href="https://qgis.org/en/site/getinvolved/development/roadmap.html#release">väljalaskegraafikut</a>.</p>
-<p>QGIS 3.28 saab alla laadida <a href="https://qgis.org/en/site/forusers/download.html">ametlikult kodulehelt</a>, valides enda arvuti operatsioonisüsteemile sobiva variandi. Allalaadimine võib pisut aega võtta. Kui allalaadimine on lõppenud, ava fail ning installi programm. Kasuta vaikimisi valikuid.</p>
-<p><img src="imgs/6_qgis_328.webp" width="50%" style="display: block; margin: auto;" /></p>
-</div>
-<div id="andmed-ja-failihaldus" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Andmed ja failihaldus<a href="qgis_1.html#andmed-ja-failihaldus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Segaduste vältimiseks on soovitatav kursusel kasutada kaustade struktuuri, kus selle kursuse kaustas on QGISi projekti fail(id) laiendiga <em>.qgz</em> ja kaustad <strong>andmed</strong> ja <strong>kaardid</strong>, kuhu panete vastavalt kõik praktikumides kasutatavad andmed ja valminud kaardid. Võimalike probleemide vältimiseks (eriti Windowsi operatsioonisüsteemis) võiks kursuse kaust olla kohas (<em>directory path</em>), kus ei ole täpitähti. Nt <em>C:/ut/magistrantuur/sygis_2023/geohum2023/</em>.</p>
-<p>Näiteks:</p>
-<ul>
-<li>C:/…/geohum2023/
-<ul>
-<li>praktikum_6.qgz</li>
-<li>andmed/
-<ul>
-<li>kirikud.gpkg</li>
-<li>vallakohtuprotokollid1.csv</li>
-<li>jne</li>
-</ul></li>
-<li>kaardid/
-<ul>
-<li>pr6_ylesanne_1.png</li>
-<li>pr6_ylesanne_2.jpeg</li>
-<li>jne</li>
-</ul></li>
-</ul></li>
-</ul>
-<p>Praktikumis kasutatavad andmed leiate <a href="https://moodle.ut.ee/">Moodle’ist</a>. Laadige need alla, pakkige lahti (parempoolne klikk ja <em>Extract here</em>) ja asetage kausta <em>andmed</em>. Soovi korral võite Eesti maakondade kihi ka ise <a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html">Maa-ameti Geoportaalist</a> alla laadida, kuna tegu on avalike ruumiandmetega. Siin kasutame <em>shapefile</em>-formaadis maakondade vektorandmeid (<em>Maakond SHP</em>). Klikkides jaotisel <em>Ruumiandmed</em> leiab ka rohkelt muid andmeid.</p>
-</div>
-<div id="esimene-seadistamine-ja-kasutajaliides" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Esimene seadistamine ja kasutajaliides<a href="qgis_1.html#esimene-seadistamine-ja-kasutajaliides" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Avame programmi QGIS Desktop 3.28. Sageli on esimisel korral avades QGIS eestikeelne. See on küll tore, kuid kahjuks on tõlge poolik ning internetist abi otsides on eestikeelsetest terminitest vähe kasu. Niisiis kasutame kursusel <strong>ingliskeelset versiooni</strong>. Selleks saab valida ülaserva menüüst <em>Seaded → Suvandid → Üldine</em> (vasakul servas). Teeme linnukese <em>Override System Locale</em> ette. Valime <em>User Interface Translation</em> rippmenüüst <em>American English</em>. <em>Locale (numbers, date and currency formats)</em> juures ei tule midagi muuta. See peab jääma <em>Estonian Estonia (et_EE)</em>. Vajuta all servas <em>OK</em>. <strong>Sulge QGIS ning ava uuesti.</strong> Nüüd on programm ingliskeelne.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:changelanguage"></span>
-<img src="imgs/6_qgis_language.gif" alt="Keele muutmine QGISis" width="80%" />
-<p class="caption">
-Joonis 6.1: Keele muutmine QGISis
-</p>
-</div>
-<div id="vaikimisi-koordinaatide-referentssüsteemi-sätestamine." class="section level3 hasAnchor" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> Vaikimisi koordinaatide referentssüsteemi sätestamine.<a href="qgis_1.html#vaikimisi-koordinaatide-referentssüsteemi-sätestamine." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Kuna enamik harjutusi kursusel käsitlevad Eesti ruumiandmeid, siis oleks mõistlik valida vaikimisi koordinaatide referentsüssteemiks (<em>CRS</em>) ka Eesti süsteem:</p>
-<ul>
-<li>Ülevalt servast menüüst valime <em>Settings → Options → CRS and Transforms → CRS Handling</em>. Alumisel gif-il on kasutatud eelmist QGISi stabiilset versiooni, kus seda nimetati lihtsalt CRS-iks.<br />
-</li>
-<li><em>CRS for Projects</em> alt valime <em>Use a default CRS</em>, klikime rippmenüü kõrval ikoonil ja kirjutame seal <em>Filter</em> otsinguse <em>Estonian Coordinate System of 1997</em> ehk <a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Geodeetilised-andmed/Eesti-geodeetiline-susteem/L-EST97-koordinaatsusteem-p173.html">L-EST97</a>. Vajutame sellele otsingu tulemusele ning menüü alumises servas <em>OK</em>. Teeme sama <em>CRS for Layers</em> juures. vajutame OK ja sulgeme seaded.<br />
-</li>
-<li>Vahetame ka praeguse projekti <em>CRS</em>-i. Selleks klikime ekraani alumises paremas nurgas maakera ikooni kõrval ning valime ka seal EPSG:3301 koodiga <em>CRS</em>-i.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:defaultcrs"></span>
-<img src="imgs/6_qgis_crs.gif" alt="Koordinaatsüsteemi sätestamine" width="80%" />
-<p class="caption">
-Joonis 6.2: Koordinaatsüsteemi sätestamine
-</p>
-</div>
-<p>Salvestame QGISi projekti oma kursuse kausta, valides ülevalt vasakult <em>Project → Save</em>. Failinimeks võib panna näiteks <em>praktikum_6</em>. <strong>Praktikumi jooksul võiks projekti aeg-ajalt salvestada!</strong></p>
-<p>Vaata QGISi kasutajaliidest. Suurde keskel olevasse aknasse ilmuvad kaardid ja ruumiandmete kihid graafiliselt. Vasakul on kihtide aken <em>Layers</em>. Allservas näeme kursori asukoha koordinaate, mõõtkava, mida saab seal ka muuta, ning paremal nurgas on koordinaatsüsteem, mis peaks nüüd olema EPSG:3301. Üleval servas on menüüd ja kõiksugused tööriistad.</p>
-</div>
-</div>
-<div id="andmete-avamine" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Andmete avamine<a href="qgis_1.html#andmete-avamine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Nagu varasematest mäletame, on põhilised ruumiandmete tüübid raster- ja vektorandmed. Viimased neist võivad koosneda punktidest, joontest või polügoonidest. Avame kõigist andmetüüpidest näite.</p>
-<ul>
-<li><p>Avame Eesti <strong>maakondade kihi</strong>.</p>
-<ul>
-<li><em>Layer → Add layer → Add vector layer</em>.<br />
-</li>
-<li>Kliki <em>Vector Dataset(s)</em> juures sirvimise ikoonil (kolm punkti). Vali andmete kaustast <em>shape</em>-fail <em>maakond_20231001.shp</em> ja vajuta <em>Open</em>. Seejärel menüü all servas <em>Add</em> ja <em>Close</em>.<br />
-</li>
-<li>Nüüd on avatud kiht kõigi Eesti maakondade piirjoontega.</li>
-</ul></li>
-<li><p>Avame muinsuskaitse all olevate <strong>kirikute kihi</strong>. Kõik samamoodi nagu eelmise kihiga, valida tuleb lihtsalt <em>geopackage</em>’i fail <em>kirikud.gpkg</em>.</p></li>
-<li><p>Avame suuremate <strong>jõgede kihi</strong> <em>joed.gpkg</em>. Kui on juba selge, kuidas käib menüü kaudu kihi avamine, siis võib selle kihi avamiseks faili ka lihtsalt kaardiaknasse lohistada.</p></li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vectorlayers"></span>
-<img src="imgs/6_qgis_vector_layers.gif" alt="Vektorkihtide lisamine" width="80%" />
-<p class="caption">
-Joonis 6.3: Vektorkihtide lisamine
-</p>
-</div>
-<p>Kihtide paneelil <em>Layers</em> saab kihte välja ja sisse lülitada ning hiirega tõstes muuta nende järjekorda.<br />
-Peaaknas saab hiire rullikuga suumida (all servas muutub ka mõõtkava).<br />
-Hiire vasakpoolset klahvi all hoides ja ka klaviatuuri nooltega saab kaardil liikuda.<br />
-Mingi kihi terve ulatuse nägemiseks vali <em>Layers</em> paneelil kiht, tee sellel paremklikk ning vali <em>Zoom to Layer</em>. Sellest on abi ka siis, kui oled kaardil n-ö eksinud ja ei suuda kihti enam üles leida.<br />
-Kihtide <strong>atribuuttabelit</strong> saab vaadata, kui teha kihil paremklikk ja valida <em>Open Attribute Table</em>. Proovime kaardil ringi liikuda ning vaatame kõikide kihtide atribuuttabelit.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:attributes"></span>
-<img src="imgs/6_qgis_maakondade_atribuudid.png" alt="Maakondade vektorkihi atribuuttabel" width="60%" />
-<p class="caption">
-Joonis 6.4: Maakondade vektorkihi atribuuttabel
-</p>
-</div>
-<p>Vaatame ka näidet rasterandmetest ortofotode näol. Ava 2020. a ja 1995. a ortofotod kasutades <em>Layer → Add Layer → Add Raster Layer</em> ning vali vastavalt failid <em>orto_2020.tif</em> ja <em>orto_1995.tif</em>. Vajuta <em>Add</em> ja <em>Close</em>.<br />
-Esmapilgul ei ole midagi näha, kuna ortofotod on väga suure mõõtkavaga (=väga väikese ala kohta). Liigu kihtide juurde (paremklikk -&gt; <em>Zoom to Layer(s)</em>) ja vaata nende erinevusi. Selleks lülita vastavaid kihte <em>Layers</em> paneelil sisse ja välja. Proovi ka lähedale suumida, et näha eraldiseisvaid piksleid. 1995. aasta ortofotol on oluliselt vähem piksleid, mis tähendab, et ühe piksli mõõtmed on palju suuremad.</p>
-<p>Rasteri pikslisuuruse vaatamiseks tee kihil paremklikk → <em>Properties</em>. Vali jaotis <em>Information</em>. <em>Information from provider</em> juures on kirjas <em>Pixel size</em>, antud juhul piksli küljepikkus meetrites. Pärast seda võib rasterkihid eemaldada. Selleks tee kihtide aknas kihil paremklikk → <em>Remove layer</em>. Võid mõlemad kihid ka korraga eemaldada.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rasterlayers"></span>
-<img src="imgs/6_qgis_rasterlayers.gif" alt="Rasterkihtide lisamine" width="80%" />
-<p class="caption">
-Joonis 6.5: Rasterkihtide lisamine
-</p>
-</div>
-<p>Ortofotode kohta saab rohkem lugeda ja neid ka ise kaardiruutude kaupa alla laadida <a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Ortofotod-p99.html">Maa-ameti Geoportaalist</a>.</p>
-</div>
-<div id="kihtide-visualiseerimine" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Kihtide visualiseerimine<a href="qgis_1.html#kihtide-visualiseerimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Selleks, et kõik kihid välja paistaksid, peaksid need olema ülevalt alla järjekorras kirikud, jõed, maakonnad. Andmete visualiseerisemiseks on meil punktide puhul kasutada värv, kuju ja suurus. Joonte ja alade puhul on meil kuju ette antud, kuid saame lisaks värvile ja suurusele vahetada mustrit (nt katkendjoon või viirutatud ala).</p>
-<div id="harjutus-1" class="section level3 hasAnchor" number="6.5.1">
-<h3><span class="header-section-number">6.5.1</span> Harjutus 1<a href="qgis_1.html#harjutus-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Muudame kihtide stiili nii, et kirikud paistaksid selgelt välja, jõed oleksid sinised ja nähtavad ning maakondi tähistaksid ainult nende piirjooned. Lisame ka maakonnanimed.</p>
-<p>Sümbolite muutmiseks teeme kihil topeltkliki (või paremkliki ja valime <em>Properties</em>) ning avanenud aknas valime vasakul servas jaotise <strong><em>Symbology</em></strong>.</p>
-<p>Avanenud menüüs valime punkt- ja joonobjektidele värvi (<em>Color</em>) ja suuruse (<em>Size</em>, joonte puhul <em>Width</em>). Võib mängida ka läbipaistvusega (<em>Opacity</em>). Kui tahad vahetulemust näha, aga ei taha <em>Properties</em> akent kinni panna, võid vajutada avanenud akna alumises servas nupule <em>Apply</em>. Kui oled tulemusega rahul ja rohkem midagi muuta ei taha, vajuta <em>OK</em>.</p>
-<p>Pindobjektidele ehk maakondade polügoonidele valime sümbolitüübiks <em>Simple fill</em> asemel <em>Outline: Simple Line</em>. See tähendab, et kogu ala pole mitte mingi värviga täidetud (<em>fill</em>), vaid näeme ainult ala piirjooni. Võib muuta ka piirjoonte värvi ja paksust (<em>Stroke width</em>).</p>
-<p>Alternatiivina võib kihi stiili muutmiseks sisse lülitada paneeli <em>Layer Styling</em>. Selleks valime üleval menüüribal <em>View → Panels → Layer Styling</em>. Nüüd on seesama <em>Symbology</em> aken kaardiakna kõrval ning muudatused on kohe paremini näha.</p>
-<p>Lisame maakonnanimed, valides maakondade vektorkihi puhul samas menüüs vasakult <strong><em>Labels</em></strong> ning seal <em>No Labels</em> asemel <em>Single Labels</em>. <em>Value</em> alt vali <em>MNIMI</em>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:harjutus1"></span>
-<img src="imgs/6_qgis_harjutus1.png" alt="Harjutus 1 tulemus" width="100%" />
-<p class="caption">
-Joonis 6.6: Harjutus 1 tulemus
-</p>
-</div>
-<p>Kas see on hea visualiseerimine? Mis on hea, mis on puudu, mis on üleliigne, kui eesmärgiks on näidata kaitse all olevate kirikute arvu maakonnas?</p>
-</div>
-<div id="yhendamine1" class="section level3 hasAnchor" number="6.5.2">
-<h3><span class="header-section-number">6.5.2</span> Harjutus 2<a href="qgis_1.html#yhendamine1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Harjutuse eesmärk on luua kaart, mis näitab <strong>maakondade värvi</strong> abil, kui palju on muinsuskaitse all olevaid kirikuid maakondades (nn horopleetkaart <a href="kaardid.html#fig:horopleet">4.3</a>). Teisisõnu: <strong>klassifitseerime</strong> maakonnad selle järgi, millist kirikute arvu põhjal moodustuvat sagedusklassi nad esindavad.<br />
-Selleks tuleb maakondade polügoonide kihiga siduda tabel, kus on kirjas iga maakonna kirikute arv, ning värvida seejärel maakonnad vastavalt sellele arvule.</p>
-<p>Avame Exceli, Notepad++-i vms programmiga faili <em>kirikud_maakonniti.csv</em>. Nagu näha, on tegu väga lihtsa andmestikuga, kus on ainult kaks tulpa ja 15 rida (iga maakonna kohta üks rida). <strong>Avame sama faili QGISis: </strong></p>
-<ul>
-<li><em>Layer → Add Layer → Add Delimited Text Layer</em><br />
-</li>
-<li>Klikime <em>File name</em> juures sirvimise ikoonil (kolm punkti). Valime kaustast faili <em>kirikud_maakonniti.csv</em>.<br />
-</li>
-<li>Valime <em>File Format</em> juures <em>CSV</em> (<em>comma-separated values</em> ehk tabel, kus tulpasid eraldavad komad).<br />
-</li>
-<li><em>Record and Fields Options</em> juures teeme linnukese <em>First record has field names</em> ette. See on vajalik, et QGIS arvestaks tabeli esimest rida kui tulpade pealkirju.<br />
-</li>
-<li><em>Geometry Definition</em> juures valime <em>No geometry (attribute only table)</em>. See tuleb valida, kuna antud tabelis ei ole ühtegi koordinaatidega tulpa. Kui oleks, saaksime siin määrata, millise nimega tulbas paiknevad pikkus- ja millise nimega tulbas laiuskraade kuvavad koordinaadid, samuti selle, millises CRSis koordinaadid on määratud.<br />
-</li>
-<li>Vaatame nüüd, kas all <em>Sample Data</em> aknas on andmed kujutatud eraldi tulpades ja täpitähed olemas. Kui täpitähti pole, peame valima üleval <em>Encoding</em> rippmenüüst <em>iso8859_15</em>, mis on ametlik eesti keele kodeering, või <em>windows-1252</em>. Tegelikult töötavad veel paar kodeeringut.<br />
-</li>
-<li><em>Add → Close</em>. Nagu näha, ei ilmunud QGISi peaaknasse midagi, kuna tegu pole ruumiandmete kihiga, vaid lihtsalt tabeliga.<br />
-</li>
-<li>Vaatame kihtide paneelis lisatud CSV-faili atribuuttabelit. See on samasugune nagu Excelis/Notepadis.</li>
-</ul>
-<p><strong>Ühendame kultuurimälestiste tabeli maakondade kihiga: </strong></p>
-<ul>
-<li>Andmestike ühendamiseks peab olema mõlemas andmestikus tulp, mille sisu kattub teise andmestiku ühe tulba sisuga. Käesoleva kahe andmestiku puhul on mõlemal tulp maakondade nimedega: maakondade vektorkihil on selle atribuudi nimi <code>MNIMI</code> ja csv-kihil <code>maakond</code>.<br />
-</li>
-<li>Kuna ühendame ruumiandmetega mitteruumiandmeid (ja mitte vastupidi), valime <em>Layers</em> paneelil <strong>maakondade polügoonide vektorkihi</strong>, teeme sellel topeltkliki, valime vasakul servas jaotise <em>Joins</em> ning vajutame all servas rohelisele plussmärgile. Täidame avanenud aknas väljad järgmiselt:
-<ul>
-<li><strong>Join layer</strong>: <em>kirikud_maakonniti</em> (see on see mitteruumiandmete kiht, mida ruumiandmetega liidame)</li>
-<li><strong>Join field</strong>: <em>maakond</em> (mitteruumiandmete kihi tulp, mille sisu kattub ruumiandmete kihi ühe tulba sisuga)<br />
-</li>
-<li><strong>Target field</strong>: <em>MNIMI</em> (ruumiandmete kihi tulp, mille sisu kattub mitteruumiandmete kihi ühe tulba sisuga)<br />
-</li>
-<li><strong>Joined fields</strong> ette teeme linnukese ja seal omakorda linnukese ainult tulbanime <em>kirikuid</em> ette, kuna me ei soovi tabelist võtta ka maakondade nimesid, mis on polügoonide vektorkihil juba olemas.</li>
-<li><strong>Custom Field Name Prefix</strong> ette teeme linnukese ja kustutame sealses lahtris oleva teksti, et lisatavatele tulpadele (antud juhul tulbale <em>kirikuid</em>) ei kirjutataks ühendatud andmestikus ette ka liidetava kihi nime: tahame, et uues andmestikus oleks lihtsalt tulp <em>kirikuid</em>, mitte <em>kirikud_maakonniti_kirikuid</em>.<br />
-</li>
-<li><em>OK → OK</em><br />
-</li>
-<li>Vaatame uuesti maakondade vektorkihi atribuuttabelit (kiirklahv F6), et näha, kas igale maakonnale said lisatud kirikute arvud.</li>
-</ul></li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tablejoin"></span>
-<img src="imgs/6_qgis_tablejoin.png" alt="Kirikute tabel ühendatud maakondade kihiga" width="70%" />
-<p class="caption">
-Joonis 6.7: Kirikute tabel ühendatud maakondade kihiga
-</p>
-</div>
+<div id="geostatistika1" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">Praktikum 16</span> Geostatistika (1)<a href="geostatistika1.html#geostatistika1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <blockquote>
-<p>Mis juhtub, kui ühendad kaks andmestikku teistpidi: kirikute arvu tabelile liidad maakondade polügoonide kihi?</p>
+<p>“Everything is related to everything else, but near things are more related than distant things.” (Waldo Tobler, 1970).</p>
 </blockquote>
-<p><strong>Värvime maakonnad vastavalt kirikute arvule.</strong></p>
-<ul>
-<li>Maakondade kihil teeme topeltkliki või paremkliki ja valime <em>Properties</em>. Liigume jaotisesse <em>Symbology</em>.<br />
-</li>
-<li><em>Simple line</em> asemel vali uuesti <em>Symbol layer type</em> juurest <em>Simple fill</em><br />
-</li>
-<li>Jaotise ülaservast valime <em>Single Symbol</em> asemel <em>Graduated</em> selleks, et värvida valitud kihi elemendid vastavalt mingile arvulisele, pidevale tunnusele (siin on selleks kirikute arv):
-<ul>
-<li><em>Value</em> juures valime tunnuse <em>kirikuid</em>. See määrab, millise tulba väärtuste põhjal maakonnad värvitakse.<br />
-</li>
-<li><em>Color ramp</em> juures valime rippmenüüst värviskaala, millel on ühtlane 2–3 tooni üleminek. Näiteks helekollasest tumeroheliseks (vt <em>All Color Ramps</em> -&gt; <em>YlGn</em>).<br />
-</li>
-<li>Klikime <em>Classify</em>. Proovime ka erinevate jaotumistega (nt <em>Equal interval</em> ja <em>Pretty breaks</em>) ja klasside hulgaga (<em>Classes</em>). Näiteks <em>Pretty breaks</em> ja kolm klassi annab ilusa tulemuse. Jälgime, et enamik maakondi ei oleks ühte värvi. Räägime klassifitseerimismeetoditest edaspidi ka lähemalt.<br />
-</li>
-<li>Vajutame <em>OK</em>.<br />
-</li>
-</ul></li>
-<li>Nüüd on kõik maakonnad värvitud valitud värviskaalaga vastavalt sellele, kui palju on neis kirikuid. Kas see kaart on informatiivne? Mida peaks lisama või ära võtma?</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:harjutus2"></span>
-<img src="imgs/6_qgis_harjutus2.png" alt="Harjutus 2 tulemus" width="100%" />
+<div id="punktimustri-analüüs" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> Punktimustri analüüs<a href="geostatistika1.html#punktimustri-analüüs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Punktimustri analüüsi näol on tegemist statistiliste meetodite kogumiga, mille abil saab uurida ruumilisi (keerukaid) suhteid nähtuste vahel, mida on kujutatud punktidena. Näiteks asustusüksused maastikul või mingi info (nt pärimus, keel, ilm) kogumiskoht. Kuigi sageli on punktidega kaasas ka täiendavat infot, mis punkti iseloomustab (nt jutustuse liik, keelend, temperatuur), siis võib meid huvitada puhtalt ka <strong>punktide jaotumine ruumis</strong>.</p>
+<p>Arheoloogias on selliseid meetodeid kasutatud juba alates 1960. aastatest, kui hakati rohkem tegelema kvantitatiivsete meetoditega. Näiteks on uuritud leidude paiknemist asulates, hoonetes ja matusekohtades ning linnamägesid maastikul. GISi kasutuselevõtmine lihtsustas oluliselt nende analüüside tegemist.</p>
+<div id="punktitihedus" class="section level3 hasAnchor" number="16.1.1">
+<h3><span class="header-section-number">16.1.1</span> Punktitihedus<a href="geostatistika1.html#punktitihedus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Lihtne viis punktide jaotumise formaalseks hindamiseks on mõõta nende paiknemistihedust mingis kindlas piirkonnas. Seda nimetatakse ka <strong>esimese järgu ruumiliseks intensiivsuseks</strong> (<em>first-order spatial intensity</em>). Lihtsaim tulemus keskmise intensiivsuse väljendamiseks võib olla arv, mis näitab oodatavat punktide hulka mingil alal. Vaatame näidet!</p>
+<p>Alloleval pildil on näha 100 punkti, mis jaotuvad juhuslikult alal, mille mõõtmed on 10 x 10 ühikut ning mis on omakorda jagatud 2 x 2 ruutudeks. Kokku on alal niisiis 25 ruutu. Ühikud ei ole siinkohal tähtsad. Need sõltuvad meie uurimisalast ja -küsimusest ning võivad ulatuda nanomeetrist kilomeetri ja valgusaastani. Esimese asjana võiks küsida, kui palju punkte võiks paikneda ühes ruudus, arvestades et igal ruudul (või muul pindalaühikul) on sama hea võimalus punktide saamiseks. Võiks eeldada, et vastus on 4, kuna 100 / 25 = 4.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:17firstorderrandom"></span>
+<img src="imgs/16_first_order_intensity_random.PNG" alt="Punktide juhuslik jaotumine ja võrdlus Poissoni jaotusega [@Gillings2020]" width="80%" />
 <p class="caption">
-Joonis 6.8: Harjutus 2 tulemus
+Joonis 16.1: Punktide juhuslik jaotumine ja võrdlus Poissoni jaotusega <span class="citation">(<a href="kirjandus.html#ref-Gillings2020" role="doc-biblioref">Gillings et al. 2020</a>)</span>
+</p>
+</div>
+<p>Tegelikult järgib punktide juhuslik paiknemine aga <strong>teoreetilist Poissoni jaotust</strong>, mille kohaselt on mitmes ruudus vähem kui 4 ja üksikutes ruutudes rohkem kui 4 punkti. Täiesti juhuslikult paiknevate punktide jaotuse vaadeldav intensiivsus pindalaühiku kohta peakski järgima Poissoni jaotust. Sellist olukorda nimetatakse <strong>täielikuks ruumiliseks juhuslikkuseks</strong> (<em>complete spatial randomness – CSR</em>) ja selle jaotuse loonud juhuslikku käitumist nimetatakse <strong>Poissoni punkti protsessiks</strong> (<em>Poisson point process</em>). Huvi korral vaata Poissoni jaotuse tutvustust näiteks <a href="https://www.youtube.com/watch?v=BbLfV0wOeyc">365 Data Science videost</a>.</p>
+<p>Võiksime teoreetiliselt ka eeldada, et iga punkt kogu uurimisala ulatuses käitub samamoodi. Pärismaailmas olevad punktid sellisele eeldusele aga sageli ei vasta. Näiteks koonduvad punktid pigem mingisse uurimisala piirkonda ja teistes uurimisala piirkondades on neid hõredalt. Sellisel juhul võib eeldada, et punktide intensiivsust uurimisala erinevates piirkondades mõjutab mingi väline protsess/käitumine. Näiteks võivad külad koonduda mingi kihelkonna põhjaossa, kuna lõunaosas on soo, või parimate riigieksami tulemustega õpilased suurematesse linnadesse, kuna seal on rohkem eliitkoole.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:16firstorderinhom"></span>
+<img src="imgs/16_first_order_intensity_inhomogenous1.PNG" alt="Mittehomogeenne jaotumine ja võrdlus Poissoni jaotusega [@Gillings2020]" width="80%" />
+<p class="caption">
+Joonis 16.2: Mittehomogeenne jaotumine ja võrdlus Poissoni jaotusega <span class="citation">(<a href="kirjandus.html#ref-Gillings2020" role="doc-biblioref">Gillings et al. 2020</a>)</span>
+</p>
+</div>
+<p>Ülaloleval joonisel on näha selgelt, et punktid koonduvad üles parempoolsesse nurka ning ruudupõhine lugemine näitab, et jaotus ei järgi Poissoni jaotust. Sageli on aga erinevus sellisest juhuslikust homogeensest punktimustrist suhteliselt selge ning me ei peagi seda niimoodi vaatama või testima. Pärismaailmas ongi väga vähe nähtuseid, mis on täielikult juhuslikud.</p>
+<p>Populaarne meetod esimese järgu intensiivsuse kokkuvõtmiseks on <strong>tuumhindamine</strong> (<em>Kernel Density Estimation</em> ehk KDE). See on sarnane ruudupõhise lugemisega, aga kindlate ruutude asemel liigub kogu punktidega kaetud alast süsteemselt üle aken ehk <em>kernel</em> ehk tuum. Igas asukohas loetakse kokku punktid, mis jäävad parajasti kerneli alla jäävale alale ja see arv jäädvustatakse kerneli (ajutisse) keskkohta. Tulemuseks on rasterkiht, mille iga piksli väärtus näitab punktimustri hinnangulist intensiivsust selles piirkonnas.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:16kdeprinciple"></span>
+<img src="imgs/16_kde_principle.png" alt="KDE tööpõhimõte. Näidatud on 5 andmepunkti, kindla suurusega kernel ning tuletatud KDE" width="50%" />
+<p class="caption">
+Joonis 16.3: KDE tööpõhimõte. Näidatud on 5 andmepunkti, kindla suurusega kernel ning tuletatud KDE
+</p>
+</div>
+<p>KDE puhul on oluline kasutatava akna suurus (<strong><em>kernel bandwidth</em></strong>), mis indikeerib seda, <strong>kui suure mõjualaga käitumine punktandmeid tekitas</strong>: mida suurem aken, seda kaugemaleulatuvam on ühe punkti mõju. Akna suurus on pisut arbitraarne valik ja üldiselt soovitatakse katsetada mitme erineva suurusega, et saada mustrist parem ettekujutus.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:16firstorderinhom2"></span>
+<img src="imgs/16_first_order_intensity_inhomogenous2.png" alt="KDE tulemus erineva akna suurusega [@Gillings2020]" width="80%" />
+<p class="caption">
+Joonis 16.4: KDE tulemus erineva akna suurusega <span class="citation">(<a href="kirjandus.html#ref-Gillings2020" role="doc-biblioref">Gillings et al. 2020</a>)</span>
+</p>
+</div>
+<p>Lisaks akna suurusele mängib pisut rolli ka see, mis kujuga kernel on, indikeerides seda, kui suur mõju kerneli alla jäävatel punktidel mingis kerneli osas on. Näiteks võivad suurema kaalu saada kerneli keskele jäävad punktid (<em>triweight</em>), aga kõikidel punktidel võib olla terves kerneli ulatuses ka ühesugune kaal (<em>uniform</em>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:16kernelshape"></span>
+<img src="imgs/16_kernels.png" alt="Erinevad kerneli kujud (Brian Amberg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=5329895)" width="80%" />
+<p class="caption">
+Joonis 16.5: Erinevad kerneli kujud (Brian Amberg, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=5329895" class="uri">https://commons.wikimedia.org/w/index.php?curid=5329895</a>)
+</p>
+</div>
+<p>Ehkki vahel võib punktimustri intensiivsust hinnata ka niisama, palja silmaga, peetakse KDE-d oluliseks alguspunktiks punktide jaotumise analüüsimisel, kuna:</p>
+<ol style="list-style-type: decimal">
+<li>erinevate kerneli suuruste võrdlemine aitab saada punktimustri jaotumisest selgemat ülevaadet;<br />
+</li>
+<li>see aitab mõista olukordi, kus on liiga palju punkte, et lihtsalt peale vaadates midagi nende kohta öelda, või kus punktidel on mingi kaal ning neid ei saa seetõttu võrdsetena käsitleda;</li>
+<li>see võib olla sisendiks järgmistele, keerukamatele analüüsidele (näiteks mudelitele, kus võrreldakse mittehomogeensete punktimustrite tekkeprotsesse).</li>
+</ol>
+</div>
+</div>
+<div id="ülesanne-1" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> Ülesanne 1<a href="geostatistika1.html#ülesanne-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Koostame kultuurimälestiste leviku paremaks mõistmiseks <em>KDE</em> kihid erinevate akna suurustega. Selleks</p>
+<ul>
+<li>avame Maa-ameti omavalitsuste polügoonikihi <em>omavalitsus.gpkg</em> ja kultuurimälestiste punktikihi <em>malestised.gpkg</em>,<br />
+</li>
+<li>valime <em>Processing → Toolbox → Interpolation → Heatmap (Kernel density estimation)</em>.
+<ul>
+<li><em>Point layer</em> väärtuseks määrame <code>malestised</code>.<br />
+</li>
+<li>Raadiuseks võib esialgu panna 20 kilomeetrit (<strong>jälgi, et ühik oleks õige!</strong>) ning piksli suuruseks 1000x1000 (meetrit).</li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:yl1"></span>
+<img src="imgs/16_yl1.png" alt="KDE sätted" width="70%" />
+<p class="caption">
+Joonis 16.6: KDE sätted
+</p>
+</div>
+<ul>
+<li>Lõikame tulemuse omavalitsuste piiridesse: <em>Raster → Extraction → Clip raster by mask layer → Input: Heatmap, Mask layer: omavalitsus → Run</em>.<br />
+</li>
+<li>Kasutame rastri värvimiseks sobivat värvipaletti ja uurime ka <em>Identify features</em> tööriista abil (<code>Ctrl+Shift+i</code>) funktsiooniga rastri väärtuseid erinevates kohtades.</li>
+<li>Võrdleme KDE tulemust ka omavalitsustepõhise kultuurimälestiste jaotumisega. Selleks loeme kokku igas KOV-is olevate kultuurimälestiste arvu (nt <em>Vector → Analysis Tools → Count points in polygon</em>). Polügooni kihiks valime <em>omavalitsus</em> ning punktide kihiks <em>malestised</em>. Visualiseerime tekkinud kihti tulba <em>NUMPOINTS</em> abil. Mis on erinevused ja millest need tulevad?</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:16kernelestimation"></span>
+<img src="imgs/16_malestised_heatmap1.png" alt="Kultuurimälestiste KDE raadiusega 20 km ja piksli suurusega 1000 m ning kultuurimälestised omavalitsuste kaupa" width="50%" /><img src="imgs/16_malestised_kov.png" alt="Kultuurimälestiste KDE raadiusega 20 km ja piksli suurusega 1000 m ning kultuurimälestised omavalitsuste kaupa" width="50%" />
+<p class="caption">
+Joonis 16.7: Kultuurimälestiste KDE raadiusega 20 km ja piksli suurusega 1000 m ning kultuurimälestised omavalitsuste kaupa
+</p>
+</div>
+<p>KDE <em>heatmap</em>’i algoritmi <em>Quartic</em> kerneli kujuga kasutab ka <em>Symbology</em> jaotise valikus olev <em>heatmap</em>, millega oleme varem kokku puutunud.</p>
+</div>
+<div id="graphical-modeler" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> Graphical Modeler<a href="geostatistika1.html#graphical-modeler" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kui soovime samu funktsioone korduvalt järjest kasutada (nt võrrelda tulemusi erinevate kerneli suuruste ja kujudega), siis võime neist ise uue funktsiooni luua, mis kombineerib meile kõik vajaliku. Siinkohal ongi abiks <em>Graphical Modeler</em>. Loome funktsiooni, mis teeb sama, mida eelnevas ülesandes tegime kolme eraldi tegevusena (<em>heatmap</em>, <em>clip</em>, värvimine). Seeläbi saame oluliselt lihtsamini ja kiiremini katsetada <em>heatmap</em>’ide tegemist erinevate väärtustega ning neid omavahel kohe võrrelda. Praegu on meil funktsioonid suhteliselt lihtsad ning neid on ainult kolm, aga keerukamate tegevuste puhul on automatiseerimisest palju kasu.</p>
+<p>Meie mudel koosneb kolmest osast:</p>
+<ul>
+<li>Sisendid: mälestised, omavalitsus, raadius, kerneli kuju, stiil</li>
+<li>Funktsioonid: <em>heatmap</em>, <em>clip</em>, <em>stylize</em></li>
+<li>Väljundid: omavalitsuste piiridesse lõigatud värvitud <em>heatmap</em>.</li>
+</ul>
+<p>Avame graafilise mudeldaja, valides ülamenüüst <em>Processing → Graphical Modeler</em> <img src="imgs/16_gm.png" />.</p>
+<div id="sisendid" class="section level3 unnumbered hasAnchor">
+<h3>Sisendid<a href="geostatistika1.html#sisendid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sisendite valimiseks valime vasakult <em>Inputs</em>.</p>
+<p><strong>Punktikihi</strong> lisamiseks valime sealt <em>Map Layer</em>. Anname sisendkihile nime (nt <em>punktandmed</em>). Valime tüübiks <strong><em>Vector point</em></strong>. Vaatame, et oleks tehtud linnuke <em>Mandatory</em> ette.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:gminputs"></span>
+<img src="imgs/16_gm_inputs.png" alt="Graphical Modeler sisendid" width="50%" />
+<p class="caption">
+Joonis 16.8: Graphical Modeler sisendid
+</p>
+</div>
+<p>Lisame samamoodi <strong>omavalitsuste kihi</strong> sisendi ja valime sellele kihile õige tüübi.</p>
+<p>Lisame ka numbrilise sisendi kerneli <strong>raadiuse</strong> jaoks, valides <em>Inputs → <strong>Number</strong></em>.
+Raadiuse tüüp on täisarv (<em>Integer</em>) ja vaikeväärtus võiks olla 20000 (e 20 km).</p>
+<p>Lisame mudelisse ka sisendi, millega saame muuta kerneli <strong>kuju</strong> , valides <em>Inputs → <strong>Enum</strong></em>.<br />
+Rohelisest plussmärgist lisame 5 valitavat väärtust ja nimetame need vastavalt KDE pakutavatele väärtustele: <code>Quartic</code>, <code>Triangular</code>, <code>Uniform</code>, <code>Triweight</code> ja <code>Epanechnikov</code>.</p>
+<p>Lisame lõpuks sisendi ka <strong>stiili</strong> jaoks, et kõik väljundid oleksid samasuguse stiiliga.<br />
+Selleks tuleb aga eelnevalt stiili fail salvestada. Avame varem tehtud <em>heatmap</em>’i jaotise <em>Symbology</em>.</p>
+<ul>
+<li>Määrame <code>Min</code> väärtuseks 0 ja <code>Max</code> väärtuseks 500,<br />
+</li>
+<li>jagame arvuskaala väärtused värvide vahel nii, et iga värv vastaks kindlale väärtuste klassile: <em>Interpolation → Discrete</em> ja <em>Mode → Equal Interval</em> (nt 10 klassiga).</li>
+</ul>
+<p>Kui on olemas sobiv stiil, siis valime <em>Symbology</em> jaotises alt vasakult <em>Style → Save style</em>.<br />
+Nüüd läheme tagasi <em>Graphical Modeler</em>’i juurde. Valime <em>Input</em>’i alt <em><strong>File/Folder</strong></em> ning paneme sellele nimeks <em>stiil</em>.</p>
+<p>Nüüd on kõik viis sisendit olemas.</p>
+</div>
+<div id="funktsioonid" class="section level3 unnumbered hasAnchor">
+<h3>Funktsioonid<a href="geostatistika1.html#funktsioonid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Esimene funktsioon on <em>heatmap</em>’i tegemine.</p>
+<p>Valime vasakult <em>Inputs</em> asemel <em>Algorithms → Interpolation → heatmap</em>. Lisame selle mudelisse. Nagu näha, on tegemist sama <em>heatmap</em>’i funktsiooniga, mida varasemalt kasutasime. Siin määrame aga sisendid meie mudelist.</p>
+<ul>
+<li><em>Point layer</em> ees klikime ikoonil <img src="imgs/16_icon.png" />, valime sealt <em>Value</em> asemel <em>Model input</em> ja kihiks varem tehtud sisendi nimega <em>punktandmed</em>.<br />
+</li>
+<li><em>Radius</em> juures valime mudeli sisendi <em>raadius</em>.<br />
+</li>
+<li><em>Output raster size</em> määrame 1000. Seda ei hakka me sisendiga iga kord muutma.<br />
+</li>
+<li><em>Show advanced parameters</em> alt määrame <em>Kernel shape</em> väärtuseks mudeli sisendi.</li>
+</ul>
+<p>Nüüd vajutame <em>OK</em>. Nagu näha, lähevad valitud sisendite juurest jooned funktsiooni sisse.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:16graphicalmodeleralgorithm"></span>
+<img src="imgs/16_gm_algorithm.png" alt="Graphical Modeler: *heatmap*'i algoritmi lisamine" width="80%" />
+<p class="caption">
+Joonis 16.9: Graphical Modeler: <em>heatmap</em>’i algoritmi lisamine
+</p>
+</div>
+<p>Lisame järgmise funktsiooni. <em>Algorithms</em> seast otsime <em>Clip raster by mask layer</em> ja lisame selle mudelisse. <em>Input layer</em>’iks määrame <em>Algorithm output</em>. Valikusse ilmub automaatselt <em>“Heatmap”</em>, kuna see on meie mudelis praegu ainuke algoritm. <em>Mask Layer</em> juures valime <em>Value</em> asemel <em>Model input</em> ja kihiks varem tehtud sisend nimega <em>polügoonid</em>. <em>Clipped (mask)</em> juures sisestame tulemuse nime (nt <em>clipped_heatmap</em>).</p>
+<p>Lõpuks lisame stiliseerimise funktsiooni. <em>Algorithms</em> seast otsime <em>Set layer style</em>. Lisame selle mudelisse, määrame <em>Layer → Algorithm output</em> ja valime algoritmi <em>“Clipped (mask)”</em>. <em>Style file → Model input → stiil</em>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:16graphicalmodelerstyle"></span>
+<img src="imgs/16_gm_ready.png" alt="Graphical Modeler" width="80%" />
+<p class="caption">
+Joonis 16.10: Graphical Modeler
 </p>
 </div>
 </div>
+<div id="tulemus" class="section level3 unnumbered hasAnchor">
+<h3>Tulemus<a href="geostatistika1.html#tulemus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Väljund <em>clipped_heatmap</em> on juba automaatselt tekkinud, kuna andsime selle nime lõikamise funktsioonis.</p>
+<p>Proovime, kas mudel töötab. Valime üleval <em>Model → Run model</em>. Nagu näha, avaneb funktsiooni aken, kus on sisendiks meie määratud valikud. Valime õiged kihid ja jooksutame mudelit. QGISi peaaknasse peaks ilmuma nüüd <em>heatmap</em>, mis on õigetesse piiridesse lõigatud ning etteantud stiiliga värvitud.</p>
+<p>Salvestame mudeli, paneme sellele nimeks nt <em>heatmap_clipper</em> vms. Nüüd võib <em>Graphical Modeler</em> akna kinni panna. Mudel on nüüd leitav <em>Processing Toolbox</em>’ist (<em>Processing → Toolbox</em>) <em>Models</em> all või on lihtsalt otsitav antud pealkirja järgi. Testime nüüd mudeli abil erinevate raadiustega, millised KDE’d välja tulevad. Olenevalt soovitavast üldistamise tasemest saab valida endale sobiva rastermudeli.</p>
 </div>
-<div id="aluskaardid" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> Aluskaardid<a href="qgis_1.html#aluskaardid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Nagu varasemates loengutes nägime, on olemas rohkelt aluskaarte, mida erinevates rakendustes põhiliselt teemakaartide tegemisel kasutatakse. QGISis saab neid kasutada läbi pistikprogrammide ehk <em>Plugins</em> või WMS- ja WFS-teenuste (vastavalt <em>web map service</em> ja <em>web feature service</em>).</p>
-<p>WMS-teenuse kaudu saab kasutada peaaegu kõiki <a href="https://xgis.maaamet.ee/xgis2/page/app/maainfo">Maa-ameti XGISis</a> olevaid kihte. Täpsemalt saab sellest lugeda <a href="https://geoportaal.maaamet.ee/est/Teenused/WMS-teenused-p65.html">WMS teenuste lehel</a>. Lisaks saab kasutada paljusid muid andmeid kogu maailmast. WMS-teenuse kaarte saab kasutada sisuliselt ainult visualiseerimiseks. Päringuid, valikuid vmt nende põhjal teha ei saa.</p>
-<p><strong>Lisame WMS-teenusest aluskaardi:</strong></p>
-<ul>
-<li><em>Layer → Add Layer → Add WMS/WMTS layer</em>.<br />
-</li>
-<li>Lisame ühenduse (<em>New</em>). Avanenud aknas määrame nimeks (<em>Name</em>) näiteks <em>Maa-ameti aluskaart</em> ning URLi juurde kopeerime aadressi <a href="https://kaart.maaamet.ee/wms/alus?">https://kaart.maaamet.ee/wms/alus?</a>. Vajutame <em>OK</em>. Nüüd on paika pandud, millise Maa-ameti kaardiserveriga QGIS ühenduse loob.<br />
-</li>
-<li>Klikime ühenduse loomiseks nupul <em>Connect</em>. Valime serverist laetud kihtide hulgast näiteks <em>138 MAANTEED</em> ning klikime nupul <em>Add</em>.<br />
-</li>
-<li>Lisame veel ühe ühenduse (<em>New</em>). Seal kirjutame nime (<em>Name</em>) lahtrisse <em>Maa-ameti orto ja reljeef</em> ning URLi juurde kopeerime aadressi <a href="https://kaart.maaamet.ee/wms/fotokaart?">https://kaart.maaamet.ee/wms/fotokaart?</a>. Vajutame <em>OK</em>.<br />
-</li>
-<li>Klikime uue ühenduse loomiseks nupul <em>Connect</em>. Valime serverist kihi <em>21 vreljeef</em> ning klikime nupul <em>Add</em>. Sulgeme akna.<br />
-</li>
-<li>Nüüd on peaaknas näha maanteed koos reljeefiga. Kui lisatud WMS-kihid ei paista välja, siis tuleb muuta kihtide järjekorda või rohkem sisse või välja suumida.<br />
-</li>
-<li>Proovime lisada ka täiendavaid kihte.</li>
-</ul>
-<p><strong>Quickmap ja OSM</strong></p>
-<p>Lisame veebikaartide pistikprogrammi.</p>
-<ul>
-<li>Üleval servas valime <em>Plugins → Manage and Install Plugins</em>. Otsingusse kirjutame <em>Quickmap</em>. Valime <em>QuickMapSercives</em> ja installime selle. Sulgeme akna.<br />
-</li>
-<li>Järgmiseks valime ülaservas <em>Web → QuickMapServices → OSM → OSM standard</em>. Nüüd on aluskaardiks OpenStreetMap. Jällegi - kui aluskaardi kiht ei paista välja, muuda <em>Layers</em> paneelil kihtide järjekorda või lülita muid kihte välja.</li>
-</ul>
-<p>Proovime ka teisi kaarte, nt Google’i aluskaarti.</p>
-<p>Rohkemate võimaluste jaoks laadi lisakomplekt QMS kaarte: <em>Web → QuickMapServices → Settings → More services → Get contributed pack → OK → Save</em>.</p>
 </div>
-<div id="järgmisel-korral-5" class="section level2 hasAnchor" number="6.7">
-<h2><span class="header-section-number">6.7</span> Järgmisel korral<a href="qgis_1.html#järgmisel-korral-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Kaartide kujundamine ja eksportimine, andmete loomine ja digitaliseerimine QGISis.</p>
+<div id="ruumiline-vastastikmõju" class="section level2 hasAnchor" number="16.4">
+<h2><span class="header-section-number">16.4</span> Ruumiline vastastikmõju<a href="geostatistika1.html#ruumiline-vastastikmõju" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Eelnevalt vaatasime punktide jaotuse esimese järgu omadusi, mis kirjeldavad üldist punktide tihedust ning seda, kas intensiivsus on uurimisalas homogeenne või mitte. Nagu eelnevalt öeldud, võib juhtudel, kus ei ole tegemist homogeense jaotumisega, eeldada mingit välist mõju. Tõenäoliselt ei ole suur osa inimtegevusest ja kultuurist ruumis päris suvaline.</p>
+<p>Punktimustrite uurimise juures on oluline aspekt see, et ühe punkti asumine teatud kohas võib suurendada või vähendada teise punkti asumise tõenäosust selle läheduses. See on punktimustri <strong>teise järgu omadus</strong> (<em>second-order property</em>). Näiteks pole mõistlik kogu uurimisalas küladel täiesti kõrvuti asuda. Niisiis eeldatakse, et mittehomogeense mustri taga võib olla mingi tõmbav (<em>attraction</em>) või tõukav/peletav (<em>inhibition</em>) protsess.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:17secondordern"></span>
+<img src="imgs/16_second_order.PNG" alt="Punktimustrid, kus (a) pole teise järgu efekte, (b) paiknemine on regulaarne ja (c) klasterdunud [@Gillings2020]." width="80%" />
+<p class="caption">
+Joonis 16.11: Punktimustrid, kus (a) pole teise järgu efekte, (b) paiknemine on regulaarne ja (c) klasterdunud <span class="citation">(<a href="kirjandus.html#ref-Gillings2020" role="doc-biblioref">Gillings et al. 2020</a>)</span>.
+</p>
+</div>
+<p>Lihtne meetod selliste mustrite (esialgseks) uurimiseks on lähima naabri analüüs ehk <em>nearest neighbour analysis</em> (ka <em>Clark and Evans test</em>). Testi käigus arvutatakse iga punkti ja tema lähima naabri vaheline kaugus ning seejärel võrreldakse kõikide nende lähimate naabrite distantside aritmeetilist keskmist eeldatava juhusliku distantsiga sellise punktide arvu ja ala suuruse põhjal.</p>
+<p>Testi tulemusena saadav <em>r</em>-väärtus ehk <em>nearest neighbour index</em> näitab, et jaotus on juhuslik, kui see on 1 lähedal; regulaarne, kui see on suurem kui 1, ning klasterdunud, kui see on väiksem kui 1.</p>
+</div>
+<div id="ülesanne-2" class="section level2 hasAnchor" number="16.5">
+<h2><span class="header-section-number">16.5</span> Ülesanne 2<a href="geostatistika1.html#ülesanne-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vaatame Tartumaa asustuse punktimustrit. Laadime Moodle’ist alla kihi <em>tartumaa_asustus.gpkg</em> ja avame selle QGISis. Andmestik pärineb <a href="https://kohanimeregister.ee/knravalik/">Kohanimeregistrist</a> ning selles on igale Tartumaa küla või aleviku nimele lisatud <a href="https://www.eki.ee/dict/knr/">Kohanimeraamatust</a> esmamainimise aasta, kihelkond ning nime etümoloogia.</p>
+<p>Vaatame andmestiku atribuuttabelit, et näha, millega on tegemist. Esmamainimise aastate tulbast ülevaate saamiseks võib kasutada ülamenüüst funktsiooni <em>View → Statistical summary</em>. Näha on lihtne ülevaade vanimast ja noorimast külast, keskmisest ja enimlevinud esmamainimise aastaarvust jms.</p>
+<p>Külade vanusest esmase ülevaate saamiseks võib kasutada erinevaid värve iga sajandi jaoks. Seda saab teha <em>Graduated</em> sümboloogia ja <em>Pretty breaks</em> abil.</p>
+<p>Arvutame nüüd Tartumaa asustuse <em>Nearest Neighbor Index</em>’i iga sajandi kohta või näiteks keskaja ja uusaja kohta. Selleks filtreerime või valime vastavad väärtused. <em>Processing Toolbox</em> otsingusse paneme <em>nearest</em> ja vali sealt <em>Nearest neighbor analysis</em>. Avame analüüsi tulemusena valminud html-faili ning vaatame, milline on indeksi väärtus. Hindame selle järgi, kas punktid asuvad suvaliselt, regulaarselt või klasterdunult.</p>
+<ul>
+<li><em>Observed Mean Distance</em> näitab, mis on kahe punktide ja nende lähimate naabrite vaheliste kauguste keskmine,<br />
+</li>
+<li><em>Expected Mean Distance</em> näitab, mis oleks see oodatud keskmine kaugus siis, kui punktide paiknemine oleks juhuslik,<br />
+</li>
+<li><em>The Nearest Neighbor index</em> näitab, kas punktid paiknevad juhuslikult (r = 0: OMD ja EMD on enam-vähem samad), regulaarselt (r &gt; 1, OMD &gt; EMD) või klasterdunult (r &lt; 1, OMD &lt; EMD).<br />
+</li>
+<li><em>Z-Score</em>: kui väärtus &gt; 2, siis on näha statistiliselt olulist regulaarsust, kui väärtus on &lt; -2, on näha statistiliselt olulist klasterdumist.</li>
+</ul>
+<p>Proovime analüüsida ka kultuurimälestiste paiknemist ja võrrelda näiteks eri tüüpi mälestiste (ajalugu, arheoloogia jne) paiknemist NNI põhjal.</p>
+</div>
+<div id="klasterdamine" class="section level2 hasAnchor" number="16.6">
+<h2><span class="header-section-number">16.6</span> Klasterdamine<a href="geostatistika1.html#klasterdamine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>K-keskmiste (<em>K-means</em>) klasterdamine on meetod, mille abil jagatakse väärtused (punktid) etteantud arvu gruppidesse ehk klastritesse. Klastritesse jaotumine sõltub sellest, millise klastri keskpunktile vastav punkt kõige lähemal on. Esmalt leitakse niisiis punktide üldise jaotumise järgi (vahel ka täiesti suvaliselt) klastrite keskpunktid, seejärel seostatakse kõik muud punktid lähima keskpunktiga. Siis arvutatakse uued keskpunktide asukohad ja leitakse sellised punktid, mille lähimaks keskpunktiks ei ole enam selle klastri keskpunkt, milles punkt asub. Kui selliseid punkte leidub, siis korratakse punktide klastritesse jagamist.</p>
+<div class="vembedr" align="center">
+<div>
+<iframe src="https://www.youtube.com/embed/5I3Ei69I40s" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p>Proovime selle läbi. Laadime QGISi kihelkondade vektorkihi ja Saaremaa asustusüksuste vektorkihi. Jagame Saaremaa asustusüksused sama paljudeks klastriteks, kui on Saaremaal kihelkondi. <em>Processing → Toolbox → Vector analysis → K-means clustering</em>.</p>
+<p>Vaatame, kas lihtsalt distantsipõhine külade jaotamine gruppidesse kattub kihelkondadega. Sama võiks teha näiteks taludega ja võrrelda küladesse jaotumist. Selle põhjal omakorda võiks uurida edasi, kas inimestevaheline suhtlus toimib (või ajalooliselt toimis) pigem ühe küla/kihelkonna piirides või tõenäolisemalt üle küla/kihelkonna piiride, millised on/olid sotsiaalsed võrgustikud jne.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:18kalster"></span>
+<img src="imgs/17_klaster_saaremaa.PNG" alt="Saaremaa külade jaotumine klastriteks" width="60%" />
+<p class="caption">
+Joonis 16.12: Saaremaa külade jaotumine klastriteks
+</p>
+</div>
+<p>Teiste lihtsamate statistiliste meetodite kasutamise kohta vektorandmetega (nt lähikeskuste leidmine jm) saad lugeda <a href="https://docs.qgis.org/3.28/en/docs/user_manual/processing_algs/qgis/vectoranalysis.html">siit</a>.</p>
+</div>
+<div id="järgmisel-korral-15" class="section level2 hasAnchor" number="16.7">
+<h2><span class="header-section-number">16.7</span> Järgmisel korral<a href="geostatistika1.html#järgmisel-korral-15" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Veel geostatistikat (ruumiline interpoleerimine vastavalt andmestiku tunnusele).</p>
 
 </div>
 </div>
@@ -581,8 +561,8 @@ Joonis 6.8: Harjutus 2 tulemus
           </div>
         </div>
       </div>
-<a href="storymaps.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="qgis_2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tekstianalyys2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
