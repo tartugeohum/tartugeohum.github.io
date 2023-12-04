@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Praktikum 10 Avaldised ja päringud | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
-  <meta name="description" content="Praktikum 10 Avaldised ja päringud | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <title>Praktikum 18 Veebirakendused, veebimajutus | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 18 Veebirakendused, veebimajutus | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Praktikum 10 Avaldised ja päringud | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:title" content="Praktikum 18 Veebirakendused, veebimajutus | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Praktikum 10 Avaldised ja päringud | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="twitter:title" content="Praktikum 18 Veebirakendused, veebimajutus | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="georefereerimine.html"/>
-<link rel="next" href="andmekihtide_yhendamine.html"/>
+<link rel="prev" href="geostatistika2.html"/>
+<link rel="next" href="kirjandus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -366,453 +366,263 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="avaldised" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">Praktikum 10</span> Avaldised ja päringud<a href="avaldised.html#avaldised" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Impordime tänaseks praktikumiks esmalt QGISi</p>
-<ul>
-<li>kihelkondade <em>shapefile</em>’i (EKI, Peeter Päll),<br />
-</li>
-<li><em>shapefile</em>’i, mis sisaldab andmeid <em>ei ole</em> ja <em>pole</em> eituskonstruktsioonide <strong>leviku</strong> kohta eesti murretes Andrus Saareste 1955. aasta <a href="https://github.com/MPilvik/RuRaKe/tree/master/Saareste-vaike-murdeatlas">“Väikese Eesti murdeatlase”</a> põhjal,<br />
-</li>
-<li>CSV-faili, mis sisaldab andmeid <em>ei ole</em> ja <em>pole</em> suhtelisest <strong>sagedusest</strong> <a href="http://www.murre.ut.ee/mkweb/">Eesti murrete korpuses</a>. NB! Kodeering on UTF-8, välju eraldab semikoolon, esimesel real on tulbanimed ning koordinaatide infot failis ei ole.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressions7"></span>
-<img src="imgs/10_layers.png" alt="Lisatud kihid" width="80%" />
+<div id="veebirakendused" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">Praktikum 18</span> Veebirakendused, veebimajutus<a href="veebirakendused.html#veebirakendused" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Tavalised arvutis hoitavad kaardid on <strong>digitaalsed kaardid</strong>, mille võib panna ka veebilehele, ent mille koostamine, säilitamine ja näitamine ei sõltu kuidagi veebitehnoloogiast. Digitaalsed kaardid on staatilised. <strong>Veebikaardid</strong> aga mitte lihtsalt ei paikne veebis, vaid on veebist sõltuvad: nii nende koostamine kui ka vaatamine sõltub veebitehnoloogiast. Sageli on veebikaardid dünaamilised, interaktiivsed ning võivad kasutada ka mujalt veebist päritavaid andmeid.</p>
+<p>Lisaks sellele, et veebikaartidel saab kuvada korraga mitut kihti, mingeid kihte sisse ja välja lülitada või kasutada andmete esitamiseks animatsiooni, saab nendele lisada ka erinevaid lisaelemente, näiteks sisse- ja väljasuumimine, vahemaade mõõtmine, legend, pealkirjad, otsing jpm. Samuti saab määrata, mis juhtub, kui kasutaja liigub hiirega mingi punkti peale, sellel klikib või mingil muul moel veebikaardiga suhtleb.</p>
+<p>Tänapäevase veebikaardi aluskaart koosneb <strong>paanidest</strong> (<em>tiles</em>), tüüpiliselt 256×256 piksli suurustest rasterpiltidest (aga juba kasutatakse ka resolutsioonist sõltumatuid vektorpaane), mida laaditakse vastavalt kasutaja valikutele kaardipaanide serverist (näiteks OpenStreetMapi serverist). See tähendab, et kasutajale näidatakse ainult seda osa kaardist, mida tal on vaja näha, muutes kaardi laadimise oluliselt kiiremaks.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tiles"></span>
+<img src="imgs/18_tiles.gif" alt="Kaardipaanide laadimine (Allikas: [Axis Maps](https://www.axismaps.com/guide/what-is-a-web-map))" width="70%" />
 <p class="caption">
-Joonis 10.1: Lisatud kihid
+Joonis 18.1: Kaardipaanide laadimine (Allikas: <a href="https://www.axismaps.com/guide/what-is-a-web-map">Axis Maps</a>)
 </p>
 </div>
-<p>Kui soovid võrrelda, kuidas EKI kihelkondade kaart klapib Maa-ameti kihelkondade kaardiga, võid taustaks panna veel WMS-i või WFS-i kaudu Maa-ameti ajaloolise haldusjaotuse kaardi: <code>https://teenus.maaamet.ee/ows/wms-ajalooline-haldus?</code>.</p>
-<div id="avaldised-1" class="section level2 hasAnchor" number="10.1">
-<h2><span class="header-section-number">10.1</span> Avaldised<a href="avaldised.html#avaldised-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Avaldised (<em>expressions</em>) on tehted ja vormelid, mille abil hõlpsalt muuta atribuutide väärtusi, luua uusi (virtuaalseid) atribuute või kihte, andmetest alamhulki välja filtreerida, teha statistikat jne. Avaldiste abil saab andmeid QGISis mitmekülgsemalt analüüsida ning visualiseerida.</p>
-<p>Avaldisi saab QGISis kasutada mitmes kohas, näiteks</p>
-<ul>
-<li>objektide valimiseks <code>Select Features by Expression</code> tööriista abil <img src="imgs/10_selectfeatures.png" />,<br />
-</li>
-<li>objektide valimiseks atribuuttabeli alumisest vasakust nurgast <code>Advanced Filter (Expression)</code> <img src="imgs/10_advancedfilter.png" />,<br />
-</li>
-<li>atribuutide muutmiseks ja lisamiseks <code>Field calculator</code>’is <img src="imgs/10_fieldcalculator.png" />,<br />
-</li>
-<li>päringute tegemiseks <code>Query builder</code>’is (<em>Layer Properties → Source → Query Builder</em>) <img src="imgs/10_querybuilder.png" />,<br />
-</li>
-<li>päringute tegemiseks <code>Database Manager</code>’is (<em>Database → DB Manager</em>) <img src="imgs/10_dbmanager.png" />,<br />
-</li>
-<li>sümbolite, siltide või paigutuse parameetrite muutmisel (<em>Symbology → Rule-based</em>) <img src="imgs/10_rulebased.png" />,<br />
-</li>
-<li>jne.</li>
-</ul>
-<p>Avaldisi saab eeldefineeritud funktsioonide abil koostada niisiis mitmeks erinevaks otstarbeks, vaata ülevaadet <a href="https://docs.qgis.org/3.28/en/docs/user_manual/expressions/expression.html">QGIS 3.28 juhendist</a>. Sealjuures saab üht ja sama asja teha sageli erineval moel.</p>
-<p>Oleme juba lihtsate avaldistega kokku puutunud, kui</p>
-<ul>
-<li><a href="avaandmed.html#p8h1">filtreerisime aadressiandmete andmestikust välja ainult eluruumid</a>: <code>"ADOB_LIIK" = 'ER'</code>;</li>
-<li>arvutasime digiteeritud polügoonide pindala (<a href="georefereerimine.html#fig:koilapindala">9.12</a>): <code>round($area / 10000, 2)</code>.</li>
-</ul>
-<p>Vaatame sel korral harjutuste ja ülesannete toel lähemalt operaatoreid (<em>Operators</em>), matemaatilisi funktsioone (<em>Math</em>), tingimuslauseid (<em>Conditionals</em>) ning teksti muutmise võimalusi (<em>String</em>).</p>
-<p>Operaatorid ja funktsioonid, millega tänases praktikumis kokku puutume, on</p>
-<ul>
-<li><strong><code>-</code></strong>: lahuta ühest väärtusest teine;<br />
-</li>
-<li><strong><code>&gt;</code></strong>: leia, kas üks väärtus on suurem kui teine (tagastab <code>1</code> (TRUE) või <code>0</code> (FALSE));<br />
-</li>
-<li><strong><code>&gt;=</code></strong>: leia, kas üks väärtus on suurem kui teine või sellega võrdne (tagastab <code>1</code> (TRUE) või <code>0</code> (FALSE));<br />
-</li>
-<li><strong><code>IS</code></strong>: mingi (atribuudi) väärtus peab olema mingi kindel väärtus (sama, mis <code>=</code>, tagastab <code>1</code> (TRUE) või <code>0</code> (FALSE));<br />
-</li>
-<li><strong><code>IS NOT</code></strong>: mingi (atribuudi) väärtus ei tohi olla mingi kindel väärtus (sama, mis <code>!=</code>, tagastab <code>1</code> (TRUE) või <code>0</code> (FALSE));<br />
-</li>
-<li><strong><code>ILIKE</code></strong>: kas mingi (atribuudi) väärtus vastab mingile kindlale mustrile (tõstutundetu)? (tagastab <code>1</code> (TRUE) või <code>0</code> (FALSE));<br />
-</li>
-<li><strong><code>OR</code></strong>: operaator VÕI (tagastab <code>1</code> (TRUE) või <code>0</code> (FALSE));<br />
-</li>
-<li><strong><code>if(tingimus, kuikehtib, kuieikehti)</code></strong>: kui kehtib mingi tingimus, määratakse mingi väärtus, kui ei kehti, siis mingi muu väärtus (sama, mis <code>CASE ... WHEN ... THEN ... ELSE ... END</code>);<br />
-</li>
-<li><strong><code>length(tekst)</code></strong>: leia mingi teksti/sõne pikkus tähemärkides;<br />
-</li>
-<li><strong><code>replace(tekst, midaasendada, millegaasendada)</code></strong>: asenda tekst või selle mingi osa muu tekstiga;<br />
-</li>
-<li><strong><code>regexp_replace(tekst, midaasendada, millegaasendada)</code></strong>: asenda tekst või selle mingi osa muu tekstiga, kasutades regulaarvaldisi.</li>
-</ul>
-<div id="harjutused" class="section level3 hasAnchor" number="10.1.1">
-<h3><span class="header-section-number">10.1.1</span> Harjutused<a href="avaldised.html#harjutused" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="harjutus-1-operaatorid-objektide-valimiseks" class="section level4 unnumbered hasAnchor">
-<h4>Harjutus 1: operaatorid objektide valimiseks<a href="avaldised.html#harjutus-1-operaatorid-objektide-valimiseks" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Kasutame valiku tööriista (<strong><em>Select Features by Expression</em></strong>), et teha aktiivseks kõik need kihelkondade polügoonid, millel on midagi kirjutatud tulpa <em>Problem</em> (nt selleks, et hakata parandustega tegelema).</p>
-<ul>
-<li>Kõikide atribuutide/tulpade nimed ja tüübid saab kätte jaotisest <strong><em>Fields and Values</em></strong>. Nupp <em>All Unique</em> näitab atribuudi kõiki eri väärtuseid, nupp <em>10 Samples</em> sellest kuni kümmet esimest eri väärtust. Topeltklikk atribuudi nimel liigutab jutumärkide vahel oleva atribuudi vasakul asuvasse avaldise kasti. Avaldiste kastis <strong>viidataksegi topeltjutumärkidega atribuuttabeli mingile tunnusele (= tulbanimele), ühekordsete jutumärkidega mingitele tekstilistele väärtustele</strong> (nt kui küsime tulbast <code>Parish_id</code> Pühalepa kihelkonna rida, siis peaksime kirjutama avaldise <code>"Parish_id" = 'Phl'</code> või <code>"Parish_id" IS 'Phl'</code>).<br />
-</li>
-<li>Jaotuse <strong><em>Operators</em></strong> alt leiame terve hulga sümboleid, mille abil teha nt arvutustehteid, võrdlustehteid või tekstitöötlust, sh vajamineva operaatori <em>IS NOT</em>.<br />
-</li>
-<li>Tahame leida niisiis atribuuttabelist neid ridu, kus tulp <em>Problem</em> ei ole tühi: <strong><code>"Problem" IS NOT NULL</code></strong>.<br />
-</li>
-<li>Vajutame nupul <em>Select Features</em>.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressionsex1"></span>
-<img src="imgs/10_harjutus1.png" alt="Probleemsed kihelkonnad" width="70%" />
+<p>Aluskaart annab veebikaardile geograafilise konteksti, ent ei ole iseenesest kaardi tegemise ega vaatamise põhjuseks. Aluskaardil saab omakorda kuvada muid vektor- või rasterandmeid.</p>
+<p>Suur osa veebikaartidest (ja neid pakkuvatest APIdest ehk rakendusliidestest) on vaikimisi <strong>Web Mercatori</strong> projektsioonis (CRS-iga EPSG:3857), mille puhul peab arvestama sellega, et alade suurus on moonutatud.</p>
+<iframe width="100%" height="480px" src="https://thetruesize.com/#?borders=1~!MTU2MDMyNDc.NDgyOTAxOQ*MzM0ODE1MTM(NDAxMDYxNQ~!CONTIGUOUS_US*MTAwMjQwNzU.MjUwMjM1MTc(MTc1)MA~!IN*NTI2NDA1MQ.Nzg2MzQyMQ)Mg~!CN*OTkyMTY5Nw.NzMxNDcwNQ(MjI1)MQ" frameborder="0" scrolling="yes">
+</iframe>
+<p>Kui tahta teha sageli, palju või korralikke veebikaarte ja kaardirakendusi, tasub vähemalt mingil algtasemel ära õppida keel, milles seda teha saab.
+Veebilehed kasutavad (vähemalt) <a href="https://www.w3schools.com/html/default.asp"><strong>HTML</strong></a>i, et veebilehte struktureerida, <a href="https://www.w3schools.com/css/default.asp"><strong>CSS</strong></a>i, et veebilehte kujundada, ning <a href="https://www.w3schools.com/js/default.asp"><strong>JavaScript</strong></a>i, et lisada veebilehele interaktiivsust.
+<!-- javascript võib lehe sisu muuta, muuta selle väljanägemist mingis brauseris, saata serverile mingit informatsiooni või küsida serverilt uut informatsiooni--></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:htmlcssjs"></span>
+<img src="imgs/18_htmlcssjs.jpg" alt="HTML, JavaScript ja CSS (Allikas: [dev.to](https://dev.to/fabcodingzest/how-to-get-started-with-web-development-front-end-part-1-5c6h))" width="50%" />
 <p class="caption">
-Joonis 10.2: Probleemsed kihelkonnad
+Joonis 18.2: HTML, JavaScript ja CSS (Allikas: <a href="https://dev.to/fabcodingzest/how-to-get-started-with-web-development-front-end-part-1-5c6h">dev.to</a>)
 </p>
 </div>
-</div>
-<div id="harjutus-2-tingimuslaused-uute-atribuutidetunnuste-loomiseks" class="section level4 unnumbered hasAnchor">
-<h4>Harjutus 2: tingimuslaused uute atribuutide/tunnuste loomiseks<a href="avaldised.html#harjutus-2-tingimuslaused-uute-atribuutidetunnuste-loomiseks" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Kasutame tööriista <strong><em>Field Calculator</em></strong>, et lisada <em>ei ole</em>/<em>pole</em> atlase levikuandmetesse <strong>virtuaalne (st ajutine)</strong> tekstiatribuut nimega <em>saj19</em>, kus oleks väärtus “jah” ridadel, kus keelejuhi sünniaeg on väiksem kui aasta 1900, “ei”, kui keelejuhi sünniaeg on hilisem, ja “ei tea”, kui keelejuhi sünniaega pole märgitud.</p>
-<ul>
-<li>Siin läheb vaja tingimuslauseid jaotises <strong><em>Conditionals</em></strong>. Kasutame siin funktsiooni <em>if</em>, mille järel sulgude sees komadega eraldatult tuleb anda esmalt tingimus (“Kas tulbas <code>SaKJSynd</code> olev arv on väiksem kui 1900?”), seejärel väärtus juhul, kui tingimus vastab tõele, ning lõpuks väärtus juhul, kui tingimus ei vasta tõele: <strong><code>if("SaKJSynd" &lt; 1900, 'jah', 'ei')</code></strong>.<br />
-</li>
-<li>Meil on aga atribuuttabelis ka sellised read, kus keelejuhi sünniaeg võrdub 0-ga või on <em>NULL</em>, sest see pole teada. Meil oleks oluline märkida ära, et nende puhul me tegelikult sünniaega hinnata ei oska: <strong><code>if("SaKJSynd" IS 0 OR "SaKJSynd" IS NULL, 'ei tea', if("SaKJSynd" &lt; 1900, 'jah', 'ei'))</code></strong>:
-<ul>
-<li>Kui tulbas “SaKJSynd” on väärtus 0 VÕI polegi midagi (<em>NULL</em>),<br />
-</li>
-<li>märgi tulpa “saj19” väärtus <em>ei tea</em>,<br />
-</li>
-<li>vastasel juhul
-<ul>
-<li>kui tulbas “SaKJSynd” on väärtus, mis on väiksem kui 1900,
-<ul>
-<li>märgi tulpa “saj19” väärtus <em>jah</em>,<br />
-</li>
-</ul></li>
-<li>vastasel juhul väärtus <em>ei</em>.</li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressionsex2"></span>
-<img src="imgs/10_harjutus2.png" alt="Uue tulba tekitamine" width="70%" />
+<p>Ühe lihtsa veebilehe struktuur HTML-failis võib välja näha näiteks selline:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Minu lehe pealkiri&lt;/title&gt;
+    &lt;link href=&quot;stiil.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot;&gt;
+  &lt;/head&gt;
+  &lt;body bgcolor=&quot;black&quot; text=&quot;white&quot;&gt;
+    &lt;h1&gt;Minu esimene veebileht&lt;/h1&gt;
+    &lt;p&gt;Siin on mingi tekst.&lt;/p&gt;
+    &lt;p&gt;Siin on &lt;a href=&quot;https://tartugeohum.github.io/&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt;, kust leiab kõik selle kursuse materjalid&lt;/p&gt;
+    &lt;p&gt;Siin all on nupp, millele vajutades saab veel midagi teada.&lt;/p&gt;
+    &lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&#39;pealkiri&#39;).style.display=&#39;block&#39;&quot;&gt;Vajuta siia!&lt;/button&gt;
+    &lt;p id=&quot;pealkiri&quot; style=&quot;display:none&quot;&gt;See on minu esimene veebileht!&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Selle veebilehe juurde käiv CSS-fail omakorda selline:</p>
+<pre><code>h1{
+  text-align: center;
+  color: blue;
+  font-size: 40px;
+}
+p{
+  font-family: courier;
+  font-size: 20px;
+}</code></pre>
+<p>Kokku saab ühe väga lihtsa lehe, mis näeb välja selline:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:html"></span>
+<img src="imgs/18_html.PNG" alt="Lihtne veebileht" width="80%" />
 <p class="caption">
-Joonis 10.3: Uue tulba tekitamine
+Joonis 18.3: Lihtne veebileht
 </p>
 </div>
-</div>
-<div id="harjutus-3-tekstiavaldised-sümbolite-kujundamiseks-1" class="section level4 unnumbered hasAnchor">
-<h4>Harjutus 3: tekstiavaldised sümbolite kujundamiseks (1)<a href="avaldised.html#harjutus-3-tekstiavaldised-sümbolite-kujundamiseks-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Värvime kihelkonnad selle järgi, kui mitu tähte nende nimes on, aga nii, et me ei pea atribuuttabelisse selleks eraldi tunnust looma.</p>
-<ul>
-<li>Valime kihelkondade kihi <strong><em>Symbology</em></strong> alt <em>Graduated</em> ja <em>Value</em> puhul ühe konkreetse tunnuse nime valiku asemel vajutame lahtri kõrval olevat avaldise sümboliga nuppu <img src="imgs/10_avaldisenupp.png" />.<br />
-</li>
-<li>Kihelkondade nimed on tulbas <code>Name</code>. Teksti/sõne pikkuse leidmiseks on jaotise <strong><em>String</em></strong> all funktsioon <em>length</em>: <strong><code>length("Name")</code></strong>.<br />
-</li>
-<li>Lisame ka sildid, et kontrollida, kas värvilegend peab paika.<br />
-</li>
-<li>Alloleva kaardi saamiseks teeme veel mõned kujunduslikud sammud:
-<ul>
-<li><em>Symbology → Symbol → Simple Fill</em>:
-<ul>
-<li>muudame polügoonide piirjoonte (<em>Stroke</em>) läbipaistvust 16% peale;<br />
-</li>
-<li>teeme linnukese <em>Draw effects</em> valiku ette ja vajutame kollasel tähekesel,<br />
-</li>
-<li>seal omakorda teeme linnukese <em>Drop Shadow</em> ette, valime varju ulatuseks (<em>Offset</em>) 135 kraadi ja 1 mm, udustamise raadiuseks (<em>Blur radius</em>) 2 mm ning <em>Blend mode</em> väärtuseks <em>Normal</em>.<br />
-</li>
-</ul></li>
-<li><em>Symbology → Labels</em>:
-<ul>
-<li>muudame teksti suurust väiksemaks (<em>Text → Size → 5 points</em>);<br />
-</li>
-<li>joonistame teksti ümber pooleldi läbipaistva puhverala (<em>Buffer → Draw text buffer → Opacity = 50%</em>);<br />
-</li>
-<li>muudame siltide paigutuse nurga alla (<em>Placement → General Settings → Mode = Free (Angled)</em>);<br />
-</li>
-<li>näitame kõiki (ka kattuvaid) silte (<em>Rendering → Overlapping labels → Mode = Allow Overlaps without Penalty</em>, vanemates QGISi versioonides <em>Rendering → Show all labels for this layer (including colliding labels)</em>).</li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressionsex3"></span>
-<img src="imgs/10_harjutus3.png" alt="Kihelkonnad vastavalt nende nimede pikkusele" width="70%" />
+<p>Interaktiivsete <strong>veebikaartide</strong> jaoks kasutatakse sageli näiteks JavaScripti teekide/pakettide <a href="https://leafletjs.com/"><strong>Leaflet</strong></a>i või <a href="https://openlayers.org/"><strong>OpenLayers</strong></a>i APIsid ehk rakendusliideseid, mis suhtlevad erinevate serveritega ning muudavad ja kuvavad kaarti vastavalt kasutaja valikutele. Mõlemad teegid on vabavaralised ja avatud lähtekoodiga, samas kui näiteks Google Mapsi API ja ArcGISi API on seotud konkreetse omandusliku (<em>proprietary</em>) tarkvaraga.
+<!-- Veebikaartide APId sisaldavad kaardiklasse ja kihte, ilma et peaks ise kirjutama tervet pikka koodi, millega mingit kaarti programmaatiliselt joonistada. APIde abil saab seega kirjutada programme kiiremini ja lihtsamalt --></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:leafletOL"></span>
+<img src="imgs/18_leaflet.png" alt="Leaflet ja OpenLayers" width="28%" /><img src="imgs/18_openlayers.png" alt="Leaflet ja OpenLayers" width="28%" />
 <p class="caption">
-Joonis 10.4: Kihelkonnad vastavalt nende nimede pikkusele
+Joonis 18.4: Leaflet ja OpenLayers
 </p>
 </div>
-</div>
-<div id="harjutus-4-tekstiavaldised-sümbolite-kujundamiseks-2" class="section level4 unnumbered hasAnchor">
-<h4>Harjutus 4: tekstiavaldised sümbolite kujundamiseks (2)<a href="avaldised.html#harjutus-4-tekstiavaldised-sümbolite-kujundamiseks-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Toome värvi ja/või sümboliga esile ainult need “ei ole”-“pole” andmestiku punktid, mille asustusüksuse nime alguses või lõpus on <em>Jõe-/-jõe</em> või <em>Järve-/-järve</em>. Teised punktid värvime halliks ja teeme läbipaistvamaks. Need punktid, millel asulanime atribuuttabelis ei ole, jätame jooniselt välja.</p>
+<p>Leafleti kasutatakse üldiselt rohkem, see on ökonoomsem, lihtsama APIga ning sobib hästi lihtsamate kaardirakenduste tegemiseks (<em>Leaflet does the 20% of things that are required 80% of the time</em>). Samas saab paljud funktsioonid kätte ainult erinevatest pluginatest ning kõiki võib-olla ei olegi veel olemas. Suure hulga funktsionaalsustega kaardirakenduste jaoks soovitatakse kasutada pigem OpenLayersit, mille API on keerulisem, ent selle võrra on see paindlikum ning pakub rohkem funktsioone.</p>
+<p>Ka Mapbox pakub oma JavaScripti teeki/paketti <strong><a href="https://docs.mapbox.com/mapbox-gl-js/guides/">Mapbox GL JS</a></strong>, mis võimaldab koostada veebikaarte ja kaardirakendusi.</p>
+<div id="kaardikihid-qgisis" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Kaardikihid QGISis<a href="veebirakendused.html#kaardikihid-qgisis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Eelmisel korral tegime kaardid, kus interpoleerisime <strong>murdeatlase levikuandmete</strong> ja <strong>murdekorpuse sagedusandmete</strong> põhjalt <em>ei ole</em> ja <em>pole</em> rasterkihid, kus teadaolevate andmepunktide keelendi väärtuste järgi ennustasime ka vahepealseid väärtusi kohtadesse, kust andmeid ei olnud.</p>
+<p>Kuvame neid rasterkihte veebikaardil. Lisaks anname veebikaardi kasutajale võimaluse vaadata eraldi atlase ja korpuse punktandmeid ning kihelkondade vektorkihti.</p>
+<p>Selleks, et kihtide loomine kiiremini läheks, on juba tekitatud sobivad vektorkihid <strong><em>atlas.gpkg</em></strong>, <strong><em>korpus.gpkg</em></strong> ja <strong><em>kihelkonnad.gpkg</em></strong>, mida pole vaja enam filtreerida ega muude andmetega ühendada.</p>
 <ul>
-<li>Asendame esmalt <em>ő</em>-sümbolid tulbas “ANIMI” <em>õ</em>-tähtedega:
-<ul>
-<li>Selleks saame <em>Field Calculator</em>’is uuendada olemasolevat atribuuti “ANIMI” (<em>Update existing field</em>) regulaaravaldise abil (<em>String → replace</em>): <strong><code>replace("ANIMI", 'ő', 'õ')</code></strong>.<br />
+<li>Laadime kihid QGISi,<br />
 </li>
-</ul></li>
-<li>Valime nüüd punktide kihi <strong><em>Symbology</em></strong> alt <em>Categorized</em> ja <em>Value</em> puhul vajutame jälle avaldise sümboliga nuppu.
-<ul>
-<li>Saame kasutada näiteks operaatorit <em>ILIKE</em>: <strong><code>"ANIMI" ILIKE '%jõe%' OR "ANIMI" ILIKE '%järve%'</code></strong>.<br />
+<li>värvime atlase punktid vastavalt sellele, kas punkt esindab <em>ei ole</em> või <em>pole</em> varianti (<em>Categorized</em>),<br />
 </li>
-<li>Selles avaldises ütleme, et kujunda mingit moodi ainult need punktid, mille ridadel atribuuttabelis on tulbas “ANIMI” järjend <em>Jõe</em> või <em>jõe</em> (<code>ILIKE</code> on tõstutundetu) sõna alguses, lõpus või keskel (sümbol <code>%</code> märgib ükskõik mis sümboleid ükskõik kui palju, sh ka 0 sümbolit), samamoodi <em>järve</em> kohta.<br />
+<li>värvime korpuse punktid vastavalt sellele, kui suur on <em>ei ole</em> osakaal (<em>Graduated</em>),<br />
 </li>
-<li>Märgime sellised objektid näiteks tähekestega ja muud punktid, mis avaldisele ei vasta, helehalliks.<br />
-</li>
-</ul></li>
-<li>Lisame sama avaldist kasutades ka sildid ainult valitud punktidele: <strong><code>if("ANIMI" ILIKE '%jõe%' OR "ANIMI" ILIKE '%järve%', "ANIMI", NULL)</code></strong>.<br />
-</li>
-<li>Võime lisada alla veel Maa-ameti fotokaartide WMS-teenusest värvilise reljeefvarjutuse (<em>21 vreljeef</em>), et vaadata, kas leitud kohanimed ka päriselt veekogude ääres on.</li>
+<li>määrame atlase ja korpuse punktidele erinevad sümbolid.</li>
 </ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressionsex4"></span>
-<img src="imgs/10_harjutus4.png" alt="Jõe- ja järvenimelised asulanimed" width="70%" />
+<p>Järgmiseks teeme <strong>rasterkihid</strong> <em>Thin Plate Spline</em> meetodiga, et ennustada <em>ei ole</em> (<em>vs.</em> <em>pole</em>) väärtusi ka nendele aladele, kust atlases või korpuses andmeid ei ole.</p>
+<ul>
+<li><em>Processing → Toolbox → Thin Plate Spline</em><br />
+</li>
+<li>Kasutame atlase punktikihi <code>KeelendNum</code> tulpa, kus on ainult väärtused 0 ja 1, ja korpuse punktikihi <code>eiole</code> tulpa, kus on väärtused 0st 1ni. Rasterkihtidel niisiis ennustame väärtusi 0 ja 1 vahepeale (tegelikult ka üle ja alla nende).<br />
+</li>
+<li>Määrame piksli suuruseks 500 ja <em>Regularisation</em> väärtuseks 0.1, otsinguraadiuseks 20 km (20 000 meetrit).<br />
+</li>
+<li>Lõikame rastrid kihelkondade kihi järgi.<br />
+</li>
+<li>Värvime rastrid nii, et alad, mis on <em>pole</em>-lembesemad, on tumedamad. Määrame skaala otspunktideks 0 ja 1.<br />
+</li>
+<li>Nimetame lõigatud ja värvitud rastrid nt nimedega <em>atlase TPS</em> ja <em>korpuse TPS</em>.</li>
+</ul>
+</div>
+<div id="veebikaartide-tegemine" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> Veebikaartide tegemine<a href="veebirakendused.html#veebikaartide-tegemine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Peidame</strong> vektorkihtidelt tunnused, mida me ei taha veebikaardil näidata. Selleks teeme igal kihil topeltkliki, liigume jaotisesse <em>Attributes Form</em>, valime peidetava atribuudi ja <em>Widget Type</em> alt valime <em>Hidden</em>. Võiksime peita vähemalt objekte identifitseeriva atribuudi <code>fid</code>, lisaks ka nt kihelkondade lühendid jms.</p>
+<p>Järgmiseks valime kaardile <strong>aluskaardi</strong> (<em>QuickMapServices</em>) ja muudame projekti CRSi EPSG:3857ks. <strong>Salvestame projekti ja rasterfailid</strong>!</p>
+<p>Tehtud kaartide hõlpsaks lisamiseks veebi saab installida nüüd <strong>qgis2web</strong> pistikprogrammi. See genereerib QGISi projektist kas OpenLayersi, Leafleti või Mapboxi API abil veebikaardi tervikliku veebilehena koos kõikide vajalike kaustade ja failidega, ilma et peaksime tingimata ise JavaScriptis, CSSis ja HTMLis koodi kirjutama.</p>
+<p>Valime seejärel <em>Web → qgis2web → Create web map</em>.</p>
+<p>Jaotises <code>Layers and Groups</code> valime, milliseid kihte oma veebikaardil tahame näidata.</p>
+<ul>
+<li>Iga kihi juures saab omakorda valida, kas tahame, et kiht oleks kohe kaarti avades nähtav (<em>Visible</em>), kas kihi elementidel klikkides avaneksid hüpikaknad (<em>Popups</em>) ja kas soovime, et väiksemal mõõtkaval oleksid lähedased punktid klasterdatud ühe punkti alla, nii et oleks nähtav, kui mitu punkti sellesse piirkonda jääb (<em>Cluster</em>, ainult vektorkihtidel).<br />
+</li>
+<li>Hüpikakende puhul (<em>Popup fields</em>) saab omakorda igale andmestiku tunnusele määrata, kas lisada sellele ka tulbanimi ja kui, siis kas tulbas oleva teksti kõrvale (<em>inline label</em>) või kohale (<em>header label</em>).</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:layersandgroups"></span>
+<img src="imgs/18_layersandgroups.png" alt="Kihtide ja nende atribuutide kuvamine QGISi qgis2web pistikprogrammis" width="90%" />
 <p class="caption">
-Joonis 10.5: Jõe- ja järvenimelised asulanimed
+Joonis 18.5: Kihtide ja nende atribuutide kuvamine QGISi qgis2web pistikprogrammis
 </p>
 </div>
-</div>
-</div>
-</div>
-<div id="päringud" class="section level2 hasAnchor" number="10.2">
-<h2><span class="header-section-number">10.2</span> Päringud<a href="avaldised.html#päringud" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Lisaks eeldefineeritud funktsioonidele saab kasutada ka <a href="https://www.w3schools.com/sql/">SQL-i päringuid</a>, näiteks:</p>
+<p>Jaotises <code>Appearance</code> valime, milliseid üldisi elemente ja vidinaid oma kaardile soovime lisada. Näiteks:</p>
 <ul>
-<li><a href="https://www.w3schools.com/sql/sql_select.asp">Ridade ja tulpade valimine</a>
-<ul>
-<li><strong>SELECT</strong> tulp <strong>FROM</strong> andmestik;
-<ul>
-<li><em>vali andmestikust ainult üks tulp</em><br />
+<li><em>Add layers list</em> alt saab valida, kas võimalikud kihid kuvada menüüs, mille saab lahti klõpsata (<em>Collapsed</em>), või menüüs, kus on kõik kihid kohe nähtaval (<em>Expanded</em>).<br />
 </li>
-</ul></li>
-<li><strong>SELECT</strong> tulp1, tulp2 <strong>FROM</strong> andmestik;
-<ul>
-<li><em>vali andmestikust kaks tulpa</em><br />
+<li><em>Attribute filter</em> kastis saab valida need andmestiku atribuudid, mille põhjal kaardi kasutaja saab alamhulki pärida, nt kui tahab näha ainult Võru murde andmeid või ainult <em>ei ole</em> punkte.<br />
 </li>
-</ul></li>
-<li><strong>SELECT DISTINCT</strong> tulp <strong>FROM</strong> andmestik;
-<ul>
-<li><em>vali andmestikust tulba unikaalsed väärtused</em><br />
+<li><em>Layer search</em> alt saab määrata kihid, millelt kasutaja võib päringuid teha (nt et leida üles mõni Pühalepa kihelkonna punktike).<br />
 </li>
-</ul></li>
-<li><strong>SELECT</strong> * <strong>FROM</strong> andmestik;
-<ul>
-<li><em>vali andmestikust kõik tulbad ja read</em><br />
+<li><em>Template</em> ütleb, kas kaardi suurus veebilehel on nii suur, kui ta on parajasti näha QGISi peaaknas, nn lõuendil (<em>canvas</em>), või ulatub kaart üle kogu veebilehe.<br />
 </li>
-</ul></li>
-<li><strong>SELECT</strong> * <strong>FROM</strong> andmestik <strong>WHERE</strong> tulp = ‘Mingi väärtus’;
-<ul>
-<li><em>vali andmestikust kõik tulbad ja read, kus tulbas ‘tulp’ on väärtus ‘Mingi väärtus’</em><br />
+<li><em>Extent</em> määrab ära, kas näeme veebikaardi avamisel seda vaadet, mida parajasti QGISi peaaknas lõuendil, või näidatakse sellist ulatust, mis katab ära kihtide maksimaalse ulatuse (nt et kõik punktid kaardil oleksid kohe alguses näha).<br />
 </li>
-</ul></li>
-<li><strong>SELECT</strong> tulp1, tulp2 <strong>FROM</strong> andmestik <strong>WHERE</strong> tulp1 &gt; 50 <strong>AND</strong> tulp2 <strong>ILIKE</strong> ‘%St%’;
-<ul>
-<li><em>vali andmestikust tulbad ‘tulp1’ ja ‘tulp2’ ning ainult sellised read, kus tulp1 väärtused on suuremad kui 50 ja kus tulp2s on lahtris kuskil tähejärjend ‘St’</em><br />
-</li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_update.asp">Muutmine</a>
-<ul>
-<li><strong>UPDATE</strong> andmestik <strong>SET</strong> tulp = ‘Mingi uus väärtus’ <strong>WHERE</strong> tulp = ‘Mingi vana väärtus’;
-<ul>
-<li><em>uuenda andmestikku nii, et sea tulba ‘tulp’ väärtuseks ‘Mingi uus väärtus’ nendel ridadel, kus tulba ‘tulp’ väärtus on praegu ‘Mingi vana väärtus’</em><br />
-</li>
-</ul></li>
-<li><strong>UPDATE</strong> andmestik <strong>SET</strong> tulp = ‘Mingi uus väärtus’ <strong>WHERE</strong> id = 8;
-<ul>
-<li><em>uuenda andmestikku nii, et sea tulba ‘tulp’ väärtuseks ‘Mingi uus väärtus’ sellel real, kus id väärtus on 8</em><br />
-</li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_insert.asp">Lisamine</a>
-<ul>
-<li><strong>INSERT INTO</strong> andmestik (tulp1, tulp2, tulp3, tulp4) <strong>VALUES</strong> (‘tulp1 väärtus’, ‘tulp2 väärtus’, ‘tulp3 väärtus’, ‘tulp4 väärtus’);
-<ul>
-<li><em>sisesta andmestikku üks rida, kus tulpadesse ‘tulp1’, ‘tulp2’, ‘tulp3’ ja ‘tulp4’ lähevad vastavalt väärtused ‘tulp1 väärtus’, ‘tulp2 väärtus’, ‘tulp3 väärtus’ ja ‘tulp4 väärtus’</em><br />
-</li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_delete.asp">Kustutamine</a>
-<ul>
-<li><strong>DELETE FROM</strong> andmestik <strong>WHERE</strong> tulp = ‘Mingi väärtus’;
-<ul>
-<li><em>kustuta andmestikust read, kus tulbas ‘tulp’ on väärtus ‘Mingi väärtus’</em><br />
-</li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_orderby.asp">Järjestamine</a>
-<ul>
-<li><strong>SELECT</strong> tulp1, tulp2, tulp3 <strong>FROM</strong> andmestik <strong>ORDER BY</strong> tulp1;
-<ul>
-<li><em>vali andmestikust ainult tulbad ‘tulp1’, ‘tulp2’ ja ‘tulp3’ ning järjesta uus andmestik ‘tulp1’ väärtuste järgi (vaikimisi väiksemast suuremani või A-st Z-ni)</em><br />
-</li>
-</ul></li>
-<li><strong>SELECT</strong> tulp1, tulp2, tulp3 <strong>FROM</strong> andmestik <strong>ORDER BY</strong> tulp1, tulp2;
-<ul>
-<li><em>vali andmestikust ainult tulbad ‘tulp1’, ‘tulp2’ ja ‘tulp3’ ning järjesta uus andmestik ‘tulp1’ ning siis ‘tulp2’ väärtuste järgi</em><br />
-</li>
-</ul></li>
-</ul></li>
-<li><a href="https://www.w3schools.com/sql/sql_groupby.asp">Grupeerimine</a>
-<ul>
-<li><strong>SELECT</strong> tulp1, tulp2 <strong>FROM</strong> andmestik <strong>GROUP BY</strong> tulp1;
-<ul>
-<li><em>vali andmestikust tulbad ‘tulp1’ ja ‘tulp2’ ning grupeeri andmed ‘tulp1’ unikaalsete väärtuste järgi</em><br />
-</li>
-</ul></li>
-<li><strong>SELECT</strong> tulp1, tulp2 <strong>FROM</strong> andmestik <strong>WHERE</strong> tulp1 = ‘Mingi väärtus’ <strong>GROUP BY</strong> tulp2;
-<ul>
-<li><em>vali andmestikust tulbad ‘tulp1’ ja ‘tulp2’ ning ainult read, kus tulbal ‘tulp1’ on väärtused ‘Mingi väärtus’, grupeeri saadud tabel ‘tulp2’ unikaalsete väärtuste järgi</em></li>
-</ul></li>
-</ul></li>
+<li><em>Max zoom level</em> ja <em>Min zoom level</em> määravad ära, kui detailselt (mis suumimise astmel) kasutajal kaarti vaadata lubame.</li>
 </ul>
-<div id="harjutused-1" class="section level3 hasAnchor" number="10.2.1">
-<h3><span class="header-section-number">10.2.1</span> Harjutused<a href="avaldised.html#harjutused-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>SQL-i päringuid saab QGISis teha nt <strong><em>DB Manager</em></strong>’i tööriistaga (ülamenüüs <code>Database → DB Manager</code>). Mõned SQL-i funktsioonid (nt <code>UPDATE</code>) töötavad ainult “päris” andmebaasiformaatidega, nt <em>GeoPackage</em>’i failidega (kui need on ka <em>GeoPackage</em>’ina sisse loetud, mitte lihtsalt vektorfailidena).</p>
-<p>DB Manageris valime praegu virtuaalsete kihtide alt kihelkondade polügoonide kihi, valime ülevalt menüüst <code>SQL Window</code> <img src="imgs/10_sqlwindow.png" /> ja kirjutame kasti päringu (asendame punktiirid sobivate väärtustega).</p>
-<ol style="list-style-type: decimal">
-<li>Valime kihelkondade andmestikust ainult eestikeelse murrete nimede tulba ja salvestame selle eraldi kihil.
-<ul>
-<li><code>SELECT ... FROM ...;</code><br />
-</li>
-<li>Kui tahame uuele kihile saada kaasa ka polügoonide andmeid, peame valima ka geomeetria: <code>SELECT ..., geometry FROM ...;</code><br />
-</li>
-<li>Vajutame <em>Execute</em>, teeme linnukese <em>Load as new layer</em> ette ja vajutame <em>Load</em>.<br />
-</li>
-</ul></li>
-<li>Valime kihelkondade andmestikust kõik tulbad, aga ainult need Võru murde kihelkonna read, kus kihelkonna pindala on suurem kui kõikide eesti kihelkondade keskmine pindala.
-<ul>
-<li><code>SELECT ... FROM ... WHERE ... = '...' AND ... &gt; (SELECT AVG(...) FROM ...);</code><br />
-</li>
-</ul></li>
-<li>Leiame murdealade kogupindalad.
-<ul>
-<li><code>SELECT ..., SUM(...) AS pindala FROM ... GROUP BY ...;</code></li>
-</ul></li>
-</ol>
-</div>
-</div>
-<div id="ülesanne-1-ei-olepole-suhtelised-sagedused-murdekorpuses" class="section level2 hasAnchor" number="10.3">
-<h2><span class="header-section-number">10.3</span> Ülesanne 1: “ei ole”/“pole” suhtelised sagedused murdekorpuses<a href="avaldised.html#ülesanne-1-ei-olepole-suhtelised-sagedused-murdekorpuses" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>Ei ole</em> ja <em>pole</em> tunduvad eesti keeles paljudes kontekstides ekvivalentsed, samatähenduslikud ja sama funktsiooniga variandid. Sellel varieerumisel on aga ka oma murdetaust: mõned murded eelistavad analüütilist <em>ei ole</em> konstruktsiooni, teised sünteetilist <em>pole</em> konstruktsiooni, ehkki tegemist ei ole selgelt kategooriliste eelistustega (“kasutan ainult üht ja mitte kunagi teist”).<br />
-<a href="https://www.murre.ut.ee/mkweb/">Eesti murrete korpus</a> sisaldab transkribeeritud murdeintervjuude tekste 10 traditsiooniliselt murdealalt. Tekstid on suuremas jaos salvestatud 1960.-1970. aastatel. Korpusest on võimalik teha päringuid nii sõnajärjendite kui ka märksõnade põhjal, et näha näiteks, milline on erinevate keelendite sagedusjaotus eri piirkondade murdetekstides.</p>
-<p>Värvime kihelkondade polügoonid selle põhjal, kui palju neis kasutatakse murdekorpuse andmete põhjal protsentuaalselt eituse varianti <em>ei ole</em> (vs. <em>pole</em>). Need suhtelised sagedused on tabelis <em>eiole_pole_mk_props.csv</em>, aga selle tabeliga ei ole seotud mingeid koordinaate. Peame niisiis <strong>ühendama</strong> tabeli mingi tunnuse alusel (nt kihelkondade nimede järgi) olemasolevate ruumiandmetega.</p>
-<ul>
-<li>Teeme esmalt virtuaalse koopia kihelkondade kihist (nimetame selle nt <em>kihelkonnad2</em>). Nõnda ei mõjuta see, mida edasi teeme, meie algandmestikku. Koopia tegemiseks on palju viise, ent harjutamise mõttes kasutame selleks siin SQLi päringut.
-<ul>
-<li><em>Layer → Create Layer → New Virtual Layer</em>: nimeta kiht nimega <em>kihelkonnad2</em>, <em>Query</em> väljale kirjuta <code>SELECT * FROM kihelkonnad</code> ja vajuta <em>Add</em>;<br />
-</li>
-</ul></li>
-<li>Ühendame andmestiku <em>eiole_pole_mk_props</em> kihiga <em>kihelkonnad2</em>. Esmalt kontrollime, kas ühendamine võiks üldse korralikult õnnestuda, st kas mõlemas kihis viidatakse samadele kihelkondadele ühtmoodi. Selleks, et leida kihelkonnad/murrakud, mis on kahele kihile ühised, saab kasutada SQLi päringut <strong><code>SELECT Murrak FROM eiole_pole_mk_props INTERSECT SELECT Parish_id FROM kihelkonnad2;</code></strong>. Selleks, et leida aga kihelkonnad, mida teises andmestikus ei ole, võib kasutada päringut <strong><code>SELECT Murrak FROM eiole_pole_mk_props EXCEPT SELECT Parish_id FROM kihelkonnad2;</code></strong>. Kasutame päringu tegemiseks <em>DB Manageri</em>. Kui oleme vajutanud nupul <em>Execute</em>, väljastatakse alumisse aknasse need murrakute nimed, mis on küll andmestikus <em>eiole_pole_mk_props</em> tulbas <em>Murrak</em>, ent mida ei ole sellisel kujul andmestikus <em>kihelkonnad2</em> tulbas <em>Parish_id</em>.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressions8"></span>
-<img src="imgs/10_ylesanne1.png" alt="Vigase kihelkonnanime tuvastamine" width="70%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:appearance"></span>
+<img src="imgs/18_appearance.png" alt="Interaktiivsete võimaluste lisamine" width="100%" />
 <p class="caption">
-Joonis 10.6: Vigase kihelkonnanime tuvastamine
+Joonis 18.6: Interaktiivsete võimaluste lisamine
+</p>
+</div>
+<p>Jaotises <code>Export</code> saame määrata ära, kuhu veebikaardi väljundi saadame: kas mingisse lokaalsesse kausta oma arvutis või otse FTP serverisse. Paneme väljundi esialgu oma kursuse kausta. Vajutame <em>Export</em>.</p>
+<p>Lähemalt saab qgis2web pistikprogrammist lugeda jaotisest <code>Help</code>.</p>
+</div>
+<div id="ülesanne" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> Ülesanne<a href="veebirakendused.html#ülesanne" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Salvestame olemasoleva QGISi projekti ja teeme seejärel uue projekti. Laadime sinna andmestiku <em>notable_estonians.gpkg</em>. See on veidi puhastatud versioon juba <a href="varvid.html#yl12_1">12. praktikumis</a> kasutatud andmestikust tuntud eestlaste või Eestiga seotud isikute kohta, mis on aluseks rakendusele <a href="https://tjukanovt.github.io/notable-people?fbclid=IwAR0PPqeqBJNJGXMMQ0avraSaSOwm05xIxouUWhiLbeQ1Te9gBVnvwGC3i3U">Notable people</a> (punktid). Terve andmestiku viide ja allalaadimise link <a href="https://data.sciencespo.fr/dataset.xhtml?persistentId=doi:10.21410/7E4/RDAG3O">siin</a>, andmestiku tutvustus <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9184645/">siin</a>.</p>
+<p>Kujundame punktid.</p>
+<p>Teeme rakenduse, kus tuntud eestlaste punkte saaks kõikide tunnuste järgi filtreerida ja punktile liikudes saaks konkreetse isiku kohta rohkem infot. Lisaks võiks saada teha päringuid konkreetsete nimede põhjal.</p>
+<p>Ekspordime veebikaardi Leafleti APIt kasutades. Nimetame väljundkausta ümber nimega <strong>kuulsad_eestlased</strong>.</p>
+</div>
+<div id="veebikaartide-majutamine-ja-jagamine" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">18.4</span> Veebikaartide majutamine ja jagamine<a href="veebirakendused.html#veebikaartide-majutamine-ja-jagamine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Valmis veebikaardi jagamiseks teistega võid saata kogu rakenduse kausta kellelegi lokaalselt vaatamiseks või selle kuskile serverisse avalikult üles panna.</p>
+<div id="ülikooli-võrguketas" class="section level3 hasAnchor" number="18.4.1">
+<h3><span class="header-section-number">18.4.1</span> Ülikooli võrguketas<a href="veebirakendused.html#ülikooli-võrguketas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tartu Ülikooli tudengitel ja töötajatel on TÜ serveris \\pohl.ut.ee või \\leesikas.ut.ee oma võrguketas (vaikimisi 1GB), kus on võimalik hoida ja varundada oma isiklikke faile. Samuti saab TÜ serverisse oma kodukataloogi salvestada ja üles panna loodud veebilehed. Veebilehed tuleks salvestada kodukataloogi alamkausta <strong>public_html</strong> ning nendele saab ligi aadressilt <strong><code>https://kodu.ut.ee/~kasutajanimi/</code></strong>.</p>
+<p>Ülikooli võrguketastele ligipääsemiseks peab olema ülikooli sisevõrgus. Väljastpoolt ülikooli saab sisevõrku turvaliselt ühenduse <a href="https://wiki.ut.ee/pages/viewpage.action?pageId=17105590">virtuaalse privaatvõrgu</a> (<strong>VPN</strong>) abil.</p>
+<p>Ülikooli sisevõrgus olles saab isikliku võrguketta kodu- või sülearvutile külge haakida. Windowsis näiteks tuleb selleks minna esmalt jaotisesse <em>This PC</em> ja valida ülamenüüst <em>Computer → Map network drive</em>. Vali võrgukettale suvaline täht, mis pole veel kasutuses, <em>Folder</em> jaotisse kirjuta <code>\\pohl.ut.ee\sinukasutajanimi</code> või <code>\\leesikas.ut.ee\sinukasutajanimi</code>. NB! Kui sisselogimisel küsitakse kasutajanime, siis see olgu kujul <code>domenis\kasutajanimi</code> või <code>kasutajanimi@ut.ee</code>.</p>
+<p>(Kui see kohe ei tööta, siis proovi esmalt <a href="https://www.techcrumble.net/2018/03/you-cant-access-this-shared-folder-because-your-organizations-security-policies-block-unauthenticated-guest-access/">seda</a>.)</p>
+<p>Kui liigutad nüüd kogu qgis2web väljundi kausta (kas kausta <em>kuulsad_eestlased</em> või <em>ei ole/pole</em> veebirakenduse) oma kursuse kaustast külge haagitud võrgukettale <em>public_html</em> kausta ja kirjutad seejärel mõne veebibrauseri aadressiribale <code>https://kodu.ut.ee/~sinukasutajanimi/rakendusekaustanimi</code>, peaksid nägema oma veebikaarti kõigile kättesaadaval kujul.</p>
+</div>
+<div id="github-pages" class="section level3 hasAnchor" number="18.4.2">
+<h3><span class="header-section-number">18.4.2</span> GitHub Pages<a href="veebirakendused.html#github-pages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Veebikaarte saab tasuta majutada näiteks ka <a href="https://github.com/"><strong>GitHubis</strong></a> (vaata lühikest juhendit <a href="https://rogerdudler.github.io/git-guide/">siit</a>). Selleks tuleks teha uus avalik repositoorium, kuhu paigutada <em>qgis2web</em>i väljundkausta sisu (sh kindlasti ka fail <em>index.html</em>). Vaata juhendit näiteks <a href="https://github.com/NieneB/Webmapping_for_beginners/wiki/Hosting-on-github">siit</a>.</p>
+<p>Tee endale GitHubi konto ning seal loo uus repositoorium (<em>New</em>), nt kas üldisema nimega <em>veebikaart</em> või spetsiifilisema nimega.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:loouuskonto"></span>
+<img src="imgs/18_loouuskonto.png" alt="Uue repositooriumi tegemine GitHubis" width="70%" />
+<p class="caption">
+Joonis 18.7: Uue repositooriumi tegemine GitHubis
+</p>
+</div>
+<p>Kõige lihtsam on GitHubis toimetada <a href="https://desktop.github.com/">GitHub Desktopi</a> rakenduse abil.</p>
+<ul>
+<li>Laadi programm alla.<br />
+</li>
+<li>Ava programm.<br />
+</li>
+<li>Vali <em>File → Options → Accounts</em> ning logi sisse GitHub.com kontole oma GitHubi kasutajanime ja parooliga (võib toimuda läbi brauseri).<br />
+</li>
+<li>Järgmiseks vali avalehel <em>Clone a repository from the Internet</em> ning filtreeri välja veebis loodud repositoorium (nt <em>MPilvik/veebikaart</em>). Vali see, vali oma arvutis koht, kus tahad seda kausta lokaalselt enda arvutis hoida, ning vajuta <em>Clone</em>. Nüüd tekib sinu arvutis vastavasse kausta uus tühi kaust.<br />
+</li>
+<li>Sikuta sellesse tühja kausta kogu qgis2web pistikprogrammi eksporditud väljundkausta <strong>sisu</strong> (NB! ainult sisu, mitte kausta ennast).<br />
+</li>
+<li>Mine tagasi GitHub Desktopi rakendusse. Näed, et rakendus näitab sulle kaustas toimunud muudatusi (lisamisi, kustutamisi, muid muudatusi).<br />
+</li>
+<li>Selleks, et veebikaardi materjale nüüd GitHubi üles lükata, tuleb need n-ö <em>commit</em>’ida ning seejärel <em>push</em>’ida. All vasakus nurgas on kastike koos nupuga <em>Commit to main</em>. Lisa <em>Summary</em> väljale mingi kirjeldus, mis uuendusi üles laadid (nt <em>veebikaardi materjalid</em>) ning vajuta <em>Commit to main</em> nupule.<br />
+</li>
+<li>Lõpuks pead vajutama <em>Publish branch/Push origin</em> nupule, et kõik veebi üles laadida.<br />
+</li>
+<li>Lehel github.com peaksid nüüd sisse logides nägema, et qgis2webi väljundid (sh index.html) on kõik loodud veebikaardi kaustas.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:github1"></span>
+<img src="imgs/18_github1.png" alt="Üleslaaditud veebikaardi materjalid GitHubis" width="70%" />
+<p class="caption">
+Joonis 18.8: Üleslaaditud veebikaardi materjalid GitHubis
 </p>
 </div>
 <ul>
-<li>Parandame CSV-kihis selle murraku nime, mis ei sisaldu kihelkondade <em>shapefile</em>’is. Kuna CSV-faili atribuute muuta ei saa, lisame kihile uue virtuaalse atribuudi <em>Murrak2</em>, kus asendame vigase nime õigega (kasutame <em>if</em>-tingimuslauset).</li>
+<li>Lõpuks tuleb veebileht ka rakendusena nähtavaks teha. Selleks saab kasutada <strong>GitHub Pages</strong> veebimajutuse teenust. Vali oma repositooriumis <em>Settings → Pages → Branch</em> = <em>main</em> v <em>master</em> ja vajuta <em>Save</em>. Oota paar sekundit ning mine lehele <code>https://sinukasutajanimi.github.io/sinurakendusenimi/</code></li>
 </ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressions10"></span>
-<img src="imgs/10_newfield.png" alt="Uue virtuaalse atribuudi loomine" width="70%" />
-<p class="caption">
-Joonis 10.7: Uue virtuaalse atribuudi loomine
-</p>
+<p>Kui tahad veebikaardi repositooriumit ära kustutada, saad teha seda kaustas <em>Settings → General → Danger Zone → Delete this repository</em> alt.</p>
+<p>Kuskile serverisse riputatud veebilehte saab omakorda paigutada teise veebilehe sisse, nt HTML-i <a href="https://www.w3schools.com/tags/tag_iframe.ASP"><strong>iframe</strong></a>-märgendi abil.</p>
 </div>
+</div>
+<div id="lisa-ajatelje-kasutamine-qgisis" class="section level2 hasAnchor" number="18.5">
+<h2><span class="header-section-number">18.5</span> LISA: ajatelje kasutamine QGISis<a href="veebirakendused.html#lisa-ajatelje-kasutamine-qgisis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kasutame <a href="https://www.efis.ee/">Eesti filmi andmebaasist</a> kogutud andmeid selle kohta, milliseid geograafilisi kohti läbi aegade Eesti filmides näha on olnud. Selleks on andmebaasis lisaks tavalistele märksõnadele märgendatud eraldi ka <a href="https://www.efis.ee/et/marksonad/id/13/view/Detailed/page/1">kohanimed</a>. Selle kursuse tarbeks korjasime need <a href="https://github.com/MPilvik/efis_webscraping/blob/main/efis_scraping_script.R">R-i skriptiga</a> kokku ning eri aastate peale kokku vähemalt 5 korda esinenud kohanimede koordinaatidega sidumiseks kasutasime Maa-ameti geokodeerimise teenust.</p>
+<p>Kohad, millele teenuses mingid koordinaadid määrati, oleme üle vaadanud ning nende punktid enam-vähem õigesse kohta liigutanud (seega koordinaatide ja atribuudi <code>Taisaadress</code> andmed ei pruugi alati klappida). Kohtadele, mis koordinaate ei saanud, ei ole koordinaate ka eraldi lisatud.</p>
+<p>Laadime saadud andmestiku <strong>efis_parandatud.gpkg</strong> QGISi. Valime <em>QuickMapServices</em> kaudu ka mingi sobiva aluskaardi. Määrame projekti CRS-iks EPSG:3857.</p>
 <ul>
-<li>Lisame kihile <em>kihelkonnad2</em> <em>ei ole</em>/<em>pole</em> kasutamise sagedusandmed. Kasutame andmestike ühendamiseks vastavalt <em>Parish_id</em> ja <em>Murrak2</em> tulpasid.
-<ul>
-<li>Teine moodus kihte ühe tunnuse alusel ühendada on nii, kui valid <em>Processing → Toolbox → Vector general → Join attributes by field value</em>. Erinevus tavalise <em>Join</em>-funktsiooniga on selles, et tekib uus kiht (vaikimisi nimega <em>Joined layer</em>).<br />
+<li>Filtreerime andmestikust kõigepealt välja ainult need read, kus aastaarvud on olemas.<br />
 </li>
-</ul></li>
-<li>Värvime <em>ei ole</em>/<em>pole</em> proportsioonide infoga täiendatud kihi <em>kihelkonnad2</em> polügoonid vastavalt <em>ei ole</em> suhtelisele sagedusele kihelkonnas/murrakus nii, et <strong>viirutatult oleksid märgitud ka kihelkonnad, millest murdekorpuse sagedusinfot ei ole</strong> (vaikimisi klassifitseerides neid kihelkondi enam üldse ei näidataks). Selleks peab kasutama <strong>reeglipõhist sümboloogiat</strong>. Nendele kihelkondadele, kust infot on, teeme 5 sagedusklassi (0-0.2, 0.2-0.4, 0.4-0.6, 0.6-0.8 ja 0.8-1.0).</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressions12"></span>
-<img src="imgs/10_eioleprops.gif" alt="Reeglipõhine polügoonide värvimine" width="70%" />
-<p class="caption">
-Joonis 10.8: Reeglipõhine polügoonide värvimine
-</p>
-</div>
-</div>
-<div id="ülesanne-2-ei-olepole-murdeatlase-levikuandmed" class="section level2 hasAnchor" number="10.4">
-<h2><span class="header-section-number">10.4</span> Ülesanne 2: “ei ole”/“pole” murdeatlase levikuandmed<a href="avaldised.html#ülesanne-2-ei-olepole-murdeatlase-levikuandmed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>Lisame joonisele ka murdeatlase punktandmed ning eristame punktide välimuse selle järgi, kas tegemist on “ei ole” või “pole” variandiga.<br />
+<li>Kuna Eesti kohta on info oluliselt detailsem kui välismaa kohta, piirame oma veebikaardi samuti ainult Eesti alaga. Kasutame selleks <em>Select Features by Freehand</em> tööriista, et tõmmata ümber Eesti ala piiri, mille seest punkte valida.<br />
 </li>
-<li>Kuna praegu on keelendi tulbas igasuguseid variante, nt <em>põle</em>, <em>ei (äi) ole</em>, <em>ole ei (õi)</em>, <em>ei (äi, öi) pole</em>, siis peaks esmalt looma ühe binaarse tunnuse, kus oleksid ainult väärtused <em>ei ole</em> ja <em>pole</em>.<br />
+<li>Salvestame tehtud valiku eraldi kihina. Nimetame selle nt nimega <strong>efis_eesti.gpkg</strong>.<br />
 </li>
-<li>Selleks filtreerime (paremklikk → <em>Filter</em>) kihist <code>30_ei_ole</code> välja ainult need read, kus keelendi info on olemas (<code>"Keelend" IS NOT NULL</code>) ning lisame selle atribuuttabelisse <em>Field Calculator</em>’i abil uue <strong>virtuaalse</strong> atribuudi/tulba nimega <em>Keelend2</em>, kuhu paneme väärtuse <em>pole</em> siis, kui keelendi tulbas esineb <em>p</em>-täht, ja <em>ei ole</em> siis, kui ei esine (see tähendab, et ka nt <em>ei pole</em> klassifitseeritakse <em>pole</em>-ks). Kasutame <em>if</em>-tingimuslauset ja <em>ILIKE</em>-operaatorit: <code>if("Keelend" ILIKE '%p%', 'pole', 'ei ole')</code>.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressionsex5"></span>
-<img src="imgs/10_keelend2.png" alt="Binaarse virtuaalse tunnuse loomine" width="70%" />
-<p class="caption">
-Joonis 10.9: Binaarse virtuaalse tunnuse loomine
-</p>
-</div>
-<ul>
-<li>Valime binaarsele keelendile vastava sümboli ja värvi.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressionsex6"></span>
-<img src="imgs/10_eiolepoleatlas.png" alt="Korpuse ja atlase andmed eituskonstruktsioonide *ei ole* ja *pole* sagedusest ja levikust" width="70%" />
-<p class="caption">
-Joonis 10.10: Korpuse ja atlase andmed eituskonstruktsioonide <em>ei ole</em> ja <em>pole</em> sagedusest ja levikust
-</p>
-</div>
-</div>
-<div id="ülesanne-3-ei-olepole-selged-eelistused" class="section level2 hasAnchor" number="10.5">
-<h2><span class="header-section-number">10.5</span> Ülesanne 3: “ei ole”/“pole” selged eelistused<a href="avaldised.html#ülesanne-3-ei-olepole-selged-eelistused" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>Teeme kihist <em>kihelkonnad2</em> duplikaadi nimega <em>kihelkonnad3</em> (paremklikk → <em>Duplicate Layer</em> ja uuel kihil paremklikk → <em>Rename Layer</em>).<br />
+<li>Eemaldame punktidelt äärejooned, valime punktidele värvid, teeme need läbipaistvamaks ning määrame punktide suuruse vastavalt sellele, kui palju mingit kohta mingil aastal filmides näidatud oli (tulp <em>n</em>, mille väärtuseid võiks lineaarselt kujutada suuruste kaudu 2 mm-st kuni 15 mm-ni: <em>Data defined override → Assistant → Source: </em>n, <em>Values from: </em>1, <em>to: </em>10, <em>Size from:</em> 2, <em>to:</em> 15, <em>Scale method:</em> Radius).<br />
 </li>
-<li>Kasutades reeglipõhist polügoonide värvimist, kuvame kihil <em>kihelkonnad3</em> värviliselt ainult sagedused, mille puhul <em>ei ole</em> ja <em>pole</em> <strong>proportsioonide absoluuterinevus</strong> on vähemalt 0,5. Ülejäänud polügoonidele (sh puuduvatele väärtustele) määrame halli värvi.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressions13"></span>
-<img src="imgs/10_suurederinevused.gif" alt="Suured sageduserinevused" width="80%" />
-<p class="caption">
-Joonis 10.11: Suured sageduserinevused
-</p>
-</div>
+<li>Kuna aastaarvu sisaldav tulp on hetkel andmestikus tekstikujul ja sisaldab ka ajavahemikke (nt <em>1940-1941</em>), tekitame andmestikku kaks uut tulpa:
 <ul>
-<li>Nüüd muudame reegleid nii, et kihelkonnad, mille puhul <em>ei_ole</em> ja <em>pole</em> suur vahe on negatiivne (-0,5 või vähem), on punased, ja need, mille vahe on positiivne (0,5 või suurem), on sinised.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressions14"></span>
-<img src="imgs/10_suuredvaiksederinevused.gif" alt="*ei ole* ja *pole* konstruktsioonide eelistused murrakutes" width="70%" />
-<p class="caption">
-Joonis 10.12: <em>ei ole</em> ja <em>pole</em> konstruktsioonide eelistused murrakutes
-</p>
-</div>
-</div>
-<div id="ülesanne-4-tekstiatribuutide-muutmine" class="section level2 hasAnchor" number="10.6">
-<h2><span class="header-section-number">10.6</span> Ülesanne 4: tekstiatribuutide muutmine<a href="avaldised.html#ülesanne-4-tekstiatribuutide-muutmine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>Muudame kihil <em>kihelkonnad3</em> eestikeelsete murrete nimetustes kõik Setu murded Seto murreteks, kasutades <em>if</em>-tingimuslauset. Salvestame uued nimed uude tulpa “Murre”.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressions16"></span>
-<img src="imgs/10_setuseto.png" alt="Setu murre Seto murdeks" width="60%" />
-<p class="caption">
-Joonis 10.13: Setu murre Seto murdeks
-</p>
-</div>
-<ul>
-<li>Muudame kihil <em>kihelkonnad3</em> ingliskeelsete murrete nimetustes kõik Setu murded Seto murreteks, kasutades <em>CASE</em>-tingimuslauset. Salvestame uued nimed uude tulpa “Dialect”.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressions17"></span>
-<img src="imgs/10_setuseto_eng.png" alt="Setu murre Seto murdeks (2)" width="60%" />
-<p class="caption">
-Joonis 10.14: Setu murre Seto murdeks (2)
-</p>
-</div>
-<ul>
-<li>Leiame kihil <em>kihelkonnad3</em> kõik kihelkondade nimed, mille saksakeelne nimi algab lühendiga <em>St.</em> ning muudame lühendi <em>Sankt</em>’iks, kasutades regulaaravaldist. Salvestame uued nimed uude tulpa nimega “Saksakeelne_nimi”.</li>
-</ul>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:expressions18"></span>
-<img src="imgs/10_saksakeelnenimi.png" alt="*St.* muutmine *Sankt*'iks" width="70%" />
-<p class="caption">
-Joonis 10.15: <em>St.</em> muutmine <em>Sankt</em>’iks
-</p>
-</div>
-<ul>
-<li>Leiame kõik kihelkonnad, mille nimed lõppevad <em>la</em>-ga (nt <em>Ambla</em>) ja asendame need lõpud uues tulbas nimega “Kihelkond” <em>LA</em>-ga (<em>AmbLA</em>), kasutades regulaaravaldist: <code>regexp_replace("Name", '(.*)la', '\\1LA')</code>. Siin ütleme, et
-<ul>
-<li>tulba <em>Name</em> kõikides sõnades,<br />
+<li>nimetame esimese tulba nimega <em>aasta1</em>, kus oleks arvu kujul ainult 4 esimest numbrit <em>aasta</em> tulbast: <code>to_int(left("aasta", 4))</code>.<br />
 </li>
-<li>mis algavad mis iganes sümboliga (nt tähega, numbriga, kirjavahemärgiga, tühikuga) <code>.</code>,</li>
-<li>mida esineb ükskõik mitu korda <code>*</code> (nt <em>Kei</em>, <em>Viga</em>, <em>Amb</em>, <em>Halja</em>)<br />
-</li>
-<li>ja kus sellele millele iganes mitu iganes korda järgneb järjend <em>la</em>,<br />
-</li>
-<li>jäta alles see esimene <code>\\1</code> (ja siin ainus) grupeeritud osa <code>(.*)</code> enne <em>la</em>-d,<br />
-</li>
-<li>aga grupeeritud osa lõpus asenda järjend <em>la</em> järjendiga <em>LA</em>.</li>
+<li>Seejärel teeme tulba nimega <em>kuupaev</em>, paneme tulbale <code>aasta1</code> ümber funktsiooni <code>to_date()</code>, mis muudab aastaarvu kuupäevaks: <code>to_date("aasta1", 'yyyy')</code> ja määrame aasta viitepunktiks mitte 1. jaanuari, vaid juuni lõpu: <code>to_date("aasta1", 'yyyy') + to_interval('2 days')</code>.</li>
 </ul></li>
 </ul>
-<p>Põhimõtteliselt võiksime kasutada DB Manageris ka <em>UPDATE CASE WHERE</em> lauseid, ent kuna ükski meie kihtidest ei ole QGISi jaoks päris andmebaas, siis saame teha DB Manageris ainult päringuid, aga tabelit muuta ei saa. Saame aga eksportida mõne <em>virtuaalse kihi</em> näiteks GeoPackage-formaadis failina ning seda uuesti sisse lugedes saame andmestikku DB Manageris ka SQL-lausete abil muuta.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:efiseesti"></span>
+<img src="imgs/19_efis_eesti.png" alt="Eesti filmidega seotud kohad ja uued tunnused atribuuttabelis" width="90%" />
+<p class="caption">
+Joonis 18.9: Eesti filmidega seotud kohad ja uued tunnused atribuuttabelis
+</p>
 </div>
-<div id="järgmisel-korral-9" class="section level2 hasAnchor" number="10.7">
-<h2><span class="header-section-number">10.7</span> Järgmisel korral<a href="avaldised.html#järgmisel-korral-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Järgmisel korral tegeleme põhjalikumalt andmekihtide ühendamise erinevate viisidega ning jätkame ka kujundusvõimaluste katsetamisega.</p>
+<ul>
+<li>Teeme nüüd <em>efis_eesti</em> kihil paremkliki ning valime <em>Properties</em>. Vasakult menüüst valime <em>Temporal</em> ja teeme linnukese valiku ette <em>Dynamic Temporal Control</em>.<br />
+</li>
+<li>Kuna meil on andmestikus nüüd kuupäeva tulp, saame valida konfiguratsiooniks väärtuse <em>Single Field with Date/Time</em> ning <em>Field</em> väärtuseks loodud tulba <em>kuupaev</em>. Vajutame <em>OK</em>.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:temporal"></span>
+<img src="imgs/19_temporal.png" alt="Ajadimensiooni kasutamine QGISis" width="70%" />
+<p class="caption">
+Joonis 18.10: Ajadimensiooni kasutamine QGISis
+</p>
+</div>
+<ul>
+<li>Valime järgmiseks menüüribalt, kus on nt ka salvestamise ja suumimise ikoonid, kella pildiga tööriista <strong><em>Temporal Controller Panel</em></strong> <img src="imgs/19_temporalcontrollericon.png" />. Kui seda ikooni ei ole menüüs näha, siis saab minna <em>View → Panels → Temporal Controller</em> ja teha sinna ette linnuke.<br />
+</li>
+<li>Avanenud menüüs vajutame rohelise noolekesega nupule <em>Animated temporal navigation</em> <img src="imgs/19_animated.png" />. <em>Animation range</em>’i saame määrata värskendamise ikooni juurest: <em>Set to Full Range</em> ja liidame lõpuaastale ühe (2021. aasta asemel niisiis 2022). Ajatelje “sammuks” määrame 1 aasta.<br />
+<img src="imgs/19_animationrange.png" /></li>
+<li>Vajutame animatsiooni mängimise nupule ning seejärel peaks nägema, kuidas kaardile ilmuvad igal aasta filmidega seotud olnud kohad ning nende ikoonide suurus vastab sellele, kui mitme filmiga need sel aastal seotud olid.<br />
+</li>
+<li>Võime kuvada kaardil ka aastaarvu, et oleks lihtsam jälgida: <em>View → Decorations → Title Label</em>. Teeme linnukese valiku ette <em>Enable Title Label</em>, valime <em>Insert or Edit an Expression</em> ja trükime avaldise kasti <code>year(@map_start_time)</code>.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:temporalcontroller"></span>
+<img src="imgs/19_temporalcontroller.gif" alt="QGIS Temporal Controller" width="70%" />
+<p class="caption">
+Joonis 18.11: QGIS Temporal Controller
+</p>
+</div>
+<p>QGIS ei lase animatsiooni gif-ina salvestada, vaid kõik 100 pilti (aastatest 1921-2021) salvestatakse eraldi pildifailidena ning neid tuleb eraldi animeerida mõnes teises programmis, nt <a href="https://ezgif.com/maker">Ezgifi</a> veebipõhises programmis.</p>
+<p>Selline gif on aga põhimõtteliselt lihtsalt liikuv pilt ning kasutajal ei ole võimalik andmeid kuidagi oma soovidele vastavalt põhjalikumalt uurida.</p>
+</div>
+<div id="järgmisel-korral-17" class="section level2 hasAnchor" number="18.6">
+<h2><span class="header-section-number">18.6</span> Järgmisel korral<a href="veebirakendused.html#järgmisel-korral-17" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ruumiandmete analüüs R-is. Selleks palun installi endale <a href="https://www.r-project.org/"><strong>R</strong></a> ja <a href="https://posit.co/download/rstudio-desktop/"><strong>RStudio</strong></a> uusimad versioonid.</p>
 
 </div>
 </div>
@@ -821,8 +631,8 @@ Joonis 10.15: <em>St.</em> muutmine <em>Sankt</em>’iks
           </div>
         </div>
       </div>
-<a href="georefereerimine.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="andmekihtide_yhendamine.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="geostatistika2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
