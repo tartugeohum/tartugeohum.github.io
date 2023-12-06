@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Praktikum 11 Andmekihtide ühendamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
   <meta name="description" content="Praktikum 11 Andmekihtide ühendamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Praktikum 11 Andmekihtide ühendamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
@@ -52,14 +52,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.3/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.2.0/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.2.1/leaflet.js"></script>
 <link href="libs/leaflet-measure-2.1.7/leaflet-measure.css" rel="stylesheet" />
 <script src="libs/leaflet-measure-2.1.7/leaflet-measure.min.js"></script>
 <script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
@@ -68,10 +68,74 @@
 <link href="libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -348,6 +412,20 @@ div.csl-indent {
 <li class="chapter" data-level="18.5" data-path="veebirakendused.html"><a href="veebirakendused.html#lisa-ajatelje-kasutamine-qgisis"><i class="fa fa-check"></i><b>18.5</b> LISA: ajatelje kasutamine QGISis</a></li>
 <li class="chapter" data-level="18.6" data-path="veebirakendused.html"><a href="veebirakendused.html#järgmisel-korral-17"><i class="fa fa-check"></i><b>18.6</b> Järgmisel korral</a></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>19</b> Ruumiandmete analüüs R-iga</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="r.html"><a href="r.html#miks-teha-kaarte-koodipõhiselt"><i class="fa fa-check"></i><b>19.1</b> Miks teha kaarte koodipõhiselt?</a></li>
+<li class="chapter" data-level="19.2" data-path="r.html"><a href="r.html#r-rstudio-ja-r-markdown"><i class="fa fa-check"></i><b>19.2</b> R, RStudio ja R Markdown</a></li>
+<li class="chapter" data-level="19.3" data-path="r.html"><a href="r.html#pakettide-installimine"><i class="fa fa-check"></i><b>19.3</b> Pakettide installimine</a></li>
+<li class="chapter" data-level="19.4" data-path="r.html"><a href="r.html#kood"><i class="fa fa-check"></i><b>19.4</b> Kood</a></li>
+<li class="chapter" data-level="19.5" data-path="r.html"><a href="r.html#andmete-sisselugemine"><i class="fa fa-check"></i><b>19.5</b> Andmete sisselugemine</a></li>
+<li class="chapter" data-level="19.6" data-path="r.html"><a href="r.html#kaartide-tegemine"><i class="fa fa-check"></i><b>19.6</b> Kaartide tegemine</a></li>
+<li class="chapter" data-level="19.7" data-path="r.html"><a href="r.html#andmete-valimine-1"><i class="fa fa-check"></i><b>19.7</b> Andmete valimine</a></li>
+<li class="chapter" data-level="19.8" data-path="r.html"><a href="r.html#andmestike-ühendamine-1"><i class="fa fa-check"></i><b>19.8</b> Andmestike ühendamine</a></li>
+<li class="chapter" data-level="19.9" data-path="r.html"><a href="r.html#jooniste-eksportimine"><i class="fa fa-check"></i><b>19.9</b> Jooniste eksportimine</a></li>
+<li class="chapter" data-level="19.10" data-path="r.html"><a href="r.html#ülesanne-4"><i class="fa fa-check"></i><b>19.10</b> Ülesanne</a></li>
+<li class="chapter" data-level="19.11" data-path="r.html"><a href="r.html#r-i-raamatud-ja-juhendid"><i class="fa fa-check"></i><b>19.11</b> R-i raamatud ja juhendid</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
 </ul>
 
@@ -373,8 +451,8 @@ div.csl-indent {
 <p>Kui meil on olemas andmestik, milles ruumilist infot väljendavad ainult mingid tekstilised tunnused (nt riikide, maakondade, linnade, talude vm nimed), saame nende konkreetsete asukohtade määramiseks, kaardil kuvamiseks ning ruumiliseks analüüsimiseks kasutada ära vabalt kättesaadavaid ruumiandmeid (nt Maa-ameti ruumiandmeid).</p>
 <p>Vaatame esmalt varasemast oluliselt suuremat 19. sajandi vallakohtute andmestikku. See on osa <a href="https://ra.ee/vallakohtud">Rahvusarhiivi ühisloomeprojektist</a>, mille käigus on praeguseks sisestatud üle 129 000 vallakohtuprotokolli, mis kajastavad muu hulgas näiteks laenusid ja võlanõudeid, varavastaseid kuritegusid, pärimisasju, kahjutasunõudeid, aga ka näiteks sõimu ja vägivalda ning muid üleastumisi. Siin praktikumis kasutatavas andmestikus on umbes 25 000 protokolli andmed.</p>
 <p>Tabel näeb välja selline:</p>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-319d0f5a0a4c319a7e87" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-319d0f5a0a4c319a7e87">{"x":{"filter":"none","vertical":false,"data":[[399,182,508,249,533],[1885,1823,1856,1869,1843],["7","5","2","3","3"],["19","19","17","11","27"],["159","NULL","4","66","NULL"],["Maade ja hoonete rentimine, mõõtmine ja pärandamine. Ehitamine. Suhted mõisa ja kroonuga.","NULL","NULL","Laenud ja võlanõuded","Perekonna- ja pärimisasjad"],["Pärnu","Viljandi","Tartu","Viljandi","Viljandi"],["Halliste","Helme","Kodavere","Helme","Paistu"],["Penuja","Lõve","Alatskivi","Lõve","Holstre"],[409,84,211,60,348]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>id<\/th>\n      <th>year<\/th>\n      <th>month<\/th>\n      <th>day<\/th>\n      <th>protocol_number<\/th>\n      <th>X_record_type<\/th>\n      <th>maakond<\/th>\n      <th>kihelkond<\/th>\n      <th>vald<\/th>\n      <th>number_of_characters<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"paginate":false,"filter":false,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[0,1,9]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ed304366b5f5ad98d76e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ed304366b5f5ad98d76e">{"x":{"filter":"none","vertical":false,"data":[[399,182,508,249,533],[1885,1823,1856,1869,1843],["7","5","2","3","3"],["19","19","17","11","27"],["159","NULL","4","66","NULL"],["Maade ja hoonete rentimine, mõõtmine ja pärandamine. Ehitamine. Suhted mõisa ja kroonuga.","NULL","NULL","Laenud ja võlanõuded","Perekonna- ja pärimisasjad"],["Pärnu","Viljandi","Tartu","Viljandi","Viljandi"],["Halliste","Helme","Kodavere","Helme","Paistu"],["Penuja","Lõve","Alatskivi","Lõve","Holstre"],[409,84,211,60,348]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>id<\/th>\n      <th>year<\/th>\n      <th>month<\/th>\n      <th>day<\/th>\n      <th>protocol_number<\/th>\n      <th>X_record_type<\/th>\n      <th>maakond<\/th>\n      <th>kihelkond<\/th>\n      <th>vald<\/th>\n      <th>number_of_characters<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"paginate":false,"filter":false,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[0,1,9]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <p>Selleks, et protokollide andmeid kaardil kuvada, peame maakondade, valdade või kihelkondade nimede abil ühendama tabeli mingite ruumiandmetega. Kasutame siin kõige suuremat üldistuse astet ja kasutame ühendamiseks <strong>maakondi</strong>.</p>
 <p>Esmalt laadime aga andmestiku QGISi: <em>Layer → Add Layer → Add Delimited Text Layer</em> → valime faili <em>vallakohtud_RA.csv</em>, tulpade eraldaja on tabulaator (<em>Tab</em>), linnuke on kastide ees <em>First record has field names</em> ja <em>Detect field types</em>, <em>Geometry Definition</em> on <em>No geometry</em> → <em>Add → Close</em>.</p>
 <p><strong>Mitu eri maakonda andmestikus kokku on?</strong></p>
@@ -555,8 +633,8 @@ Joonis 11.11: CSV ja vektorkihi ühendamine (polügoonidega) vektorandmeteks
 <p>Geokodeerimine töötab väga hästi tänapäevaste aadressidega.<br />
 Vaatame aga nüüd ka natuke vanemaid andmeid, nimelt Rahvusarhiivi kaudu kasutatavat <strong>Tartu Ülikooli ja Eesti Ajalooarhiivi andmebaasi “Album Academicum 1918–1944”</strong>, mis koondab matrikliraamatutele jt allikatele tuginedes infot Tartu Ülikooli immatrikuleeritud üliõpilastest aastatel 1918-1944 (<a href="http://www.ra.ee/apps/andmed/index.php/site/page?view=aaut_annotation">vaata lähemalt</a>). Kuna andmestik ise on üpris mahukas, sisaldades infot enam kui 20 000 tudengi kohta, siis vaatame siin ainult kahe väga levinud perekonnanimega (Tamm ja Saar) üliõpilaste andmeid ning võrdleme nende perekonnanimedega üliõpilaste päritolu. Naisüliõpilaste andmete puhul ei pruugi võrdlus olla väga täpne, kuna andmestikus sisalduvad ka need kirjed, kus <em>Tamm</em> või <em>Saar</em> on saadud perekonnanimeks abiellumisel.<br />
 Oleme veidi algandmestikku täiendanud ning lisanud standardiseeritud sünnikoha tulbad, kus andmebaasis kajastatud sünnikohtadel on lühendid lahti kirjutatud ning erinevate tasemete vahele on lisatud komad.</p>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c33ebccd254a1e1cc0c2" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c33ebccd254a1e1cc0c2">{"x":{"filter":"none","vertical":false,"fillContainer":true,"data":[[120,129,172,207,407],["Alide","Alexander (Aleksander)","Andres","Ann","Alfred"],["Tamm","Tamm","Tamm","Tamm","Tamm"],["Jakob","Jaan","Hans","Jaan","Jaan"],["põllumees","Puudub","põllumees","metsavaht","majaomanik"],["20.01.1897","20.11.1896","22.09.1895","22.12.1890","10.12.1900"],["Võ Vana-Roosa v","Põltsamaa","Vil Tarvastu v","Pä Karksi v","Valga"],["Võrumaa, Vana-Roosa vald","Põltsamaa","Viljandimaa, Tarvastu vald","Pärnumaa, Karksi vald","Valga"],["Vana-Roosa, Võrumaa","Põltsamaa","Tarvastu, Viljandimaa","Karksi, Pärnumaa","Valga"],["Vana-Roosa","Põltsamaa","Tarvastu","Karksi","Valga"],["Puudub","1933","Apr.1926","surnud","12.07.1963"],["Puudub","Puudub","Puudub","Eesti","Tln"],["Valga G 16","TÜ apt abil 21","Tartu RK 17","Pärnu TG 10","Tartu RK 18"],["med 19-24-, filos 24-26-","farm k 24-29*","jur 17-, lood 17-, med 17-18-, med 19-23*","filos 19-24-","keem 18-, keem 19-24-, jur 24-25-, New Yorgi Columbia Ü ajakirjandus 29..33*"],["Puudub","Fraternitas Liviensis","Ugala","EÜS Veljesto","Ugala"],["Puudub","Puudub","Puudub","Puudub","Puudub"],["Puudub","Puudub","Puudub","11-13 Võiera (Uue-Vändra v) algk, 13-16 Pärnu Eesti Kooliseltsi progümn-i õp, 16-18 tunniandja Pärnus. 18-19 Vahi põllutöökooli, 19-20 Tartu ÕSi, 20-21 Tartu Linna PRG, 22-30 Tartu linna õhtualgk õp. 22-45 TÜ filosoofiateaduskonna seminariraamatukogu korraldaja. 45 arret Tartus, 47 asumisel Salehardis, 50 vabanes, Eestis tagasi.","18-20 Vabadussõjas. 20 Tartu linnaraamatukogu ametnik. 25-35 elas USAs, kuukirja \"Meie Tee\" asutajaid ja toimetuse liige, tegi kaastööd \"Päevalehele\" ja ajakirjale \"Olion\", 29 \"Estonian Bulletini\" toim. A-st 35 Eesti Kultuurkapitali kujutava kunsti sihtkapitali valitsuse sekretär ja ajakirja \"Välis-Eesti\" toim. Saksa okupatsiooni ajal ajalehe \"Eesti Sõna\" toimetuse liige. 49 küüditati Sõmeru vallast Krasnojarski kraisse, 57 Eestis tagasi."],["Tamm","Tamm","Tamm","Tamm","Tamm"]],"container":"<table class=\"display fill-container\">\n  <thead>\n    <tr>\n      <th>Matrikli.Nr.<\/th>\n      <th>Eesnimi<\/th>\n      <th>Perenimi<\/th>\n      <th>Isanimi<\/th>\n      <th>Isa.tegevusala<\/th>\n      <th>Sünniaeg<\/th>\n      <th>Sünnikoht<\/th>\n      <th>Sünnikoht_std<\/th>\n      <th>Sünnikoht_std2<\/th>\n      <th>Sünnikoht_std3<\/th>\n      <th>Surm<\/th>\n      <th>Surmakoht<\/th>\n      <th>Kool<\/th>\n      <th>Eriala<\/th>\n      <th>Akadeem..org.<\/th>\n      <th>Teaduskraadide.omandamiseks.kaitstud.tööde.pealkirjad<\/th>\n      <th>Elulugu<\/th>\n      <th>pk<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"paginate":false,"filter":false,"columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-82f979dc49206f93918c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-82f979dc49206f93918c">{"x":{"filter":"none","vertical":false,"fillContainer":true,"data":[[120,129,172,207,407],["Alide","Alexander (Aleksander)","Andres","Ann","Alfred"],["Tamm","Tamm","Tamm","Tamm","Tamm"],["Jakob","Jaan","Hans","Jaan","Jaan"],["põllumees","Puudub","põllumees","metsavaht","majaomanik"],["20.01.1897","20.11.1896","22.09.1895","22.12.1890","10.12.1900"],["Võ Vana-Roosa v","Põltsamaa","Vil Tarvastu v","Pä Karksi v","Valga"],["Võrumaa, Vana-Roosa vald","Põltsamaa","Viljandimaa, Tarvastu vald","Pärnumaa, Karksi vald","Valga"],["Vana-Roosa, Võrumaa","Põltsamaa","Tarvastu, Viljandimaa","Karksi, Pärnumaa","Valga"],["Vana-Roosa","Põltsamaa","Tarvastu","Karksi","Valga"],["Puudub","1933","Apr.1926","surnud","12.07.1963"],["Puudub","Puudub","Puudub","Eesti","Tln"],["Valga G 16","TÜ apt abil 21","Tartu RK 17","Pärnu TG 10","Tartu RK 18"],["med 19-24-, filos 24-26-","farm k 24-29*","jur 17-, lood 17-, med 17-18-, med 19-23*","filos 19-24-","keem 18-, keem 19-24-, jur 24-25-, New Yorgi Columbia Ü ajakirjandus 29..33*"],["Puudub","Fraternitas Liviensis","Ugala","EÜS Veljesto","Ugala"],["Puudub","Puudub","Puudub","Puudub","Puudub"],["Puudub","Puudub","Puudub","11-13 Võiera (Uue-Vändra v) algk, 13-16 Pärnu Eesti Kooliseltsi progümn-i õp, 16-18 tunniandja Pärnus. 18-19 Vahi põllutöökooli, 19-20 Tartu ÕSi, 20-21 Tartu Linna PRG, 22-30 Tartu linna õhtualgk õp. 22-45 TÜ filosoofiateaduskonna seminariraamatukogu korraldaja. 45 arret Tartus, 47 asumisel Salehardis, 50 vabanes, Eestis tagasi.","18-20 Vabadussõjas. 20 Tartu linnaraamatukogu ametnik. 25-35 elas USAs, kuukirja \"Meie Tee\" asutajaid ja toimetuse liige, tegi kaastööd \"Päevalehele\" ja ajakirjale \"Olion\", 29 \"Estonian Bulletini\" toim. A-st 35 Eesti Kultuurkapitali kujutava kunsti sihtkapitali valitsuse sekretär ja ajakirja \"Välis-Eesti\" toim. Saksa okupatsiooni ajal ajalehe \"Eesti Sõna\" toimetuse liige. 49 küüditati Sõmeru vallast Krasnojarski kraisse, 57 Eestis tagasi."],["Tamm","Tamm","Tamm","Tamm","Tamm"]],"container":"<table class=\"display fill-container\">\n  <thead>\n    <tr>\n      <th>Matrikli.Nr.<\/th>\n      <th>Eesnimi<\/th>\n      <th>Perenimi<\/th>\n      <th>Isanimi<\/th>\n      <th>Isa.tegevusala<\/th>\n      <th>Sünniaeg<\/th>\n      <th>Sünnikoht<\/th>\n      <th>Sünnikoht_std<\/th>\n      <th>Sünnikoht_std2<\/th>\n      <th>Sünnikoht_std3<\/th>\n      <th>Surm<\/th>\n      <th>Surmakoht<\/th>\n      <th>Kool<\/th>\n      <th>Eriala<\/th>\n      <th>Akadeem..org.<\/th>\n      <th>Teaduskraadide.omandamiseks.kaitstud.tööde.pealkirjad<\/th>\n      <th>Elulugu<\/th>\n      <th>pk<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"paginate":false,"filter":false,"columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <p>Põhimõtteliselt võib proovida ka praktikumis tabelit <em>tamm_saar_koond.csv</em> massgeokodeerimisse saata (sel juhul tasub otsida ilmselt ainult haldus- ja asustusjaotuse klassifikaatorist, tulemuste esitamisel tahaksime otsida ka ajaloolistest andmetest ning kui vaja, siis üldistada täpsemat aadressi üldisemaks), ent kui teeme seda kõik koos, võib server saada üle koormatud. Seepärast oleme lisanud praktikumi materjalidesse ka juba geokodeeritud faili <em>tamm_saar_koond_geokod_std2.gpkg</em>, mis kasutas aadressidena tulpa <em>Sünnikoht_std2</em> (kus on mitu kohanime tasandit, ent kustutatud on liiginime näitavad sõnad, nagu <em>vald</em>, <em>kihelkond</em>, <em>maakond</em> jms), ja faili <em>tamm_saar_koond_geokod_std3.gpkg</em>, mis kasutas aadressidena tulpa <em>Sünnikoht_std3</em> (kus on ainult kõige madalama taseme kohanimi).</p>
 <p><strong>Ülesanne</strong></p>
 <ul>

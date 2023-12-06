@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
   <meta name="description" content="HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
@@ -52,14 +52,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.3/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.2.0/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.2.1/leaflet.js"></script>
 <link href="libs/leaflet-measure-2.1.7/leaflet-measure.css" rel="stylesheet" />
 <script src="libs/leaflet-measure-2.1.7/leaflet-measure.min.js"></script>
 <script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
@@ -68,10 +68,74 @@
 <link href="libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -348,6 +412,20 @@ div.csl-indent {
 <li class="chapter" data-level="18.5" data-path="veebirakendused.html"><a href="veebirakendused.html#lisa-ajatelje-kasutamine-qgisis"><i class="fa fa-check"></i><b>18.5</b> LISA: ajatelje kasutamine QGISis</a></li>
 <li class="chapter" data-level="18.6" data-path="veebirakendused.html"><a href="veebirakendused.html#järgmisel-korral-17"><i class="fa fa-check"></i><b>18.6</b> Järgmisel korral</a></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>19</b> Ruumiandmete analüüs R-iga</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="r.html"><a href="r.html#miks-teha-kaarte-koodipõhiselt"><i class="fa fa-check"></i><b>19.1</b> Miks teha kaarte koodipõhiselt?</a></li>
+<li class="chapter" data-level="19.2" data-path="r.html"><a href="r.html#r-rstudio-ja-r-markdown"><i class="fa fa-check"></i><b>19.2</b> R, RStudio ja R Markdown</a></li>
+<li class="chapter" data-level="19.3" data-path="r.html"><a href="r.html#pakettide-installimine"><i class="fa fa-check"></i><b>19.3</b> Pakettide installimine</a></li>
+<li class="chapter" data-level="19.4" data-path="r.html"><a href="r.html#kood"><i class="fa fa-check"></i><b>19.4</b> Kood</a></li>
+<li class="chapter" data-level="19.5" data-path="r.html"><a href="r.html#andmete-sisselugemine"><i class="fa fa-check"></i><b>19.5</b> Andmete sisselugemine</a></li>
+<li class="chapter" data-level="19.6" data-path="r.html"><a href="r.html#kaartide-tegemine"><i class="fa fa-check"></i><b>19.6</b> Kaartide tegemine</a></li>
+<li class="chapter" data-level="19.7" data-path="r.html"><a href="r.html#andmete-valimine-1"><i class="fa fa-check"></i><b>19.7</b> Andmete valimine</a></li>
+<li class="chapter" data-level="19.8" data-path="r.html"><a href="r.html#andmestike-ühendamine-1"><i class="fa fa-check"></i><b>19.8</b> Andmestike ühendamine</a></li>
+<li class="chapter" data-level="19.9" data-path="r.html"><a href="r.html#jooniste-eksportimine"><i class="fa fa-check"></i><b>19.9</b> Jooniste eksportimine</a></li>
+<li class="chapter" data-level="19.10" data-path="r.html"><a href="r.html#ülesanne-4"><i class="fa fa-check"></i><b>19.10</b> Ülesanne</a></li>
+<li class="chapter" data-level="19.11" data-path="r.html"><a href="r.html#r-i-raamatud-ja-juhendid"><i class="fa fa-check"></i><b>19.11</b> R-i raamatud ja juhendid</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
 </ul>
 
@@ -419,7 +497,7 @@ Joonis 1.1: Eesti kujutatud “Sõrmuste Isanda” kaartide stiilis, <a href="ht
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:gis-wordcloud"></span>
 <img src="imgs/1_gis_wordcloud_wallentin2015.png" alt="Mida GISiga tehakse? [@Wallentin2015]" width="80%" />
 <p class="caption">
-Joonis 1.2: Mida GISiga tehakse? <span class="citation">(<a href="kirjandus.html#ref-Wallentin2015" role="doc-biblioref">Wallentin et al. 2015</a>)</span>
+Joonis 1.2: Mida GISiga tehakse? <span class="citation">(<a href="kirjandus.html#ref-Wallentin2015">Wallentin et al. 2015</a>)</span>
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:gis-wordcloud2"></span>
@@ -557,13 +635,13 @@ Joonis 1.10: Andrus Saareste käsikirjaline murdekaart sõna ‘keegi’ alaleü
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:arheo-example"></span>
 <img src="imgs/1_arheo_example_teemakaart_kimber.jpeg" alt="Muististe jaotumise visualiseerimine  ja maastiku nähtavuse analüüsimine [@Kimber2016]" width="49%" /><img src="imgs/1_arheo_example_kimber_lohukivid_totalviewshed.jpg" alt="Muististe jaotumise visualiseerimine  ja maastiku nähtavuse analüüsimine [@Kimber2016]" width="49%" />
 <p class="caption">
-Joonis 1.11: Muististe jaotumise visualiseerimine ja maastiku nähtavuse analüüsimine <span class="citation">(<a href="kirjandus.html#ref-Kimber2016" role="doc-biblioref">Kimber 2016</a>)</span>
+Joonis 1.11: Muististe jaotumise visualiseerimine ja maastiku nähtavuse analüüsimine <span class="citation">(<a href="kirjandus.html#ref-Kimber2016">Kimber 2016</a>)</span>
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:arheo-example2"></span>
 <img src="imgs/1_arheo_example_haav_asulate_mudel.png" alt="Muinasaegsete asulakohtade ennustav mudeldamine [@Haav2014] ja kiviaegse maastiku rekonstruktsioonid (9700 - 5300 eKr) [@Rosentau2013]" width="49%" /><img src="imgs/1_arheo_example_rosentau2013.png" alt="Muinasaegsete asulakohtade ennustav mudeldamine [@Haav2014] ja kiviaegse maastiku rekonstruktsioonid (9700 - 5300 eKr) [@Rosentau2013]" width="49%" />
 <p class="caption">
-Joonis 1.12: Muinasaegsete asulakohtade ennustav mudeldamine <span class="citation">(<a href="kirjandus.html#ref-Haav2014" role="doc-biblioref">Haav 2014</a>)</span> ja kiviaegse maastiku rekonstruktsioonid (9700 - 5300 eKr) <span class="citation">(<a href="kirjandus.html#ref-Rosentau2013" role="doc-biblioref">Rosentau et al. 2013</a>)</span>
+Joonis 1.12: Muinasaegsete asulakohtade ennustav mudeldamine <span class="citation">(<a href="kirjandus.html#ref-Haav2014">Haav 2014</a>)</span> ja kiviaegse maastiku rekonstruktsioonid (9700 - 5300 eKr) <span class="citation">(<a href="kirjandus.html#ref-Rosentau2013">Rosentau et al. 2013</a>)</span>
 </p>
 </div>
 </div>
@@ -572,7 +650,7 @@ Joonis 1.12: Muinasaegsete asulakohtade ennustav mudeldamine <span class="citati
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:linguistics1"></span>
 <img src="imgs/1_pole_atlas.png" alt="'ei ole'/'pole' levikuandmed (murdeatlasest) ja 'pole' sagedusandmed (murdekorpusest) [@Lindström2019]" width="70%" />
 <p class="caption">
-Joonis 1.13: ‘ei ole’/‘pole’ levikuandmed (murdeatlasest) ja ‘pole’ sagedusandmed (murdekorpusest) <span class="citation">(<a href="kirjandus.html#ref-Lindström2019" role="doc-biblioref">Lindström et al. 2019</a>)</span>
+Joonis 1.13: ‘ei ole’/‘pole’ levikuandmed (murdeatlasest) ja ‘pole’ sagedusandmed (murdekorpusest) <span class="citation">(<a href="kirjandus.html#ref-Lindström2019">Lindström et al. 2019</a>)</span>
 </p>
 </div>
 </div>
@@ -581,7 +659,7 @@ Joonis 1.13: ‘ei ole’/‘pole’ levikuandmed (murdeatlasest) ja ‘pole’ 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:linguistics2"></span>
 <img src="imgs/1_hiippala.jpg" alt="Keeleline mitmekesisus Helsingi piirkonnas rahvastikuregistri vs. sotsiaalmeeedia postituste andmete põhjal [@Väisänen2022]" width="70%" />
 <p class="caption">
-Joonis 1.14: Keeleline mitmekesisus Helsingi piirkonnas rahvastikuregistri vs. sotsiaalmeeedia postituste andmete põhjal <span class="citation">(<a href="kirjandus.html#ref-Väisänen2022" role="doc-biblioref">Väisänen et al. 2022</a>)</span>
+Joonis 1.14: Keeleline mitmekesisus Helsingi piirkonnas rahvastikuregistri vs. sotsiaalmeeedia postituste andmete põhjal <span class="citation">(<a href="kirjandus.html#ref-Väisänen2022">Väisänen et al. 2022</a>)</span>
 </p>
 </div>
 </div>
@@ -590,13 +668,13 @@ Joonis 1.14: Keeleline mitmekesisus Helsingi piirkonnas rahvastikuregistri vs. 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:more-examples1"></span>
 <img src="imgs/1_example_france_trains_geddes2014.png" alt="Rongiliikluse areng Prantsusmaal [@Gregory2014]" width="60%" />
 <p class="caption">
-Joonis 1.15: Rongiliikluse areng Prantsusmaal <span class="citation">(<a href="kirjandus.html#ref-Gregory2014" role="doc-biblioref">Gregory et al. 2014</a>)</span>
+Joonis 1.15: Rongiliikluse areng Prantsusmaal <span class="citation">(<a href="kirjandus.html#ref-Gregory2014">Gregory et al. 2014</a>)</span>
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:more-examples2"></span>
 <img src="imgs/1_example_moncla_paris_street_mentions.png" alt="Pariisi tänavate nimetamine kirjanduses [@Moncla2019]" width="75%" />
 <p class="caption">
-Joonis 1.16: Pariisi tänavate nimetamine kirjanduses <span class="citation">(<a href="kirjandus.html#ref-Moncla2019" role="doc-biblioref">Moncla et al. 2019</a>)</span>
+Joonis 1.16: Pariisi tänavate nimetamine kirjanduses <span class="citation">(<a href="kirjandus.html#ref-Moncla2019">Moncla et al. 2019</a>)</span>
 </p>
 </div>
 </div>
@@ -610,9 +688,9 @@ Joonis 1.16: Pariisi tänavate nimetamine kirjanduses <span class="citation">(<a
 <p>Seminar.</p>
 <p>Lugemiseks valida üks artikkel kahest järgmisest:</p>
 <ul>
-<li>David J. Bodenhamer <span class="citation">(<a href="kirjandus.html#ref-Bodenhamer2010" role="doc-biblioref">2010</a>)</span>. <em>The Potential of Spatial Humanities</em><br />
+<li>David J. Bodenhamer <span class="citation">(<a href="kirjandus.html#ref-Bodenhamer2010">2010</a>)</span>. <em>The Potential of Spatial Humanities</em><br />
 </li>
-<li>Todd Presner &amp; David Shepard <span class="citation">(<a href="kirjandus.html#ref-Presner2015" role="doc-biblioref">2015</a>)</span>. <em>Mapping the Geospatial Turn</em></li>
+<li>Todd Presner &amp; David Shepard <span class="citation">(<a href="kirjandus.html#ref-Presner2015">2015</a>)</span>. <em>Mapping the Geospatial Turn</em></li>
 </ul>
 <p>Artiklite pdf-id leiad Moodle’ist.</p>
 <p><em>Arutlemiseks</em></p>

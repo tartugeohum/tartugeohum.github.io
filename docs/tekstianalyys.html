@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Praktikum 14 Geograafiline tekstianalüüs (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
   <meta name="description" content="Praktikum 14 Geograafiline tekstianalüüs (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Praktikum 14 Geograafiline tekstianalüüs (1) | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
@@ -52,14 +52,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.3/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.2.0/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.2.1/leaflet.js"></script>
 <link href="libs/leaflet-measure-2.1.7/leaflet-measure.css" rel="stylesheet" />
 <script src="libs/leaflet-measure-2.1.7/leaflet-measure.min.js"></script>
 <script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
@@ -68,10 +68,74 @@
 <link href="libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -348,6 +412,20 @@ div.csl-indent {
 <li class="chapter" data-level="18.5" data-path="veebirakendused.html"><a href="veebirakendused.html#lisa-ajatelje-kasutamine-qgisis"><i class="fa fa-check"></i><b>18.5</b> LISA: ajatelje kasutamine QGISis</a></li>
 <li class="chapter" data-level="18.6" data-path="veebirakendused.html"><a href="veebirakendused.html#järgmisel-korral-17"><i class="fa fa-check"></i><b>18.6</b> Järgmisel korral</a></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>19</b> Ruumiandmete analüüs R-iga</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="r.html"><a href="r.html#miks-teha-kaarte-koodipõhiselt"><i class="fa fa-check"></i><b>19.1</b> Miks teha kaarte koodipõhiselt?</a></li>
+<li class="chapter" data-level="19.2" data-path="r.html"><a href="r.html#r-rstudio-ja-r-markdown"><i class="fa fa-check"></i><b>19.2</b> R, RStudio ja R Markdown</a></li>
+<li class="chapter" data-level="19.3" data-path="r.html"><a href="r.html#pakettide-installimine"><i class="fa fa-check"></i><b>19.3</b> Pakettide installimine</a></li>
+<li class="chapter" data-level="19.4" data-path="r.html"><a href="r.html#kood"><i class="fa fa-check"></i><b>19.4</b> Kood</a></li>
+<li class="chapter" data-level="19.5" data-path="r.html"><a href="r.html#andmete-sisselugemine"><i class="fa fa-check"></i><b>19.5</b> Andmete sisselugemine</a></li>
+<li class="chapter" data-level="19.6" data-path="r.html"><a href="r.html#kaartide-tegemine"><i class="fa fa-check"></i><b>19.6</b> Kaartide tegemine</a></li>
+<li class="chapter" data-level="19.7" data-path="r.html"><a href="r.html#andmete-valimine-1"><i class="fa fa-check"></i><b>19.7</b> Andmete valimine</a></li>
+<li class="chapter" data-level="19.8" data-path="r.html"><a href="r.html#andmestike-ühendamine-1"><i class="fa fa-check"></i><b>19.8</b> Andmestike ühendamine</a></li>
+<li class="chapter" data-level="19.9" data-path="r.html"><a href="r.html#jooniste-eksportimine"><i class="fa fa-check"></i><b>19.9</b> Jooniste eksportimine</a></li>
+<li class="chapter" data-level="19.10" data-path="r.html"><a href="r.html#ülesanne-4"><i class="fa fa-check"></i><b>19.10</b> Ülesanne</a></li>
+<li class="chapter" data-level="19.11" data-path="r.html"><a href="r.html#r-i-raamatud-ja-juhendid"><i class="fa fa-check"></i><b>19.11</b> R-i raamatud ja juhendid</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
 </ul>
 
@@ -374,7 +452,7 @@ div.csl-indent {
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mappinglakes1"></span>
 <img src="imgs/14_mappinglakes1.jpg" alt="*Mapping the Lakes*: kahe poeedi reisikirjeldustes mainitud kohtade võrdlus [@Gregory&amp;Cooper2009]" width="120%" />
 <p class="caption">
-Joonis 14.1: <em>Mapping the Lakes</em>: kahe poeedi reisikirjeldustes mainitud kohtade võrdlus <span class="citation">(<a href="kirjandus.html#ref-Gregory&amp;Cooper2009" role="doc-biblioref">Gregory et al. 2009</a>)</span>
+Joonis 14.1: <em>Mapping the Lakes</em>: kahe poeedi reisikirjeldustes mainitud kohtade võrdlus <span class="citation">(<a href="kirjandus.html#ref-Gregory&amp;Cooper2009">Gregory et al. 2009</a>)</span>
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mappinglakes3"></span>
@@ -400,7 +478,7 @@ Joonis 14.4: Inglismaa Lake District ehk “järvemaa” piirkond (© User:Dilif
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:literarymapping"></span>
 <img src="imgs/14_literarymappingbook.PNG" alt="Literary Mapping in the Digital Age [@Cooper&amp;Donaldson&amp;Murrieta-Flores2016] (vaata [sisukorda](https://books.google.ee/books?id=v_EyDAAAQBAJ&amp;printsec=frontcover&amp;hl=et#v=onepage&amp;q&amp;f=false))" width="30%" />
 <p class="caption">
-Joonis 14.5: Literary Mapping in the Digital Age <span class="citation">(<a href="kirjandus.html#ref-Cooper&amp;Donaldson&amp;Murrieta-Flores2016" role="doc-biblioref">Cooper et al. 2016</a>)</span> (vaata <a href="https://books.google.ee/books?id=v_EyDAAAQBAJ&amp;printsec=frontcover&amp;hl=et#v=onepage&amp;q&amp;f=false">sisukorda</a>)
+Joonis 14.5: Literary Mapping in the Digital Age <span class="citation">(<a href="kirjandus.html#ref-Cooper&amp;Donaldson&amp;Murrieta-Flores2016">Cooper et al. 2016</a>)</span> (vaata <a href="https://books.google.ee/books?id=v_EyDAAAQBAJ&amp;printsec=frontcover&amp;hl=et#v=onepage&amp;q&amp;f=false">sisukorda</a>)
 </p>
 </div>
 <!-- Ehkki on ka digitaalseid kirjandusatlaseid, story mape jm, siis geograafiline tekstianalüüs erineb selle poolest, et tegeleb päriselt ka teksti kvantitatiivse analüüsiga, mitte ei kasuta seda lihtsalt illustratsiooniks. -->
@@ -470,7 +548,7 @@ Geoparsimine on seega laiem mõiste kui asukohamärgistamine või geokodeerimine
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:geoparsing"></span>
 <img src="imgs/14_geoparsing.png" alt="Geoparsimine ühendab kohanimede tuvastamise ja koordinaatidega sidumise [@Grittaetal2018]" width="80%" />
 <p class="caption">
-Joonis 14.6: Geoparsimine ühendab kohanimede tuvastamise ja koordinaatidega sidumise <span class="citation">(<a href="kirjandus.html#ref-Grittaetal2018" role="doc-biblioref">Gritta et al. 2017</a>)</span>
+Joonis 14.6: Geoparsimine ühendab kohanimede tuvastamise ja koordinaatidega sidumise <span class="citation">(<a href="kirjandus.html#ref-Grittaetal2018">Gritta et al. 2017</a>)</span>
 </p>
 </div>
 </div>
@@ -482,7 +560,7 @@ Joonis 14.6: Geoparsimine ühendab kohanimede tuvastamise ja koordinaatidega sid
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:london"></span>
 <img src="imgs/14_london.PNG" alt="Londoni kujutamine kirjanduses [@Heuseretal2016]" width="80%" />
 <p class="caption">
-Joonis 14.7: Londoni kujutamine kirjanduses <span class="citation">(<a href="kirjandus.html#ref-Heuseretal2016" role="doc-biblioref">Heuser et al. 2016</a>)</span>
+Joonis 14.7: Londoni kujutamine kirjanduses <span class="citation">(<a href="kirjandus.html#ref-Heuseretal2016">Heuser et al. 2016</a>)</span>
 </p>
 </div>
 <ul>
@@ -495,7 +573,7 @@ Joonis 14.7: Londoni kujutamine kirjanduses <span class="citation">(<a href="kir
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:london2"></span>
 <img src="imgs/14_london2.png" alt="Londoni kujutamine kirjanduses [@Heuseretal2016]" width="80%" />
 <p class="caption">
-Joonis 14.8: Londoni kujutamine kirjanduses <span class="citation">(<a href="kirjandus.html#ref-Heuseretal2016" role="doc-biblioref">Heuser et al. 2016</a>)</span>
+Joonis 14.8: Londoni kujutamine kirjanduses <span class="citation">(<a href="kirjandus.html#ref-Heuseretal2016">Heuser et al. 2016</a>)</span>
 </p>
 </div>
 <ul>
@@ -519,7 +597,7 @@ Joonis 14.8: Londoni kujutamine kirjanduses <span class="citation">(<a href="kir
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mappinglakes3567"></span>
 <img src="imgs/14_costsurface.png" alt="Kohtadest kirjutamine ja maastikud [@Murrieta-Flores2017]" width="50%" />
 <p class="caption">
-Joonis 14.9: Kohtadest kirjutamine ja maastikud <span class="citation">(<a href="kirjandus.html#ref-Murrieta-Flores2017" role="doc-biblioref">Murrieta-Flores et al. 2017</a>)</span>
+Joonis 14.9: Kohtadest kirjutamine ja maastikud <span class="citation">(<a href="kirjandus.html#ref-Murrieta-Flores2017">Murrieta-Flores et al. 2017</a>)</span>
 </p>
 </div>
 <ul>
@@ -528,7 +606,7 @@ Joonis 14.9: Kohtadest kirjutamine ja maastikud <span class="citation">(<a href=
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mappinglakes2"></span>
 <img src="imgs/14_mappinglakes2.PNG" alt="Kohtadest kirjutamine ja maastikud [@Murrieta-Flores2017]" width="50%" />
 <p class="caption">
-Joonis 14.10: Kohtadest kirjutamine ja maastikud <span class="citation">(<a href="kirjandus.html#ref-Murrieta-Flores2017" role="doc-biblioref">Murrieta-Flores et al. 2017</a>)</span>
+Joonis 14.10: Kohtadest kirjutamine ja maastikud <span class="citation">(<a href="kirjandus.html#ref-Murrieta-Flores2017">Murrieta-Flores et al. 2017</a>)</span>
 </p>
 </div>
 <ul>
