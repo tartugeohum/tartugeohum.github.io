@@ -48,7 +48,7 @@ Geomeetrilisi põhiobjekte ehk primitiive on 3:
 - **pind/areaal/polügoon/ala** (nt põld, mets, linn).
 
 
-```{r ruumiobjektid, echo=F, fig.show='hold', fig.align='center', out.width= "80%", fig.cap= "Punktid, jooned, polügoonid [@Ballas2018 : 13]"}
+```{r ruumiobjektid, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap= "Punktid, jooned, polügoonid [@Ballas2018 : 13]"}
 knitr::include_graphics(here::here("imgs", "3_points_lines_polygons.PNG"))
 ```
 
@@ -59,7 +59,7 @@ Mitmest punktist moodustub ühemõõtmeline **joon**, enamasti *murdjoon*, mille
 
 Joonest omakorda saab moodustada **polügooni**, mispuhul joone algus- ja lõpp-punkt kattuvad.  <!-- polügoonil saab määrata pindala ja ümbermõõdu-->
 
-```{r points-lines-polygons, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap= "Geomeetrilised objektid [@Bolstad2016 : 43]"}
+```{r points-lines-polygons, echo=F, fig.show='hold', fig.align='center', out.width= "40%", fig.cap= "Geomeetrilised objektid [@Bolstad2016 : 43]"}
 knitr::include_graphics(here::here("imgs", "3_Bolstad2016_pointslinespolygons.PNG"))
 ```
 
@@ -72,7 +72,7 @@ knitr::include_graphics(here::here("imgs", c("3_pringi1.PNG", "3_pringi2.PNG")))
 ```
 
 
-```{r pringi3, echo=F, fig.show='hold', fig.align='center', out.width= "100%", fig.cap= "Pringi Ohvrimäe raietööd [@Kaasik2018]"}
+```{r pringi3, echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap= "Pringi Ohvrimäe raietööd [@Kaasik2018]"}
 knitr::include_graphics(here::here("imgs", "3_pringi3.PNG"))
 ```
 
@@ -92,6 +92,8 @@ Topoloogilised suhted on aluseks topoloogiareeglitele, mis defineerivad, kuidas 
 
 ![Topoloogiareeglid ArcGISis](imgs/3_topology_rules_poster.pdf){width=80% height=700}
 
+<br>
+<br>
 
 Topoloogilisi suhteid ja reegleid kasutatakse näiteks siis, kui tahetakse planeerida võimalikult kiiret teekonda ühest punktist teise või hoonestuse paiknemist, aga ka paljuks muuks. Pelgaks visualiseerimiseks pole aga topoloogilisi suhteid andmebaasis vaja defineerida.   
 
@@ -107,7 +109,7 @@ Nii vektor- kui ka rasterandmeid saab hoida *geopackage*'i ([GPKG](https://en.wi
 
 Rastermudel peaks olema tõenäoliselt juba tuttav, kui oled kokku puutunud näiteks digifotodega või muude digiteeritud piltidega. Formaadid, nagu JPEG, TIFF, GIF jm, põhinevad kõik rastermudelil. Samuti põhinevad rastertehnoloogial nt kõiksugu LCD-monitorid.
 
-```{r raster, echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap= "Rastermudeli struktuur [@Bolstad2016 : 54]"}
+```{r raster, echo=F, fig.show='hold', fig.align='center', out.width= "40%", fig.cap= "Rastermudeli struktuur [@Bolstad2016 : 54]"}
 knitr::include_graphics(here::here("imgs", "3_raster_model.PNG"))
 ```
 
@@ -124,7 +126,7 @@ GISi seisukohast on eraldi liik rasterandmeid **satelliitpildid, aerofotod ja or
 Satelliitide eri sensorite ja kaamerate abil saadud info abil on võimalik kuvada suurt hulka maapinna omadusi ja protsesse. Erinevad satelliidid annavad erineva kvaliteediga pilte. 
 
 
-```{r satelliit, echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap= "EstCube-1 tehtud satelliitpilt ([https://www.estcube.com/](https://www.estcube.com/))"}
+```{r satelliit, echo=F, fig.show='hold', fig.align='center', out.width= "50%", fig.cap= "EstCube-1 tehtud satelliitpilt ([https://www.estcube.com/](https://www.estcube.com/))"}
 knitr::include_graphics(here::here("imgs", "3_estcube1.png"))
 ```
 
@@ -220,12 +222,4 @@ Vaata natuke ringi [siin](https://blog.ut.ee/time-for-challenge-30-maps-in-30-da
 Vaata ka *30 Day Map Challenge* käigus tehtud kaarte ([siin](https://30daymapchallenge.com/)). 
 
 
-## Ülesanne {#kasikirjalised}
-
-Kujuta ette, et Google Mapsi ei ole veel leiutatud ja paberkaardid on väga kallid, aga sulle on Tartusse külla tulnud sõber / perekonnaliige / tuttav / välismaa sõber, kes ei ole siin kunagi varem käinud. Joonista tema jaoks paberile Tartu kesklinna kaart ning lisa kaardile enda või tema jaoks tähtsamad kohad ning tagaküljele kirjuta ka, kellele kaart on mõeldud. 
-
-
-## Järgmisel korral
-
-Kolmapäeval räägime lähemalt kaartidest ja nende omadustest, koordinaatsüsteemidest ja projektsioonidest.  
 

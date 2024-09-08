@@ -10,9 +10,9 @@ output:
             split_bib: FALSE
             css: "style.css"
 author: "Maarja-Liisa Pilvik, Andres Kimber"
-date: "sügis 2023"
+date: "sügis 2024"
 documentclass: book
-bibliography: kirjandus.bib
+bibliography: ["kirjandus.bib"]  
 csl: harvard-european-archaeology.csl
 link-citations: yes
 ---
@@ -25,26 +25,22 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 ## Kursuse korraldusest
 
--   3 EAP  
--   **E** ja **K** 12.15-13.45  
--   Nädalad 4.-9., 11.-16. 10. nädal vaba, st **6. ja 8. novembril praktikume ei toimu.**   
--   Lossi 3-425  
--   Kontakt ja info: [maarja-liisa.pilvik\@ut.ee](mailto:maarja-liisa.pilvik@ut.ee){.email}  
--   Hindamine arvestuslik. Kursuse lõpuks peavad olema esitatud  
-    -   vabal valikul 2 kodutööd 3st. Esitamiseks aega kursuse lõpuni;    
-    -   lõpuprojekt. Esitlused 13. ja 18. detsembril. Lõpuprojekti esitamise tähtaeg **12.12 kell 12.00** päeval. Soovijatele konsultatsioon 11. detsembril praktikumi tavalisel toimumisajal.    
--   Kodutööde teemad:  
+- 3 EAP  
+- **E** kell 12.15-13.45  
+- Lossi 3-425  
+- Kontakt ja info: [maarja-liisa.pilvik\@ut.ee](mailto:maarja-liisa.pilvik@ut.ee){.email}  
+- Hindamine arvestuslik. Kursuse lõpuks peavad olema esitatud  
+    - vabal valikul 2 kodutööd 3st. Esitamiseks aega kursuse lõpuni;    
+    - lõpuprojekt. Esitlused 2. ja 9. detsembril. Lõpuprojekti esitamise tähtaeg **29. november 23:59**. Soovijatele konsultatsioonid kokku lepitud aegadel.    
+- Kodutööde teemad:  
     - *story map*'i (kaardiloo) tegemine,   
     - kaardi georefereerimine,   
     - andmestike ühendamine ja visualiseerimine.   
--   Arvestuse saamiseks tuleb võtta osa vähemalt 70% auditoorselt toimuvatest praktikumidest, st kohapeal tuleb osaleda vähemalt 16 kohtumisel 23st. Tänase praktikumi, 11., 13. ja 18. detsembri praktikumide eest läheb kohalkäimine kõikidel automaatselt kirja. Vajadusel on võimalikud erikokkulepped.  
--   Materjale hoitakse ja täiendatakse [**kursuse kodulehel**](https://tartugeohum.github.io) ja [**Moodle**](https://moodle.ut.ee/course/view.php?id=10284)**'is**.
+- Arvestuse saamiseks tuleb võtta osa vähemalt 70% auditoorselt toimuvatest praktikumidest, st kohapeal tuleb osaleda vähemalt 10 kohtumisel 14st. Vajadusel on võimalikud erikokkulepped. Tänase praktikumi eest läheb kohalkäimine kõikidel automaatselt kirja.  
+- Materjale hoitakse ja täiendatakse [**kursuse kodulehel**](https://tartugeohum.github.io) ja [**Moodle**](https://moodle.ut.ee/course/view.php?id=10284)**'is**.
+
 
 ## Mis on geoinfosüsteemid?
-
-```{r lotr-map, echo=F, fig.show='hold', fig.align='center', out.width= "75%", fig.cap = 'Eesti kujutatud "Sõrmuste Isanda" kaartide stiilis, [twitter.com/evelynuuemaa](https://twitter.com/evelynuuemaa/status/1291261715095662592?s=07&fbclid=IwAR1q6bpp4c7UNOTYph2YngZ7DrlBzrftR1gX2upWtoVNxLNzdFsgXZv_sVQ)'}
-knitr::include_graphics(here::here("imgs", "1_example_lotr_uuemaa.jpg"))
-```
 
 Geoinfosüsteem on **arvutipõhine süsteem ruumiliste ja mitteruumiliste andmete kogumiseks, haldamiseks, analüüsiks, visualiseerimiseks ja jagamiseks**. Selle abil on võimalik ruumisuhete kaudu mõista oma andmeid paremini või teisest vaatepunktist ning sedakaudu teha kaalutletumaid otsuseid.
 
@@ -56,25 +52,25 @@ knitr::include_graphics(here::here("imgs", "1_gis_wordcloud_wallentin2015.png"))
 knitr::include_graphics(here::here("imgs", "1_GISwordcloud.png"))
 ```
 
-Andmete
+Geoinfosüsteeme saab kasutada nii andmete  
 
--   kogumine (nt paberkaartide digiteerimine, päringud repositooriumidest, käsitsi sisestamine);\
--   haldamine (nt andmebaaside struktureerimine, dokumenteerimine);\
--   analüüs (nt erinevate andmekihtide ühendamine, kattuvate alade arvutamine, puuduvate väärtuste arvutamine, puhveralade arvutamine);\
--   visualiseerimine (nt kaartide koostamine ja kujundamine);\
--   jagamine (nt projektide majutamine veebis, andmete ja metaandmete publitseerimine).
+-   **kogumiseks** (nt paberkaartide digiteerimine, päringud repositooriumidest, käsitsi sisestamine);  
+-   **haldamiseks** (nt andmebaaside struktureerimine, dokumenteerimine);  
+-   **analüüsiks** (nt erinevate andmekihtide ühendamine, kattuvate alade, puuduvate väärtuste, puhveralade arvutamine);  
+-   **visualiseerimiseks** (nt kaartide koostamine ja kujundamine);  
+-   **jagamiseks** (nt projektide majutamine veebis, andmete ja metaandmete publitseerimine).  
 
 ```{r gis-umbrella, echo = FALSE, fig.align='center', out.width= "60%", fig.cap="GIS kui vihmavari, [What are Geographic Information Systems](http://spatialquerylab.com/FOSS4GAcademy/Lectures/GST101/L1/1-What_are_Geographic_Information_Systems.pdf)"}
 knitr::include_graphics(here::here("imgs", "1_intro_GISumbrella.PNG"))
 ```
 
-Ehkki vahel käsitletakse geoinfosüsteeme kui mingit kindlat tarkvara (nt ArcGIS), on GIS definitsioonilt pigem mingite funktsionaalsuste kogum. See tähendab ka seda, et erinevad tarkvarad või selle osad võivad spetsialiseeruda erinevatele GISi funktsioonidele ning mingeid funktsioone (nt andmete kogumine) ei pea üldse tarkvara abil täitma.
+Ehkki vahel käsitletakse geoinfosüsteeme kui mingit kindlat tarkvara (nt ArcGIS, QGIS), on GIS definitsioonilt pigem mingite funktsionaalsuste kogum. See tähendab ka seda, et erinevad tarkvarad või selle osad võivad spetsialiseeruda erinevatele GISi funktsioonidele.  
 
 ```{r gis-tarkvarad, echo=F, fig.show='hold', fig.align='center', out.width= "20%",  out.height="50%", fig.cap= "Populaarsed GIS tarkvarad"}
 knitr::include_graphics(here::here("imgs", c("1_arcgis_logo.jpg", "1_qgis_logo.png", "1_grassgis_logo.png", "1_Rlogo.png")))
 ```
 
-Kuigi GIS võib talletada ka mitteruumilist infot, moodustavad kõige olemuslikuma osa geoinfosüsteemidest siiski just ruumiandmed. Kõige sagedamini kasutatakse GISi geograafiliste andmete töötlemiseks, ent neid saab põhimõtteliselt kasutada mis tahes andmete jaoks, millel on mingid dimensioonid (nt väljamõeldud kohad; inimkeha; planeetide pinnad; puuviljad jne). Geoinfosüsteemidest võib seega kõige lihtsamal moel mõelda kui koordinaatidega varustatud andmebaasidest ja nende sisu analüüsimiseks ja visualiseerimiseks mõeldud tööriistadest.  
+Kuigi GIS võib talletada ka mitteruumilist infot, moodustavad kõige olemuslikuma osa geoinfosüsteemidest siiski just **ruumiandmed**. Kõige sagedamini kasutatakse GISi geograafiliste andmete töötlemiseks, ent neid saab põhimõtteliselt kasutada mis tahes andmete jaoks, millel on mingid dimensioonid (nt väljamõeldud kohad; inimkeha; planeetide pinnad; puuviljad jne). Geoinfosüsteemidest võib seega kõige lihtsamal moel mõelda kui koordinaatidega varustatud andmebaasidest ja nende sisu analüüsimiseks ja visualiseerimiseks mõeldud tööriistadest.  
 
 Tüüpiliselt toimub andmete analüüs GISis kihtide põhimõttel: eri tüüpi infot hoitakse erinevatel andmekihtidel ning nende ühendamisel sünteesitakse uut teadmist.  
 
@@ -112,30 +108,31 @@ embed_url("https://www.youtube.com/watch?v=3kFYsOHgDSo") %>% use_align("center")
 embed_url("https://www.youtube.com/watch?v=ryWcq7Dv4jE") %>% use_align("center")
 ```
 
--   GISi ulatuslikum areng toimus 1970ndatel ning 1980ndate lõpuks oli fookus juba sellel, kuidas parandada GISi kasutuskogemust.\
--   Esimestel aastakümnetel oli GIS põhiliselt haldus- ja militaarkasutuses. 1982. aastal tõi ESRI (Environmental Systems Research Institute, Inc.) välja **esimese kommertsliku GIS-toote**, ARC/INFO, mis põhines Harvard Laboratory Computer Graphicsi poolt arendatud esimesel vektoritega töötaval GISil. ESRI roll GIS-tarkvara arendajana on sellest alates ainult kasvanud.\
--   1990ndatest alates hakkas GISi **kasutajaskond kiiresti kasvama**. Seda soodustas järjest väiksemate, odavamate ja kiiremate arvutite tootmine, andmete ulatuslikum kättesaadavus ning uute satelliitide ja kaugseiretehnoloogia kasutuselevõtt.\
--   Viimast kaht kümnendit on iseloomustanud lisaks tehnoloogia jätkuvale arengule ka **vabavaralise GIS-tarkvara teke**, mis on teinud ruumiandmete kasutamise ja analüüsi kättesaadavamaks nii tavakasutajale kui ka talle pakutavate toodete arendajatele. On toimunud nn [**ruumiline revolutsioon (*Geospatial Revolution*)**](https://www.e-education.psu.edu/maps/l1_p2.html), mis on muutnud nii seda, kuidas me liigume, otsuseid teeme ja oma lugusid jagame.
+- GISi ulatuslikum areng toimus 1970ndatel ning 1980ndate lõpuks oli fookus juba sellel, kuidas parandada GISi kasutuskogemust.  
+- Esimestel aastakümnetel oli GIS põhiliselt haldus- ja militaarkasutuses. 1982. aastal tõi ESRI (Environmental Systems Research Institute, Inc.) välja **esimese kommertsliku GIS-toote**, ARC/INFO, mis põhines Harvard Laboratory Computer Graphicsi poolt arendatud esimesel vektoritega töötaval GISil. ESRI roll GIS-tarkvara arendajana on sellest alates ainult kasvanud.  
+- 1990ndatest alates hakkas GISi **kasutajaskond kiiresti kasvama**. Seda soodustas järjest väiksemate, odavamate ja kiiremate arvutite tootmine, andmete ulatuslikum kättesaadavus ning uute satelliitide ja kaugseiretehnoloogia kasutuselevõtt.  
+- Viimast kaht kümnendit on iseloomustanud lisaks tehnoloogia jätkuvale arengule ka **vabavaralise GIS-tarkvara teke**, mis on teinud ruumiandmete kasutamise ja analüüsi kättesaadavamaks nii tavakasutajale kui ka talle pakutavate toodete arendajatele. On toimunud nn [**ruumiline revolutsioon (*Geospatial Revolution*)**](https://www.e-education.psu.edu/maps/l1_p2.html), mis on muutnud nii seda, kuidas me liigume, otsuseid teeme ja oma lugusid jagame.  
 
 Praeguseks kasutatakse geoinfosüsteeme näiteks
 
--   telekommunikatsioonis,\
--   linnaplaneerimises (näiteks [Tallinna Ligipääsetavuse infosüsteem](https://lips.tallinn.ee/est)),\
--   logistikas, navigeerimises (näiteks [Veeteede Ameti Nutimer](https://gis.vta.ee/nutimeri/)),\
--   meteoroloogias,\
--   katastroofide ohjamisel ja leevendamisel,\
--   tervishoius,\
--   kuritegevuse analüüsil,\
--   ...
+- telekommunikatsioonis,  
+- linnaplaneerimises (näiteks [Tallinna Ligipääsetavuse infosüsteem](https://lips.tallinn.ee/est)),  
+- logistikas, navigeerimises (näiteks [Veeteede Ameti Nutimer](https://gis.vta.ee/nutimeri/)),  
+- meteoroloogias,  
+- katastroofide ohjamisel ja leevendamisel,  
+- tervishoius,  
+- kuritegevuse analüüsil,  
+- ...
 
-Vt veel rakendusvaldkondi nt [siit](https://grindgis.com/blog/gis-applications-uses).
+Vt veel rakendusvaldkondi nt [siit](https://grindgis.com/blog/gis-applications-uses).  
+
 
 
 
 ## Ruumiandmed ja GIS humanitaarteadustes
 
 Ehkki näiteks arheoloogias on ruum ja ruumiandmed olnud alati kesksel kohal, on teistes humanitaaria valdkondades (nt ajaloos, kirjandusteadustes) toimunud viimase paarikümne aasta jooksul nn **ruumiline pööre** (*Spatial Turn*). Ruumiline pööre algas tegelikult geograafia valdkonna seest: pelga inimelu või -tegevuse mahuti või "lava" tõlgenduse asemel seati fookusesse ruum kui pidevalt muutuv ja kompleksne sotsiaalne moodustis. See võimaldas leida enam ühist keelt ka sotsiaal- ja humanitaarteadlastega.  
-Humanitaarteadustes on küll *ruumi* ja *koha* mõistetel olnud alati üsna prominentne roll, ent ruumilise pöörde käigus seati fookus eksplitsiitselt sellele, kuidas sotsiaalsete muutuste ning laiemalt inimtegevuse seletamiseks tuleb võtta arvesse ka ruumilist komponenti. Sealjuures rõhutatakse, et ruum võib ajas muutuda ning et *ruumid* võivad olla nii füüsilis-geograafilised kui ka abstraktsed, metafoorsed või väljamõeldud (vt nt üle-eelmisel aastal ilmunud Keele & Kirjanduse erinumbrit ["Keel ja ruum"](https://keeljakirjandus.ee/ee/archives/issue/2020-8-9)). Nõnda on näiteks keskaegses kirjanduses narratiivi loomise seisukohast võrdselt olulised nii London kui ka Camelot; erinevate keelte kohaväljendeid (nt kaassõnu *ees*, *kõrval*, *taga*) uurides saame teada, kuidas mingi keele kõneleja end mõtteliselt millegi suhtes positsioneerib (kas absoluutselt või relatiivselt), kuidas tajutakse aega ruumisuhete kaudu jne.  
+Humanitaarteadustes on küll *ruumi* ja *koha* mõistetel olnud alati üsna prominentne roll, ent ruumilise pöörde käigus seati fookus eksplitsiitselt sellele, kuidas sotsiaalsete muutuste ning laiemalt inimtegevuse seletamiseks tuleb võtta arvesse ka ruumilist komponenti. Sealjuures rõhutatakse, et ruum võib ajas muutuda ning et *ruumid* võivad olla nii füüsilis-geograafilised kui ka abstraktsed, metafoorsed või väljamõeldud (vt nt Keele & Kirjanduse erinumbrit ["Keel ja ruum"](https://keeljakirjandus.ee/ee/archives/issue/2020-8-9)). Nõnda on näiteks keskaegses kirjanduses narratiivi loomise seisukohast võrdselt olulised nii London kui ka Camelot; erinevate keelte kohaväljendeid (nt kaassõnu *ees*, *kõrval*, *taga*) uurides saame teada, kuidas mingi keele kõneleja end mõtteliselt millegi suhtes positsioneerib (kas absoluutselt või relatiivselt), kuidas tajutakse aega ruumisuhete kaudu jne.  
 
 Ruumi asetamine kesksele positsioonile on digihumanitaaria katusmõiste alla sünnitanud interdistsiplinaarsed valdkonnad nimega **geohumanitaaria** (*GeoHumanities*) ja **ruumihumanitaaria** (*Spatial Humanities*), mis ühendavad GISi ja klassikalised ruumianalüüsi meetodid (nt teekondade arvutamine, kaartide koostamine) uuemate arvutuslike meetoditega (nt loomuliku keele töötlus, võrgustikuanalüüs, simulatsioonimudelid, tehisnärvivõrgud). Ruumihumanitaaria ja geohumanitaaria vaheline piir ei ole päris selge ning sageli kasutatakse mõisteid sünonüümidena, samuti on mõlemal valdkonnal suur ühisosa inimgeograafiaga. Kui aga eristust tehakse, siis loetakse geohumanitaaria valdkonda pigem konkreetsete, geograafiliste kohtade ja ruumidega tegelevad uurimused ning ruumihumanitaaria alla ka uurimused, mis analüüsivad sümboolseid, ähmaseid või väljamõeldud ruume.
 
@@ -187,25 +184,76 @@ knitr::include_graphics(here::here("imgs", "1_example_france_trains_geddes2014.p
 knitr::include_graphics(here::here("imgs", "1_example_moncla_paris_street_mentions.png"))
 ```
 
-## Küsitlus
 
-Palun täida Moodle'is lühike küsimustik.
 
-## Järgmisel korral
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_rara1.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[Rahvusraamatukogu andmestikud kaartidel](https://digilab.rara.ee/blogi/rara-andmestikud-kaartidel/) (RaRa digilabor)</p>
+</div>
+</div>
 
-Seminar.
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_rara2.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[Kultuuripärandi kujutamine kaartidel](https://digilab.rara.ee/blogi/digitaalsed-rannakud-ehk-kultuuriparandi-kujutamisest-kaartidel/) (RaRa digilabor)</p>
+</div>
+</div>
 
-Lugemiseks valida üks artikkel kahest järgmisest:
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_orbis.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[The Stanford Geospatial Network Model of the Roman World - ORBIS](https://orbis.stanford.edu/). ORBIS simuleerib liikumist Rooma impeeriumi aegse teedevõrgu peamistel marsruutidel, laevatatavatel jõgedel ja mereteedel Vahemeres, Mustal merel ja Atlandi ookeani rannikul ning rekonstrueerib interaktiivselt antiikaja reisi kestust ja rahalisi kulusid, võimaldades arvesse võtta ka erinevaid transpordiviise ja -vahendeid ning hooajalisi erinevusi.</p>
+</div>
+</div>
 
--   David J. Bodenhamer [-@Bodenhamer2010]. *The Potential of Spatial Humanities*\
--   Todd Presner & David Shepard [-@Presner2015]. *Mapping the Geospatial Turn*
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_saksadorpat.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[Virtuaalne kakskeelne kultuurilooline kaart "Saksa Tartu / Deutsches Dorpat"](https://muuseum.tartu.ee/tartu-dorpat/#) (Tartu Linnamuuseum). Kaart tutvustab Tartu linna kultuurilugu saksakeelsete linnakirjelduste ja nende tekstide eestikeelsete tõlgete kaudu. Valitud tekstide hulgas on katkendeid mälestustest, ilukirjandusest, reisikirjadest, aga ka mitmeid baltisaksa anekdoote Tartu kohta. Tekstid viivad uitama nii Emajõe äärde kui ka Toomemäele, annavad võimaluse põigata vanadesse kondiitriäridesse, tudengikõrtsidesse, loengusaalidesse ja mujalegi. </p>
+</div>
+</div>
 
-Artiklite pdf-id leiad Moodle'ist.
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_tallinn.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[Geocoded art](http://geocodedart.com/). Rakendus koondab maailma olulisemaid maastiku- ja meremaale ning võimaldab võrrelda kujutatut tegeliku asukohaga.</p>
+</div>
+</div>
 
-*Arutlemiseks*
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_lotr.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[LotrProject](http://lotrproject.com/) koondab erinevaid "Sõrmuste isandaga" seotud projekte, muu hulgas interaktiivseid kaarte ja ajajooni.</p>
+</div>
+</div>
 
--   Milliseid võimalusi geoinfosüsteemid humanitaariale pakuvad?\
--   Milliseid humanitaarteaduste ja GISi põrkumise probleemkohti artiklites kirjeldatakse?\
--   Kas need probleemkohad on maailma kontekstis endiselt aktuaalsed? Aga Eesti kontekstis?\
--   Milliseid murekohti näed arvutuslike meetodite ja arvutipõhiste tehnoloogiate laiema leviku juures humanitaarteadustes?\
--   Kas humanitaarteadused on omavahel ühildatavad? Aga teiste valdkondadega? Milline on interdistsiplinaarsete uurimuste/projektide olevik, milline tulevik?
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_ylejoe.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[Ülejõe paigad ja lood](https://muuseum.tartu.ee/kaardirakendus/) (Tartu linnamuuseum). Interaktiivne kaardirakendus, mille sisuks on Ülejõe praeguste ja endiste elanike lood ja mälestused Ülejõe erinevatest asutustest, paikadest, sündmustest ja elu-olust peamiselt Nõukogude okupatsiooni ajal.</p>
+</div>
+</div>
+
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_literatur.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[A Literary Atlas of Europe](https://www.literaturatlas.eu/en/index.html). Projekt, mille eesmärgiks on uurida, kaardistada ja omavahel võrrelda kolme Euroopa piirkonda kirjandusgeograafilisest vaatenurgast. Loodav andmebaas võimaldab mitmekesist temaatilist ja ruumilist analüüsi.</p>
+</div>
+</div>

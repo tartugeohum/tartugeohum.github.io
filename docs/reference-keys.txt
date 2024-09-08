@@ -383,3 +383,4 @@ andmestike-ühendamine-1
 jooniste-eksportimine
 ülesanne-4
 r-i-raamatud-ja-juhendid
+fig:unnamed-chunk-1
