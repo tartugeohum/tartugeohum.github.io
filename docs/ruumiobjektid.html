@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Praktikum 2 Ruumiobjektid ja ruumiandmed | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
   <meta name="description" content="Praktikum 2 Ruumiobjektid ja ruumiandmed | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Praktikum 2 Ruumiobjektid ja ruumiandmed | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
   <meta property="og:type" content="book" />
@@ -20,7 +20,7 @@
   
   
 
-<meta name="author" content="Maarja-Liisa Pilvik, Andres Kimber" />
+<meta name="author" content="Maarja-Liisa Pilvik" />
 
 
 
@@ -51,6 +51,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 
@@ -229,7 +230,7 @@ Joonis 2.6: Spagetistruktuur vs. topoloogiline struktuur <span class="citation"
 </div>
 <div id="rasterandmed" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Rasterandmed<a href="ruumiobjektid.html#rasterandmed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Rastermudelit</strong> kasutatakse eeskätt pidevate andmeobjektide (nn <em>väljade</em>) kujutamiseks. Rastermudelis jagatakse kogu ruum ühesuguste (kindla kujuga) osadega <strong>korrapäraseks</strong> võrguks ehk <em>rastriks</em>, nii et igale rastri elemendile saab koordinaatide abil ühtmoodi viidata ning et väljal ei oleks kattumisi ega tühimikke.</p>
+<p><strong>Rastermudelit</strong> kasutatakse eeskätt pidevate andmeobjektide (nn <em>väljade</em>) kujutamiseks. Rastermudelis jagatakse kogu ruum ühesuguste (kindla kujuga) osadega <strong>korrapäraseks</strong> võrguks ehk <em>rastriks</em>, nii et igale rastri elemendile saaks koordinaatide abil ühtmoodi viidata ning väljal ei oleks kattumisi ega tühimikke.</p>
 <p>Rastermudel peaks olema tõenäoliselt juba tuttav, kui oled kokku puutunud näiteks digifotodega või muude digiteeritud piltidega. Formaadid, nagu JPEG, TIFF, GIF jm, põhinevad kõik rastermudelil. Samuti põhinevad rastertehnoloogial nt kõiksugu LCD-monitorid.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:raster"></span>
 <img src="imgs/3_raster_model.PNG" alt="Rastermudeli struktuur [@Bolstad2016 : 54]" width="40%" />
@@ -239,7 +240,7 @@ Joonis 2.7: Rastermudeli struktuur <span class="citation">(<a href="kirjandus.ht
 </div>
 <p>Rastri üht elementi nimetatakse tavaliselt <strong>piksliks</strong> (<em>pixel</em> ehk <em>picture element</em>). Pikslid võivad olla igasuguse kujuga (nt kolmnurgad, kuusnurgad), ent enamasti on need siiski ruudukujulised. Olgugi, et piksel on olemuselt alati kahemõõtmeline, on piksli koordinaatideks selle keskpunkti koordinaadid. Ühel pikslil on terves oma ulatuses üks väärtus (vastaval alal kõige tüüpilisem või keskmine väärtus), mis täpsustab näiteks selle piksli värvi ja/või heleduse ning iseloomustab selle kaudu piksliga piiratud alas asuva ruumilise nähtuse mingit omadust. Selline omadus võib olla nii pidev (nt kõrgusinfo, mingi keelelise konstruktsiooni suhteline kasutussagedus) kui ka diskreetne (nt keelendi <em>A</em> vs. keelendi <em>B</em> kasutus).</p>
 <p>See, kui täpselt rastermudel mingile reaalse maailma andmeobjekti kujule vastab, sõltub sellest, kui suured on ühe rastri elemendi ehk piksli mõõtmed, ehk sellest, kui suur on resolutsioon ehk <strong>eraldusvõime/lahutusvõime</strong>. Mida kõrgem on eraldusvõime, seda täpsem rastermudel on, ent seda suurem on ka rasterandmete faili suurus; mida madalam on eraldusvõime, seda enam infot läheb kaotsi. Efektiivseks eraldusvõime määramiseks tuleks arvesse võtta nii kaardi mõõtkava kui ka muude kaardistatavate andmete väikseimat ühikut.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="imgs/3_Bolstad2016_rasters.PNG" alt="Rastri resolutsioon [@Bolstad2016 : 55]" width="80%" />
 <p class="caption">
 Joonis 2.8: Rastri resolutsioon <span class="citation">(<a href="kirjandus.html#ref-Bolstad2016">Bolstad 2016</a> : 55)</span>
@@ -371,13 +372,13 @@ Joonis 2.12: Maastiku nähtavuse analüüsimine <span class="citation">(<a href=
 </p>
 </div>
 <p>Samuti võib üht ja sama nähtust kuvada erinevat moodi, nii vektori kui ka rastrina.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
 <img src="imgs/3_okabe_2006.PNG" alt="Tänavaröövid Saitamas [@Okabe2006 : 8]" width="70%" />
 <p class="caption">
 Joonis 2.13: Tänavaröövid Saitamas <span class="citation">(<a href="kirjandus.html#ref-Okabe2006">Okabe 2006</a> : 8)</span>
 </p>
 </div>
-<p>Vaata natuke ringi <a href="https://blog.ut.ee/time-for-challenge-30-maps-in-30-days/">siin</a> ja <a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/30DayMapChallenge-2022-p880.html">siin</a>. Kas saad aru, millist tüüpi mudeleid on kasutatud?
+<p>Vaata natuke ringi <a href="https://blog.ut.ee/time-for-challenge-30-maps-in-30-days/">siin</a> ja <a href="https://geoportaal.maaamet.ee/est/ruumiandmed/30daymapchallenge-2023-p918.html">siin</a>. Kas saad aru, millist tüüpi mudeleid on kasutatud?
 Vaata ka <em>30 Day Map Challenge</em> käigus tehtud kaarte (<a href="https://30daymapchallenge.com/">siin</a>).</p>
 
 </div>

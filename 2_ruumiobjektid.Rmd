@@ -104,7 +104,7 @@ Nii vektor- kui ka rasterandmeid saab hoida *geopackage*'i ([GPKG](https://en.wi
 
 ## Rasterandmed
 
-**Rastermudelit** kasutatakse eeskätt pidevate andmeobjektide (nn *väljade*) kujutamiseks. Rastermudelis jagatakse kogu ruum ühesuguste (kindla kujuga) osadega **korrapäraseks** võrguks ehk *rastriks*, nii et igale rastri elemendile saab koordinaatide abil ühtmoodi viidata ning et väljal ei oleks kattumisi ega tühimikke. 
+**Rastermudelit** kasutatakse eeskätt pidevate andmeobjektide (nn *väljade*) kujutamiseks. Rastermudelis jagatakse kogu ruum ühesuguste (kindla kujuga) osadega **korrapäraseks** võrguks ehk *rastriks*, nii et igale rastri elemendile saaks koordinaatide abil ühtmoodi viidata ning väljal ei oleks kattumisi ega tühimikke. 
 
 
 Rastermudel peaks olema tõenäoliselt juba tuttav, kui oled kokku puutunud näiteks digifotodega või muude digiteeritud piltidega. Formaadid, nagu JPEG, TIFF, GIF jm, põhinevad kõik rastermudelil. Samuti põhinevad rastertehnoloogial nt kõiksugu LCD-monitorid.
@@ -218,7 +218,7 @@ knitr::include_graphics(here::here("imgs", "3_okabe_2006.PNG"))
 ```
 
 
-Vaata natuke ringi [siin](https://blog.ut.ee/time-for-challenge-30-maps-in-30-days/) ja [siin](https://geoportaal.maaamet.ee/est/Ruumiandmed/30DayMapChallenge-2022-p880.html). Kas saad aru, millist tüüpi mudeleid on kasutatud?
+Vaata natuke ringi [siin](https://blog.ut.ee/time-for-challenge-30-maps-in-30-days/) ja [siin](https://geoportaal.maaamet.ee/est/ruumiandmed/30daymapchallenge-2023-p918.html). Kas saad aru, millist tüüpi mudeleid on kasutatud?
 Vaata ka *30 Day Map Challenge* käigus tehtud kaarte ([siin](https://30daymapchallenge.com/)). 
 
 

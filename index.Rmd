@@ -9,7 +9,7 @@ output:
                     scroll_highlight: true
             split_bib: FALSE
             css: "style.css"
-author: "Maarja-Liisa Pilvik, Andres Kimber"
+author: "Maarja-Liisa Pilvik"
 date: "sügis 2024"
 documentclass: book
 bibliography: ["kirjandus.bib"]  
@@ -27,22 +27,31 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 - 3 EAP  
 - **E** kell 12.15-13.45  
-- Lossi 3-425  
+- Jakobi 2-105  
 - Kontakt ja info: [maarja-liisa.pilvik\@ut.ee](mailto:maarja-liisa.pilvik@ut.ee){.email}  
 - Hindamine arvestuslik. Kursuse lõpuks peavad olema esitatud  
     - vabal valikul 2 kodutööd 3st. Esitamiseks aega kursuse lõpuni;    
-    - lõpuprojekt. Esitlused 2. ja 9. detsembril. Lõpuprojekti esitamise tähtaeg **29. november 23:59**. Soovijatele konsultatsioonid kokku lepitud aegadel.    
+    - lõpuprojekt. Esitlused 2. ja 9. detsembril. Lõpuprojekti esitamise tähtaeg **29. november 23.59**. Soovijatele konsultatsioonid kokku lepitud aegadel.    
 - Kodutööde teemad:  
     - *story map*'i (kaardiloo) tegemine,   
     - kaardi georefereerimine,   
     - andmestike ühendamine ja visualiseerimine.   
-- Arvestuse saamiseks tuleb võtta osa vähemalt 70% auditoorselt toimuvatest praktikumidest, st kohapeal tuleb osaleda vähemalt 10 kohtumisel 14st. Vajadusel on võimalikud erikokkulepped. Tänase praktikumi eest läheb kohalkäimine kõikidel automaatselt kirja.  
+- Arvestuse saamiseks tuleb võtta osa vähemalt 70% auditoorselt toimuvatest praktikumidest, st kohapeal tuleb osaleda vähemalt 10 kohtumisel 14st. Vajadusel on võimalikud erikokkulepped. Tänase praktikumi eest läheb kohalkäimine kõikidele automaatselt kirja.  
 - Materjale hoitakse ja täiendatakse [**kursuse kodulehel**](https://tartugeohum.github.io) ja [**Moodle**](https://moodle.ut.ee/course/view.php?id=10284)**'is**.
 
 
 ## Mis on geoinfosüsteemid?
 
 Geoinfosüsteem on **arvutipõhine süsteem ruumiliste ja mitteruumiliste andmete kogumiseks, haldamiseks, analüüsiks, visualiseerimiseks ja jagamiseks**. Selle abil on võimalik ruumisuhete kaudu mõista oma andmeid paremini või teisest vaatepunktist ning sedakaudu teha kaalutletumaid otsuseid.
+
+Andmete  
+
+-   **kogumine**: nt paberkaartide digiteerimine, päringud repositooriumidest, käsitsi sisestamine;  
+-   **haldamine**: nt andmebaaside struktureerimine, dokumenteerimine;  
+-   **analüüs**: nt erinevate andmekihtide ühendamine, kattuvate alade, puuduvate väärtuste, puhveralade, teekondade arvutamine;  
+-   **visualiseerimine**: nt kaartide koostamine ja kujundamine;  
+-   **jagamine**: nt projektide majutamine veebis, andmete ja metaandmete publitseerimine.  
+
 
 ```{r gis-wordcloud, echo=F, fig.show='hold', fig.align='center', out.width= "80%", fig.cap= "Mida GISiga tehakse? [@Wallentin2015]"}
 knitr::include_graphics(here::here("imgs", "1_gis_wordcloud_wallentin2015.png"))
@@ -52,17 +61,7 @@ knitr::include_graphics(here::here("imgs", "1_gis_wordcloud_wallentin2015.png"))
 knitr::include_graphics(here::here("imgs", "1_GISwordcloud.png"))
 ```
 
-Geoinfosüsteeme saab kasutada nii andmete  
 
--   **kogumiseks** (nt paberkaartide digiteerimine, päringud repositooriumidest, käsitsi sisestamine);  
--   **haldamiseks** (nt andmebaaside struktureerimine, dokumenteerimine);  
--   **analüüsiks** (nt erinevate andmekihtide ühendamine, kattuvate alade, puuduvate väärtuste, puhveralade arvutamine);  
--   **visualiseerimiseks** (nt kaartide koostamine ja kujundamine);  
--   **jagamiseks** (nt projektide majutamine veebis, andmete ja metaandmete publitseerimine).  
-
-```{r gis-umbrella, echo = FALSE, fig.align='center', out.width= "60%", fig.cap="GIS kui vihmavari, [What are Geographic Information Systems](http://spatialquerylab.com/FOSS4GAcademy/Lectures/GST101/L1/1-What_are_Geographic_Information_Systems.pdf)"}
-knitr::include_graphics(here::here("imgs", "1_intro_GISumbrella.PNG"))
-```
 
 Ehkki vahel käsitletakse geoinfosüsteeme kui mingit kindlat tarkvara (nt ArcGIS, QGIS), on GIS definitsioonilt pigem mingite funktsionaalsuste kogum. See tähendab ka seda, et erinevad tarkvarad või selle osad võivad spetsialiseeruda erinevatele GISi funktsioonidele.  
 
@@ -91,6 +90,10 @@ Infotehnoloogia arenguga on muutunud võimalikuks säilitada digitaalsel kujul a
 ```{r koolerakaart, echo = FALSE, fig.align = 'center', out.width = "60%", fig.cap = "John Snow koolera leviku kaart (1855) ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Snow-cholera-map.jpg))"}
 knitr::include_graphics(here::here("imgs", "1_Snow-cholera-map.jpg"))
 ```
+
+<!--Enne 1960ndaid kartograafia ja teemakaartide joonistamine. John Snow (1854) koolerapuhang Londonis, kus ta kasutas ruumianalüüsi et tuvastada puhangu allikat.
+20. sajandi alguses kasutati kiledele joonistatud kaardikihte ning asetati need üksteisega kohakuti.-->
+
 
 ```{r ajajoon, echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "[GISi ajajoon](https://www.researchgate.net/figure/Timeline-of-major-GIS-events_fig1_315640751)"}
 knitr::include_graphics(here::here("imgs", "1_Timeline-of-major-GIS-events.png"))
@@ -157,9 +160,13 @@ Siiski on vahest enamgi neid, kes ühel või teisel moel ruumiandmeid ja geoinfo
 knitr::include_graphics(here::here("imgs", c("1_arheo_example_teemakaart_kimber.jpeg", "1_arheo_example_kimber_lohukivid_totalviewshed.jpg")))
 ```
 
-```{r arheo-example2, echo = FALSE, fig.show='hold', fig.align = 'center', out.width = "49%", fig.cap = "Muinasaegsete asulakohtade ennustav mudeldamine [@Haav2014] ja kiviaegse maastiku rekonstruktsioonid (9700 - 5300 eKr) [@Rosentau2013]"}
-knitr::include_graphics(here::here("imgs", c("1_arheo_example_haav_asulate_mudel.png", "1_arheo_example_rosentau2013.png")))
+```{r arheo-example2, echo = FALSE, fig.show='hold', fig.align = 'center', out.width = "49%", fig.cap = "Muinasaegsete asulakohtade ennustav mudeldamine [@Haav2014]"}
+knitr::include_graphics(here::here("imgs", c("1_arheo_example_haav_asulate_mudel.png")))
 ```
+
+<!--Rebala. Lohukivid rauaaja lõpuni u 450 pkr. Vaatas iga kivi ümbruse pinnareljeefi. Ei olnud tähtis, et kivi asuks mõnel künkal, seljandikul või hoopis madalamal alal. Millised vaated avanevad lohukivide juures seistes? Kas hea nähtavus oli oluline? Vaatevälja analüüs, põhineb lagedal reljeefil, ei arvesta pinnakattega. Kogu ala potentsiaalne nähtavus (totaalne vaateväli, arvutatakse vaateväli igast uuritava maastiku punktist). Lohukivide ja ümbritseva maastiku nähtavus ei erine omavahel statistiliselt olulisel määral: kivi valikul polnud oluline selle hea ega halb nähtavus, vaid muud aspektid. -->
+
+<!--Teadaolevate asulakohtade ja keraamikaleidude põhjal modelleeritud, kus tõenäoliselt veel asulaid võis paikneda.-->
 
 ### Keeleteadus
 
@@ -173,6 +180,7 @@ knitr::include_graphics("imgs/1_pole_atlas.png")
 knitr::include_graphics("imgs/1_hiippala.jpg")
 ```
 
+<!--Soome rahvastikuregistri 2015. aasta andmeid võrreldi Instagrami ja Twitteri sama aasta andmetega. Registris ka raporteeritud emakeel, aga mitmekeelsust ei ole registeeritud, seega ei kajasta tegelikku keelelist mitmekesisust. Sotsiaalmeedia asukohamärgisega postitused-->
 
 ### Veel näiteid
 
@@ -206,6 +214,25 @@ knitr::include_graphics(here::here("imgs", "1_example_moncla_paris_street_mentio
 
 <div style="display: flex; align-items: center;">
 <div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_saksadorpat.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[Virtuaalne kakskeelne kultuurilooline kaart "Saksa Tartu / Deutsches Dorpat"](https://muuseum.tartu.ee/tartu-dorpat/#) (Tartu Linnamuuseum). Kaart tutvustab Tartu linna kultuurilugu saksakeelsete linnakirjelduste ja nende tekstide eestikeelsete tõlgete kaudu. Valitud tekstide hulgas on katkendeid mälestustest, ilukirjandusest, reisikirjadest, aga ka mitmeid baltisaksa anekdoote Tartu kohta. Tekstid viivad uitama nii Emajõe äärde kui ka Toomemäele, annavad võimaluse põigata vanadesse kondiitriäridesse, tudengikõrtsidesse, loengusaalidesse ja mujalegi. </p>
+</div>
+</div>
+
+
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
+<img src="imgs/1_ylejoe.png" alt="Your Image" style="max-width: 100%; height: auto;">
+</div>
+<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
+<p>[Ülejõe paigad ja lood](https://muuseum.tartu.ee/kaardirakendus/) (Tartu linnamuuseum). Interaktiivne kaardirakendus, mille sisuks on Ülejõe praeguste ja endiste elanike lood ja mälestused Ülejõe erinevatest asutustest, paikadest, sündmustest ja elu-olust peamiselt Nõukogude okupatsiooni ajal.</p>
+</div>
+</div>
+
+<div style="display: flex; align-items: center;">
+<div style="flex: 1; text-align: center; padding-right: 10px;">
 <img src="imgs/1_orbis.png" alt="Your Image" style="max-width: 100%; height: auto;">
 </div>
 <div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
@@ -213,14 +240,6 @@ knitr::include_graphics(here::here("imgs", "1_example_moncla_paris_street_mentio
 </div>
 </div>
 
-<div style="display: flex; align-items: center;">
-<div style="flex: 1; text-align: center; padding-right: 10px;">
-<img src="imgs/1_saksadorpat.png" alt="Your Image" style="max-width: 100%; height: auto;">
-</div>
-<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
-<p>[Virtuaalne kakskeelne kultuurilooline kaart "Saksa Tartu / Deutsches Dorpat"](https://muuseum.tartu.ee/tartu-dorpat/#) (Tartu Linnamuuseum). Kaart tutvustab Tartu linna kultuurilugu saksakeelsete linnakirjelduste ja nende tekstide eestikeelsete tõlgete kaudu. Valitud tekstide hulgas on katkendeid mälestustest, ilukirjandusest, reisikirjadest, aga ka mitmeid baltisaksa anekdoote Tartu kohta. Tekstid viivad uitama nii Emajõe äärde kui ka Toomemäele, annavad võimaluse põigata vanadesse kondiitriäridesse, tudengikõrtsidesse, loengusaalidesse ja mujalegi. </p>
-</div>
-</div>
 
 <div style="display: flex; align-items: center;">
 <div style="flex: 1; text-align: center; padding-right: 10px;">
@@ -240,14 +259,6 @@ knitr::include_graphics(here::here("imgs", "1_example_moncla_paris_street_mentio
 </div>
 </div>
 
-<div style="display: flex; align-items: center;">
-<div style="flex: 1; text-align: center; padding-right: 10px;">
-<img src="imgs/1_ylejoe.png" alt="Your Image" style="max-width: 100%; height: auto;">
-</div>
-<div style="flex: 1; padding-left: 10px; background-color: #ffffff;">
-<p>[Ülejõe paigad ja lood](https://muuseum.tartu.ee/kaardirakendus/) (Tartu linnamuuseum). Interaktiivne kaardirakendus, mille sisuks on Ülejõe praeguste ja endiste elanike lood ja mälestused Ülejõe erinevatest asutustest, paikadest, sündmustest ja elu-olust peamiselt Nõukogude okupatsiooni ajal.</p>
-</div>
-</div>
 
 <div style="display: flex; align-items: center;">
 <div style="flex: 1; text-align: center; padding-right: 10px;">
