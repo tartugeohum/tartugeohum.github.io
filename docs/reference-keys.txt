@@ -59,6 +59,14 @@ fig:mapbox9
 fig:mapbox10
 fig:mapbox11
 fig:mapbox12
+fig:storymaps1
+fig:storymaps2
+fig:storymaps3
+fig:storymaps4
+fig:storymaps5
+fig:storymaps51
+fig:storymaps6
+fig:storymaps7
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
@@ -93,3 +101,8 @@ mapbox-studio
 kaardistiili-kohandamine
 oma-andmete-lisamine
 kaardijagamine
+storymaps
+story-maps
+storymapjs
+arcgis-storymaps
+ülesanne-tänane-kuupäev-story-mapis
