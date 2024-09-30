@@ -205,6 +205,35 @@ knitr::include_graphics(here::here("imgs", "5_qgis_harjutus2.png"))
 ```
 
 
+Lahenduskäik (üks võimalikest):  
+
+- Lisame WFS-teenuse kaudu valdade aluskaardi: `Layer → Add Layer → Add WFS / OGC API - Features Layer`. Loome uue ühenduse (`New`), ühenduse nimeks paneme näiteks *Maa-ameti ajalooline haldus*, URL-ribale kleebime aadressi `https://teenus.maaamet.ee/ows/wms-ajalooline-haldus?`. Vajutame `OK`. Loome kaardiserveriga ühenduse (`Connect`) ning valime pakutud kihtide hulgast kihi `Vald 1922 (ms:vallad_1922)`. Vajutame `Add`, avanenud hüpikaknas vajutame `Add Layers` ning sulgeme andmete sisselugemise akna.    
+- Kui QGISi sisseloetud kihtide hulgas pole veel vallakohtute punktikihti, avame ka selle (vt jaotist `Andmete sisselugemine CSV-failist`).   
+- Teeme valdade polügoonikihil (`ms:vallad_1922`) topeltkliki ning liigume jaotisse `Symbology`. `Fill → Simple Fill` all valime **`Fill color`** väärtuseks kollase värvi HEX/HTML-koodiga `#d6bf15`, **`Fill style`** väärtuseks `Dense 1`, piirjoonte paksuseks 0,1 mm (**`Stroke width`**), piirjoonte värviks tumesinise värvi HEX/HTML-koodiga `#1d5060` (**`Stroke color`**).   
+
+```{r qgisharjutus1, echo=F, fig.show='hold', fig.align='center', out.width= "50%"}
+knitr::include_graphics(here::here("imgs", "5_qgis_ex1.png"))
+```
+
+- Teeme topeltkliki vallakohtuprotokollide punktikihil ja liigume samuti jaotisse `Symbology`. `Marker → Simple Marker` all valime **`Symbol layer type`** väärtuseks `SVG Marker`, suuruseks (**`Size`**) 6 mm, **`SVG browser`** aknast valime `App Symbols → amenity` ning valime kaalu ikooni.       
+
+```{r qgisharjutus2, echo=F, fig.show='hold', fig.align='center', out.width= "50%"}
+knitr::include_graphics(here::here("imgs", "5_qgis_ex2.png"))
+```
+
+- Nüüd lisame kaalu ikoonidele alla veel oranžid kastikesed, klikkides `Marker → SVG Marker` kastikese kõrval rohelisel plussmärgil (`Add symbol layer`). Tekkinud punktisümboli (`Simple Marker`) liigutame SVG markeri alla, kasutades sinist noolt kastikese kõrval (`Move down`). `Simple Marker` sümboli suuruseks määrame 6,4 mm (**`Size`**), värviks (**`Fill color`**) oranži HEX/HTML-koodiga `#f29b31`, piirjoone värviks (**`Stroke color`**) pruuni värvi, nt HEX/HTML-koodiga `#7d642a`. Oranžile kastikesele lisame ka varju. Selleks kerime `Simple Marker` kujundusvalikute all lõppu välja, teeme linnukese valiku `Draw effects` ette ning klikime kollasel tähekesel. Lisaks valikule `Source` teeme linnukese ka valiku `Drop Shadow` ette.       
+
+```{r qgisharjutus3, echo=F, fig.show='hold', fig.align='center', out.width= "50%"}
+knitr::include_graphics(here::here("imgs", "5_qgis_ex3.png"))
+```
+
+- Lõpuks lisame valdadele valla nimedega sildid. Selleks teeme vallakohtuprotokollide punktikihil topeltkliki ja liigume jaotisse **`Labels`**. `No Labels` asemel valime `Single Labels` ning `Value` väärtuseks tulba `Vald`. Teksti suuruseks (**`Text → Size`**) määrame 8 punkti, joonistame siltidele kollase tausta (**`Background → Draw background`**) HEX/HTML-värvikoodiga `#dacd81`, taustapuhvri suuruseks määrame igast küljest 1 punkti (**`Size X`** ja **`Size Y`**), paigutame sildid sümbolite kohale (**`Placement → General Settings → Mode → Offset from Point`**, `Quadrant` üleval keskel, `Offset Y`: -3,5), lubame siltidel ka kattuda (**`Rendering → Overlapping labels → Mode → Allow Overlaps without Penalty`**), kattuvate siltide paremaks paigutamiseks lubame ka viiktekste (**`Callouts → Draw callouts`**), viiktekstide jooned teeme pruunikaks (HEX/HTML-kood `#655629`) ja paksemaks (0,5 mm), joone alguspunkti liigutame sümbolist kaugemale (`Offset from feature` väärtuseks nt 4 mm). Lõpuks kasutame siltide käsitsi liigutamise tööriista (kollane silt `abc`, mille all on sinisel taustal valge nool), et liigutada sildid sobivasse kohta.  
+
+```{r qgisharjutus4, echo=F, fig.show='hold', fig.align='center', out.width= "70%"}
+knitr::include_graphics(here::here("imgs", "5_qgis_ex4.png"))
+```
+
+
 ## Kaartide eksportimine
 
 Kui kaardiaknas on kaart valmis, siis võib selle salvestada pildina.  

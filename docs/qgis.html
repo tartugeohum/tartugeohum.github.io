@@ -402,6 +402,27 @@ Protokollikihi markerite puhul kombineeri selleks variante <code>Simple Marker</
 Joonis 5.12: Vallakohtuprotokollide kaart
 </p>
 </div>
+<p>Lahenduskäik (üks võimalikest):</p>
+<ul>
+<li>Lisame WFS-teenuse kaudu valdade aluskaardi: <code>Layer → Add Layer → Add WFS / OGC API - Features Layer</code>. Loome uue ühenduse (<code>New</code>), ühenduse nimeks paneme näiteks <em>Maa-ameti ajalooline haldus</em>, URL-ribale kleebime aadressi <code>https://teenus.maaamet.ee/ows/wms-ajalooline-haldus?</code>. Vajutame <code>OK</code>. Loome kaardiserveriga ühenduse (<code>Connect</code>) ning valime pakutud kihtide hulgast kihi <code>Vald 1922 (ms:vallad_1922)</code>. Vajutame <code>Add</code>, avanenud hüpikaknas vajutame <code>Add Layers</code> ning sulgeme andmete sisselugemise akna.<br />
+</li>
+<li>Kui QGISi sisseloetud kihtide hulgas pole veel vallakohtute punktikihti, avame ka selle (vt jaotist <code>Andmete sisselugemine CSV-failist</code>).<br />
+</li>
+<li>Teeme valdade polügoonikihil (<code>ms:vallad_1922</code>) topeltkliki ning liigume jaotisse <code>Symbology</code>. <code>Fill → Simple Fill</code> all valime <strong><code>Fill color</code></strong> väärtuseks kollase värvi HEX/HTML-koodiga <code>#d6bf15</code>, <strong><code>Fill style</code></strong> väärtuseks <code>Dense 1</code>, piirjoonte paksuseks 0,1 mm (<strong><code>Stroke width</code></strong>), piirjoonte värviks tumesinise värvi HEX/HTML-koodiga <code>#1d5060</code> (<strong><code>Stroke color</code></strong>).</li>
+</ul>
+<p><img src="imgs/5_qgis_ex1.png" width="50%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Teeme topeltkliki vallakohtuprotokollide punktikihil ja liigume samuti jaotisse <code>Symbology</code>. <code>Marker → Simple Marker</code> all valime <strong><code>Symbol layer type</code></strong> väärtuseks <code>SVG Marker</code>, suuruseks (<strong><code>Size</code></strong>) 6 mm, <strong><code>SVG browser</code></strong> aknast valime <code>App Symbols → amenity</code> ning valime kaalu ikooni.</li>
+</ul>
+<p><img src="imgs/5_qgis_ex2.png" width="50%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Nüüd lisame kaalu ikoonidele alla veel oranžid kastikesed, klikkides <code>Marker → SVG Marker</code> kastikese kõrval rohelisel plussmärgil (<code>Add symbol layer</code>). Tekkinud punktisümboli (<code>Simple Marker</code>) liigutame SVG markeri alla, kasutades sinist noolt kastikese kõrval (<code>Move down</code>). <code>Simple Marker</code> sümboli suuruseks määrame 6,4 mm (<strong><code>Size</code></strong>), värviks (<strong><code>Fill color</code></strong>) oranži HEX/HTML-koodiga <code>#f29b31</code>, piirjoone värviks (<strong><code>Stroke color</code></strong>) pruuni värvi, nt HEX/HTML-koodiga <code>#7d642a</code>. Oranžile kastikesele lisame ka varju. Selleks kerime <code>Simple Marker</code> kujundusvalikute all lõppu välja, teeme linnukese valiku <code>Draw effects</code> ette ning klikime kollasel tähekesel. Lisaks valikule <code>Source</code> teeme linnukese ka valiku <code>Drop Shadow</code> ette.</li>
+</ul>
+<p><img src="imgs/5_qgis_ex3.png" width="50%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Lõpuks lisame valdadele valla nimedega sildid. Selleks teeme vallakohtuprotokollide punktikihil topeltkliki ja liigume jaotisse <strong><code>Labels</code></strong>. <code>No Labels</code> asemel valime <code>Single Labels</code> ning <code>Value</code> väärtuseks tulba <code>Vald</code>. Teksti suuruseks (<strong><code>Text → Size</code></strong>) määrame 8 punkti, joonistame siltidele kollase tausta (<strong><code>Background → Draw background</code></strong>) HEX/HTML-värvikoodiga <code>#dacd81</code>, taustapuhvri suuruseks määrame igast küljest 1 punkti (<strong><code>Size X</code></strong> ja <strong><code>Size Y</code></strong>), paigutame sildid sümbolite kohale (<strong><code>Placement → General Settings → Mode → Offset from Point</code></strong>, <code>Quadrant</code> üleval keskel, <code>Offset Y</code>: -3,5), lubame siltidel ka kattuda (<strong><code>Rendering → Overlapping labels → Mode → Allow Overlaps without Penalty</code></strong>), kattuvate siltide paremaks paigutamiseks lubame ka viiktekste (<strong><code>Callouts → Draw callouts</code></strong>), viiktekstide jooned teeme pruunikaks (HEX/HTML-kood <code>#655629</code>) ja paksemaks (0,5 mm), joone alguspunkti liigutame sümbolist kaugemale (<code>Offset from feature</code> väärtuseks nt 4 mm). Lõpuks kasutame siltide käsitsi liigutamise tööriista (kollane silt <code>abc</code>, mille all on sinisel taustal valge nool), et liigutada sildid sobivasse kohta.</li>
+</ul>
+<p><img src="imgs/5_qgis_ex4.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="kaartide-eksportimine" class="section level2 hasAnchor" number="5.5">
