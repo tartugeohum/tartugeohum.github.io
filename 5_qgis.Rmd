@@ -1,0 +1,225 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+# Sissejuhatus QGISi {#qgis}
+
+QGIS (varasemalt Quantum GIS) on **vabavaraline** ja **avatud lähtekoodiga** geoinfosüsteemide tarkvara, mida saab kasutada kõikide tuntumate operatsioonisüsteemidega. QGISis saab rakendada kõiki põhilisi ruumiandmete analüüsi meetodeid ning funktsionaalsuselt ei jää see sugugi alla kommertstarkvarale (nt ArcGIS).  
+
+## Installimine ja seadistamine
+
+QGISil on alati kaks hetkeversiooni: stabiilne *Long Term Release* (LTR) ja uusimate võimaluste *Latest Release* (LR), lisaks on mõlemast vaheversioonid (*Point Release*), milles parandatakse ainult varasema versiooni vigu, aga ei muudeta midagi muud (nt ei lisata uusi tööriistu). Väga suuri erinevusi LTR ja LR vahel ei ole, eriti selle kursuse raames käsitletavate tööriistade osas. Arvutiklassi arvutitesse peaks olema installitud kõige hiljutisem stabiilne versioon **3.34 'Prizren'**, järgmine stabiilne versioon (3.40) tuleb aga välja juba 25. oktoobril. Kel huvi, võib vaadata lähemalt ka [väljalaskegraafikut](https://www.qgis.org/resources/roadmap/). 
+
+QGISi saab alla laadida programmi [ametlikult kodulehelt](https://www.qgis.org/download/), valides enda arvuti operatsioonisüsteemile sobiva variandi. Allalaadimine võib pisut aega võtta. Kui allalaadimine on lõppenud, avame faili ning installime programmi. Kasutame vaikimisi valikuid.  
+
+Avame programmi **QGIS Desktop**.  
+
+```{r qgis334, echo=F, fig.show='hold', fig.align='center', out.width= "50%"}
+knitr::include_graphics(here::here("imgs", "5_qgis334.webp"))
+```
+
+### Kasutajaliidese keel
+
+Sageli on QGIS esimesel korral avades **eestikeelne**. See on küll tore, aga kahjuks on tõlge kohati poolik ning internetist abi otsides on eestikeelsetest siltidest ja terminitest vähe kasu. Niisiis kasutame kursusel **ingliskeelset** versiooni. Selleks saab valida ülaserva menüüst `Seaded → Suvandid → Üldine` ning teha linnuke valiku `Override System Locale` ette. Vahetame ainult kasutajaliidese keele (`User Interface Translation`) ning vajutame allservas `OK`. **Sulgeme QGISi ja avame uuesti**. Nüüd ongi programm ingliskeelne.
+
+```{r qgislanguage, echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap="Kasutajaliidese keele seadistamine QGISis"}
+knitr::include_graphics(here::here("imgs", "5_qgis_changelanguage.png"))
+```
+
+### Vaikimisi koordinaatide referentssüsteem
+
+Kuna enamik harjutusi kursusel käsitlevad Eesti ruumiandmeid, oleks mõistlik valida vaikimisi koordinaatide referentssüsteemiks (*CRS*) Eesti süsteemi.  
+Valime menüü ülaservast `Settings → Options → CRS and Transforms → CRS Handling → CRS for Projects → Use a default CRS`. Klikime rippmenüü kõrval ikoonil ja otsime süsteemi **Estonian Coordinate System of 1997** ehk [L-EST97](https://geoportaal.maaamet.ee/est/Ruumiandmed/Geodeetilised-andmed/Eesti-geodeetiline-susteem/L-EST97-koordinaatsusteem-p173.html), mille [EPSG](https://en.wikipedia.org/wiki/EPSG_Geodetic_Parameter_Dataset) kood on **EPSG:3301**. Valime sama referentssüsteemi ka `CRS for Layers` valiku juures.  
+Vahetame ära ka praeguse projekti CRSi. Selleks klikime ekraani alumises paremas nurgas maakera ikooni kõrval ning valime seal EPSG:3301 koodiga CRSi.
+
+```{r qgisproj, echo=F, fig.show='hold', fig.align='center', out.width= "49%", fig.cap="Koordinaatide referentssüsteemi vahetamine QGISis"}
+knitr::include_graphics(here::here("imgs", c("5_qgis_projection.png", "5_qgis_projection2.png")))
+```
+
+
+### Paneelid ja tööriistad
+
+Vaikimisi nähaolevaid paneele ja tööriistu saab muuta, valides vastavalt `View → Panels` ja `View → Toolbars`. Soovitatav on vaikmisi mitte näidata brauseri paneeli (`Browser`), kuna see võib QGISi muuta mingites operatsioonisüsteemides aeglaseks ning programmi hakata kokku jooksutama.  
+
+
+<br>
+<br>
+
+Loome enda arvutisse kursuse kausta (nt nimega `geohum_2024`) ning salvestame sinna QGISi (hetkel ilma sisuta) projekti: ülamenüüst `Project → Save`. **Praktikumi jooksul võiks projekti aeg-ajalt salvestada!**  
+
+Vaatame QGISi kasutajaliidest. Suurde keskel olevasse aknasse ilmuvad kaardid ja ruumiandmete kihid graafiliselt. Vasakul on kihtide aken *Layers*. Allservas näeme kursori asukoha koordinaate, mõõtkava, mida saab seal ka muuta, ning paremal nurgas on koordinaatide referentssüsteem, mis peaks nüüd olema EPSG:3301. Ülemises servas on menüüd ja kõiksugu tööriistad.  
+
+
+## Aluskaardid {#aluskaardid}
+
+Nagu varasemates praktikumides nägime, on olemas rohkelt aluskaarte, mida erinevates rakendustes põhiliselt teemakaartide tegemisel kasutatakse. QGISis saab neid kasutada näiteks WMS-, WFS- või WCS-teenuste (vastavalt *web map service*, *web feature service* ja *web coverage service*) või pistikprogrammide (*plugins*) kaudu.  
+
+Eesti aluskaartide jaoks saab **WMS**-teenuse kaudu kasutada peaaegu kõiki [Maa-ameti XGISi kaardirakenduses](https://xgis.maaamet.ee/xgis2/page/app/maainfo) olevaid kihte. Täpsemalt saab lugeda Maa-ameti [WMS-teenuste lehelt](https://geoportaal.maaamet.ee/est/teenused/wms-wfs-wcs-teenused-p65.html). Lisaks saab luua WMS-teenuse kaudu ühenduse kõiksugu muude ruumiandmete serveritega üle maailma (vt nt [terrestris](https://www.terrestris.de/de/openstreetmap-wms/) või otsi üles eri riikide ametlike geoportaalide teenused). Erinevalt WFS-teenusest (vektorandmete jaoks) ja WCS-teenusest (rasterandmete jaoks), saab WMS-teenuse kaarte kasutada sisuliselt ainult aluskaartide jaoks ja visualiseerimiseks. Päringuid, valikuid jm toiminguid nendega teha ei saa, kuna tegemist on lihtsalt piltidega.  
+
+
+- WMS-teenusest aluskaardi lisamiseks valime menüüst **`Layer → Add Layer → Add WMS/WMTS layer`**.  
+- Lisame uue ühenduse (`New`). Avanenud aknas määrame ühenduse nimeks (`Name`) näiteks *Maa-ameti aluskaart* ning URLi juurde kopeerime aadressi <https://kaart.maaamet.ee/wms/alus?>. Vajutame `OK`. Nüüd on paika pandud, millise Maa-ameti kaardiserveriga QGIS ühenduse loob, aga ühendust ennast ei ole veel tekkinud.  
+- Klikime ühenduse loomiseks nupul `Connect`. Valime serverist laetud kihtide hulgast näiteks `138 MAANTEED` ning klikime nupul `Add`.  
+- Lisame veel ühe ühenduse (`New`). Seal kirjutame nime lahtrisse *Maa-ameti fotokaart* ning URLi juurde kopeerime aadressi <https://kaart.maaamet.ee/wms/fotokaart?>. Vajutame `OK`.  
+- Klikime uue ühenduse loomiseks nupul `Connect`. Valime serverist kihi `6 vreljeef` ning klikime nupul `Add`. Sulgeme akna.  
+- Sikutame `Layers` paneelil teede kihi värvilise reljeefvarjutuse kihi peale, vastasel juhul ei ole teid näha.  
+
+```{r qgiswms, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap="WMS-teenuse aluskaart QGISis"}
+knitr::include_graphics(here::here("imgs", "5_qgis_wms.png"))
+```
+
+Kui teeme nüüd näiteks värvilise reljeefvarjutuse kihil paremkliki ja valime `Properties`, saame vaadata kihi omadusi. Ühtlasi näeme, et visuaalselt saame kihti teha ainult läbipaistva(ma)ks (jaotis `Transparency`), mustvalgeks, kontrastsemaks, heledamaks jms (jaotis `Symbology`), nii nagu ka tavalise pildifaili puhul.  
+
+
+Saame aluskaarte kasutada ka **pistikprogrammide** kaudu (nt **QuickMapServices**).
+
+- Valime ülaservas menüüst `Plugins → Manage and Install Plugins`. Otsingusse kirjutame `Quickmap`, valime leitud pistikprogrammi `QuickMapServices` ning installime selle. Sulgeme akna.  
+- Järgmiseks valime ülamenüüst **`Web → QuickMapServices`** ning sealt mõne teenusepakkuja aluskaardi. Esimest korda pistikprogrammi kasutades võiks laadida ka suuremat aluskaartide valikut pakkuva lisapaketi **`Web → QuickMapServices → Settings → More services → Get contributed pack`**.    
+
+Võid nüüd vasakul paneelil kihte sisse ja välja lülitada või ära kustutada. Suumi ka veidi Eesti alalt välja ning vaata, milline näeb välja ülejäänud maailm Eesti projektsiooni kasutades.  
+
+```{r qgisbasemaps, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap="ESRI aluskaart QGISis"}
+knitr::include_graphics(here::here("imgs", "5_qgis_basemaps.png"))
+```
+
+
+## Andmete avamine
+
+Nagu varasemast mäletame, on põhilised ruumiandmete tüübid raster- ja vektorandmed. Viimased neist võivad koosneda punktidest, joontest või polügoonidest. Vektorandmed võivad lisaks olla spetsiaalses ruumiandmete vormingus (nt GeoJSON, SHP, KML, GPKG) või ka tavalises lihttekstiformaadis (nt CSV).  
+
+### Rasterandmed
+
+Rasterandmete sisselugemiseks kasutame näitena Maa-ameti ortofotosid aastatest 1995 ja 2023. Valime ülamenüüst **`Layer → Add Layer → Add Raster Layer`** ning seejärel valime failid *orto_1995.tif* ja *orto_2023.tif*. Vajutame `Add` ja `Close`.  
+Esmapilgul ei ole midagi näha, kuna ortofotod on väga suure mõõtkavaga (= väga väikese ala kohta). Teeme ühel fotokihtidest paremkliki ning valime `Zoom to Layer(s)`.  
+
+```{r qgisorto, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap="Maa-ameti ortofotod QGISis"}
+knitr::include_graphics(here::here("imgs", "5_qgis_orto.png"))
+```
+
+
+Vaatame fotode erinevusi. Selleks lülitame vastavaid kihte `Layers` paneelil sisse ja välja. Proovime suumida ka lähedale, et näha eraldiseisvaid piksleid. 1995. aasta ortofotol on oluliselt vähem piksleid, mis tähendab, et ühe piksli mõõtmed on palju suuremad. Rastri pikslisuuruse vaatamiseks teeme rasterkihil paremkliki ning valime `Properties → Information → Information from provider → Pixel size`. Piksli küljepikkus on siin esitatud meetrites. 
+
+Kustutame ortofotod nüüd QGISi kihtide hulgast ära (paremklikk kihil ja `Remove Layer`).  
+
+Ortofotode kohta saab rohkem lugeda ja neid ka ise kaardiruutude kaupa alla laadida [Maa-ameti Geoportaalist](https://geoportaal.maaamet.ee/est/ruumiandmed/ortofotod-p99.html).
+
+### Vektorandmed
+
+Vektorandmete avamise näitlikustamiseks kasutame [kohapärimuse kaardirakenduse](https://geoportaal.maaamet.ee/est/kaardirakendused/kohaparimus/kohaparimuse-kaardirakenduse-kirjeldus-p474.html) (Eesti Kirjandusmuuseum, Maa-amet, Keskkonnaamet) andmeid. Rakendusest on päritud kõiki tekste, helisalvestisi ja videoid, milles mainitud koha tüüp oleks *jõgi*. Kohapärimuse vektorikihi ruumiobjekti tüüp on **punkt**, failivorming on **GeoJSON**.  
+
+Lisaks loeme sisse Maa-ameti [vooluveekogude andmed](https://geoportaal.maaamet.ee/est/ruumiandmed/eesti-topograafia-andmekogu/laadi-etak-andmed-alla-p609.html), ent vaid nende jõgede kohta, mida on kohapärimuse kihil mainitud. Vooluveekogude vektorkihi ruumiobjekti tüüp on **joon**, failivorming on **GPKG** (*geopackage*).   
+
+Kõige taustaks loeme sisse ka Maa-ameti [ajalooliste kihelkonnapiiride andmestiku](https://geoportaal.maaamet.ee/est/ruumiandmed/haldus-ja-asustusjaotus/ajalooline-haldusjaotus-p827.html) (**polügoonid**). Failivorming on **SHP** (*shapefile*).  
+
+Vektorandmete sisselugemiseks valime ülamenüüst **`Layer → Add Layer → Add Vector Layer`**, valime `Source` jaotises kolme punktikesega nupul vajutades sobiva faili ja vajutame nupul `Add`. Kui GeoJSON- ja GPKG-vormingus faile saame lugeda sisse tervikuna, siis SHP-vormingus faili puhul peame sisse lugema ainult SHP-faili enda, ent hoolitsema selle eest, et kõik ülejäänud failid (*cpg*, *dbf*, *prj*, *sbn* jne) oleksid sellega samas kaustas olemas! **Vastasel juhul SHP ei tööta**. Seda peab silmas pidama ka siis, kui enda andmestikku SHP-vormingus kellegagi jagada tahate.  
+
+```{r qgisvector, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap="Kohapärimuse, jõgede ja kihelkondade vektorkihid QGISis"}
+knitr::include_graphics(here::here("imgs", "5_qgis_vectorlayers.png"))
+```
+
+Jällegi saab kihtide (`Layers`) paneelil kihtide järjekorda muuta, kui mõnd kihti näha ei ole (näiteks polügoonid katavad ära nii punktid kui ka jooned).  
+
+
+#### Atribuuttabel
+
+Vektorkihtide (aga vahel ka rasterkihtide) atribuuttabeleid saame vaadata, kui teeme kihil paremkliki ja valime `Open Attribute Table`. Atribuuttabel avaneb ka siis, kui teha kiht aktiivseks ning vajutada klahvi `F6`.  
+
+```{r qgisattributes, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap="Jõgede vektorkihi atribuuttabel"}
+knitr::include_graphics(here::here("imgs", "5_qgis_attributes.png"))
+```
+
+### Andmete sisselugemine CSV-failist
+
+Vektorkihi võime sisse lugeda ka tavalisest, väljadega tekstifailist (*delimited text*). Selleks valime **`Layer → Add Layer → Add Delimited Text Layer`**. Valime andmestike hulgast varasemast tuttava vallakohtuprotokollide csv-faili. Väljadega faili sisselugemiseks tuleb määrata, milline **sümbol välju/tulpasid eraldab**, millises **kodeeringus** fail on, kas failil on ka **päiserida** tulbanimedega jm. Kui tahame, et tabeli vaatlused kuvataks kuidagi ka kaardil, tuleb ette anda ka tulbanimed, mis sisaldavad **koordinaate**, ning **koordinaatide referentssüsteemi**. Vastasel juhul (*No geometry*) loetakse sisse lihtsalt atribuuttabel, ent tabeli andmeid ei saa kaardil ilma neid mingite ruumiandmetega ühendamata kuvada.
+
+Vallakohtuprotokollide faili   
+
+- kodeering on UTF-8,  
+- väljasid eraldab semikoolon,  
+- esimene rida on päiserida,  
+- koordinaadid on tulbas nimega `Longitude` ja `Latitude`,
+- koordinaadid on WGS-84 süsteemis (nn geograafilised koordinaadid), EPSG koodiga 4326.  
+
+
+```{r qgiscsv, echo=F, fig.show='hold', fig.align='center', out.width= "80%", fig.cap="Vallakohtuprotokollide csv-faili sisselugemine"}
+knitr::include_graphics(here::here("imgs", "5_qgis_csv.png"))
+```
+
+Vaatame nüüd ka vallakohtuprotokollide atribuuttabelit.  
+
+
+## Andmete visualiseerimine
+
+Vektorkihi visualiseerimiseks võime teha valitud kihil topeltkliki (või paremkliki ja valida `Properties`) ning liikuda jaotisse **`Symbology`**. Võime kujundamise paneeli ka püsivalt QGISi projekti põhiaknas kuvada, kui valime projektiakna ülamenüüst **`View → Panels → Layer Styling`**.  
+
+Vaikimisi on kõik kihi elemendid kujundatud samamoodi (`Single Symbol`). Punktobjektide põhiline kujunduselement on kasutatav sümbol (`Marker`), joonobjektidel joon (`Line`) ja polügoonidel polügooni täitevärv või -muster (`Fill`). Kiireks muutmiseks on kohe nähtaval näiteks värv (`Color`), läbipaistvus (`Opacity`), suurus (`Size` või `Width`) ja mõned vaikimisi pakutud sümbolitüübid või täitemustrid.  
+
+Kui tahame vektorkihi elementide väljanägemist põhjalikumalt muuta, saame klikkida vastava kujunduselemendi (`Marker`, `Line`, `Fill`) all asuval tekstil (`Simple Marker`, `Simple Line`, `Simple Fill`).  
+
+
+### Harjutus 1
+
+- Jätame kihelkondade polügoonidest alles ainult piirjooned (`Outline: Simple Line`), mille värvime omakorda helehalliks.    
+- Teeme jõgede jooned siniseks (`Color`) ja paksemaks (`Width`). Võime lisada sinistele joontele taustaks ka teise, veidi paksema ja heledama joone, mis toimiks visuaalse puhvrina (`Add symbol layer`).   
+- Teeme kohapärimuse punktid suuremaks (`Size`) ja läbipaistvamaks (`Opacity`), teeme piirjoone (`Stroke`) heledamaks.  
+
+```{r qgisvisual, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap="Muudetud kujundusega vektorkihid"}
+knitr::include_graphics(here::here("imgs", "5_qgis_visual.png"))
+```
+
+
+### Sildid
+
+Lisame jõgede kihile ka **sildid** tulbast `nimetus`. Selleks teeme jälle valitud kihil topeltkliki ja liigume nüüd jaotisse **`Labels`**. Vaikeväärtuse `No Labels` asemel valime `Single Labels` ning `Value` lahtrisse valime tulba/tunnuse nime.      
+
+- `Text → Size` jaotises teeme teksti pisut väiksemaks.    
+- `Formatting → Spacing → letter` määrame väärtuseks 1, et tähtede paigutust hõrendada.    
+- Lisame tekstile puhvri `Buffer → Draw text buffer`.  
+- `Placement` jaotisest valime `General Settings → Mode → Curved`, et paigutada sildid jõgede kõveruse järgi. Lubame neid paigutada nii joonest vasakule ja paremale kui ka joone peale.    
+- `Rendering` jaotisest valime `Overlapping labels → Allow Overlaps without Penalty`, et näidata kõiki silte. `Label options → Allow inferior fallback placements` lubab silte paigutada ka horisontaalselt, kui joon on muidu liiga lühike, et tekst sellele ära mahuks.   
+- `Callouts → Draw callouts` lubame silte ka kaugemale paigutada, tõmmates sildi ja objekti vahele joone.  
+
+Tööriistaribal saab siltide tööriistadega silte ka ükshaaval paigutada, keerata jne.  
+
+```{r qgislabels, echo=F, fig.show='hold', fig.align='center', out.width= "30%", fig.cap="Siltide tööriistad"}
+knitr::include_graphics(here::here("imgs", "5_qgis_labels.png"))
+```
+
+```{r qgisvisual2, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap="Siltidega vektorkiht"}
+knitr::include_graphics(here::here("imgs", "5_qgis_visual2.png"))
+```
+
+
+### Harjutus 2
+
+Lisa **WFS-teenuse** (mitte WMS!!!) kaudu Maa-ameti ajalooliste haldusüksuste seast (<https://teenus.maaamet.ee/ows/wms-ajalooline-haldus?>) 1922. aasta vallapiiride kiht.  
+Vallapiiride kihile lisa vallakohtuprotokollide punktid.
+
+Püüa kujundada kaart vallapiiride ja protokollidega nii nagu etteantud joonisel. 
+Valdade kihile tekstuuri lisamiseks saad `Simple Fill` kujunduselementide juures valida `Fill style → Solid` asemel midagi muud.  
+Protokollikihi markerite puhul kombineeri selleks variante `Simple Marker` (taustaruuduke) ja `SVG Marker` (kaalude ikoon). Taustaruudukesele saad varjusid lisada, kui valid markeri, kerid kujundusvalikute lõppu, teed linnukese valiku `Draw effects` ette ning valid tähekesest valiku `Drop Shadow`.   
+
+```{r qgisharjutus, echo=F, fig.show='hold', fig.align='center', out.width= "60%", fig.cap="Vallakohtuprotokollide kaart"}
+knitr::include_graphics(here::here("imgs", "5_qgis_harjutus2.png"))
+```
+
+
+## Kaartide eksportimine
+
+Kui kaardiaknas on kaart valmis, siis võib selle salvestada pildina.  
+
+Selleks:  
+
+- valime ülamenüüst `Project → New Print Layout` ja anname oma kaardile sobiva nime;  
+- avanenud aknas valime ülalt `Add Item → Add Map`. Joonistame akna valgele lehele nelinurga, hoides all hiire vasakpoolset klahvi. QGISi peaaknas olev kaart kuvatakse sinna. Abiks kaardi paigutamisel on taustaruudustik (`View → Show Grid`) ja selle külge haakimine (`View → Snap to grid`).  
+- Sätime kaarti nii, et kõik vajalik oleks näha. Selleks valime `Edit → Move Content` või vajutame klaviatuuril klahvi **`C`**. Kui oleme kaardi õigesse kohta liigutanud, valime menüüst `Edit → Select/Move Item` või vajutame klaviatuuril klahvi **`V`**.  
+- Muudame kaardi taustavärvi tumesiniseks. Selleks valime parempoolsel paneelil `Item Properties` ning kerime alla sektsioonini `Background`. Vahetame värvi.  
+- Lisame kaardile joonmõõtkava: `Add Item → Add Scale Bar`. Parempoolsel paneelil saab muuta mõõtkava pikkust ja stiili (`Item Properties → Segments`). Lisame paremale poole nii palju ühikuid, kui soovime. `Fixed width` muudab mõõtkava ühe ühiku pikkust.  
+- Lisame kaardile ka pealkirja ja viite Maa-ametile: `Add Item → Add Label`.    
+- Salvestame kaardivaate ning ekspordime seejärel kaardi: `Layout → Export As Image`.  
+
+```{r qgiskaart, echo=F, fig.show='hold', fig.align='center', out.width= "50%", fig.cap="Valmis kaart"}
+knitr::include_graphics(here::here("imgs", "5_qgis_final.png"))
+```
+
