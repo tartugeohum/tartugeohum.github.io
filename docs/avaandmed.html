@@ -531,7 +531,7 @@ Joonis 6.6: Mitteruumiandmete ühendamine ruumiandmetega
 </p>
 </div>
 <p>Nüüd on maakondade vektorkihi atribuuttabelis ka rahvaloenduse andmed, mida saame edasi kaardil visualiseerida. Kui eelmisel korral vaatasime, kuidas kujundada kõiki kihi objekte (<code>features</code>) ühesuguselt (<code>Symbology → Single symbol</code>), siis nüüd tahame, et maakonnad oleksid värvitud erinevalt, vastavalt sellele, kas ja kui palju seal rahvaarv kasvas või kahanes.</p>
-<p>Praeguses atribuuttabelis on lihtsalt 2011. ja 2021. aasta rahvaarv, meil aga oleks vaja näidata <strong>muutust</strong>. Mugav viis selleks oleks teha atribuuttabelisse lihtsalt <strong>uus tulp</strong>, kus 2011. aasta rahvaarvust oleks lahutatud 2021. aasta rahvaarv. Kui rahvaarv kasvas, siis on väärtus positiivne; kui kahanes, siis negatiivne. <strong>Uue tulba lisamiseks</strong> avame maakondade vektorkihi atribuuttabeli (kiirklahv F6 või paremklikk ja <code>Open Attribute Table</code>) ning võtame lahti tööriista <strong><code>Field Calculator</code></strong> (kiirklahv <code>Ctrl+I</code>). <img src="imgs/8_fieldcalculator.png" />.</p>
+<p>Praeguses atribuuttabelis on lihtsalt 2011. ja 2021. aasta rahvaarv, meil aga oleks vaja näidata <strong>muutust</strong>. Mugav viis selleks oleks teha atribuuttabelisse lihtsalt <strong>uus tulp</strong>, kus 2021. aasta rahvaarvust oleks lahutatud 2011. aasta rahvaarv. Kui rahvaarv kasvas, siis on väärtus positiivne; kui kahanes, siis negatiivne. <strong>Uue tulba lisamiseks</strong> avame maakondade vektorkihi atribuuttabeli (kiirklahv F6 või paremklikk ja <code>Open Attribute Table</code>) ning võtame lahti tööriista <strong><code>Field Calculator</code></strong> (kiirklahv <code>Ctrl+I</code>). <img src="imgs/8_fieldcalculator.png" />.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fieldcalc"></span>
 <img src="imgs/6_fieldcalc.png" alt="Uue tulba lisamine atribuuttabelisse" width="50%" />
 <p class="caption">
@@ -556,8 +556,7 @@ Joonis 6.7: Uue tulba lisamine atribuuttabelisse
 </li>
 <li><code>Standard Deviation</code> - võrdsete intervallidega sagedusklassid, intervallid põhinevad standardhälbel (näitab, kui palju mingi arvuline väärtus erineb keskmisest)</li>
 </ul>
-Selles ülesandes võiks üks klass võimalusel väljendada kuni 5 protsendipunkti muutust (<code>pretty breaks</code>). Valime sellise värviskaala (nt PRGn või RdBu), mis väljendaks skaala kumbagi äärmist otsa (suuri kasvuprotsente ja suuri kahanemisprotsente) eri värvidega.<br />
-
+<p>Selles ülesandes võiks üks klass võimalusel väljendada kuni 5 protsendipunkti muutust (<code>pretty breaks</code>). Valime sellise värviskaala (nt PRGn või RdBu), mis väljendaks skaala kumbagi äärmist otsa (suuri kasvuprotsente ja suuri kahanemisprotsente) eri värvidega.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:graduated"></span>
 <img src="imgs/6_graduated.png" alt="Maakondade värvimine vastavalt protsentuaalsele muutusele rahvaarvus" width="50%" />
 <p class="caption">

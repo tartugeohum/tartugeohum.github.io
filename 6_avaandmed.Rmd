@@ -237,7 +237,7 @@ knitr::include_graphics(here::here("imgs", "6_join1.png"))
 
 Nüüd on maakondade vektorkihi atribuuttabelis ka rahvaloenduse andmed, mida saame edasi kaardil visualiseerida. Kui eelmisel korral vaatasime, kuidas kujundada kõiki kihi objekte (`features`) ühesuguselt (`Symbology → Single symbol`), siis nüüd tahame, et maakonnad oleksid värvitud erinevalt, vastavalt sellele, kas ja kui palju seal rahvaarv kasvas või kahanes.  
 
-Praeguses atribuuttabelis on lihtsalt 2011. ja 2021. aasta rahvaarv, meil aga oleks vaja näidata **muutust**. Mugav viis selleks oleks teha atribuuttabelisse lihtsalt **uus tulp**, kus 2011. aasta rahvaarvust oleks lahutatud 2021. aasta rahvaarv. Kui rahvaarv kasvas, siis on väärtus positiivne; kui kahanes, siis negatiivne. **Uue tulba lisamiseks** avame maakondade vektorkihi atribuuttabeli (kiirklahv F6 või paremklikk ja `Open Attribute Table`) ning võtame lahti tööriista **`Field Calculator`** (kiirklahv `Ctrl+I`). ![](imgs/8_fieldcalculator.png). 
+Praeguses atribuuttabelis on lihtsalt 2011. ja 2021. aasta rahvaarv, meil aga oleks vaja näidata **muutust**. Mugav viis selleks oleks teha atribuuttabelisse lihtsalt **uus tulp**, kus 2021. aasta rahvaarvust oleks lahutatud 2011. aasta rahvaarv. Kui rahvaarv kasvas, siis on väärtus positiivne; kui kahanes, siis negatiivne. **Uue tulba lisamiseks** avame maakondade vektorkihi atribuuttabeli (kiirklahv F6 või paremklikk ja `Open Attribute Table`) ning võtame lahti tööriista **`Field Calculator`** (kiirklahv `Ctrl+I`). ![](imgs/8_fieldcalculator.png). 
 
 ```{r fieldcalc, echo = F, fig.align="center", out.width = "50%", fig.cap = "Uue tulba lisamine atribuuttabelisse"}
 knitr::include_graphics(here::here("imgs", "6_fieldcalc.png"))
@@ -260,6 +260,7 @@ Lõpuks värvime maakonnad vastavalt protsentuaalse muutuse suunale ja suurusele
 
 
 Selles ülesandes võiks üks klass võimalusel väljendada kuni 5 protsendipunkti muutust (`pretty breaks`). Valime sellise värviskaala (nt PRGn või RdBu), mis väljendaks skaala kumbagi äärmist otsa (suuri kasvuprotsente ja suuri kahanemisprotsente) eri värvidega.  
+
 ```{r graduated, echo = F, fig.align="center", out.width = "50%", fig.cap = "Maakondade värvimine vastavalt protsentuaalsele muutusele rahvaarvus"}
 knitr::include_graphics(here::here("imgs", "6_graduated.png"))
 ``` 
