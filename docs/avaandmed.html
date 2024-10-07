@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Praktikum 6 Avaandmed ja repositooriumid. Andmekihtide ühendamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 6 Avaandmed ja repositooriumid. Andmekihtide ühendamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Praktikum 6 Avaandmed ja repositooriumid. Andmekihtide ühendamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Praktikum 6 Avaandmed ja repositooriumid. Andmekihtide ühendamine | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  
+  
+  
+
+<meta name="author" content="Maarja-Liisa Pilvik" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="qgis.html"/>
+<link rel="next" href="kirjandus.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<link href="libs/leaflet-measure-2.1.7/leaflet-measure.css" rel="stylesheet" />
+<script src="libs/leaflet-measure-2.1.7/leaflet-measure.min.js"></script>
+<script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Sissejuhatus</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#kursuse-korraldusest"><i class="fa fa-check"></i><b>1.1</b> Kursuse korraldusest</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#mis-on-geoinfosüsteemid"><i class="fa fa-check"></i><b>1.2</b> Mis on geoinfosüsteemid?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#geoinfosüsteemide-ajaloost"><i class="fa fa-check"></i><b>1.3</b> Geoinfosüsteemide ajaloost</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#ruumiandmed-ja-gis-humanitaarteadustes"><i class="fa fa-check"></i><b>1.4</b> Ruumiandmed ja GIS humanitaarteadustes</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#lugude-jutustamine"><i class="fa fa-check"></i><b>1.4.1</b> Lugude jutustamine</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#arheoloogia"><i class="fa fa-check"></i><b>1.4.2</b> Arheoloogia</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#keeleteadus"><i class="fa fa-check"></i><b>1.4.3</b> Keeleteadus</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#keele-sotsiaalteadus"><i class="fa fa-check"></i><b>1.4.4</b> Keele-/sotsiaalteadus</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#veel-näiteid"><i class="fa fa-check"></i><b>1.4.5</b> Veel näiteid</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html"><i class="fa fa-check"></i><b>2</b> Ruumiobjektid ja ruumiandmed</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#vektorandmed"><i class="fa fa-check"></i><b>2.1</b> Vektorandmed</a></li>
+<li class="chapter" data-level="2.2" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#rasterandmed"><i class="fa fa-check"></i><b>2.2</b> Rasterandmed</a></li>
+<li class="chapter" data-level="2.3" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#vektor-vs.-raster"><i class="fa fa-check"></i><b>2.3</b> Vektor vs. raster</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="kaardid.html"><a href="kaardid.html"><i class="fa fa-check"></i><b>3</b> Kaardid, koordinaatsüsteemid ja projektsioonid</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="kaardid.html"><a href="kaardid.html#kaart"><i class="fa fa-check"></i><b>3.1</b> Kaart</a></li>
+<li class="chapter" data-level="3.2" data-path="kaardid.html"><a href="kaardid.html#kaardi-elemendid"><i class="fa fa-check"></i><b>3.2</b> Kaardi elemendid</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="kaardid.html"><a href="kaardid.html#mootkava"><i class="fa fa-check"></i><b>3.2.1</b> Mõõtkava</a></li>
+<li class="chapter" data-level="3.2.2" data-path="kaardid.html"><a href="kaardid.html#projektsioon"><i class="fa fa-check"></i><b>3.2.2</b> Koordinaatsüsteemid ja projektsioonid</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="kaardid.html"><a href="kaardid.html#kaartide-liigitus"><i class="fa fa-check"></i><b>3.3</b> Kaartide liigitus</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="kaardid.html"><a href="kaardid.html#digitaalkaardid"><i class="fa fa-check"></i><b>3.3.1</b> Digitaalkaardid</a></li>
+<li class="chapter" data-level="3.3.2" data-path="kaardid.html"><a href="kaardid.html#viguriga-kaardid"><i class="fa fa-check"></i><b>3.3.2</b> Viguriga kaardid</a></li>
+<li class="chapter" data-level="3.3.3" data-path="kaardid.html"><a href="kaardid.html#ülesanne"><i class="fa fa-check"></i><b>3.3.3</b> Ülesanne</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="kaardid.html"><a href="kaardid.html#kaartide-koostamine-ja-kujundamine-veebis"><i class="fa fa-check"></i><b>3.4</b> Kaartide koostamine ja kujundamine veebis</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="kaardid.html"><a href="kaardid.html#arcgis-online"><i class="fa fa-check"></i><b>3.4.1</b> ArcGIS Online</a></li>
+<li class="chapter" data-level="3.4.2" data-path="kaardid.html"><a href="kaardid.html#mapbox-studio"><i class="fa fa-check"></i><b>3.4.2</b> Mapbox Studio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="storymaps.html"><a href="storymaps.html"><i class="fa fa-check"></i><b>4</b> Story maps</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="storymaps.html"><a href="storymaps.html#story-maps"><i class="fa fa-check"></i><b>4.1</b> Story maps</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="storymaps.html"><a href="storymaps.html#storymapjs"><i class="fa fa-check"></i><b>4.1.1</b> StoryMapJS</a></li>
+<li class="chapter" data-level="4.1.2" data-path="storymaps.html"><a href="storymaps.html#arcgis-storymaps"><i class="fa fa-check"></i><b>4.1.2</b> ArcGIS StoryMaps</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="storymaps.html"><a href="storymaps.html#ülesanne-tänane-kuupäev-story-mapis"><i class="fa fa-check"></i><b>4.2</b> Ülesanne: tänane kuupäev <em>story map</em>’is</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="qgis.html"><a href="qgis.html"><i class="fa fa-check"></i><b>5</b> Sissejuhatus QGISi</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="qgis.html"><a href="qgis.html#installimine-ja-seadistamine"><i class="fa fa-check"></i><b>5.1</b> Installimine ja seadistamine</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="qgis.html"><a href="qgis.html#kasutajaliidese-keel"><i class="fa fa-check"></i><b>5.1.1</b> Kasutajaliidese keel</a></li>
+<li class="chapter" data-level="5.1.2" data-path="qgis.html"><a href="qgis.html#vaikimisi-koordinaatide-referentssüsteem"><i class="fa fa-check"></i><b>5.1.2</b> Vaikimisi koordinaatide referentssüsteem</a></li>
+<li class="chapter" data-level="5.1.3" data-path="qgis.html"><a href="qgis.html#paneelid-ja-tööriistad"><i class="fa fa-check"></i><b>5.1.3</b> Paneelid ja tööriistad</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="qgis.html"><a href="qgis.html#aluskaardid"><i class="fa fa-check"></i><b>5.2</b> Aluskaardid</a></li>
+<li class="chapter" data-level="5.3" data-path="qgis.html"><a href="qgis.html#andmete-avamine"><i class="fa fa-check"></i><b>5.3</b> Andmete avamine</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="qgis.html"><a href="qgis.html#rasterandmed-1"><i class="fa fa-check"></i><b>5.3.1</b> Rasterandmed</a></li>
+<li class="chapter" data-level="5.3.2" data-path="qgis.html"><a href="qgis.html#vektorandmed-1"><i class="fa fa-check"></i><b>5.3.2</b> Vektorandmed</a></li>
+<li class="chapter" data-level="5.3.3" data-path="qgis.html"><a href="qgis.html#andmete-sisselugemine-csv-failist"><i class="fa fa-check"></i><b>5.3.3</b> Andmete sisselugemine CSV-failist</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="qgis.html"><a href="qgis.html#andmete-visualiseerimine"><i class="fa fa-check"></i><b>5.4</b> Andmete visualiseerimine</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="qgis.html"><a href="qgis.html#harjutus-1"><i class="fa fa-check"></i><b>5.4.1</b> Harjutus 1</a></li>
+<li class="chapter" data-level="5.4.2" data-path="qgis.html"><a href="qgis.html#sildid"><i class="fa fa-check"></i><b>5.4.2</b> Sildid</a></li>
+<li class="chapter" data-level="5.4.3" data-path="qgis.html"><a href="qgis.html#harjutus-2"><i class="fa fa-check"></i><b>5.4.3</b> Harjutus 2</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="qgis.html"><a href="qgis.html#kaartide-eksportimine"><i class="fa fa-check"></i><b>5.5</b> Kaartide eksportimine</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="avaandmed.html"><a href="avaandmed.html"><i class="fa fa-check"></i><b>6</b> Avaandmed ja repositooriumid. Andmekihtide ühendamine</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="avaandmed.html"><a href="avaandmed.html#avaandmed-1"><i class="fa fa-check"></i><b>6.1</b> Avaandmed</a></li>
+<li class="chapter" data-level="6.2" data-path="avaandmed.html"><a href="avaandmed.html#eesti-ruumiandmed"><i class="fa fa-check"></i><b>6.2</b> Eesti ruumiandmed</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="avaandmed.html"><a href="avaandmed.html#maa-ameti-geoportaal"><i class="fa fa-check"></i><b>6.2.1</b> Maa-ameti geoportaal</a></li>
+<li class="chapter" data-level="6.2.2" data-path="avaandmed.html"><a href="avaandmed.html#statistikaamet"><i class="fa fa-check"></i><b>6.2.2</b> Statistikaamet</a></li>
+<li class="chapter" data-level="6.2.3" data-path="avaandmed.html"><a href="avaandmed.html#muu"><i class="fa fa-check"></i><b>6.2.3</b> Muu</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="avaandmed.html"><a href="avaandmed.html#muudriigid"><i class="fa fa-check"></i><b>6.3</b> Muude riikide ruumiandmed</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="avaandmed.html"><a href="avaandmed.html#harjutus"><i class="fa fa-check"></i><b>6.3.1</b> Harjutus</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="avaandmed.html"><a href="avaandmed.html#andmestike-ühendamine"><i class="fa fa-check"></i><b>6.4</b> Andmestike ühendamine</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="avaandmed.html"><a href="avaandmed.html#ühendamine-ühise-tunnuse-järgi"><i class="fa fa-check"></i><b>6.4.1</b> Ühendamine ühise tunnuse järgi</a></li>
+<li class="chapter" data-level="6.4.2" data-path="avaandmed.html"><a href="avaandmed.html#geokodeerimine"><i class="fa fa-check"></i><b>6.4.2</b> Geokodeerimine</a></li>
+<li class="chapter" data-level="6.4.3" data-path="avaandmed.html"><a href="avaandmed.html#ühendamine-ruumiinfo-järgi"><i class="fa fa-check"></i><b>6.4.3</b> Ühendamine ruumiinfo järgi</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="avaandmed" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Praktikum 6</span> Avaandmed ja repositooriumid. Andmekihtide ühendamine<a href="avaandmed.html#avaandmed" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="avaandmed-1" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Avaandmed<a href="avaandmed.html#avaandmed-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Avaandmed</strong> (<em>Open Data</em>) on vabalt ja avalikult kättesaadavad andmed. Avaandmeid võib ilma piiranguteta alla laadida, kasutada ja levitada, juhul kui andmeid kasutatakse vastavalt litsentsitingimustele.
+Avaandmete mõiste on selgelt defineerituna kasutusel olnud kümmekond aastat ning on eriti viimastel aastatel tihedalt seotud survega avalikule sektorile teha oma andmed või osa nendest juurdepääsupiiranguta kättesaadavaks. <!-- Andmed saadud maksumaksja rahaga, faktid ei saa olla autoriõigustega kaitstud; hoiab ressursse kokku, ei pea mitu korda samu andmeid koguma; paremad teenused --></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:opendatatypes"></span>
+<img src="imgs/8_opendatatypes.png" alt="Avaandmete liike ([Open Knowledge Foundation](https://blog.okfn.org/2013/10/03/defining-open-data/))" width="40%" />
+<p class="caption">
+Joonis 6.1: Avaandmete liike (<a href="https://blog.okfn.org/2013/10/03/defining-open-data/">Open Knowledge Foundation</a>)
+</p>
+</div>
+<p>Avaandmetele lähedane mõiste, mis on eeskätt kasutuses teadusandmete kontekstis, on <strong><em>FAIR</em>-andmed</strong> ehk andmed, mis on leitavad (<em>findable</em>), kättesaadavad (<em>accessible</em>), ristkasutatavad (<em>interoperable</em>) ja taaskasutatavad (<em>reusable</em>). FAIR-andmed ei ole tingimata kättesaadavad <em>kõikidele</em> ja <em>mis tahes tingimustel</em>, ent järgivad andmete kvaliteedi tagamise põhimõtteid, on paremini dokumenteeritud ning hõlpsamini taaskasutatavad.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fair"></span>
+<img src="imgs/8_FAIR.jpg" alt="FAIR põhimõtted" width="70%" />
+<p class="caption">
+Joonis 6.2: FAIR põhimõtted
+</p>
+</div>
+<ul>
+<li>Andmete <strong>leitavusele</strong> aitab näiteks kaasa see, kui andmed on masinloetaval kujul, nad on kirjeldatud metainfo kaudu, varustatud märksõnadega ja neil on püsiidentifikaator DOI (<em>Digital Object Identifier</em>).<br />
+</li>
+<li>Kui andmeid (või osa nendest) hoitakse mingis avalikus repositooriumis ehk elektroonilises andmehoidlas, kust neid on võimalik alla laadida, on need hästi <strong>kättesaadavad</strong>.<br />
+</li>
+<li>Kui andmete vorming vastab mingitele kokkulepitud standarditele või andmeid hoitakse lihtsalt laialt kasutusel olevas, platvormist sõltumatus vormingus (nt CSV, XML), on need ka hõlpsasti <strong>ristkasutatavad</strong>.<br />
+</li>
+<li>Kui andmete kogumise ja töötlemise protsess on põhjalikult dokumenteeritud ning andmed on varustatud litsentsiga, on need ka <strong>taaskasutatavad</strong>.</li>
+</ul>
+<p>Eesti avaliku sektori avaandmed on tehtud kättesaadavaks <a href="https://avaandmed.eesti.ee/">Eesti Avaandmete Portaalis</a>. Ka enamikul ELi liikmesriikidel on oma avaliku sektori avaandmete portaalid.</p>
+<p>Suuremad rahvusvahelised <strong>teadusandmete</strong> repositooriumid on näiteks <a href="https://zenodo.org/">Zenodo</a>, <a href="https://dataverse.harvard.edu/">Harvard Dataverse</a> (vaata ka <a href="https://dataverse.org/">teisi Dataverse’i projekte</a>), <a href="https://osf.io">OSF</a> ja <a href="https://figshare.com/">Figshare</a>. Repositooriume võib omakorda otsida erinevatest registritest, nagu <a href="https://www.re3data.org/">Re3data.org</a> või <a href="https://explore.openaire.eu/search/advanced/datasets">OpenAIRE</a>.</p>
+<p>Tartu Ülikool pakub TÜ raamatukogu kaudu võimalust säilitada oma teadusandmeid <a href="https://datadoi.ee/">DataDOI</a> repositooriumis. Seal saavad andmed endale digitaalobjekti identifikaatori ehk DOI ning need registreeritakse koos metaandmetega rahvusvahelises DataCite registris. <a href="https://datacite.ee/">DataCite Eesti</a> koondab ka teisi Eesti teadusega seotud repositooriume, nt <a href="https://geocollections.info/">Eesti geokogude portaal</a>. Raamatukogul on ka ülevaade enimlevinud <a href="https://utlib.ut.ee/avatud-juurdepaas">avatud juurdepääsuga andmebaasidest</a> ning <a href="https://utlib.ut.ee/teaduse-avaandmed-open-data">teaduse avaandmete repositooriumidest ja registritest</a>.</p>
+<p>Kui tahta oma andmeid avalikustada, tuleks nendele lisada <strong>litsents</strong>, mis määrab ära intellektuaalse omandi kasutusõiguse.
+Tüüpilised avaandmete litsentsid on:</p>
+<table>
+<tr>
+<th style="text-align:left">
+Litsents
+</th>
+<th style="text-align:left">
+Valdkond
+</th>
+<th style="text-align:left">
+Tuleb viidata
+</th>
+<th style="text-align:left">
+Tohib levitada ainult sarnase litsentsiga
+</th>
+</tr>
+<tr>
+<td>
+<a href="https://creativecommons.org/publicdomain/zero/1.0/"><strong>CC0</strong></a>
+</td>
+<td>
+Sisu, andmed
+</td>
+<td>
+Ei
+</td>
+<td>
+Ei
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://opendatacommons.org/licenses/pddl/summary/"><strong>PDDL</strong></a>
+</td>
+<td>
+Andmed
+</td>
+<td>
+Ei
+</td>
+<td>
+Ei
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://creativecommons.org/licenses/by/4.0/"><strong>CC-BY</strong></a>
+</td>
+<td>
+Sisu, andmed
+</td>
+<td>
+Jah
+</td>
+<td>
+Ei
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://opendatacommons.org/licenses/by/summary/"><strong>ODC-BY</strong></a>
+</td>
+<td>
+Andmed
+</td>
+<td>
+Jah
+</td>
+<td>
+Ei
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/"><strong>CC-BY-SA</strong></a>
+</td>
+<td>
+Sisu, andmed
+</td>
+<td>
+Jah
+</td>
+<td>
+Jah
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://opendatacommons.org/licenses/odbl/summary/"><strong>ODbL</strong></a>
+</td>
+<td>
+Andmed
+</td>
+<td>
+Jah
+</td>
+<td>
+Jah
+</td>
+</tr>
+</table>
+</div>
+<div id="eesti-ruumiandmed" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Eesti ruumiandmed<a href="avaandmed.html#eesti-ruumiandmed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="maa-ameti-geoportaal" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Maa-ameti geoportaal<a href="avaandmed.html#maa-ameti-geoportaal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Eesti ruumiandmete peamine haldaja ja levitaja on Maa-amet. Alates 2018. aasta suvest on väga suur osa Maa-ameti andmeid avalikud ning allalaetavad lehelt <a href="https://geoportaal.maaamet.ee/est/">https://geoportaal.maaamet.ee/</a>. Nende kasutamist käsitleb <a href="https://geoportaal.maaamet.ee/avaandmete-litsents">Maa-ameti avatud ruumiandmete litsents</a>.</p>
+<p>Peamised punktid:</p>
+<ul>
+<li>Õigus kasutada andmeid tasuta, kasutaja valitud kõlbelisel eesmärgil, kooskõlas seaduste ja heade tavadega.<br />
+</li>
+<li>Andmete publitseerimisel ja levitamisel peab viitama nende päritolule.<br />
+</li>
+<li>Maa-amet ei vastuta otsese ega kaudse kahju eest, mis võib tekkida andmete kasutamisest tulenevalt.</li>
+</ul>
+<p>Maa-ameti kaudu on vabalt kasutatavad ka <strong><a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus/Ajalooline-haldusjaotus-p827.html">ajaloolise haldusjaotuse</a></strong> andmed, sh mõisate, kihelkondade, valdade, rajoonide kohta. Andmete kasutamisel tutvu kindlasti ka viitamistingimustega.</p>
+</div>
+<div id="statistikaamet" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Statistikaamet<a href="avaandmed.html#statistikaamet" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://www.stat.ee/">Statistikaamet</a> pakub avalikke andmeid sageli seotult mingite haldusüksuste andmetega (nt maakonnapõhiselt). Varasemalt pakkus statistikaamet ka kaardirakendust, mis võimaldas teha nende andmebaasi põhjal teemakaarte ja ka vastavaid andmeid ruumiandmetena alla laadida. <a href="https://www.stat.ee/et/uudised/statistikaamet-sulgeb-kaardirakenduse">2023. aasta suvel aga rakendus suleti</a>, kuna selle aluseks olev tehnoloogia oli vananenud.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:statamet2"></span>
+<img src="imgs/8_statamet2.PNG" alt="Murdekõnelejad statistikaameti kaardirakenduse teemakaardil (2022)" width="80%" />
+<p class="caption">
+Joonis 6.3: Murdekõnelejad statistikaameti kaardirakenduse teemakaardil (2022)
+</p>
+</div>
+</div>
+<div id="muu" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Muu<a href="avaandmed.html#muu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><a href="https://geoportaal.ee/">Eesti geoportaal</a> koondab avalik-õiguslike asutuste ruumiandmeid ja nendega seotud metainfot. On seotud EL-i INSPIRE portaaliga (vt <a href="avaandmed.html#muudriigid">muude riikide ruumiandmete jaotist</a>). Viited on koondatud kategooriate kaupa ruumiandmete kataloogi.<br />
+</li>
+<li>Ruumiandmeid leiab mingil määral <a href="https://opendata.riik.ee">Eesti Avaandmete Portaalist</a>, sh Maa-ameti ja Statistikaameti andmeid, aga ka näiteks kohalike omavalitsuste, registrite, ametite jt avaliku sektori institutsioonide andmeid.<br />
+</li>
+<li><a href="https://www.tallinn.ee/est/geoportaal/Andmed">Tallinna ruumiandmed</a> - Tallinna linna aluskaart, hooned, asumipiirid jpm.<br />
+</li>
+<li><a href="https://geohub.tartulv.ee/">Tartu linna ruumiandmed</a>.<br />
+</li>
+<li>Digiteeritud kaarte leiab näiteks <a href="https://www.ra.ee/kaardid/">Rahvusarhiivi kaartide infosüsteemist</a> ja <a href="https://www.digar.ee/arhiiv/et/pildimaterjal?id=162">Digarist</a>.<br />
+</li>
+<li>Nii Eesti kui ka välisriikide praeguseid ja endiseid nimekujusid leiab nii Eesti Keele Instituudi <a href="https://www.eki.ee/dict/knr/">Kohanimeraamatust</a> kui ka <a href="https://www.eki.ee/knab/knab.htm">Kohanimeandmebaasist</a>. Mõlema puhul on võimalik näiteks teadustöö eesmärgil saada enda kasutusse ka lähteandmeid (või osa nendest). Ametlikku <a href="https://maaamet.ee/ruumiandmed-ja-kaardid/aadressid-ja-kohanimed/kohanimeregister">kohanimeregistrit</a>, mis esitab kohanimede ametliku, standardse nimekuju, haldab Maa-amet.</li>
+<li><a href="https://register.muinas.ee/public.php?menuID=placeinfo">Arheoloogilise ja pärimusliku kohainfo andmebaas</a>: ei ole avatud juurdepääsuga. Riina Juuriku poole pöördudes saab juurdepääsu aga küsida.<br />
+</li>
+<li><a href="https://tara.ut.ee/">TARA (Tartu Ülikooli arheoloogia infosüsteem)</a>: leidude, luude, proovide, arhiivi, fotode jms kogud.<br />
+</li>
+<li>Andrus Saareste “<a href="https://github.com/MPilvik/RuRaKe/tree/master/Saareste-murdeatlas">Eesti murdeatlase</a>” (1938/1941) ja “<a href="https://github.com/MPilvik/RuRaKe/tree/master/Saareste-vaike-murdeatlas">Väikese eesti murdeatlase</a>” (1955) andmed, käsikirjalisi murdekaarte saab vaadata <a href="http://rurake.keeleressursid.ee/index.php/andrus-saarestes-unpublished-dialect-maps/">siin</a>.</li>
+</ul>
+</div>
+</div>
+<div id="muudriigid" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Muude riikide ruumiandmed<a href="avaandmed.html#muudriigid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Juurdepääsupiiranguta ruumiandmeid leiab internetist otsides hulganisti. Täpsed ruumiandmed on leitavad sageli huvipakkuva riigi enda avaandmete portaalidest. Siin on toodud vaid mõned üksikud näited üldisematest andmebaasidest ja repositooriumidest:</p>
+<ul>
+<li><a href="https://inspire-geoportal.ec.europa.eu/">INSPIRE</a> on Euroopa Liidu ruumiandmete infrastruktuur, mis koondab ELi liikmesriikide ja EFTA riikide ruumiandmeid (sh Eesti andmeid).<br />
+</li>
+<li><a href="https://www.naturalearthdata.com/">Natural Earth Data</a>: vektorkujul rannajooned, maa, ookeanid, saared, jõed, järved jm. Olemas ka rasterandmeid aluskaartide jaoks.<br />
+</li>
+<li><a href="https://gadm.org/">GADM</a>: Maailma riikide halduspiiride vektorandmed ja valmiskaardid (leht sisaldab palju reklaami).<br />
+</li>
+<li><a href="https://www.mapsforeurope.org/">Open Maps for Europe</a>.<br />
+</li>
+<li><a href="http://www.diva-gis.org/Data">DIVA-GIS</a>: nii ülemaailmsed kui ka üksikute riikide ruumiandmed.<br />
+</li>
+<li><a href="https://www.geofabrik.de/data/">Geofabrik</a>: OpenStreetMapi aluseks olevad andmekihid (SHP-formaadis andmed tasulised).<br />
+</li>
+<li><a href="https://data.maptiler.com/downloads/planet/">MapTiler</a>: erinevad maailma vektor- ja rasterpaanid (põhiliselt aluskaartide jaoks).<br />
+</li>
+<li><a href="http://freegisdata.rtwilson.com/">Robin Wilsoni põhjalik nimekiri vabalt kasutatavatest ruumiandmetest</a>.<br />
+</li>
+<li><a href="https://www.oldmapsonline.org/">Ajalooliste kaartide kollektsioon</a>.<br />
+</li>
+<li><a href="https://www.davidrumsey.com/">David Rumsey kaardikollektsioon</a>: üle 100 000 kõrge kvaliteediga digiteeritud kaardi 16.-21. sajandist, osa ka georefereeritud.<br />
+</li>
+<li>Georefereeritud kaardid <a href="https://mapwarper.net/">Map Warperis</a>.<br />
+</li>
+<li>Arheoloogia andmete suurimaks koondajaks on <a href="https://ariadne-infrastructure.eu/">Ariadne Plus</a>, mis koondab üle 2 miljoni andmestiku kogu Euroopast. Projekti eesmärk on luua pilvepõhine virtuaalne teadustöö tegemise keskkond.<br />
+</li>
+<li><a href="https://archaeologydataservice.ac.uk/">ADS (Archaeology Data Sercive)</a>: juhtiv repositoorium arheoloogia ja laiemalt kogu pärandi andmete pikaajaliseks säilitamiseks ja jagamiseks.<br />
+</li>
+<li><a href="https://www.tdar.org/">tDAR (The Digital Archaeology Record)</a>: rahvusvaheline arheoloogiliste uuringute andmete repositoorium.<br />
+</li>
+<li><a href="https://dans.knaw.nl/">DANS (Data Archiving and Networked Services)</a>: Madalmaade digiandmete repositoorium.<br />
+</li>
+<li><a href="https://pleiades.stoa.org/home">Pleiades</a> - <em>ajalooliste</em> kohtade, riikide ja nimede ruumiandmed.<br />
+</li>
+<li><a href="https://zenodo.org/record/4784188">Geographical database of the Uralic Languages</a> - Uurali keelte (sh murrete) polügoonid ja punktandmed.<br />
+</li>
+<li><a href="https://data.sciencespo.fr/dataset.xhtml?persistentId=doi:10.21410/7E4/RDAG3O">Eri riikide tuntud inimeste kohta Vikipeediast kogutud andmebaas</a>, mis on aluseks <a href="https://tjukanovt.github.io/notable-people?fbclid=IwAR0PPqeqBJNJGXMMQ0avraSaSOwm05xIxouUWhiLbeQ1Te9gBVnvwGC3i3U">sellele rakendusele</a>.</li>
+</ul>
+<p>Geoinfoga varustatud andmeid leiab ka mitmesugustelt üldistelt lehekülgedelt ja platvormidelt, nt <a href="https://twitter.com/">Twitterist/X-ist</a> või <a href="https://www.flickr.com/">Flickrist</a>, mis võimaldavad andmeid koguda oma API (<em>Application Programming Interface</em>) abil.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Flickr"></span>
+<img src="imgs/8_flickr.jpg" alt="Näide Flickrist kogutud andmete visualiseerimisest ([Postimees, 25. september 2021](https://arvamus.postimees.ee/7345222/viguriga-kaardid-kus-pildistatakse-enim?fbclid=IwAR2N2c1YQcE1EOzY7u_UC5wNClvhl0JZEpmBbpA2NY9UrKobrNwsW8D0zBY))" width="70%" />
+<p class="caption">
+Joonis 6.4: Näide Flickrist kogutud andmete visualiseerimisest (<a href="https://arvamus.postimees.ee/7345222/viguriga-kaardid-kus-pildistatakse-enim?fbclid=IwAR2N2c1YQcE1EOzY7u_UC5wNClvhl0JZEpmBbpA2NY9UrKobrNwsW8D0zBY">Postimees, 25. september 2021</a>)
+</p>
+</div>
+<div id="harjutus" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Harjutus<a href="avaandmed.html#harjutus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Laadime Natural Earth Data lehelt alla maailma riikide polügoonide vektorandmed, mõõtkavaga 1:50 000 000 (<code>Downloads → Medium scale data → Cultural → Admin 0 - Countries</code>). Pakime allalaaditud faili lahti ning loeme SHP-faili QGISi (kasutame projekti CRSina veebi-Mercatori CRS-i <strong>EPSG:3857</strong>).<br />
+</li>
+<li>Vaatame kihi atribuuttabelit. Kuidas on väljendatud halduslikke vaidluskohti (vt nt Iisrael)?</li>
+<li>Valime kihilt ainult Euroopa riigid. Selleks saame kasutada valiku tööriistu.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:selectiontools"></span>
+<img src="imgs/7_selection_tools.png" alt="Valimise tööriistad menüüribal" width="30%" />
+<p class="caption">
+Joonis 6.5: Valimise tööriistad menüüribal
+</p>
+</div>
+<p>Objektide valimiseks teeme esmalt aktiivseks kihi, millelt valik teha. Valikut saab teha käsitsi või avaldiste abil. Valitud elemendid muutuvad vaikimisi kollaseks (värvi saab sätetes ka muuta).</p>
+<p>Valiku tööriistad:</p>
+<ul>
+<li><strong>Select Features by Area or Single Click</strong><br />
+<img src="imgs/7_qgis_selectbyarea.png" width="20%" />
+<ul>
+<li><em>Select Feature(s)</em>: vali elemendid nendel hiirega klikkides, mitme elemendi korraga valimiseks hoia all Ctrl-klahvi;<br />
+</li>
+<li><em>Select Features by Polygon</em>: joonista hiirega polügoon, mille sisse jäävad elemendid valitakse, valiku lõpetamiseks tee paremklikk;<br />
+</li>
+<li><em>Select Features by Freehand</em>: joonista vabakäega mis tahes kujund, mille sisse jäävad elemendid valitakse, valiku lõpetamiseks tee uuesti vasakklikk;<br />
+</li>
+<li><em>Select Features by Radius</em>: vali elemendid, mis jäävad teatud raadiuse kaugusele määratud keskpunktist, keskpunkti määramiseks tee kuskil vasakklikk, valiku lõpetamiseks tee uuesti vasakkklikk;<br />
+</li>
+</ul></li>
+<li><strong>Select Features by Value</strong><br />
+<img src="imgs/7_qgis_selectbyvalue.png" width="20%" />
+<ul>
+<li><em>Select Features by Value</em>: vali elemendid, mille atribuuttabeli mingite tunnuste väärtused vastavad mingitele määratud väärtustele;<br />
+</li>
+<li><em>Select Features by Expression</em>: vali elemendid, mis vastavad avaldisega määratud tingimusele;<br />
+</li>
+<li><em>Select All Features</em>: vali kõik kihi elemendid;<br />
+</li>
+<li><em>Invert Feature Selection</em>: tee valik vastupidiseks (kõik valitud ehk kollased elemendid muutuvad mittekollaseks ja kõik mittekollased muutuvad kollaseks ehk valituks);<br />
+</li>
+</ul></li>
+<li><strong>Deselect Features from All Layers</strong><br />
+<img src="imgs/7_qgis_deselect.png" width="20%" />
+<ul>
+<li><em>Deselect Features from All Layers</em>: tühista valikud kõikidelt kihtidelt;<br />
+</li>
+<li><em>Deselect Features from the Current Active Layer</em>: tühista valikud ainult aktiivselt kihilt;<br />
+</li>
+</ul></li>
+<li><strong>Select by Location</strong>: vali elemendid, mis vastavad mingile geomeetrilise suhte määratlusele (nt vali kõik polügoonid, mis osaliselt kattuvad mingi teise polügooniga). NB! Ei tööta, kui kiht on vigane!<br />
+<img src="imgs/7_qgis_selectbylocation.png" width="20%" /></li>
+</ul>
+<p>Kõik valiku töööriistad leiad ka ülamenüüst: <em>Edit → Select</em>.</p>
+<p>Võiksime põhimõtteliselt kasutada tavalist <code>Select Feature(s)</code> valiku tööriista ja kõik Euroopa riigid <code>Ctrl</code>-klahvi all hoides järjest hiirega läbi klõpsida. Lihtsam on aga kasutada tööriista <code>Select Features by Value</code> (kiirklahv <code>F3</code>) ning valida automaatselt kõik need polügoonid, mille tulba <code>REGION_UN</code> väärtus on <code>Europe</code>.</p>
+<p><img src="imgs/6_select.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>Seejärel võime <code>Ctrl</code>-klahvi all hoides ja <code>Select Feature(s)</code> tööriista kasutades valikust välja jätta alad, mida Euroopa kaardile ei taha jätta (nt Venemaa). Maailma riikide andmestiku puhul on tegemist <strong>multipolügoonidega</strong>, mistõttu tulevad Euroopa riike valides kaasa ka meretagused (koloniaal)alad. Kui tahaksime neid andmetest välja jätta, peaksime lahutama mitmikpolügoonid eraldi polügoonideks (<code>Vector → Geometry Tools → Multipart to Singleparts</code>, linnuta valik <code>Selected features only</code>). Tekib uus kiht (vaikimisi nimega <code>Single parts</code>), millelt saame seejärel uuesti valida nüüd ainult need polügoonid, mida tahame oma Euroopa kaardile jätta (nt tööriistaga <code>Select Features by Polygon</code>). Valitud riigid saame salvestada omaette Euroopa vektorkihina, kui teeme kihil paremkliki ning valime <code>Export → Save Selected Features As</code>.</p>
+<p><img src="imgs/6_saveselected.png" width="60%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="andmestike-ühendamine" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Andmestike ühendamine<a href="avaandmed.html#andmestike-ühendamine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Andmestike ühendamiseks on QGISis mitu erinevat viisi.</p>
+<div id="ühendamine-ühise-tunnuse-järgi" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Ühendamine ühise tunnuse järgi<a href="avaandmed.html#ühendamine-ühise-tunnuse-järgi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kui ühendame <strong>ruumiandmeid ja mitteruumiandmeid</strong>, saame kasutada mõlema andmestiku kattuva sisuga tulpasid. Näiteks võib meil olla olemas andmestik, milles ruumilist infot väljendavad ainult mingid tekstilised tunnused (riikide, maakondade, linnade, talude vm nimed). Nende tunnuste abil saame ühendada andmed avalikult ja vabalt kättesaadavate ruumiandmetega (nt Maa-ameti ruumiandmetega).</p>
+<p>Uurime, kuidas on maakondades 2021. aasta rahvaloenduse põhjal rahvaarv 2011. aasta andmetega võrreldes <strong>protsentuaalselt</strong> muutunud.</p>
+<ul>
+<li>Laadime QGISi Maa-ameti maakonnapiiride vektorkihi ja Moodle’is oleva CSV-andmestiku <a href="https://andmed.stat.ee/et/stat/rahvaloendus__rel_vordlus__rahvastiku_paiknemine/RLV003">statistikaameti rahvaloenduse andmetega</a> (NB! Statistikaameti andmetes ei ole koordinaate -&gt; <code>No geometry</code>).<br />
+</li>
+<li>Ühendame maakondade vektorkihiga (!) statistikaameti rahvaloenduse andmed (ühine tulp on mõlemas andmestikus see, kus on maakondade nimed).
+<ul>
+<li>Vaatame andmekihtide atribuuttabelitest, kas maakondade nimed on samal kujul.<br />
+</li>
+<li>Teeme maakondade vektorkihil topeltkliki ning valime avanenud aknas vasakult jaotise <strong><code>Joins</code></strong>. Rohelisest plussmärgist lisame uue ühenduse (<code>Add new join</code>).<br />
+</li>
+<li>Ühendatav kiht (<code>Join layer</code>) on meie rahvaloenduse andmete kiht, mille ühendamise jaoks kasutatav tulp (<code>Join field</code>) on tulp <strong>Elukoht</strong>. See tulp vastab ruumiandmete kihil tulbale <strong>MNIMI</strong> (<code>Target field</code>).<br />
+</li>
+<li>Kuna elukoha ja maakonna nime tulba sisu kattub, ei ole mõlemat vaja ühendatud andmestikus alles hoida (<code>Joined fields</code>). Samuti ei taha me, et iga ruumiandmete kihile lisatava tulba nime ees oleks omakorda veel ühendatava kihi nimi (<code>Custom field name prefix</code>).</li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:join1"></span>
+<img src="imgs/6_join1.png" alt="Mitteruumiandmete ühendamine ruumiandmetega" width="50%" />
+<p class="caption">
+Joonis 6.6: Mitteruumiandmete ühendamine ruumiandmetega
+</p>
+</div>
+<p>Nüüd on maakondade vektorkihi atribuuttabelis ka rahvaloenduse andmed, mida saame edasi kaardil visualiseerida. Kui eelmisel korral vaatasime, kuidas kujundada kõiki kihi objekte (<code>features</code>) ühesuguselt (<code>Symbology → Single symbol</code>), siis nüüd tahame, et maakonnad oleksid värvitud erinevalt, vastavalt sellele, kas ja kui palju seal rahvaarv kasvas või kahanes.</p>
+<p>Praeguses atribuuttabelis on lihtsalt 2011. ja 2021. aasta rahvaarv, meil aga oleks vaja näidata <strong>muutust</strong>. Mugav viis selleks oleks teha atribuuttabelisse lihtsalt <strong>uus tulp</strong>, kus 2011. aasta rahvaarvust oleks lahutatud 2021. aasta rahvaarv. Kui rahvaarv kasvas, siis on väärtus positiivne; kui kahanes, siis negatiivne. <strong>Uue tulba lisamiseks</strong> avame maakondade vektorkihi atribuuttabeli (kiirklahv F6 või paremklikk ja <code>Open Attribute Table</code>) ning võtame lahti tööriista <strong><code>Field Calculator</code></strong> (kiirklahv <code>Ctrl+I</code>). <img src="imgs/8_fieldcalculator.png" />.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fieldcalc"></span>
+<img src="imgs/6_fieldcalc.png" alt="Uue tulba lisamine atribuuttabelisse" width="50%" />
+<p class="caption">
+Joonis 6.7: Uue tulba lisamine atribuuttabelisse
+</p>
+</div>
+<p>Uue tulba lisamine viib meie vektorkihi automaatselt muutmisrežiimi. Sellele viitab ka see, et atribuuttabeli ülamenüüs läheb aktiivseks kollane pliiats. Pliiatsil klõpsates saab muutmisrežiimi sisse ja välja lülitada. Selleks, et enda loodud tulp kihile salvestada ja muutmisrežiimist väljuda, peame pliiatsil nüüd uuesti klõpsama.</p>
+<p>Lisame ka protsentuaalse muutuse tulba <strong>MuutusProp</strong>, kus kajastame muutust protsentuaalselt ehk jagame tulba (<code>Field</code>) <strong>Muutus</strong> väärtused läbi 2011. aasta rahvaarvuga (<code>Field</code> <strong>2011 Vanuserühmad kokku</strong>) ja korrutame saadud tulemuse 100ga. Kuna siin lubame arvudes ka komakohti, on <code>Output field type</code> sedapuhku mitte <code>Integer</code>, vaid <code>Decimal number (real)</code>.</p>
+<p>Lõpuks värvime maakonnad vastavalt protsentuaalse muutuse suunale ja suurusele. Selleks teeme maakondade vektorkihil topeltkliki ja liigume jaotisse <code>Symbology</code>. <code>Single Symbol</code> asemel valime väärtuse <strong><code>Graduated</code></strong>, mis võimaldab vektorkihi objekte (nt maakondade polügoone) kujundada vastavalt mingile <strong>arvulisele tunnusele</strong> kihi atribuuttabelis. Praegusel juhul on selleks tunnuseks (<code>Value</code>) loodud tunnus <strong>MuutusProp</strong>. Arvulise tunnuse alusel jagatakse vaatlused sagedusklassidesse. Klasside arvu saab muuta, samuti on klasside tekitamiseks erinevad meetodid:</p>
+<ul>
+<li><code>Equal Count (Quantile)</code> - igasse sagedusklassi määratakse (enam-vähem) võrdne arv objekte<br />
+</li>
+<li><code>Equal Interval</code> - kõik sagedusklassid on sama suure intervalliga (nt 1-3, 4-6, 7-9 jne), intervalli suuruse määrab klasside arv<br />
+</li>
+<li><code>Fixed Interval</code> - kõik sagedusklassid on sama suure intervalliga, intervalli suuruse määrab kasutaja<br />
+</li>
+<li><code>Logarithmic Scale</code> - rohkem tuuakse esile erinevusi väikeste väärtuste vahel<br />
+</li>
+<li><code>Natural Breaks (Jenks)</code> - sagedusklasse luuakse nii, et sama klassi väärtused oleksid üksteisega võimalikult sarnased ja teistest klassidest võimalikult erinevad<br />
+</li>
+<li><code>Pretty Breaks</code> - kõik sagedusklassid on enam-vähem sama suure intervalliga, klassi piiridena kasutatakse lihtsaid, ümardatud väärtusi, mistõttu vähima ja suurima sagedusklassi intervall võib teistest erineda<br />
+</li>
+<li><code>Standard Deviation</code> - võrdsete intervallidega sagedusklassid, intervallid põhinevad standardhälbel (näitab, kui palju mingi arvuline väärtus erineb keskmisest)</li>
+</ul>
+Selles ülesandes võiks üks klass võimalusel väljendada kuni 5 protsendipunkti muutust (<code>pretty breaks</code>). Valime sellise värviskaala (nt PRGn või RdBu), mis väljendaks skaala kumbagi äärmist otsa (suuri kasvuprotsente ja suuri kahanemisprotsente) eri värvidega.<br />
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:graduated"></span>
+<img src="imgs/6_graduated.png" alt="Maakondade värvimine vastavalt protsentuaalsele muutusele rahvaarvus" width="50%" />
+<p class="caption">
+Joonis 6.8: Maakondade värvimine vastavalt protsentuaalsele muutusele rahvaarvus
+</p>
+</div>
+<p>Salvestame kaardi pildifailina. Lisame kaardile ka pealkirja, legendi ja viite kasutatud andmetele.</p>
+<p>Veidi paindlikumaid võimalusi ruumiandmete ja mitteruumiandmete ühendamiseks pakub <strong><code>Processing → Toolbox → Vector general → Join attributes by field value</code></strong>. Näiteks kui on vaja ruumiandmete koordinaate määrata mitmele sama atribuudi väärtust omavale objektile korraga (nt andmestikus on mitu Harju maakonna vaatlust), saame kasutada seal ühendamisviisi <code>one-to-many</code>.</p>
+</div>
+<div id="geokodeerimine" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Geokodeerimine<a href="avaandmed.html#geokodeerimine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Täpsemate asukohtade määramiseks (nt aadresside jaoks) saab kasutada geokodeerimise teenust. Geokodeerimine on aadressi või kohanime seostamine geograafiliste koordinaatidega. Tagurpidi geokodeerimine omakorda võimaldab koordinaatidest tuletada aadressid ja kohanimed.</p>
+<p>QGISis on sisse-ehitatud geokodeerija, mis annab ka tänapäevaste andemetega küllaltki häid tulemusi: <em>Processing → Toolbox → Vector general → Batch Nominatim geocoder</em>.</p>
+<p>Ka Maa-amet pakub tasuta <a href="https://inaadress.maaamet.ee/geocoder/one#/">geokodeerimise teenust</a>. Sealjuures on võimalik geokodeerida nii ainult üht aadressi/kohta korraga kui ka tervet hulka andmeid (massgeokodeerimine).</p>
+<p><strong>Massgeokodeerimise</strong> sisendiks sobivad CSV- või XLSX-formaadis andmetabelid. CSV-formaadi puhul peab välju eraldama semikoolon. Vaatame seda lühikese näite abil, kus geokodeerime Tartu Ülikooli valdkondade dekanaatide ametlikud aadressid.</p>
+<ul>
+<li>Kodeerimisel peab ära määrama, millises tulbas paikneb sisendaadress, mida geokodeerima hakatakse. Antud juhul on selleks tulp <em>aadress</em>.<br />
+</li>
+<li>Seejärel saab valida mh,
+<ul>
+<li>milliste objektide hulgast vasteid otsitakse. Meid huvitavad siin eeskätt õppe<strong>hooned</strong>, aga veidi ebatäpsemate aadresside puhul (talud, tänavad, maakonnad, linnad jne) tasub otsida ka teiste objektide seast;<br />
+</li>
+<li>kuidas vasteid esitatakse. Eeskätt puudutab see aadresse, millel on kas mitu vastet või millele täpset vastet ei leita.<br />
+</li>
+</ul></li>
+<li>Lõpuks saab valida,
+<ul>
+<li>milliseid ruumiandmete tulpasid väljundisse soovime (nt kas kõiki aadressiobjektide id-sid ja tasemeid);<br />
+</li>
+<li>kas tahame, et andmeid töödeldaks sünkroonselt, mispuhul saame protsessi jälgida kohe samas veebilehitseja aknas, või asünkroonselt, mispuhul andmed laetakse serverisse ning kasutajale saadetakse mõne aja pärast tulemus meilile. Viimast tasub teha eeskätt siis, kui andmestik on mahukas.</li>
+</ul></li>
+</ul>
+<p>Geokodeerimine töötab väga hästi tänapäevaste aadressidega.<br />
+Vaatame aga nüüd ka natuke vanemaid andmeid, nimelt Rahvusarhiivi kaudu kasutatavat <strong>Tartu Ülikooli ja Eesti Ajalooarhiivi andmebaasi “Album Academicum 1918–1944”</strong>, mis koondab matrikliraamatutele jt allikatele tuginedes infot Tartu Ülikooli immatrikuleeritud üliõpilastest aastatel 1918-1944 (<a href="https://www.ra.ee/apps/andmed/index.php/site/aaut">vaata lähemalt</a>). Kuna andmestik ise on üpris mahukas, sisaldades infot enam kui 20 000 tudengi kohta, siis vaatame siin ainult Pärna-, Pähna-, Lõhmuse- ja Niine-nimeliste üliõpilaste andmeid ning võrdleme nende päritolu. Tahame teada, kas eri perekonnanimedega üliõpilaste sünnikohad korreleeruvad perekonnanimes oleva sõna levikualaga murretes. Naisüliõpilaste andmete puhul ei pruugi võrdlus olla väga täpne, kuna andmestikus sisalduvad ka need kirjed, kus perekonnanimi on saadud abiellumisel.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:murded"></span>
+<img src="imgs/6_murded_parn.png" alt="Sõnade levik murretes ([Väike murdesõnastik](https://arhiiv.eki.ee/dict/vms/))" width="24%" /><img src="imgs/6_murded_pahn.png" alt="Sõnade levik murretes ([Väike murdesõnastik](https://arhiiv.eki.ee/dict/vms/))" width="24%" /><img src="imgs/6_murded_lohmus.png" alt="Sõnade levik murretes ([Väike murdesõnastik](https://arhiiv.eki.ee/dict/vms/))" width="24%" /><img src="imgs/6_murded_niin.png" alt="Sõnade levik murretes ([Väike murdesõnastik](https://arhiiv.eki.ee/dict/vms/))" width="24%" />
+<p class="caption">
+Joonis 6.9: Sõnade levik murretes (<a href="https://arhiiv.eki.ee/dict/vms/">Väike murdesõnastik</a>)
+</p>
+</div>
+<p>Oleme veidi algandmestikku täiendanud ning lisanud standardiseeritud sünnikoha tulbad, kus andmebaasis kajastatud sünnikohtadel on lühendid lahti kirjutatud ning erinevate tasemete kohanimed on lahku löödud.</p>
+<p>Põhimõtteliselt võib proovida ka praktikumis tabelit massgeokodeerimisse saata (sel juhul tasub otsida ilmselt ainult haldus- ja asustusjaotuse klassifikaatorist), ent kui teeme seda kõik koos, võib server saada üle koormatud. Seepärast oleme lisanud praktikumi materjalidesse ka juba geokodeeritud faili <em>parn_niin_lohmus_pahn.gpkg</em>, mis kasutas aadressidena tulpa <em>Sünnikoht</em>, kus on kogu sünnikoha täiskirje, ning lisasammudena tulpasid <em>tase3</em>, <em>tase2</em> ja <em>tase1</em>, milles sünnikoha info erinevad tasemed olid lahku löödud (kõige spetsiifilisem kohanimi tulbas <em>tase3</em>). Otsitud on maakonna/omavalitsuse/asustusüksuse/linnaosa objekte.</p>
+<ul>
+<li>Laadime geokodeeritud andmestiku QGISi.<br />
+</li>
+<li>Valime andmetele sobiva aluskaardi (nt eelmisel korral kasutatud kihelkondade kaardi).<br />
+</li>
+<li>Värvime punktid selle järgi, kas tegemist on Pärna-, Pähna-, Lõhmuse- või Niine-nimeliste üliõpilastega (tulp <code>pk</code>). Selleks teeme vektorkihil topeltkliki ja liigume jaotisse <code>Symbology</code>. <code>Single Symbol</code> asemel valime väärtuse <strong><code>Categorized</code></strong>, mis võimaldab vektorkihi objekte (nt maakondade polügoone) kujundada vastavalt mingile <strong>kategoriaalsele/tekstilisele tunnusele</strong> kihi atribuuttabelis. Praegusel juhul on selleks tunnuseks (<code>Value</code>) loodud tunnus <strong>pk</strong>. Vajutame nupul <code>Classify</code>.<br />
+</li>
+<li>Teeme punkte suuremaks, viime punktide läbipaistvuse 50% peale, vahetame soovi korral punktide värvi ja sümboleid.</li>
+</ul>
+</div>
+<div id="ühendamine-ruumiinfo-järgi" class="section level3 hasAnchor" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> Ühendamine ruumiinfo järgi<a href="avaandmed.html#ühendamine-ruumiinfo-järgi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kui kasutada on näiteks kaks vektorkihti, mis mõlemad sisaldavad ka ruumiandmeid, saame ühendada neid ka ilma ühise atribuudita, <strong>koordinaatide põhjal</strong>.</p>
+Loeme sisse eelmisel korral kasutatud kohapärimuse punktikihi ja ajalooliste kihelkonnapiiride polügoonikihi. Oletame, et <strong>tahame värvida eri värvi neid kihelkondi, kust meil kohapärimuse andmeid on</strong>. Vaatame kihtide atribuuttabeleid. Mõlemal kihil on olemas kihelkonnanimedega tulp ning info näib olevat samal kujul. Seega võiksime põhimõtteliselt ühendada punktikihi kihelkondade kihiga ning teha värviliseks ainult need kihelkonnad, kust kohapärimuse kihilt tulevates tulpades midagi on.<br />
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:khk"></span>
+<img src="imgs/6_kohap1.png" alt="Kihelkondade värvimine vastavalt kohapärimusele" width="60%" />
+<p class="caption">
+Joonis 6.10: Kihelkondade värvimine vastavalt kohapärimusele
+</p>
+</div>
+<p>Kui aga tahame värvida kihelkondi selle järgi, <strong>kui palju</strong> kuskilt kihelkonnast kohapärimuse andmeid on, jääksime siin hätta, kuna kihelkonnakihil on iga kihelkonna kohta ainult üks rida, meil võib aga ühest ja samast kihelkonnast olla mitu pärimusjuttu. Siin saame kasutada valikut <code>Processing → Toolbox → Vector general → Join attributes by location (summary)</code>.</p>
+<p>Siin kohtame taas <a href="https://docs.qgis.org/3.34/en/docs/user_manual/processing_algs/algs_include.html">geomeetrilisi predikaate</a>.<br />
++ <strong>equals</strong> - kahel objektil täpselt samad koordinaadid<br />
++ <strong>intersects</strong> - kaks objekti katavad vähemalt mingeid ühiseid koordinaate (sh nt servi)<br />
++ <strong>crosses</strong> - kaks objekti lõikuvad nii, et lõikumiskoht on madalama dimensionaalsusega kui objektid ise<br />
++ <strong>overlap</strong> - kaks objekti katavad mingeid ühiseid koordinaate, aga ei ole täpselt ühesugused, kohakuti ega ainult servapunktidest kattuvad<br />
++ <strong>touches</strong> - kaks objekti puutuvad kokku ainult servadest, aga objektide siseosa ei kattu<br />
++ <strong>within</strong> - esimene objekt tervenisti teise sees<br />
++ <strong>contains</strong> - teine objekt tervenisti esimese sees</p>
+<p>Kasutame geomeetrilist predikaati <em>contains</em>, sest tahame teada, millised punktid jäävad iga kihelkonna polügooni sisse (võivad ka polügooni sisemise piiriga külgneda) ja teame, et kõik punktid jäävad Eesti riigi maakondade piiridesse. Samuti võime igaks juhuks märkida meetodina ära <em>intersects</em>, juhuks kui mõni punkt asub täpselt maakondade polügoonide piiril.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:loc"></span>
+<img src="imgs/6_join2.png" alt="Kohapärimuse punktide kokkulugemine kihelkonnapiirides" width="60%" />
+<p class="caption">
+Joonis 6.11: Kohapärimuse punktide kokkulugemine kihelkonnapiirides
+</p>
+</div>
+<p>Kuna vektorkihi geomeetria on vigane, saame veateate. Võime kihi ära parandada (<code>Processing → Toolbox → Vector geometry → Fix geometries</code>) või valida ühendamise aknas alt vasakult nurgast <code>Advanced → Algorithm Settings → Invalid feature filtering</code> ja määrata väärtuseks <code>Skip (Ignore) Features with Invalid Geometries</code>. Viimasel juhul jäetakse vigased polügoonid uuelt loodavalt kihilt välja.<br />
+Ühendamise käigus tekkinud kihil võime nüüd polügoonid värvida kas tulba <code>NIMETUS_count</code> järgi, kui tahame näidata lihtsalt, kui palju tekste/helisalvestisi/videoid mingist kihelkonnast oli (kõik Pühajõest rääkivad tekstid loetakse eraldi kokku), või <code>NIMETUS_unique</code>, kui tahame näidata, mitmest <strong>unikaalsest</strong> objektist räägiti (Pühajõgi läheb arvesse ainult ühe korra). Kasutame <code>Graduated</code> visualiseerimist.</p>
+<p>Selleks, et näha jääksid ka kihelkonnad, kust ühtegi punkti ei ole (e kus tulpades on väärtus <code>NULL</code>), peame pärast sagedusklasside moodustamist lisama eraldi klassi ka nendele juhtumitele. Valime <code>Graduated</code> asemel <code>Rule-based</code>, lisame rohelisest plussmärgist uue reegli, mille sildiks määrame <strong>0</strong> ning reegli kirjutamise asemel valime lihtsalt valiku <code>Else</code>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rules"></span>
+<img src="imgs/6_rulebased.gif" alt="Reegli lisamine kujundamisel" width="70%" />
+<p class="caption">
+Joonis 6.12: Reegli lisamine kujundamisel
+</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="qgis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
