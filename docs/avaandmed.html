@@ -217,6 +217,27 @@ div.csl-indent {
 <li class="chapter" data-level="7.4" data-path="georefereerimine.html"><a href="georefereerimine.html#harjutus-3-käsikirjalise-kaardi-georefereerimine"><i class="fa fa-check"></i><b>7.4</b> Harjutus 3: käsikirjalise kaardi georefereerimine</a></li>
 <li class="chapter" data-level="7.5" data-path="georefereerimine.html"><a href="georefereerimine.html#veebilahendus"><i class="fa fa-check"></i><b>7.5</b> Veebilahendus</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="avaldised.html"><a href="avaldised.html"><i class="fa fa-check"></i><b>8</b> Avaldised ja päringud</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="avaldised.html"><a href="avaldised.html#andmed"><i class="fa fa-check"></i><b>8.1</b> Andmed</a></li>
+<li class="chapter" data-level="8.2" data-path="avaldised.html"><a href="avaldised.html#avaldised-1"><i class="fa fa-check"></i><b>8.2</b> Avaldised</a></li>
+<li class="chapter" data-level="8.3" data-path="avaldised.html"><a href="avaldised.html#harjutused-avaldistega"><i class="fa fa-check"></i><b>8.3</b> Harjutused avaldistega</a>
+<ul>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-1-operaatorid-objektide-valimiseks"><i class="fa fa-check"></i>Harjutus 1: operaatorid objektide valimiseks</a></li>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-2-tingimuslaused-uute-atribuutidetunnuste-loomiseks"><i class="fa fa-check"></i>Harjutus 2: tingimuslaused uute atribuutide/tunnuste loomiseks</a></li>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-3-tekstiavaldised-sümbolite-kujundamiseks-1"><i class="fa fa-check"></i>Harjutus 3: tekstiavaldised sümbolite kujundamiseks (1)</a></li>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-4-tekstiavaldised-sümbolite-kujundamiseks-2"><i class="fa fa-check"></i>Harjutus 4: tekstiavaldised sümbolite kujundamiseks (2)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="avaldised.html"><a href="avaldised.html#päringud"><i class="fa fa-check"></i><b>8.4</b> Päringud</a></li>
+<li class="chapter" data-level="8.5" data-path="avaldised.html"><a href="avaldised.html#harjutus-päringutega"><i class="fa fa-check"></i><b>8.5</b> Harjutus päringutega</a></li>
+<li class="chapter" data-level="8.6" data-path="avaldised.html"><a href="avaldised.html#ülesanded"><i class="fa fa-check"></i><b>8.6</b> Ülesanded</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="avaldised.html"><a href="avaldised.html#ülesanne-1-ei-olepole-suhtelised-sagedused-murdekorpuses"><i class="fa fa-check"></i><b>8.6.1</b> Ülesanne 1: “ei ole”/“pole” suhtelised sagedused murdekorpuses</a></li>
+<li class="chapter" data-level="8.6.2" data-path="avaldised.html"><a href="avaldised.html#ülesanne-2-ei-olepole-murdeatlase-levikuandmed"><i class="fa fa-check"></i><b>8.6.2</b> Ülesanne 2: “ei ole”/“pole” murdeatlase levikuandmed</a></li>
+<li class="chapter" data-level="8.6.3" data-path="avaldised.html"><a href="avaldised.html#ülesanne-3-ei-olepole-selged-eelistused"><i class="fa fa-check"></i><b>8.6.3</b> Ülesanne 3: “ei ole”/“pole” selged eelistused</a></li>
+<li class="chapter" data-level="8.6.4" data-path="avaldised.html"><a href="avaldised.html#ülesanne-4-tekstiatribuutide-muutmine"><i class="fa fa-check"></i><b>8.6.4</b> Ülesanne 4: tekstiatribuutide muutmine</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
 </ul>
 
@@ -640,14 +661,22 @@ Joonis 6.10: Kihelkondade värvimine vastavalt kohapärimusele
 </p>
 </div>
 <p>Kui aga tahame värvida kihelkondi selle järgi, <strong>kui palju</strong> kuskilt kihelkonnast kohapärimuse andmeid on, jääksime siin hätta, kuna kihelkonnakihil on iga kihelkonna kohta ainult üks rida, meil võib aga ühest ja samast kihelkonnast olla mitu pärimusjuttu. Siin saame kasutada valikut <code>Processing → Toolbox → Vector general → Join attributes by location (summary)</code>.</p>
-<p>Siin kohtame taas <a href="https://docs.qgis.org/3.34/en/docs/user_manual/processing_algs/algs_include.html">geomeetrilisi predikaate</a>.<br />
-+ <strong>equals</strong> - kahel objektil täpselt samad koordinaadid<br />
-+ <strong>intersects</strong> - kaks objekti katavad vähemalt mingeid ühiseid koordinaate (sh nt servi)<br />
-+ <strong>crosses</strong> - kaks objekti lõikuvad nii, et lõikumiskoht on madalama dimensionaalsusega kui objektid ise<br />
-+ <strong>overlap</strong> - kaks objekti katavad mingeid ühiseid koordinaate, aga ei ole täpselt ühesugused, kohakuti ega ainult servapunktidest kattuvad<br />
-+ <strong>touches</strong> - kaks objekti puutuvad kokku ainult servadest, aga objektide siseosa ei kattu<br />
-+ <strong>within</strong> - esimene objekt tervenisti teise sees<br />
-+ <strong>contains</strong> - teine objekt tervenisti esimese sees</p>
+<p>Siin kohtame taas <a href="https://docs.qgis.org/3.34/en/docs/user_manual/processing_algs/algs_include.html">geomeetrilisi predikaate</a>.</p>
+<ul>
+<li><strong>equals</strong> - kahel objektil täpselt samad koordinaadid<br />
+</li>
+<li><strong>intersects</strong> - kaks objekti katavad vähemalt mingeid ühiseid koordinaate (sh nt servi)<br />
+</li>
+<li><strong>crosses</strong> - kaks objekti lõikuvad nii, et lõikumiskoht on madalama dimensionaalsusega kui objektid ise<br />
+</li>
+<li><strong>overlap</strong> - kaks objekti katavad mingeid ühiseid koordinaate, aga ei ole täpselt ühesugused, kohakuti ega ainult servapunktidest kattuvad<br />
+</li>
+<li><strong>touches</strong> - kaks objekti puutuvad kokku ainult servadest, aga objektide siseosa ei kattu<br />
+</li>
+<li><strong>within</strong> - esimene objekt tervenisti teise sees<br />
+</li>
+<li><strong>contains</strong> - teine objekt tervenisti esimese sees</li>
+</ul>
 <p>Kasutame geomeetrilist predikaati <em>contains</em>, sest tahame teada, millised punktid jäävad iga kihelkonna polügooni sisse (võivad ka polügooni sisemise piiriga külgneda) ja teame, et kõik punktid jäävad Eesti riigi maakondade piiridesse. Samuti võime igaks juhuks märkida meetodina ära <em>intersects</em>, juhuks kui mõni punkt asub täpselt maakondade polügoonide piiril.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:loc"></span>
 <img src="imgs/6_join2.png" alt="Kohapärimuse punktide kokkulugemine kihelkonnapiirides" width="60%" />

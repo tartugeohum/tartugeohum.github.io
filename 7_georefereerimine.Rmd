@@ -39,7 +39,7 @@ Avame QGISi. QGISis on georefereerimise tööriist **`Georeferencer`** leitav ü
 Vanemates QGISi versioonides leiad tööriista *Raster* menüü alt. Juhul, kui seal valikut *Georeferencer* ei ole, siis tuleb see aktiveerida. Selleks vali *Plugins → Manage and Install Plugins* → otsingusse kirjuta *Georeferencer* → tee linnuke *Georefencer GDAL Plugin* ette ja sulge see aken. Nüüd on tööriist *Georeferencer* rastrimenüü all näha. Tööriista sisselülitamine on ühekordne tegevus, järgmisel korral QGISi avades on see juba olemas.  
 </p>
 
-Georefereerimise tööriista kohta saab täpsemalt lugeda [QGIS 3.28 juhendist](https://docs.qgis.org/3.34/en/docs/user_manual/working_with_raster/georeferencer.html).  
+Georefereerimise tööriista kohta saab täpsemalt lugeda [QGISi juhendist](https://docs.qgis.org/3.34/en/docs/user_manual/working_with_raster/georeferencer.html).  
 
 ### Avame kaardi pildifaili  
 

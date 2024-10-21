@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="avaandmed.html"/>
-<link rel="next" href="kirjandus.html"/>
+<link rel="next" href="avaldised.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -217,6 +217,27 @@ div.csl-indent {
 <li class="chapter" data-level="7.4" data-path="georefereerimine.html"><a href="georefereerimine.html#harjutus-3-käsikirjalise-kaardi-georefereerimine"><i class="fa fa-check"></i><b>7.4</b> Harjutus 3: käsikirjalise kaardi georefereerimine</a></li>
 <li class="chapter" data-level="7.5" data-path="georefereerimine.html"><a href="georefereerimine.html#veebilahendus"><i class="fa fa-check"></i><b>7.5</b> Veebilahendus</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="avaldised.html"><a href="avaldised.html"><i class="fa fa-check"></i><b>8</b> Avaldised ja päringud</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="avaldised.html"><a href="avaldised.html#andmed"><i class="fa fa-check"></i><b>8.1</b> Andmed</a></li>
+<li class="chapter" data-level="8.2" data-path="avaldised.html"><a href="avaldised.html#avaldised-1"><i class="fa fa-check"></i><b>8.2</b> Avaldised</a></li>
+<li class="chapter" data-level="8.3" data-path="avaldised.html"><a href="avaldised.html#harjutused-avaldistega"><i class="fa fa-check"></i><b>8.3</b> Harjutused avaldistega</a>
+<ul>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-1-operaatorid-objektide-valimiseks"><i class="fa fa-check"></i>Harjutus 1: operaatorid objektide valimiseks</a></li>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-2-tingimuslaused-uute-atribuutidetunnuste-loomiseks"><i class="fa fa-check"></i>Harjutus 2: tingimuslaused uute atribuutide/tunnuste loomiseks</a></li>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-3-tekstiavaldised-sümbolite-kujundamiseks-1"><i class="fa fa-check"></i>Harjutus 3: tekstiavaldised sümbolite kujundamiseks (1)</a></li>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-4-tekstiavaldised-sümbolite-kujundamiseks-2"><i class="fa fa-check"></i>Harjutus 4: tekstiavaldised sümbolite kujundamiseks (2)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="avaldised.html"><a href="avaldised.html#päringud"><i class="fa fa-check"></i><b>8.4</b> Päringud</a></li>
+<li class="chapter" data-level="8.5" data-path="avaldised.html"><a href="avaldised.html#harjutus-päringutega"><i class="fa fa-check"></i><b>8.5</b> Harjutus päringutega</a></li>
+<li class="chapter" data-level="8.6" data-path="avaldised.html"><a href="avaldised.html#ülesanded"><i class="fa fa-check"></i><b>8.6</b> Ülesanded</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="avaldised.html"><a href="avaldised.html#ülesanne-1-ei-olepole-suhtelised-sagedused-murdekorpuses"><i class="fa fa-check"></i><b>8.6.1</b> Ülesanne 1: “ei ole”/“pole” suhtelised sagedused murdekorpuses</a></li>
+<li class="chapter" data-level="8.6.2" data-path="avaldised.html"><a href="avaldised.html#ülesanne-2-ei-olepole-murdeatlase-levikuandmed"><i class="fa fa-check"></i><b>8.6.2</b> Ülesanne 2: “ei ole”/“pole” murdeatlase levikuandmed</a></li>
+<li class="chapter" data-level="8.6.3" data-path="avaldised.html"><a href="avaldised.html#ülesanne-3-ei-olepole-selged-eelistused"><i class="fa fa-check"></i><b>8.6.3</b> Ülesanne 3: “ei ole”/“pole” selged eelistused</a></li>
+<li class="chapter" data-level="8.6.4" data-path="avaldised.html"><a href="avaldised.html#ülesanne-4-tekstiatribuutide-muutmine"><i class="fa fa-check"></i><b>8.6.4</b> Ülesanne 4: tekstiatribuutide muutmine</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
 </ul>
 
@@ -269,7 +290,7 @@ Joonis 7.2: Jägala mõisa kaart 1688. a
 <p style="color:#bfbfbe;">
 Vanemates QGISi versioonides leiad tööriista <em>Raster</em> menüü alt. Juhul, kui seal valikut <em>Georeferencer</em> ei ole, siis tuleb see aktiveerida. Selleks vali <em>Plugins → Manage and Install Plugins</em> → otsingusse kirjuta <em>Georeferencer</em> → tee linnuke <em>Georefencer GDAL Plugin</em> ette ja sulge see aken. Nüüd on tööriist <em>Georeferencer</em> rastrimenüü all näha. Tööriista sisselülitamine on ühekordne tegevus, järgmisel korral QGISi avades on see juba olemas.
 </p>
-<p>Georefereerimise tööriista kohta saab täpsemalt lugeda <a href="https://docs.qgis.org/3.34/en/docs/user_manual/working_with_raster/georeferencer.html">QGIS 3.28 juhendist</a>.</p>
+<p>Georefereerimise tööriista kohta saab täpsemalt lugeda <a href="https://docs.qgis.org/3.34/en/docs/user_manual/working_with_raster/georeferencer.html">QGISi juhendist</a>.</p>
 <div id="avame-kaardi-pildifaili" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Avame kaardi pildifaili<a href="georefereerimine.html#avame-kaardi-pildifaili" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Avame <code>Georeferencer</code> tööriista ning selles 19. saj Tartu kaardi: <strong><code>File → Open Raster</code></strong>. Selles aknas liikumine käib samamoodi nagu tavalises kaardiaknas. Suumida saab hiire rullikuga ning liikuda noolte ja hiirega liikuda, kui valitud on käekujuline <code>Pan</code> ikoon. Vaatame kaardil ringi. Milliseid kohti ära tunneme?</p>
@@ -447,7 +468,7 @@ Joonis 7.14: Digiteeritud maa-alad
         </div>
       </div>
 <a href="avaandmed.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="avaldised.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
