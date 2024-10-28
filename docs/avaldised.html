@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="georefereerimine.html"/>
-<link rel="next" href="kirjandus.html"/>
+<link rel="next" href="tekstianalyys.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -238,6 +238,19 @@ div.csl-indent {
 <li class="chapter" data-level="8.6.4" data-path="avaldised.html"><a href="avaldised.html#ülesanne-4-tekstiatribuutide-muutmine"><i class="fa fa-check"></i><b>8.6.4</b> Ülesanne 4: tekstiatribuutide muutmine</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="tekstianalyys.html"><a href="tekstianalyys.html"><i class="fa fa-check"></i><b>9</b> Geograafiline tekstianalüüs</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="tekstianalyys.html"><a href="tekstianalyys.html#sammud"><i class="fa fa-check"></i><b>9.1</b> Sammud</a></li>
+<li class="chapter" data-level="9.2" data-path="tekstianalyys.html"><a href="tekstianalyys.html#ressursid"><i class="fa fa-check"></i><b>9.2</b> Ressursid</a></li>
+<li class="chapter" data-level="9.3" data-path="tekstianalyys.html"><a href="tekstianalyys.html#eesti-keele-geoparsimine"><i class="fa fa-check"></i><b>9.3</b> Eesti keele geoparsimine</a></li>
+<li class="chapter" data-level="9.4" data-path="tekstianalyys.html"><a href="tekstianalyys.html#harjutus-3"><i class="fa fa-check"></i><b>9.4</b> Harjutus</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="tekstianalyys.html"><a href="tekstianalyys.html#kohanimeüksuste-tuvastamine-ja-tekstikatkendite-meelsuse-tuvastamine"><i class="fa fa-check"></i><b>9.4.1</b> Kohanimeüksuste tuvastamine ja tekstikatkendite meelsuse tuvastamine</a></li>
+<li class="chapter" data-level="9.4.2" data-path="tekstianalyys.html"><a href="tekstianalyys.html#tekstikatkendi-meelsuse-tuvastamine-excelis"><i class="fa fa-check"></i><b>9.4.2</b> Tekstikatkendi meelsuse tuvastamine Excelis</a></li>
+<li class="chapter" data-level="9.4.3" data-path="tekstianalyys.html"><a href="tekstianalyys.html#koordinaatide-lisamine-geokodeerimine"><i class="fa fa-check"></i><b>9.4.3</b> Koordinaatide lisamine (geokodeerimine)</a></li>
+<li class="chapter" data-level="9.4.4" data-path="tekstianalyys.html"><a href="tekstianalyys.html#visualiseerimine"><i class="fa fa-check"></i><b>9.4.4</b> Visualiseerimine</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
 </ul>
 
@@ -292,11 +305,11 @@ Joonis 8.1: Lisatud kihid
 </li>
 <li>päringute tegemiseks <code>Database Manager</code>’is (<strong><code>Database → DB Manager</code></strong>) <img src="imgs/10_dbmanager.png" />,<br />
 </li>
-<li>sümbolite, siltide või paigutuse parameetrite muutmisel (<strong><code>Symbology → Rule-based</code></strong>) <img src="imgs/10_rulebased.png" />,<br />
+<li>sümbolite, siltide või paigutuse parameetrite muutmisel (<strong><code>Symbology</code></strong>)<br />
 </li>
 <li>jne.</li>
 </ul>
-<p>Avaldisi saab eeldefineeritud funktsioonide abil koostada niisiis mitmeks erinevaks otstarbeks, vaata ülevaadet <a href="https://docs.qgis.org/3.34/en/docs/user_manual/expressions/expression.html">QGIS 3.34 juhendist</a>. Sealjuures saab üht ja sama asja teha sageli erineval moel.</p>
+<p>Avaldisi saab eeldefineeritud funktsioonide abil koostada niisiis mitmeks erinevaks otstarbeks, vaata ülevaadet <a href="https://docs.qgis.org/3.34/en/docs/user_manual/expressions/expression.html">QGISi juhendist</a>. Sealjuures saab üht ja sama asja teha sageli erineval moel.</p>
 <p>Oleme juba lihtsate avaldistega kokku puutunud, kui arvutasime eelmisel korral digiteeritud polügoonide pindala (<a href="georefereerimine.html#fig:koilapindala">7.13</a>): <code>round($area / 10000, 2)</code>.</p>
 <p>Vaatame sel korral harjutuste ja ülesannete toel lähemalt <strong>operaatoreid</strong> (<strong><code>Operators</code></strong>), <strong>matemaatilisi funktsioone</strong> (<strong><code>Math</code></strong>), <strong>tingimuslauseid</strong> (<strong><code>Conditionals</code></strong>) ning teksti muutmise võimalusi (<strong><code>String</code></strong>).</p>
 <p>Operaatorid ja funktsioonid, millega tänases praktikumis kokku puutume, on</p>
@@ -328,7 +341,7 @@ Joonis 8.1: Lisatud kihid
 <h2><span class="header-section-number">8.3</span> Harjutused avaldistega<a href="avaldised.html#harjutused-avaldistega" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="harjutus-1-operaatorid-objektide-valimiseks" class="section level3 unnumbered hasAnchor">
 <h3>Harjutus 1: operaatorid objektide valimiseks<a href="avaldised.html#harjutus-1-operaatorid-objektide-valimiseks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Kasutame valiku tööriista (<strong><code>Select Features by Expression</code></strong>), et teha aktiivseks kõik need kihelkondade polügoonid, millel on midagi kirjutatud tulpa <code>Problem</code> (nt selleks, et hakata parandustega tegelema).</p>
+<p>Kasutame <strong>valiku tööriista</strong> (<strong><code>Select Features by Expression</code></strong>), et teha aktiivseks kõik need kihelkondade polügoonid, millel on midagi kirjutatud tulpa <code>Problem</code> (nt selleks, et hakata parandustega tegelema).</p>
 <ul>
 <li>Kõikide atribuutide/tulpade nimed ja tüübid saab kätte jaotisest <strong><code>Fields and Values</code></strong>. Nupp <code>All Unique</code> näitab atribuudi kõiki eri väärtuseid, nupp <code>10 Samples</code> sellest kuni kümmet esimest eri väärtust. Topeltklikk atribuudi nimel liigutab jutumärkide vahel oleva atribuudi vasakul asuvasse avaldise kasti. Avaldiste kastis <strong>viidataksegi topeltjutumärkidega atribuuttabeli mingile tunnusele (= tulbanimele), ühekordsete jutumärkidega mingitele tekstilistele väärtustele</strong> (nt kui küsime tulbast <code>Parish_id</code> Pühalepa kihelkonna rida, siis peaksime kirjutama avaldise <strong><code>"Parish_id"</code></strong> <code>=</code> <strong><code>'Phl'</code></strong> või <code>"Parish_id" IS 'Phl'</code>).<br />
 </li>
@@ -347,7 +360,7 @@ Joonis 8.2: Probleemsed kihelkonnad
 </div>
 <div id="harjutus-2-tingimuslaused-uute-atribuutidetunnuste-loomiseks" class="section level3 unnumbered hasAnchor">
 <h3>Harjutus 2: tingimuslaused uute atribuutide/tunnuste loomiseks<a href="avaldised.html#harjutus-2-tingimuslaused-uute-atribuutidetunnuste-loomiseks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Kasutame tööriista <strong><code>Field Calculator</code></strong>, et lisada <em>ei ole</em>/<em>pole</em> atlase levikuandmetesse <strong>virtuaalne (st ajutine)</strong> tekstiatribuut nimega <strong><code>saj19</code></strong>, kus oleks väärtus <em>jah</em> ridadel, kus keelejuhi sünniaeg on väiksem kui aasta 1900, <em>ei</em>, kui keelejuhi sünniaeg on hilisem, ja <em>ei tea</em>, kui keelejuhi sünniaega pole märgitud. Virtuaalse atribuudi lisamiseks valime <code>Field Calculator</code>’is <code>Create a new field → Create virtual field</code>, atribuudi nimeks paneme <code>saj19</code>, atribuudi tüübiks valime <code>Text (string)</code>.</p>
+<p>Kasutame <strong>väljakalkulaatori tööriista</strong> (<strong><code>Field Calculator</code></strong>), et lisada <em>ei ole</em>/<em>pole</em> atlase levikuandmetesse <strong>virtuaalne (st ajutine)</strong> tekstiatribuut nimega <strong><code>saj19</code></strong>, kus oleks väärtus <em>jah</em> ridadel, kus keelejuhi sünniaeg on väiksem kui aasta 1900, <em>ei</em>, kui keelejuhi sünniaeg on hilisem, ja <em>ei tea</em>, kui keelejuhi sünniaega pole märgitud. Virtuaalse atribuudi lisamiseks valime <code>Field Calculator</code>’is <code>Create a new field → Create virtual field</code>, atribuudi nimeks paneme <code>saj19</code>, atribuudi tüübiks valime <code>Text (string)</code>.</p>
 <ul>
 <li>Siin läheb vaja <strong>tingimuslauseid</strong> jaotises <strong><code>Conditionals</code></strong>. Kasutame siin funktsiooni <strong><code>if</code></strong>, mille järel sulgude sees komadega eraldatult tuleb anda esmalt tingimus (“Kas tulbas <code>SaKJSynd</code> olev arv on väiksem kui 1900?”), seejärel väärtus juhul, kui tingimus vastab tõele, ning lõpuks väärtus juhul, kui tingimus ei vasta tõele: <strong><code>if("SaKJSynd" &lt; 1900, 'jah', 'ei')</code></strong>.<br />
 </li>
@@ -540,19 +553,19 @@ Joonis 8.5: Jõe- ja järvenimelised asulanimed
 </div>
 <div id="harjutus-päringutega" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> Harjutus päringutega<a href="avaldised.html#harjutus-päringutega" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>SQL-i päringuid saab QGISis teha nt <strong><em><code>DB Manager</code></em></strong>’i tööriistaga (ülamenüüs <code>Database → DB Manager</code>). Mõned SQL-i funktsioonid (nt <code>UPDATE</code>) töötavad ainult “päris” andmebaasiformaatidega, nt <em>GeoPackage</em>’i failidega (kui need on ka <em>GeoPackage</em>’ina sisse loetud, mitte lihtsalt vektorfailidena).</p>
+<p>SQL-i päringuid saab QGISis teha nt <strong><code>DB Manager</code></strong> tööriistaga (ülamenüüs <code>Database → DB Manager</code>). Mõned SQL-i funktsioonid (nt <code>UPDATE</code>) töötavad ainult “päris” andmebaasiformaatidega, nt <em>GeoPackage</em>’i failidega (kui need on ka <em>GeoPackage</em>’ina sisse loetud, mitte lihtsalt vektorfailidena).</p>
 <p>DB Manageris valime praegu virtuaalsete kihtide alt kihelkondade polügoonide kihi, valime ülevalt menüüst <strong><code>SQL Window</code></strong> <img src="imgs/10_sqlwindow.png" /> ja kirjutame kasti päringu (asendame punktiirid sobivate väärtustega).</p>
 <ol style="list-style-type: decimal">
 <li>Valime kihelkondade andmestikust ainult eestikeelse murrete nimede tulba ja salvestame selle eraldi kihil.
 <ul>
 <li><code>SELECT ... FROM ...;</code><br />
 </li>
-<li>Kui tahame uuele kihile saada kaasa ka polügoonide andmeid, peame valima ka geomeetria: <code>SELECT ..., geometry FROM ...;</code><br />
+<li>Kui tahame uuele kihile saada kaasa ka polügoonide andmeid, peame valima “eraldi tulbana” ka kihi geomeetria, mis on enamasti kujul <code>geometry</code>: <code>SELECT ..., geometry FROM ...;</code><br />
 </li>
 <li>Vajutame <em>Execute</em>, teeme linnukese <em>Load as new layer</em> ette ja vajutame <em>Load</em>.<br />
 </li>
 </ul></li>
-<li>Valime kihelkondade andmestikust kõik tulbad, aga ainult need Võru murde kihelkonna read, kus kihelkonna pindala on suurem kui kõikide eesti kihelkondade keskmine pindala.
+<li>Valime kihelkondade andmestikust kõik tulbad, aga ainult need Võru murde kihelkondade read, kus kihelkonna pindala on suurem kui kõikide eesti kihelkondade keskmine pindala.
 <ul>
 <li><code>SELECT ... FROM ... WHERE ... = '...' AND ... &gt; (SELECT AVG(...) FROM ...);</code><br />
 </li>
@@ -709,7 +722,7 @@ Joonis 8.15: <em>St.</em> muutmine <em>Sankt</em>’iks
         </div>
       </div>
 <a href="georefereerimine.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tekstianalyys.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

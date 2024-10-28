@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Praktikum 9 Geograafiline tekstianalüüs | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</title>
+  <meta name="description" content="Praktikum 9 Geograafiline tekstianalüüs | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Praktikum 9 Geograafiline tekstianalüüs | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Praktikum 9 Geograafiline tekstianalüüs | HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes" />
+  
+  
+  
+
+<meta name="author" content="Maarja-Liisa Pilvik" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="avaldised.html"/>
+<link rel="next" href="kirjandus.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<link href="libs/leaflet-measure-2.1.7/leaflet-measure.css" rel="stylesheet" />
+<script src="libs/leaflet-measure-2.1.7/leaflet-measure.min.js"></script>
+<script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Sissejuhatus</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#kursuse-korraldusest"><i class="fa fa-check"></i><b>1.1</b> Kursuse korraldusest</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#mis-on-geoinfosüsteemid"><i class="fa fa-check"></i><b>1.2</b> Mis on geoinfosüsteemid?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#geoinfosüsteemide-ajaloost"><i class="fa fa-check"></i><b>1.3</b> Geoinfosüsteemide ajaloost</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#ruumiandmed-ja-gis-humanitaarteadustes"><i class="fa fa-check"></i><b>1.4</b> Ruumiandmed ja GIS humanitaarteadustes</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#lugude-jutustamine"><i class="fa fa-check"></i><b>1.4.1</b> Lugude jutustamine</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#arheoloogia"><i class="fa fa-check"></i><b>1.4.2</b> Arheoloogia</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#keeleteadus"><i class="fa fa-check"></i><b>1.4.3</b> Keeleteadus</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#keele-sotsiaalteadus"><i class="fa fa-check"></i><b>1.4.4</b> Keele-/sotsiaalteadus</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#veel-näiteid"><i class="fa fa-check"></i><b>1.4.5</b> Veel näiteid</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html"><i class="fa fa-check"></i><b>2</b> Ruumiobjektid ja ruumiandmed</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#vektorandmed"><i class="fa fa-check"></i><b>2.1</b> Vektorandmed</a></li>
+<li class="chapter" data-level="2.2" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#rasterandmed"><i class="fa fa-check"></i><b>2.2</b> Rasterandmed</a></li>
+<li class="chapter" data-level="2.3" data-path="ruumiobjektid.html"><a href="ruumiobjektid.html#vektor-vs.-raster"><i class="fa fa-check"></i><b>2.3</b> Vektor vs. raster</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="kaardid.html"><a href="kaardid.html"><i class="fa fa-check"></i><b>3</b> Kaardid, koordinaatsüsteemid ja projektsioonid</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="kaardid.html"><a href="kaardid.html#kaart"><i class="fa fa-check"></i><b>3.1</b> Kaart</a></li>
+<li class="chapter" data-level="3.2" data-path="kaardid.html"><a href="kaardid.html#kaardi-elemendid"><i class="fa fa-check"></i><b>3.2</b> Kaardi elemendid</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="kaardid.html"><a href="kaardid.html#mootkava"><i class="fa fa-check"></i><b>3.2.1</b> Mõõtkava</a></li>
+<li class="chapter" data-level="3.2.2" data-path="kaardid.html"><a href="kaardid.html#projektsioon"><i class="fa fa-check"></i><b>3.2.2</b> Koordinaatsüsteemid ja projektsioonid</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="kaardid.html"><a href="kaardid.html#kaartide-liigitus"><i class="fa fa-check"></i><b>3.3</b> Kaartide liigitus</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="kaardid.html"><a href="kaardid.html#digitaalkaardid"><i class="fa fa-check"></i><b>3.3.1</b> Digitaalkaardid</a></li>
+<li class="chapter" data-level="3.3.2" data-path="kaardid.html"><a href="kaardid.html#viguriga-kaardid"><i class="fa fa-check"></i><b>3.3.2</b> Viguriga kaardid</a></li>
+<li class="chapter" data-level="3.3.3" data-path="kaardid.html"><a href="kaardid.html#ülesanne"><i class="fa fa-check"></i><b>3.3.3</b> Ülesanne</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="kaardid.html"><a href="kaardid.html#kaartide-koostamine-ja-kujundamine-veebis"><i class="fa fa-check"></i><b>3.4</b> Kaartide koostamine ja kujundamine veebis</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="kaardid.html"><a href="kaardid.html#arcgis-online"><i class="fa fa-check"></i><b>3.4.1</b> ArcGIS Online</a></li>
+<li class="chapter" data-level="3.4.2" data-path="kaardid.html"><a href="kaardid.html#mapbox-studio"><i class="fa fa-check"></i><b>3.4.2</b> Mapbox Studio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="storymaps.html"><a href="storymaps.html"><i class="fa fa-check"></i><b>4</b> Story maps</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="storymaps.html"><a href="storymaps.html#story-maps"><i class="fa fa-check"></i><b>4.1</b> Story maps</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="storymaps.html"><a href="storymaps.html#storymapjs"><i class="fa fa-check"></i><b>4.1.1</b> StoryMapJS</a></li>
+<li class="chapter" data-level="4.1.2" data-path="storymaps.html"><a href="storymaps.html#arcgis-storymaps"><i class="fa fa-check"></i><b>4.1.2</b> ArcGIS StoryMaps</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="storymaps.html"><a href="storymaps.html#ülesanne-tänane-kuupäev-story-mapis"><i class="fa fa-check"></i><b>4.2</b> Ülesanne: tänane kuupäev <em>story map</em>’is</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="qgis.html"><a href="qgis.html"><i class="fa fa-check"></i><b>5</b> Sissejuhatus QGISi</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="qgis.html"><a href="qgis.html#installimine-ja-seadistamine"><i class="fa fa-check"></i><b>5.1</b> Installimine ja seadistamine</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="qgis.html"><a href="qgis.html#kasutajaliidese-keel"><i class="fa fa-check"></i><b>5.1.1</b> Kasutajaliidese keel</a></li>
+<li class="chapter" data-level="5.1.2" data-path="qgis.html"><a href="qgis.html#vaikimisi-koordinaatide-referentssüsteem"><i class="fa fa-check"></i><b>5.1.2</b> Vaikimisi koordinaatide referentssüsteem</a></li>
+<li class="chapter" data-level="5.1.3" data-path="qgis.html"><a href="qgis.html#paneelid-ja-tööriistad"><i class="fa fa-check"></i><b>5.1.3</b> Paneelid ja tööriistad</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="qgis.html"><a href="qgis.html#aluskaardid"><i class="fa fa-check"></i><b>5.2</b> Aluskaardid</a></li>
+<li class="chapter" data-level="5.3" data-path="qgis.html"><a href="qgis.html#andmete-avamine"><i class="fa fa-check"></i><b>5.3</b> Andmete avamine</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="qgis.html"><a href="qgis.html#rasterandmed-1"><i class="fa fa-check"></i><b>5.3.1</b> Rasterandmed</a></li>
+<li class="chapter" data-level="5.3.2" data-path="qgis.html"><a href="qgis.html#vektorandmed-1"><i class="fa fa-check"></i><b>5.3.2</b> Vektorandmed</a></li>
+<li class="chapter" data-level="5.3.3" data-path="qgis.html"><a href="qgis.html#andmete-sisselugemine-csv-failist"><i class="fa fa-check"></i><b>5.3.3</b> Andmete sisselugemine CSV-failist</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="qgis.html"><a href="qgis.html#andmete-visualiseerimine"><i class="fa fa-check"></i><b>5.4</b> Andmete visualiseerimine</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="qgis.html"><a href="qgis.html#harjutus-1"><i class="fa fa-check"></i><b>5.4.1</b> Harjutus 1</a></li>
+<li class="chapter" data-level="5.4.2" data-path="qgis.html"><a href="qgis.html#sildid"><i class="fa fa-check"></i><b>5.4.2</b> Sildid</a></li>
+<li class="chapter" data-level="5.4.3" data-path="qgis.html"><a href="qgis.html#harjutus-2"><i class="fa fa-check"></i><b>5.4.3</b> Harjutus 2</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="qgis.html"><a href="qgis.html#kaartide-eksportimine"><i class="fa fa-check"></i><b>5.5</b> Kaartide eksportimine</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="avaandmed.html"><a href="avaandmed.html"><i class="fa fa-check"></i><b>6</b> Avaandmed ja repositooriumid. Andmekihtide ühendamine</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="avaandmed.html"><a href="avaandmed.html#avaandmed-1"><i class="fa fa-check"></i><b>6.1</b> Avaandmed</a></li>
+<li class="chapter" data-level="6.2" data-path="avaandmed.html"><a href="avaandmed.html#eesti-ruumiandmed"><i class="fa fa-check"></i><b>6.2</b> Eesti ruumiandmed</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="avaandmed.html"><a href="avaandmed.html#maa-ameti-geoportaal"><i class="fa fa-check"></i><b>6.2.1</b> Maa-ameti geoportaal</a></li>
+<li class="chapter" data-level="6.2.2" data-path="avaandmed.html"><a href="avaandmed.html#statistikaamet"><i class="fa fa-check"></i><b>6.2.2</b> Statistikaamet</a></li>
+<li class="chapter" data-level="6.2.3" data-path="avaandmed.html"><a href="avaandmed.html#muu"><i class="fa fa-check"></i><b>6.2.3</b> Muu</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="avaandmed.html"><a href="avaandmed.html#muudriigid"><i class="fa fa-check"></i><b>6.3</b> Muude riikide ruumiandmed</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="avaandmed.html"><a href="avaandmed.html#harjutus"><i class="fa fa-check"></i><b>6.3.1</b> Harjutus</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="avaandmed.html"><a href="avaandmed.html#andmestike-ühendamine"><i class="fa fa-check"></i><b>6.4</b> Andmestike ühendamine</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="avaandmed.html"><a href="avaandmed.html#ühendamine-ühise-tunnuse-järgi"><i class="fa fa-check"></i><b>6.4.1</b> Ühendamine ühise tunnuse järgi</a></li>
+<li class="chapter" data-level="6.4.2" data-path="avaandmed.html"><a href="avaandmed.html#geokodeerimine"><i class="fa fa-check"></i><b>6.4.2</b> Geokodeerimine</a></li>
+<li class="chapter" data-level="6.4.3" data-path="avaandmed.html"><a href="avaandmed.html#ühendamine-ruumiinfo-järgi"><i class="fa fa-check"></i><b>6.4.3</b> Ühendamine ruumiinfo järgi</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="georefereerimine.html"><a href="georefereerimine.html"><i class="fa fa-check"></i><b>7</b> Georefereerimine</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="georefereerimine.html"><a href="georefereerimine.html#kaartide-otsimine-ja-allalaadimine"><i class="fa fa-check"></i><b>7.1</b> Kaartide otsimine ja allalaadimine</a></li>
+<li class="chapter" data-level="7.2" data-path="georefereerimine.html"><a href="georefereerimine.html#harjutus-1-vana-tartu-kaardi-georefereerimine"><i class="fa fa-check"></i><b>7.2</b> Harjutus 1: vana Tartu kaardi georefereerimine</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="georefereerimine.html"><a href="georefereerimine.html#avame-kaardi-pildifaili"><i class="fa fa-check"></i><b>7.2.1</b> Avame kaardi pildifaili</a></li>
+<li class="chapter" data-level="7.2.2" data-path="georefereerimine.html"><a href="georefereerimine.html#lisame-aluskaardi"><i class="fa fa-check"></i><b>7.2.2</b> Lisame aluskaardi</a></li>
+<li class="chapter" data-level="7.2.3" data-path="georefereerimine.html"><a href="georefereerimine.html#georefereerime-kaardi"><i class="fa fa-check"></i><b>7.2.3</b> Georefereerime kaardi</a></li>
+<li class="chapter" data-level="7.2.4" data-path="georefereerimine.html"><a href="georefereerimine.html#lõikame-kaardist-välja-ainult-vanalinna-osa"><i class="fa fa-check"></i><b>7.2.4</b> Lõikame kaardist välja ainult vanalinna osa</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="georefereerimine.html"><a href="georefereerimine.html#harjutus-2-ajalooline-maakasutus-jägala-mõisa-külades"><i class="fa fa-check"></i><b>7.3</b> Harjutus 2: ajalooline maakasutus Jägala mõisa külades</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="georefereerimine.html"><a href="georefereerimine.html#kaardi-georefereerimine"><i class="fa fa-check"></i><b>7.3.1</b> Kaardi georefereerimine</a></li>
+<li class="chapter" data-level="7.3.2" data-path="georefereerimine.html"><a href="georefereerimine.html#digiteerimine"><i class="fa fa-check"></i><b>7.3.2</b> Digiteerimine</a></li>
+<li class="chapter" data-level="7.3.3" data-path="georefereerimine.html"><a href="georefereerimine.html#pindalade-arvutamine"><i class="fa fa-check"></i><b>7.3.3</b> Pindalade arvutamine</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="georefereerimine.html"><a href="georefereerimine.html#harjutus-3-käsikirjalise-kaardi-georefereerimine"><i class="fa fa-check"></i><b>7.4</b> Harjutus 3: käsikirjalise kaardi georefereerimine</a></li>
+<li class="chapter" data-level="7.5" data-path="georefereerimine.html"><a href="georefereerimine.html#veebilahendus"><i class="fa fa-check"></i><b>7.5</b> Veebilahendus</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="avaldised.html"><a href="avaldised.html"><i class="fa fa-check"></i><b>8</b> Avaldised ja päringud</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="avaldised.html"><a href="avaldised.html#andmed"><i class="fa fa-check"></i><b>8.1</b> Andmed</a></li>
+<li class="chapter" data-level="8.2" data-path="avaldised.html"><a href="avaldised.html#avaldised-1"><i class="fa fa-check"></i><b>8.2</b> Avaldised</a></li>
+<li class="chapter" data-level="8.3" data-path="avaldised.html"><a href="avaldised.html#harjutused-avaldistega"><i class="fa fa-check"></i><b>8.3</b> Harjutused avaldistega</a>
+<ul>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-1-operaatorid-objektide-valimiseks"><i class="fa fa-check"></i>Harjutus 1: operaatorid objektide valimiseks</a></li>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-2-tingimuslaused-uute-atribuutidetunnuste-loomiseks"><i class="fa fa-check"></i>Harjutus 2: tingimuslaused uute atribuutide/tunnuste loomiseks</a></li>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-3-tekstiavaldised-sümbolite-kujundamiseks-1"><i class="fa fa-check"></i>Harjutus 3: tekstiavaldised sümbolite kujundamiseks (1)</a></li>
+<li class="chapter" data-level="" data-path="avaldised.html"><a href="avaldised.html#harjutus-4-tekstiavaldised-sümbolite-kujundamiseks-2"><i class="fa fa-check"></i>Harjutus 4: tekstiavaldised sümbolite kujundamiseks (2)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="avaldised.html"><a href="avaldised.html#päringud"><i class="fa fa-check"></i><b>8.4</b> Päringud</a></li>
+<li class="chapter" data-level="8.5" data-path="avaldised.html"><a href="avaldised.html#harjutus-päringutega"><i class="fa fa-check"></i><b>8.5</b> Harjutus päringutega</a></li>
+<li class="chapter" data-level="8.6" data-path="avaldised.html"><a href="avaldised.html#ülesanded"><i class="fa fa-check"></i><b>8.6</b> Ülesanded</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="avaldised.html"><a href="avaldised.html#ülesanne-1-ei-olepole-suhtelised-sagedused-murdekorpuses"><i class="fa fa-check"></i><b>8.6.1</b> Ülesanne 1: “ei ole”/“pole” suhtelised sagedused murdekorpuses</a></li>
+<li class="chapter" data-level="8.6.2" data-path="avaldised.html"><a href="avaldised.html#ülesanne-2-ei-olepole-murdeatlase-levikuandmed"><i class="fa fa-check"></i><b>8.6.2</b> Ülesanne 2: “ei ole”/“pole” murdeatlase levikuandmed</a></li>
+<li class="chapter" data-level="8.6.3" data-path="avaldised.html"><a href="avaldised.html#ülesanne-3-ei-olepole-selged-eelistused"><i class="fa fa-check"></i><b>8.6.3</b> Ülesanne 3: “ei ole”/“pole” selged eelistused</a></li>
+<li class="chapter" data-level="8.6.4" data-path="avaldised.html"><a href="avaldised.html#ülesanne-4-tekstiatribuutide-muutmine"><i class="fa fa-check"></i><b>8.6.4</b> Ülesanne 4: tekstiatribuutide muutmine</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tekstianalyys.html"><a href="tekstianalyys.html"><i class="fa fa-check"></i><b>9</b> Geograafiline tekstianalüüs</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="tekstianalyys.html"><a href="tekstianalyys.html#sammud"><i class="fa fa-check"></i><b>9.1</b> Sammud</a></li>
+<li class="chapter" data-level="9.2" data-path="tekstianalyys.html"><a href="tekstianalyys.html#ressursid"><i class="fa fa-check"></i><b>9.2</b> Ressursid</a></li>
+<li class="chapter" data-level="9.3" data-path="tekstianalyys.html"><a href="tekstianalyys.html#eesti-keele-geoparsimine"><i class="fa fa-check"></i><b>9.3</b> Eesti keele geoparsimine</a></li>
+<li class="chapter" data-level="9.4" data-path="tekstianalyys.html"><a href="tekstianalyys.html#harjutus-3"><i class="fa fa-check"></i><b>9.4</b> Harjutus</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="tekstianalyys.html"><a href="tekstianalyys.html#kohanimeüksuste-tuvastamine-ja-tekstikatkendite-meelsuse-tuvastamine"><i class="fa fa-check"></i><b>9.4.1</b> Kohanimeüksuste tuvastamine ja tekstikatkendite meelsuse tuvastamine</a></li>
+<li class="chapter" data-level="9.4.2" data-path="tekstianalyys.html"><a href="tekstianalyys.html#tekstikatkendi-meelsuse-tuvastamine-excelis"><i class="fa fa-check"></i><b>9.4.2</b> Tekstikatkendi meelsuse tuvastamine Excelis</a></li>
+<li class="chapter" data-level="9.4.3" data-path="tekstianalyys.html"><a href="tekstianalyys.html#koordinaatide-lisamine-geokodeerimine"><i class="fa fa-check"></i><b>9.4.3</b> Koordinaatide lisamine (geokodeerimine)</a></li>
+<li class="chapter" data-level="9.4.4" data-path="tekstianalyys.html"><a href="tekstianalyys.html#visualiseerimine"><i class="fa fa-check"></i><b>9.4.4</b> Visualiseerimine</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="kirjandus.html"><a href="kirjandus.html"><i class="fa fa-check"></i>Kirjandus</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HVHV.00.001 Geoinfosüsteemide rakendusvõimalused humanitaarteadustes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tekstianalyys" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Praktikum 9</span> Geograafiline tekstianalüüs<a href="tekstianalyys.html#tekstianalyys" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Geograafiline tekstianalüüs on uurimissuund ja metodoloogia, mis ühendab kirjandusteaduste traditsioonilised tekstianalüüsi meetodid ruumianalüüsi ja arvutuslike tekstianalüüsi meetoditega.</p>
+<p>Geograafilise tekstianalüüsi nimi on kitsamalt seotud Lancasteri ülikooliga ning nimedega nagu <a href="https://www.lancaster.ac.uk/history/about/people/ian-gregory">Ian Gregory</a>, <a href="https://www.lancaster.ac.uk/history/about/people/christopher-donaldson">Christopher Donaldson</a>, <a href="https://www.lancaster.ac.uk/history/about/people/patricia-murrieta-flores">Patricia Murrieta-Flores</a> jt. Ehkki Lancasteri ülikooli projekt <a href="https://www.lancaster.ac.uk/mappingthelakes/index.htm"><strong>Mapping the Lakes: A Literary GIS</strong></a> ei olnud kaugeltki mitte esimene projekt, mis kirjandusteoste kaardistamisega tegeles, oli see üks esimesi, mis süsteemselt tegeles sellega, et demonstreerida, kuidas <strong>digiteerimise ja GISi</strong> abil saab visualiseerida ja analüüsida (ajaloolisest) struktureerimata tekstist välja kooruvaid mustreid, kohtade eri kujutamisviise ning kohtadega seotud tundmusi, kujutlusi jms.</p>
+<!-- võrdlesid kahe poeedi reisikirjeldusi Järvemaast ning leidsid, et kaks kirjanikku said samast piirkonnast täiesti erinevaid kogemusi: üks käis hobusega mööda "turistikaid" teid, teine jalgsi ja avastas uusi kohti -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mappinglakes1"></span>
+<img src="imgs/14_mappinglakes1.jpg" alt="*Mapping the Lakes*: kahe poeedi reisikirjeldustes mainitud kohtade võrdlus [@Gregory&amp;Cooper2009]" width="120%" />
+<p class="caption">
+Joonis 9.1: <em>Mapping the Lakes</em>: kahe poeedi reisikirjeldustes mainitud kohtade võrdlus <span class="citation">(<a href="kirjandus.html#ref-Gregory&amp;Cooper2009">Gregory et al. 2009</a>)</span>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mappinglakes3"></span>
+<img src="imgs/14_mappinglakes3.PNG" alt="Kohtadega seotud emotsioonid poeedi reisikirjelduses ([Mapping the Lakes](https://www.lancaster.ac.uk/mappingthelakes/Exploratory%20Maps.htm))" width="48%" /><img src="imgs/14_mappinglakes4.PNG" alt="Kohtadega seotud emotsioonid poeedi reisikirjelduses ([Mapping the Lakes](https://www.lancaster.ac.uk/mappingthelakes/Exploratory%20Maps.htm))" width="48%" />
+<p class="caption">
+Joonis 9.2: Kohtadega seotud emotsioonid poeedi reisikirjelduses (<a href="https://www.lancaster.ac.uk/mappingthelakes/Exploratory%20Maps.htm">Mapping the Lakes</a>)
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:lakedistrict2"></span>
+<img src="imgs/14_lakedistrict2.jpg" alt="Inglismaa Lake District ehk &quot;järvemaa&quot; piirkond (© User:Nilfanion / Wikimedia Commons / CC-BY-SA)" width="40%" />
+<p class="caption">
+Joonis 9.3: Inglismaa Lake District ehk “järvemaa” piirkond (© User:Nilfanion / Wikimedia Commons / CC-BY-SA)
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:lakedistrict1"></span>
+<img src="imgs/14_lakedistrict1.jpg" alt="Inglismaa Lake District ehk &quot;järvemaa&quot; piirkond (© User:Diliff / Wikimedia Commons / CC-BY-SA)" width="70%" />
+<p class="caption">
+Joonis 9.4: Inglismaa Lake District ehk “järvemaa” piirkond (© User:Diliff / Wikimedia Commons / CC-BY-SA)
+</p>
+</div>
+<p>Esimesele projektile Inglismaa Järvemaa piirkonnast järgnesid jätkuprojektid <a href="https://www.lancaster.ac.uk/fass/projects/spatialhum.wordpress/"><strong>Spatial Humanities: Texts, GIS &amp; Places</strong></a> ja <a href="http://wp.lancs.ac.uk/lakesdeepmap/"><strong>Geospatial Innovation: A Deep Map of the Lake District</strong></a>. Kui esimeses projektis tehti kohtade ja nendega seotu tuvastamisel rohkem käsitööd, siis järgnevates kasutati juba enam tekstide ja keele automaattöötluse vahendeid. Samuti kasutati hilisemates projektides ka muid andmeid (nt rahvastikuandmeid).</p>
+<!-- - Analüüsitud kolme 18. sajandi briti reisija - luuletaja Thomas Gray, loodusteadlase Thomas Pennanti ja põllumehe Arthur Youngi - kirjeldusi nende reisidest läbi Lake Districti, selleks et mõista, kuidas selle piirkonna looduslikud objektid ja maastik (orud, mäed jms) kujundasid seda, mis kohti rändajad külastasid, miks nad mingeid kohti teistele eelistasid ja miks mingeid kohti mainisid, ent ei külastanud.  
+- Kohanimed tuvastatud käsitsi, koordinaadid määratud kohanimeloendi järgi.  
+- Punktipõhisest esitusest rastermudeli juurde: reisikirjades kohad mitte kui diskreetsed objektid, vaid üleminekud. kohti iseloomustab rohkem asju kui nende geograafiline asukoht -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mappinglakes3567-1"></span>
+<img src="imgs/14_costsurface.png" alt="Kohtadest kirjutamine ja maastikud [@Murrieta-Flores2017]" width="49%" />
+<p class="caption">
+Joonis 9.5: Kohtadest kirjutamine ja maastikud <span class="citation">(<a href="kirjandus.html#ref-Murrieta-Flores2017">Murrieta-Flores et al. 2017</a>)</span>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mappinglakes3567-2"></span>
+<img src="imgs/14_mappinglakes2.PNG" alt="Kohtadest kirjutamine ja maastikud [@Murrieta-Flores2017]" width="49%" />
+<p class="caption">
+Joonis 9.6: Kohtadest kirjutamine ja maastikud <span class="citation">(<a href="kirjandus.html#ref-Murrieta-Flores2017">Murrieta-Flores et al. 2017</a>)</span>
+</p>
+</div>
+<!-- - Kasutatud levinud geoinfosüsteemipõhiseid analüüsimeetodeid (*Cost-Surface Analysis*, *Least-Cost-Path Analysis*, *spatial proximity test*, *Line Density Analysis*) selleks, et analüüsida, **kuidas Lake Districti suhteline ligipääsetavus mõjutas reisijate valitud teekondi ja sellest tulenevalt nende kogemusi**. Esmalt simuleerisid mudelitega n-ö looduslikud koridorid ning seejärel arvutasid, kas reisikirjades kujutatud kohad on nendele koridoridele lähemal kui puhta juhuse läbi võiks oodata. Vastavalt looduslikele koridoridele ning kohtadele, mida kirjutajad mainisid, modelleeriti ka nende tõenäolised liikumisteekonnad ning vaadati, kas mõned piirkonnad said kolme reisija peale kollektiivselt eriti palju tähelepanu.  
+- Leiti, et reisijad tõepoolest liikusid mööda looduslikke koridore ning et liiguti põhiliselt kolme järve ümbruses, kuhu ehitati 18. sajandil ka paremaid teid. -->
+<p><br>
+<br></p>
+<p>Praegu võib geograafilise tekstianalüüsi keskmeks pidada niisiis korpuslingvistiliste meetodite kasutamist, ent laiemalt võib sellesse valdkonda lugeda mis tahes kohtadega seotud kirjandusliku või ajaloolise teksti analüüsi ja visualiseerimise, nn <em>literary GIS</em> või <em>literary mapping</em>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:literarymapping"></span>
+<img src="imgs/14_literarymappingbook.PNG" alt="Literary Mapping in the Digital Age [@Cooper&amp;Donaldson&amp;Murrieta-Flores2016] (vaata [sisukorda](https://books.google.ee/books?id=v_EyDAAAQBAJ&amp;printsec=frontcover&amp;hl=et#v=onepage&amp;q&amp;f=false))" width="30%" />
+<p class="caption">
+Joonis 9.7: Literary Mapping in the Digital Age <span class="citation">(<a href="kirjandus.html#ref-Cooper&amp;Donaldson&amp;Murrieta-Flores2016">Cooper et al. 2016</a>)</span> (vaata <a href="https://books.google.ee/books?id=v_EyDAAAQBAJ&amp;printsec=frontcover&amp;hl=et#v=onepage&amp;q&amp;f=false">sisukorda</a>)
+</p>
+</div>
+<!-- Ehkki on ka digitaalseid kirjandusatlaseid, story mape jm, siis geograafiline tekstianalüüs erineb selle poolest, et tegeleb päriselt ka teksti kvantitatiivse analüüsiga, mitte ei kasuta seda lihtsalt illustratsiooniks. -->
+<p>Geograafilises tekstianalüüsis on prominentsel kohal tekstides mainitud kohanimed ja nendega seostuv:</p>
+<ol style="list-style-type: decimal">
+<li>Mis kohtadest tekstides räägitakse? <!-- ka kui sagedasti? --></li>
+<li>Kuidas tekstides nendest kohtadest räägitakse? <!-- mis sõnadega? --></li>
+<li>Mida räägitakse tekstides nende kohtadega seotud objektide ja nähtuste kohta?</li>
+</ol>
+<!-- Kirjandusteostes kujutatud geograafiliste kogemuste ja ruumisuhete analüüsiks, nt reisikirjades, aga ka ilukirjanduses -->
+<p>Geograafiline tekstianalüüs on seega üks tekstide kauglugemise (<em>distant reading</em>) tehnikatest, mille abil tuvastada tekstidest mustreid.</p>
+<p>Humanitaarteadustes on meetodit kasutatud põhiliselt ajalooliste (st enne 20. sajandit kirjutatud) tekstide analüüsil, eeskätt ilmselt autoriõiguste tõttu, ent sellel on suur ühisosa ka tänapäevaste avalike tekstide analüüsiga. Ajalooliste tekstide puhul lisandub analüüsi sageli <strong>teoste digiteerimise protsess</strong> (nt käsitsi sisestamine või tärktuvastus), mida võivad oluliselt komplitseerida aja jooksul toimunud muutused näiteks</p>
+<ul>
+<li>kirjastamiskonventsioonides,<br />
+</li>
+<li>trükiformaatides,</li>
+<li>keeles,<br />
+</li>
+<li>kirjaviisis.</li>
+</ul>
+<div id="sammud" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Sammud<a href="tekstianalyys.html#sammud" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Geograafilises tekstianalüüsis on tüüpiliselt 3 põhisammu.</p>
+<!-- Kuidas defineerida kohanime? -->
+<ol style="list-style-type: decimal">
+<li>Tekstis viidatud <strong>kohanimede tuvastamine</strong>.
+<ul>
+<li>Kohanimesid võib tuvastada mõistagi käsitsi, teksti lähilugemisel, aga üha enam kasutatakse tänapäevaseid <strong>loomuliku keele töötluse vahendeid</strong> (automaatne nimetuvastus, <em>Named Entity Recognition</em>). Üksikute tekstide puhul tagab käsitsi otsimine kindlasti parema kvaliteedi, ent suuremate tekstikorpuste puhul läheb see liiga aeganõudvaks ja ressursimahukaks.<br />
+</li>
+<li>Probleeme:
+<ul>
+<li>kohtadele ei ole alati viidatud konkreetsete kohanimedega (nt <em>Anne sauna taga</em>, <em>kaks kilomeetrit Elvast läände</em>, <em>see küla, kust me läbi sõitsime</em>); sageli seda aga ignoreeritakse põhjenduse toel, et konkreetsete kohanimedega tehakse veidi teisi asju kui ümberütlemistega: luuakse korraga tahtlikult narratiivset JA geograafilist ruumi.<br />
+</li>
+<li>probleemid metonüümiaga (nt saab kohanime märgendi hoopis organisatsioon mingi riigi valitsuse, meeskondade vmt puhul, <em>Itaalia võttis vastu otsuse…</em>, <em>Eesti kaotas 1-8</em>);<br />
+</li>
+<li>digiteerimise käigus tekib alati vigu, ükskõik kas tärktuvastuse või käsitsi sisestamisega;</li>
+<li>ajaloolistes kohanimedes palju varieeruvust, seal esinevad kohanimed ei pruugi sisalduda ka andmetes, mille peal automaatse analüüsi vahendid on treenitud;</li>
+<li>kui oskad veidi skripte kirjutada, saab nimetuvastust omakorda täiendada reeglitega (nt määra konstruktsioonid “X talu” alati kohanimedeks).<br />
+</li>
+</ul></li>
+</ul></li>
+<li>Tuvastatud kohanimede ehk <strong>toponüümide sidumine koordinaatidega</strong>.
+<ul>
+<li>Enamasti kasutatakse selleks koordinaatidega varustatud <strong>kohanimeloendeid</strong> (<em>gazetteer</em>) või kohanimeandmebaase (nimeüksuste vastete leidmine ehk <em>Named Entity Matching</em>).<br />
+</li>
+<li>Probleeme:
+<ul>
+<li>ühe ja sama kohanimega võib viidata mitmele kohale, tuleks lahendada viitesuhted. Selleks võib alati valida näiteks kõige tõenäolisema viite, täpsustada piirkonda või ka käsitsi õige viite määrata;<br />
+</li>
+<li>kui oskad veidi skriptida, saab siingi kasutada samuti mingeid reegleid ja statistilisi tõenäosusi (nt <em>Lisbon</em> või <em>Berlin</em> viitavad üldiselt tõenäolisemalt Euroopa kohanimedele, aga Ameerika kirjanike puhul või USA idarannikust rääkides USA samanimelistele väikelinnadele).<br />
+</li>
+</ul></li>
+</ul></li>
+<li>Mainitud kohtade ja nendega seotu <strong>analüüsimine, tõlgendamine ja visualiseerimine</strong>.
+<ul>
+<li>Identifitseeritud kohtade mainimissagedusi võib võrrelda näiteks rahvastikunäitajatega (kas tihedamini asustatud kohti mainitakse ka rohkem? kas kohtade sündimus- või suremusnäitajad korreleeruvad nende mainimiste sagedusega?), muude ajalooliste, etnograafiliste vm andmetega. Aga võib ka analüüsida seda, mis kontekstis kohanimesid on tekstides mainitud, näiteks mis emotsioonidega seoses, milliste omadussõnadega seoses jne.</li>
+<li>Siin võib kasutada muu hulgas korpuslingvistilisi meetodeid (nt sagedasti koosesinevate sõnapaaride ehk kollokatsioonide tuvastamine), ühisloomet (nt lastakse inimestel mingeid kohtadega seotud tekstilõike mingil alusel hinnata või märgendada), aga loomulikult ka kvalitatiivset analüüsi.<br />
+</li>
+<li>Analüüsi käigus selgub ka, milliseid osi tekstikorpusest tuleb n-ö lähilugeda ja milliste osadega saab hakkama ka kauglugemise teel.<br />
+</li>
+<li>GISi võib kasutada selles etapis põhimõtteliselt ka lihtsalt visualiseerimiseks, aga on ka palju võimalusi põhjalikumaks analüüsiks.</li>
+</ul></li>
+</ol>
+<!-- Mis võiks olla Tallinna ja Tartu kollokaadid?-->
+<p>Kaht esimest sammu ehk kohanimede tuvastamist ja eraldamist tekstist ning nende koordinaatidega sidumist nimetatakse kokkuvõtvalt ka <strong>geoparsimiseks</strong> (<em>geoparsing</em>).
+Geoparsimine on seega laiem mõiste kui asukohamärgistamine või geokodeerimine, kuna tegeleb ka kohanimede tuvastamisega tekstist ning samuti ebamäärasemate kohaviidete tuvastamise ning viitesuhete lahendamisega.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geoparsing"></span>
+<img src="imgs/14_geoparsing.png" alt="Geoparsimine ühendab kohanimede tuvastamise ja koordinaatidega sidumise [@Grittaetal2018]" width="80%" />
+<p class="caption">
+Joonis 9.8: Geoparsimine ühendab kohanimede tuvastamise ja koordinaatidega sidumise <span class="citation">(<a href="kirjandus.html#ref-Grittaetal2018">Gritta et al. 2017</a>)</span>
+</p>
+</div>
+</div>
+<div id="ressursid" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Ressursid<a href="tekstianalyys.html#ressursid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Geoparsitud tekstikogusid ei ole väga palju. Seega tuleb huvipakkuvate tekstidega teha läbi kõik ülal nimetatud sammud ise. On mõned valmislahendused, kuhu lihtsustatult öeldes läheb tekst sisse ja välja tuleb geoparsitud fail, milles on eraldatud kohanimed ja määratud neile koordinaadid.</p>
+<ul>
+<li>Näiteks võib kasutada <a href="https://www.ltg.ed.ac.uk/software/geoparser/">Edinburgh Geoparserit</a> (jookseb ainult Macil ja Linuxil, aga Linuxi virtuaalmasina abil ka Windowsis; juhend kasutamiseks <a href="https://programminghistorian.org/en/lessons/geoparsing-text-with-edinburgh">siin</a>), mis kasutab geoparsimisel kontekstilist infot, et leida tekstist kohanimed ning määrata neile õiged koordinaadid. On olemas ka <em>online</em> testversioon: <a href="http://jekyll.inf.ed.ac.uk/geoparser/" class="uri">http://jekyll.inf.ed.ac.uk/geoparser/</a>. Edinburgh Geoparser kasutab muu hulgas <a href="https://www.geonames.org/"><strong>GeoNames</strong></a>i koordinaatide jm infoga varustatud üldist kohanimeloendit (sisaldab ka nt u 15 000 Eesti kohanime).<br />
+</li>
+<li><a href="https://geocode.xyz/textscan">Geocode.xyz</a></li>
+<li><a href="https://github.com/milangritta/Geocoding-with-Map-Vector">CamCoder</a><br />
+</li>
+<li><a href="https://demo.dbpedia-spotlight.org/">DBpedia Spotlight</a></li>
+<li><a href="https://www.geo-locate.org/web/WebFileGeoref.aspx">GEOLocate</a> veebiparser on pigem geokodeerija (NB! failiformaat)</li>
+</ul>
+<p>Eri geoparserite võrdlemiseks võib kasutada nt <a href="https://github.com/geoai-lab/EUPEG">EUPEG</a> Java-rakendust (demoversioon siin: <a href="https://geoai.geog.buffalo.edu/EUPEG/#" class="uri">https://geoai.geog.buffalo.edu/EUPEG/#</a>).</p>
+</div>
+<div id="eesti-keele-geoparsimine" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Eesti keele geoparsimine<a href="tekstianalyys.html#eesti-keele-geoparsimine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ülal nimetatud ressursse saab mingil määral kasutada ka eesti keele jaoks, ent eesti keele puhul raskendab kohanimede tuvastamist oluliselt erinevate käändevormide kasutamine (nt <em>Tartu</em>, <em>Tartus</em>, <em>Tartusse</em>).</p>
+<p>Eesti keele automaatanalüüsi tööriistade kõige terviklikum komplekt sisaldub Pythoni <a href="https://github.com/estnltk/estnltk"><strong>EstNLTK</strong></a> teegis, mille kaudu on võimalik kasutada nii nimetuvastajat kui ka morfoloogilist analüsaatorit. Nende kasutamiseks tuleb aga osata pisut Pythoni skripte kirjutada (baasasjad saab üpris lihtsa vaevaga omandada nt <a href="https://github.com/estnltk/estnltk/tree/main/tutorials">siit</a>), nimetuvastuse kasutamise juhendi leiab <a href="https://github.com/estnltk/estnltk/blob/main/tutorials/nlp_pipeline/D_information_extraction/02_named_entities.ipynb">siit</a>.</p>
+<p>EstNLTK nimetuvastaja eristab kolme tüüpi nimesid:</p>
+<ul>
+<li>isikunimed (<code>PER</code>),</li>
+<li>kohanimed (<code>LOC</code>),</li>
+<li>organisatsiooninimed (<code>ORG</code>).</li>
+</ul>
+<p>Samu tööriistu, mida EstNLTK teegis, kasutatakse ka nimetuvastuse demorakenduses (kuni 5000 tähemärgi pikkusele tekstile) <a href="https://ner.tartunlp.ai/" class="uri">https://ner.tartunlp.ai/</a>. Ajalooliste tekstide nimetuvastuseks arendatud tööriistade prototüübid on kättesaadavad lehel <a href="https://github.com/soras/vk_ner_lrec_2022" class="uri">https://github.com/soras/vk_ner_lrec_2022</a>.</p>
+<p>Tuvastatud kohanimede algvormid saab omakorda saata näiteks <a href="https://geoportaal.maaamet.ee/est/Teenused/Geokodeerimise-teenus-p440.html">Maa-ameti geokodeerimise teenusesse</a>, et siduda kohanimed koordinaatidega. Võib kasutada ka QGISi geokodeerimise tööriistu (nt Batch Nominatim geocoder’it või mõnd paljudest pistikprogrammidest).</p>
+<p>Geoparsimiseks ongi lisaks valmislahendustele oluliselt laialdasemad võimalused erinevates programmeerimiskeeltes (nt Pythonis, Bashis, JavaScriptis).
+Pythonil on nt geoparsimise teegid <a href="https://github.com/openeventdata/mordecai"><strong>Mordecai</strong></a> ja <a href="https://pypi.org/project/geoparsepy/"><strong>geoparsepy</strong></a>, mis võtavad sisendiks teksti ja väljastavad kohanimed koos koordinaatidega. Samuti kasutavad Pythonit suurem osa ülal nimetatud “valmis” geoparseritest. <!-- Pythonit saab kasutada ka QGISis --></p>
+</div>
+<div id="harjutus-3" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Harjutus<a href="tekstianalyys.html#harjutus-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kasutame geograafilise tekstianalüüsi näitlikustamiseks <a href="https://stenogrammid.riigikogu.ee/et">Riigikogu istungite stenogramme</a>. Selle praktikumi jaoks oleme kraapinud veebist nende istungite protokollid, mis on toimunud vahemikus 01.01.2020 ja 06.11.2023.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="imgs/15_stenogrammid.png" alt="Riigikogu istungite stenogrammid veebilehel" width="80%" />
+<p class="caption">
+Joonis 9.9: Riigikogu istungite stenogrammid veebilehel
+</p>
+</div>
+<p>Kõik protokollid on Moodle’is praktikumi materjalide kaustas eraldi alamkaustas nimega <strong><em>stenogrammid2023.zip</em></strong>. Samuti on materjalide hulgas kraapimiseks kasutatud R-i skript.</p>
+<p>Ülesandes</p>
+<ol style="list-style-type: decimal">
+<li>leiame, <strong>milliseid kohanimeüksusi</strong> on mingi istungi protokollis mainitud;<br />
+</li>
+<li>analüüsime, milline on kohanimeüksust sisaldava <strong>tekstikatkendi meelsus</strong>: kas tekst on pigem positiivne, negatiivne või neutraalne;<br />
+</li>
+<li><strong>puhastame</strong> andmestiku;<br />
+</li>
+<li><strong>geokodeerime</strong> kohanimeüksused;<br />
+</li>
+<li><strong>visualiseerime</strong> andmeid.</li>
+</ol>
+<div id="kohanimeüksuste-tuvastamine-ja-tekstikatkendite-meelsuse-tuvastamine" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Kohanimeüksuste tuvastamine ja tekstikatkendite meelsuse tuvastamine<a href="tekstianalyys.html#kohanimeüksuste-tuvastamine-ja-tekstikatkendite-meelsuse-tuvastamine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kohanimeüksuste automaatseks tuvastamiseks ning nende vahetu konteksti eraldamiseks tekstist kasutame EstNLTK analüüsivahendeid. Selleks, et Pythoni installimiselt ning skriptide kirjutamiselt aega kokku hoida, kasutame praktikumis <strong><a href="https://colab.research.google.com/drive/1K8wftl_g9PC9psobw9-lcUwoF1ukM90y?usp=sharing">Google Colabi</a></strong>, mille kaudu saame jooksutada juba valmis kirjutatud skripti. Kui soovid eesti keele automaattöötluse kohta rohkem õppida, on suureks abiks <a href="https://github.com/estnltk/estnltk">EstNLTK õppematerjalid</a> (kaustas <em>tutorials</em>) ja TÜ kursus “<a href="https://github.com/d009/EstNLP">Eesti keele töötlus Pythonis</a>”.</p>
+<p>Meelsusanalüüsiks kasutame siin Eesti Keele Instituudi <a href="http://peeter.eki.ee:5000/valence">emotsioonidetektorit</a>, mille aluseks olev Pythoni kood on üleval GitHubi lehel <a href="https://github.com/EKT1/valence/" class="uri">https://github.com/EKT1/valence/</a>. Sama kausta materjalid on ka Moodle’is failis <em>valence-master.zip</em>. Emotsioonidetektori kohta saad lugeda artiklist <em><a href="http://www.folklore.ee/folklore/vol64/polarity.pdf">Pajupuu, Hille; Altrov, Rene; Pajupuu, Jaan (2016). Identifying polarity in different text types. Folklore. Electronic Journal of Folklore, 64, 25−42</a></em>.</p>
+<p>Koodi jooksutamiseks vajuta koodiplokkide vasakus servas oleval noolekesel. Kui midagi skripti jooksutamisel ei tööta, on praktikumi materjalides kaasas ka ühe näidisfaili (<em>202106091400.csv</em>) analüüsid (kaustas <em>kohanimed_valmis</em>).</p>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="3%" />
+<col width="89%" />
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">kohanime_vorm</th>
+<th align="left">kohanime_lemma</th>
+<th align="left">kontekst</th>
+<th align="left">meelsus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Eestis</td>
+<td align="left">Eesti</td>
+<td align="left">esmaspäeval kinnitasime nädala töökava ja sinna hulka oli märgitud ka Sotsiaaldemokraatliku Erakonna fraktsiooni algatatud olulise tähtsusega riikliku küsimuse ” Ebavõrdsus Eestis – kas vaesusest saab välja kärpida ? ” arutelu . Ettekandjaks oli määratud majandusanalüütik Madis Aben . Me teame .</td>
+<td align="left">positive</td>
+</tr>
+<tr class="even">
+<td align="left">Viljandimaalt</td>
+<td align="left">Viljandimaa</td>
+<td align="left">oleks mõeldav ? Sest inimestele peab ju ette ka ütlema . Näiteks üks esineja peaks sel juhul hakkama siia sõitma Viljandimaalt . Aitäh ! Möönan , et olukord ei ole väga selge , just esinejate vaatest , aga me saame üheskoos</td>
+<td align="left">positive</td>
+</tr>
+<tr class="odd">
+<td align="left">Eestis</td>
+<td align="left">Eesti</td>
+<td align="left">tagasi hea kolleegi Helmen Küti ettepaneku juurde . Asjaolu , et on nad pannud püsti sellise küsimuse nagu ” Ebavõrdsus Eestis – kas vaesusest saab välja kärpida ? ” arutelu , on iseenesest nii verbaalses mõttes äärmiselt oluline kui ka sisu</td>
+<td align="left">positive</td>
+</tr>
+<tr class="even">
+<td align="left">Eestis</td>
+<td align="left">Eesti</td>
+<td align="left">muud selgitust ma ei taha , ainult seda , mis annab õiguse – Sotsiaaldemokraatliku Erakonna päevakorda pandud punkti ” Ebavõrdsus Eestis ” välja arvata ! Palun nimetage see norm ! Härra Grünthal , Riigikogu juhatus ei arva Sotsiaaldemokraatliku Erakonna fraktsiooni päevakorrapunkti</td>
+<td align="left">positive</td>
+</tr>
+<tr class="odd">
+<td align="left">Euroopa</td>
+<td align="left">Euroopa</td>
+<td align="left">ole protseduuriline küsimus . Läheme edasi tänase päevakorraga . Esimene päevakorrapunkt on väliskomisjoni esitatud Riigikogu otsuse ” Riigikogu otsuse ” Euroopa Julgeoleku- ja Koostööorganisatsiooni Parlamentaarse Assamblee Eesti delegatsiooni moodustamine ” muutmine ” eelnõu esimene lugemine . Ettekande teeb väliskomisjoni liige Imre</td>
+<td align="left">neutral</td>
+</tr>
+<tr class="even">
+<td align="left">Eesti</td>
+<td align="left">Eesti</td>
+<td align="left">tänase päevakorraga . Esimene päevakorrapunkt on väliskomisjoni esitatud Riigikogu otsuse ” Riigikogu otsuse ” Euroopa Julgeoleku- ja Koostööorganisatsiooni Parlamentaarse Assamblee Eesti delegatsiooni moodustamine ” muutmine ” eelnõu esimene lugemine . Ettekande teeb väliskomisjoni liige Imre Sooäär . Palun ! Aitäh ,</td>
+<td align="left">neutral</td>
+</tr>
+</tbody>
+</table>
+<p>Skripti väljundiks on fail <strong><em>istung.csv</em></strong>, kus on tabelkujul</p>
+<ul>
+<li>kohanimeüksus sellisel kujul, nagu see tekstis esineb (tulp <code>kohanime_vorm</code>);<br />
+</li>
+<li>kohanimeüksuse algvorm (tulp <code>kohanime_lemma</code>), mitmesõnalise kohanimeüksuse puhul on lemmatiseeritud ainult nimeüksuse viimane sõna (nt <code>Tallinna linn</code>);<br />
+</li>
+<li>kontekst ehk 20 sõna kohanimest vasakule ja paremale (tulp <code>kontekst</code>);<br />
+</li>
+<li>kontekstile määratud meelsuse hinnang (tulp <code>meelsus</code>).</li>
+</ul>
+<p>Loeme tabeli Excelisse või muusse tabeltöötlusprogrammi:</p>
+<ul>
+<li><em>Data → From Text/CSV</em> → <em>File Origin: UTF-8</em>, <em>Delimiter: Tab</em> → <em>Transform Data</em> → vajuta <em>Use First Row as Headers</em> → <em>Close &amp; Load</em>).</li>
+</ul>
+<p>Hindame nimetuvastuse kvaliteeti. On teada, et automaatne nimetuvastus töötab kõige paremini isikunimede tuvastamisega, kohanimede ja organisatsioonidega on sel rohkem raskusi.<br />
+Võime andmeid pisut käsitsi puhastada ja korrastada. Kustutame tabelist read, kus nimetuvastus on eksinud (nt <em>Facebook</em>, <em>Euroopa Liit</em>), parandame kohanimede lemmasid (nt <em>pai</em> → <em>Paide</em>).</p>
+<p>Salvestame Exceli tabeli nimega <strong><em>istung.xlsx</em></strong>.</p>
+</div>
+<div id="tekstikatkendi-meelsuse-tuvastamine-excelis" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> Tekstikatkendi meelsuse tuvastamine Excelis<a href="tekstianalyys.html#tekstikatkendi-meelsuse-tuvastamine-excelis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>EKI emotsioonidetektor on tegelikult kasutatav ka MS Exceli laiendusena (<em>Add-in</em>), ent see ei pruugi uuemates Exceli versioonides alati töötada. Katsetame.</p>
+<ul>
+<li>Laadime lehelt <a href="http://peeter.eki.ee:5000/applications/list" class="uri">http://peeter.eki.ee:5000/applications/list</a> alla faili <em><a href="http://peeter.eki.ee:5000/valence.xlam">valence.xlam</a></em>.<br />
+</li>
+<li>Otsime Excelist üles <em>File → Options → Add-ins → Manage Excel Add-ins → Go → Browse</em>, otsime üles faili <em>valence.xlam</em>.<br />
+</li>
+<li>Kirjutame Excelis tabeli uude tulpa <code>=Valence.TestBayes()</code> ja sulgude vahele lahtri viite, milles on tekst (nt <code>=Valence.TestBayes(C2)</code>). Kontrollime, kas tulemused vastavad Pythoni skriptiga saadud tulemustele.</li>
+</ul>
+</div>
+<div id="koordinaatide-lisamine-geokodeerimine" class="section level3 hasAnchor" number="9.4.3">
+<h3><span class="header-section-number">9.4.3</span> Koordinaatide lisamine (geokodeerimine)<a href="tekstianalyys.html#koordinaatide-lisamine-geokodeerimine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Nüüd peame saama oma tabelile koordinaadid. Selleks võiksime proovida põhimõtteliselt kasutada ka <a href="https://inaadress.maaamet.ee/geocoder/one#/">Maa-ameti geokodeerimise teenust</a>, aga kuna teame, et meie tabelis on palju ka välisriikide kohanimesid, ei oleks sellest väga palju kasu. Katsetame niisiis hoopis QGISi geokodeerijat.<br />
+Esmalt salvestame xlsx-faili csv-na, nt nimega <strong><em>istung_parandatud.csv</em></strong>. Geokodeerimise jaoks oleks vaja, et faili kodeering oleks UTF-8.</p>
+<p>Seejärel</p>
+<ul>
+<li>avame QGISi,<br />
+</li>
+<li>otsime sobiva aluskaardi ja CRS-i,<br />
+</li>
+<li>laadime csv-faili QGISi,<br />
+</li>
+<li>valime <strong><code>Processing → Toolbox → Vector general → Batch Nominatim geocoder</code></strong>, <code>Input layer</code> on csv-faili kiht, mille just laadisime, <code>Address field</code> on <em>kohanime_lemma</em>.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="imgs/15_geokodeerimine.png" alt="Tuvastatud kohanimede geokodeerimine QGISis" width="60%" />
+<p class="caption">
+Joonis 9.10: Tuvastatud kohanimede geokodeerimine QGISis
+</p>
+</div>
+<p>Nimetame kihi <em>Geocoded</em> ümber nimega <strong><em>istungi_kohad</em></strong>.</p>
+</div>
+<div id="visualiseerimine" class="section level3 hasAnchor" number="9.4.4">
+<h3><span class="header-section-number">9.4.4</span> Visualiseerimine<a href="tekstianalyys.html#visualiseerimine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="mainimiste-arv" class="section level4 unnumbered hasAnchor">
+<h4>Mainimiste arv<a href="tekstianalyys.html#mainimiste-arv" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Vaatame esmalt, milliseid kohti ja kui palju mainiti. Selleks on teatavasti mitu võimalust:</p>
+<ul>
+<li>muudame punktide läbipaistvust (rohkem mainitud kohad jäävad tumedamalt);<br />
+</li>
+<li>valime <code>Symbology</code> jaotises <code>Single symbol</code> asemel <strong><code>Point Cluster</code></strong> või <strong><code>Point Displacement</code></strong>;<br />
+</li>
+<li>valime <code>Symbology</code> jaotises <strong><code>Heatmap</code></strong>, valime sobiva värvipaleti ja -skaala.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="imgs/15_heatmap.png" alt="Stenogrammis mainitud kohanimede *heatmap*" width="70%" />
+<p class="caption">
+Joonis 9.11: Stenogrammis mainitud kohanimede <em>heatmap</em>
+</p>
+</div>
+<p>Võime ka teha uue kihi, kus loeme kokku, kui mitu korda üht nime mainitakse, ja visualiseerida mainimiste arvu näiteks punkti suuruse abil. Selleks valime <strong><code>Database → DB Manager → SQL Window</code></strong> ja päringu aknasse kirjutame</p>
+<pre><code>SELECT kohanime_lemma, COUNT(kohanime_lemma) AS arv, geometry
+FROM istungi_kohad
+GROUP BY kohanime_lemma;</code></pre>
+<p>Vajutame <code>Execute</code>, teeme linnukese kasti <code>Load as new layer</code> ette ja vajutame <code>Load</code>. Uuel kihil vajutame <code>Size</code> paremas ääres kastikest, valime <code>Expression → Edit</code> ja kirjutame avaldiseks <code>log10("arv")*10</code>. Logaritmimine vähendab erinevusi suurt arvude vahel ja toob esile erinevusi väiksemate arvude vahel.</p>
+</div>
+<div id="emotsioonid" class="section level4 unnumbered hasAnchor">
+<h4>Emotsioonid<a href="tekstianalyys.html#emotsioonid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Kasutame punktide asemel diagramme, et visualiseerida, kui suur protsent mingi koha mainimistest olid positiivses, negatiivses ja neutraalses kontekstis. Selleks tuleb esmalt teha kiht, kus oleme kokku lugenud iga koha iga emotsiooni mainimiste arvu ja pannud selle eraldi tulpadesse.</p>
+<p><strong><code>Database → DB Manager → SQL Window</code></strong> ja päringu aknasse kirjutame</p>
+<pre><code>SELECT kohanime_lemma, geometry,
+SUM(CASE WHEN meelsus = &#39;positive&#39; THEN 1 ELSE 0 END) AS positive,
+SUM(CASE WHEN meelsus = &#39;negative&#39; THEN 1 ELSE 0 END) AS negative,
+SUM(CASE WHEN meelsus = &#39;neutral&#39; THEN 1 ELSE 0 END) AS neutral
+FROM istungi_kohad
+GROUP BY kohanime_lemma;  </code></pre>
+<ul>
+<li>Uue tekkinud kihi <code>Symbology</code> jaotises valime <code>Single symbol</code> asemel <code>No symbols</code>.<br />
+</li>
+<li>Lisame pirukadiagrammid (<code>Diagrams → Pie Chart</code>),
+<ul>
+<li>atribuutideks valime tulbad <em>positive</em>, <em>negative</em> ja <em>neutral</em>,<br />
+</li>
+<li>neile kategooriatele valime sobivad värvid,<br />
+</li>
+<li>muudame diagrammid veidi läbipaistvamaks (<code>Rendering → Opacity</code>)<br />
+</li>
+<li>ja diagrammide suuruseks määrame <code>Scaled size</code>,
+<ul>
+<li><code>Attribute</code> väärtuseks <code>"positive"+"negative"+"neutral"</code><br />
+</li>
+<li>ja valime sobiva skaala, arvestades kõige sagedamini mainitud koha mainimiste arvu ja kõige harvemini mainitud kohtade arvu.<br />
+</li>
+</ul></li>
+<li>paneme diagrammid punktide koha peale: <code>Placement → Over point</code>.</li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="imgs/15_diagrams.png" alt="Positiivsete, negatiivsete ja neutraalsete mainimiste osakaalud" width="70%" />
+<p class="caption">
+Joonis 9.12: Positiivsete, negatiivsete ja neutraalsete mainimiste osakaalud
+</p>
+</div>
+<p>Teine variant sama tulemuseni jõudmiseks oleks</p>
+<ul>
+<li>teha topeltklikk kihil <em>istungi_kohad</em>,<br />
+</li>
+<li>kaotada <code>Symbology</code> jaotises ära tavalised punktikesed (<code>No symbols</code>),<br />
+</li>
+<li>jaotises <code>Diagrams</code> valida <code>Pie Chart</code>,<br />
+</li>
+<li>seal omakorda <code>Attributes</code> jaotises lisada <code>Assigned attributes</code> aknasse kolm avaldist, mis loeksid kokku iga kohanime lemma esinemiskorrad juhul, kui 1) meelsuse tulbas on väärtus <em>positive</em>, 2) meelsuse tulbas on väärtus <em>negative</em>, 3) meelsuse tulbas on väärtus <em>neutral</em>:
+<ul>
+<li><code>count("kohanime_lemma", group_by:="kohanime_lemma", filter:="meelsus"='positive')</code><br />
+</li>
+<li><code>count("kohanime_lemma", group_by:="kohanime_lemma", filter:="meelsus"='negative')</code><br />
+</li>
+<li><code>count("kohanime_lemma", group_by:="kohanime_lemma", filter:="meelsus"='neutral')</code><br />
+</li>
+</ul></li>
+<li>diagrammide <code>Size</code> jaotises valida <code>Scaled size</code> → <code>Attribute</code> väärtuseks kirjutada avaldis <code>count("kohanime_lemma", group_by:="kohanime_lemma")</code>, Maximum value määrata <code>Find</code> nupu abil, <code>Size</code> väärtuseks määrata nt 15 ning suurendada ka väikeste diagrammide suurust (nt 2 peale).</li>
+</ul>
+<p>Sellisel juhul aga tuleb iga muudatust tehes (nt sektorite värvi, diagrammide suurust, läbipaistvust vm-d muutes) diagrammide aluseks olevad andmed iga kord uuesti genereerida ning seetõttu võtab muudatuste nägemine kauem aega.</p>
+<p>Määrame lõpuks ka kohanimedele sildid, mis tuleksid nähtavale alles siis, kui oleme piisavalt sisse suuminud.</p>
+<p><strong><code>Symbology → Labels → Single labels → Rendering → Scale Dependent Visibility</code></strong>. Valime ka <code>Overlapping labels → Allow Overlaps without Penalty</code>, et näidata kõiki silte.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="avaldised.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kirjandus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
