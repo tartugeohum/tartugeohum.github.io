@@ -197,7 +197,7 @@ DB Manageris valime praegu virtuaalsete kihtide alt kihelkondade polügoonide ki
 
 ## Ülesanded
 
-### Ülesanne 1: "ei ole"/"pole" suhtelised sagedused murdekorpuses  
+### Ülesanne 1: "ei ole"/"pole" suhtelised sagedused murdekorpuses {#kontrollikihelkondi} 
 
 Värvime kihelkondade polügoonid selle põhjal, kui palju neis kasutatakse **murdekorpuse** (!) andmete põhjal protsentuaalselt eituse varianti *ei ole* (vs. *pole*). Need suhtelised sagedused on tabelis **`eiole_pole_mk_props.csv`**, aga selle tabeliga ei ole seotud mingeid koordinaate. Peame niisiis **ühendama** tabeli mingi tunnuse alusel (nt kihelkondade nimede järgi) olemasolevate ruumiandmetega.
 
