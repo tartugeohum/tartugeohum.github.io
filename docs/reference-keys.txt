@@ -163,6 +163,7 @@ fig:github1
 fig:efiseesti
 fig:temporal
 fig:temporalcontroller
+fig:20rstudioide
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
@@ -289,3 +290,15 @@ veebikaartide-majutamine-ja-jagamine
 github-pages
 muud-veebimajutusteenused
 lisa-ajatelje-kasutamine-qgisis
+r
+miks-teha-kaarte-koodipõhiselt
+r-rstudio-ja-r-markdown
+pakettide-installimine-ja-töökataloogi-seadistamine
+kood
+andmete-sisselugemine
+kaartide-tegemine
+andmete-valimine
+andmestike-ühendamine-1
+jooniste-eksportimine
+ülesanne-5
+r-i-raamatud-ja-juhendid
