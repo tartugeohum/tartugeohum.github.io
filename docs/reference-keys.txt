@@ -302,3 +302,4 @@ andmestike-ühendamine-1
 jooniste-eksportimine
 ülesanne-5
 r-i-raamatud-ja-juhendid
+ruumiobjektid-ja-ruumiandmed
