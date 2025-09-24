@@ -78,9 +78,9 @@ knitr::include_graphics(here::here("imgs", "5_storymapjs_iframe.png"))
 - Loo tegemiseks pead looma (avaliku) kasutajakonto. Seejärel saad meilile aktiveerimislingi ning sellele vajutades saabki konto loomise lõpule viia (määrata kasutajanime ja parooli jms).   
 - Kindluse mõttes võib esmalt ära vahetada vaikimisi platvormi keele, kui see ei ole inglise keel. Vastasel juhul võivad mõned tõlked arusaamatuks jääda (nt sõna *heading* tõlkena võib kohata sõna *suund*). Selleks saab minna üleval paremas nurgas enda profiili lingile ning vaadata lähemalt seadeid (*Kuva minu seaded* või *View my settings*) ning uuenda keelt, numbri- ja kuupäevavorminguid. Seejärel trüki aadressiribale uuesti `https://storymaps.arcgis.com`.   
 - Uue loo tegemiseks vajuta nupul *Create story*. Võib alustada tühja malliga (*Start from scratch*) või valida mallitüübi  
-    + *Sidecar* (tekst ja visuaal kuvatud kõrvuti paneelidel, sobib hästi, kui suurem rõhk on näiteks tekstil)  
+    + *Sidecar* (tekst ja visuaal kuvatud kõrvuti paneelidel, sobib hästi, kui suurem rõhk on näiteks tekstil ning pildid ja kaardid on lihtsalt visuaalne lisamaterjal)  
     + *Guided map tour* (tekst ja visuaal kuvatud kaardil, vaataja liigub mööda punkte kindlaks määratud järjekorras)  
-    + *Explorer map tour* (nagu eelmine vormel, aga vaataja saab valida, mis järjekorras mööda punkte liigub).  
+    + *Explorer map tour* (nagu eelmine vormel, aga vaataja saab valida, mis järjekorras mööda punkte liigub; tekst ja kaart eraldi paneelidel).  
 - Kasutame siin tühja malli, millele saame lisada teisi malle juurde. Tiitellehele saab märkida oma projekti nime ja lühikese tutvustuse. Võib lisada juurde ka pildi või video (**NB! Kui kasutad teiste tehtud materjale, viita kindlasti ka autorile**).  
 
 ```{r storymaps4, echo = F, fig.align = "center", fig.show='hold', out.width= "60%", fig.cap= "ArcGIS StoryMapsi avakuva"}
@@ -92,14 +92,21 @@ knitr::include_graphics(here::here("imgs", "5_arcgis_intro.png"))
     + nupu, mis viib nt mingile lingile (`Button`),  
     + horisontaalse eraldusriba eri tekstiplokkide vahele (`Separator`),  
     + koodiploki (`Code`),  
-    + tabeli (`Table`) kuni 8 tulba ja 10 reaga,  
     + kaardi (`Map`),  
+    + graafikuid (`Chart`),  
+    + infograafikat (`Infographic`),  
+    + tabeli (`Table`) kuni 8 tulba ja 13 reaga,  
     + pildi (`Image`),  
+    + 360-kraadise pildi (`360 image`),  
+    + pildigalerii (`Image gallery`),  
     + video (`Video`),  
+    + heli (`Audio`),  
+    + olemasoleva ArcGISi rakenduse (`ArcGIS app`),  
+    + ajajoone (`Timeline`),  
     + liuguri, mis lubab kõrvutada kaht kaarti või pilti (`Swipe`),    
     + teisi loomalle (*Sidecar*, *Map tour*), mille sisse omakorda võib lisada üleval nimetatud elemente.  
 - Tasulises versioonis on võimalik kasutada veel plokitüüpe.  
-- Kaardi (`Map`) võid lisada juba varem valmis tehtud kaartide hulgast (nt eelmisel korral tehtud vallakohtuprotokollide kaardi) või teha kohapeal uue (*New express map*). Selleks    
+- Kaardi (`Map`) võid lisada juba varem valmis tehtud kaartide hulgast (nt vallakohtuprotokollide kaardi) või teha kohapeal uue (*New express map*). Selleks    
     + tuleks valida esmalt aluskaart (*basemap*),  
     + seejärel lisada tekst, meedia ja siduda punktid konkreetsete kohtadega.
   
@@ -127,7 +134,7 @@ knitr::include_graphics(here::here("imgs", "5_arcgis_maptour.gif"))
 
 
 - Kui lugu on valmis, avalikusta lugu (ülemises menüüs nupp `Publish`).   
-- Kaarti saab jagada samuti lingiga (kui lugu on avalik) ning lisada *iframe*'i koodiga teistele veebilehtedele (`More actions` -> `Embed this story`).  
+- Kaarti saab jagada samuti lingiga (kui lugu on avalik), QR-koodiga jmt. Põhimõtteliselt peaks olema võimalik lisada kaardilugu *iframe*'i koodiga ka teistele veebilehtedele (`More actions` -> `Embed this story`), ent igal pool ei pruugi see õnnestuda.  
 - Vaata lähemalt kõikide ArcGIS-i *story map*'ide võimalusi [siit](https://storymaps.arcgis.com/stories/cea22a609a1d4cccb8d54c650b595bc4).  
 
 
@@ -135,7 +142,7 @@ knitr::include_graphics(here::here("imgs", "5_arcgis_maptour.gif"))
 
 ## Ülesanne: tänane kuupäev *story map*'is
 
-Otsi [Vikipeediast tänase kuupäevaga](https://en.wikipedia.org/wiki/September_23) seotud sündmus (nt ajalooline sündmus, mõne kuulsa isiku sünni- või surmakuupäev), võid kasutada ka [eestikeelset nimekirja](https://et.wikipedia.org/wiki/23._september), ning kujuta vastavat Vikipeedia artiklit või selle olulisemaid osi *story map*'il kas StoryMap JS või ArcGis Story Maps keskkonnas. Lisa võimalusel pilte, linke ja muud, mis loo käiku aitavad jälgida.  
+Otsi [Vikipeediast tänase kuupäevaga](https://en.wikipedia.org/wiki/September_24) seotud sündmus (nt ajalooline sündmus, mõne kuulsa isiku sünni- või surmakuupäev), võid kasutada ka [eestikeelset nimekirja](https://et.wikipedia.org/wiki/23._september), ning kujuta vastavat Vikipeedia artiklit või selle olulisemaid osi *story map*'il kas StoryMap JS või ArcGis Story Maps keskkonnas. Lisa võimalusel pilte, linke ja muud, mis loo käiku aitavad jälgida.  
 
-Avalikusta valmis *story map* ning lisa *iframe*'i kood [ühisesse faili](https://sites.google.com/view/kaardilood2024/kodu): `Manusta` -> `Manusta kood` -> sisesta *iframe*'i kood -> `Järgmine` -> `Sisesta`.  
+Avalikusta valmis *story map* ning lisa Moodle'is kaardilugude andmebaasi kaardiloo pealkiri, link, iframe'i kood ning kuvatõmmis.   
 
