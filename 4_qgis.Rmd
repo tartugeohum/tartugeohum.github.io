@@ -9,19 +9,19 @@ QGIS (varasemalt Quantum GIS) on **vabavaraline** ja **avatud lähtekoodiga** ge
 
 ## Installimine ja seadistamine
 
-QGISil on alati kaks hetkeversiooni: stabiilne *Long Term Release* (LTR) ja uusimate võimaluste *Latest Release* (LR), lisaks on mõlemast vaheversioonid (*Point Release*), milles parandatakse ainult varasema versiooni vigu, aga ei muudeta midagi muud (nt ei lisata uusi tööriistu). Väga suuri erinevusi LTR ja LR vahel ei ole, eriti selle kursuse raames käsitletavate tööriistade osas. Arvutiklassi arvutitesse peaks olema installitud kõige hiljutisem stabiilne versioon **3.34 'Prizren'**, järgmine stabiilne versioon (3.40) tuleb aga välja juba 25. oktoobril. Kel huvi, võib vaadata lähemalt ka [väljalaskegraafikut](https://www.qgis.org/resources/roadmap/). 
+QGISil on alati kaks hetkeversiooni: stabiilne *Long Term Release* (LTR) ja uusimate võimaluste *Latest Release* (LR), lisaks on mõlemast vaheversioonid (*Point Release*), milles parandatakse ainult varasema versiooni vigu, aga ei muudeta midagi muud (nt ei lisata uusi tööriistu). Väga suuri erinevusi LTR ja LR vahel ei ole, eriti selle kursuse raames käsitletavate tööriistade osas. Arvutiklassi arvutitesse peaks olema installitud kõige hiljutisem stabiilne versioon **3.40 'Bratislava'**. Kel huvi, võib vaadata lähemalt ka [väljalaskegraafikut](https://www.qgis.org/resources/roadmap/). 
 
 QGISi saab alla laadida programmi [ametlikult kodulehelt](https://www.qgis.org/download/), valides enda arvuti operatsioonisüsteemile sobiva variandi. Allalaadimine võib pisut aega võtta. Kui allalaadimine on lõppenud, avame faili ning installime programmi. Kasutame vaikimisi valikuid.  
 
 Avame programmi **QGIS Desktop**.  
 
 ```{r qgis334, echo=F, fig.show='hold', fig.align='center', out.width= "50%"}
-knitr::include_graphics(here::here("imgs", "5_qgis334.webp"))
+knitr::include_graphics(here::here("imgs", "4_qgis.png"))
 ```
 
 ### Kasutajaliidese keel
 
-Sageli on QGIS esimesel korral avades **eestikeelne**. See on küll tore, aga kahjuks on tõlge kohati poolik ning internetist abi otsides on eestikeelsetest siltidest ja terminitest vähe kasu. Niisiis kasutame kursusel **ingliskeelset** versiooni. Selleks saab valida ülaserva menüüst `Seaded → Suvandid → Üldine` ning teha linnuke valiku `Override System Locale` ette. Vahetame ainult kasutajaliidese keele (`User Interface Translation`) ning vajutame allservas `OK`. **Sulgeme QGISi ja avame uuesti**. Nüüd ongi programm ingliskeelne.
+Sageli on QGIS esimesel korral avades **eestikeelne**. See on küll tore, aga kahjuks on tõlge kohati poolik ning internetist abi otsides on eestikeelsetest siltidest ja terminitest vähe kasu. Niisiis kasutame kursusel **ingliskeelset** versiooni. Selleks saab valida ülaserva menüüst `Seaded → Suvandid → Üldine` ning teha linnuke valiku `Override System Locale` ette. Vahetame ainult kasutajaliidese keele (`User interface translation`) ning vajutame allservas `OK`. **Sulgeme QGISi ja avame uuesti**. Nüüd ongi programm ingliskeelne.
 
 ```{r qgislanguage, echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap="Kasutajaliidese keele seadistamine QGISis"}
 knitr::include_graphics(here::here("imgs", "5_qgis_changelanguage.png"))
@@ -46,7 +46,7 @@ Vaikimisi nähaolevaid paneele ja tööriistu saab muuta, valides vastavalt `Vie
 <br>
 <br>
 
-Loome enda arvutisse kursuse kausta (nt nimega `geohum_2024`) ning salvestame sinna QGISi (hetkel ilma sisuta) projekti: ülamenüüst `Project → Save`. **Praktikumi jooksul võiks projekti aeg-ajalt salvestada!**  
+Loome enda arvutisse kursuse kausta (nt nimega `geohum_2025`) ning salvestame sinna QGISi (hetkel ilma sisuta) projekti: ülamenüüst `Project → Save`. **Praktikumi jooksul võiks projekti aeg-ajalt salvestada!**  
 
 Vaatame QGISi kasutajaliidest. Suurde keskel olevasse aknasse ilmuvad kaardid ja ruumiandmete kihid graafiliselt. Vasakul on kihtide aken *Layers*. Allservas näeme kursori asukoha koordinaate, mõõtkava, mida saab seal ka muuta, ning paremal nurgas on koordinaatide referentssüsteem, mis peaks nüüd olema EPSG:3301. Ülemises servas on menüüd ja kõiksugu tööriistad.  
 
@@ -72,7 +72,7 @@ knitr::include_graphics(here::here("imgs", "5_qgis_wms.png"))
 Kui teeme nüüd näiteks värvilise reljeefvarjutuse kihil paremkliki ja valime `Properties`, saame vaadata kihi omadusi. Ühtlasi näeme, et visuaalselt saame kihti teha ainult läbipaistva(ma)ks (jaotis `Transparency`), mustvalgeks, kontrastsemaks, heledamaks jms (jaotis `Symbology`), nii nagu ka tavalise pildifaili puhul.  
 
 
-Saame aluskaarte kasutada ka **pistikprogrammide** kaudu (nt **QuickMapServices**).
+Saame aluskaarte kasutada ka **pistikprogrammide** kaudu (nt **QuickMapServices**, aga vt ka [teisi aluskaartide pistikprogramme](https://plugins.qgis.org/plugins/tags/basemap/?order=desc&sort=downloads)).
 
 - Valime ülaservas menüüst `Plugins → Manage and Install Plugins`. Otsingusse kirjutame `Quickmap`, valime leitud pistikprogrammi `QuickMapServices` ning installime selle. Sulgeme akna.  
 - Järgmiseks valime ülamenüüst **`Web → QuickMapServices`** ning sealt mõne teenusepakkuja aluskaardi. Esimest korda pistikprogrammi kasutades võiks laadida ka suuremat aluskaartide valikut pakkuva lisapaketi **`Web → QuickMapServices → Settings → More services → Get contributed pack`**.    
@@ -102,7 +102,7 @@ Vaatame fotode erinevusi. Selleks lülitame vastavaid kihte `Layers` paneelil si
 
 Kustutame ortofotod nüüd QGISi kihtide hulgast ära (paremklikk kihil ja `Remove Layer`).  
 
-Ortofotode kohta saab rohkem lugeda ja neid ka ise kaardiruutude kaupa alla laadida [Maa-ameti Geoportaalist](https://geoportaal.maaamet.ee/est/ruumiandmed/ortofotod-p99.html).
+Ortofotode kohta saab rohkem lugeda ja neid ka ise kaardiruutude kaupa alla laadida [Maa-ameti Geoportaalist](https://geoportaal.maaamet.ee/est/ruumiandmed/ortofotod-p99.html).  
 
 ### Vektorandmed
 
