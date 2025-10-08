@@ -29,11 +29,11 @@ knitr::include_graphics(here::here("imgs", "8_FAIR.jpg"))
 - Kui andmete kogumise ja töötlemise protsess on põhjalikult dokumenteeritud ning andmed on varustatud litsentsiga, on need ka **taaskasutatavad**.   
 
 
-Eesti avaliku sektori avaandmed on tehtud kättesaadavaks [Eesti Avaandmete Portaalis](https://avaandmed.eesti.ee/). Ka enamikul ELi liikmesriikidel on oma avaliku sektori avaandmete portaalid.  
+Eesti avaliku sektori avaandmed on tehtud kättesaadavaks [Eesti Avaandmete Portaalis](https://andmed.eesti.ee/). Ka enamikul ELi liikmesriikidel on oma avaliku sektori avaandmete portaalid.  
 
 Suuremad rahvusvahelised **teadusandmete** repositooriumid on näiteks [Zenodo](https://zenodo.org/), [Harvard Dataverse](https://dataverse.harvard.edu/) (vaata ka [teisi Dataverse'i projekte](https://dataverse.org/)), [OSF](https://osf.io) ja [Figshare](https://figshare.com/). Repositooriume võib omakorda otsida erinevatest registritest, nagu [Re3data.org](https://www.re3data.org/) või [OpenAIRE]( https://explore.openaire.eu/search/advanced/datasets).  
 
-Tartu Ülikool pakub TÜ raamatukogu kaudu võimalust säilitada oma teadusandmeid [DataDOI](https://datadoi.ee/) repositooriumis. Seal saavad andmed endale digitaalobjekti identifikaatori ehk DOI ning need registreeritakse koos metaandmetega rahvusvahelises DataCite registris. [DataCite Eesti](https://datacite.ee/) koondab ka teisi Eesti teadusega seotud repositooriume, nt [Eesti geokogude portaal](https://geocollections.info/). Raamatukogul on ka ülevaade enimlevinud [avatud juurdepääsuga andmebaasidest](https://utlib.ut.ee/avatud-juurdepaas) ning [teaduse avaandmete repositooriumidest ja registritest](https://utlib.ut.ee/teaduse-avaandmed-open-data).
+Tartu Ülikool pakub TÜ raamatukogu kaudu võimalust säilitada oma teadusandmeid [DataDOI](https://datadoi.ee/) repositooriumis. Seal saavad andmed endale digitaalobjekti identifikaatori ehk DOI ning need registreeritakse koos metaandmetega rahvusvahelises DataCite registris. [DataCite Eesti](https://datacite.ee/) koondab ka teisi Eesti teadusega seotud repositooriume. Raamatukogu on teinud ka põhjaliku [ülevaate](https://utlib.ut.ee/et/sisu/avatud-teadus) avatud teaduse repositooriumidest, avatud juurdepääsuga teadusandmebaasidest, andmehaldusest, kursustest, üritustest jm-st.
 
 
 
@@ -104,23 +104,34 @@ Maa-ameti kaudu on vabalt kasutatavad ka **[ajaloolise haldusjaotuse](https://ge
 
 ### Statistikaamet
 
-[Statistikaamet](https://www.stat.ee/) pakub avalikke andmeid sageli seotult mingite haldusüksuste andmetega (nt maakonnapõhiselt). Varasemalt pakkus statistikaamet ka kaardirakendust, mis võimaldas teha nende andmebaasi põhjal teemakaarte ja ka vastavaid andmeid ruumiandmetena alla laadida. [2023. aasta suvel aga rakendus suleti](https://www.stat.ee/et/uudised/statistikaamet-sulgeb-kaardirakenduse), kuna selle aluseks olev tehnoloogia oli vananenud.  
+[Statistikaamet](https://www.stat.ee/) pakub avalikke andmeid sageli seotult mingite haldusüksuste andmetega (nt maakonnapõhiselt). Statistikaameti teemakaarte saab vaadata [kaardirakenduse](https://xgis.maaamet.ee/xgis2/page/app/statistika) kaudu. Samuti on võimalik andmeid lihtsalt alla laadida ning haldusüksuse tulba kaudu ühendada Maa-ameti ruumiandmetega (nt saab statistikaameti maakondade näitajad siduda Maa-ameti vastavate maakondade polügoonidega).   
 
+<!---
 ```{r statamet2, echo=F, fig.show='hold', fig.align='center', out.width= "80%", fig.cap = "Murdekõnelejad statistikaameti kaardirakenduse teemakaardil (2022)"}
 knitr::include_graphics(here::here("imgs", "8_statamet2.PNG"))
 ```
+--->
 
-### Muu
+Samuti saab statistikaameti lehelt alla laadida nt Eesti rahvastiku paiknemise ruutkaardi, mis kujutab rahvaarvu 1 ruutkilomeetri kohta 2024. aasta andmete põhjal.  
+```{r statametruutkaart, echo = F, fig.show='hold', fig.align='center', out.width="80%", fig.cap = "Eesti rahvastiku paiknemine statistikaameti ruutkaardil (2024)"}
+knitr::include_graphics(here::here("imgs", "5_statruutkaart.png"))
+
+```
+
+
+
+### Muud
 
 - [Eesti geoportaal](https://geoportaal.ee/) koondab avalik-õiguslike asutuste ruumiandmeid ja nendega seotud metainfot. On seotud EL-i INSPIRE portaaliga (vt [muude riikide ruumiandmete jaotist](#muudriigid)). Viited on koondatud kategooriate kaupa ruumiandmete kataloogi.   
-- Ruumiandmeid leiab mingil määral [Eesti Avaandmete Portaalist](https://opendata.riik.ee), sh Maa-ameti ja Statistikaameti andmeid, aga ka näiteks kohalike omavalitsuste, registrite, ametite jt avaliku sektori institutsioonide andmeid.   
+- Ruumiandmeid leiab mingil määral [Eesti Avaandmete Portaalist](https://andmed.eesti.ee/datasets?type=ALL), sh Maa-ameti ja Statistikaameti andmeid, aga ka näiteks kohalike omavalitsuste, registrite, ametite jt avaliku sektori institutsioonide andmeid.   
 - [Tallinna ruumiandmed](https://www.tallinn.ee/est/geoportaal/Andmed) - Tallinna linna aluskaart, hooned, asumipiirid jpm.  
 - [Tartu linna ruumiandmed](https://geohub.tartulv.ee/).  
 - Digiteeritud kaarte leiab näiteks [Rahvusarhiivi kaartide infosüsteemist](https://www.ra.ee/kaardid/) ja [Digarist](https://www.digar.ee/arhiiv/et/pildimaterjal?id=162).    
-- Nii Eesti kui ka välisriikide praeguseid ja endiseid nimekujusid leiab nii Eesti Keele Instituudi [Kohanimeraamatust](https://www.eki.ee/dict/knr/) kui ka [Kohanimeandmebaasist](https://www.eki.ee/knab/knab.htm). Mõlema puhul on võimalik näiteks teadustöö eesmärgil saada enda kasutusse ka lähteandmeid (või osa nendest). Ametlikku [kohanimeregistrit](https://maaamet.ee/ruumiandmed-ja-kaardid/aadressid-ja-kohanimed/kohanimeregister), mis esitab kohanimede ametliku, standardse nimekuju, haldab Maa-amet. 
-- [Arheoloogilise ja pärimusliku kohainfo andmebaas](https://register.muinas.ee/public.php?menuID=placeinfo): ei ole avatud juurdepääsuga. Riina Juuriku poole pöördudes saab juurdepääsu aga küsida.   
-- [TARA (Tartu Ülikooli arheoloogia infosüsteem)](https://tara.ut.ee/): leidude, luude, proovide, arhiivi, fotode jms kogud.    
-- Andrus Saareste "[Eesti murdeatlase](https://github.com/MPilvik/RuRaKe/tree/master/Saareste-murdeatlas)" (1938/1941) ja "[Väikese eesti murdeatlase](https://github.com/MPilvik/RuRaKe/tree/master/Saareste-vaike-murdeatlas)" (1955) andmed, käsikirjalisi murdekaarte saab vaadata [siin](http://rurake.keeleressursid.ee/index.php/andrus-saarestes-unpublished-dialect-maps/).  
+- Nii Eesti kui ka välisriikide praeguseid ja endiseid nimekujusid leiab nii Eesti Keele Instituudi [Kohanimeraamatust](https://www.eki.ee/dict/knr/) kui ka [Kohanimeandmebaasist](https://www.eki.ee/knab/knab.htm). Mõlema puhul on võimalik näiteks teadustöö eesmärgil saada enda kasutusse ka lähteandmeid (või osa nendest). Ametlikku [kohanimeregistrit](https://geoportaal.maaamet.ee/est/teenused/aks-kohanimeregistri-teenus-p133.html), mis esitab kohanimede ametliku, standardse nimekuju, haldab Maa-amet. 
+- [TARA (Tartu Ülikooli arheoloogia infosüsteem)](http://tara.ut.ee/): leidude, luude, proovide, arhiivi, fotode jms kogud.    
+- [Kultuurimälestiste register](https://register.muinas.ee/public.php?menuID=monument): informatsioon kõikide Eestis riikliku kaitse all olevate mälestiste kohta, päringutulemustel sageli juures ka koordinaadid.  
+- [Uurali keelte geograafiline andmebaas](https://zenodo.org/records/4784188): Uurali keelte ruumiandmed ja valmis kaardid.  
+- Andrus Saareste "[Eesti murdeatlase](https://github.com/MPilvik/RuRaKe/tree/master/Saareste-murdeatlas)" (1938/1941) ja "[Väikese eesti murdeatlase](https://github.com/MPilvik/RuRaKe/tree/master/Saareste-vaike-murdeatlas)" (1955) andmed.  
 
 
 
@@ -130,15 +141,12 @@ Juurdepääsupiiranguta ruumiandmeid leiab internetist otsides hulganisti. Täps
 
 - [INSPIRE](https://inspire-geoportal.ec.europa.eu/) on Euroopa Liidu ruumiandmete infrastruktuur, mis koondab ELi liikmesriikide  ja EFTA riikide ruumiandmeid (sh Eesti andmeid).  
 - [Natural Earth Data](https://www.naturalearthdata.com/): vektorkujul rannajooned, maa, ookeanid, saared, jõed, järved jm. Olemas ka rasterandmeid aluskaartide jaoks.  
-- [GADM](https://gadm.org/): Maailma riikide halduspiiride vektorandmed ja valmiskaardid (leht sisaldab palju reklaami).  
-- [Open Maps for Europe](https://www.mapsforeurope.org/).   
-- [DIVA-GIS](http://www.diva-gis.org/Data): nii ülemaailmsed kui ka üksikute riikide ruumiandmed.   
+- [Open Maps for Europe](https://www.mapsforeurope.org/): vektor- ja rasterandmed, veebiteenused.   
 - [Geofabrik](https://www.geofabrik.de/data/): OpenStreetMapi aluseks olevad andmekihid (SHP-formaadis andmed tasulised).  
 - [MapTiler](https://data.maptiler.com/downloads/planet/): erinevad maailma vektor- ja rasterpaanid (põhiliselt aluskaartide jaoks).  
 - [Robin Wilsoni põhjalik nimekiri vabalt kasutatavatest ruumiandmetest](http://freegisdata.rtwilson.com/).  
 - [Ajalooliste kaartide kollektsioon](https://www.oldmapsonline.org/).  
 - [David Rumsey kaardikollektsioon](https://www.davidrumsey.com/): üle 100 000 kõrge kvaliteediga digiteeritud kaardi 16.-21. sajandist, osa ka georefereeritud.   
-- Georefereeritud kaardid [Map Warperis](https://mapwarper.net/).      
 - Arheoloogia andmete suurimaks koondajaks on [Ariadne Plus](https://ariadne-infrastructure.eu/), mis koondab üle 2 miljoni andmestiku kogu Euroopast. Projekti eesmärk on luua pilvepõhine virtuaalne teadustöö tegemise keskkond.    
 - [ADS (Archaeology Data Sercive)](https://archaeologydataservice.ac.uk/): juhtiv repositoorium arheoloogia ja laiemalt kogu pärandi andmete pikaajaliseks säilitamiseks ja jagamiseks.   
 - [tDAR (The Digital Archaeology Record)](https://www.tdar.org/): rahvusvaheline arheoloogiliste uuringute andmete repositoorium.   
@@ -148,16 +156,13 @@ Juurdepääsupiiranguta ruumiandmeid leiab internetist otsides hulganisti. Täps
 - [Eri riikide tuntud inimeste kohta Vikipeediast kogutud andmebaas](https://data.sciencespo.fr/dataset.xhtml?persistentId=doi:10.21410/7E4/RDAG3O), mis on aluseks [sellele rakendusele](https://tjukanovt.github.io/notable-people?fbclid=IwAR0PPqeqBJNJGXMMQ0avraSaSOwm05xIxouUWhiLbeQ1Te9gBVnvwGC3i3U).  
 
 
-Geoinfoga varustatud andmeid leiab ka mitmesugustelt üldistelt lehekülgedelt ja platvormidelt, nt [Twitterist/X-ist](https://twitter.com/) või [Flickrist](https://www.flickr.com/), mis võimaldavad andmeid koguda oma API (*Application Programming Interface*) abil.  
+Geoinfoga varustatud andmeid leiab ka mitmesugustelt üldistelt lehekülgedelt ja platvormidelt, mis võimaldavad andmeid koguda oma API (*Application Programming Interface*) abil. Samuti saab ruumiandmeid koguda nt [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) andmebaasist.  
 
-```{r Flickr, echo = F, fig.align="center", out.width = "70%", fig.cap = "Näide Flickrist kogutud andmete visualiseerimisest ([Postimees, 25. september 2021](https://arvamus.postimees.ee/7345222/viguriga-kaardid-kus-pildistatakse-enim?fbclid=IwAR2N2c1YQcE1EOzY7u_UC5wNClvhl0JZEpmBbpA2NY9UrKobrNwsW8D0zBY))"}
-knitr::include_graphics(here::here("imgs", "8_flickr.jpg"))
-```
 
 
 ### Harjutus
 
-- Laadime Natural Earth Data lehelt alla maailma riikide polügoonide vektorandmed, mõõtkavaga 1:50 000 000 (`Downloads → Medium scale data → Cultural → Admin 0 - Countries`). Pakime allalaaditud faili lahti ning loeme SHP-faili QGISi (kasutame projekti CRSina veebi-Mercatori CRS-i **EPSG:3857**).    
+- Laadime Natural Earth Data lehelt alla maailma riikide polügoonide vektorandmed, mõõtkavaga 1:50 000 000 (`Downloads → Medium scale data → Cultural → Admin 0 - Countries`). Pakime allalaaditud faili lahti ning loeme SHP-faili QGISi (NB! Pane tähele CRS-i).    
 - Vaatame kihi atribuuttabelit. Kuidas on väljendatud halduslikke vaidluskohti (vt nt Iisrael)?
 - Valime kihilt ainult Euroopa riigid. Selleks saame kasutada valiku tööriistu. 
 
@@ -224,7 +229,7 @@ Kui ühendame **ruumiandmeid ja mitteruumiandmeid**, saame kasutada mõlema andm
 
 Uurime, kuidas on maakondades 2021. aasta rahvaloenduse põhjal rahvaarv 2011. aasta andmetega võrreldes **protsentuaalselt** muutunud.   
 
-- Laadime QGISi Maa-ameti maakonnapiiride vektorkihi ja Moodle'is oleva CSV-andmestiku [statistikaameti rahvaloenduse andmetega](https://andmed.stat.ee/et/stat/rahvaloendus__rel_vordlus__rahvastiku_paiknemine/RLV003) (NB! Statistikaameti andmetes ei ole koordinaate -> `No geometry`).  
+- Laadime QGISi Maa-ameti [maakonnapiiride vektorkihi](https://s3.pilw.io/rp-kemit-kataster/EHAK/maakond_shp.zip) ja Moodle'is oleva CSV-andmestiku [statistikaameti rahvaloenduse andmetega](https://andmed.stat.ee/et/stat/rahvaloendus__rel_vordlus__rahvastiku_paiknemine/RLV003) (NB! Statistikaameti andmetes ei ole koordinaate -> `No geometry`).  
 - Ühendame maakondade vektorkihiga (!) statistikaameti rahvaloenduse andmed (ühine tulp on mõlemas andmestikus see, kus on maakondade nimed).    
     + Vaatame andmekihtide atribuuttabelitest, kas maakondade nimed on samal kujul.  
     + Teeme maakondade vektorkihil topeltkliki ning valime avanenud aknas vasakult jaotise **`Joins`**. Rohelisest plussmärgist lisame uue ühenduse (`Add new join`).  
@@ -245,15 +250,15 @@ knitr::include_graphics(here::here("imgs", "6_fieldcalc.png"))
 
 Uue tulba lisamine viib meie vektorkihi automaatselt muutmisrežiimi. Sellele viitab ka see, et atribuuttabeli ülamenüüs läheb aktiivseks kollane pliiats. Pliiatsil klõpsates saab muutmisrežiimi sisse ja välja lülitada. Selleks, et enda loodud tulp kihile salvestada ja muutmisrežiimist väljuda, peame pliiatsil nüüd uuesti klõpsama.  
 
-Lisame ka protsentuaalse muutuse tulba **MuutusProp**, kus kajastame muutust protsentuaalselt ehk jagame tulba (`Field`) **Muutus** väärtused läbi 2011. aasta rahvaarvuga (`Field` **2011 Vanuserühmad kokku**) ja korrutame saadud tulemuse 100ga. Kuna siin lubame arvudes ka komakohti, on `Output field type` sedapuhku mitte `Integer`, vaid `Decimal number (real)`.    
+Lisame ka protsentuaalse muutuse tulba **MuutusProp**, kus kajastame muutust protsentuaalselt ehk jagame tulba (`Field`) **Muutus** väärtused läbi 2011. aasta rahvaarvuga (`Field` **2011 Vanuserühmad kokku**) ja korrutame saadud tulemuse 100ga. Kuna siin lubame arvudes ka komakohti, on `Output field type` sedapuhku mitte `Integer`, vaid `Decimal`.    
 
 
-Lõpuks värvime maakonnad vastavalt protsentuaalse muutuse suunale ja suurusele. Selleks teeme maakondade vektorkihil topeltkliki ja liigume jaotisse `Symbology`. `Single Symbol` asemel valime väärtuse **`Graduated`**, mis võimaldab vektorkihi objekte (nt maakondade polügoone) kujundada vastavalt mingile **arvulisele tunnusele** kihi atribuuttabelis. Praegusel juhul on selleks tunnuseks (`Value`) loodud tunnus **MuutusProp**. Arvulise tunnuse alusel jagatakse vaatlused sagedusklassidesse. Klasside arvu saab muuta, samuti on klasside tekitamiseks erinevad meetodid:   
+Lõpuks värvime maakonnad vastavalt protsentuaalse muutuse suunale ja suurusele. Selleks teeme maakondade vektorkihil topeltkliki ja liigume jaotisse `Symbology`. `Single Symbol` asemel valime väärtuse **`Graduated`**, mis võimaldab vektorkihi objekte (nt maakondade polügoone) kujundada vastavalt mingile **arvulisele tunnusele** kihi atribuuttabelis. Praegusel juhul on selleks tunnuseks (`Value`) loodud tunnus **MuutusProp**. Vajutame nupul `Classify`. Arvulise tunnuse alusel jagatakse vaatlused sagedusklassidesse. Klasside arvu saab muuta, samuti on klasside tekitamiseks erinevad meetodid:   
 
 - `Equal Count (Quantile)` - igasse sagedusklassi määratakse (enam-vähem) võrdne arv objekte  
 - `Equal Interval` - kõik sagedusklassid on sama suure intervalliga (nt 1-3, 4-6, 7-9 jne), intervalli suuruse määrab klasside arv   
 - `Fixed Interval` - kõik sagedusklassid on sama suure intervalliga, intervalli suuruse määrab kasutaja     
-- `Logarithmic Scale` - rohkem tuuakse esile erinevusi väikeste väärtuste vahel    
+- `Logarithmic Scale` - rohkem tuuakse esile erinevusi väikeste väärtuste vahel (NB! ei tööta negatiivsete väärtustega)    
 - `Natural Breaks (Jenks)` - sagedusklasse luuakse nii, et sama klassi väärtused oleksid üksteisega võimalikult sarnased ja teistest klassidest võimalikult erinevad    
 - `Pretty Breaks` - kõik sagedusklassid on enam-vähem sama suure intervalliga, klassi piiridena kasutatakse lihtsaid, ümardatud väärtusi, mistõttu vähima ja suurima sagedusklassi intervall võib teistest erineda    
 - `Standard Deviation` - võrdsete intervallidega sagedusklassid, intervallid põhinevad standardhälbel (näitab, kui palju mingi arvuline väärtus erineb keskmisest)
@@ -311,6 +316,9 @@ Põhimõtteliselt võib proovida ka praktikumis tabelit massgeokodeerimisse saat
 - Teeme punkte suuremaks, viime punktide läbipaistvuse 50% peale, vahetame soovi korral punktide värvi ja sümboleid.  
 
 
+```{r lohmus, echo = F, fig.align="center", fig.show='hold', out.width = "70%", fig.cap = ""}
+knitr::include_graphics(here::here("imgs", c("5_lohmusparn.png")))
+``` 
 
 ### Ühendamine ruumiinfo järgi
 
