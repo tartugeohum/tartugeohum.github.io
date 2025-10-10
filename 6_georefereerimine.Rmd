@@ -39,7 +39,7 @@ Avame QGISi. QGISis on georefereerimise tööriist **`Georeferencer`** leitav ü
 Vanemates QGISi versioonides leiad tööriista *Raster* menüü alt. Juhul, kui seal valikut *Georeferencer* ei ole, siis tuleb see aktiveerida. Selleks vali *Plugins → Manage and Install Plugins* → otsingusse kirjuta *Georeferencer* → tee linnuke *Georefencer GDAL Plugin* ette ja sulge see aken. Nüüd on tööriist *Georeferencer* rastrimenüü all näha. Tööriista sisselülitamine on ühekordne tegevus, järgmisel korral QGISi avades on see juba olemas.  
 </p>
 
-Georefereerimise tööriista kohta saab täpsemalt lugeda [QGISi juhendist](https://docs.qgis.org/3.34/en/docs/user_manual/working_with_raster/georeferencer.html).  
+Georefereerimise tööriista kohta saab täpsemalt lugeda [QGISi juhendist](https://docs.qgis.org/3.40/en/docs/user_manual/managing_data_source/georeferencer.html).  
 
 ### Avame kaardi pildifaili  
 
@@ -53,14 +53,14 @@ Lisaks laadime ajalooliste kaartide WMS-teenusest ka üheverstase ja kolmeversta
 
 ### Georefereerime kaardi  
 
-Märgime ära mõned ühesugused geograafilised punktid georefereeritaval kaardil ja tänapäevasel aluskaardil. Selleks võtame ette jälle `Georeferencer` akna. Georefereerija aknas valime **`Edit → Add point`** ja klikime ajaloolisel kaardil mõnel hästi tuvastataval objektil. Näiteks TÜ peahoone, raekoda, kaarsild, tähetorn, Jaani kirik vms. Võib ka kasutada näiteks tänavate ristumiskohti. Seejärel valime `From map canvas` ning klikime tänapäevasel aluskaardil samas kohas.  
+Märgime ära mõned ühesugused geograafilised punktid georefereeritaval kaardil ja tänapäevasel aluskaardil. Selleks võtame ette jälle `Georeferencer` akna. Georefereerija aknas valime **`Edit → Add GCP point`** ja klikime georefereerimise aknas ajaloolisel kaardil mõnel hästi tuvastataval objektil. Näiteks TÜ peahoone, raekoda, kaarsild, tähetorn, Jaani kirik vms. Võib ka kasutada näiteks tänavate ristumiskohti. Seejärel valime avanenud aknas `From map canvas` ning klikime tänapäevasel aluskaardil samas kohas. Vajutame `OK`.  
 
 ```{r georef1, echo=F, fig.show='hold', fig.align='center', out.width= "80%", fig.cap="Sama asukoha märkimine"}
 knitr::include_graphics(here::here("imgs", "7_georef_addpoints.gif"))
 ```
 
 Märgime samamoodi veel neli kuni kümme punkti kaardil. Võimalusel asetame punktid kaardil võimalikult laiali, sest nii saab suurema ala kohta täpsema tulemuse.
-Kui tahame, et aluskaart oleks sama nurga all nagu georefereeritav kaart, võime aluskaarti QGISi peaaknas mingi nurga alla keerata. Selleks vaab alamenüüs muuta `Rotation` parameetri väärtust. 
+Kui tahame, et aluskaart oleks sama nurga all nagu georefereeritav kaart, võime aluskaarti QGISi peaaknas mingi nurga alla keerata. Selleks saab alamenüüs muuta `Rotation` parameetri väärtust. 
 
 Seejärel tuleb valida georefereerimise sätted. Klikime georefereerija aknas kollasel hammasrattal ja vaatame, et sätted oleksid nii nagu siinsel pildil.  
 
@@ -68,9 +68,9 @@ Seejärel tuleb valida georefereerimise sätted. Klikime georefereerija aknas ko
 knitr::include_graphics(here::here("imgs", "9_georef_settings.png"))
 ```
 
-Vajutame rohelisel noolekesel `Start Georeferencing`. Nüüd ilmub georefereeritud kaart QGISi peaaknasse (juhul, kui sätetes oli tehtud linnuke valiku `Load in QGIS when done` ette). 
+Vajutame rohelisel noolekesel `Start Georeferencing`. Nüüd ilmub georefereeritud kaart QGISi peaaknasse (juhul, kui sätetes oli tehtud linnuke valiku `Load in QGIS when done` ette). Kui georefereerimine ei õnnestu (nt jookseb QGIS georefereerimisel kokku, siis vali mõni muu algoritm, nt `Polynomial 1`).   
 
-Vaatame, kui hästi tänapäevase koordinaatide referentssüsteemiga sidumine õnnestus. Kui kaart on väga paigast ära, siis saame lisada rohkem punkte või muuta transformatsiooni tüüpi. Vastavatest algoritmidest saab täpsemalt lugeda tööriista `Georeferencer` [juhendist](https://docs.qgis.org/3.34/en/docs/user_manual/working_with_raster/georeferencer.html#available-transformation-algorithms), ent lühidalt:  
+Vaatame, kui hästi tänapäevase koordinaatide referentssüsteemiga sidumine õnnestus. Kui kaart on väga paigast ära, siis saame lisada rohkem punkte või muuta transformatsiooni tüüpi. Vastavatest algoritmidest saab täpsemalt lugeda tööriista `Georeferencer` [juhendist](https://docs.qgis.org/3.40/en/docs/user_manual/managing_data_source/georeferencer.html#available-transformation-algorithms), ent lühidalt:  
 
 - `Linear` algoritm sobib põhiliselt siis, kui tegu on kõrge kvaliteediga rasterkaardiga, mille koordinaatide referentssüsteem on teada. See kohandab kaardi mõõtkava, ent ei võimalda kujutist pöörata ega muul moel muundada, kuna ei muuda originaalkujutise piksleid. Enamasti sobib see seega uuematele kaartidele, mis on (kindlas projektsioonis) suure täpsusega.     
 - `Helmerti` algoritm sobib hea kvaliteediga suuremõõtkavalistele rasterkaartidele või ortofotodele, mille koordinaatsüsteem ei pruugi ühtida aluskaardi omaga. Võimaldab kujutist ka pöörata.     
@@ -188,7 +188,3 @@ knitr::include_graphics(here::here("imgs", "9_koila_alad.png"))
 
 Georefereerime [kaartide praktikumis](#kaardid) käsitsi joonistatud kaardid Tartu kesklinnast. Valime sobivaima algoritmi.  
 
-
-## Veebilahendus
-
-[georeferencer.com](https://www.oldmapsonline.org/auth/widget?mode=select&next=https%3A%2F%2Fwww.oldmapsonline.org%2Fmaps%2F) töötab sisuliselt täpselt samamoodi nagu QGISi Georeferencer, aga võimaldab georefereerida internetis ja ilma spetsiaalse tarkvarata. 
