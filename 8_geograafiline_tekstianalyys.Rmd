@@ -39,7 +39,12 @@ Esimesele projektile Inglismaa Järvemaa piirkonnast järgnesid jätkuprojektid 
 knitr::include_graphics(here::here("imgs", c("14_costsurface.png", "14_mappinglakes2.png")))
 ```
 
-<!-- - Kasutatud levinud geoinfosüsteemipõhiseid analüüsimeetodeid (*Cost-Surface Analysis*, *Least-Cost-Path Analysis*, *spatial proximity test*, *Line Density Analysis*) selleks, et analüüsida, **kuidas Lake Districti suhteline ligipääsetavus mõjutas reisijate valitud teekondi ja sellest tulenevalt nende kogemusi**. Esmalt simuleerisid mudelitega n-ö looduslikud koridorid ning seejärel arvutasid, kas reisikirjades kujutatud kohad on nendele koridoridele lähemal kui puhta juhuse läbi võiks oodata. Vastavalt looduslikele koridoridele ning kohtadele, mida kirjutajad mainisid, modelleeriti ka nende tõenäolised liikumisteekonnad ning vaadati, kas mõned piirkonnad said kolme reisija peale kollektiivselt eriti palju tähelepanu.  
+<!-- - Kasutatud levinud geoinfosüsteemipõhiseid analüüsimeetodeid (*Cost-Surface Analysis*, *Least-Cost-Path Analysis*, *spatial proximity test*, *Line Density Analysis*) selleks, et analüüsida, **kuidas Lake Districti suhteline ligipääsetavus mõjutas reisijate valitud teekondi ja sellest tulenevalt nende kogemusi**. 
+Cost-surface analysis: raster, milles iga piksel väljendab sellest kohast läbi minemise "kulu" ehk keerukust, arvestades maastikku, maakatet, looduslikke takistusi                          jm-d
+Least-cost-path analysis: leiab optimaalse teekonna kahe (või enama) koha vahel, minimeerides "kogukulu"
+Spatial proximity test: mõõdab, kui lähedal on kaks objekti teineteisele
+Line density analysis: arvutab joonobjektide (nt teede, jõgede) tiheduse mingis piirkonnas
+Esmalt simuleerisid mudelitega n-ö looduslikud koridorid ning seejärel arvutasid, kas reisikirjades kujutatud kohad on nendele koridoridele lähemal kui puhta juhuse läbi võiks oodata. Vastavalt looduslikele koridoridele ning kohtadele, mida kirjutajad mainisid, modelleeriti ka nende tõenäolised liikumisteekonnad ning vaadati, kas mõned piirkonnad said kolme reisija peale kollektiivselt eriti palju tähelepanu.  
 - Leiti, et reisijad tõepoolest liikusid mööda looduslikke koridore ning et liiguti põhiliselt kolme järve ümbruses, kuhu ehitati 18. sajandil ka paremaid teid. -->  
 
 
@@ -66,12 +71,15 @@ Geograafilises tekstianalüüsis on prominentsel kohal tekstides mainitud kohani
 
 Geograafiline tekstianalüüs on seega üks tekstide kauglugemise (*distant reading*) tehnikatest, mille abil tuvastada tekstidest mustreid. 
 
-Humanitaarteadustes on meetodit kasutatud põhiliselt ajalooliste (st enne 20. sajandit kirjutatud) tekstide analüüsil, eeskätt ilmselt autoriõiguste tõttu, ent sellel on suur ühisosa ka tänapäevaste avalike tekstide analüüsiga. Ajalooliste tekstide puhul lisandub analüüsi sageli **teoste digiteerimise protsess** (nt käsitsi sisestamine või tärktuvastus), mida võivad oluliselt komplitseerida aja jooksul toimunud muutused näiteks  
+Humanitaarteadustes on meetodit kasutatud põhiliselt ajalooliste (st enne 20. sajandit kirjutatud) tekstide analüüsil, eeskätt ilmselt autoriõiguste tõttu, ent sellel on suur ühisosa ka tänapäevaste avalike tekstide analüüsiga. 
+
+Ajalooliste tekstide puhul lisandub analüüsi sageli **teoste digiteerimise protsess** (nt käsitsi sisestamine või tärktuvastus), mida võivad oluliselt komplitseerida aja jooksul toimunud muutused näiteks  
 
 - kirjastamiskonventsioonides,  
 - trükiformaatides, 
 - keeles,  
-- kirjaviisis.  
+- kirjaviisis,
+- haldusjaotuses jne.  
 
 
 
@@ -89,11 +97,17 @@ Geograafilises tekstianalüüsis on tüüpiliselt 3 põhisammu.
         + digiteerimise käigus tekib alati vigu, ükskõik kas tärktuvastuse või käsitsi sisestamisega;
         + ajaloolistes kohanimedes palju varieeruvust, seal esinevad kohanimed ei pruugi sisalduda ka andmetes, mille peal automaatse analüüsi vahendid on treenitud; 
         + kui oskad veidi skripte kirjutada, saab nimetuvastust omakorda täiendada reeglitega (nt määra konstruktsioonid "X talu" alati kohanimedeks).  
+
+<br>
+
 2. Tuvastatud kohanimede ehk **toponüümide sidumine koordinaatidega**.  
     - Enamasti kasutatakse selleks koordinaatidega varustatud **kohanimeloendeid** (*gazetteer*) või kohanimeandmebaase (nimeüksuste vastete leidmine ehk *Named Entity Matching*).  
     - Probleeme:  
         + ühe ja sama kohanimega võib viidata mitmele kohale, tuleks lahendada viitesuhted. Selleks võib alati valida näiteks kõige tõenäolisema viite, täpsustada piirkonda või ka käsitsi õige viite määrata;  
         + kui oskad veidi skriptida, saab siingi kasutada samuti mingeid reegleid ja statistilisi tõenäosusi (nt *Lisbon* või *Berlin* viitavad üldiselt tõenäolisemalt Euroopa kohanimedele, aga Ameerika kirjanike puhul või USA idarannikust rääkides USA samanimelistele väikelinnadele).  
+
+<br>
+
 3. Mainitud kohtade ja nendega seotu **analüüsimine, tõlgendamine ja visualiseerimine**.  
     - Identifitseeritud kohtade mainimissagedusi võib võrrelda näiteks rahvastikunäitajatega (kas tihedamini asustatud kohti mainitakse ka rohkem? kas kohtade sündimus- või suremusnäitajad korreleeruvad nende mainimiste sagedusega?), muude ajalooliste, etnograafiliste vm andmetega. Aga võib ka analüüsida seda, mis kontekstis kohanimesid on tekstides mainitud, näiteks mis emotsioonidega seoses, milliste omadussõnadega seoses jne. 
      - Siin võib kasutada muu hulgas korpuslingvistilisi meetodeid (nt sagedasti koosesinevate sõnapaaride ehk kollokatsioonide tuvastamine), ühisloomet (nt lastakse inimestel mingeid kohtadega seotud tekstilõike mingil alusel hinnata või märgendada), aga loomulikult ka kvalitatiivset analüüsi.   
@@ -120,7 +134,7 @@ Geoparsitud tekstikogusid ei ole väga palju. Seega tuleb huvipakkuvate tekstide
 - [DBpedia Spotlight](https://demo.dbpedia-spotlight.org/)
 - [GEOLocate](https://www.geo-locate.org/web/WebFileGeoref.aspx) veebiparser on pigem geokodeerija (NB! failiformaat)
 
-Eri geoparserite võrdlemiseks võib kasutada nt [EUPEG](https://github.com/geoai-lab/EUPEG) Java-rakendust (demoversioon siin: https://geoai.geog.buffalo.edu/EUPEG/#).  
+Eri geoparserite võrdlemiseks võib kasutada nt [EUPEG](https://github.com/geoai-lab/EUPEG) Java-rakendust.    
 
 
 ## Eesti keele geoparsimine
@@ -129,11 +143,11 @@ Eri geoparserite võrdlemiseks võib kasutada nt [EUPEG](https://github.com/geoa
 
 Eesti keele automaatanalüüsi tööriistade kõige terviklikum komplekt sisaldub Pythoni [**EstNLTK**](https://github.com/estnltk/estnltk) teegis, mille kaudu on võimalik kasutada nii nimetuvastajat kui ka morfoloogilist analüsaatorit. Nende kasutamiseks tuleb aga osata pisut Pythoni skripte kirjutada (baasasjad saab üpris lihtsa vaevaga omandada nt [siit](https://github.com/estnltk/estnltk/tree/main/tutorials)), nimetuvastuse kasutamise juhendi leiab [siit](https://github.com/estnltk/estnltk/blob/main/tutorials/nlp_pipeline/D_information_extraction/02_named_entities.ipynb).
 
-EstNLTK nimetuvastaja eristab kolme tüüpi nimesid:  
+EstNLTK nimetuvastaja eristab kolme põhitüüpi nimesid:  
 
 - isikunimed (`PER`),
 - kohanimed (`LOC`),
-- organisatsiooninimed (`ORG`).
+- organisatsiooninimed (`ORG`).  
 
 
 Samu tööriistu, mida EstNLTK teegis, kasutatakse ka nimetuvastuse demorakenduses (kuni 5000 tähemärgi pikkusele tekstile) https://ner.tartunlp.ai/. Ajalooliste tekstide nimetuvastuseks arendatud tööriistade prototüübid on kättesaadavad lehel https://github.com/soras/vk_ner_lrec_2022.  
@@ -169,12 +183,13 @@ Kõik protokollid on Moodle'is praktikumi materjalide kaustas eraldi alamkaustas
 Kohanimeüksuste automaatseks tuvastamiseks ning nende vahetu konteksti eraldamiseks tekstist kasutame EstNLTK analüüsivahendeid. Selleks, et Pythoni installimiselt ning skriptide kirjutamiselt aega kokku hoida, kasutame praktikumis **[Google Colabi](https://colab.research.google.com/drive/1K8wftl_g9PC9psobw9-lcUwoF1ukM90y?usp=sharing)**, mille kaudu saame jooksutada juba valmis kirjutatud skripti. Kui soovid eesti keele automaattöötluse kohta rohkem õppida, on suureks abiks [EstNLTK õppematerjalid](https://github.com/estnltk/estnltk) (kaustas *tutorials*) ja TÜ kursus "[Eesti keele töötlus Pythonis](https://github.com/d009/EstNLP)".
 
 
-Meelsusanalüüsiks kasutame siin Eesti Keele Instituudi [emotsioonidetektorit](http://peeter.eki.ee:5000/valence), mille aluseks olev Pythoni kood on üleval GitHubi lehel https://github.com/EKT1/valence/. Sama kausta materjalid on ka Moodle'is failis *valence-master.zip*. Emotsioonidetektori kohta saad lugeda artiklist *[Pajupuu, Hille; Altrov, Rene; Pajupuu, Jaan (2016). Identifying polarity in different text types. Folklore. Electronic Journal of Folklore, 64, 25−42](http://www.folklore.ee/folklore/vol64/polarity.pdf)*.
+Meelsusanalüüsiks kasutame siin Eesti Keele Instituudi [emotsioonidetektorit](http://peeter.eki.ee:5000/valence), mille aluseks olev Pythoni kood on üleval GitHubi lehel https://github.com/EKT1/valence/. Sama kausta materjalid on ka Moodle'is failis *valence-master.zip*. Emotsioonidetektori kohta saad lugeda artiklist *[Pajupuu, Hille; Altrov, Rene; Pajupuu, Jaan (2016). Identifying polarity in different text types. Folklore. Electronic Journal of Folklore, 64, 25−42](http://www.folklore.ee/folklore/vol64/polarity.pdf)*. Olgu öeldud, et tegemist on üsna vana tööriistaga, tänapäeval saaks ilmselt täpsema tulemuse paremate keelemudelite abil.  
 
-Koodi jooksutamiseks vajuta koodiplokkide vasakus servas oleval noolekesel. Kui midagi skripti jooksutamisel ei tööta, on praktikumi materjalides kaasas ka ühe näidisfaili (*202106091400.csv*) analüüsid (kaustas *kohanimed_valmis*). 
+
+Koodi jooksutamiseks vajuta koodiplokkide vasakus servas oleval noolekesel. Kui midagi skripti jooksutamisel ei tööta, on praktikumi materjalides kaasas ka ühe näidisfaili (*202203011000.csv*) analüüsid (kaustas *kohanimed_valmis*). 
 
 ```{r, echo = F, message = F, warning = F}
-dat <- read.delim("data/praktikum_15_andmed/kohanimed_valmis/istung.csv", sep = "\t", encoding = "UTF-8")
+dat <- read.delim("data/andmed_2025/andmed_praktikum8/kohanimed_valmis/istung.csv", sep = "\t", encoding = "UTF-8")
 knitr::kable(head(dat))
 ```
 
@@ -200,11 +215,14 @@ Salvestame Exceli tabeli nimega **_istung.xlsx_**.
 
 ### Tekstikatkendi meelsuse tuvastamine Excelis
 
-EKI emotsioonidetektor on tegelikult kasutatav ka MS Exceli laiendusena (*Add-in*), ent see ei pruugi uuemates Exceli versioonides alati töötada. Katsetame.  
+EKI emotsioonidetektor oli kasutatav ka MS Exceli laiendusena (*Add-in*), ent see ei pruugi uuemates Exceli versioonides töötada ning laiendus ei ole enam veebist allalaaditav.  
 
-- Laadime lehelt http://peeter.eki.ee:5000/applications/list alla faili *[valence.xlam](http://peeter.eki.ee:5000/valence.xlam)*.  
-- Otsime Excelist üles *File → Options → Add-ins → Manage Excel Add-ins → Go → Browse*, otsime üles faili *valence.xlam*.  
-- Kirjutame Excelis tabeli uude tulpa `=Valence.TestBayes()` ja sulgude vahele lahtri viite, milles on tekst (nt `=Valence.TestBayes(C2)`). Kontrollime, kas tulemused vastavad Pythoni skriptiga saadud tulemustele.  
+<div style="color:#bfbfbe;">
+Katsetame.  
+Laadime lehelt http://peeter.eki.ee:5000/applications/list alla faili *[valence.xlam](http://peeter.eki.ee:5000/valence.xlam)*.  
+Otsime Excelist üles *File → Options → Add-ins → Manage Excel Add-ins → Go → Browse*, otsime üles faili *valence.xlam* (kaasas ka praktikumi materjalidega).  
+Kirjutame Excelis tabeli uude tulpa `=Valence.TestBayes()` ja sulgude vahele lahtri viite, milles on tekst (nt `=Valence.TestBayes(C2)`). Kontrollime, kas tulemused vastavad Pythoni skriptiga saadud tulemustele.  
+</div>
 
 ### Koordinaatide lisamine (geokodeerimine)
 
@@ -240,7 +258,7 @@ Vaatame esmalt, milliseid kohti ja kui palju mainiti. Selleks on teatavasti mitu
 
 
 ```{r echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap= "Stenogrammis mainitud kohanimede *heatmap*"}
-knitr::include_graphics(here::here("imgs", "15_heatmap.png"))
+knitr::include_graphics(here::here("imgs", "8_heatmap.png"))
 ```
 
 
@@ -275,14 +293,14 @@ GROUP BY kohanime_lemma;
     + atribuutideks valime tulbad *positive*, *negative* ja *neutral*,  
     + neile kategooriatele valime sobivad värvid,  
     + muudame diagrammid veidi läbipaistvamaks (`Rendering → Opacity`)  
-    + ja diagrammide suuruseks määrame `Scaled size`, 
+    + ja diagrammide suuruseks määrame `Size → Scaled size`, 
         - `Attribute` väärtuseks `"positive"+"negative"+"neutral"`   
         - ja valime sobiva skaala, arvestades kõige sagedamini mainitud koha mainimiste arvu ja kõige harvemini mainitud kohtade arvu.   
     + paneme diagrammid punktide koha peale: `Placement → Over point`.  
 
 
-```{r echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap= "Positiivsete, negatiivsete ja neutraalsete mainimiste osakaalud"}
-knitr::include_graphics(here::here("imgs", "15_diagrams.png"))
+```{r echo=F, fig.show='hold', fig.align='center', out.width= "90%", fig.cap= "Positiivsete, negatiivsete ja neutraalsete mainimiste osakaalud"}
+knitr::include_graphics(here::here("imgs", "8_diagrams.png"))
 ```
 
 
@@ -290,7 +308,7 @@ Teine variant sama tulemuseni jõudmiseks oleks
 
 - teha topeltklikk kihil *istungi_kohad*,  
 - kaotada `Symbology` jaotises ära tavalised punktikesed (`No symbols`),  
-- jaotises `Diagrams` valida `Pie Chart`,  
+- jaotises `Diagrams` valida `Pie Chart` (ja teha linnuke valiku `Enable diagram` ette),  
 - seal omakorda `Attributes` jaotises lisada `Assigned attributes` aknasse kolm avaldist, mis loeksid kokku iga kohanime lemma esinemiskorrad juhul, kui 1) meelsuse tulbas on väärtus *positive*, 2) meelsuse tulbas on väärtus *negative*, 3) meelsuse tulbas on väärtus *neutral*:  
   + `count("kohanime_lemma", group_by:="kohanime_lemma", filter:="meelsus"='positive')`  
   + `count("kohanime_lemma", group_by:="kohanime_lemma", filter:="meelsus"='negative')`  
