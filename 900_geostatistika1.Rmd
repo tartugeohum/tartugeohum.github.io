@@ -192,7 +192,7 @@ Testi tulemusena saadav *r*-väärtus ehk *nearest neighbour index* näitab, et 
 
 ## Ülesanne 2
 
-Vaatame Tartumaa asustuse punktimustrit. Laadime Moodle'ist alla kihi *tartumaa_asustus.gpkg* ja avame selle QGISis. Andmestik pärineb [Kohanimeregistrist](https://kohanimeregister.ee/knravalik/) ning selles on igale Tartumaa küla või aleviku nimele lisatud [Kohanimeraamatust](https://www.eki.ee/dict/knr/) esmamainimise aasta, kihelkond ning nime etümoloogia.    
+Vaatame Tartumaa asustuse punktimustrit. Laadime Moodle'ist alla kihi *tartumaa_asustus.gpkg* ja avame selle QGISis. Andmestik pärineb [Kohanimeregistrist](https://geoportaal.maaamet.ee/est/teenused/aks-kohanimeregistri-teenus-p133.html) ning selles on igale Tartumaa küla või aleviku nimele lisatud [Kohanimeraamatust](https://www.eki.ee/dict/knr/) esmamainimise aasta, kihelkond ning nime etümoloogia.    
 
 Vaatame andmestiku atribuuttabelit, et näha, millega on tegemist. Esmamainimise aastate tulbast ülevaate saamiseks võib kasutada ülamenüüst funktsiooni `View → Statistical summary`. Näha on lihtne ülevaade vanimast ja noorimast külast, keskmisest ja enimlevinud esmamainimise aastaarvust jms. 
 
