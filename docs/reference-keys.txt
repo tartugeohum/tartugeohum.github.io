@@ -144,6 +144,13 @@ fig:16graphicalmodeleralgorithm
 fig:16graphicalmodelerstyle
 fig:17secondordern
 fig:18kalster
+fig:17simpleinterpolation
+fig:17idwformula
+fig:17idwformulaex
+fig:17idwqgis
+fig:18spline
+fig:17tps
+fig:17voronoi
 sissejuhatus
 kursuse-korraldusest
 mis-on-geoinfosüsteemid
@@ -251,3 +258,12 @@ model-designer
 ruumiline-vastastikmõju
 ülesanne-2
 klasterdamine
+geostatistika2
+interpoleerimine
+distantsi-kaaluv-interpoleerimine
+ülesanne-1-1
+splain-spline
+ülesanne-2-1
+ülesanne-3
+voronoi-polügoonid
+muud-meetodid

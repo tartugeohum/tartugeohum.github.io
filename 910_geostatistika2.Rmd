@@ -63,7 +63,7 @@ knitr::include_graphics(here::here("imgs/17_idw_qgis.PNG"))
 **5** - määrab, millises ulatuses rastrit interpoleerida (võib olla nt mingi muu vektorkiht, nagu maakondade vektorkiht).  
 **6** - väljundiks saadava rastri piksli külje suurus (kasutatava CRS-i ühikutes, enamasti meetrites). Mida suurem on mõõtkava (st mida väiksemat ala vaatleme), seda väiksem peaks olema piksli suurus.   
 
-GDALi kaudu saab kasutada ka teist IDW-tööriista, mis pakub natuke enam paindlikkust. Näiteks saab seal määrata otsimisraadiuse (kui kaugele jäävaid punkte üldse arvesse võtta) või maksimaalse arvu punkte, mida punkti läheduses arvesse võtta.
+GDALi kaudu saab kasutada ka teist IDW-tööriista (*Grid*), mis pakub natuke enam paindlikkust. Näiteks saab seal määrata otsimisraadiuse (kui kaugele jäävaid punkte üldse arvesse võtta) või maksimaalse arvu punkte, mida punkti läheduses arvesse võtta.
 
 <!-- IDW number of nearest points, search radius-->
 
@@ -73,10 +73,12 @@ Interpoleerime *ei ole* ja *pole* varieerumist Andrus Saareste murdeatlase andme
 
 Lõika IDW-ga saadud raster kihelkondade piiridesse (`Raster → Extraction → Clip Raster by Mask Layer`).  
 
+Mis muutub, kui teed kauguse koefitsienti *P* väiksemaks (nt 0,1)? Mis muutub, kui teed seda suuremaks (nt 5)?
+
 
 ### Splain (*Spline*)
 
-Splain (*spline*) on pidev kõver, mis ühendab punkte. *Thin Plate Spline* on meetod, kus püütakse splainide abil tekitada minimaalse kumerusega pidevat pinda, mis läbiks kõiki andmestiku punkte, kusjuures punkte kujutatakse ette kolmemõõtmelisena: teame punktide x- ja y- koordinaate ning mingi punktide atribuut, mille väärtusi interpoleerime, annab justkui kõrgusinfo, z-koordinaadi. Pinda üritatakse punktide vahele ja peale sättida niisiis nii, et sel oleks võimalikult vähe kumerust, aga samal ajal oleksid läbitud kõik punktid. *Regularized spline* lubab kõverale ka väärtuseid, mis on punktide enda väärtustest suuremad või väiksemad (lubame ennustada vaadeldavatest andmetest väljapoole). *Tension spline* ei lase sellistel kumerustel tekkida. 
+Splain (*spline*) on pidev kõver, mis ühendab punkte. *Thin Plate Spline* on meetod, kus püütakse splainide abil tekitada minimaalse kumerusega pidevat pinda, mis läbiks kõiki andmestiku punkte, kusjuures punkte kujutatakse ette kolmemõõtmelisena: teame punktide x- ja y- koordinaate ning mingi punktide atribuut, mille väärtusi interpoleerime, annab justkui kõrgusinfo, z-koordinaadi. Pinda üritatakse punktide vahele ja peale sättida niisiis nii, et sel oleks võimalikult vähe kumerust, aga samal ajal oleksid läbitud kõik punktid. *Regularized spline* lubab kõverale ka väärtusi, mis on punktide enda väärtustest suuremad või väiksemad (lubame ennustada vaadeldavatest andmetest väljapoole). *Tension spline* ei lase sellistel kumerustel tekkida. 
 
 <!--The name "Thin Plate" comes from the fact that a TPS more or less simulates how a thin metal plate would behave if it was forced through the same control points. -->
 
@@ -134,6 +136,9 @@ Kui meil on tegemist kategoriaalse (st mittearvulise) atribuudiga (nt `Keelend` 
 ```{r 17voronoi, echo =F, fig.align='center', fig.show='hold', fig.cap = "Voronoi polügoonide klassifitseerimine *ei ole* ja *pole* kasutuse põhjal", out.width="80%"}
 knitr::include_graphics(here::here("imgs/17_voronoi.png"))
 ```
+
+
+<!--- Mida suuremaks muuta IDWs kauguse koefitsiendi väärtust, seda olulisemaks saab AINULT kõige lähema punkti väärtus, mis on tegelikult täpselt sama asi, mida teevad Voronoi polügoonid: mingile alale määratakse tema kõige lähema vaatluse väärtus.--->
 
 
 ## Muud meetodid  
