@@ -9,17 +9,25 @@ Tavalised arvutis hoitavad kaardid on **digitaalsed kaardid**, mille võib panna
 
 Lisaks sellele, et veebikaartidel saab kuvada korraga mitut kihti, mingeid kihte sisse ja välja lülitada või kasutada andmete esitamiseks animatsiooni, saab nendele lisada ka erinevaid lisaelemente, näiteks sisse- ja väljasuumimine, vahemaade mõõtmine, legend, pealkirjad, otsing jpm. Samuti saab määrata, mis juhtub, kui kasutaja liigub hiirega mingi punkti peale, sellel klikib või mingil muul moel veebikaardiga suhtleb.  
 
-Tänapäevase veebikaardi aluskaart koosneb **paanidest** (*tiles*), tüüpiliselt 256×256 piksli suurustest rasterpiltidest (aga juba kasutatakse ka resolutsioonist sõltumatuid vektorpaane), mida laaditakse vastavalt kasutaja valikutele kaardipaanide serverist (näiteks OpenStreetMapi serverist). See tähendab, et kasutajale näidatakse ainult seda osa kaardist, mida tal on vaja näha, muutes kaardi laadimise oluliselt kiiremaks.  
+Veebikaardi aluskaart koosneb **paanidest** (*tiles*). See tähendab, et kasutajale näidatakse ainult seda osa kaardist, mida tal on vaja näha, muutes kaardi laadimise oluliselt kiiremaks. Vektorpaanipõhine veebitehnoloogia on uuem kui rasterpaanipõhine tehnoloogia.  
+**Rasterpaane** (tüüpiliselt 256x256 piksli suurused rasterpildid) laaditakse vastavalt kasutaja valikutele kaardipaanide serverist (nt OpenStreetMapi serverist) ning brauser lihtsalt kuvab laaditud paane. Kasutaja ei saa rasterpaane ise stiliseerida ning paanide laadimine võib olenevalt interneti kiirusest võtta pisut aega. 
 
-```{r tiles, echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap= "Kaardipaanide laadimine (Allikas: [Axis Maps](https://www.axismaps.com/guide/what-is-a-web-map))"}
+```{r tiles, echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap= "Rasterpaanide laadimine (Allikas: [Axis Maps](https://www.axismaps.com/guide/what-is-a-web-map))"}
 knitr::include_graphics(here::here("imgs", "18_tiles.gif"))
 ```
 
+**Vektorpaanide** puhul laaditakse serverist vaid matemaatilisele kujule viidud geomeetrilised andmed (punktid, jooned, polügoonid ja nende atribuudid, tavaliselt PBF- või MVT-laiendiga) ja stiilijuhised, ent kaardipaanid joonistab brauser. Vektorpaanide väljanägemist saab hõlpsalt muuta.   
+<!--Server saadab väikese faili, mis ütleb "Joonista punktist A joon punkti B ja polügoon punktide A, B, C, D ja E vahel. Lisaks saab brauser stiilivormingu andmed, nt "värvi kõik jooned mustaks" -->
+<br>
+<br>
+
 Aluskaart annab veebikaardile geograafilise konteksti, ent ei ole iseenesest kaardi tegemise ega vaatamise põhjuseks. Aluskaardil saab omakorda kuvada muid vektor- või rasterandmeid.
 
-Suur osa veebikaartidest (ja neid pakkuvatest APIdest ehk rakendusliidestest) kasutab vaikimisi **Web Mercatori** projektsiooni (CRS-iga EPSG:3857), mille puhul peab arvestama sellega, et alade suurus on moonutatud. 
+Suur osa veebikaartidest (ja neid pakkuvatest APIdest ehk rakendusliidestest) kasutab vaikimisi **Web Mercatori** projektsiooni (CRS-iga EPSG:3857), mille puhul peab arvestama sellega, et alade suurus on moonutatud. Nõnda katab näiteks sama suumi astmega kaardipaan poolustele lähemal oluliselt väiksemat ala kui ekvaatori lähedal.
 
-<iframe width="100%" height="480px" src="https://thetruesize.com/#?borders=1~!MTU2MDMyNDc.NDgyOTAxOQ*MzM0ODE1MTM(NDAxMDYxNQ~!CONTIGUOUS_US*MTAwMjQwNzU.MjUwMjM1MTc(MTc1)MA~!IN*NTI2NDA1MQ.Nzg2MzQyMQ)Mg~!CN*OTkyMTY5Nw.NzMxNDcwNQ(MjI1)MQ" frameborder="0" scrolling="yes"></iframe>
+```{r zoom7, echo=F, fig.show='hold', fig.align='center', out.width= "28%", fig.cap= "Ecuador ja Svalbardi saarestik samal suumi astmel (7)"}
+knitr::include_graphics(here::here("imgs", c("18_Quito_z7.png", "18_Svalbard_z7.png")))
+```
 
 Kui tahta teha sageli, palju või korralikke veebikaarte ja kaardirakendusi, tasub vähemalt mingil algtasemel ära õppida keel, milles seda teha saab. 
 Veebilehed kasutavad (vähemalt) [**HTML**](https://www.w3schools.com/html/default.asp)i, et veebilehte struktureerida, [**CSS**](https://www.w3schools.com/css/default.asp)i, et veebilehte kujundada, ning [**JavaScript**](https://www.w3schools.com/js/default.asp)i, et lisada veebilehele interaktiivsust.
@@ -34,18 +42,24 @@ knitr::include_graphics(here::here("imgs", "18_htmlcssjs.jpg"))
 
 ```
 <!DOCTYPE html>
-<html>
+<html lang="et">
   <head>
+	<meta charset="UTF-8">
     <title>Minu lehe pealkiri</title>
-    <link href="stiil.css" type="text/css" rel="stylesheet">
+    <link href="stiil.css" rel="stylesheet">
   </head>
-  <body bgcolor="black" text="white">
+  <body>
     <h1>Minu esimene veebileht</h1>
     <p>Siin on mingi tekst.</p>
 	<p>Siin on <a href="https://tartugeohum.github.io/" target="_blank">link</a>, kust leiab kõik selle kursuse materjalid</p>
     <p>Siin all on nupp, millele vajutades saab veel midagi teada.</p>
-    <button type="button" onclick="document.getElementById('pealkiri').style.display='block'">Vajuta siia!</button>
-    <p id="pealkiri" style="display:none">See on minu esimene veebileht!</p>
+	<button id="minuNupp" type="button">Vajuta siia!</button>
+    <p id="salatekst" class="peidetud">See on minu esimene veebileht!</p>
+	<script>
+		document.getElementById('minuNupp').addEventListener('click', function(){
+			document.getElementById('salatekst').style.display='block';
+		});
+	</script>
   </body>
 </html>
 ```
@@ -53,14 +67,19 @@ knitr::include_graphics(here::here("imgs", "18_htmlcssjs.jpg"))
 Selle veebilehe juurde käiv CSS-fail omakorda selline:
 
 ```
-h1{
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  color: blue;
+}
+h1 {
+  text-align: center;
+  color: #FFFF00; 
   font-size: 40px;
 }
-p{
-  font-family: courier;
-  font-size: 20px;
+.peidetud {
+  display: none;
 }
 ```
 
@@ -70,11 +89,13 @@ Kokku saab ühe väga lihtsa lehe, mis näeb välja selline:
 knitr::include_graphics(here::here("imgs", "18_html.PNG"))
 ```
 
-Interaktiivsete **veebikaartide** jaoks kasutatakse sageli näiteks JavaScripti teekide/pakettide [**Leaflet**](https://leafletjs.com/)i või [**OpenLayers**](https://openlayers.org/)i APIsid ehk rakendusliideseid, mis suhtlevad erinevate serveritega ning muudavad ja kuvavad kaarti vastavalt kasutaja valikutele. Mõlemad teegid on vabavaralised ja avatud lähtekoodiga, samas kui näiteks Google Mapsi API ja ArcGISi API on seotud konkreetse omandusliku (*proprietary*) tarkvaraga. 
+Interaktiivsete **veebikaartide** jaoks on pikka aega enim kasutatud JavaScripti teekide/pakettide [**Leaflet**](https://leafletjs.com/)i või [**OpenLayers**](https://openlayers.org/)i APIsid ehk rakendusliideseid, mis suhtlevad erinevate serveritega ning muudavad ja kuvavad kaarti vastavalt kasutaja valikutele. Mõlemad teegid on vabavaralised ja avatud lähtekoodiga, samas kui näiteks Google Mapsi API ja ArcGISi API on seotud konkreetse omandusliku (*proprietary*) tarkvaraga.  
+
+Vektorpaanide tehnoloogia laiema levikuga on saanud oluliseks ka [**MapLibre GL JS**](https://maplibre.org/maplibre-gl-js/docs/) teek, mis omakorda kasutab WebGL-i tehnoloogiat (*Web Graphics Library*, võimaldab brauseril suhelda GPUga). 
 <!-- Veebikaartide APId sisaldavad kaardiklasse ja kihte, ilma et peaks ise kirjutama tervet pikka koodi, millega mingit kaarti programmaatiliselt joonistada. APIde abil saab seega kirjutada programme kiiremini ja lihtsamalt -->
 
-```{r leafletOL, echo=F, fig.show='hold', fig.align='center', out.width= "28%", fig.cap= "Leaflet ja OpenLayers"}
-knitr::include_graphics(here::here("imgs", c("18_leaflet.png", "18_openlayers.png")))
+```{r leafletOL, echo=F, fig.show='hold', fig.align='center', out.width= "25%", fig.cap= "Leaflet, OpenLayers ja MapLibre"}
+knitr::include_graphics(here::here("imgs", c("18_leaflet.png", "18_openlayers.png", "18_maplibre.png")))
 ```
 
 
@@ -82,94 +103,99 @@ Leafleti kasutades peaksime oma HTML-faili lisama mõned read, et kuvada näitek
 
 ```
 <!DOCTYPE html>
-<html>
+<html lang="et">
   <head>
+	<meta charset="UTF-8">
     <title>Minu lehe pealkiri</title>
-    <link href="stiil.css" type="text/css" rel="stylesheet">
-    
-    <!-- Siia alla tuleb Leafleti CSS-koodi aadress -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Siia alla tuleb Leafleti JavaScripti aadress -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-	
+    <link href="stiil.css" rel="stylesheet">
+	<!--Siia alla tuleb Leafleti CSS-koodi aadress-->
+	<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+	<!--Siia alla tuleb Leafleti JavaScripti aadress-->
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
-  <body bgcolor="black" text="white">
+  <body>
     <h1>Minu esimene veebileht</h1>
     <p>Siin on mingi tekst.</p>
-    <p>Siin on <a href="https://tartugeohum.github.io/" target="_blank">link</a>, kust leiab kõik selle kursuse materjalid</p>
+	<p>Siin on <a href="https://tartugeohum.github.io/" target="_blank">link</a>, kust leiab kõik selle kursuse materjalid</p>
     <p>Siin all on nupp, millele vajutades saab veel midagi teada.</p>
-    <button type="button" onclick="document.getElementById('pealkiri').style.display='block'">Vajuta siia!</button>
-    <p id="pealkiri" style="display:none">See on minu esimene veebileht!</p>
-    
-    <!-- Siia alla tuleb kaardi jaotis (katab ära 100% lehe laiusest, kõrgus on 500 pikslit) -->
-    <div id="map" style="width: 100%; height: 500px; margin-top: 20px;"></div>
-
-    <!-- Siia alla tuleb JavaScripti osa, mis aitab kaardi jaotises midagi näidata -->
-    <script>
-      // Loome kaardi
-      var map = L.map('map').setView([58.3802, 26.723], 15); // Määrame koordinaadid ja sissesuumimise taseme (15)
-      
-      // Lisame OpenStreetMapi aluskaardi
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-      }).addTo(map);
-
-      // Lisame markeri Raekoja platsi kohale
-      L.marker([58.3802, 26.723]).addTo(map)
-        .bindPopup('Raekoja plats')
-        .openPopup();
+	<button id="minuNupp" type="button">Vajuta siia!</button>
+    <p id="salatekst" class="peidetud">See on minu esimene veebileht!</p>
+	<script>
+		document.getElementById('minuNupp').addEventListener('click', function(){
+			document.getElementById('salatekst').style.display='block';
+		});
+	</script>
+	
+	<!--Siia alla tuleb kaardi jaotis (katab ära 100% lehe laiusest, kõrgus on 500 pikslit)-->
+	<div id="kaart" style="width: 100%; height: 500px; margin-top: 20px;"></div>
+	<!--Siia alla tuleb JavaScripti osa, mis aitab kaardi jaotises midagi näidata-->
+	<script>
+		// Loome kaardi
+		var map = L.map('kaart').setView([58.3802,26.723],15); // määrame koordinaadid ja suumi taseme (15)
 		
-    </script>
+		// Lisame OpenStreetMapi aluskaardi
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			attribution: '© OpenStreetMap'
+		}).addTo(map);
+		
+		// Lisame markeri Raekoja platsi kohale
+		L.marker([58.3802,26.723]).addTo(map)
+			.bindPopup('Raekoja plats')
+			.openPopup();
+	</script>
   </body>
 </html>
 ```
 
-Lisame nüüd oma lihtsale kaardile ka mingi avaliku vektorkihi andmed, nt Tartu linna geoportaalist [rattaparklate asukohad ja nende mahutavuse](https://geohub.tartulv.ee/maps/079c580d3a924e819f3c2580f053ad1a/about).
+Lisame nüüd oma lihtsale kaardile ka mingi avaliku vektorkihi andmed, nt Tartu linna geoportaalist [rattaparklate asukohad ja nende mahutavuse](https://avaandmed.tartulv.ee/datasets/a1eb7d891db049a58475994115da47fe_0/explore).
 
 
 ```
 <!DOCTYPE html>
-<html>
+<html lang="et">
   <head>
+	<meta charset="UTF-8">
     <title>Minu lehe pealkiri</title>
-    <link href="stiil.css" type="text/css" rel="stylesheet">
-    
-    <!-- Siia alla tuleb Leafleti CSS-koodi aadress -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Siia alla tuleb Leafleti JavaScripti aadress -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-	
+    <link href="stiil.css" rel="stylesheet">
+	<!--Siia alla tuleb Leafleti CSS-koodi aadress-->
+	<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+	<!--Siia alla tuleb Leafleti JavaScripti aadress-->
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
-  <body bgcolor="black" text="white">
+  <body>
     <h1>Minu esimene veebileht</h1>
     <p>Siin on mingi tekst.</p>
-    <p>Siin on <a href="https://tartugeohum.github.io/" target="_blank">link</a>, kust leiab kõik selle kursuse materjalid</p>
+	<p>Siin on <a href="https://tartugeohum.github.io/" target="_blank">link</a>, kust leiab kõik selle kursuse materjalid</p>
     <p>Siin all on nupp, millele vajutades saab veel midagi teada.</p>
-    <button type="button" onclick="document.getElementById('pealkiri').style.display='block'">Vajuta siia!</button>
-    <p id="pealkiri" style="display:none">See on minu esimene veebileht!</p>
-    
-    <!-- Siia alla tuleb kaardi jaotis (katab ära 100% lehe laiusest, kõrgus on 500 pikslit) -->
-    <div id="map" style="width: 100%; height: 500px; margin-top: 20px;"></div>
-
-    <!-- Siia alla tuleb JavaScripti osa, mis aitab kaardi jaotises midagi näidata -->
-    <script>
-      // Loome kaardi
-      var map = L.map('map').setView([58.3802, 26.723], 15); // Määrame koordinaadid ja sissesuumimise taseme (15)
-      
-      // Lisame OpenStreetMapi aluskaardi
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-      }).addTo(map);
-
-      // Lisame markeri Raekoja platsi kohale
-      L.marker([58.3802, 26.723]).addTo(map)
-        .bindPopup('Raekoja plats')
-        .openPopup();
+	<button id="minuNupp" type="button">Vajuta siia!</button>
+    <p id="salatekst" class="peidetud">See on minu esimene veebileht!</p>
+	<script>
+		document.getElementById('minuNupp').addEventListener('click', function(){
+			document.getElementById('salatekst').style.display='block';
+		});
+	</script>
+	
+	<!--Siia alla tuleb kaardi jaotis (katab ära 100% lehe laiusest, kõrgus on 500 pikslit)-->
+	<div id="kaart" style="width: 100%; height: 500px; margin-top: 20px;"></div>
+	<!--Siia alla tuleb JavaScripti osa, mis aitab kaardi jaotises midagi näidata-->
+	<script>
+		// Loome kaardi
+		var map = L.map('kaart').setView([58.3802,26.723],15); // määrame koordinaadid ja suumi taseme (15)
 		
-      // Pärime Tartu linna geoportaalist rattaparklate andmeid GeoJSONi formaadis
-      fetch('https://gis.tartulv.ee/arcgis/rest/services/Linnatransport/LI_rattaparkla/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson')
+		// Lisame OpenStreetMapi aluskaardi
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			attribution: '© OpenStreetMap'
+		}).addTo(map);
+		
+		// Lisame markeri Raekoja platsi kohale
+		L.marker([58.3802,26.723]).addTo(map)
+			.bindPopup('Raekoja plats')
+			.openPopup();
+		
+		// Pärime Tartu linna geoportaalist rattaparklate andmeid GeoJSONi formaadis
+		fetch('https://gis.tartulv.ee/arcgis/rest/services/Liikluskorraldus/LI_rattaparklad/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson')
         .then(response => response.json()) // parsime andmeid JSON-formaadis
         .then(data => {
           // lisame GeoJSONi andmekihi kaardile 		
@@ -196,18 +222,14 @@ Lisame nüüd oma lihtsale kaardile ka mingi avaliku vektorkihi andmed, nt Tartu
 				);
               }
             }
-          // lisa GeoJSONi kiht kaardile
-          }).addTo(map);
+          }).addTo(map);// lisa GeoJSONi kiht kaardile
         })
         .catch(error => console.error('Error fetching GeoJSON data:', error));
-    </script>
+	</script>
   </body>
 </html>
 ```
 
-Leafleti kasutatakse üldiselt rohkem, see on ökonoomsem, lihtsama APIga ning sobib hästi lihtsamate kaardirakenduste tegemiseks (*Leaflet does the 20% of things that are required 80% of the time*). Samas saab paljud funktsioonid kätte ainult erinevatest pluginatest ning kõiki võib-olla ei olegi veel olemas. Suure hulga funktsionaalsustega kaardirakenduste jaoks soovitatakse kasutada pigem OpenLayersit, mille API on keerulisem, ent selle võrra on see paindlikum ning pakub rohkem funktsioone. 
-
-Ka Mapbox pakub oma JavaScripti teeki/paketti **[Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/guides/)**, mis võimaldab koostada veebikaarte ja kaardirakendusi.  
 
 
 
@@ -232,7 +254,7 @@ Lisame ka **rasterkihid**, mis on tehtud *Thin Plate Spline* meetodiga, et ennus
 
 ## Veebikaartide tegemine
 
-Enne veebikaardi tegemist **peidame** vektorkihtidelt tunnused, mida me ei taha veebikaardil näidata. Selleks teeme igal kihil topeltkliki, liigume jaotisesse `Attributes Form`, valime peidetava atribuudi ja `Widget Type` alt valime `Hidden`. Võiksime peita vähemalt objekte identifitseeriva atribuudi `fid`, lisaks ka nt kihelkondade lühendid jms.  
+Enne veebikaardi tegemist **peidame** vektorkihtidelt tunnused, mida me ei taha veebikaardil näidata. Selleks teeme igal kihil topeltkliki, liigume jaotisesse `Attributes Form`, valime peidetava atribuudi ja `Widget Type` alt valime `Hidden`. Võiksime peita vähemalt objekte identifitseeriva atribuudi `fid`, lisaks ka nt kihelkondade lühendid jms. **Atribuute saab peita ka hiljem `qgis2web` tööriistas.**   
 
 Järgmiseks valime kaardile **aluskaardi** (*QuickMapServices*) ja muudame projekti CRSi EPSG:3857ks. **Salvestame projekti ja rasterfailid**!   
 
@@ -250,7 +272,7 @@ Kui tööriista avamisel saad eelvaate aknas (paremal pool) teate, et uuema veeb
 
 Jaotises **`Layers and Groups`** valime, milliseid kihte oma veebikaardil tahame näidata.  
 
-- Iga kihi juures saab omakorda valida, kas tahame, et kiht oleks kohe kaarti avades nähtav (`Visible`), kas kihi elementidel klikkides avaneksid hüpikaknad (`Popups`) ja kas soovime, et väiksemal mõõtkaval oleksid lähedased punktid klasterdatud ühe punkti alla, nii et oleks nähtav, kui mitu punkti sellesse piirkonda jääb (`Cluster`, ainult vektorkihtidel).  
+- Iga kihi juures saab omakorda valida, kas tahame, et kiht oleks kohe kaarti avades nähtav (`Visible`), kas soovime, et väiksemal mõõtkaval oleksid lähedased punktid klasterdatud ühe punkti alla, nii et oleks nähtav, kui mitu punkti sellesse piirkonda jääb (`Cluster`, ainult vektorkihtidel) ja kas kihi elementidel klikkides avaneksid hüpikaknad (`Popups`).  
 - Hüpikakende puhul (`Popup fields`) saab omakorda igale andmestiku tunnusele määrata, kas lisada sellele ka tulbanimi ja kui, siis kas tulbas oleva teksti kõrvale (`inline label`) või kohale (`header label`).
 
 ```{r layersandgroups, echo=F, fig.show='hold', fig.align='center', out.width= "90%", fig.cap= "Kihtide ja nende atribuutide kuvamine QGISi qgis2web pistikprogrammis"}
@@ -259,7 +281,7 @@ knitr::include_graphics(here::here("imgs", "18_layersandgroups.png"))
 
 Jaotises **`Appearance`** valime, milliseid üldisi elemente ja vidinaid oma kaardile soovime lisada. Näiteks:
 
-- `Add layers list` alt saab valida, kas võimalikud kihid kuvada menüüs, mille saab lahti klõpsata (*Collapsed*), või menüüs, kus on kõik kihid kohe nähtaval (*Expanded*).  
+- `Layers list` alt saab valida, kas võimalikud kihid kuvada menüüs, mille saab lahti klõpsata (*Collapsed*), või menüüs, kus on kõik kihid kohe nähtaval (*Expanded*).  
 - `Attribute filter` kastis saab valida need andmestiku atribuudid, mille põhjal kaardi kasutaja saab alamhulki pärida, nt kui tahab näha ainult Võru murde andmeid või ainult *ei ole* punkte.   
 - `Layer search` alt saab määrata kihid, millelt kasutaja võib päringuid teha (nt et leida üles mõni Pühalepa kihelkonna punktike).  
 - `Template` ütleb, kas kaardi suurus veebilehel on nii suur, kui ta on parajasti näha QGISi peaaknas, nn lõuendil (*canvas*), või ulatub kaart üle kogu veebilehe.  
@@ -305,9 +327,23 @@ Tartu Ülikooli tudengitel ja töötajatel on TÜ serveris \\\\pohl.ut.ee või \
 Kui liigutad nüüd kogu qgis2web väljundi kausta (kas kausta *kuulsad_eestlased* või *ei ole/pole* veebirakenduse) oma kursuse kaustast külge haagitud võrgukettale *public_html* kausta ja kirjutad seejärel mõne veebibrauseri aadressiribale `https://kodu.ut.ee/~sinukasutajanimi/rakendusekaustanimi`, peaksid nägema oma veebikaarti kõigile kättesaadaval kujul.  
 
 
+### Netlify
+
+Vahest kõige hõlpsam viis oma veebirakendust (mitte tingimata veebikaarti) majutada on kasutada [**Netlify**](https://www.netlify.com/) teenust, kus saab pärast sisselogimist (mh ka nt GitHubi või Google'i kontoga) oma rakenduse kausta (selles praktikumis `qgis2web` tööriista väljundkausta) lehele üles laadida.
+
+```{r netlifydrop, echo=F, fig.show='hold', fig.align='center', out.width= "70%", fig.cap= "Netlify Drop"}
+knitr::include_graphics(here::here("imgs", "18_netlifly_drop.png"))
+```
+
+
+Pärast üleslaadimist suunatakse kasutaja lehele, kus ta saab oma avaldatud rakenduse sätteid muuta.  
+
+Netlify pakub GitHubiga üsna sarnaseid funktsioone (mõlemad põhinevad Giti versioonihaldustarkvaral) ning ühilduvad teineteisega hõlpsasti (näiteks saab GitHubi üles laaditud rakendust majutada Netlifys ning rakenduse sisu muutub iga kord, kui GitHubis midagi muudetakse). GitHubi rakendusi võib majutada staatiliselt ka GitHubi enda teenuses **GitHub Pages**. Võrreldes GitHubiga on Netlify aga algajale ehk mõnevõrra lihtsam ning pakub ka igasuguseid lisavõimalusi oma rakendusega töötamiseks. Küll aga tasub tähele panna, et tasuta majutusel on [kasutuspiirangud](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/how-credits-work/): igas kuus on tasuta kasutada 300 "krediidiühikut" (*credits*). Krediidiühikuid kulutavad nt uute rakenduste lisamine, rakenduste muutmine, rakenduse lisavidinate kasutamiskorrad jm. Kui krediidiühikud saavad kasutatud, siis rakendusele selles kuus enam ligi ei pääse.       
+
+
 ### GitHub Pages
 
-Veebikaarte saab tasuta majutada näiteks ka [**GitHubis**](https://github.com/) (vaata lühikest juhendit [siit](https://rogerdudler.github.io/git-guide/)). Selleks tuleks teha uus avalik repositoorium, kuhu paigutada *qgis2web*i väljundkausta sisu (sh kindlasti ka fail *index.html*). Vaata juhendit näiteks [siit](https://github.com/NieneB/Webmapping_for_beginners/wiki/Hosting-on-github). 
+Veebikaarte saab tasuta majutada niisiis ka [**GitHubis**](https://github.com/) (vaata lühikest juhendit [siit](https://rogerdudler.github.io/git-guide/)). Selleks tuleks teha uus avalik repositoorium, kuhu paigutada *qgis2web*i väljundkausta sisu (sh kindlasti ka fail *index.html*). Vaata juhendit näiteks [siit](https://github.com/NieneB/Webmapping_for_beginners/wiki/Hosting-on-github). 
 
 Tee endale GitHubi konto ning seal loo uus repositoorium (`New`), nt kas üldisema nimega *veebikaart* või spetsiifilisema nimega.    
 
@@ -339,6 +375,8 @@ Kui tahad veebikaardi repositooriumit ära kustutada, saad teha seda kaustas `Se
 
 Kuskile serverisse riputatud veebilehte saab omakorda paigutada teise veebilehe sisse, nt HTML-i [**iframe**](https://www.w3schools.com/tags/tag_iframe.ASP)-märgendi abil. 
 
+Ka GitHub Pages teenusel on mõned ("pehmed") [piirangud](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits). Näiteks on majutatava projekti soovitatav maksimaalne suurus 1GB ning igakuine andmeside maht 100GB. "Pehme" tähendab piirangute puhul seda, et nende ületamisel ei blokeerita sinu rakendust või kontot (vähemalt mitte kohe), aga võid saada hoiatuse või teavituse, milles palutakse nt teatud aja jooksul rakendus sobivale kujule viia või kasutada tasulist plaani.  
+<!-- Iga kord, kui keegi veebilehte külastab, laadib nende brauser sinu rakenduse majutusteenusest alla faile (nt HTML, CSS, JavaScript, pildid, paanid, fondid, ikoonid jm).-->
 
 ### Muud veebimajutusteenused
 
@@ -347,7 +385,7 @@ Veebilehti on lisaks võimalik majutada lugematul hulgal serverites. Enamik neis
 
 ## LISA: ajatelje kasutamine QGISis
 
-Kasutame [Eesti filmi andmebaasist](https://www.efis.ee/) kogutud andmeid selle kohta, milliseid geograafilisi kohti läbi aegade Eesti filmides näha on olnud. Selleks on andmebaasis lisaks tavalistele märksõnadele märgendatud eraldi ka [kohanimed](https://www.efis.ee/et/marksonad/id/13/view/Detailed/page/1). Selle kursuse tarbeks korjasime need [R-i skriptiga](https://github.com/MPilvik/efis_webscraping/blob/main/efis_scraping_script.R) kokku ning eri aastate peale kokku vähemalt 5 korda esinenud kohanimede koordinaatidega sidumiseks kasutasime Maa-ameti geokodeerimise teenust. 
+Kasutame [Eesti filmi andmebaasist](https://www.efis.ee/) kogutud andmeid selle kohta, milliseid geograafilisi kohti läbi aegade Eesti filmides näha on olnud. Selleks on andmebaasis lisaks tavalistele märksõnadele märgendatud eraldi ka [kohanimed](https://www.efis.ee/keywords?type=1462&page=0&sortBy=frequency&sortDirection=desc). Selle kursuse tarbeks korjasime need (EFISe veebilehe vanemast versioonist) [R-i skriptiga](https://github.com/MPilvik/efis_webscraping/blob/main/efis_scraping_script.R) kokku ning eri aastate peale kokku vähemalt 5 korda esinenud kohanimede koordinaatidega sidumiseks kasutasime Maa-ameti geokodeerimise teenust. 
 
 Kohad, millele teenuses mingid koordinaadid määrati, oleme üle vaadanud ning nende punktid enam-vähem õigesse kohta liigutanud (seega koordinaatide ja atribuudi `Taisaadress` andmed ei pruugi alati klappida). Kohtadele, mis koordinaate ei saanud, ei ole koordinaate ka eraldi lisatud.  
 
