@@ -16,13 +16,13 @@ Erinevalt nn *osuta-ja-klõpsa* tarkvaradest, kus andmete analüüs toimub puhta
 
 ## R, RStudio ja R Markdown 
 
-Meie kasutame siin kursusel R-i versiooni **4.4.1** ja RStudio versiooni **2024.04.2**, aga töötavad ka nendest pisut vanemad ja ka päris uued versioonid. Lisaks neile võiksid Windowsi kasutajad enda arvutisse installida ka programmi [RTools](https://cran.r-project.org/bin/windows/Rtools/).  
-Kui sa programme enda arvutisse installida ei taha või ei saa, võib TÜ arvutivõrgus olles kasutada oma ülikooli kasutajakontoga RStudiot ka veebi vahendusel: **https://rstudio.hpc.ut.ee**. Kui pakettide installimine allpool ei õnnestu, võid kasutada ka [Google Colabi](https://colab.research.google.com/drive/17qt-HT9_x5D-O4Yvw69MBdQ60INyFJ5k?usp=sharing) (vali *Runtime* -> *Change runtime type* -> R).    
+Meie kasutame siin kursusel R-i versiooni **4.5.2** ja RStudio versiooni **2025.09.2**, aga töötavad ka nendest pisut vanemad ja ka päris uued versioonid. Lisaks neile võiksid Windowsi kasutajad enda arvutisse installida ka programmi [RTools](https://cran.r-project.org/bin/windows/Rtools/).  
+Kui sa programme enda arvutisse installida ei taha või ei saa, võib kasutada ka [Google Colabi](https://colab.research.google.com/drive/17qt-HT9_x5D-O4Yvw69MBdQ60INyFJ5k?usp=sharing) (vali *Runtime* -> *Change runtime type* -> R).    
 
 
 [**R**](https://www.r-project.org/) on vabavaraline väga võimas programmeerimiskeel ja rakendustarkvara andmeanalüüsiks, statistilisteks arvutusteks ning andmete visualiseerimiseks. R pakub väga palju statistilisi ja graafilisi meetodeid ning täieneb pidevalt uute tööriistade ja funktsioonidega. Üks R-i tugevaid külgi on just võimalus teha kõrge kvaliteediga jooniseid ja graafikuid. Kuna tegu on koodipõhise tarkvaraga, siis annab see kasutajatele suhteliselt vabad käed ning võimaldab kontrollida isegi kõige väiksemaid detaile.  
 
-**Pakettide** (*package*) eesmärk on lisada mingeid funktsioone. Paljud paketid tulevad R-iga kohe kaasa, aga üldiselt peab neid (eriti spetsiifilisemate ülesannete täitmiseks) juurde installima. Hetkel on R-i kodulehel [cran.r-project.org](https://cran.r-project.org/web/packages/index.html) üle 20 100 paketi. Pakett koosneb koodist, andmetest, dokumentatsioonist ja testidest ning seda on lihtne teistega jagada. Ka ruumiandmete analüüsimiseks, andmete töötlemiseks ja visualiseerimiseks on R-is omaette paketid, ehkki põhiosa tavalisest andmetöötlusest saab edukalt teha ka ilma lisapakette installimata.   
+**Pakettide** (*package*) eesmärk on lisada mingeid funktsioone. Paljud paketid tulevad R-iga kohe kaasa, aga üldiselt peab neid (eriti spetsiifilisemate ülesannete täitmiseks) juurde installima. Hetkel on R-i kodulehel [cran.r-project.org](https://cran.r-project.org/web/packages/index.html) üle 23 000 paketi. Pakett koosneb koodist, andmetest, dokumentatsioonist ja testidest ning seda on lihtne teistega jagada. Ka ruumiandmete analüüsimiseks, andmete töötlemiseks ja visualiseerimiseks on R-is omaette paketid, ehkki põhiosa tavalisest andmetöötlusest saab edukalt teha ka ilma lisapakette installimata.   
 
 [**RStudio**](https://posit.co/downloads/) on R-i integreeritud arenduskeskkond (*integrated development environment* ehk *IDE*). See koosneb tekstiredaktorist (1), konsoolist (2) ning tööriistadest graafikute kuvamiseks, koodi silumiseks, kogu keskkonna ja ajaloo majandamiseks jpm. RStudiost on nii vabavaraline kui ka kommertsversioon. Meie kasutame vabavaralist.
 
@@ -34,13 +34,14 @@ knitr::include_graphics(here::here("imgs/20_rstudio1.png"))
 **2** - konsool. Siia kuvatakse kogu jooksutatud skript. Lisaks saab siin ka eraldi koodi jooksutada, mis sel juhul skripti ei salvestu.   
 **3** - töökeskkond (`Environment`), käskude ajalugu (`History`) jm. Töökeskkonnas näed kõiki mingi sessiooni jooksul loodud muutujaid (mingit infot säilitavaid objekte, nt tabeleid) ja funktsioone.  
 **4** - failid (`Files`), joonised (`Plots`), paketid (`Packages`) jm. Failide all näed neid faile, mis on parasjagu sinu töökataloogis (*working directory*). Töökataloogi aadressi näed ka konsooli päises.  
+
 Lisaks tavalisele `.R`-laiendiga skriptiformaadile on üha enam kasutusel ka R Markdowni failiformaat (laiendiga `.Rmd`).  
 [**R Markdown**](https://rmarkdown.rstudio.com/) on formaat tavalise teksti ning koodi kombineerimiseks ning võimaldab kirjutada täielikult reprodutseeritavaid artikleid, raamatuid, raporteid ning koostada veebilehti, interaktiivseid lahendusi jpm. Nii see juhend kui ka kogu kursuse materjalid on kirjutatud R Markdownis.  
 
 R Markdown koosnebki tavaliselt tekstist nagu see siin.
 
 ```{r, echo = T}
-# Ning kooditükkidest nagu see siin. Kooditükid on Rstudios kolme ` vahel.
+# Ning koodiplokkidest nagu see siin. Koodiplokid on Rstudios kolme ` vahel.
 # Trellid teksti ees tähistavad kommentaari nagu tavalises R-i skriptifailis 
 # ning seda koodi jooksutamisel ei arvestata. See on lihtsalt inimesele lugemiseks.
 # Kood ise tuleb kirjutada ilma trellideta.
@@ -85,64 +86,6 @@ getwd()
 
 Kui kopeerid koodiridu R-i skriptifaili, siis hoolitse selle eest, et sisseloetavate failide kaust `data` oleks funktsiooniga `getwd()` näidatud kaustas.  
 
-## Kood 
-
-Vaatame paari näidet koodist, et mõista, kuidas üldiselt asjad töötavad.
-
-```{r, echo = T}
-# Arvutuste tegemine. Koodi jooksutades näidatakse tulemust. 
-5 + 11
-```
-
-Väärtustele (ja ka andmestikele, funktsioonidele) saab anda `<-` abil nime ning selle nimega neile edaspidi viidata. 
-
-```{r, echo = T}
-a <- 3
-b <- 7
-a + b
-```
-
-```{r, echo = T}
-x <- 2
-y <- 4
-a + b + x + y
-```
-
-Sama tehet saame teha ka funktsiooni abil. **Funktsiooni puhul kirjutatakse kõigepealt funktsiooni nimi (nt `c` või `sum`) ning sellele järgnevad sulud, kus saab funktsiooni argumentidele väärtuseid anda**. Põhimõtteliselt käib see samamoodi nagu inimkeeles: funktsioon on justkui mingi sihiline tegusõna (*tee midagi*), millele tuleb lisada, *mida*, *millega* või *kuidas* tehakse. Need viimased ongi argumendid, mida täpsustatakse sulgude sees. Kombineerime funktsiooniga **`c()`** (*concatenate*) arvulistest väärtustest nimekirja ning liidame funktsiooniga **`sum()`** kõik nimekirja väärtused kokku. 
-
-```{r, echo = T}
-nimekiri <- c(a, b, x, y)
-nimekiri
-```
-
-```{r, echo = T}
-sum(nimekiri)
-```
-
-Muutujatele saab omistada lisaks arvulistele väärtustele mõistagi ka teistuguseid, nt tekstilisi väärtusi.  
-
-```{r, echo = T}
-tekst <- "tekstilised väärtused on alati jutumärkide vahel"
-tekst
-```
-
-Tekstiliste väärtustega arvutustehteid teha ei saa, küll aga igasugu muid asju.  
-
-```{r, echo = T}
-nchar(tekst) # näita teksti pikkust tähemärkides
-gsub("e", "E", tekst) # asenda tekstis väikesed e-d suurtega
-substr(tekst, 1, 10) # näita tekstist esimest 10 tähte
-```
-
-Muutujates saab hoida ka terveid andmetabeleid (*data frame*'e).  
-
-```{r, echo = T}
-nimed <- c("Oskar", "Mari", "Juhan") # nimekiri nimedest
-vanused <- c(10, 25, 99) # nimekiri vanustest (sama pikk kui nimede nimekiri)
-tabel <- data.frame(nimed, vanused) # tabel kahest nimekirjast
-tabel
-```
-
 
 ## Andmete sisselugemine
 
@@ -151,24 +94,93 @@ Andmete sisselugemiseks tuleb kasutada vastavalt andmestiku tüübile funktsioon
 ```{r, echo = T, results='hide'}
 kihelkonnad <- st_read("data/kihelkonnad/kihelkonnad.shp")
 # Seda koodi võiks lugeda järgmiselt: 
-# ava meie praeguse R Markdowni failiga samas kaustas olevast kaustast data/kihelkonnad 
-# fail kihelkonnad.shp ja anna sellele nimeks kihelkonnad.
+# ava meie praeguse R Markdowni failiga samas kaustas olevast kaustast data/kihelkonnad/ 
+# fail kihelkonnad.shp ja anna sellele kihile R-is nimeks kihelkonnad.
 ```
 
-Näeme, et sisse loetakse multipolügooni tüüpi ruumiandmed, mis on Eesti 1997. aasta koordinaatide referentssüsteemis. Kõige läänepoolsem x-koordinaat on 369020.1, kõige idapoolsem 739155.1; kõige lõunapoolsem y-koordinaat on 6377141, kõige põhjapoolsem 6634006.  
+Näeme, et sisse loetakse multipolügooni tüüpi ruumiandmed, mis on Eesti 1997. aasta koordinaatide referentssüsteemis. Kõige läänepoolsem x-koordinaat on 369020.1, kõige idapoolsem 739155.1; kõige lõunapoolsem y-koordinaat on 6377141, kõige põhjapoolsem 6634006. Kuna tegemist on projitseeritud CRS-iga, on koordinaadid esitatud meetrites.  
 Atribuuttabelis on 120 rida ja 11 tulpa.  
 Loeme sisse ka atlase punktikihi, kus on 279 rida ja 13 tulpa.
 
-```{r, echo = T, results='hide'}
+**Nimetame mõne tulba ümber**.   
+
+```{r, echo = TRUE}
+names(kihelkonnad) # küsi atributtabeli tulbanimesid (pane tähele, et andmestikus on ka tulp 'geometry'!)
+
+names(kihelkonnad)[4] <- "German_name" # asendame 4. tulbanime tekstiga "German_name"
+```
+
+
+Detailset infot kihi koordinaatide referentssüsteemi kohta saame küsida käsuga **`st_crs()`**.  
+
+```{r, echo = TRUE}
+st_crs(kihelkonnad)
+```
+Koordinaatide referentssüsteemi muutmiseks saame kasutada funktsiooni **`st_transform()`**. Teeme näiteks uue kihelkondade kihi, mille koordinaatide referentssüsteem on EPSG:4326 koodiga (vt https://epsg.io/).    
+
+```{r, echo = TRUE}
+kihelkonnad_4326 <- st_transform(kihelkonnad, crs = 4326) # uus kihelkondade kiht, mille crs on EPSG:4326
+st_crs(kihelkonnad_4326) # vaatame uuesti CRS-i infot
+```
+
+**Joonistame kaardid**, et võrrelda kaht koordinaatide referentssüsteemi. Kasutame paketti `ggplot2`, mis laaditakse automaatselt koos paketiga `tidyverse`, ning funktsiooni `geom_sf()`, mis laaditakse koos paketiga `sf`, et joonistada ruumiandmete kihti.    
+
+```{r, echo = TRUE}
+ggplot() + 
+  geom_sf(data = kihelkonnad) +
+  labs(title = "EPSG:3301")
+
+ggplot() +
+  geom_sf(data = kihelkonnad_4326) +
+  labs(title = "EPSG:4326")
+```
+
+Kaks kaarti paistavad esmapilgul sarnased, ent pane tähele, et esimesel, projitseeritud kaardil on jooned veidi kõverdunud. 
+
+
+### Harjutus 1
+
+Loe sisse murdeatlase *ei ole*/*pole* kiht `data/atlas.gpkg` ja nimeta sisseloetud andmekiht nimega `atlas`.
+
+- Millist CRS-i on kasutatud?  
+- Kui palju objekte/andmepunkte kihil on?  
+- Millised andmepunkte kirjeldavad atribuudid on atributttabelis?  
+- Joonista atlase punktidest kaart.  
+- Lisa kaardil punktikihi alla kihelkondade kiht (vihje: kui kasutame kaht ruumiandmete kihti, siis saame liita joonisele vastavalt ka kaks `geom_sf()` kihti).  
+
+```{r, echo = T}
+
+
+
+```
+
+```{r, echo = F, results='hide'}
 atlas <- st_read("data/atlas.gpkg")
 ```
 
-Kui `st_read()` funktsiooniga andmete sisselugemine ei tööta, tähendab see tõenäoliselt, et pakett on jäänud installimata (`install.packages("sf")`) või laadimata (`library(sf)`).  
-Andmestikest ülevaate saamiseks võime vajutada paremal *Environment* jaotises vastava muutuja nimel või kasutada näiteks funktsiooni `head()`, mis kuvab tabeli esimesed read (vaikimisi 6 esimest rida).  
+### Harjutus 2  
 
-```{r, echo = T}
-head(kihelkonnad)
+Loe sisse maailma riikide polügoonid [Natural Earth](https://www.naturalearthdata.com/downloads/) lehelt (*large scale, 1:10m, cultural, admin 0*). Paki allalaetud kaust lahti ning loe ruumiandmete shapefile R-i. Nimeta sisseloetud kiht nimega `riigid`.  
+
+- Millist CRS-i on kasutatud?  
+- Kui palju objekte/andmepunkte kihil on?  
+- Millised andmepunkte kirjeldavad atribuudid on atribuuttabelis?  
+- Joonista riikide polügoonidest kaart. 
+- Loo uus riikide kiht, kus CRS oleks Eesti koordinaatide referentssüsteem EPSG:3301. Joonista kaart. Mis juhtub?   
+
+```{r, echo = TRUE}
+
+
+
 ```
+
+```{r, echo = F, results='hide'}
+riigid <- st_read("data/ne_10m_admin_0_countries/ne_10m_admin_0_countries.shp")
+```
+
+
+### Andmete sisselugemine CSV-failist
+
 
 Nagu öeldud, saab tavaliste tabelite (st mitteruumiandmete) sisselugemiseks kasutada näiteks funktsiooni `read.delim()`, aga `read`-käskusid on tegelikult väga palju (trüki nt konsooli sisse `read` ja vajuta tabulaatorit, et näha võimalikke variante). Loeme sisse murdekorpuse sagedusandmed.    
 
@@ -184,25 +196,13 @@ Vaatame esimesi ridu.
 head(korpus)
 ```
 
+
+
 ## Kaartide tegemine
 
-Populaarne R-i pakett andmete visualiseerimiseks on [ggplot2](https://ggplot2.tidyverse.org/index.html), mis on ka Tidyverse'i pakettide kogumiku osa. Sellega saab teha nii kõiksugu jooniseid kui ka kaarte. Pakett põhineb nn graafikagrammatika (*Grammar of Graphics*) kontseptsioonil, mis võimaldab luua jooniseid erinevate komponentide ja kihtide kombineerimise teel. Sisuliselt toimub komponentide lisamine kihtidena pisut sarnaselt sellele, mida oleme siiani QGISis teinud. Kõigepealt lisatakse aluskiht, seejärel mingi sisukiht ning seejärel kõikvõimalikud märkused ja lisad (ehkki kihtide lisamise järjekord ei ole väga rangelt määratud). 
+Paketiga `ggplot2` saab teha nii kõiksugu jooniseid kui ka kaarte. Pakett põhineb nn graafikagrammatika (*Grammar of Graphics*) kontseptsioonil, mis võimaldab luua jooniseid erinevate komponentide ja kihtide kombineerimise teel. Sisuliselt toimub komponentide lisamine kihtidena pisut sarnaselt sellele, mida oleme siiani QGISis teinud. Kõigepealt lisatakse aluskiht, seejärel mingi sisukiht ning seejärel kõikvõimalikud märkused ja lisad (ehkki kihtide lisamise järjekord ei ole väga rangelt määratud). 
 Proovime paketi `ggplot2` abil teha oma sisseloetud andmetest kaarte.
 
-```{r, echo = T}
-ggplot() + 
-    geom_sf(data = kihelkonnad)
-```
-
-- Funktsiooniga **`ggplot()`** algab iga ggploti graafik.  
-- Sellele lisame ruumiandmete kihi **`geom_sf()`** funktsiooniga, mille sees saame täpsustada andmestiku nime, kust ruumiandmed tulevad. `geom`-kihte võib lisada ka mitu tükki.  
-
-
-```{r, echo = T}
-ggplot() +
-    geom_sf(data = kihelkonnad) +
-    geom_sf(data = atlas)
-```
 
 Värvime maakondade polügoonid helehalli värvi (`fill`), polügoonide piirjooned samuti heledamaks halliks (`color`). Punktid teeme läbipaistvamaks (`alpha`) ja pisut suuremaks (`size`) ja kasutame halli taustaga kaarditeema asemel mustvalget teemat (`theme_bw()`). Värvinimesid ja HEX-värvikoode, mida saab kasutada, leiad näiteks [siit](https://r-charts.com/colors/).  
 
@@ -224,6 +224,7 @@ ggplot() +
     annotation_scale(location = "bl")
 ```
 
+
 Praegu oleme kujutanud kaardil lihtsalt ruumiandmeid (kus mingid polügoonid või punktid asuvad?), aga ei kajasta kuidagi visuaalselt andmestiku tunnuseid. Juhul, kui mõni kujunduselement (nt värv, suurus, kuju, läbipaistvus) on seotud **atribuuttabeli tunnusega**, tuleb selle tunnuse nimi ja seda kujutav visuaalne atribuut tuua välja `geom()`-kihil **`aes()`**-funktsiooni sees (*aesthetics*).
 
 ```{r, echo = T}
@@ -232,7 +233,7 @@ ggplot() +
     geom_sf(data = kihelkonnad, aes(fill = Dialect_et))
 
 # Vrd
-#ggplot() +
+# ggplot() +
 #    geom_sf(data = kihelkonnad, fill = "red")
 ```
 
@@ -244,7 +245,7 @@ ggplot() +
     geom_sf(data = atlas, alpha = 0.5, size = 3, aes(color = KeelendBin))
 
 # Vrd
-#ggplot() +
+# ggplot() +
 #    geom_sf(data = kihelkonnad) +
 #    geom_sf(data = atlas, alpha = 0.5, size = 3, color = "red")
 ```
@@ -270,6 +271,7 @@ ggplot() +
 ```
 
 Võime määrata värvid ka käsitsi, nt `scale_color_manual(values = c("pink", "green"))`.  
+
 
 ## Andmete valimine
 
@@ -335,7 +337,34 @@ ggplot() +
 Atlase punktikihi puhul meil murrete infot teada ei ole (on ainult maakondade info). Selleks, et kuvada korraga nt keskmurde kihelkondi JA keskmurde atlase punkte, peaksime atlase punktidele nende kihelkonna info põhjal leidma ka murrete nimed.  
 
 
+### Harjutus 3
+
+Vali riikide kihilt   
+
+- ainult riigid, mille rahvaarv on üle 100 miljoni ja kuva need kaardil (atribuut `POP_EST`), värvi polügoonid vastavalt maailmajaole (atribuut `REGION_UN`);  
+- ainult Euroopa riigid ja kuva need kaardil (atribuut `REGION_UN`), värvi polügoonid vastavalt rahvaarvule (atribuut `POP_EST`);  
+- ainult Euroopa riigid, mille rahvaarv on üle 100 miljoni, ja kuva need kaardil;  
+- ainult Eesti polügoon (atribuut `NAME`) ja salvesta see eraldi objekti nimega `eesti`.  
+
+```{r, echo = TRUE}
+
+
+
+
+```
+
+
+```{r, echo = FALSE, results='hide'}
+riigid %>%
+  filter(NAME == "Estonia") -> eesti
+
+```
+
+
+
 ## Andmestike ühendamine
+
+### Ruumiandmed + ruumiandmed
 
 **Ruumiandmete** omavahel ühendamiseks (st puhtalt koordinaadipõhiseks andmete ühendamiseks) saab kasutada funktsiooni **`st_join()`** (paketist `sf`). Selleks, et ühendamisel säiliks andmestiku vektortüübina punktandmestik, mitte polügoonid, peaksime vasakule poole panema atlase andmestiku nime ja paremale kihelkondade oma.    
 
@@ -348,6 +377,8 @@ head(atlas_khk)
 ```
 
 Funktsioon `st_join()` vaatab niisiis iga punkti puhul, millise kihelkonna polügooni sisse see punkt jääb, ning lisab punktile vastava kihelkonna info (sh info selle kohta, millise murdeala alla kihelkond kuulub).  
+
+Kuvame kaardil nüüd keskmurde kihelkondade polügoone ja keskmurde piiridesse jäävaid murdeatlase punkte.  
 
 ```{r, echo = T}
 kesk_khk <- kihelkonnad %>% filter(Dialect_et == "Kesk")
@@ -386,7 +417,9 @@ ggplot() +
           panel.background = element_rect(fill = "grey40"))
 ```
 
-Muude andmestike (nt **ruumiandmete + mitteruumiandmete**) ühendamiseks saab kasutada muid `..._join()`-funktsioone (paketist `dplyr`, mis peaks laaditama automaatselt, kui laadid paketi `tidyverse`). Näiteks **`left_join()`** ühendab kaks andmestikku nii, et uude andmestikku jäävad vasakpoolsest andmestikust kõik read ja parempoolsest andmestikust need read, mis tal on vasakpoolsega ühised. Säilib ka vasakpoolsete andmete andmetüüp (nt kui vasakpoolne andmestik on ruumiandmete andmestik ja parempoolne tavaline tabel, on ühendamisel tekkiv andmestik ka ruumiandmete andmestik). Teiste `join`-meetodite kohta saad lugeda, kui trükid konsooli `?join` ja vajutad Enterit.  
+### Ruumiandmed + mitteruumiandmed
+
+Ruumiandmete ja mitteruumiandmete ühendamiseks saab kasutada muid `..._join()`-funktsioone (paketist `dplyr`, mis peaks laaditama automaatselt, kui laadid paketi `tidyverse`). Näiteks **`left_join()`** ühendab kaks andmestikku nii, et uude andmestikku jäävad vasakpoolsest andmestikust kõik read ja parempoolsest andmestikust need read, mis tal on vasakpoolsega ühised. Säilib ka vasakpoolsete andmete andmetüüp (nt kui vasakpoolne andmestik on ruumiandmete andmestik ja parempoolne tavaline tabel, on ühendamisel tekkiv andmestik ka ruumiandmete andmestik). Teiste `join`-meetodite kohta saad lugeda, kui trükid konsooli `?join` ja vajutad Enterit.  
 
 Kui tahame ühendada nüüd kihelkondade polügoonide andmeid (`kihelkonnad`) ja murdekorpuse sagedusandmeid (`korpus`), peame kõigepealt tegema kindlaks, millised on need tulbanimed, mis mõlemas andmestikus sisaldavad samu väärtusi.
 
@@ -417,6 +450,22 @@ ggplot() +
     theme_bw()
 ```
 
+### Ruumiobjektide ühendamine mingi atribuudi alusel
+
+Kui tahame aga näiteks ühendada hoopis kihelkondi atribuudi `Dialect_et` põhjal murdealadeks, saame seda teha funktsioonide `group_by()` ja `summarise()` abil (paketist `tidyverse`).  
+
+```{r, echo = TRUE}
+kihelkonnad %>% # võta kihelkondade kiht
+  group_by(Dialect_et) %>% # grupeeri kihelkonnad murdeala põhjal
+  summarise() -> murded # ühenda iga murdeala kihelkonnad üheks polügooniks ning salvesta tulemus objekti nimega 'murded'
+
+# Teeme joonise
+ggplot() +
+  geom_sf(data = murded, aes(fill = Dialect_et))
+```
+
+
+
 ## Jooniste eksportimine
 
 Kaarte saab eksportida paremal olevast *Plots* aknast, valides *Export* (see toimib juhul, kui oled enne määranud, et R Markdowni koodiplokkide väljundeid ei kuvataks markdowni faili sees; vastasel juhul ei kuvata *Plots* jaotises midagi). Samuti võib koodi lõppu lisada funktsiooni `ggsave("failinimi.png")`. Seejärel salvestatakse fail *Working directory* asukohta, mida saad vaadata funktsiooniga `getwd()`.
@@ -439,6 +488,131 @@ ggplot() +
     theme_bw()
 dev.off()
 ```
+
+## Geostatistika: interpoleerimine
+
+Ka R-is võib kasutada erinevaid geostatistika meetodeid. Näiteks kui soovime interpoleerida *ei ole*/*pole* atlase andmetest rasterkihi, milles iga piksel väljendab *ei ole* esinemise tõenäosust, saame kasutada selleks näiteks pakette [`stars`](https://r-spatial.github.io/stars/) ja [`gstat`](https://r-spatial.github.io/gstat/).  
+
+Esmalt peame aga looma keelendi väärtuse (*ei ole* või *pole*) põhjal uue binaarse arvtunnuse, kus üks variant (nt *ei ole*) oleks kodeeritud 1-ga ja teine (nt *pole*) 0-ga.  
+
+```{r, echo = TRUE}
+atlas$KeelendNum <- ifelse(atlas$KeelendBin == "ei ole", 1, 0)
+
+table(atlas$KeelendNum)
+```
+Järgmiseks peame määrama interpoleerimise tulemusel saadava rastri ulatuse (nt kas ennustame *ei ole* kasutust ka Eestist väljapoole?) ja piksli küljepikkuse. Määrame Eestit katva ala kihelkondade kihi põhjal ning ala suuruseks 10 x 10 km (= 10 000 m2).
+
+```{r, warning=FALSE, echo = TRUE}
+# install.packages("stars")
+library(stars)
+st_bbox(kihelkonnad) %>%
+  st_as_stars(dx = 10000) %>%
+  st_crop(kihelkonnad) -> est_grid # lõikame interpoleeritud rastri kihelkondade kihi piiridesse
+```
+
+Kasutame kõige lihtsamat interpoleerimise meetodit, IDW-d (*Inverse Distance Weighting*, vt praktikum 10).  
+
+```{r, warning=FALSE, echo = TRUE, message=FALSE}
+# install.packages("gstat")
+library(gstat)
+result <- idw(KeelendNum ~ 1, atlas, est_grid)
+
+ggplot() +
+  geom_sf(data = kihelkonnad) +
+  geom_stars(data = result, aes(fill = var1.pred, x = x, y = y)) +
+  scale_fill_viridis_c()
+```
+
+## Veebikaardid
+
+Veebikaartide tegemiseks saame ka R-is kasutada näiteks paketi [**`leaflet`**](https://rstudio.github.io/leaflet/) võimalusi.  
+
+```{r, echo = TRUE}
+# install.packages("leaflet")
+library(leaflet)
+```
+
+Kuvame esmalt lihtsalt mingit aluskaarti.  
+
+```{r, echo = TRUE}
+leaflet() %>%
+  addTiles() %>%
+  setView(25.576, 58.807, zoom = 7)
+```
+
+
+Leafletiga veebikaardile kihtide lisamiseks tuleb kihtidele määrata koordinaatide referentssüsteemiks EPSG:4326.  
+
+```{r, echo = TRUE}
+atlas_4326 <- st_transform(atlas, crs = 4326)
+
+leaflet(atlas_4326) %>%
+    addCircles(color = "red") %>% # lisame atlase punktid
+    addTiles() %>%
+    setView(25.576, 58.807, zoom = 7)
+```
+
+Värvime nüüd punktid vastavalt *ei ole* või *pole* variandile ning lisame popupid.   
+
+```{r, echo = TRUE}
+pal <- colorFactor(palette = c("darkblue", "orange3"), domain = atlas_4326$KeelendBin)
+
+leaflet(atlas_4326) %>%
+    addCircles(color = ~pal(KeelendBin),
+               popup = ~paste(
+                   "<b>Küla:</b>", SaKyla, "<br/>",
+                   "<b>Keelend:</b>", Keelend, "<br/>"
+               )) %>%
+    addTiles() %>%
+    setView(25.576, 58.807, zoom = 7)
+```
+
+
+Leafleti interaktiivseid kaarte saab lisada ka R Markdowni dokumentidesse, Shiny rakendustesse, slaididele jne.  
+
+
+## Geokodeerimine    
+
+R-is saab ka andmeid geokodeerida (= määrata kohanimedele või aadressidele koordinaadid). Selleks on erinevaid pakette, näiteks   
+
+- `tidygeocoder`,  
+- `nominatimlite`,  
+- `osmdata`.  
+
+Katsetame siin paketti [**`tidygeocoder`**](https://jessecambon.github.io/tidygeocoder/).  
+
+```{r, echo = TRUE}
+# install.packages("tidygeocoder")
+library(tidygeocoder)
+```
+
+Paketi põhifunktsioon on `geocode()`, mis nõuab sisendiks `data.frame` tabelformaadis andmeid. Teeme näiteks tabeli, kus oleks neli rida, igal real üks (eri üldistusastmega) aadress:  
+
+- Jakobi 2, Tartu  
+- Ülikooli 18, Tartu  
+- Tartu  
+- Eesti  
+
+```{r, echo = TRUE}
+data.frame(Koht = c("Jakobi 2, Tartu", "Ülikooli 18, Tartu", "Tartu", "Eesti")) -> aadresside_df
+
+aadresside_df %>%
+  geocode(address = Koht, method = "osm", lat = latitude, long = longitude) -> geokodeeritud_df
+
+head(geokodeeritud_df)
+
+```
+
+Kuna geokodeerimise tulemus on tavaline andmetabel, milles koordinaadid on antud atribuutide väärtustena, tuleb meil nüüd `geom_sf()` funktsiooni asemel kasutada funktsiooni `geom_point()` ning anda eksplitsiitselt ette kaardile pandavate punktide x- ja y-koordinaadid. Võime lisada kaardile ka kohanimede sildid, mis oleks punktidest pisut ülevalpool (`vjust = 1`).  
+
+```{r, echo = TRUE}
+ggplot() +
+  geom_sf(data = eesti) +
+  geom_point(data = geokodeeritud_df, aes(x = longitude, y = latitude), color = "red") +
+  geom_text(data = geokodeeritud_df, aes(x = longitude, y = latitude, label = Koht), color = "grey", vjust = -1, check_overlap = F)
+```
+
+
 
 ## Ülesanne
 
